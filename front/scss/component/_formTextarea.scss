@@ -55,4 +55,7 @@
       color: var(--alert-txt-color);
     }
   }
+  &.flex {
+    align-items: center;
+  }
 }

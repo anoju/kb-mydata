@@ -650,6 +650,9 @@ html.lock,
 }
 
 // width
+.w-auto {
+  width: auto !important;
+}
 @for $i from 0 through 300 {
   .w-#{$i} {
     width: $i * 0.1rem !important;
