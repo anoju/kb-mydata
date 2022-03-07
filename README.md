@@ -1,2 +1,1 @@
 # kyobo-mydata-pub
-test
