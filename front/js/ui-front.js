@@ -1301,10 +1301,11 @@ ui.Button = {
     });
   },
   imgBox: function () {
-    $(document).on('click', 'a.img-box-wrap', function (e) {
+    $(document).on('click', '.img-box-wrap.ui-expend a.img-box', function (e) {
       e.preventDefault();
-      const $children = $(this).children();
-      Layer.imgBox($children.clone());
+      const $idx = $(this).index();
+      const $children = $(this).parent().children();
+      Layer.imgBox($children, $idx);
     });
   },
   tap: function () {
@@ -5216,7 +5217,8 @@ const Layer = {
     Layer.open('#' + tooltipPopId);
   },
   imgBoxIdx: 0,
-  imgBox: function (contents) {
+  imgBox: function (contents, idx) {
+    const $idx = idx ? idx : 0;
     const imgPopId = 'uiPopImgBox' + Layer.imgBoxIdx;
     let $html = '<div id="' + imgPopId + '" class="' + Layer.popClass + ' full pop-img-box ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
     $html += '<article class="' + Layer.wrapClass + '">';
@@ -5239,8 +5241,14 @@ const Layer = {
     }
     Layer.imgBoxIdx += 1;
     const $popup = $('#' + imgPopId);
-    $popup.find('.swiper-wrapper').append(contents);
-    $popup.find('.swiper-wrapper').children().addClass('swiper-zoom-container').removeClass('img-box').wrap('<div class="swiper-slide"></div>');
+    let $contentsHtml = '';
+    contents.each(function () {
+      const $this = $(this);
+      const $img = $this.find('img');
+      $contentsHtml += '<div class="swiper-slide"><div class="swiper-zoom-container"><img src="' + $img.attr('src') + '" alt="' + $img.attr('alt') + '" /></div></div>';
+    });
+    $popup.find('.swiper-wrapper').append($contentsHtml);
+    // $popup.find('.swiper-wrapper').children().addClass('swiper-zoom-container').removeClass('img-box').wrap('<div class="swiper-slide"></div>');
 
     // img rotate
     setTimeout(function () {
@@ -5260,7 +5268,7 @@ const Layer = {
           }, 5);
         }
       });
-    }, 5);
+    }, 10);
 
     let imgSwiper;
     Layer.open($popup, function () {
@@ -5273,6 +5281,7 @@ const Layer = {
           el: $popSwiperPagination[0],
           clickable: true
         },
+        initialSlide: $idx,
         zoom: true
       });
       $popup.find('.img-box-swiper').data('swiper', imgSwiper);

@@ -1,6 +1,5 @@
 **/node_modules/*
 **/*.min.*
-**/admin/static/scss/*
 **/lib/*
 _font.scss
 front.scss
