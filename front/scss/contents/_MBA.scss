@@ -1,32 +1,5 @@
 // 테스트
 
-.updown {
-  margin-left: 0.4rem;
-  font-size: 1.2rem;
-  vertical-align: middle;
-
-  &:before {
-    content: '';
-    display: inline-block;
-    font-size: 1.2rem;
-    vertical-align: middle;
-    line-height: 1;
-    margin-top: -0.2rem;
-  }
-  &.up {
-    &:before {
-      content: '▲';
-    }
-    color: #3887fd;
-  }
-  &.down {
-    &:before {
-      content: '▼';
-    }
-    color: #eb5757;
-  }
-}
-
 .match-animation {
   overflow: hidden;
   position: relative;
@@ -797,7 +770,8 @@
 
 .top-100-box {
   margin: 0 -2.4rem;
-  > a {
+  > a,
+  > div {
     display: flex;
     padding: 1.8rem 0 1.8rem 0;
     margin: 0 2.4rem 0 1.4rem;
@@ -833,6 +807,9 @@
         font-size: 1.2rem;
         color: #979797;
       }
+    }
+    &:first-child:last-child {
+      border-bottom: 0;
     }
   }
 }
@@ -1355,6 +1332,48 @@
       }
     }
   }
+}
+
+/* 공통 일거 같은 애들 */
+.updown {
+  margin-left: 0.4rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  line-height: 1;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    line-height: 1;
+    margin-top: -0.2rem;
+    margin-right: 0.2rem;
+  }
+  &.up {
+    &:before {
+      content: '▲';
+    }
+    color: #3887fd;
+  }
+  &.down {
+    &:before {
+      content: '▼';
+    }
+    color: #eb5757;
+  }
+}
+
+.filter-info {
+  display: inline-flex;
+  align-items: center;
+  margin: 1.6rem 0;
+  padding: 0 1.2rem;
+  height: 3.1rem;
+  font-size: 1.2rem;
+  color: #fe7d65;
+  border-radius: 2rem;
+  background: #fff5f3;
 }
 
 .loading-bar {
