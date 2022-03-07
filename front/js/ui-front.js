@@ -5756,13 +5756,17 @@ const Layer = {
 
         if (!ui.Mobile.any()) Layer.focusMove(tar);
         Layer.position(tar);
-        if (!!callback) {
-          callback();
-        }
+
         setTimeout(function () {
           Layer.resize();
           ui.Tab.resize();
         }, 10);
+
+        if (!!callback) {
+          setTimeout(function () {
+            callback();
+          }, 200);
+        }
         Layer.opening--;
       }, $openDelay);
     } else {
