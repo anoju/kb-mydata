@@ -1219,6 +1219,7 @@
           color: #979797;
           i {
             margin-right: 0.3rem;
+            margin-top: -0.1rem;
             vertical-align: middle;
             transition: all 0.3s ease;
           }
@@ -1230,6 +1231,15 @@
                 background-image: url('../images/icon/ico-heart-on.png');
               }
             }
+          }
+        }
+      }
+
+      .img-thumb-group {
+        margin-top: 1.2rem;
+        .img-box-wrap {
+          .img-box {
+            width: 6.4rem;
           }
         }
       }
