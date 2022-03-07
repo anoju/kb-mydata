@@ -41,3 +41,29 @@
 .smooth-corners {
   mask-image: paint(smooth-corners);
 }
+.img-box-wrap {
+  display: flex;
+  .section & {
+    @include outer(true);
+  }
+  @include scroll-x;
+  .img-box + .img-box {
+    margin-left: 0.8rem;
+  }
+  .img-box {
+    width: 8rem;
+    flex-shrink: 0;
+    border-radius: 0.4rem;
+    &:before {
+      border: 0.1rem solid #eee;
+      border-radius: 0.4rem;
+      padding-top: calc(100% - 0.2rem);
+    }
+  }
+  &.ty2 {
+    padding-top: 0.4rem;
+    .img-box + .img-box {
+      margin-left: 1.6rem;
+    }
+  }
+}
