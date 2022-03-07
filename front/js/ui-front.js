@@ -796,9 +796,10 @@ ui.Common = {
       });
     };
     if (typeof lottie === 'undefined') {
-      let $url = '/static/js/lib/lottie.5.7.13.min.js';
+      let $url = '/js/lib/lottie.5.7.13.min.js';
       if (location.pathname.indexOf('/front/') > -1) $url = '/front' + $url;
       if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $url = '/kyobo-mydata-pub' + $url;
+      if (location.pathname.indexOf('dev-mydata.mykkl.com') > -1) $url = '/mydata/resources/static' + $url;
       ui.Util.loadScript($url, $lottieInit);
     } else {
       $lottieInit();
@@ -1110,9 +1111,10 @@ ui.Util = {
   },
   paint: function () {
     if (!$('.smooth-corners').length) return;
-    let $url = '/static/js/lib/paint.min.js';
+    let $url = '/js/lib/paint.min.js';
     if (location.pathname.indexOf('/front/') > -1) $url = '/front' + $url;
     if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $url = '/kyobo-mydata-pub' + $url;
+    if (location.pathname.indexOf('dev-mydata.mykkl.com') > -1) $url = '/mydata/resources/static' + $url;
     if (CSS && 'paintWorklet' in CSS) CSS.paintWorklet.addModule($url);
   },
   canvasRotateImg: function (target, src, deg) {
