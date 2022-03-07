@@ -1016,6 +1016,7 @@
       margin: 2.4rem 0;
     }
     .tit {
+      padding-right: 5.5rem;
       font-size: 2.2rem;
       color: #424242;
       font-weight: bold;
@@ -1127,5 +1128,263 @@
         font-size: 1.4rem;
       }
     }
+  }
+
+  .user-detail-talk-box {
+    margin-top: 1.4rem;
+    .user-detail-talk {
+      position: relative;
+      border-top: 1px solid #f2f4f6;
+      border-bottom: 1px solid #f2f4f6;
+      padding: 1.7rem 2.4rem;
+      margin: 0.4rem -2.4rem 0;
+      .nick-name {
+        display: flex;
+        align-items: center;
+        .img-box {
+          width: 4rem;
+        }
+        .tit-box {
+          flex: 1 1 auto;
+          margin-left: 0.8rem;
+          .name {
+            font-size: 1.4rem;
+            color: #23adfa;
+            line-height: 1;
+            &.me {
+              color: #fe7d65;
+              &:before {
+                content: '나';
+                display: inline-flex;
+                width: 1.8rem;
+                height: 1.8rem;
+                border-radius: 50%;
+                font-size: 1rem;
+                vertical-align: middle;
+                margin-right: 0.3rem;
+                margin-top: -0.2rem;
+                color: #fff;
+                justify-content: center;
+                align-items: center;
+                background: #fe7d65;
+              }
+            }
+            &.writer {
+              &:before {
+                content: '작성자';
+                display: inline-flex;
+                width: 4rem;
+                height: 1.8rem;
+                border-radius: 0.9rem;
+                font-size: 1rem;
+                vertical-align: middle;
+                margin-right: 0.3rem;
+                margin-top: -0.2rem;
+                color: #fff;
+                justify-content: center;
+                align-items: center;
+                background: #23adfa;
+              }
+            }
+          }
+          .time {
+            margin-top: 0.6rem;
+            font-size: 1.2rem;
+            line-height: 1;
+            color: #979797;
+          }
+        }
+      }
+      .tit {
+        margin-top: 1.2rem;
+        font-size: 1.6rem;
+        color: #424242;
+        font-weight: 500;
+      }
+      .text {
+        margin-top: 0.8rem;
+        font-size: 1.4rem;
+        color: #979797;
+      }
+
+      .info-box {
+        display: flex;
+        align-items: center;
+        margin-top: 1.6rem;
+        span,
+        a {
+          display: block;
+          margin-right: 1.6rem;
+          font-size: 1.4rem;
+          color: #979797;
+          i {
+            margin-right: 0.3rem;
+            vertical-align: middle;
+            transition: all 0.3s ease;
+          }
+
+          &.btn-share {
+            &.on {
+              .i-ico-heart {
+                animation: bounceIn 0.8s linear;
+                background-image: url('../images/icon/ico-heart-on.png');
+              }
+            }
+          }
+        }
+      }
+
+      .btn-menu {
+        position: absolute;
+        top: 1.7rem;
+        right: 0.5rem;
+        width: 4rem;
+        height: 4rem;
+        font-size: 0;
+        i {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0.3rem;
+          height: 0.3rem;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          background: #b0b0b0;
+          &:before,
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 0.3rem;
+            height: 0.3rem;
+            border-radius: 50%;
+            background: #b0b0b0;
+          }
+          &:before {
+            top: -0.6rem;
+          }
+          &:after {
+            bottom: -0.6rem;
+          }
+        }
+      }
+
+      .btn-menu-over {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease 0.15s;
+        .btn-group {
+          display: flex;
+          position: absolute;
+          top: 2rem;
+          right: 2.4rem;
+          transform: translateY(10%);
+          transition: all 0.3s ease;
+          opacity: 0;
+          a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 7.4rem;
+            height: 3.6rem;
+            font-size: 1.4rem;
+            border-radius: 6px;
+            color: #fff;
+            i {
+              margin-right: 0.4rem;
+            }
+
+            &.btn-alarm {
+              background: #8657eb;
+            }
+            &.btn-edit {
+              border-radius: 6px 0 0 6px;
+              background: #5e6170;
+            }
+            &.btn-trash {
+              border-radius: 0px 6px 6px 0px;
+              background: #eb5757;
+            }
+          }
+        }
+
+        &.on {
+          visibility: visible;
+          opacity: 1;
+          transition: all 0.3s ease;
+          .btn-group {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease 0.15s;
+          }
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -0.5rem;
+        left: 0;
+        width: 100%;
+        display: block;
+        height: 0.4rem;
+        background: #fafafa;
+      }
+      &:first-child {
+        margin-top: 0rem;
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.loading-bar {
+  --offset: 187;
+  --duration: 1.4s;
+  text-align: center;
+  padding: 2.8rem 0;
+  svg {
+    animation: rotator var(--duration) linear infinite;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0 auto;
+    .path {
+      stroke-dasharray: var(--offset);
+      stroke-dashoffset: 0;
+      transform-origin: center;
+      stroke: #fe7d65;
+      animation: dash var(--duration) ease-in-out infinite;
+    }
+  }
+}
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: var(--offset);
+  }
+  50% {
+    stroke-dashoffset: var(--offset) / 4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: var(--offset);
+    transform: rotate(450deg);
   }
 }
