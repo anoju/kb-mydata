@@ -64,7 +64,6 @@
 
         $('#btnFocus').click(function () {
           const $idx = $focusIdx + 1 >= $elLength - 1 ? 0 : $focusIdx + 1;
-          console.log($focusIdx, $elLength, $idx);
           $el.eq($idx).focus();
         });
 
