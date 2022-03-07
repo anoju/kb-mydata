@@ -66,8 +66,9 @@
           const $idx = $focusIdx + 1 >= $elLength - 1 ? 0 : $focusIdx + 1;
           $el.eq($idx).focus();
         });
-
-        $el.first().focus();
+        setTimeout(function () {
+          $el.first().focus();
+        }, 100);
       });
     </script>
   </body>
