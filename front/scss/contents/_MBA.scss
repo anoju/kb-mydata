@@ -1200,24 +1200,6 @@
             vertical-align: middle;
             transition: all 0.3s ease;
           }
-
-          &.btn-share {
-            &.on {
-              .i-ico-heart {
-                animation: bounceIn 0.8s linear;
-                background-image: url('../images/icon/ico-heart-on.png');
-              }
-            }
-          }
-        }
-      }
-
-      .img-thumb-group {
-        margin-top: 1.2rem;
-        .img-box-wrap {
-          .img-box {
-            width: 6.4rem;
-          }
         }
       }
 
@@ -1330,11 +1312,67 @@
           display: none;
         }
       }
+
+      &.comment {
+        margin-top: 0rem;
+        border-top: 0;
+        padding-left: 4.1rem;
+        background: #f7f7fa;
+        &:before {
+          display: none;
+        }
+        .nick-name {
+          position: relative;
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: -1.6rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            border: 0.2rem solid #b0b0b0;
+            border-width: 0 0 0.2rem 0.2rem;
+            transform: translateY(-50%);
+          }
+        }
+      }
     }
   }
 }
 
 /* 공통 일거 같은 애들 */
+
+.btn-share {
+  display: inline-flex;
+  i {
+    margin-right: 0.4rem;
+  }
+  &.on {
+    .i-ico-heart {
+      animation: bounceIn 0.8s linear;
+      background-image: url('../images/icon/ico-heart-on.png');
+    }
+  }
+}
+
+.img-thumb-group {
+  margin-top: 1.2rem;
+  .img-box-wrap {
+    .img-box {
+      width: 6.4rem;
+    }
+  }
+
+  &.type2 {
+    .img-box-wrap {
+      .img-box {
+        width: 28rem;
+      }
+    }
+  }
+}
+
 .updown {
   margin-left: 0.4rem;
   font-size: 1.2rem;

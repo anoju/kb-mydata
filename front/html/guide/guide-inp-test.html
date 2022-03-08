@@ -42,7 +42,13 @@
             </select>
           </div>
           <div class="input"><input type="text" placeholder="네번째" /></div>
-          <div class="btn-wrap bottom-fixed">
+          <div class="input"><input type="file" name="photo" accept="image/*" capture="gallery" placeholder="이미지 선택-gallery" /></div>
+          <div class="input"><input type="file" name="photo" accept="image/*" capture="filesystem" placeholder="이미지 선택-filesystem" /></div>
+
+          <div class="imgs_wrap"></div>
+
+          <div style="height: 100vh"></div>
+          <div class="btn-wrap bottom-fixed scroll-hide">
             <div>
               <div class="flex">
                 <div class="textarea auto-height flex">
@@ -83,6 +89,8 @@
       <!-- //팝업 -->
     </article>
     <script>
+      var sel_files = [];
+
       $(function () {
         const $el = $('input, select');
         const $elLength = $el.length;
@@ -106,6 +114,34 @@
             $('#pop1 textarea').focus();
           });
         });
+
+        $(':file').on('change', handleImgsFilesSelect);
+
+        function handleImgsFilesSelect(e) {
+          var files = e.target.files;
+          var filesArr = Array.prototype.slice.call(files);
+
+          console.log(files);
+
+          filesArr.forEach(function (f) {
+            if (!f.type.match('image.*')) {
+              alert('확장자는 이미지 확장자만 가능합니다.');
+              return;
+            }
+
+            sel_files.push(f);
+
+            var reader = new FileReader();
+            //console.log(reader)
+            reader.onload = function (e) {
+              var img_html = '<img src=' + e.target.result + ' />';
+              $('.imgs_wrap').append(img_html);
+            };
+            reader.readAsDataURL(f);
+
+            console.log(reader.readAsDataURL(f));
+          });
+        }
       });
     </script>
   </body>
