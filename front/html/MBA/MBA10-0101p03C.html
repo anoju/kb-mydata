@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+  </head>
+  <body>
+    <div id="fullPopup" class="popup full ground-wrap" role="dialog" aria-hidden="true">
+      <article class="pop-wrap">
+        <div class="pop-head">
+          <div>
+            <h1>댓글 보기</h1>
+            <a href="#" class="pop-close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>
+          </div>
+        </div>
+        <div class="pop-body pt-0">
+          <div class="section">
+            <div class="user-detail-talk-box">
+              <div class="pb-14">
+                <!-- 내 댓글만 체크 -->
+                <div class="checkbox btn w-auto f-left btn-chk-toggle">
+                  <input type="checkbox" id="" /><i aria-hidden="true"></i>
+                  <label for="" class="lbl h-26 fz-14 pd-12x"><i class="i-ico-check-off-14 mr-5" aria-hidden="true"></i>내댓글만</label>
+                </div>
+                <!-- // 내 댓글만 체크 -->
+                <p class="filter f-right fz-14">
+                  <a href="#">최신<i class="i-ico-filter"></i></a>
+                </p>
+                <div class="clear block"></div>
+              </div>
+              <!-- 기본 -->
+              <div class="user-detail-talk">
+                <div class="nick-name">
+                  <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
+                  <div class="tit-box">
+                    <p class="name">닉네임부자</p>
+                    <p class="time">3분 전</p>
+                  </div>
+                </div>
+                <p class="text ellipsis-2 fz-15 fc-424242">
+                  상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
+                  상세내용상세내용상세내용상세내용상세내용상세내
+                </p>
+
+                <div class="img-thumb-group">
+                  <div class="img-box-wrap ui-expend">
+                    <a href="#" class="img-box"><img src="../../images/temp/thumb-temp.jpg" alt="" /></a>
+                    <a href="#" class="img-box"><img src="../../images/temp/thumb-temp4-2.jpg" alt="" /></a>
+                    <a href="#" class="img-box"><img src="../../images/temp/thumb-temp5.jpg" alt="" /></a>
+                    <a href="#" class="img-box"><img src="../../images/temp/thumb-temp.jpg" alt="" /></a>
+                    <a href="#" class="img-box"><img src="../../images/temp/thumb-temp4-2.jpg" alt="" /></a>
+                    <a href="#" class="img-box"><img src="../../images/temp/thumb-temp5.jpg" alt="" /></a>
+                  </div>
+                </div>
+
+                <button class="btn-menu"><i>메뉴 펼치기</i></button>
+                <div class="btn-menu-over">
+                  <div class="btn-group">
+                    <a href="#" class="btn-alarm" onclick="Layer.open('#bottomPopup1-1')"><i class="i-ico-alarm"></i>신고</a>
+                  </div>
+                </div>
+              </div>
+              <!-- //기본 -->
+
+              <!-- 나 -->
+              <div class="user-detail-talk">
+                <div class="nick-name">
+                  <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
+                  <div class="tit-box">
+                    <!--
+                        me : 내 계정에서 등록된 정보
+                        writer : 작성자
+                      -->
+                    <p class="name me">닉네임부자</p>
+                    <p class="time">3분 전</p>
+                  </div>
+                </div>
+                <p class="text ellipsis-2 fz-15 fc-424242">
+                  상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
+                  상세내용상세내용상세내용상세내용상세내용상세내
+                </p>
+
+                <button class="btn-menu"><i>메뉴 펼치기</i></button>
+                <div class="btn-menu-over">
+                  <div class="btn-group">
+                    <a href="#" class="btn-edit"><i class="i-ico-edit"></i>수정</a>
+                    <a href="#" class="btn-trash" onclick="Layer.open('#bottomPopup1-2')"><i class="i-ico-trash"></i>삭제</a>
+                  </div>
+                </div>
+              </div>
+              <!-- //나 -->
+
+              <!-- 작성자 -->
+              <div class="user-detail-talk">
+                <div class="nick-name">
+                  <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
+                  <div class="tit-box">
+                    <!--
+                        me : 내 계정에서 등록된 정보
+                        writer : 작성자
+                      -->
+                    <p class="name writer">닉네임부자</p>
+                    <p class="time">3분 전</p>
+                  </div>
+                </div>
+                <p class="text ellipsis-2 fz-15 fc-424242">
+                  상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
+                  상세내용상세내용상세내용상세내용상세내용상세내
+                </p>
+
+                <button class="btn-menu"><i>메뉴 펼치기</i></button>
+                <div class="btn-menu-over">
+                  <div class="btn-group">
+                    <a href="#" class="btn-alarm" onclick="Layer.open('#bottomPopup1-1')"><i class="i-ico-alarm"></i>신고</a>
+                  </div>
+                </div>
+              </div>
+              <!-- //작성자 -->
+              <!-- 나 -->
+              <div class="user-detail-talk">
+                <div class="nick-name">
+                  <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
+                  <div class="tit-box">
+                    <!--
+                        me : 내 계정에서 등록된 정보
+                        writer : 작성자
+                      -->
+                    <p class="name me">닉네임부자</p>
+                    <p class="time">3분 전</p>
+                  </div>
+                </div>
+                <p class="text ellipsis-2 fz-15 fc-424242">
+                  상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
+                  상세내용상세내용상세내용상세내용상세내용상세내
+                </p>
+
+                <button class="btn-menu"><i>메뉴 펼치기</i></button>
+                <div class="btn-menu-over">
+                  <div class="btn-group">
+                    <a href="#" class="btn-edit"><i class="i-ico-edit"></i>수정</a>
+                    <a href="#" class="btn-trash" onclick="Layer.open('#bottomPopup1-2')"><i class="i-ico-trash"></i>삭제</a>
+                  </div>
+                </div>
+              </div>
+              <!-- //나 -->
+
+              <!-- 작성자 -->
+              <div class="user-detail-talk">
+                <div class="nick-name">
+                  <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
+                  <div class="tit-box">
+                    <!--
+                        me : 내 계정에서 등록된 정보
+                        writer : 작성자
+                      -->
+                    <p class="name writer">닉네임부자</p>
+                    <p class="time">3분 전</p>
+                  </div>
+                </div>
+                <p class="text ellipsis-2 fz-15 fc-424242">
+                  상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
+                  상세내용상세내용상세내용상세내용상세내용상세내
+                </p>
+
+                <button class="btn-menu"><i>메뉴 펼치기</i></button>
+                <div class="btn-menu-over">
+                  <div class="btn-group">
+                    <a href="#" class="btn-alarm" onclick="Layer.open('#bottomPopup1-1')"><i class="i-ico-alarm"></i>신고</a>
+                  </div>
+                </div>
+              </div>
+              <!-- //작성자 -->
+            </div>
+
+            <div class="loading-bar">
+              <svg width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- 팝업 -->
+    <!-- 신고 팝업 -->
+    <div id="bottomPopup1-1" class="popup bottom" role="dialog" aria-hidden="true">
+      <article class="pop-wrap">
+        <div class="pop-head">
+          <div>
+            <h1>신고안내</h1>
+            <a href="#" class="pop-close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="section mb-10">
+            <p class="fz-16">그라운드 이용 중 <span class="fc-168B68">유해한 게시물 또는 불량 사용자를 경혐하셨다면,</span> 서비스 운영자에게 신고해주세요.</p>
+            <ul class="txt-list mt-33">
+              <li class="dot">신고하신 내용은 서비스 이용약관과 운영정책에 따라 서비스 운영자가 확인 및 판단하여 적절한 조치를 취하겠습니다.</li>
+              <li class="dot">
+                불슨한 동기의 무분별한 신고 행위 또는 신고 내용에 욕설, 성희롱 등의 표현을 포함한 경우 신고한 사용자 역시 서비스 운영정책에 따라 원활한 서비스 이용이 어려울 수 있습니다.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="pop-foot">
+          <div>
+            <div class="flex">
+              <a href="#" class="button primary ui-pop-close">확인</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- 삭제 팝업 -->
+    <div id="bottomPopup1-2" class="popup bottom" role="dialog" aria-hidden="true">
+      <article class="pop-wrap">
+        <div class="pop-head">
+          <div>
+            <h1>삭제 확인</h1>
+            <a href="#" class="pop-close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="section mb-10">
+            <p class="fz-16">선택하신 Talk을 정말로 삭제 하길 바라세요?</p>
+            <p class="fz-1 fc-979797 mt-33"><i class="i-ico-notice-16 va-middle mr-6" aria-hidden="true"></i>삭제된 게시물은 다시 복구할 수 없습니다.</p>
+          </div>
+        </div>
+        <div class="pop-foot">
+          <div>
+            <div class="flex">
+              <a href="#" class="button gray ui-pop-close">계속 남겨두기</a>
+              <a href="#" class="button primary ui-pop-close">삭제하기</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <!-- //팝업 -->
+    <script>
+      $(function () {
+        filterSearch();
+        userTalk();
+        Layer.open('#fullPopup');
+      });
+
+      const userTalk = function () {
+        $(document).on('click', '.user-detail-talk .btn-menu', function () {
+          const $this = $(this);
+          $this.next().addClass('on');
+          setTimeout(function () {
+            $this.next().removeClass('on');
+          }, 3000);
+          return false;
+        });
+      };
+
+      const filterSearch = () => {
+        let idx = 0;
+        const text = ['최신', '과거'];
+        const length = text.length - 1;
+        const icoHtml = '<i class="i-ico-filter"></i>';
+        $(document).on('click', '.filter > a', function () {
+          idx == length ? (idx = 0) : idx++;
+          $(this).html(text[idx] + icoHtml);
+          return false;
+        });
+      };
+    </script>
+  </body>
+</html>

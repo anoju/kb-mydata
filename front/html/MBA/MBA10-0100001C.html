@@ -147,7 +147,7 @@
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-alarm"><i class="i-ico-alarm"></i>신고</a>
+                    <a href="#" class="btn-alarm" onclick="Layer.open('#bottomPopup1-1')"><i class="i-ico-alarm"></i>신고</a>
                   </div>
                 </div>
               </div>
@@ -181,7 +181,7 @@
                 <div class="btn-menu-over">
                   <div class="btn-group">
                     <a href="#" class="btn-edit"><i class="i-ico-edit"></i>수정</a>
-                    <a href="#" class="btn-trash"><i class="i-ico-trash"></i>삭제</a>
+                    <a href="#" class="btn-trash" onclick="Layer.open('#bottomPopup1-2')"><i class="i-ico-trash"></i>삭제</a>
                   </div>
                 </div>
               </div>
@@ -214,7 +214,7 @@
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-alarm"><i class="i-ico-alarm"></i>신고</a>
+                    <a href="#" class="btn-alarm" onclick="Layer.open('#bottomPopup1-1')"><i class="i-ico-alarm"></i>신고</a>
                   </div>
                 </div>
               </div>
@@ -238,6 +238,61 @@
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
+      <!-- 신고 팝업 -->
+      <div id="bottomPopup1-1" class="popup bottom" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>신고안내</h1>
+              <a href="#" class="pop-close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="section mb-10">
+              <p class="fz-16">그라운드 이용 중 <span class="fc-168B68">유해한 게시물 또는 불량 사용자를 경혐하셨다면,</span> 서비스 운영자에게 신고해주세요.</p>
+              <ul class="txt-list mt-33">
+                <li class="dot">신고하신 내용은 서비스 이용약관과 운영정책에 따라 서비스 운영자가 확인 및 판단하여 적절한 조치를 취하겠습니다.</li>
+                <li class="dot">
+                  불슨한 동기의 무분별한 신고 행위 또는 신고 내용에 욕설, 성희롱 등의 표현을 포함한 경우 신고한 사용자 역시 서비스 운영정책에 따라 원활한 서비스 이용이 어려울 수 있습니다.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="flex">
+                <a href="#" class="button primary ui-pop-close">확인</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 삭제 팝업 -->
+      <div id="bottomPopup1-2" class="popup bottom" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>삭제 확인</h1>
+              <a href="#" class="pop-close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="section mb-10">
+              <p class="fz-16">선택하신 Talk을 정말로 삭제 하길 바라세요?</p>
+              <p class="fz-1 fc-979797 mt-33"><i class="i-ico-notice-16 va-middle mr-6" aria-hidden="true"></i>삭제된 게시물은 다시 복구할 수 없습니다.</p>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="flex">
+                <a href="#" class="button gray ui-pop-close">계속 남겨두기</a>
+                <a href="#" class="button primary ui-pop-close">삭제하기</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
       <!-- //팝업 -->
     </article>
     <script>
