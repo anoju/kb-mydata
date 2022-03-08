@@ -6368,7 +6368,7 @@ const Layer = {
     const $isFn = !!fn;
     const $className = '.' + type + '-box';
 
-    if (delayTime == undefined) delayTime = 3000;
+    if (delayTime == undefined) delayTime = 2000;
 
     let $boxHtml = '<div class="' + $className.substring(1) + '">';
     $boxHtml += '<div>';
@@ -6392,8 +6392,9 @@ const Layer = {
     };
     const $spaceH = $('.bottom-fixed-space').outerHeight();
     if ($spaceH) {
-      const $top = parseInt($toast.css('bottom'));
-      $toast.css('bottom', $top + $spaceH);
+      // const $top = parseInt($toast.css('bottom'));
+      // $toast.css('bottom', $top + $spaceH);
+      $toast.css('bottom', $spaceH);
     }
     $toast.addClass('on');
     let $closeTime;
