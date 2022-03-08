@@ -582,6 +582,15 @@ ui.Common = {
       $('.floating-btn').removeClass('top-on');
     };
 
+    const showHideOn = function () {
+      $('.floating-btn').addClass('fixedHide');
+      $('.scroll-hide').addClass('hidden');
+    };
+    const showHideOff = function () {
+      $('.floating-btn').removeClass('fixedHide');
+      $('.scroll-hide').removeClass('hidden');
+    };
+
     let $lastSclTop = $(window).scrollTop();
     const $scrollEvt = function () {
       const $SclTop = $(window).scrollTop();
@@ -663,6 +672,12 @@ ui.Common = {
       setTimeout(function () {
         $lastSclTop = $SclTop;
       }, 50);
+
+      /*  */
+
+      if ($SclTop > 0) {
+        showHideOn();
+      }
     };
     const $scrollEndEvt = function () {
       const $SclTop = $(window).scrollTop();
@@ -672,6 +687,7 @@ ui.Common = {
     };
     $(window).on('scroll', $scrollEvt);
     window.addEventListener('scroll', ui.Util.debounce($scrollEndEvt, 1500));
+    window.addEventListener('scroll', ui.Util.debounce(showHideOff, 500));
   },
   scrollShowTitleClass: 'page-fade-title',
   scrollShowTitle: function (target, wrap, header, titleEl) {
