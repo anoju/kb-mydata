@@ -681,6 +681,9 @@ html:not(.mobile) {
   margin-left: 12.5rem;
   .kb-page-title.fixed > div {
     left: 14.375rem;
+    .kb-wrap.sidebar-off & {
+      left: 1.875rem;
+    }
   }
 }
 .kb-wrap {
@@ -736,7 +739,7 @@ html:not(.mobile) {
     background: #fff;
     align-items: center;
     justify-content: space-between;
-    transition: height 0.2s;
+    transition: height 0.2s, left 0.3s;
   }
   &.fixed > div {
     position: fixed;
@@ -810,13 +813,16 @@ html:not(.mobile) {
   .kb-sidebar:not(.hide) + .kb-content {
     margin-left: 18%;
     .kb-page-title.fixed > div {
-      left: calc(18% + 0.938rem);
+      left: calc(18% + 1.25rem);
+      .kb-wrap.sidebar-off & {
+        left: 1.25rem;
+      }
     }
   }
   .kb-page-title {
     &.fixed > div {
-      left: 0.938rem;
-      right: 0.938rem;
+      left: 1.25rem;
+      right: 1.25rem;
     }
   }
 }
