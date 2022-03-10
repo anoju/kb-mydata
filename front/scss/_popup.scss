@@ -207,23 +207,20 @@
     }
 
     &.pop-img-box {
-      > .pop-wrap {
-        background: transparent;
-      }
+      // > .pop-wrap {
+      //   background: transparent;
+      // }
       .pop-body {
         // padding: 6rem 0;
         padding: 0;
         height: 100%;
         overflow: hidden;
+        background: #000;
       }
       .pop-close {
         position: absolute;
-        top: 1rem;
-        right: 1rem;
-        width: 4.8rem;
-        height: 4.8rem;
-        background-image: url(../images/icon/btn-close-w-24.png);
-        z-index: 10;
+        top: 0.2rem;
+        right: 1.4rem;
       }
       .swiper-zoom-container {
         canvas,
