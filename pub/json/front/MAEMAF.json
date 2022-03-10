@@ -100,4 +100,23 @@
     "worker": "안효주",
     "complete": "2022-03-10"
   }
+  ,{
+    "id":"MAF03-0000001C",
+    "url":"../../front/html/MAF/",
+    "type":"page",
+    "depth2": "1대1문의하기",
+    "name": "문의하기",
+    "worker": "",
+    "complete": ""
+  }
+
+  ,{
+    "id":"MAF04-0000001C",
+    "url":"../../front/html/MAF/",
+    "type":"page",
+    "depth2": "이용약관",
+    "name": "약관목록",
+    "worker": "",
+    "complete": ""
+  }
 ]
