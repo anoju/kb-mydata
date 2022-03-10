@@ -4,7 +4,7 @@
   },
   {
     "id": "MY00-000",
-    "url": "../../admin/html/MY0/",
+    "url": "../../admin/html/MY/",
     "type": "page",
     "depth2": "로그인",
     "worker": "변상우",
@@ -13,7 +13,7 @@
   },
   {
     "id": "MY00-001",
-    "url": "../../admin/html/MY0/",
+    "url": "../../admin/html/MY/",
     "type": "page",
     "depth2": "비밀번호 변경",
     "worker": "변상우",
