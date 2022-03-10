@@ -3,10 +3,9 @@
   position: relative;
   display: flex;
   width: 100%;
-  background: #fff;
-  border: 0.1rem solid #ddd;
+  background: #fafafa;
+  border: 0.1rem solid #fafafa;
   border-radius: 1rem;
-  color: var(--strong-txt-color);
   align-items: center;
   transition: border 0.3s;
   &.readonly,
@@ -19,7 +18,7 @@
   &.disabled input,
   // input[readonly],
   input:disabled {
-    background: #f8f8f8;
+    opacity: 0.4;
   }
   &.focus {
     border-color: var(--primary-color);
@@ -58,13 +57,15 @@
     flex: 1 1 auto;
     height: 4.6rem;
     padding: 0 0.8rem;
-    font-size: 1.5rem;
     border: 0 none;
     color: inherit;
     background: none;
     -webkit-appearance: none;
     border-radius: 1rem;
     outline: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--strong-txt-color);
     &:first-child {
       padding-left: 1.6rem;
     }

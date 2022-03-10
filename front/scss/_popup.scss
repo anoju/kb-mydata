@@ -282,7 +282,7 @@
         padding: 2.4rem 5rem 2.4rem var(--base-padding);
       }
       .pop-close {
-        top: 3.4rem;
+        top: 2.1rem;
       }
     }
     .pop-body {
@@ -325,7 +325,6 @@
       }
       .pop-close {
         margin-top: 0;
-        display: none;
       }
       &:not(.no-title) + .pop-body {
         padding-top: 0;

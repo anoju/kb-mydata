@@ -1,9 +1,9 @@
 .textarea {
   position: relative;
-  border: 0.1rem solid #ddd;
+  border: 0.1rem solid #fafafa;
   border-radius: 1rem;
   min-height: 4.8rem;
-  background: #fff;
+  background: #fafafa;
   &.focus {
     border-color: var(--primary-color);
   }
@@ -16,6 +16,13 @@
     min-height: 4.6rem;
     resize: none;
     line-height: 2.2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--strong-txt-color);
+  }
+  &.disabled textarea,
+  textarea:disabled {
+    opacity: 0.4;
   }
   .btn-inp-del {
     position: absolute;
