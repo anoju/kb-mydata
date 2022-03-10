@@ -76,15 +76,17 @@
 .line-list-1 {
   > li {
     + li {
-      border-top: 1px solid var(--line-color);
+      border-top: 0.1rem solid var(--line-color);
     }
   }
 }
-.line-list-item-1 {
+[class*='line-list-item-'] {
+  display: flex;
+  min-height: 6rem;
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
-  &:where(a) {
-    display: block;
+  align-items: center;
+  &:where(a):not(.no-arr) {
     padding-right: 3.2rem;
     &:after {
       position: absolute;
@@ -93,6 +95,26 @@
       margin-top: -1.2rem;
       @include arr-right-24;
     }
+  }
+  .item-tit {
+    font-weight: 500;
+  }
+  .section & {
+    @include outer(true);
+    &:where(a):not(.no-arr) {
+      padding-right: 5.6rem;
+      &:after {
+        right: 2.4rem;
+      }
+    }
+  }
+}
+.line-list-item-1 {
+  display: block;
+  min-height: auto;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  &:where(a) {
     &:visited,
     &.visited {
       .item-tit {
@@ -101,20 +123,10 @@
       }
     }
   }
-  .section & {
-    @include outer(true);
-    &:where(a) {
-      padding-right: 5.6rem;
-      &:after {
-        right: 2.4rem;
-      }
-    }
-  }
   .item-tit {
     font-size: 1.6rem;
     line-height: 2rem;
     color: var(--strong-txt-color);
-    font-weight: 500;
     @include ellipsis(1);
     .i-ico-new {
       margin-right: 0.8rem;
@@ -129,7 +141,22 @@
     color: var(--gray-txt-color);
   }
 }
-
+.line-list-2 {
+  > li {
+    border-bottom: 0.1rem solid #f2f4f6;
+  }
+}
+.line-list-item-2 {
+  .item-tit {
+    font-size: 1.4rem;
+    color: var(--strong-txt-color2);
+  }
+}
+.line-list-3 {
+  > li {
+    border-bottom: 0.1rem solid #f2f4f6;
+  }
+}
 // list-view
 [class*='list-view-'] {
   word-break: break-all;
