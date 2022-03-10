@@ -106,8 +106,8 @@
     "type":"page",
     "depth2": "1대1문의하기",
     "name": "문의하기",
-    "worker": "",
-    "complete": ""
+    "worker": "안효주",
+    "complete": "2022-03-11"
   }
   ,{
     "id":"MAF03-0000002C",
@@ -115,27 +115,27 @@
     "type":"page",
     "depth2": "1대1문의하기",
     "name": "문의내역",
-    "worker": "",
-    "complete": ""
+    "worker": "안효주",
+    "complete": "2022-03-10"
   }
   ,{
     "id":"MAF03-0000003C",
-    "url":"../../front/html/MAF/MAF03-0000001C.html",
+    "url":"../../front/html/MAF/MAF03-0000001C.html?type=change",
     "type":"page",
     "depth2": "1대1문의하기",
     "name": "문의수정",
-    "worker": "",
-    "complete": "",
+    "worker": "안효주",
+    "complete": "2022-03-11",
     "etc": "MAF03-0000001C과 동일"
   }
   ,{
     "id":"MAF03-0000p01C",
     "url":"../../front/html/MAF/MAF03-0000002C.html",
-    "type":"page",
+    "type":"pop",
     "depth2": "1대1문의하기",
     "name": "문의상세",
-    "worker": "",
-    "complete": "",
+    "worker": "안효주",
+    "complete": "2022-03-11",
     "etc": "MAF03-0000002C에 포함"
   }
 
