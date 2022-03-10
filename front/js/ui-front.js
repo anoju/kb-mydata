@@ -5240,6 +5240,7 @@ const Layer = {
     const imgPopId = 'uiPopImgBox' + Layer.imgBoxIdx;
     let $html = '<div id="' + imgPopId + '" class="' + Layer.popClass + ' full pop-img-box ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
     $html += '<article class="' + Layer.wrapClass + '">';
+    $html += '<div class="' + Layer.headClass + '"><div><h1>이미지</h1><a href="#" class="pop-close" role="button" aria-label="팝업창 닫기"></a></div></div>';
     $html += '<div class="' + Layer.bodyClass + '">';
     $html += '<div class="ui-swiper _zoom img-box-swiper">';
     $html += '<div class="swiper">';
@@ -5247,7 +5248,6 @@ const Layer = {
     $html += '</div>';
     $html += '<div class="swiper-pagination"></div>';
     $html += '</div>';
-    $html += '<a href="#" class="pop-close" role="button" aria-label="팝업창 닫기"></a>';
     $html += '</div>';
     $html += '</article>';
     $html += '</div>';

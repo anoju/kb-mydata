@@ -43,8 +43,8 @@
   z-index: 2;
   .swiper-pagination-bullet {
     vertical-align: top;
-    width: 0.6rem;
-    height: 0.6rem;
+    width: 0.8rem;
+    height: 0.8rem;
     border-radius: 0.3rem;
     background: #222;
     opacity: 0.2;
@@ -55,7 +55,7 @@
     @include text-blind;
   }
   .swiper-pagination-bullet-active {
-    width: 1.6rem;
+    width: 2rem;
     opacity: 1;
   }
   &.swiper-pagination-fraction {
@@ -223,10 +223,21 @@
     }
   }
   .swiper-pagination {
+    display: inline-flex;
     position: absolute;
-    bottom: 3rem;
+    left: 50%;
+    bottom: 4rem;
+    width: auto;
     margin-top: 0;
+    padding: 0.8rem;
+    border-radius: 1.4rem;
+    background: rgba(0, 0, 0, 0.3);
+    transform: translateX(-50%);
     .swiper-pagination-bullet {
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
       background: #fff;
     }
   }
