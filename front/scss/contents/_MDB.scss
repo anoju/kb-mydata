@@ -41,3 +41,10 @@
     }
   }
 }
+
+.iframe-full-box {
+  flex: 1 1 auto;
+  iframe {
+    height: -vh(100, 14.8rem, true);
+  }
+}
