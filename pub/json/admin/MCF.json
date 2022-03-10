@@ -1,0 +1,27 @@
+[
+  {
+    "depth1": "앱관리"
+  },
+  {
+    "id": "MCF05-0100001C",
+    "url": "../../admin/html/MCF/",
+    "type": "page",
+    "depth2": "게시판관리",
+    "depth3": "공지사항",
+    "name": "공지사항 목록",
+    "worker": "변상우",
+    "complete": "2022-03-10",
+    "etc": "접근권한팝업 & 유효성팝업 포함"
+  },
+
+  {
+    "id": "MCF05-0100004C",
+    "url": "../../admin/html/MCF/",
+    "type": "page",
+    "depth2": "게시판관리",
+    "depth3": "공지사항",
+    "name": "공지사항 상세(등록)",
+    "worker": "변상우",
+    "complete": "2022-03-10"
+  }
+]

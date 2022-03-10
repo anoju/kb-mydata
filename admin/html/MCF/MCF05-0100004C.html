@@ -41,7 +41,7 @@
           <!-- 컨텐츠헤더 -->
           <div class="kb-page-title">
             <div>
-              <div class="kb-title" id="content">
+              <div class="kb-title">
                 <h1>공지사항</h1>
               </div>
               <div class="kb-page-btn">
@@ -171,6 +171,14 @@
                 <div class="form-box-cont d-flex align-items-center">홍길동</div>
               </div>
             </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">
+                  <label for="select1">최근수정</label>
+                </div>
+                <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
+              </div>
+            </div>
           </div>
           <div class="btn-wrap text-center mt-5">
             <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
@@ -193,10 +201,32 @@
       CKEDITOR.replace('editor');
 
       //팝업
-      /*
+      //유효성 오류팝업(제목미입력)
       Modal.alert('제목을 입력해주세요.', function () {
-        console.log('제목입력 - 확인');
+        console.log('제목미입력 - 확인');
       });
+      //유효성 오류팝업(내용미입력)
+      Modal.alert('내용을 입력해주세요.', function () {
+        console.log('내용미입력 - 확인');
+      });
+      //유효성 오류팝업(우선노출 5개 초과)
+      Modal.alert('우선노출 등록은 \<br>\ 5개를 초과할 수 없습니다.', function () {
+        console.log('우선노출 5개 초과 - 확인');
+      });
+      //유효성 오류팝업(등록된 콘테츠 삭제 지정오류)
+      Modal.alert('기 등록된 콘테츠 삭제 후 \<br>\ 지정해 주세요.', function () {
+        console.log('등록된 콘테츠 삭제 지정오류 - 확인');
+      });
+      //유효성 오류팝업(게시일 지정오류)
+      Modal.alert('게시 시작일은 \<br>\ 종료일을 확인해 주세요.', function () {
+        console.log('게시일 지정오류- 확인');
+      });
+      //유효성 오류팝업(게시일 지정오류)
+      Modal.alert('게시 시작일은 \<br>\ 0개월 이내부터 가능합니다.', function () {
+        console.log('게시일 지정오류- 확인');
+      });
+
+      //등록팝업
       Modal.confirm('공지사항 등록을하시겠습니까?', function (e) {
         if (e) {
           console.log('등록 - 확인');
@@ -204,7 +234,15 @@
           console.log('등록 - 취소');
         }
       });
-      */
+
+      //등록팝업
+      Modal.confirm('공지사항 등록을 \<br>\ 취소하시겠습니까?', function (e) {
+        if (e) {
+          console.log('등록취소 - 확인');
+        } else {
+          console.log('등록취소 - 취소');
+        }
+      });
     </script>
   </body>
 </html>

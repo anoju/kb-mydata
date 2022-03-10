@@ -10,11 +10,11 @@
     "name": "이벤트 팝업",
     "worker": "안효주",
     "complete": "2022-03-22"
-  },
-  {
+  }
+  ,{
     "depth1": "알림"
-  },
-  {
+  }
+  ,{
     "id":"MAE01-000001C",
     "url":"../../front/html/MAE/",
     "type":"page",
@@ -22,8 +22,8 @@
     "name": "공지사항 목록",
     "worker": "안효주",
     "complete": "2022-03-22"
-  },
-  {
+  }
+  ,{
     "id":"MAE01-000002C",
     "url":"../../front/html/MAE/",
     "type":"page",
@@ -31,8 +31,8 @@
     "name": "공지사항 상세",
     "worker": "안효주",
     "complete": "2022-03-22"
-  },
-  {
+  }
+  ,{
     "id":"MAE02-000001C",
     "url":"../../front/html/MAE/",
     "type":"page",
@@ -40,8 +40,8 @@
     "name": "(진행중) 이벤트 목록",
     "worker": "안효주",
     "complete": "2022-03-22"
-  },
-  {
+  }
+  ,{
     "id":"MAE02-000001C-2",
     "url":"../../front/html/MAE/",
     "type":"page",
@@ -49,13 +49,25 @@
     "name": "(종료) 이벤트 목록",
     "worker": "안효주",
     "complete": "2022-03-22"
-  },
-  {
+  }
+  ,{
     "id":"MAE02-000002C",
     "url":"../../front/html/MAE/",
     "type":"page",
     "depth2": "이벤트",
     "name": "이벤트 상세",
+    "worker": "안효주",
+    "complete": "2022-03-22"
+  }
+  ,{
+    "depth1": "고객센터"
+  }
+  ,{
+    "id":"MAF02-0000001C",
+    "url":"../../front/html/MAF/",
+    "type":"page",
+    "depth2": "자주묻는질문",
+    "name": "카테고리선택",
     "worker": "안효주",
     "complete": "2022-03-22"
   }
