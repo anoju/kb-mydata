@@ -10,18 +10,10 @@
     "depth3": "공지사항",
     "name": "공지사항 목록",
     "worker": "변상우",
-    "complete": "2022-03-10"
+    "complete": "2022-03-10",
+    "etc": "접근권한팝업 & 유효성팝업 포함"
   },
-  {
-    "id": "MCF05-0100002C",
-    "url": "../../admin/html/MCF/",
-    "type": "page",
-    "depth2": "게시판관리",
-    "depth3": "공지사항",
-    "name": "공지사항 목록(검색결과 없음)",
-    "worker": "변상우",
-    "complete": "2022-03-10"
-  },
+
   {
     "id": "MCF05-0100004C",
     "url": "../../admin/html/MCF/",
