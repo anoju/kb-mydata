@@ -18,6 +18,7 @@
   > .folding-head {
     position: relative;
     border-top: 0.1rem solid #eee;
+    &.line-none,
     &:first-child {
       border-top-width: 0;
     }
