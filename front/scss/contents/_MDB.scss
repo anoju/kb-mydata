@@ -35,9 +35,17 @@
       &.ico-1 {
         background-image: url(../images/MY/connect-ico-1.png);
       }
+
       &.ico-2 {
         background-image: url(../images/MY/connect-ico-2.png);
       }
     }
+  }
+}
+
+.iframe-full-box {
+  flex: 1 1 auto;
+  iframe {
+    height: -vh(100, 14.8rem, true);
   }
 }

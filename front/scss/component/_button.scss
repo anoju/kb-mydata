@@ -69,9 +69,20 @@
     width: 100%;
   }
 
+  &.disabled,
+  &:disabled {
+    opacity: 0.3;
+  }
+
   &.primary {
     background: var(--primary-color);
     color: #fff;
+    &.disabled,
+    &:disabled {
+      opacity: 1;
+      color: var(--primary-disabled-color);
+      background-color: var(--primary-disabled-bg-color);
+    }
   }
   // &.secondary {
   //   background: #f5045e;
@@ -95,19 +106,6 @@
   &.black {
     background: #000;
     color: #fff;
-  }
-
-  &.disabled,
-  &:disabled {
-    // opacity: 0.3;
-    &:not(.line) {
-      color: var(--disabled-color);
-      background-color: var(--disabled-bg-color);
-    }
-    &.line {
-      color: var(--disabled-color);
-      border-color: var(--disabled-bg-color);
-    }
   }
 
   &.line {

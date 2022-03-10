@@ -14,13 +14,6 @@
   </head>
   <body>
     <article id="wrap" class="match-animation-wrap">
-      <header id="header">
-        <div>
-          <div class="head-left">
-            <button type="button" class="head-back button" role="button" aria-label="이전화면"></button>
-          </div>
-        </div>
-      </header>
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="match-animation">
@@ -84,7 +77,7 @@
           loss : 패배
           draw : 무승부
         -->
-        <div class="match-animation-result">
+        <div class="match-animation-result loss">
           <div class="top-text-motion">
             <div class="slide"><span></span><span></span><span></span></div>
           </div>
@@ -111,16 +104,6 @@
             </div>
           </div>
         </div>
-
-        <div class="match-result-wrap">
-          <div class="bg"></div>
-          <div class="section"></div>
-          <div class="btn-wrap">
-            <div class="flex">
-              <button type="button" class="button h60 primary">확인</button>
-            </div>
-          </div>
-        </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
     </article>
@@ -136,12 +119,9 @@
             }, 5000);
           }, 1000);
 
+          // 결과만 보고 싶을때
           // $('.match-animation').addClass('action end');
           // $('.match-animation-result').addClass('show');
-        });
-        $(document).on('click', '.match-animation-result .button', function () {
-          $('.match-animation-wrap').addClass('action');
-          return false;
         });
       });
     </script>
