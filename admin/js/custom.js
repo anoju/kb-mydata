@@ -315,7 +315,7 @@
       if ($('.kb-sidebar').length) {
         var $link = $('.kb-lnb-dep2 .kb-lnb-link');
         var $path = location.pathname;
-        var $title = $('.kb-title h1').text();
+        var $title = $('.breadcrumb-item.active').length ? $('.breadcrumb-item.active').text() : $('.kb-title h1').text();
         var isActiveOn = false;
         $link.each(function () {
           var $this = $(this);
