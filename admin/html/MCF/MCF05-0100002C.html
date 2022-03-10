@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title" id="content">
+                <h1>공지사항</h1>
+              </div>
+              <div class="kb-page-btn">
+                <button type="button" class="btn btn-primary"><i class="bi bi-plus"></i> 신규등록</button>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">공지사항 검색</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">검색어</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-md-5">
+                      <select class="custom-select">
+                        <option value="1">제목</option>
+                      </select>
+                    </div>
+                    <div class="col-md-7 mt-2 mt-md-0">
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">사용여부</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">전체</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">사용</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">사용안함</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">기간검색</div>
+                <div class="form-box-cont">
+                  <div class="input-daterange-btn">
+                    <div class="input-group">
+                      <input type="date" class="form-control" placeholder="시작일" />
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">~</div>
+                      </div>
+                      <input type="date" class="form-control" placeholder="종료일" />
+                    </div>
+
+                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                      <button type="button" class="btn btn-outline-secondary">1개월</button>
+                      <button type="button" class="btn btn-outline-secondary">3개월</button>
+                      <button type="button" class="btn btn-outline-secondary">6개월</button>
+                      <button type="button" class="btn btn-outline-secondary active">전체</button>
+                      <!-- active 클래스로  활성화 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <button type="button" class="btn large btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">검색 <strong class="fc-red">0</strong>개 / 전체 <strong class="fc-red">0</strong>개</div>
+            <div class="right">
+              <select class="custom-select custom-select-sm">
+                <option value="1">등록일 ↓</option>
+                <option value="2">등록일 ↑</option>
+              </select>
+            </div>
+          </div>
+
+          <table class="table table-hover" id="table" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">사용여부</th>
+                <th scope="col">제목</th>
+                <th scope="col">게시기간</th>
+                <th scope="col">조회수</th>
+                <th scope="col">등록자</th>
+                <th scope="col">등록일</th>
+                <th scope="col">최근수정일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="tr-fixed">
+                <td colspan="9">일치하는 검색결과가 없습니다.</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        var $table = $('#table');
+        $table.bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+
+      // 팝업
+      // Modal.alert('해당 메뉴에 접속권한이 없습니다.', function (e) {
+      //   console.log('접속권한 - 확인');
+      // });
+    </script>
+  </body>
+</html>
