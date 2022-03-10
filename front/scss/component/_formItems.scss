@@ -16,11 +16,10 @@ i.require {
   }
 }
 .form-lbl {
-  margin-top: 2.4rem;
   display: flex;
   align-items: center;
-  font-weight: 700;
-  color: var(--strong-txt-color);
+  color: #818892;
+  font-size: 1.4rem;
   > .left {
     display: flex;
     flex-wrap: wrap;
@@ -43,6 +42,62 @@ i.require {
   position: relative;
   + .form-item,
   + .validate-item {
+    margin-top: 1.6rem;
+  }
+}
+.form-box {
+  position: relative;
+  .form-lbl {
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    top: 1.6rem;
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none;
+    a,
+    button {
+      pointer-events: auto;
+    }
+  }
+  &.input {
+    align-items: flex-start;
+    > *:not(input, .form-lbl) {
+      height: 3.6rem;
+      margin-top: 3.2rem;
+    }
+    > div:last-child,
+    .btn-inp-del:last-child {
+      margin-right: 2rem;
+    }
+  }
+  &.input input,
+  &.select select,
+  &.select .btn-select {
+    padding-top: 3.2rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    height: 7.8rem;
+  }
+  &.textarea textarea {
+    padding: 4.2rem 2rem 1.4rem;
+  }
+  &.select {
+    select,
+    .btn-select {
+      padding-right: 5rem;
+    }
+    select {
+      background-position: right 2rem bottom 1.6rem;
+    }
+    .btn-select:after {
+      margin-top: 0;
+      top: auto;
+      right: 2rem;
+      bottom: 1.6rem;
+    }
+  }
+  + .form-box {
     margin-top: 1.6rem;
   }
 }
