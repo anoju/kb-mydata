@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">앱관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">문의하기</li>
+                  </ol>
+                </nav>
+                <h1>FAQ</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">게시물 검색</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">분야</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-md-5">
+                      <select class="custom-select">
+                        <option value="1">전체</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">답변상태</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">전체</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">답변완료</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">답변대기</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">검색어</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-md-5">
+                      <select class="custom-select">
+                        <option value="1">제목</option>
+                      </select>
+                    </div>
+                    <div class="col-md-7 mt-2 mt-md-0">
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">기간검색</div>
+                <div class="form-box-cont">
+                  <div class="input-daterange-btn">
+                    <div class="input-group">
+                      <input type="date" class="form-control" placeholder="시작일" />
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">~</div>
+                      </div>
+                      <input type="date" class="form-control" placeholder="종료일" />
+                    </div>
+
+                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                      <button type="button" class="btn btn-outline-secondary active">15일</button>
+                      <button type="button" class="btn btn-outline-secondary">3개월</button>
+                      <button type="button" class="btn btn-outline-secondary">6개월</button>
+                      <!-- active 클래스로  활성화 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <button type="button" class="btn large btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개 / 미답변 <strong class="fc-red">1</strong>건</div>
+            <div class="right">
+              <select class="custom-select custom-select-sm">
+                <option value="1">등록일 ↓</option>
+                <option value="2">등록일 ↑</option>
+              </select>
+            </div>
+          </div>
+
+          <table class="table table-hover" id="table" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">분야</th>
+                <th scope="col">고객명</th>
+                <th scope="col">상담등록일</th>
+                <th scope="col">제목</th>
+                <th scope="col">답변등록</th>
+                <th scope="col">등록자</th>
+                <th scope="col">답변등록일</th>
+                <th scope="col">최근수정일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 일치하는 검색결과가 없습니다. -->
+              <tr class="no-records-found">
+                <td colspan="9">일치하는 검색결과가 없습니다.</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+                <td>기타</td>
+                <td>홍길동</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>대기</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr class="tr-disabled">
+                <td>2</td>
+                <td>이벤트/쿠폰</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>이벤트/쿠폰</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>이벤트/쿠폰</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>마이데이터</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>이벤트/쿠폰</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>이벤트/쿠폰</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>이벤트/쿠폰</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>이벤트</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>이벤트/쿠폰</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>이벤트/쿠폰</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+              <tr class="tr-disabled">
+                <td>2</td>
+                <td>이벤트/쿠폰</td>
+                <td>나성범</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>완료</td>
+                <td>2022.12.03</td>
+                <td>2022.12.03</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        var $table = $('#table');
+        $table.bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+
+      // 팝업
+      //접근권한없음 팝업
+      Modal.alert('해당 메뉴에 접속권한이 없습니다.', function (e) {
+        console.log('접속권한 - 확인');
+      });
+      //유효성 오류 팝업
+      Modal.alert('종료일이 시작일보다 빠릅니다. \<br>\ 게시 시작일은 종료일을 확인해 주세요.', function (e) {
+        console.log('접속권한 - 확인');
+      });
+    </script>
+  </body>
+</html>

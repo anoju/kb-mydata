@@ -1,0 +1,23 @@
+[
+  {
+    "depth1": "공통"
+  },
+  {
+    "id": "MY00-000",
+    "url": "../../admin/html/MY0/",
+    "type": "page",
+    "depth2": "로그인",
+    "worker": "변상우",
+    "complete": "2022-03-10",
+    "etc": ""
+  },
+  {
+    "id": "MY00-001",
+    "url": "../../admin/html/MY0/",
+    "type": "page",
+    "depth2": "비밀번호 변경",
+    "worker": "변상우",
+    "complete": "2022-03-10",
+    "etc": "비밀번호 변경 완료 팝업포함"
+  }
+]

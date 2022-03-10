@@ -45,10 +45,10 @@
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">앱관리</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">공지사항</li>
+                    <li class="breadcrumb-item active" aria-current="page">FAQ</li>
                   </ol>
                 </nav>
-                <h1>공지사항</h1>
+                <h1>FAQ</h1>
               </div>
               <div class="kb-page-btn">
                 <button type="button" class="btn btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
@@ -61,10 +61,18 @@
           <!-- 컨텐츠본문 -->
           <div class="title-wrap">
             <div class="left">
-              <h2 class="h3">공지사항 정보</h2>
+              <h2 class="h3">FAQ 등록정보</h2>
             </div>
           </div>
           <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-label">카테고리</div>
+              <div class="form-box-cont">
+                <select class="custom-select">
+                  <option value="1">제목</option>
+                </select>
+              </div>
+            </div>
             <div class="form-box-row">
               <div class="form-box-label">제목</div>
               <div class="form-box-cont">
@@ -101,65 +109,6 @@
                   </div>
                 </div>
               </div>
-              <div class="form-box-item">
-                <div class="form-box-label">우선노출선택(고정)</div>
-                <div class="form-box-cont">
-                  <div class="custom-control-wrap">
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo2" class="custom-control-input" />
-                      <span class="custom-control-label">사용</span>
-                    </label>
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo2" class="custom-control-input" />
-                      <span class="custom-control-label">사용안함</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">게시기간</div>
-                <div class="form-box-cont">
-                  <div class="d-flex align-items-center">
-                    <div class="custom-control-wrap text-nowrap">
-                      <label class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" name="rdo3" class="custom-control-input" />
-                        <span class="custom-control-label">사용</span>
-                      </label>
-                      <label class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" name="rdo3" class="custom-control-input" />
-                        <span class="custom-control-label">사용안함</span>
-                      </label>
-                    </div>
-                    <div class="help-txt">* 게시기간은 시작일의 0시 0분부터 종료일의 23:59을 기준으로 합니다.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">게시일</div>
-                <div class="form-box-cont">
-                  <div class="input-daterange-btn">
-                    <div class="input-group">
-                      <input type="date" class="form-control" placeholder="시작일" />
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">~</div>
-                      </div>
-                      <input type="date" class="form-control" placeholder="종료일" />
-                    </div>
-
-                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
-                      <button type="button" class="btn btn-outline-secondary">15일</button>
-                      <button type="button" class="btn btn-outline-secondary">1개월</button>
-                      <button type="button" class="btn btn-outline-secondary">3개월</button>
-                      <button type="button" class="btn btn-outline-secondary active">계속</button>
-                      <!-- active 클래스로  활성화 -->
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -172,7 +121,7 @@
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label">
-                  <label for="select1">등록자</label>
+                  <label for="select1">최초등록자</label>
                 </div>
                 <div class="form-box-cont d-flex align-items-center">홍길동</div>
               </div>
@@ -215,14 +164,7 @@
       Modal.alert('내용을 입력해주세요.', function () {
         console.log('내용미입력 - 확인');
       });
-      //유효성 오류팝업(우선노출 5개 초과)
-      Modal.alert('우선노출 등록은 \<br>\ 5개를 초과할 수 없습니다.', function () {
-        console.log('우선노출 5개 초과 - 확인');
-      });
-      //유효성 오류팝업(등록된 콘테츠 삭제 지정오류)
-      Modal.alert('기 등록된 콘테츠 삭제 후 \<br>\ 지정해 주세요.', function () {
-        console.log('등록된 콘테츠 삭제 지정오류 - 확인');
-      });
+
       //유효성 오류팝업(게시일 지정오류)
       Modal.alert('게시 시작일은 \<br>\ 종료일을 확인해 주세요.', function () {
         console.log('게시일 지정오류- 확인');
@@ -233,7 +175,7 @@
       });
 
       //등록팝업
-      Modal.confirm('공지사항 등록을하시겠습니까?', function (e) {
+      Modal.confirm('FAQ 등록을하시겠습니까?', function (e) {
         if (e) {
           console.log('등록 - 확인');
         } else {
@@ -242,7 +184,7 @@
       });
 
       //등록팝업
-      Modal.confirm('공지사항 등록을 \<br>\ 취소하시겠습니까?', function (e) {
+      Modal.confirm('FAQ 등록을 \<br>\ 취소하시겠습니까?', function (e) {
         if (e) {
           console.log('등록취소 - 확인');
         } else {

@@ -1459,6 +1459,9 @@ html:not(.mobile) {
   background-size: 1.5rem auto;
   padding-right: 1.875rem !important;
 }
+.custom-file-label::after {
+  content: '찾아보기';
+}
 @supports (-ms-ime-align: auto) {
   .form-signin {
     .form-label-group {

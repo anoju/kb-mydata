@@ -45,10 +45,10 @@
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">앱관리</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">공지사항</li>
+                    <li class="breadcrumb-item active" aria-current="page">FAQ</li>
                   </ol>
                 </nav>
-                <h1>공지사항</h1>
+                <h1>FAQ</h1>
               </div>
               <div class="kb-page-btn">
                 <button type="button" class="btn btn-primary"><i class="bi bi-plus"></i> 신규등록</button>
@@ -60,22 +60,19 @@
           <!-- 컨텐츠본문 -->
           <div class="title-wrap">
             <div class="left">
-              <h2 class="h3">공지사항 검색</h2>
+              <h2 class="h3">게시물 검색</h2>
             </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label">검색어</div>
+                <div class="form-box-label">카테고리</div>
                 <div class="form-box-cont">
                   <div class="form-row">
                     <div class="col-md-5">
                       <select class="custom-select">
-                        <option value="1">제목</option>
+                        <option value="1">전체</option>
                       </select>
-                    </div>
-                    <div class="col-md-7 mt-2 mt-md-0">
-                      <input type="text" class="form-control" />
                     </div>
                   </div>
                 </div>
@@ -96,6 +93,23 @@
                       <input type="radio" name="rdo1" class="custom-control-input" />
                       <span class="custom-control-label">사용안함</span>
                     </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">검색어</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-md-5">
+                      <select class="custom-select">
+                        <option value="1">제목</option>
+                      </select>
+                    </div>
+                    <div class="col-md-7 mt-2 mt-md-0">
+                      <input type="text" class="form-control" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -130,15 +144,7 @@
           </div>
 
           <div class="title-wrap mt-5">
-            <div class="left">
-              검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개
-              <!-- 고정컨텐츠 이동 버튼 -->
-              <span class="">
-                <a href="#" class="btn btn-secondary btn-sm m-lg-1">위로 ↑</a>
-                <a href="#" class="btn btn-secondary btn-sm">아래로 ↓</a>
-              </span>
-              <!-- // 고정컨텐츠 이동 버튼 -->
-            </div>
+            <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개</div>
             <div class="right">
               <select class="custom-select custom-select-sm">
                 <option value="1">등록일 ↓</option>
@@ -150,12 +156,11 @@
           <table class="table table-hover" id="table" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
             <thead>
               <tr>
-                <th scope="col">&nbsp;</th>
                 <th scope="col">번호</th>
+                <th scope="col">카테고리</th>
                 <th scope="col">사용여부</th>
                 <th scope="col">제목</th>
                 <th scope="col">게시기간</th>
-                <th scope="col">조회수</th>
                 <th scope="col">등록자</th>
                 <th scope="col">등록일</th>
                 <th scope="col">최근수정일</th>
@@ -166,198 +171,127 @@
               <tr class="no-records-found">
                 <td colspan="9">일치하는 검색결과가 없습니다.</td>
               </tr>
-              <tr class="tr-fixed">
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
-                <td>고정</td>
-                <td>사용</td>
-                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
-                <td>홍길동</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
+
               <tr>
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
                 <td>1</td>
                 <td>사용</td>
+                <td>마이데이터</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
                 <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
                 <td>아이유</td>
                 <td>2022.12.02</td>
                 <td>2022.12.02</td>
               </tr>
               <tr class="tr-disabled">
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
                 <td>2</td>
+                <td>매치</td>
                 <td>사용안함</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>계속</td>
-                <td>12,456</td>
+                <td>2022.12.31 ~ 2022.12.31</td>
                 <td>유재석</td>
                 <td>2022.12.03</td>
                 <td>2022.12.03</td>
               </tr>
               <tr>
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
                 <td>3</td>
+                <td>회원가입</td>
                 <td>사용</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
+                <td>계속</td>
                 <td>홍길동</td>
                 <td>2022.12.04</td>
                 <td>2022.12.04</td>
               </tr>
               <tr>
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
-                <td>4</td>
+                <td>3</td>
+                <td>포인트</td>
                 <td>사용</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
                 <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
                 <td>홍길동</td>
-                <td>2022.12.05</td>
-                <td>2022.12.05</td>
+                <td>2022.12.04</td>
+                <td>2022.12.04</td>
               </tr>
               <tr>
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
                 <td>5</td>
+                <td>마이데이터</td>
                 <td>사용</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
                 <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
                 <td>홍길동</td>
                 <td>2022.12.06</td>
                 <td>2022.12.06</td>
               </tr>
               <tr>
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
                 <td>6</td>
+                <td>마이데이터</td>
                 <td>사용</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
                 <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
                 <td>홍길동</td>
-                <td>2022.12.07</td>
-                <td>2022.12.07</td>
+                <td>2022.12.06</td>
+                <td>2022.12.06</td>
               </tr>
-              <tr class="tr-disabled">
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
+              <tr>
                 <td>7</td>
+                <td>마이데이터</td>
                 <td>사용</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
                 <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
                 <td>홍길동</td>
-                <td>2022.12.08</td>
-                <td>2022.12.08</td>
+                <td>2022.12.06</td>
+                <td>2022.12.06</td>
               </tr>
               <tr>
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
                 <td>8</td>
+                <td>마이데이터</td>
                 <td>사용</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
                 <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
                 <td>홍길동</td>
-                <td>2022.12.09</td>
-                <td>2022.12.09</td>
+                <td>2022.12.06</td>
+                <td>2022.12.06</td>
               </tr>
               <tr>
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
                 <td>9</td>
+                <td>마이데이터</td>
                 <td>사용</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
                 <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
                 <td>홍길동</td>
-                <td>2022.12.10</td>
-                <td>2022.12.10</td>
+                <td>2022.12.06</td>
+                <td>2022.12.06</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>마이데이터</td>
+                <td>사용</td>
+                <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>2022.12.31 ~ 2022.12.31</td>
+                <td>홍길동</td>
+                <td>2022.12.06</td>
+                <td>2022.12.06</td>
               </tr>
 
               <tr>
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
                 <td>1</td>
+                <td>마이데이터</td>
                 <td>사용</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
                 <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
-                <td>아이유</td>
-                <td>2022.12.02</td>
-                <td>2022.12.02</td>
+                <td>홍길동</td>
+                <td>2022.12.06</td>
+                <td>2022.12.06</td>
               </tr>
               <tr class="tr-disabled">
-                <td>
-                  <label class="custom-control custom-radio only mb-0">
-                    <input type="radio" name="rdo1" class="custom-control-input" />
-                    <span class="custom-control-label"></span>
-                  </label>
-                </td>
                 <td>2</td>
+                <td>마이데이터</td>
                 <td>사용</td>
                 <td><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
                 <td>2022.12.31 ~ 2022.12.31</td>
-                <td>12,456</td>
-                <td>유재석</td>
-                <td>2022.12.03</td>
-                <td>2022.12.03</td>
+                <td>홍길동</td>
+                <td>2022.12.06</td>
+                <td>2022.12.06</td>
               </tr>
             </tbody>
           </table>
