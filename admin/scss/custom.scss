@@ -1269,6 +1269,23 @@ html:not(.mobile) {
   width: 30px;
   height: 30px;
 }
+.custom-control {
+  &.only {
+    min-height: 1rem;
+    padding-left: 1rem;
+    .custom-control-label {
+      position: static;
+      &:before {
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
 
 //pagination
 .pagination-wrap {
