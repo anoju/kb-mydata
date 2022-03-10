@@ -752,37 +752,22 @@ html:not(.mobile) {
   .kb-title {
     display: flex;
     align-items: center;
-    flex-direction: column;
-    > h1,
-    > div {
-      position: relative;
-      display: inline-flex;
-    }
-    > h1 {
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    h1 {
+      display: flex;
       font-size: 1.375rem;
       padding-right: 0.938rem;
       margin: 0;
       font-weight: 600;
-      width: 100%;
+      align-items: center;
     }
-    > div {
-      padding: 0 0.938rem;
-      font-size: 1rem;
-      color: #666;
-      &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        width: 0.063rem;
-        height: 1rem;
-        margin-top: -0.5rem;
-        background: #ddd;
-      }
+    > nav {
+      width: 100%;
     }
     .breadcrumb-item.active {
       font-weight: 500;
+      color: $gray-900;
     }
   }
   .breadcrumb {
@@ -856,26 +841,26 @@ html:not(.mobile) {
     .kb-title {
       display: block;
     }
-
-    .kb-page-btn {
-      position: fixed;
-      display: flex;
-      bottom: 0;
-      left: 0;
+  }
+  .kb-page-btn {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 0.625rem;
+    box-shadow: 0 -0.188rem 0.313rem rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 0 !important;
+    .btn {
       width: 100%;
-      background: #fff;
-      padding: 0.625rem;
-      box-shadow: 0 -0.188rem 0.313em rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      .btn {
-        width: 100%;
-        padding: 0.75rem 0.313rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        border-radius: 0.25rem;
-        & + .btn {
-          margin-left: 0.625rem;
-        }
+      padding: 0.75rem 0.313rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 0.25rem;
+      & + .btn {
+        margin-left: 0.625rem;
       }
     }
   }
