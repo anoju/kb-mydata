@@ -1284,6 +1284,8 @@ html:not(.mobile) {
   &.only {
     min-height: 1rem;
     padding-left: 1rem;
+    display: inline-block;
+    margin-bottom: 0;
     .custom-control-label {
       position: static;
       &:before {
