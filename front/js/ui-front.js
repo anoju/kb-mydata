@@ -5657,7 +5657,7 @@ const Layer = {
       const $openDelay = 50 * Layer.opening;
 
       // pop-scl-wrap
-      if (ui.PC.any() && ($popup.hasClass('modal') || ($popup.hasClass('bottom') && !$popup.find('.' + Layer.sclWrapClass).length))) {
+      if (ui.PC.any() && ($popup.hasClass('modal') || $popup.hasClass('bottom')) && !$popup.find('.' + Layer.sclWrapClass).length) {
         $popWrap.wrap('<div class="' + Layer.sclWrapClass + '"></div>');
       }
 

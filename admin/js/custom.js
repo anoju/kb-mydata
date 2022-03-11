@@ -20,7 +20,6 @@
     bootstrapEvt();
     device.check();
     common.init();
-    form.init();
     table.init();
 
     $(window).scroll();
@@ -423,40 +422,6 @@
           }
         }
       });
-    }
-  };
-
-  var form = {
-    init: function () {
-      form.datepicker();
-    },
-    datepicker: function () {
-      if ($('.bs-datepicker').length) {
-        $('.bs-datepicker').each(function () {
-          $(this)
-            .datepicker({
-              language: 'ko',
-              format: 'yyyy.mm.dd',
-              autoclose: true,
-              todayHighlight: true,
-              toggleActive: true
-            })
-            .on('changeDate', function (e) {
-              console.log('날짜선택');
-            });
-        });
-      }
-      if ($('.input-daterange').length) {
-        $('.input-daterange').each(function () {
-          $(this).datepicker({
-            language: 'ko',
-            format: 'yyyy.mm.dd',
-            autoclose: true,
-            todayHighlight: true,
-            toggleActive: true
-          });
-        });
-      }
     }
   };
 
