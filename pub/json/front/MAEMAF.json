@@ -150,7 +150,7 @@
   },
   {
     "id": "MAF04-0000p01C",
-    "url": "../../front/html/MAF/MAF04-0000001C.html",
+    "url": "../../front/html/MAF/MAF04-0000001C.html?pop=popView1",
     "type": "pop",
     "depth2": "이용약관",
     "name": "끌(KKL) 이용약관",
@@ -160,7 +160,7 @@
   },
   {
     "id": "MAF04-0000p02C",
-    "url": "../../front/html/MAF/MAF04-0000001C.html",
+    "url": "../../front/html/MAF/MAF04-0000001C.html?pop=popView2",
     "type": "pop",
     "depth2": "이용약관",
     "name": "끌(KKL) 개인정보 처리방침",
@@ -170,7 +170,7 @@
   },
   {
     "id": "MAF04-0000p03C",
-    "url": "../../front/html/MAF/MAF04-0000001C.html",
+    "url": "../../front/html/MAF/MAF04-0000001C.html?pop=popView3",
     "type": "pop",
     "depth2": "이용약관",
     "name": "끌(KKL) 고객정보 취급방침",
@@ -180,7 +180,7 @@
   },
   {
     "id": "MAF04-0000p04C",
-    "url": "../../front/html/MAF/MAF04-0000001C.html",
+    "url": "../../front/html/MAF/MAF04-0000001C.html?pop=popView4",
     "type": "pop",
     "depth2": "이용약관",
     "name": "오픈소스 라이선스",
@@ -190,7 +190,7 @@
   },
   {
     "id": "MAF04-0000p05C",
-    "url": "../../front/html/MAF/MAF04-0000001C.html",
+    "url": "../../front/html/MAF/MAF04-0000001C.html?pop=popView5",
     "type": "pop",
     "depth2": "이용약관",
     "name": "사업자 정보",
