@@ -53,7 +53,7 @@
             <div>
               <div class="flex">
                 <div class="textarea auto-height flex">
-                  <textarea></textarea>
+                  <textarea id="textarea"></textarea>
                   <a href="#" class="button h32 line w-auto ml-0 mr-16">입력</a>
                 </div>
               </div>
@@ -93,6 +93,13 @@
       var sel_files = [];
 
       $(function () {
+        $('#textarea').focus(function () {
+          Body.lock();
+        });
+        $('#textarea').blur(function () {
+          Body.unlock();
+        });
+
         const $el = $('input, select');
         const $elLength = $el.length;
         let $focusIdx = -1;
