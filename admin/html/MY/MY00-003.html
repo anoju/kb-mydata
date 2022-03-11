@@ -38,30 +38,31 @@
         </div>
 
         <div class="form-label-group">
-          <input type="password" id="newUserPassword" class="form-control" placeholder="숫자 및 영문 포함 6자리 이상" required />
-          <label for="newUserPassword">현재 비밀번호</label>
+          <input type="password" id="currentUserPassword" class="form-control" placeholder="숫자 및 영문 포함 6자리 이상" required />
+          <label for="currentUserPassword">현재 비밀번호</label>
         </div>
 
-        <div class="form-label-group">
+        <div class="form-label-group mb-1">
           <input type="password" id="newUserPassword" class="form-control" placeholder="숫자 및 영문 포함 6자리 이상" required />
           <label for="newUserPassword">신규 비밀번호</label>
-          <span class="text-black-50">*영문, 숫자, 특수문자 포함 6자리 이상 15자리 미만</span>
         </div>
+        <p class="mb-3 text-info text-sm"><small>* 영문, 숫자, 특수문자 포함 6자리 이상 15자리 미만</small></p>
 
         <div class="form-label-group">
           <input type="password" id="newPasswordConfirm" class="form-control" placeholder="비밀번호 확인" required />
           <label for="newPasswordConfirm">비밀번호 확인</label>
         </div>
 
-        <div class="form-label-group">
-          <!-- <span class="fc-red">현재 비밀번호가 일치하지 않습니다</span> -->
-          <!-- <span class="fc-red">입력하신 비밀번호가 일치하지 않습니다.</span> -->
-          <!-- <span class="fc-red">현재 사용하시는 비밀번호는 사용하실 수 없습니다.</span> -->
-          <span class="fc-red">비밀번호는 숫자, 영문, 특수문자를 포함한<br />6자리 이상 15자리 미만이어야 합니다.</span>
+        <div class="mb-3 text-center">
+          <!-- <span class="text-danger">현재 비밀번호가 일치하지 않습니다</span> -->
+          <!-- <span class="text-danger">입력하신 비밀번호가 일치하지 않습니다.</span> -->
+          <!-- <span class="text-danger">현재 사용하시는 비밀번호는 사용하실 수 없습니다.</span> -->
+          <span class="text-danger">비밀번호는 숫자, 영문, 특수문자를 포함한<br />6자리 이상 15자리 미만이어야 합니다.</span>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">비밀번호 변경</button>
-
-        <div class="mt-5 mb-0 text-muted text-center">&copy; KYOBO Securities co.,Ltd. All Rights Reserved</div>
+        <div><button class="btn btn-lg btn-primary btn-block" type="submit">비밀번호 변경</button></div>
+        <div class="mt-2 text-right">
+          <button class="btn btn-sm btn-transparent"><u>다음에변경</u></button>
+        </div>
       </div>
     </div>
 
