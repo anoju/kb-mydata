@@ -403,6 +403,10 @@ html.lock,
 }
 
 /*color*/
+.a-link {
+  color: #447eee;
+  text-decoration: underline;
+}
 .fc-primary {
   color: var(--primary-color) !important;
 }
@@ -425,7 +429,7 @@ html.lock,
   color: #3887fd !important;
 }
 .fc-blue {
-  color: #0087e1 !important;
+  color: #447eee !important;
 }
 .fc-pink {
   color: #ff009d !important;

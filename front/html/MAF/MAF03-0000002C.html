@@ -38,21 +38,14 @@
             </ul>
           </div>
         </div>
-        <div class="section pt-8">
-          <ul class="line-list-2 ty2">
+        <div class="section">
+          <div class="list-empty">
+            <i class="i-ico-warning-40" aria-hidden="true"></i>
+            <p>문의 내역이 없습니다.</p>
+          </div>
+          <ul class="line-list-2 ty2 mt-8">
             <li>
-              <a href="#" class="line-list-item-2">
-                <div class="flex not-full">
-                  <div>
-                    <i class="badge green">답변완료</i>
-                  </div>
-                  <div class="ml-auto">2022.01.03</div>
-                </div>
-                <div class="item-tit">클릭해서 (답변완료)상세팝업 확인! 클릭해서 (답변완료)상세팝업 확인!</div>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="line-list-item-2">
+              <a href="#" class="line-list-item-2 btn-click" onclick="Layer.open('#popView1')">
                 <div class="flex not-full">
                   <div>
                     <i class="badge gray">답변대기</i>
@@ -63,7 +56,18 @@
               </a>
             </li>
             <li>
-              <a href="#" class="line-list-item-2">
+              <a href="#" class="line-list-item-2 btn-click" onclick="Layer.open('#popView2')">
+                <div class="flex not-full">
+                  <div>
+                    <i class="badge green">답변완료</i>
+                  </div>
+                  <div class="ml-auto">2022.01.03</div>
+                </div>
+                <div class="item-tit">클릭해서 (답변완료)상세팝업 확인! 클릭해서 (답변완료)상세팝업 확인!</div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="line-list-item-2 btn-click">
                 <div class="flex not-full">
                   <div>
                     <i class="badge green">답변완료</i>
@@ -74,7 +78,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="line-list-item-2">
+              <a href="#" class="line-list-item-2 btn-click">
                 <div class="flex not-full">
                   <div>
                     <i class="badge green">답변완료</i>
@@ -85,7 +89,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="line-list-item-2">
+              <a href="#" class="line-list-item-2 btn-click">
                 <div class="flex not-full">
                   <div>
                     <i class="badge gray">답변대기</i>
@@ -101,6 +105,81 @@
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
+      <!-- 답변대기 -->
+      <div id="popView1" class="popup full" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <button type="button" class="pop-close ui-pop-close" role="button" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body qna-view-wrap">
+            <div class="list-view-1">
+              <div class="view-info">
+                <i class="badge gray">답변대기</i>
+                <span class="ml-16">매치</span>
+              </div>
+              <h1 class="view-tit">일대일 매치는 어디서 하나요?</h1>
+              <div class="view-info">
+                <div class="date">2022.01.03</div>
+              </div>
+              <div class="view-cont">
+                일대일 매치를 어디서 하는지 모르겠습니다.<br />
+                하는 방법과 어떻게 하면 할 수 있는지 알려주세요!
+              </div>
+            </div>
+            <!-- <div class="list-view-1 answer">
+              <h1 class="view-tit">답변</h1>
+              <div class="view-info">
+                <div class="date">2022.01.05</div>
+              </div>
+              <div class="view-cont">일대일 매치는 매치 메뉴에서 일대일 매치를 선택 후 진행이 가능합니다. 해당 서비스를 원활하게 이용하시려면 마이데이터 연동이 선행되어야 합니다.</div>
+            </div> -->
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="flex">
+                <button type="button" class="button gray">취소</button>
+                <button type="button" class="button primary">수정</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 답변완료 -->
+      <div id="popView2" class="popup full" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <button type="button" class="pop-close ui-pop-close" role="button" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body qna-view-wrap">
+            <div class="list-view-1">
+              <div class="view-info">
+                <i class="badge green">답변완료</i>
+                <span class="ml-16">매치</span>
+              </div>
+              <h1 class="view-tit">일대일 매치는 어디서 하나요?</h1>
+              <div class="view-info">
+                <div class="date">2022.01.03</div>
+              </div>
+              <div class="view-cont">
+                일대일 매치를 어디서 하는지 모르겠습니다.<br />
+                하는 방법과 어떻게 하면 할 수 있는지 알려주세요!
+              </div>
+            </div>
+            <div class="list-view-1 answer">
+              <h1 class="view-tit">답변</h1>
+              <div class="view-info">
+                <div class="date">2022.01.05</div>
+              </div>
+              <div class="view-cont">일대일 매치는 매치 메뉴에서 일대일 매치를 선택 후 진행이 가능합니다. 해당 서비스를 원활하게 이용하시려면 마이데이터 연동이 선행되어야 합니다.</div>
+            </div>
+          </div>
+        </article>
+      </div>
       <!-- //팝업 -->
     </article>
   </body>

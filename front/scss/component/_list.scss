@@ -86,7 +86,7 @@
   min-height: 6rem;
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
-  align-items: center;
+  justify-content: center;
   flex-direction: column;
   &:where(a):not(.no-arr) {
     padding-right: 3.2rem;
@@ -167,7 +167,7 @@
 }
 .line-list-item-2 {
   .item-tit {
-    font-size: ar(--strong-txt-color2);
+    font-size: var(--strong-txt-color2);
   }
 }
 .line-list-3 {
@@ -190,17 +190,23 @@
     font-size: 1.8rem;
     line-height: 2.6rem;
     font-weight: 700;
+    + .view-info {
+      margin-top: 0.8rem;
+    }
   }
   .view-info {
     display: flex;
+    align-items: center;
     font-size: 1.4rem;
     line-height: 1.6rem;
-    margin-top: 0.8rem;
     .date {
       color: var(--gray-txt-color);
     }
     .right {
       margin-left: auto;
+    }
+    + .view-tit {
+      margin-top: 1.2rem;
     }
   }
   .view-cont {
