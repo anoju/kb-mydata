@@ -143,53 +143,59 @@
     "url": "../../front/html/MAF/",
     "type": "page",
     "depth2": "이용약관",
-    "name": "약관 및 서비스이용동의",
-    "worker": "변상우",
-    "complete": "2022-03-10"
+    "name": "약관 및 서비스이용동의 목록",
+    "worker": "안효주",
+    "complete": "2022-03-10",
+    "etc": "목록 미확정"
   },
   {
     "id": "MAF04-0000p01C",
-    "url": "../../front/html/MAF/",
+    "url": "../../front/html/MAF/MAF04-0000001C.html",
     "type": "page",
     "depth2": "이용약관",
     "name": "끌(KKL) 이용약관",
-    "worker": "변상우",
-    "complete": "2022-03-10"
+    "worker": "안효주",
+    "complete": "2022-03-10",
+    "etc": "상세내용 미확정, MAF04-0000001C 안에 포함"
   },
   {
     "id": "MAF04-0000p02C",
-    "url": "../../front/html/MAF/",
+    "url": "../../front/html/MAF/MAF04-0000001C.html",
     "type": "page",
     "depth2": "이용약관",
     "name": "끌(KKL) 개인정보 처리방침",
-    "worker": "변상우",
-    "complete": "2022-03-10"
+    "worker": "안효주",
+    "complete": "2022-03-10",
+    "etc": "상세내용 미확정, MAF04-0000001C 안에 포함"
   },
   {
     "id": "MAF04-0000p03C",
-    "url": "../../front/html/MAF/",
+    "url": "../../front/html/MAF/MAF04-0000001C.html",
     "type": "page",
     "depth2": "이용약관",
     "name": "끌(KKL) 고객정보 취급방침",
-    "worker": "변상우",
-    "complete": "2022-03-10"
+    "worker": "안효주",
+    "complete": "2022-03-10",
+    "etc": "상세내용 미확정, MAF04-0000001C 안에 포함"
   },
   {
     "id": "MAF04-0000p04C",
-    "url": "../../front/html/MAF/",
+    "url": "../../front/html/MAF/MAF04-0000001C.html",
     "type": "page",
     "depth2": "이용약관",
     "name": "오픈소스 라이선스",
-    "worker": "변상우",
-    "complete": "2022-03-10"
+    "worker": "안효주",
+    "complete": "2022-03-10",
+    "etc": "상세내용 미확정, MAF04-0000001C 안에 포함"
   },
   {
     "id": "MAF04-0000p05C",
-    "url": "../../front/html/MAF/",
+    "url": "../../front/html/MAF/MAF04-0000001C.html",
     "type": "page",
     "depth2": "이용약관",
     "name": "사업자 정보",
-    "worker": "변상우",
-    "complete": "2022-03-10"
+    "worker": "안효주",
+    "complete": "2022-03-10",
+    "etc": "상세내용 미확정, MAF04-0000001C 안에 포함"
   }
 ]

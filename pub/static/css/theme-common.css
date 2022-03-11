@@ -361,7 +361,9 @@ caption,legend{overflow:hidden;width:1px;height:0.1px;font-size:0px;line-height:
 .g_board table thead th:first-child,
 .g_board table tbody td.no{width:25px;padding-left:0;padding-right:0;}
 /*.g_board table tbody td.id{padding:0}*/
-.g_board table tbody td.deps, .g_board table tbody td.name{text-align:left}
+.g_board table tbody td.deps,
+.g_board table tbody td.name,
+.g_board table tbody td.etc{text-align:left}
 .g_board table tbody .complete td{background-color:#fff;color:#666}
 .g_board table tbody .complete.modify td{background-color:#fcf7f6;color:#ca4c07}
 .g_board table tbody tr:hover td,

@@ -5,23 +5,10 @@
   }
 }
 .folding-list {
-  border: 0.1rem solid #eee;
-  border-width: 0.1rem 0;
   overflow: hidden;
-  &.line-none {
-    border-width: 0;
-  }
-  &.line-bottom-none {
-    border-bottom-width: 0;
-  }
   > li,
   > .folding-head {
     position: relative;
-    border-top: 0.1rem solid #eee;
-    &.line-none,
-    &:first-child {
-      border-top-width: 0;
-    }
   }
   .folding-head {
     background: #fff;
