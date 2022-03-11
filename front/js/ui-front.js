@@ -5784,6 +5784,8 @@ const Layer = {
           }, 200);
         }
         Layer.opening--;
+
+        $popup.trigger('Layer.show');
       }, $openDelay);
     } else {
       //팝업 없을때
@@ -5885,12 +5887,12 @@ const Layer = {
       $closeAfter();
     }, $closeDelay);
 
-    //callback
-    if (!!callback) {
-      setTimeout(function () {
-        callback();
-      }, $callbackDelay);
-    }
+    setTimeout(function () {
+      //callback
+      if (!!callback) callback();
+
+      $popup.trigger('Layer.hide');
+    }, $callbackDelay);
 
     /*
     const $wrap = $popup.find('.' + Layer.wrapClass);

@@ -391,6 +391,13 @@
             }
           });
         });
+
+        $('#fullPopup').on('Layer.show', function (e) {
+          console.log('fullPopup show');
+        });
+        $('#fullPopup').on('Layer.hide', function (e) {
+          console.log('fullPopup hide');
+        });
       });
     </script>
   </body>
