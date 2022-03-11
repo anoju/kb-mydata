@@ -24,6 +24,7 @@
     <script src="../../js/custom.js"></script>
 
     <!-- bootstrap-datepicker -->
+    <link rel="stylesheet" href="../../lib/bootstrap-datepicker/css/bootstrap-datepicker.min.css" />
     <script src="../../lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="../../lib/bootstrap-datepicker/locales/bootstrap-datepicker.ko.min.js"></script>
   </head>
@@ -94,5 +95,33 @@
       <!-- 푸터 -->
     </section>
     <!-- //wrap -->
+    <script>
+      if ($('.bs-datepicker').length) {
+        $('.bs-datepicker').each(function () {
+          $(this)
+            .datepicker({
+              language: 'ko',
+              format: 'yyyy.mm.dd',
+              autoclose: true,
+              todayHighlight: true,
+              toggleActive: true
+            })
+            .on('changeDate', function (e) {
+              console.log('날짜선택');
+            });
+        });
+      }
+      if ($('.input-daterange').length) {
+        $('.input-daterange').each(function () {
+          $(this).datepicker({
+            language: 'ko',
+            format: 'yyyy.mm.dd',
+            autoclose: true,
+            todayHighlight: true,
+            toggleActive: true
+          });
+        });
+      }
+    </script>
   </body>
 </html>
