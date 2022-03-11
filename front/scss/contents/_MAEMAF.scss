@@ -70,3 +70,21 @@
     }
   }
 }
+.qna-view-wrap {
+  display: flex;
+  flex-direction: column;
+  &.pop-body {
+    padding: 0 !important;
+  }
+  .list-view-1 {
+    height: 100%;
+    padding: var(--base-padding);
+    &.answer {
+      padding-top: 4rem;
+      background: #fafafa;
+      .view-cont {
+        margin-top: 2.4rem;
+      }
+    }
+  }
+}

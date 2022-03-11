@@ -200,6 +200,9 @@
     }
     .pop-head {
       flex-shrink: 0;
+      + .pop-body {
+        padding-top: 2.4rem;
+      }
     }
     .pop-body {
       flex: 1 1 auto;
