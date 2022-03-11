@@ -137,9 +137,7 @@
     "worker": "",
     "complete": "",
     "etc": "MAF03-0000002C에 포함"
-  }
->>>>>>> 527940841e35096677e623e009c1a53035424dd1
-
+  },
   {
     "id": "MAF04-0000001C",
     "url": "../../front/html/MAF/",
@@ -173,6 +171,24 @@
     "type": "page",
     "depth2": "이용약관",
     "name": "끌(KKL) 고객정보 취급방침",
+    "worker": "변상우",
+    "complete": "2022-03-10"
+  },
+  {
+    "id": "MAF04-0000p04C",
+    "url": "../../front/html/MAF/",
+    "type": "page",
+    "depth2": "이용약관",
+    "name": "오픈소스 라이선스",
+    "worker": "변상우",
+    "complete": "2022-03-10"
+  },
+  {
+    "id": "MAF04-0000p05C",
+    "url": "../../front/html/MAF/",
+    "type": "page",
+    "depth2": "이용약관",
+    "name": "사업자 정보",
     "worker": "변상우",
     "complete": "2022-03-10"
   }
