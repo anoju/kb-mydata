@@ -3,7 +3,7 @@
     "depth1": "공통"
   },
   {
-    "id": "MY00-000",
+    "id": "MCC01-0000001C",
     "url": "../../admin/html/MY/",
     "type": "page",
     "depth2": "로그인",
@@ -12,7 +12,7 @@
     "etc": ""
   },
   {
-    "id": "MY00-001",
+    "id": "MCC01-0000002C",
     "url": "../../admin/html/MY/",
     "type": "page",
     "depth2": "비밀번호 변경",
@@ -21,10 +21,19 @@
     "etc": "비밀번호 변경 완료 팝업포함"
   },
   {
-    "id": "MY00-002",
+    "id": "MCC02-0000001C",
     "url": "../../admin/html/MY/",
     "type": "page",
     "depth2": "비밀번호 변경(초기화 후 변경)",
+    "worker": "변상우",
+    "complete": "2022-03-10",
+    "etc": "비밀번호 변경 완료 팝업포함"
+  },
+  {
+    "id": "MCC02-0000002C",
+    "url": "../../admin/html/MY/",
+    "type": "page",
+    "depth2": "비밀번호 변경(선택적 변경 화면)",
     "worker": "변상우",
     "complete": "2022-03-10",
     "etc": "비밀번호 변경 완료 팝업포함"
