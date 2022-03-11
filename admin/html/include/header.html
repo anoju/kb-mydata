@@ -7,7 +7,14 @@
 
     <ul class="navbar-nav kb-navbar-util">
       <li class="nav-item">
-        <span class="nav-link"><i class="bi bi-person-circle"></i> <strong>홍길동</strong> 님</span>
+        <div class="btn-group" role="group">
+          <button id="btnDrop" type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> <strong>홍길동</strong> 님
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnDrop">
+            <a class="dropdown-item" href="#">비밀번호 변경</a>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
         <button type="button" class="nav-link"><i class="bi bi-box-arrow-in-left"></i> 로그아웃</button>

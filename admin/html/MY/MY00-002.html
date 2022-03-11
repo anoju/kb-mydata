@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+    <script>
+      $(function () {
+        $('.btn-primary').click(function () {
+          //location.href = './00/main.html';
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="form-signin-wrap">
+      <div class="form-signin">
+        <div class="text-center mb-4">
+          <h1 class="mb-4">관리자 비밀번호 변경</h1>
+          <p>안전한 정보보호를 위하여, <br />6개월마다 비밀번호를 변경해 주세요.</p>
+        </div>
+
+        <div class="form-label-group">
+          <input type="password" id="newUserPassword" class="form-control" placeholder="신규 비밀번호" required />
+          <label for="newUserPassword">신규 비밀번호</label>
+        </div>
+
+        <div class="form-label-group">
+          <input type="password" id="newPasswordConfirm" class="form-control" placeholder="비밀번호 확인" required />
+          <label for="newPasswordConfirm">비밀번호 확인</label>
+        </div>
+
+        <div class="form-label-group">
+          <!-- <span class="fc-red">입력하신 비밀번호가 일치하지 않습니다.</span> -->
+          <!-- <span class="fc-red">현재 사용하시는 비밀번호는 사용하실 수 없습니다.</span> -->
+          <span class="fc-red">비밀번호는 숫자, 영문, 특수문자를 포함한<br />6자리 이상 15자리 미만이어야 합니다.</span>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">비밀번호 변경</button>
+        <div class="mt-5 mb-0 text-muted text-center">&copy; KYOBO Securities co.,Ltd. All Rights Reserved</div>
+      </div>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script>
+            window.jQuery || document.write('<script src="../js/jquery-3.5.1.slim.min.js"><\/script>');
+        </script> -->
+    <script>
+      //유효성 오류팝업(게시일 지정오류)
+      Modal.alert('비밀번호 변경이 완료되었습니다.', function () {
+        console.log('비밀번호 변경 완료 확인');
+      });
+    </script>
+  </body>
+</html>
