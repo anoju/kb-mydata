@@ -97,6 +97,11 @@
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
+@mixin scroll-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
 @mixin scroll-hide {
   &::-webkit-scrollbar {

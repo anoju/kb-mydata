@@ -211,7 +211,8 @@ button.btn-click {
   > .button + .button {
     margin-top: 0.8rem;
   }
-  .button {
+  > .button,
+  div:not(.input, .textarea) > .button {
     width: 100%;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
