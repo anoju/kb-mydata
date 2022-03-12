@@ -1430,7 +1430,7 @@ ui.Button = {
     ui.Button.etc();
     ui.Tab.init();
 
-    if ($('.ui-touch-rotate').length) ui.Touch.init();
+    ui.Touch.init();
   }
 };
 // 탭
@@ -2334,12 +2334,78 @@ ui.Touch = {
     document.addEventListener('touchmove', _move, false);
     document.addEventListener('touchend', _end, false);
   },
+  focus: function () {
+    let $isFocus = false;
+    let $isFocusEl = null;
+    $(document).on('focus', 'input, textarea', function (e) {
+      const $target = e.target;
+      let $el;
+      // if ($target.tagName === 'TEXTAREA') $el = $($target);
+      if ($target.tagName === 'INPUT') {
+        const $type = $target.getAttribute('type');
+        // if($type === 'checkbox' || $type === 'radio' || $type === 'button' || $type === 'submit') return;
+        if ($type !== 'text' && $type !== 'tel' && $type !== 'number' && $type !== 'password' && $type !== 'email' && $type !== 'search' && $type !== 'url') return;
+      }
+      $el = $($target);
+      if ($el.prop('disabled') || $el.prop('readonly')) return;
+      $isFocus = true;
+      $isFocusEl = $target;
+      $('html').addClass('input-focus');
+    });
+    const $reset = function () {
+      $isFocus = false;
+      $isFocusEl = null;
+      $('html').removeClass('input-focus');
+      $startY = null;
+    };
+    $(document).on('blur', 'input, textarea', function (e) {
+      if ($isFocus) $reset();
+    });
 
+    let $startY = null;
+    $(document).on('touchstart', function (e) {
+      if ($isFocus) {
+        const $target = e.target;
+        const $clientY = e.touches[0].clientY;
+        if ($target !== $isFocusEl) {
+          $($isFocusEl).blur();
+          $reset();
+        } else if ($target === $isFocusEl) {
+          $startY = $clientY;
+        }
+      }
+    });
+    $(document).on('touchmove', function (e) {
+      if ($isFocus) {
+        const $target = e.target;
+        const $clientY = e.touches[0].clientY;
+        const $el = $($target);
+        const $elH = $el.outerHeight();
+        const $move = Math.abs($startY - $clientY);
+        if ($target === $isFocusEl && $elH <= $move) {
+          $($isFocusEl).blur();
+          $reset();
+        }
+      }
+    });
+    //$(window).scroll(function () {
+    // alert('aaa');
+    // if ($isFocus) {
+    //   setTimeout(function () {
+    //     $($isFocusEl).blur();
+    //     $reset();
+    //   }, 100);
+    // }
+    //});
+  },
   init: function () {
-    ui.Touch.rotateItem();
-    document.querySelectorAll(ui.Touch.rotateWrap).forEach(ui.Touch.rotate);
+    if ($('.ui-touch-rotate').length) {
+      ui.Touch.rotateItem();
+      document.querySelectorAll(ui.Touch.rotateWrap).forEach(ui.Touch.rotate);
+    }
 
     ui.Touch.refresh();
+    ui.Touch.focus();
   }
 };
 ui.Refresh = null;
@@ -2378,7 +2444,7 @@ ui.Form = {
     const $inpEls = 'input:not(:checkbox):not(:radio):not(:hidden), select, textarea, .btn-select';
     $(document).on('focusin', $inpEls, function (e) {
       const $this = $(this);
-      if (!$this.prop('readonly') && !$this.prop('disabled')) $('html').addClass('inp-focus');
+      // if (!$this.prop('readonly') && !$this.prop('disabled')) $('html').addClass('inp-focus');
       if ($this.is('input') && $this.closest('.input').length) $this.closest('.input').addClass('focus');
       if ($this.is('select') && $this.closest('.select').length) $this.closest('.select').addClass('focus');
       if ($this.hasClass('btn-select') && $this.closest('.select').length) $this.closest('.select').addClass('focus');
@@ -2386,7 +2452,7 @@ ui.Form = {
     });
     $(document).on('focusout', $inpEls, function (e) {
       const $this = $(this);
-      $('html').removeClass('inp-focus');
+      // $('html').removeClass('inp-focus');
       if ($this.closest('.form-item').length) $this.closest('.form-item').removeClass('focus');
       if ($this.is('input') && $this.closest('.input').length) $this.closest('.input').removeClass('focus');
       if ($this.is('select') && $this.closest('.select').length) $this.closest('.select').removeClass('focus');

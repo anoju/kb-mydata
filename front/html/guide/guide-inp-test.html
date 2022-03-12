@@ -50,6 +50,20 @@
 
           <div style="height: 100vh"></div>
         </div>
+        <div class="btn-wrap bottom-fixed">
+          <div>
+            <div class="flex">
+              <div class="textarea auto-height flex">
+                <textarea id="textarea"></textarea>
+                <a href="#" class="button h32 line w-auto ml-0 mr-16">입력</a>
+              </div>
+            </div>
+            <div class="flex">
+              <a href="#" class="button h60 primary" id="btnFocus">다음</a>
+              <a href="#" class="button h60 primary" id="btnFocus2">팝업입력</a>
+            </div>
+          </div>
+        </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
 
@@ -76,7 +90,7 @@
       <!-- //팝업 -->
     </article>
 
-    <div class="btn-wrap bottom-fixed">
+    <!-- <div class="btn-wrap bottom-fixed">
       <div>
         <div class="flex">
           <div class="textarea auto-height flex">
@@ -89,18 +103,18 @@
           <a href="#" class="button h60 primary" id="btnFocus2">팝업입력</a>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script>
       var sel_files = [];
 
       $(function () {
-        $('#textarea').focus(function () {
-          Body.lock();
-        });
-        $('#textarea').blur(function () {
-          Body.unlock();
-        });
+        // $('#textarea').focus(function () {
+        //   Body.lock();
+        // });
+        // $('#textarea').blur(function () {
+        //   Body.unlock();
+        // });
 
         const $el = $('input, select');
         const $elLength = $el.length;
