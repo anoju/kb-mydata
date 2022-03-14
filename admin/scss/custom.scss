@@ -1520,6 +1520,11 @@ html:not(.mobile) {
 }
 
 //bsw
+.modal-selectMenu {
+  .scroll_content {
+    height: 20rem;
+  }
+}
 
 //dark
 @import 'custom-dark';

@@ -132,7 +132,7 @@
           </table>
           <!-- //컨텐츠본문 -->
           <!-- 그룹 메뉴권한설정 팝업 -->
-          <div class="modal fade" id="registAuthority" tabindex="-1" aria-labelledby="registAuthorityLabel" aria-hidden="true">
+          <div class="modal modal-selectMenu fade" id="registAuthority" tabindex="-1" aria-labelledby="registAuthorityLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
@@ -147,11 +147,48 @@
                         <button type="button" class="btn btn-secondary">권한 초기화</button>
                         <div class="">
                           <h5>메뉴명</h5>
-                          <div class="scroll_content h-75">
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">관리자</button>
-                            <div class="collapse" id="collapseExample">
-                              <div class="card card-body"></div>
+                          <div class="scroll_content">
+                            <div class="list-group">
+                              <button type="button" class="list-group-item list-group-item-action" aria-current="true">The current button</button>
+                              <button type="button" class="list-group-item list-group-item-action">A second item</button>
+                              <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+                              <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+                              <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
                             </div>
+                            <dl>
+                              <dt>
+                                <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                                  <input type="checkbox" name="chk5" class="custom-control-input" />
+                                  <span class="custom-control-label"></span>
+                                </label>
+                                <p data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">관리자</p>
+                              </dt>
+                              <dd class="collapse" id="collapseExample">
+                                <div>
+                                  <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                                    <input type="checkbox" name="chk5" class="custom-control-input" />
+                                    <span class="custom-control-label"></span>
+                                  </label>
+                                  <p>관리자관리</p>
+                                </div>
+
+                                <div>
+                                  <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                                    <input type="checkbox" name="chk5" class="custom-control-input" />
+                                    <span class="custom-control-label"></span>
+                                  </label>
+                                  <p>Admin 관리자 관리</p>
+                                </div>
+
+                                <div>
+                                  <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                                    <input type="checkbox" name="chk5" class="custom-control-input" />
+                                    <span class="custom-control-label"></span>
+                                  </label>
+                                  <p>권한설정</p>
+                                </div>
+                              </dd>
+                            </dl>
                           </div>
                         </div>
                         <div class="modal-footer">
