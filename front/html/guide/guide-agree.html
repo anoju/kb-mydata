@@ -94,7 +94,7 @@
                 <div class="checkbox ty2">
                   <input type="checkbox" id="agree1-1" class="ui-agree-chk" /><i aria-hidden="true"></i>
                   <div class="lbl">
-                    <label for="agree1-1">(필수) 서비스 이용약관 동의</label>
+                    <label for="agree1-1" class="fc-primary">(필수) 클릭하면 약관용 pdf샘플 확인가능</label>
                     <a href="#" role="button" onclick="Layer.open('#agreeDetail0')" aria-label="약관상세 확인"><i class="i-ico-arr-right-16" aria-hidden="true"></i></a>
                   </div>
                 </div>
@@ -213,7 +213,7 @@
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
-      <div id="agreeDetail0" class="popup full show" role="dialog" aria-hidden="true">
+      <div id="agreeDetail0" class="popup full" role="dialog" aria-hidden="true">
         <article class="pop-wrap">
           <div class="pop-head">
             <div>
@@ -222,7 +222,7 @@
             </div>
           </div>
           <div class="pop-body iframe-full-box">
-            <iframe src="/front/pdfjs/web/viewer.html?file=../../temp/간편인증로그인자세히보기(PDFviewer테스트용파일).pdf" frameborder="0"></iframe>
+            <iframe src="/front/pdfjs/web/viewer.html?file=../../temp/교보증권마이데이터 샘플.pdf" frameborder="0"></iframe>
           </div>
           <div class="pop-foot">
             <div>
