@@ -13,7 +13,22 @@
     <script type="text/javascript" src="../../js/ui-front.js"></script>
   </head>
   <body>
-    <div id="bottomPopup1" class="popup bottom" role="dialog" aria-hidden="true">
+    <article id="wrap">
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <button class="button line" onclick="openOpt()">팝업 열기</button>
+        </div>
+
+        <!-- 선택 및 기본값 임시 저장-->
+        <input type="hidden" name="optAge" value="30" />
+        <input type="hidden" name="optMnyS" value="2" />
+        <input type="hidden" name="optMnyE" value="4" />
+      </main>
+    </article>
+
+    <!-- 팝업 -->
+    <div id="popMatchOpt" class="popup bottom" role="dialog" aria-hidden="true">
       <article class="pop-wrap">
         <div class="pop-head">
           <div>
@@ -31,20 +46,19 @@
             <div class="tg-btn-wrap group mt-16">
               <div class="flex">
                 <div class="radio btn">
-                  <input type="radio" id="tglrdo1-1" name="rdo1" /><i aria-hidden="true"></i>
+                  <input type="radio" id="tglrdo1-1" name="age" value="20" /><i aria-hidden="true"></i>
                   <label for="tglrdo1-1" class="lbl">20대</label>
                 </div>
                 <div class="radio btn">
-                  <input type="radio" id="tglrdo1-2" name="rdo1" /><i aria-hidden="true"></i>
-                  <!-- 최초 설정된 값이라면 fc-primary 클래스 추가-->
-                  <label for="tglrdo1-2" class="lbl fc-primary">30대</label>
+                  <input type="radio" id="tglrdo1-2" name="age" value="30" /><i aria-hidden="true"></i>
+                  <label for="tglrdo1-2" class="lbl">30대</label>
                 </div>
                 <div class="radio btn">
-                  <input type="radio" id="tglrdo1-3" name="rdo1" checked="checked" /><i aria-hidden="true"></i>
+                  <input type="radio" id="tglrdo1-3" name="age" value="40" /><i aria-hidden="true"></i>
                   <label for="tglrdo1-3" class="lbl">40대</label>
                 </div>
                 <div class="radio btn">
-                  <input type="radio" id="tglrdo1-4" name="rdo1" /><i aria-hidden="true"></i>
+                  <input type="radio" id="tglrdo1-4" name="age" value="50" /><i aria-hidden="true"></i>
                   <label for="tglrdo1-4" class="lbl">50대 이상</label>
                 </div>
               </div>
@@ -60,8 +74,8 @@
                 <div class="range"><i></i></div>
                 <div class="thumb first"></div>
                 <div class="thumb last"></div>
-                <input type="range" min="0" max="4" step="1" class="first-inp" value="1" />
-                <input type="range" min="0" max="4" step="1" class="last-inp" value="3" />
+                <input type="range" min="0" max="4" step="1" class="first-inp" name="moneyS" />
+                <input type="range" min="0" max="4" step="1" class="last-inp" name="moneyE" />
                 <div class="list append-dot" title="기간을 선택해주세요" data-unit="이하,1백만원,3천만원,1억원,이상"></div>
               </div>
             </div>
@@ -70,7 +84,7 @@
         <div class="pop-foot">
           <div>
             <div class="flex">
-              <a href="#" class="button primary ui-pop-close">변경하기</a>
+              <button type="button" class="button primary" onclick="setOpt()">변경하기</button>
             </div>
           </div>
         </div>
@@ -78,9 +92,49 @@
     </div>
 
     <script>
-      $(function () {
-        Layer.open('#bottomPopup1');
-      });
+      const $optAge = $('input[name=optAge]');
+      const $optMnyS = $('input[name=optMnyS]');
+      const $optMnyE = $('input[name=optMnyE]');
+
+      const $optValSet = function () {
+        const $optAgeVal = $optAge.val();
+        const $pop = $('#popMatchOpt');
+        $pop.find('input[name=age]').prop('checked', false).siblings('.lbl').removeClass('fc-primary');
+        console.log($optAgeVal);
+        $pop
+          .find('input[name=age][value=' + $optAgeVal + ']')
+          .prop('checked', true)
+          .siblings('.lbl')
+          .addClass('fc-primary');
+        const $optMnySVal = $optMnyS.val();
+        const $optMnyEVal = $optMnyE.val();
+        $pop.find('input[name=moneyS]').val($optMnySVal);
+        $pop.find('input[name=moneyE]').val($optMnyEVal);
+
+        //range에 set value 표시
+        ui.Form.range();
+      };
+
+      const setOpt = function () {
+        const $pop = $('#popMatchOpt');
+        const $ageVal = $pop.find('input[name=age]:checked').val();
+        const $moneySVal = $pop.find('input[name=moneyS]').val();
+        const $moneyEVal = $pop.find('input[name=moneyE]').val();
+        $optAge.val($ageVal);
+        $optMnyS.val($moneySVal);
+        $optMnyE.val($moneyEVal);
+
+        Layer.close('#popMatchOpt');
+      };
+
+      // 열기
+      const openOpt = function () {
+        Layer.open('#popMatchOpt', function () {
+          // 열때 선택값 세팅
+          $optValSet();
+        });
+      };
+      openOpt();
     </script>
   </body>
 </html>
