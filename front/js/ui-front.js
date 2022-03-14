@@ -2447,6 +2447,7 @@ ui.Form = {
       //bottom-fixed
       if ($this.closest('.bottom-fixed').length) {
         $('html').addClass('overflow-hidden');
+        $('.bottom-fixed').addClass('dim');
       }
     });
     $(document).on('focusout', $inpEls, function (e) {
@@ -2461,6 +2462,7 @@ ui.Form = {
       //bottom-fixed
       if ($this.closest('.bottom-fixed').length) {
         $('html').removeClass('overflow-hidden');
+        $('.bottom-fixed').removeClass('dim');
       }
     });
   },
