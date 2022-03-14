@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">관리자관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">관리자등록</li>
+                  </ol>
+                </nav>
+                <h1>관리자 등록</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">기본정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-label"><i class="fc-red d-inline-block mr-1">*</i> 이름</div>
+              <div class="form-box-cont">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-label"><i class="fc-red d-inline-block mr-1">*</i>아이디(사번)</div>
+              <div class="form-box-cont">
+                <input type="text" class="form-control" />
+                <div class="mt-1 text-info">※ 사번은 아이디로 사용됩니다.</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-label"><i class="fc-red d-inline-block mr-1">*</i>핸드폰</div>
+              <div class="form-box-cont">
+                <input type="text" class="form-control" />
+                <div class="mt-1 text-info">※ 숫자만 입력해 주세요.</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-label"><i class="fc-red d-inline-block mr-1">*</i>이메일</div>
+              <div class="form-box-cont">
+                <div class="form-row">
+                  <div class="col-7">
+                    <input type="text" class="form-control" placeholder="이메일" />
+                  </div>
+                  <div class="col-5 d-flex align-items-center">@iprovest.com</div>
+                </div>
+                <div class="mt-1 text-info">※ 이메일은 회사 이메일을 입력해 주세요.</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-label"><i class="fc-red d-inline-block mr-1">*</i>비밀번호</div>
+              <!-- <div class="form-box-cont d-flex align-items-center text-info">※ 관리자가 등록되면 자동으로 임시비밀번호가 발송됩니다.</div> -->
+              <div class="form-box-cont"><button type="button" class="btn btn-md btn-danger">비밀번호초기화</button></div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">권한정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">권한설정</div>
+                <div class="form-box-cont"><button type="button" class="btn btn-md btn-info" data-toggle="modal" data-target="#exampleModal">메뉴권한 설정</button></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">메모</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">신상메모</div>
+                <div class="form-box-cont">
+                  <textarea id="editor" name="editordata1">신상변경(퇴직, 인사이동 등) 계정사용 중지 등을 입력해주세요.</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">등록/수정정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">최초지정일</div>
+                <div class="form-box-cont d-flex align-items-center">2022.07.31</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5">
+            <!-- <button type="button" class="btn btn-lg btn-dark float-right" data-toggle="modal" data-target="#confirmAccount">계정사용</button> -->
+            <button type="button" class="btn btn-lg btn-dark float-right" data-toggle="modal" data-target="#confirmAccount">계정사용중지</button>
+          </div>
+          <div class="btn-wrap kb-page-btn text-center mt-5">
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 등록</button>
+          </div>
+          <!-- //컨텐츠본문 -->
+
+          <!-- 권한설정 팝업 -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">관리자 메뉴권한 설정</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <table id="table" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">&nbsp;</th>
+                        <th scope="col">권한그룹</th>
+                        <th scope="col">그룹명</th>
+                        <th scope="col">권한메뉴</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                            <input type="checkbox" name="chk1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>A</td>
+                        <td>수퍼관리자</td>
+                        <td class="text-left">
+                          <ul class="mb-0">
+                            <li>관리자 : 관리자등록, 관리자이력관리, 그룹관리, 메뉴관리, 관리자그룹관리</li>
+                            <li>회원관리 : 회원관리</li>
+                            <li>앱관리 : 알람템플릿관리, 알림발송과리, 알림발송내역관리, 투자채널관리, 공지사항, FAQ, 문의하기, 팝업관리</li>
+                            <li>PFM관리 : PFM관리</li>
+                            <li>시스템관리 : 코드관리</li>
+                            <li>매치관리 : 매치관리</li>
+                            <li>인스턴트게임관리 : 인스턴트게임관리</li>
+                            <li>공통 : 메일템플릿관리</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                            <input type="checkbox" name="chk2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>B</td>
+                        <td>회원 메뉴 관리자</td>
+                        <td class="text-left">
+                          <ul class="mb-0">
+                            <li>회원관리 : 회원관리</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                            <input type="checkbox" name="chk3" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>C</td>
+                        <td>앱관리 관리자</td>
+                        <td class="text-left">
+                          <ul class="mb-0">
+                            <li>앱관리 : 알림템플릿관리, 알림발송관리, 알림발송내역관리, 투자채널관리, 공지사항, FAQ, 문의하기, 팝업관리</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                            <input type="checkbox" name="chk4" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>D</td>
+                        <td>공통</td>
+                        <td class="text-left">
+                          <ul class="mb-0">
+                            <li>공통 : 메일템플릿관리</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                            <input type="checkbox" name="chk5" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>E</td>
+                        <td>시스템 관리자</td>
+                        <td class="text-left">
+                          <ul class="mb-0">
+                            <li>시스템관리 : 코드관리</li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-primary" onclick="$('#exampleModal').modal('hide')">등록</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //권한설정 팝업 -->
+
+          <!-- 관리자 계정 중지/사용 팝업 -->
+          <div class="modal fade" id="confirmAccount" tabindex="-1" aria-labelledby="" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-messege">
+                    홍길동 관리자의 계정을 <br />
+                    사용중지 시키시겠습니까? <br />
+                    메뉴관리 담당 여부를 확인해 주세요.
+                  </div>
+                  <!-- <div class="modal-messege">
+                    홍길동 관리자의 계정을<br />
+                    사용하시겠습니까?
+                  </div> -->
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-primary" onclick="$('#confirmAccount').modal('hide')">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //관리자 계정 중지/사용 팝업 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      //에디터
+      CKEDITOR.replace('editor');
+
+      //팝업
+      //유효성 오류팝업(제목미입력)
+      /*
+      Modal.alert('이름을 입력해주세요.', function () {
+        console.log('이름미입력 - 확인');
+      });
+      //유효성 오류팝업(아이디(사번))
+      Modal.alert('아이디(사번)를 입력해주세요.', function () {
+        console.log('아이디(사번)미입력  - 확인');
+      });
+      //유효성 오류팝업(핸드폰 번호를 미입력)
+      Modal.alert('핸드폰 번호를 입력해 주세요.', function () {
+        console.log('핸드폰 번호미입력  - 확인');
+      });
+      //유효성 오류팝업(이메일 주소를 미입력)
+      Modal.alert('이메일 주소를 입력해 주세요.', function () {
+        console.log('이메일 주소미입력  - 확인');
+      });
+      //유효성 오류팝업(권한미설정)
+      Modal.alert('권한을 설정해 주세요', function () {
+        console.log('권한미설정- 확인');
+      });
+
+      //등록팝업
+      Modal.confirm('관리자를 등록하시겠습니까?', function (e) {
+        if (e) {
+          console.log('등록 - 확인');
+        } else {
+          console.log('등록 - 취소');
+        }
+      });
+
+      //등록팝업
+      Modal.confirm('관리자 등록을 \<br>\ 취소하시겠습니까?', function (e) {
+        if (e) {
+          console.log('등록취소 - 확인');
+        } else {
+          console.log('등록취소 - 취소');
+        }
+      });
+      */
+
+      //권한설정 팝업
+      //$('#exampleModal').modal('');
+    </script>
+  </body>
+</html>
