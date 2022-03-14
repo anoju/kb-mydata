@@ -343,21 +343,28 @@ button.btn-click {
       }
     }
 
-    &.dim {
-      &:before {
-        content: '';
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 55;
-        background: rgba(0, 0, 0, 0.5);
-      }
+    /* */
+    &.btn-comment {
       > div {
-        z-index: 60;
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
         background: #fff;
+      }
+      &.dim {
+        &:before {
+          content: '';
+          display: block;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 55;
+          background: rgba(0, 0, 0, 0.5);
+        }
+        > div {
+          z-index: 60;
+          background: #fff;
+        }
       }
     }
   }
