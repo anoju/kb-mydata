@@ -2375,6 +2375,7 @@ ui.Touch = {
         }
       }
     });
+    /*
     $(document).on('touchmove', function (e) {
       if ($isFocus) {
         const $target = e.target;
@@ -2388,15 +2389,7 @@ ui.Touch = {
         }
       }
     });
-    //$(window).scroll(function () {
-    // alert('aaa');
-    // if ($isFocus) {
-    //   setTimeout(function () {
-    //     $($isFocusEl).blur();
-    //     $reset();
-    //   }, 100);
-    // }
-    //});
+    */
   },
   init: function () {
     if ($('.ui-touch-rotate').length) {
