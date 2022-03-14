@@ -49,7 +49,7 @@ const ui = {
     ui.Animation.init();
     Layer.init();
     Splitting();
-    ui.Util.paint();
+    ui.Util.init();
     ui.Chart.init();
   },
   LoadInit: function () {
@@ -1168,6 +1168,26 @@ ui.Util = {
 
       // document.body.appendChild(canvas);
     };
+  },
+  iframe: function () {
+    if ($('iframe.load-height').length) {
+      const iframeHeight = function () {
+        $('iframe.load-height').each(function () {
+          const $this = $(this);
+          const $thisH = $this.contents().find('body').height();
+          $this.height($thisH);
+        });
+      };
+
+      iframeHeight();
+      setTimeout(function () {
+        iframeHeight();
+      }, 1000);
+    }
+  },
+  init: function () {
+    ui.Util.paint();
+    ui.Util.iframe();
   }
 };
 

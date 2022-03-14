@@ -48,4 +48,14 @@
   iframe {
     height: -vh(100, 14.8rem, true);
   }
+  &.pop-body {
+    padding: 0 !important;
+    border: 0.1rem solid #ebebeb;
+    &:before {
+      content: none;
+    }
+    iframe {
+      height: 100%;
+    }
+  }
 }
