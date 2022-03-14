@@ -1170,6 +1170,18 @@ ui.Util = {
     };
   },
   iframe: function () {
+    if ($('iframe').length) {
+      $('iframe').each(function () {
+        const $this = $(this);
+        let $src = $this.attr('src');
+        if ($src.indexOf('//') < 0) {
+          if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $src = '/kyobo-mydata-pub' + $src;
+          if (location.pathname.indexOf('dev-mydata.mykkl.com') > -1) $src = '/mydata/resources/static' + $src;
+          $this.attr('src', $src);
+        }
+      });
+    }
+
     if ($('iframe.load-height').length) {
       const iframeHeight = function () {
         $('iframe.load-height').each(function () {
