@@ -67,5 +67,23 @@
     "worker": "변상우",
     "complete": "2022-03-10",
     "etc": "등록팝업 & 유효성팝업"
+  },
+  {
+    "id": "MCF06-0100001C",
+    "url": "../../admin/html/MCF/",
+    "type": "page",
+    "depth2": "팝업관리",
+    "name": "팝업관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-10"
+  },
+  {
+    "id": "MCF06-0100002C",
+    "url": "../../admin/html/MCF/",
+    "type": "page",
+    "depth2": "팝업관리",
+    "name": "팝업등록",
+    "worker": "변상우",
+    "complete": "2022-03-10"
   }
 ]
