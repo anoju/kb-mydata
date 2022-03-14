@@ -30,6 +30,13 @@
   display: flex;
   position: relative;
   width: 100%;
+  &.line {
+    select,
+    .btn-select {
+      border-color: #ebebeb;
+      background-color: #fff;
+    }
+  }
   select {
     @include bg-etc(2.4rem auto, right 1.2rem center);
     // background-image: url(../images/icon/ico-select.png);
