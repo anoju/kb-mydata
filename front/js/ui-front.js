@@ -1174,7 +1174,7 @@ ui.Util = {
       $('iframe').each(function () {
         const $this = $(this);
         let $src = $this.attr('src');
-        if ($src.indexOf('//') < 0) {
+        if ($src.indexOf('//') < 0 && $src.indexOf('../') < 0) {
           if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $src = '/kyobo-mydata-pub' + $src;
           if (location.pathname.indexOf('dev-mydata.mykkl.com') > -1) $src = '/mydata/resources/static' + $src;
           $this.attr('src', $src);
@@ -1186,8 +1186,9 @@ ui.Util = {
       const iframeHeight = function () {
         $('iframe.load-height').each(function () {
           const $this = $(this);
-          const $thisH = $this.contents().find('body').height();
-          $this.height($thisH);
+          const $thisH = $(this).height();
+          const $bodyH = $this.contents().find('body').height();
+          if (!!$bodyH && $thisH < $bodyH) $this.height($bodyH);
         });
       };
 
@@ -5874,6 +5875,9 @@ const Layer = {
           Layer.bottomTouch(tar);
         }
 
+        //iframe
+        if ($('iframe.load-height').length) ui.Util.iframe();
+
         if (!ui.Mobile.any()) Layer.focusMove(tar);
         Layer.position(tar);
 
@@ -5882,14 +5886,11 @@ const Layer = {
           ui.Tab.resize();
         }, 10);
 
-        if (!!callback) {
-          setTimeout(function () {
-            callback();
-          }, 200);
-        }
+        setTimeout(function () {
+          if (!!callback) callback();
+          $popup.trigger('Layer.show');
+        }, 200);
         Layer.opening--;
-
-        $popup.trigger('Layer.show');
       }, $openDelay);
     } else {
       //팝업 없을때
