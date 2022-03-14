@@ -100,7 +100,6 @@
         const $optAgeVal = $optAge.val();
         const $pop = $('#popMatchOpt');
         $pop.find('input[name=age]').prop('checked', false).siblings('.lbl').removeClass('fc-primary');
-        console.log($optAgeVal);
         $pop
           .find('input[name=age][value=' + $optAgeVal + ']')
           .prop('checked', true)

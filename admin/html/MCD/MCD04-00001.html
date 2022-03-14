@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">관리자관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">메뉴관리</li>
+                  </ol>
+                </nav>
+                <h1>메뉴관리</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">등록그룹</h2>
+            </div>
+          </div>
+          <table id="table" class="table table-hover" data-click-to-select="true">
+            <thead>
+              <tr>
+                <th scope="col">권한그룹</th>
+                <th scope="col">그룹명</th>
+                <th scope="col">메뉴권한</th>
+                <th scope="col">최초등록일</th>
+                <th scope="col">최근수정일</th>
+                <th scope="col">등록/수정</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A</td>
+                <td>회원관리자</td>
+                <td>회원관리</td>
+                <td>2022.07.01</td>
+                <td>2022.07.01</td>
+                <td>
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
+                  <button type="button" class="btn btn-default">삭제</button>
+                </td>
+              </tr>
+              <tr>
+                <td>A</td>
+                <td>앱, 매치 메뉴관리자</td>
+                <td>앱관리, 매치관리</td>
+                <td>2022.07.01</td>
+                <td>2022.07.01</td>
+                <td>
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
+                  <button type="button" class="btn btn-default">삭제</button>
+                </td>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td>PFM 메뉴 관리자</td>
+                <td>-</td>
+                <td>2022.07.01</td>
+                <td>2022.07.01</td>
+                <td>
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
+                  <button type="button" class="btn btn-default">삭제</button>
+                </td>
+              </tr>
+              <tr>
+                <td>D</td>
+                <td>시스템, 공통 메뉴 관리자</td>
+                <td>시스템관리, 공통</td>
+                <td>2022.07.01</td>
+                <td>2022.07.01</td>
+                <td>
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
+                  <button type="button" class="btn btn-default">삭제</button>
+                </td>
+              </tr>
+              <tr>
+                <td>E</td>
+                <td>인스턴트게임 메뉴 관리자</td>
+                <td>인스턴트게임관리</td>
+                <td>2022.07.01</td>
+                <td>2022.07.01</td>
+                <td>
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
+                  <button type="button" class="btn btn-default">삭제</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //컨텐츠본문 -->
+          <!-- 그룹 메뉴권한설정 팝업 -->
+          <div class="modal fade" id="registAuthority" tabindex="-1" aria-labelledby="registAuthorityLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="registAuthorityLabel">그룹 메뉴권한설정</h5>
+                </div>
+                <div class="modal-body">
+                  <h2>A그룹 회원 관리자</h2>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        <h3>메뉴선택</h3>
+                        <button type="button" class="btn btn-secondary">권한 초기화</button>
+                        <div class="">
+                          <h5>메뉴명</h5>
+                          <div class="scroll_content h-75">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">관리자</button>
+                            <div class="collapse" id="collapseExample">
+                              <div class="card card-body"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                          <button type="button" class="btn btn-primary" onclick="$('#registAuthority').modal('hide')">등록</button>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <h3>선택한 메뉴</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //그룹 메뉴권한설정 팝업 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+
+      // 팝업
+      //접근권한없음 팝업
+      // Modal.alert('해당 메뉴에 접속권한이 없습니다.', function (e) {
+      //   console.log('접속권한 - 확인');
+      // });
+    </script>
+  </body>
+</html>
