@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">관리자관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">관리자 권한설정</li>
+                  </ol>
+                </nav>
+                <h1>관리자 권한설정</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">관리자 선택</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">수퍼관리자</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">유재석(12345678)</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">김종국(12345678)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">일반관리자</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" />
+                      <span class="custom-control-label">송지효(12345678)</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" />
+                      <span class="custom-control-label">전소민(12345678)</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" />
+                      <span class="custom-control-label">지석진(12345678)</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" />
+                      <span class="custom-control-label">양세찬(12345678)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-info mt-1">* 계정중지 상태인 관리자는 중지 해제 후 권한을 설정해 주세요.</p>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">관리자 메뉴권한 설정</h2>
+            </div>
+          </div>
+          <table class="table table-hover table-bordered">
+            <colgroup>
+              <col style="width: 30px" />
+              <col style="width: 80px" />
+              <col style="width: 30%" />
+              <col style="width: auto" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">권한그룹</th>
+                <th scope="col">그룹명</th>
+                <th scope="col">권한메뉴</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <label class="custom-control custom-checkbox only mb-0">
+                    <input type="checkbox" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>A</td>
+                <td>수퍼관리자</td>
+                <td class="text-left">
+                  <ul class="mb-0">
+                    <li>관리자: 관리자등록, 관리자이력관리, 그룹관리, 메뉴관리, 관리자그룹관리</li>
+                    <li>회원관리: 회원관리</li>
+                    <li>앱관리: 알림템플릿관리, 알림발송관리, 알림발송내역관리, 투자채널관리, 공지사항, FAQ, 문의하기, 팝업관리</li>
+                    <li>PFM관리: PFM관리</li>
+                    <li>시스템관리: 코드관리</li>
+                    <li>매치관리: 매치관리</li>
+                    <li>인스턴트게임관리: 인스턴트게임관리</li>
+                    <li>공통: 메일템플릿관리</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-checkbox only mb-0">
+                    <input type="checkbox" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>B</td>
+                <td>회원메뉴 관리자</td>
+                <td class="text-left">
+                  <ul class="mb-0">
+                    <li>회원관리: 회원관리</li>
+                  </ul>
+                </td>
+                <tr>
+                  <td>
+                    <label class="custom-control custom-checkbox only mb-0">
+                      <input type="checkbox" class="custom-control-input" />
+                      <span class="custom-control-label"></span>
+                    </label>
+                  </td>
+                  <td>C</td>
+                  <td>앱관리 관리자</td>
+                  <td class="text-left">
+                    <ul class="mb-0">
+                      <li>앱관리: 알림템플릿관리, 알림발송관리, 알림발송내역관리, 투자채널관리, 공지사항, FAQ, 문의하기, 팝업관리</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="custom-control custom-checkbox only mb-0">
+                      <input type="checkbox" class="custom-control-input" />
+                      <span class="custom-control-label"></span>
+                    </label>
+                  </td>
+                  <td>D</td>
+                  <td>공통</td>
+                  <td class="text-left">
+                    <ul class="mb-0">
+                      <li>공통: 메일템플릿관리</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btn-wrap kb-page-btn text-center mt-5">
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 설정</button>
+          </div>
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script></script>
+  </body>
+</html>
