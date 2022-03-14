@@ -1,0 +1,50 @@
+[
+  {
+    "depth1": "관리자"
+  },
+  {
+    "id": "MCD01-00001",
+    "url": "../../admin/html/MCD/",
+    "type": "page",
+    "depth2": "관리자등록",
+    "worker": "변상우",
+    "complete": "2022-03-14",
+    "etc": "임시 화면 ID"
+  },
+  {
+    "id": "MCD01-00002",
+    "url": "../../admin/html/MCD/",
+    "type": "page",
+    "depth2": "관리자상세(등록)",
+    "worker": "변상우",
+    "complete": "2022-03-14",
+    "etc": "임시 화면 ID"
+  },
+  {
+    "id": "MCD02-00001",
+    "url": "../../admin/html/MCD/",
+    "type": "page",
+    "depth2": "관리자이력관리",
+    "worker": "변상우",
+    "complete": "2022-03-10",
+    "etc": "임시 화면 ID"
+  },
+  {
+    "id": "MCD03-00001",
+    "url": "../../admin/html/MCD/",
+    "type": "page",
+    "depth2": "관리자그룹관리",
+    "worker": "변상우",
+    "complete": "2022-03-14",
+    "etc": "임시 화면 ID"
+  },
+  {
+    "id": "MCD04-00001",
+    "url": "../../admin/html/MCD/",
+    "type": "page",
+    "depth2": "관리자메뉴관리",
+    "worker": "변상우",
+    "complete": "2022-03-14",
+    "etc": "임시 화면 ID"
+  }
+]

@@ -1533,8 +1533,99 @@ html:not(.mobile) {
 
 //bsw
 .modal-selectMenu {
+  @include media($mobile-size) {
+    .modal-dialog {
+    }
+  }
+  .col + .col {
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 0.01rem;
+      height: 100%;
+      left: 0;
+      border-left: 0.063em solid #dee2e6;
+    }
+  }
+  .menu_list {
+    h5 {
+      padding: 0.75rem 3rem;
+      background: #495057;
+      text-align: center;
+      margin-bottom: 0;
+      color: #fff;
+    }
+  }
   .scroll_content {
+    white-space: inherit;
     height: 20rem;
+    p {
+      margin: 0;
+    }
+    .list-group {
+      dt {
+        p:not(.collapsed) {
+          //color: #fff;
+          background: #ccc;
+          &::before,
+          &::after {
+            background: #fff;
+          }
+        }
+      }
+      dd {
+        position: relative;
+        top: -0.02rem;
+      }
+      & + & {
+        margin-top: 1rem;
+      }
+    }
+    .list-group-item {
+      padding: 0;
+      .list-group-item {
+        border: 0;
+      }
+      p {
+        position: relative;
+        padding: 0.75rem 3rem;
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          width: 1rem;
+          height: 0.1rem;
+          right: 1rem;
+          top: 50%;
+          background: #222;
+        }
+        &::before {
+          transform: rotate(90deg);
+        }
+        &:not(.collapsed):before {
+          content: none;
+        }
+      }
+      .custom-control {
+        margin: 0;
+        left: 1rem;
+        position: absolute;
+        top: 0.75rem;
+      }
+    }
+    .depth_2 {
+      .list-group-item {
+        border-top: 0.063em solid #ddd;
+      }
+      p {
+        &::before,
+        &::after {
+          content: none;
+        }
+      }
+    }
   }
 }
 

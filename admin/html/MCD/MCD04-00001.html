@@ -80,8 +80,8 @@
                 <td>2022.07.01</td>
                 <td>2022.07.01</td>
                 <td>
-                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
-                  <button type="button" class="btn btn-default">삭제</button>
+                  <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
+                  <button type="button" class="btn btn-sm btn-default">삭제</button>
                 </td>
               </tr>
               <tr>
@@ -91,8 +91,8 @@
                 <td>2022.07.01</td>
                 <td>2022.07.01</td>
                 <td>
-                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
-                  <button type="button" class="btn btn-default">삭제</button>
+                  <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
+                  <button type="button" class="btn btn-sm btn-default">삭제</button>
                 </td>
               </tr>
               <tr>
@@ -102,8 +102,8 @@
                 <td>2022.07.01</td>
                 <td>2022.07.01</td>
                 <td>
-                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
-                  <button type="button" class="btn btn-default">삭제</button>
+                  <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
+                  <button type="button" class="btn btn-sm btn-default">삭제</button>
                 </td>
               </tr>
               <tr>
@@ -113,8 +113,8 @@
                 <td>2022.07.01</td>
                 <td>2022.07.01</td>
                 <td>
-                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
-                  <button type="button" class="btn btn-default">삭제</button>
+                  <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
+                  <button type="button" class="btn btn-sm btn-default">삭제</button>
                 </td>
               </tr>
               <tr>
@@ -124,8 +124,8 @@
                 <td>2022.07.01</td>
                 <td>2022.07.01</td>
                 <td>
-                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
-                  <button type="button" class="btn btn-default">삭제</button>
+                  <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
+                  <button type="button" class="btn btn-sm btn-default">삭제</button>
                 </td>
               </tr>
             </tbody>
@@ -133,7 +133,7 @@
           <!-- //컨텐츠본문 -->
           <!-- 그룹 메뉴권한설정 팝업 -->
           <div class="modal modal-selectMenu fade" id="registAuthority" tabindex="-1" aria-labelledby="registAuthorityLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="registAuthorityLabel">그룹 메뉴권한설정</h5>
@@ -143,49 +143,100 @@
                   <div class="container">
                     <div class="row">
                       <div class="col">
-                        <h3>메뉴선택</h3>
-                        <button type="button" class="btn btn-secondary">권한 초기화</button>
-                        <div class="">
+                        <div class="clearfix">
+                          <h3 class="float-left">메뉴선택</h3>
+                          <button type="button" class="btn btn-sm btn-secondary float-right">권한 초기화</button>
+                        </div>
+
+                        <div class="menu_list mt-3">
                           <h5>메뉴명</h5>
                           <div class="scroll_content">
-                            <div class="list-group">
-                              <button type="button" class="list-group-item list-group-item-action" aria-current="true">The current button</button>
-                              <button type="button" class="list-group-item list-group-item-action">A second item</button>
-                              <button type="button" class="list-group-item list-group-item-action">A third button item</button>
-                              <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
-                              <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
-                            </div>
-                            <dl>
-                              <dt>
-                                <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                            <dl class="list-group">
+                              <dt class="list-group-item">
+                                <label class="custom-control custom-checkbox">
                                   <input type="checkbox" name="chk5" class="custom-control-input" />
                                   <span class="custom-control-label"></span>
                                 </label>
-                                <p data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">관리자</p>
+                                <p class="collapsed" data-toggle="collapse" data-target="#ex1-Depth1" aria-expanded="false" aria-controls="ex1-Depth1">관리자</p>
                               </dt>
-                              <dd class="collapse" id="collapseExample">
-                                <div>
-                                  <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                              <dd>
+                                <div class="list-group-item collapse" id="ex1-Depth1">
+                                  <label class="custom-control custom-checkbox">
                                     <input type="checkbox" name="chk5" class="custom-control-input" />
                                     <span class="custom-control-label"></span>
                                   </label>
-                                  <p>관리자관리</p>
+                                  <p class="collapsed" data-toggle="collapse" data-target="#ex1-Depth2" aria-expanded="false" aria-controls="ex1-Depth2">관리자 관리</p>
+                                  
+                                  <div class="collapse depth_2" id="ex1-Depth2">
+                                    <div class="list-group-item">
+                                      <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="chk5" class="custom-control-input" />
+                                        <span class="custom-control-label"></span>
+                                      </label>
+                                      <p>Admin 관리자 관리</p>
+                                    </div>
+                                    <div class="list-group-item">
+                                      <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="chk5" class="custom-control-input" />
+                                        <span class="custom-control-label"></span>
+                                      </label>
+                                      <p>권한 설정</p>
+                                    </div>
+                                  </div>
                                 </div>
+                              </dd>
+                            </dl>
 
-                                <div>
-                                  <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                            <dl class="list-group">
+                              <dt class="list-group-item">
+                                <label class="custom-control custom-checkbox">
+                                  <input type="checkbox" name="chk5" class="custom-control-input" />
+                                  <span class="custom-control-label"></span>
+                                </label>
+                                <p class="collapsed" data-toggle="collapse" data-target="#ex2-Depth1" aria-expanded="false" aria-controls="ex2-Depth1">회원관리</p>
+                              </dt>
+                              <dd>
+                                <div class="list-group-item collapse" id="ex2-Depth1">
+                                  <label class="custom-control custom-checkbox">
                                     <input type="checkbox" name="chk5" class="custom-control-input" />
                                     <span class="custom-control-label"></span>
                                   </label>
-                                  <p>Admin 관리자 관리</p>
+                                  <p data-toggle="collapse" data-target="#ex2-Depth2" aria-expanded="false" aria-controls="ex2-Depth2">회원 관리</p>
+                                  <div class="collapse depth_2" id="ex2-Depth2">
+                                    <div class="list-group-item">
+                                      <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="chk5" class="custom-control-input" />
+                                        <span class="custom-control-label"></span>
+                                      </label>
+                                      <p>회원 관리</p>
+                                    </div>
                                 </div>
+                              </dd>
+                            </dl>
 
-                                <div>
-                                  <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                            <dl class="list-group">
+                              <dt class="list-group-item">
+                                <label class="custom-control custom-checkbox">
+                                  <input type="checkbox" name="chk5" class="custom-control-input" />
+                                  <span class="custom-control-label"></span>
+                                </label>
+                                <p class="collapsed" data-toggle="collapse" data-target="#ex3-Depth1" aria-expanded="false" aria-controls="ex3-Depth1">앱관리</p>
+                              </dt>
+                              <dd>
+                                <div class="list-group-item collapse" id="ex3-Depth1">
+                                  <label class="custom-control custom-checkbox">
                                     <input type="checkbox" name="chk5" class="custom-control-input" />
                                     <span class="custom-control-label"></span>
                                   </label>
-                                  <p>권한설정</p>
+                                  <p data-toggle="collapse" data-target="#ex3-Depth2" aria-expanded="false" aria-controls="ex3-Depth2">앱관리</p>
+                                  <div class="collapse depth_2" id="ex3-Depth2">
+                                    <div class="list-group-item">
+                                      <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="chk5" class="custom-control-input" />
+                                        <span class="custom-control-label"></span>
+                                      </label>
+                                      <p>앱관리</p>
+                                    </div>
                                 </div>
                               </dd>
                             </dl>
@@ -198,6 +249,13 @@
                       </div>
                       <div class="col">
                         <h3>선택한 메뉴</h3>
+                        <div>
+                          <ul>
+                            <li>관리자 > 관리자관리 > 관리자등록</li>
+                            <li>관리자 > 관리자관리 > 관리자이력관리</li>
+                            <li>회원관리 > 회원관리 > 회원관리</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
