@@ -46,13 +46,10 @@
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">홈</a></li>
                     <li class="breadcrumb-item"><a href="#">관리자관리</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">그룹관리</li>
+                    <li class="breadcrumb-item active" aria-current="page">메뉴관리</li>
                   </ol>
                 </nav>
-                <h1>그룹관리</h1>
-              </div>
-              <div class="kb-page-btn">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registGroup"><i class="bi bi-plus"></i> 그룹신규</button>
+                <h1>메뉴관리</h1>
               </div>
             </div>
           </div>
@@ -69,121 +66,111 @@
               <tr>
                 <th scope="col">권한그룹</th>
                 <th scope="col">그룹명</th>
-                <th scope="col">등록자</th>
+                <th scope="col">메뉴권한</th>
                 <th scope="col">최초등록일</th>
                 <th scope="col">최근수정일</th>
-                <th scope="col">수정</th>
+                <th scope="col">등록/수정</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>A</td>
-                <td>회원 관리 관리자</td>
-                <td>홍길동</td>
+                <td>회원관리자</td>
+                <td>회원관리</td>
                 <td>2022.07.01</td>
                 <td>2022.07.01</td>
                 <td>
-                  <button type="button" class="btn btn-secondary">수정</button>
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
                   <button type="button" class="btn btn-default">삭제</button>
                 </td>
               </tr>
               <tr>
-                <td>B</td>
-                <td>앱, 매치 메뉴 관리자</td>
-                <td>홍길동</td>
+                <td>A</td>
+                <td>앱, 매치 메뉴관리자</td>
+                <td>앱관리, 매치관리</td>
                 <td>2022.07.01</td>
                 <td>2022.07.01</td>
                 <td>
-                  <button type="button" class="btn btn-secondary">수정</button>
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
                   <button type="button" class="btn btn-default">삭제</button>
                 </td>
               </tr>
               <tr>
                 <td>C</td>
                 <td>PFM 메뉴 관리자</td>
-                <td>홍길동</td>
+                <td>-</td>
                 <td>2022.07.01</td>
                 <td>2022.07.01</td>
                 <td>
-                  <button type="button" class="btn btn-secondary">수정</button>
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
                   <button type="button" class="btn btn-default">삭제</button>
                 </td>
               </tr>
               <tr>
                 <td>D</td>
                 <td>시스템, 공통 메뉴 관리자</td>
-                <td>홍길동</td>
+                <td>시스템관리, 공통</td>
                 <td>2022.07.01</td>
                 <td>2022.07.01</td>
                 <td>
-                  <button type="button" class="btn btn-secondary">수정</button>
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
                   <button type="button" class="btn btn-default">삭제</button>
                 </td>
               </tr>
               <tr>
                 <td>E</td>
                 <td>인스턴트게임 메뉴 관리자</td>
-                <td>홍길동</td>
+                <td>인스턴트게임관리</td>
                 <td>2022.07.01</td>
                 <td>2022.07.01</td>
                 <td>
-                  <button type="button" class="btn btn-secondary">수정</button>
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registAuthority">관리</button>
                   <button type="button" class="btn btn-default">삭제</button>
                 </td>
               </tr>
             </tbody>
           </table>
           <!-- //컨텐츠본문 -->
-          <!-- 그룹등록/수정 팝업 -->
-          <div class="modal fade" id="registGroup" tabindex="-1" aria-labelledby="registGroupLabel" aria-hidden="true">
-            <div class="modal-dialog modal-md modal-dialog-centered">
+          <!-- 그룹 메뉴권한설정 팝업 -->
+          <div class="modal fade" id="registAuthority" tabindex="-1" aria-labelledby="registAuthorityLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="registGroupLabel">신규 F 그룹의 분류 선택 및 그룹명을 입력해 주세요.</h5>
+                  <h5 class="modal-title" id="registAuthorityLabel">그룹 메뉴권한설정</h5>
                 </div>
                 <div class="modal-body">
-                  <div class="form-box">
-                    <div class="form-box-row">
-                      <div class="form-box-item">
-                        <div class="form-box-label">분류선택</div>
-                        <div class="form-box-cont">
-                          <div class="custom-control-wrap">
-                            <label class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" name="rdo1" class="custom-control-input" />
-                              <span class="custom-control-label">수퍼관리자</span>
-                            </label>
-                            <label class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" name="rdo1" class="custom-control-input" />
-                              <span class="custom-control-label">일반관리자</span>
-                            </label>
+                  <h2>A그룹 회원 관리자</h2>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        <h3>메뉴선택</h3>
+                        <button type="button" class="btn btn-secondary">권한 초기화</button>
+                        <div class="">
+                          <h5>메뉴명</h5>
+                          <div class="scroll_content h-75">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">관리자</button>
+                            <div class="collapse" id="collapseExample">
+                              <div class="card card-body">
+                                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="form-box-row">
-                      <div class="form-box-item">
-                        <div class="form-box-label">그룹명</div>
-                        <div class="form-box-cont">
-                          <input type="text" class="form-control" />
-                          <div class="mt-1 text-info">※ 한글/영문/숫자/특수문자를 포함한 10글자 이내</div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                          <button type="button" class="btn btn-primary" onclick="$('#registAuthority').modal('hide')">등록</button>
                         </div>
                       </div>
+                      <div class="col">
+                        <h3>선택한 메뉴</h3>
+                      </div>
                     </div>
                   </div>
-                  <div class="mt-4 text-center">
-                    <!-- <span class="fc-red">관리자 분류를 선택해 주세요.</span>
-                    <span class="fc-red">사용하실 그룹명을 입력해 주세요.</span> -->
-                    <span class="fc-red">동일명의 그룹이 있습니다. 다름이름을 사용해 주세요.</span>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-                  <button type="button" class="btn btn-primary" onclick="$('#registGroup').modal('hide')">등록</button>
                 </div>
               </div>
             </div>
           </div>
-          <!-- //그룹등록/수정 팝업 -->
+          <!-- //그룹 메뉴권한설정 팝업 -->
         </main>
         <!-- //컨텐츠 -->
       </div>
