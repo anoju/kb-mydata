@@ -15,7 +15,7 @@
   </head>
   <body>
     <!-- 팝업 -->
-    <div id="mainEvtPop" class="popup modal pop-event" role="dialog" aria-hidden="true">
+    <div id="mainEvtPop" class="popup modal pop-event show" role="dialog" aria-hidden="true">
       <div class="pop-bg-close not-remove ui-pop-today-close" arai-hidden="true"></div>
       <article class="pop-wrap">
         <div class="pop-body">
@@ -39,21 +39,5 @@
       </article>
     </div>
     <!-- //팝업 -->
-    <script>
-      Layer.open('#mainEvtPop');
-
-      // .ui-pop-today-close 클릭하면 닫히게
-      $('.ui-pop-today-close').click(function () {
-        const $this = $(this);
-
-        // '오늘그만보기' 체크
-        if ($this.hasClass('btn-today')) {
-          $this.addClass('checked');
-        }
-
-        // 닫기
-        Layer.close('#mainEvtPop');
-      });
-    </script>
   </body>
 </html>
