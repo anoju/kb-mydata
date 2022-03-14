@@ -2445,10 +2445,16 @@ ui.Form = {
     $(document).on('focusin', $inpEls, function (e) {
       const $this = $(this);
       // if (!$this.prop('readonly') && !$this.prop('disabled')) $('html').addClass('inp-focus');
+      if ($this.closest('.form-item').length) $this.closest('.form-item').addClass('focus');
       if ($this.is('input') && $this.closest('.input').length) $this.closest('.input').addClass('focus');
       if ($this.is('select') && $this.closest('.select').length) $this.closest('.select').addClass('focus');
       if ($this.hasClass('btn-select') && $this.closest('.select').length) $this.closest('.select').addClass('focus');
       if ($this.is('textarea') && $this.closest('.textarea').length) $this.closest('.textarea').addClass('focus');
+
+      //bottom-fixed
+      if ($this.closest('.bottom-fixed').length) {
+        $('html').addClass('overflow-hidden');
+      }
     });
     $(document).on('focusout', $inpEls, function (e) {
       const $this = $(this);
@@ -2458,6 +2464,11 @@ ui.Form = {
       if ($this.is('select') && $this.closest('.select').length) $this.closest('.select').removeClass('focus');
       if ($this.hasClass('btn-select') && $this.closest('.select').length) $this.closest('.select').removeClass('focus');
       if ($this.is('textarea') && $this.closest('.textarea').length) $this.closest('.textarea').removeClass('focus');
+
+      //bottom-fixed
+      if ($this.closest('.bottom-fixed').length) {
+        $('html').removeClass('overflow-hidden');
+      }
     });
   },
   select: function () {
