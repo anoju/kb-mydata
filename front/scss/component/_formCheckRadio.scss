@@ -1,12 +1,12 @@
 :root {
   --chk-size: 2.4rem;
   --rdo-size: 1.2rem;
-  --switch-width: 5.1rem;
-  --switch-height: 3.1rem;
-  --switch-padding: 0.2rem;
-  --switch2-width: 3.5rem;
-  --switch2-height: 2rem;
-  --switch2-padding: 0.3rem;
+  --switch-width: 3.5rem;
+  --switch-height: 2rem;
+  --switch-padding: 0.3rem;
+  --switch2-width: 5.1rem;
+  --switch2-height: 3.1rem;
+  --switch2-padding: 0.2rem;
 }
 
 //checkbox, radio
@@ -221,87 +221,13 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
     }
   }
 
-  // 아이폰 타입
+  // 안드로이드 타입
   &.switch {
     min-width: var(--switch-width);
     min-height: var(--switch-height);
     > input {
       width: var(--switch-width);
       height: var(--switch-height);
-      // top:0;
-      &:checked {
-        + i {
-          &:after {
-            left: calc(var(--switch-width) - var(--switch-height) + var(--switch-padding));
-            animation: none;
-          }
-        }
-        ~ .lbl {
-          .off {
-            display: none;
-          }
-        }
-      }
-      &:not(:checked) {
-        ~ .lbl {
-          .on {
-            display: none;
-          }
-        }
-      }
-    }
-    > i {
-      width: var(--switch-width);
-      height: var(--switch-height);
-      border: 0 none;
-      border-radius: calc(var(--switch-height) / 2);
-      background-color: #efeff4;
-      transition: background 0.3s ease;
-      overflow: hidden;
-      &:after {
-        width: calc(var(--switch-height) - (var(--switch-padding) * 2));
-        height: calc(var(--switch-height) - (var(--switch-padding) * 2));
-        margin: 0;
-        border: 0 none;
-        left: var(--switch-padding);
-        top: var(--switch-padding);
-        border-radius: 50%;
-        background: #fff;
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
-        transition: left 0.3s ease;
-        transform: none;
-      }
-      + .lbl {
-        margin-left: var(--switch-width);
-      }
-    }
-    .lbl {
-      padding-top: calc(var(--switch-padding) * 2);
-      padding-bottom: calc(var(--switch-padding) * 2);
-      line-height: calc(var(--switch-height) - (var(--switch-padding) * 4));
-      &:first-child {
-        margin-right: var(--switch-width);
-      }
-    }
-    &.small {
-      --switch-width: 2.8rem;
-      --switch-height: 1.6rem;
-      .lbl {
-        padding-top: 0;
-        padding-bottom: 0;
-        line-height: var(--switch-height);
-        font-size: 1.4rem;
-      }
-    }
-  }
-
-  // 안드로이드 타입
-  &.switch2 {
-    min-width: var(--switch2-width);
-    min-height: var(--switch2-height);
-    > input {
-      width: var(--switch2-width);
-      height: var(--switch2-height);
       &:checked {
         + i {
           background: none;
@@ -330,23 +256,23 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
       }
     }
     > i {
-      min-width: var(--switch2-width);
-      height: var(--switch2-height);
-      padding: var(--switch2-padding);
+      min-width: var(--switch-width);
+      height: var(--switch-height);
+      padding: var(--switch-padding);
       border: 0 none;
       border-radius: 0;
       &:before {
         content: '';
         display: block;
-        height: calc(var(--switch2-height) - (var(--switch2-padding) * 2));
-        border-radius: calc((var(--switch2-height) - (var(--switch2-padding) * 2)) / 2);
+        height: calc(var(--switch-height) - (var(--switch-padding) * 2));
+        border-radius: calc((var(--switch-height) - (var(--switch-padding) * 2)) / 2);
         background: #b0b0b0;
         opacity: 1;
         transition: 0.3s ease;
       }
       &:after {
-        width: var(--switch2-height);
-        height: var(--switch2-height);
+        width: var(--switch-height);
+        height: var(--switch-height);
         margin: 0;
         border: 0 none;
         left: 0;
@@ -358,15 +284,89 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
         transform: none;
       }
       + .lbl {
-        margin-left: var(--switch2-width);
+        margin-left: var(--switch-width);
       }
     }
     .lbl {
       padding-top: 0;
       padding-bottom: 0;
-      line-height: var(--switch2-height);
+      line-height: var(--switch-height);
+      &:first-child {
+        margin-right: var(--switch-width);
+      }
+    }
+  }
+
+  // 아이폰 타입
+  &.switch2 {
+    min-width: var(--switch2-width);
+    min-height: var(--switch2-height);
+    > input {
+      width: var(--switch2-width);
+      height: var(--switch2-height);
+      // top:0;
+      &:checked {
+        + i {
+          &:after {
+            left: calc(var(--switch2-width) - var(--switch2-height) + var(--switch2-padding));
+            animation: none;
+          }
+        }
+        ~ .lbl {
+          .off {
+            display: none;
+          }
+        }
+      }
+      &:not(:checked) {
+        ~ .lbl {
+          .on {
+            display: none;
+          }
+        }
+      }
+    }
+    > i {
+      width: var(--switch2-width);
+      height: var(--switch2-height);
+      border: 0 none;
+      border-radius: calc(var(--switch2-height) / 2);
+      background-color: #efeff4;
+      transition: background 0.3s ease;
+      overflow: hidden;
+      &:after {
+        width: calc(var(--switch2-height) - (var(--switch2-padding) * 2));
+        height: calc(var(--switch2-height) - (var(--switch2-padding) * 2));
+        margin: 0;
+        border: 0 none;
+        left: var(--switch2-padding);
+        top: var(--switch2-padding);
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+        transition: left 0.3s ease;
+        transform: none;
+      }
+      + .lbl {
+        margin-left: var(--switch2-width);
+      }
+    }
+    .lbl {
+      padding-top: calc(var(--switch2-padding) * 2);
+      padding-bottom: calc(var(--switch2-padding) * 2);
+      line-height: calc(var(--switch2-height) - (var(--switch2-padding) * 4));
       &:first-child {
         margin-right: var(--switch2-width);
+      }
+    }
+    &.small {
+      --switch2-width: 2.8rem;
+      --switch2-height: 1.6rem;
+      .lbl {
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: var(--switch2-height);
+        font-size: 1.4rem;
       }
     }
   }

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('지출 상세');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button type="button" class="head-back button" role="button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <dl>
+            <dt class="fc-818892" id="sub">스타벅스 여의도점</dt>
+            <dd class="fc-212121"><strong class="fz-24">31,081</strong><strong class="fz-20">원</strong></dd>
+          </dl>
+
+          <hr class="hr-line mt-32" aria-hidden="true" />
+
+          <ul class="txt-dl-list mt-24">
+            <li>
+              <div class="dt">카테고리 설정</div>
+              <div class="dd">
+                <button class="btn-txt fc-979797">미지정<i class="i-ico-arr-right-24 ml-8" aria-hidden="true"></i></button>
+              </div>
+            </li>
+            <li>
+              <div class="dt">메모</div>
+              <div class="dd">
+                <button class="btn-txt">엄마 건강하세요. 제...<i class="i-ico-arr-right-24 ml-8" aria-hidden="true"></i></button>
+              </div>
+            </li>
+          </ul>
+
+          <!-- 신용카드, 체크카드 case -->
+          <ul id="cardType" class="txt-dl-list">
+            <li>
+              <div class="dt">결제일시</div>
+              <div class="dd">2022.12.18 09:13:24</div>
+            </li>
+            <li>
+              <div class="dt">결제수단</div>
+              <div class="dd">
+                <a href="#" class="btn-txt underline">우리We’ll Rich 주거래 카드</a>
+              </div>
+            </li>
+            <li>
+              <div class="dt">사용처</div>
+              <div class="dd">스타벅스 여의도점</div>
+            </li>
+            <li>
+              <div class="dt">결제방법</div>
+              <div class="dd">일시불</div>
+            </li>
+            <li>
+              <div class="dt">결제상태</div>
+              <div class="dd">승인</div>
+            </li>
+          </ul>
+          <!-- //신용카드, 체크카드 case -->
+
+          <!-- 페이 case -->
+          <ul id="payType" class="txt-dl-list" style="display: none">
+            <li>
+              <div class="dt">결제일시</div>
+              <div class="dd">2022.12.18 09:13:24</div>
+            </li>
+            <li>
+              <div class="dt">결제수단</div>
+              <div class="dd">
+                <a href="#" class="btn-txt underline">카카오페이머니</a>
+              </div>
+            </li>
+            <li>
+              <div class="dt">사용처</div>
+              <div class="dd">스타벅스 여의도점</div>
+            </li>
+            <li>
+              <div class="dt">결제상태</div>
+              <div class="dd">결제</div>
+            </li>
+          </ul>
+          <!-- //페이 case -->
+
+          <!-- 선불카드 case -->
+          <ul id="cardType2" class="txt-dl-list" style="display: none">
+            <li>
+              <div class="dt">결제일시</div>
+              <div class="dd">2022.12.18 09:13:24</div>
+            </li>
+            <li>
+              <div class="dt">결제수단</div>
+              <div class="dd">
+                <a href="#" class="btn-txt underline">카카오페이카드</a>
+              </div>
+            </li>
+            <li>
+              <div class="dt">사용처</div>
+              <div class="dd">스타벅스 여의도점</div>
+            </li>
+            <li>
+              <div class="dt">결제상태</div>
+              <div class="dd">승인</div>
+            </li>
+          </ul>
+          <!-- //선불카드 case -->
+
+          <!-- 페이송금/본인거래 case -->
+          <ul id="payType2" class="txt-dl-list" style="display: none">
+            <li>
+              <div class="dt">입금일시</div>
+              <div class="dd">2022.12.18 09:13:24</div>
+            </li>
+            <li>
+              <div class="dt">결제수단</div>
+              <div class="dd">
+                <a href="#" class="btn-txt underline">카카오페이머니</a>
+              </div>
+            </li>
+            <li>
+              <div class="dt">사용처</div>
+              <div class="dd">박교보(하나된평창통장)</div>
+            </li>
+            <li>
+              <div class="dt">거래상태</div>
+              <div class="dd">송금</div>
+            </li>
+          </ul>
+          <!-- //페이송금/본인거래 case -->
+
+          <!-- 페이송금/타인거래 case -->
+          <ul id="payType3" class="txt-dl-list" style="display: none">
+            <li>
+              <div class="dt">입금일시</div>
+              <div class="dd">2022.12.18 09:13:24</div>
+            </li>
+            <li>
+              <div class="dt">결제수단</div>
+              <div class="dd">
+                <a href="#" class="btn-txt underline">카카오페이머니</a>
+              </div>
+            </li>
+            <li>
+              <div class="dt">사용처</div>
+              <div class="dd">-</div>
+            </li>
+            <li>
+              <div class="dt">거래상태</div>
+              <div class="dd">송금</div>
+            </li>
+          </ul>
+          <!-- //페이송금/타인거래 case -->
+
+          <!-- 계좌 case -->
+          <ul id="bankType" class="txt-dl-list" style="display: none">
+            <li>
+              <div class="dt">출금일시</div>
+              <div class="dd">2022.12.18 09:13:24</div>
+            </li>
+            <li>
+              <div class="dt">출금계좌</div>
+              <div class="dd">
+                <a href="#" class="btn-txt underline">우리은행매력적인계좌</a>
+              </div>
+            </li>
+            <li>
+              <div class="dt">사용처</div>
+              <div class="dd">ATM출금</div>
+            </li>
+            <li>
+              <div class="dt">거래상태</div>
+              <div class="dd">출금</div>
+            </li>
+          </ul>
+          <!-- //계좌 case -->
+
+          <!-- 계좌 case -->
+          <ul id="noneType" class="txt-dl-list" style="display: none">
+            <li>
+              <div class="dt">결제일시</div>
+              <div class="dd">2022.12.18 09:13:24</div>
+            </li>
+            <li>
+              <div class="dt">결제수단</div>
+              <div class="dd">
+                <a href="#" class="btn-txt underline">우리We’ll Rich주거래 카드</a>
+              </div>
+            </li>
+            <li>
+              <div class="dt">사용처</div>
+              <div class="dd">-</div>
+            </li>
+            <li>
+              <div class="dt">결제방법</div>
+              <div class="dd">일시불</div>
+            </li>
+            <li>
+              <div class="dt">결제상태</div>
+              <div class="dd">승인</div>
+            </li>
+          </ul>
+          <!-- //계좌 case -->
+
+          <hr class="hr-line mt-24" aria-hidden="true" />
+
+          <label class="flex not-full align-center h-48 mt-4">
+            <div>
+              <strong class="fw-500">지출에서 제외</strong>
+            </div>
+            <div class="ml-auto">
+              <span class="checkbox switch"><input id="checkbox" type="checkbox" title="지출에서 제외여부 선택" /><i aria-hidden="true"></i></span>
+            </div>
+          </label>
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+
+      <!-- 팝업 -->
+      <!-- //팝업 -->
+    </article>
+    <script>
+      //임시 타입별 케이스 확인용
+      if (getUnlParams().type) {
+        $('#cardType').hide();
+        if (getUnlParams().type === 'pay') $('#payType').show();
+        if (getUnlParams().type === 'card2') $('#cardType2').show();
+        if (getUnlParams().type === 'pay2') {
+          $('#sub').text('박교보(하나된평창통장)');
+          $('#payType2').show();
+        }
+        if (getUnlParams().type === 'pay3') {
+          $('#sub').text('-');
+          $('#payType3').show();
+        }
+        if (getUnlParams().type === 'bank') {
+          $('#sub').text('적용정보표시');
+          $('#bankType').show();
+        }
+        if (getUnlParams().type === 'none') {
+          $('#sub').text('-');
+          $('#noneType').show();
+          $('#checkbox').prop('checked', true);
+        }
+      }
+    </script>
+  </body>
+</html>

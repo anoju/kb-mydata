@@ -1373,6 +1373,7 @@
     width: 2.4rem;
     height: 2.4rem;
     margin: 0 auto;
+    pointer-events: none;
     .path {
       stroke-dasharray: var(--offset);
       stroke-dashoffset: 0;

@@ -2692,12 +2692,13 @@ ui.Form = {
         }
       }
     };
-    $('.input.show-del input, .textarea.show-del textarea').each(function () {
+    $('.input input, .textarea.del textarea').each(function () {
       insertDel(this);
     });
     $(document).on('keyup focusin', '.input input, .textarea.del textarea', function () {
       insertDel(this);
     });
+    /*
     $(document).on('focusout', '.input:not(.show-del) input, .textarea.del:not(.show-del) textarea', function () {
       const $this = $(this);
       if ($this.siblings('.btn-inp-del').length) {
@@ -2708,6 +2709,7 @@ ui.Form = {
         $this.data('removeDelBtn', removeDelBtn);
       }
     });
+    */
     $(document).on('click', '.btn-inp-del', function () {
       const $inp = $(this).prev();
       $inp.val('').change().focus().keyup();
