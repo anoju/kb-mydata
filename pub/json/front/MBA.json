@@ -125,14 +125,14 @@
   },
   {
     "id":"MBA10-0211p01C",
-    "url":"../../front/html/MBA/MBA05-0200p01C.html",
+    "url":"../../front/html/MBA/",
     "type":"pop",
     "depth2": "그라운드",
     "depth3": "전체 랭킹",
     "name": "전체 랭킹 보기",
     "worker": "장영석",
-    "complete": "2022-03-10",
-    "etc":"MBA05-0200p01C과 동일"
+    "complete": "2022-03-15",
+    "etc":""
   },
   {
     "id":"MBA10-0101001C",
