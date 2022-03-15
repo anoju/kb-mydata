@@ -20,14 +20,14 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="section">
-          <button type="button" class="button line" onclick="Layer.open('#popCategory')">팝업열기</button>
+          <button type="button" class="button line" onclick="Layer.open('#popMemo')">팝업열기</button>
         </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
       <!-- 답변대기 -->
-      <div id="popCategory" class="popup full" role="dialog" aria-hidden="true">
+      <div id="popMemo" class="popup full" role="dialog" aria-hidden="true">
         <article class="pop-wrap">
           <div class="pop-head">
             <div>
@@ -36,21 +36,13 @@
           </div>
           <div class="pop-body">
             <div class="section">
-              <h1 class="tit-h1">
-                카테고리<br />
-                명을 입력해주세요
-              </h1>
+              <h1 class="tit-h1">어떤 메모를 남길까요?</h1>
               <div class="input form-box show-del mt-24">
                 <div class="form-lbl">
-                  <p>카테고리 명</p>
-                  <p class="ml-auto fc-B9C1C9"><span class="fc-818892" id="count1">0</span>/8</p>
+                  <p>메모</p>
+                  <p class="ml-auto fc-B9C1C9"><span class="fc-818892" id="count1">0</span>/20</p>
                 </div>
-                <input id="input" type="text" placeholder="한글, 영문, 숫자로 8자 내외 작성" title="카테고리 명 입력" maxlength="8" data-text-count="count1" />
-              </div>
-              <div id="cateBtnWrap" class="btn-wrap mt-24" style="display: none">
-                <div class="flex">
-                  <button class="button line" onclick="cateDel()">카테고리 삭제</button>
-                </div>
+                <input id="input" type="text" placeholder="한글, 숫자, 영문 20자 내외로 작성" title="메모 입력" maxlength="20" data-text-count="count1" />
               </div>
             </div>
           </div>
@@ -85,12 +77,11 @@
         ui.Form.error('#input', false);
       }
     });
-    Layer.open('#popCategory');
+    Layer.open('#popMemo');
 
-    // 임시 수정일때: [삭제]버튼 보이게, [등록]버튼 '수정'으로 + 활성화
+    // 수정일때: [등록]버튼 '수정'으로
     if (getUnlParams().type === 'change') {
-      $('#input').val('카테고리제목이지');
-      $('#cateBtnWrap').show();
+      $('#input').val('메모 내용입니다. 메모 내용입니다.');
       $('#btnMain').prop('disabled', false).text('수정');
     }
 
