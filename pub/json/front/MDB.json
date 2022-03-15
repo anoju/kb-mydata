@@ -1,6 +1,6 @@
 [
   {
-    "depth1": "MY(PFM)"
+    "depth1": "MY(통합자산조회)"
   },
   {
     "id": "MDB02-0100001",
@@ -224,16 +224,81 @@
     "depth1": "MY(소비)"
   }
   ,{
-    "id": "MDB04-0302001-1",
-    "url": "../../front/html/MDB/MDB04-0302001-1.html",
+    "id": "MDB04-0302001",
+    "url": "../../front/html/MDB/MDB04-0302001.html",
     "type": "page",
     "depth2": "소비",
     "depth3": "지출내역",
     "depth4": "상세",
     "name": "지출상세(신용카드/체크카드)",
-    "worker": "변상우",
-    "complete": "2022-03-15",
-    "etc": ""
+    "worker": "안효주",
+    "complete": "2022-03-15"
+  }
+  ,{
+    "id": "MDB04-0302001",
+    "url": "../../front/html/MDB/MDB04-0302001.html?type=pay",
+    "type": "page",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "depth4": "상세",
+    "name": "지출상세(페이)",
+    "worker": "안효주",
+    "complete": "2022-03-15"
+  }
+  ,{
+    "id": "MDB04-0302001",
+    "url": "../../front/html/MDB/MDB04-0302001.html?type=card2",
+    "type": "page",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "depth4": "상세",
+    "name": "지출상세(선불카드)",
+    "worker": "안효주",
+    "complete": "2022-03-15"
+  }
+  ,{
+    "id": "MDB04-0302001",
+    "url": "../../front/html/MDB/MDB04-0302001.html?type=pay2",
+    "type": "page",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "depth4": "상세",
+    "name": "지출상세(페이송금, 본인거래)",
+    "worker": "안효주",
+    "complete": "2022-03-15"
+  }
+  ,{
+    "id": "MDB04-0302001",
+    "url": "../../front/html/MDB/MDB04-0302001.html?type=pay3",
+    "type": "page",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "depth4": "상세",
+    "name": "지출상세(페이송금, 타인거래)",
+    "worker": "안효주",
+    "complete": "2022-03-15"
+  }
+  ,{
+    "id": "MDB04-0302001",
+    "url": "../../front/html/MDB/MDB04-0302001.html?type=bank",
+    "type": "page",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "depth4": "상세",
+    "name": "지출상세(계좌)",
+    "worker": "안효주",
+    "complete": "2022-03-15"
+  }
+  ,{
+    "id": "MDB04-0302001",
+    "url": "../../front/html/MDB/MDB04-0302001.html?type=none",
+    "type": "page",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "depth4": "상세",
+    "name": "지출상세(적요 정보 미동의)",
+    "worker": "안효주",
+    "complete": "2022-03-15"
   }
   ,{
     "id":"MDB04-0204p01",
@@ -241,6 +306,7 @@
     "type":"pop",
     "depth2": "소비",
     "depth3": "지출내역",
+    "depth4": "카테고리",
     "name": "카테고리 등록",
     "worker": "안효주",
     "complete": "2022-03-15"
@@ -251,29 +317,33 @@
     "type":"pop",
     "depth2": "소비",
     "depth3": "지출내역",
+    "depth4": "카테고리",
     "name": "카테고리 수정",
     "worker": "안효주",
     "complete": "2022-03-15",
     "etc": "MDB04-0204p01 동일화면"
   }
   ,{
-    "id":"MDB04-0302002",
+    "id":"MDB04-0302p01",
     "url":"../../front/html/MDB/",
     "type":"pop",
     "depth2": "소비",
     "depth3": "지출내역",
+    "depth4": "메모",
     "name": "메모 등록",
     "worker": "안효주",
     "complete": "2022-03-15"
   }
   ,{
-    "id":"MDB04-0302003",
-    "url":"../../front/html/MDB/MDB04-0302002.html?type=change",
+    "id":"MDB04-0302p02",
+    "url":"../../front/html/MDB/MDB04-0302p01.html?type=change",
     "type":"pop",
     "depth2": "소비",
     "depth3": "지출내역",
+    "depth4": "메모",
     "name": "메모 수정",
     "worker": "안효주",
-    "complete": "2022-03-15"
+    "complete": "2022-03-15",
+    "etc": "MDB04-0302p01 동일화면"
   }
 ]

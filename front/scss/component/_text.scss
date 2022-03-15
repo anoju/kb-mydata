@@ -213,8 +213,11 @@
       color: var(--strong-txt-color);
     }
     + li {
-      margin-top: 1.2rem;
+      margin-top: 1.4rem;
     }
+  }
+  + .txt-dl-list {
+    margin-top: 1.4rem;
   }
 }
 .num-list-1 {
