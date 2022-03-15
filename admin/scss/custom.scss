@@ -42,6 +42,20 @@ button {
   background: none;
   border: 0 none;
 }
+pre,
+code {
+  font-family: inherit;
+}
+select,
+input,
+textarea,
+button,
+optgroup {
+  font-family: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
 @include media($mobile-size) {
   body {
     font-size: 14px;
