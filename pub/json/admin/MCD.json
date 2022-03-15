@@ -6,7 +6,8 @@
     "id": "MCD01-0100001C",
     "url": "../../admin/html/MCD/",
     "type": "page",
-    "depth2": "관리자등록",
+    "depth2": "관리자관리",
+    "depth3": "관리자등록",
     "worker": "변상우",
     "complete": "2022-03-14",
     "etc": ""
@@ -15,7 +16,8 @@
     "id": "MCD01-0100002C",
     "url": "../../admin/html/MCD/",
     "type": "page",
-    "depth2": "관리자상세(등록)",
+    "depth2": "관리자관리",
+    "depth3": "관리자상세(등록)",
     "worker": "변상우",
     "complete": "2022-03-14",
     "etc": ""
@@ -24,7 +26,8 @@
     "id": "MCD01-0200001C",
     "url": "../../admin/html/MCD/",
     "type": "page",
-    "depth2": "관리자이력관리",
+    "depth2": "관리자관리",
+    "depth3": "관리자이력관리",
     "worker": "변상우",
     "complete": "2022-03-10",
     "etc": ""
@@ -33,7 +36,8 @@
     "id": "MCD02-0100001C",
     "url": "../../admin/html/MCD/",
     "type": "page",
-    "depth2": "관리자그룹관리",
+    "depth2": "권한설정",
+    "depth3": "관리자그룹관리",
     "worker": "변상우",
     "complete": "2022-03-14",
     "etc": "그룹등록 및 그룹수정팝업 포함"
@@ -42,7 +46,8 @@
     "id": "MCD02-0200001C",
     "url": "../../admin/html/MCD/",
     "type": "page",
-    "depth2": "관리자메뉴관리",
+    "depth2": "권한설정",
+    "depth3": "관리자메뉴관리",
     "worker": "변상우",
     "complete": "2022-03-14",
     "etc": "그룹 메뉴 권한 설정 팝업 포함"
@@ -51,7 +56,8 @@
       "id": "MCD02-0300001C",
       "url": "../../admin/html/MCD/",
       "type": "page",
-      "depth2": "관리자 권한 설정",
+      "depth2": "권한설정",
+      "depth3": "관리자 권한 설정",
       "worker": "변상우",
       "complete": "2022-03-14",
       "etc": ""
