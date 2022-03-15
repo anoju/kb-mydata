@@ -1,3 +1,14 @@
+:root {
+  --chk-size: 2.4rem;
+  --rdo-size: 1.2rem;
+  --switch-width: 5.1rem;
+  --switch-height: 3.1rem;
+  --switch-padding: 0.2rem;
+  --switch2-width: 3.5rem;
+  --switch2-height: 2rem;
+  --switch2-padding: 0.3rem;
+}
+
 //checkbox, radio
 input[type='checkbox'],
 input[type='radio'] {
@@ -25,7 +36,6 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
 }
 .radio,
 .checkbox {
-  --chk-size: 2.4rem;
   position: relative;
   display: inline-block;
   min-width: var(--chk-size);
@@ -210,12 +220,8 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
     }
   }
 
-  // 아아폰 타입
+  // 아이폰 타입
   &.switch {
-    --switch-width: 5.1rem;
-    --switch-height: 3.1rem;
-    --switch-padding: 0.2rem;
-
     min-width: var(--switch-width);
     min-height: var(--switch-height);
     > input {
@@ -290,15 +296,11 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
 
   // 안드로이드 타입
   &.switch2 {
-    --switch-width: 3.5rem;
-    --switch-height: 2rem;
-    --switch-padding: 0.3rem;
-
-    min-width: var(--switch-width);
-    min-height: var(--switch-height);
+    min-width: var(--switch2-width);
+    min-height: var(--switch2-height);
     > input {
-      width: var(--switch-width);
-      height: var(--switch-height);
+      width: var(--switch2-width);
+      height: var(--switch2-height);
       &:checked {
         + i {
           background: none;
@@ -327,23 +329,23 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
       }
     }
     > i {
-      min-width: var(--switch-width);
-      height: var(--switch-height);
-      padding: var(--switch-padding);
+      min-width: var(--switch2-width);
+      height: var(--switch2-height);
+      padding: var(--switch2-padding);
       border: 0 none;
       border-radius: 0;
       &:before {
         content: '';
         display: block;
-        height: calc(var(--switch-height) - (var(--switch-padding) * 2));
-        border-radius: calc((var(--switch-height) - (var(--switch-padding) * 2)) / 2);
+        height: calc(var(--switch2-height) - (var(--switch2-padding) * 2));
+        border-radius: calc((var(--switch2-height) - (var(--switch2-padding) * 2)) / 2);
         background: #b0b0b0;
         opacity: 1;
         transition: 0.3s ease;
       }
       &:after {
-        width: var(--switch-height);
-        height: var(--switch-height);
+        width: var(--switch2-height);
+        height: var(--switch2-height);
         margin: 0;
         border: 0 none;
         left: 0;
@@ -355,15 +357,15 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
         transform: none;
       }
       + .lbl {
-        margin-left: var(--switch-width);
+        margin-left: var(--switch2-width);
       }
     }
     .lbl {
       padding-top: 0;
       padding-bottom: 0;
-      line-height: var(--switch-height);
+      line-height: var(--switch2-height);
       &:first-child {
-        margin-right: var(--switch-width);
+        margin-right: var(--switch2-width);
       }
     }
   }
@@ -407,7 +409,6 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
   }
 }
 .radio {
-  --rdo-size: 1.2rem;
   > i {
     &:after {
       left: 50%;

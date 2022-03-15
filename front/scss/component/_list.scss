@@ -80,7 +80,30 @@
     }
   }
 }
-[class*='line-list-item-'] {
+.line-list-2 {
+  > li {
+    border-bottom: 0.1rem solid #f2f4f6;
+  }
+  &.ty2 {
+    .list-item-2 {
+      .flex {
+        font-size: 1.4rem;
+        color: var(--gray-txt-color);
+      }
+      .item-tit {
+        margin-top: 0.8rem;
+        color: var(--strong-txt-color);
+        @include ellipsis(2);
+      }
+    }
+  }
+}
+.line-list-3 {
+  > li {
+    border-bottom: 0.1rem solid #f2f4f6;
+  }
+}
+[class*='list-item-'] {
   position: relative;
   display: flex;
   min-height: 6rem;
@@ -88,16 +111,6 @@
   padding-bottom: 1.6rem;
   justify-content: center;
   flex-direction: column;
-  &:where(a):not(.no-arr) {
-    padding-right: 3.2rem;
-    &:after {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      margin-top: -1.2rem;
-      @include arr-right-24;
-    }
-  }
   .flex {
     width: 100%;
     align-items: center;
@@ -107,15 +120,27 @@
   }
   .section & {
     @include outer(true);
-    &:where(a):not(.no-arr) {
-      padding-right: 5.6rem;
+  }
+  .list-arr-item & {
+    &:where(a) {
+      padding-right: 3.2rem;
       &:after {
-        right: 2.4rem;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -1.2rem;
+        @include arr-right-24;
+      }
+      .section & {
+        padding-right: 5.6rem;
+        &:after {
+          right: 2.4rem;
+        }
       }
     }
   }
 }
-.line-list-item-1 {
+.list-item-1 {
   display: block;
   min-height: auto;
   padding-top: 1.6rem;
@@ -133,7 +158,6 @@
     font-size: 1.6rem;
     line-height: 2rem;
     color: var(--strong-txt-color);
-    @include ellipsis(1);
     .i-ico-new {
       margin-right: 0.8rem;
       vertical-align: -0.3rem;
@@ -147,34 +171,13 @@
     color: var(--gray-txt-color);
   }
 }
-.line-list-2 {
-  > li {
-    border-bottom: 0.1rem solid #f2f4f6;
-  }
-  &.ty2 {
-    .line-list-item-2 {
-      .flex {
-        font-size: 1.4rem;
-        color: var(--gray-txt-color);
-      }
-      .item-tit {
-        margin-top: 0.8rem;
-        color: var(--strong-txt-color);
-        @include ellipsis(2);
-      }
-    }
-  }
-}
-.line-list-item-2 {
+
+.list-item-2 {
   .item-tit {
     font-size: var(--strong-txt-color2);
   }
 }
-.line-list-3 {
-  > li {
-    border-bottom: 0.1rem solid #f2f4f6;
-  }
-}
+
 // list-view
 [class*='list-view-'] {
   word-break: break-all;
