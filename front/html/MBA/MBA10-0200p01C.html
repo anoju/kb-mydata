@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+  </head>
+  <body>
+    <div id="bottomPopup1" class="popup bottom" role="dialog" aria-hidden="true">
+      <article class="pop-wrap">
+        <div class="pop-head">
+          <div>
+            <h1>그라운드 소개</h1>
+            <button type="button" class="pop-close ui-pop-close" role="button" aria-label="팝업창 닫기"></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="section">
+            <div class="ground-state">
+              <!-- 참여가능 -->
+              <i class="i-ico-join"></i><span class="ml-4 fc-25b69c">참여가능</span>
+              <!-- //참여가능 -->
+
+              <!-- 참여불가 -->
+              <i class="i-ico-lock"></i>
+              <!-- //참여불가 -->
+            </div>
+            <p class="mt-8 fz-16 fw-500 fc-424242 break-all">그라운드제목그라운드제목그라운드제목그라운드제목그라운드제목그라운드제목</p>
+            <p class="mt-8 fz-14 break-all">그라운드소개글그라운드소개글그라운드소개글그라운드소개글그라운드소개글그라운드소개글그라운드소개글그라운드소개글</p>
+
+            <hr class="hr-line ty2 inset mg-16y" aria-hidden="true" />
+
+            <p class="fz-14"><span class="fc-f134cb">#</span>애플 주주</p>
+            <div class="fc-979797">
+              <span class="mr-8"><i class="i-ico-date mr-3"></i>개설 +28일</span>
+              <span class="mr-8"><i class="i-ico-user mr-3"></i>10만+명</span>
+              <span><i class="i-ico-percent mr-3"></i>100.00%</span>
+            </div>
+          </div>
+        </div>
+        <div class="pop-foot">
+          <div>
+            <div class="flex">
+              <!-- 입장 가능 -->
+              <button class="button primary ui-pop-close">입장하기</button>
+              <!-- //입장 가능 -->
+
+              <!-- 입장 불가 -->
+              <!-- <button class="button primary ui-pop-close" disabled>그라운드에 입장할 수 없어요</button> -->
+              <!-- //입장 불가 -->
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <script>
+      $(function () {
+        Layer.open('#bottomPopup1');
+      });
+    </script>
+  </body>
+</html>
