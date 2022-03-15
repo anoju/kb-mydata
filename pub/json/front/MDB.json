@@ -1,6 +1,6 @@
 [
   {
-    "depth1": "MY"
+    "depth1": "MY(PFM)"
   },
   {
     "id":"MDB02-0100001",
@@ -221,6 +221,9 @@
     "complete": "2022-02-07"
   }
   ,{
+    "depth1": "MY(소비)"
+  }
+  ,{
     "id":"MDB04-0204p01",
     "url":"../../front/html/MDB/",
     "type":"page",
@@ -232,7 +235,7 @@
   }
   ,{
     "id":"MDB04-0205p01",
-    "url":"../../front/html/MDB/MDB04-0204p01.html",
+    "url":"../../front/html/MDB/MDB04-0204p01.html?type=change",
     "type":"page",
     "depth2": "소비",
     "depth3": "카테고리",

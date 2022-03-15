@@ -84,15 +84,14 @@
       } else {
         ui.Form.error('#input', false);
       }
-
-      // 삭제버튼 보이게
-      if ($val.length > 2) {
-        $('#cateBtnWrap').show();
-      } else {
-        $('#cateBtnWrap').hide();
-      }
     });
     Layer.open('#popCategory');
+
+    // 수정일때: [삭제]버튼 보이게, [등록]버튼 '수정'으로
+    if (getUnlParams().type === 'change') {
+      $('#cateBtnWrap').show();
+      $('#btnMain').text('수정');
+    }
 
     let msgTy = false;
     const cateDel = function () {
