@@ -625,7 +625,7 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
       top: 0;
       right: 0;
       margin-top: 0;
-      i {
+      [class*='i-ico-'] {
         margin-top: 0;
       }
     }

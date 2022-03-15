@@ -1174,7 +1174,7 @@ ui.Util = {
       $('iframe').each(function () {
         const $this = $(this);
         let $src = $this.attr('src');
-        if ($src.indexOf('//') < 0 && $src.indexOf('../') < 0) {
+        if ($src.indexOf('//') < 0 && $src.indexOf('//') > 9 && $src.indexOf('../') !== 0) {
           if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $src = '/kyobo-mydata-pub' + $src;
           if (location.pathname.indexOf('dev-mydata.mykkl.com') > -1) $src = '/mydata/resources/static' + $src;
           $this.attr('src', $src);
