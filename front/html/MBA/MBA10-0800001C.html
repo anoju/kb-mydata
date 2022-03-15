@@ -55,13 +55,14 @@
             <div class="user-detail-talk-box mt-0">
               <!-- 기본 -->
               <div class="user-detail-talk">
-                <div class="nick-name">
+                <!-- 프로필이 없는 경우 에러 메시지-->
+                <a href="#" class="nick-name" onclick="noProfile();">
                   <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
                   <div class="tit-box">
                     <p class="name">입질만삼년째</p>
                     <p class="time">3분 전</p>
                   </div>
-                </div>
+                </a>
                 <p class="text ellipsis-2 mt-6 fc-424242">
                   상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
                   상세내용상세내용상세내용상세내용상세내용상세내
@@ -196,6 +197,15 @@
           });
         }
       });
+      function noProfile() {
+        const text = '<p>선택하신 사용자의 프로필을 확인 할 수 없어요.</p><p class="mt-8">앱 탈퇴 또는 그라운드에서 퇴실하거나 이용정지 된 사용자의 정보는 접근이 제한됩니다.</p>';
+        Layer.confirm(text, '알림', '확인', function (e) {
+          if (e) {
+            Layer.toast('정답 선택이 완료 되었어요.');
+            choiceSelect = true;
+          }
+        });
+      }
     </script>
   </body>
 </html>
