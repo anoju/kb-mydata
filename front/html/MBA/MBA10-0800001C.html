@@ -74,7 +74,7 @@
 
               <!-- 나 -->
               <div class="user-detail-talk">
-                <div class="nick-name">
+                <a href="#" class="nick-name">
                   <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
                   <div class="tit-box">
                     <!--
@@ -84,7 +84,7 @@
                     <p class="name me">입질만삼년째</p>
                     <p class="time">3분 전</p>
                   </div>
-                </div>
+                </a>
                 <p class="text ellipsis-2 mt-6 fc-424242">
                   상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
                   상세내용상세내용상세내용상세내용상세내용상세내
@@ -102,13 +102,13 @@
 
               <!-- 타 사용자 -->
               <div class="user-detail-talk">
-                <div class="nick-name">
+                <a href="#" class="nick-name">
                   <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
                   <div class="tit-box">
                     <p class="name">입질만삼년째</p>
                     <p class="time">3분 전</p>
                   </div>
-                </div>
+                </a>
                 <p class="text ellipsis-2 mt-6 fc-424242">
                   상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
                   상세내용상세내용상세내용상세내용상세내용상세내
@@ -155,6 +155,21 @@
       <!-- //팝업 -->
     </article>
     <script>
+      $(function () {
+        userTalk();
+      });
+
+      const userTalk = function () {
+        $(document).on('click', '.user-detail-talk .btn-menu', function () {
+          const $this = $(this);
+          $this.next().addClass('on');
+          setTimeout(function () {
+            $this.next().removeClass('on');
+          }, 3000);
+          return false;
+        });
+      };
+
       $(function () {
         let choiceSelect = false;
         $('.quizOX-box :radio').click(function () {

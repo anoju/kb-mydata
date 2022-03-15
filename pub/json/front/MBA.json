@@ -20,7 +20,7 @@
     "depth3": "매치중",
     "name": "매치중",
     "worker": "장영석",
-    "complete": "진행중",
+    "complete": "2022-03-15",
     "etc":""
   },
   {
@@ -57,6 +57,62 @@
     "etc":""
   },
   {
+    "id":"MBA10-0101p03C",
+    "url":"../../front/html/MBA/",
+    "type":"pop",
+    "depth2": "그라운드",
+    "depth3": "일반",
+    "depth4": "모든 댓글보기",
+    "name": "그라운드",
+    "worker": "장영석",
+    "complete": "2022-03-15",
+    "etc":""
+  },
+  {
+    "id":"MBA10-0200p01C",
+    "url":"../../front/html/MBA/",
+    "type":"pop",
+    "depth2": "그라운드",
+    "depth3": "그라운드 소개 팝업",
+    "name": "그라운드 소개 팝업",
+    "worker": "장영석",
+    "complete": "2022-03-15",
+    "etc":"참여가능, 참여불가 케이스 존재"
+  },
+  {
+    "id":"MBA10-0212p01C",
+    "url":"../../front/html/MBA/",
+    "type":"pop",
+    "depth2": "그라운드",
+    "depth3": "그라운드 퇴실 예정 안내",
+    "name": "그라운드 퇴실 예정 안내",
+    "worker": "장영석",
+    "complete": "2022-03-15",
+    "etc":""
+  },
+  {
+    "id":"MBA10-0213p01C",
+    "url":"../../front/html/MBA/",
+    "type":"pop",
+    "depth2": "그라운드",
+    "depth3": "그라운드 퇴실 확인",
+    "name": "그라운드 퇴실 확인",
+    "worker": "장영석",
+    "complete": "2022-03-15",
+    "etc":""
+  },
+  {
+    "id":"MBA10-0900p01C",
+    "url":"../../front/html/MBA/",
+    "type":"pop",
+    "depth2": "그라운드",
+    "depth3": "그라운드 퇴실 내역 안내",
+    "name": "그라운드 퇴실 내역 안내",
+    "worker": "장영석",
+    "complete": "2022-03-15",
+    "etc":""
+  },
+  {
     "id":"MBA10-0100001C",
     "url":"../../front/html/MBA/",
     "type":"page",
@@ -79,17 +135,6 @@
     "etc":"MBA05-0200p01C과 동일"
   },
   {
-    "id":"MBA10-0101p03C",
-    "url":"../../front/html/MBA/",
-    "type":"pop",
-    "depth2": "그라운드",
-    "depth3": "게시물 상세 내 게시물",
-    "name": "모든 댓글 보기",
-    "worker": "변상우",
-    "complete": "진행중",
-    "etc":"하단 TOP버튼 & 댓글 작성 영역 미완"
-  },
-  {
     "id":"MBA10-0101001C",
     "url":"../../front/html/MBA/",
     "type":"page",
@@ -98,8 +143,8 @@
     "depth4": "타 작성자",
     "name": "",
     "worker": "장영석",
-    "complete": "진행중",
-    "etc":"하단 TOP버튼 & 댓글 작성 영역 미완"
+    "complete": "2022-03-15",
+    "etc":""
   },
   {
     "id":"MBA10-0102001C",
@@ -110,7 +155,43 @@
     "depth4": "본인 작성자",
     "name": "",
     "worker": "장영석",
-    "complete": "진행중",
-    "etc":"하단 TOP버튼 & 댓글 작성 영역 미완"
+    "complete": "2022-03-15",
+    "etc":""
+  },
+  {
+    "id":"MBA10-0103001C",
+    "url":"../../front/html/MBA/",
+    "type":"page",
+    "depth2": "그라운드",
+    "depth3": "게시물 작성",
+    "depth4": "",
+    "name": "",
+    "worker": "장영석",
+    "complete": "2022-03-15",
+    "etc":""
+  },
+  {
+    "id":"MBA10-0104001C",
+    "url":"../../front/html/MBA/",
+    "type":"page",
+    "depth2": "그라운드",
+    "depth3": "게시물 수정",
+    "depth4": "",
+    "name": "",
+    "worker": "장영석",
+    "complete": "2022-03-15",
+    "etc":""
+  },
+  {
+    "id":"MBA10-0800001C",
+    "url":"../../front/html/MBA/",
+    "type":"page",
+    "depth2": "그라운드",
+    "depth3": "이벤트 게시물",
+    "depth4": "",
+    "name": "",
+    "worker": "장영석",
+    "complete": "2022-03-15",
+    "etc":""
   }
 ]
