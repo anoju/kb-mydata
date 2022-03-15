@@ -86,8 +86,12 @@
               <div class="form-box-item">
                 <div class="form-box-label">상세내용</div>
                 <div class="form-box-cont d-flex align-items-center">
-                  마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 마이데이터 자산등록이 안되요.
-                  어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 어떻게 해야 하나요?
+                  <!-- prettier-ignore -->
+                  <div class="pre-line">마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 
+                    어떻게 해야 하나요? 마이데이터 자산등록이 안되요.
+                    어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 
+                    마이데이터 자산등록이 안되요. 어떻게 해야 하나요?
+                  </div>
                 </div>
               </div>
             </div>
@@ -158,22 +162,22 @@
 
       //팝업
       //유효성 오류팝업(파일 유형 오류)
-      Modal.alert('첨부파일은 JPG, JPEG, PNG 이며 \<br>\ 5MB 이하만 등록 가능합니다.', function () {
-        console.log('파일유형오류 - 확인');
-      });
+      // Modal.alert('첨부파일은 JPG, JPEG, PNG 이며 \<br>\ 5MB 이하만 등록 가능합니다.', function () {
+      //   console.log('파일유형오류 - 확인');
+      // });
       //유효성 오류팝업(답변미입력)
-      Modal.alert('답변을 입력해주세요.', function () {
-        console.log('답변미입력 - 확인');
-      });
+      // Modal.alert('답변을 입력해주세요.', function () {
+      //   console.log('답변미입력 - 확인');
+      // });
 
       //등록팝업
-      Modal.confirm('답변 등록하시겠습니까?', function (e) {
-        if (e) {
-          console.log('등록 - 확인');
-        } else {
-          console.log('등록 - 취소');
-        }
-      });
+      // Modal.confirm('답변 등록하시겠습니까?', function (e) {
+      //   if (e) {
+      //     console.log('등록 - 확인');
+      //   } else {
+      //     console.log('등록 - 취소');
+      //   }
+      // });
     </script>
   </body>
 </html>

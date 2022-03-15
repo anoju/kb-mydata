@@ -129,9 +129,11 @@ html:not(.mobile) {
     white-space: normal !important;
   }
 }
+.pre-line {
+  white-space: pre-line;
+}
 
 // btn
-
 .btn-scl-top {
   position: fixed;
   display: flex;
