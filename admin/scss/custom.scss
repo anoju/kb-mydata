@@ -1531,24 +1531,9 @@ html:not(.mobile) {
   }
 }
 
-//bsw
+/** BSW 작업 **/
+//그룹 권한 설정 팝업
 .modal-selectMenu {
-  @include media($mobile-size) {
-    .modal-dialog {
-    }
-  }
-  .col + .col {
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      width: 0.01rem;
-      height: 100%;
-      left: 0;
-      border-left: 0.063em solid #dee2e6;
-    }
-  }
   .menu_list {
     h5 {
       padding: 0.75rem 3rem;
@@ -1558,21 +1543,20 @@ html:not(.mobile) {
       color: #fff;
     }
   }
+
   .scroll_content {
     white-space: inherit;
     height: 20rem;
     p {
       margin: 0;
+      position: relative;
+      padding: 0.75rem 3rem;
     }
     .list-group {
       dt {
         p:not(.collapsed) {
           //color: #fff;
-          background: #ccc;
-          &::before,
-          &::after {
-            background: #fff;
-          }
+          background: #dee2e6;
         }
       }
       dd {
@@ -1583,31 +1567,43 @@ html:not(.mobile) {
         margin-top: 1rem;
       }
     }
+    //더보기 아이콘 시작
+    dt p,
+    p.depth_2_btn {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 1rem;
+        height: 0.1rem;
+        right: 1rem;
+        top: 50%;
+        background: #222;
+      }
+      &::before {
+        transform: rotate(90deg);
+      }
+      &:not(.collapsed) {
+        font-weight: bold;
+        background: #f5f5f5;
+      }
+      &:not(.collapsed):before {
+        content: none;
+      }
+    }
+    //더보기 아이콘 끝
+    .depth_2 {
+      p {
+        font-weight: 400;
+        background: #fff;
+      }
+    }
     .list-group-item {
       padding: 0;
       .list-group-item {
         border: 0;
       }
-      p {
-        position: relative;
-        padding: 0.75rem 3rem;
-        &::before,
-        &::after {
-          content: '';
-          position: absolute;
-          width: 1rem;
-          height: 0.1rem;
-          right: 1rem;
-          top: 50%;
-          background: #222;
-        }
-        &::before {
-          transform: rotate(90deg);
-        }
-        &:not(.collapsed):before {
-          content: none;
-        }
-      }
+
       .custom-control {
         margin: 0;
         left: 1rem;
@@ -1628,6 +1624,51 @@ html:not(.mobile) {
     }
   }
 }
-
+//팝업 pc 레이아웃
+@include media($pc-full-size) {
+  .modal-selectMenu {
+    .col {
+      flex-basis: 0;
+    }
+    .col + .col {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 0.01rem;
+        height: 100%;
+        left: 0;
+        border-left: 0.063em solid #dee2e6;
+      }
+    }
+    ul {
+      padding-top: 1rem;
+      margin-top: 1rem;
+      border-top: 0.063em solid #ddd;
+      padding-left: 1rem;
+    }
+  }
+}
+//팝업 테블릿 및 모바일 레이아웃
+@include media($tablet-size) {
+  .modal-selectMenu {
+    .col {
+      flex-basis: auto;
+    }
+    .col + .col {
+      margin-top: 2rem;
+      &::before {
+        content: none;
+      }
+    }
+    .scroll_content {
+      height: 15rem;
+    }
+    ul {
+      margin-top: 0;
+    }
+  }
+}
 //dark
 @import 'custom-dark';

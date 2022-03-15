@@ -137,10 +137,13 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="registAuthorityLabel">그룹 메뉴권한설정</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
                 <div class="modal-body">
-                  <h2>A그룹 회원 관리자</h2>
                   <div class="container">
+                    <h2>A그룹 회원 관리자</h2>
                     <div class="row">
                       <div class="col">
                         <div class="clearfix">
@@ -151,7 +154,9 @@
                         <div class="menu_list mt-3">
                           <h5>메뉴명</h5>
                           <div class="scroll_content">
+                            <!-- 메뉴 리스트 아이템 -->
                             <dl class="list-group">
+                              <!-- 1depth -->
                               <dt class="list-group-item">
                                 <label class="custom-control custom-checkbox">
                                   <input type="checkbox" name="chk5" class="custom-control-input" />
@@ -159,14 +164,16 @@
                                 </label>
                                 <p class="collapsed" data-toggle="collapse" data-target="#ex1-Depth1" aria-expanded="false" aria-controls="ex1-Depth1">관리자</p>
                               </dt>
+                              <!-- // 1depth -->
                               <dd>
+                                <!-- 2depth -->
                                 <div class="list-group-item collapse" id="ex1-Depth1">
                                   <label class="custom-control custom-checkbox">
                                     <input type="checkbox" name="chk5" class="custom-control-input" />
                                     <span class="custom-control-label"></span>
                                   </label>
-                                  <p class="collapsed" data-toggle="collapse" data-target="#ex1-Depth2" aria-expanded="false" aria-controls="ex1-Depth2">관리자 관리</p>
-                                  
+                                  <p class="collapsed depth_2_btn" data-toggle="collapse" data-target="#ex1-Depth2" aria-expanded="false" aria-controls="ex1-Depth2">관리자 관리</p>
+                                  <!-- 3depth -->
                                   <div class="collapse depth_2" id="ex1-Depth2">
                                     <div class="list-group-item">
                                       <label class="custom-control custom-checkbox">
@@ -183,11 +190,16 @@
                                       <p>권한 설정</p>
                                     </div>
                                   </div>
+                                  <!-- // 3depth -->
                                 </div>
+                                <!-- // 2depth -->
                               </dd>
                             </dl>
+                            <!-- // 메뉴 리스트 아이템 -->
 
+                            <!-- 메뉴 리스트 아이템 -->
                             <dl class="list-group">
+                              <!-- 1depth -->
                               <dt class="list-group-item">
                                 <label class="custom-control custom-checkbox">
                                   <input type="checkbox" name="chk5" class="custom-control-input" />
@@ -195,13 +207,16 @@
                                 </label>
                                 <p class="collapsed" data-toggle="collapse" data-target="#ex2-Depth1" aria-expanded="false" aria-controls="ex2-Depth1">회원관리</p>
                               </dt>
+                              <!-- // 1depth -->
                               <dd>
+                                <!-- 2depth -->
                                 <div class="list-group-item collapse" id="ex2-Depth1">
                                   <label class="custom-control custom-checkbox">
                                     <input type="checkbox" name="chk5" class="custom-control-input" />
                                     <span class="custom-control-label"></span>
                                   </label>
-                                  <p data-toggle="collapse" data-target="#ex2-Depth2" aria-expanded="false" aria-controls="ex2-Depth2">회원 관리</p>
+                                  <p class="depth_2_btn collapsed" data-toggle="collapse" data-target="#ex2-Depth2" aria-expanded="false" aria-controls="ex2-Depth2">회원 관리</p>
+                                  <!-- 3depth -->
                                   <div class="collapse depth_2" id="ex2-Depth2">
                                     <div class="list-group-item">
                                       <label class="custom-control custom-checkbox">
@@ -210,11 +225,17 @@
                                       </label>
                                       <p>회원 관리</p>
                                     </div>
+                                  </div>
+                                  <!-- // 3depth -->
                                 </div>
+                                <!-- // 2depth -->
                               </dd>
                             </dl>
+                            <!-- // 메뉴 리스트 아이템 -->
 
+                            <!-- 메뉴 리스트 아이템 -->
                             <dl class="list-group">
+                              <!-- 1depth -->
                               <dt class="list-group-item">
                                 <label class="custom-control custom-checkbox">
                                   <input type="checkbox" name="chk5" class="custom-control-input" />
@@ -222,24 +243,21 @@
                                 </label>
                                 <p class="collapsed" data-toggle="collapse" data-target="#ex3-Depth1" aria-expanded="false" aria-controls="ex3-Depth1">앱관리</p>
                               </dt>
+                              <!-- // 1depth -->
                               <dd>
+                                <!-- 2depth -->
                                 <div class="list-group-item collapse" id="ex3-Depth1">
                                   <label class="custom-control custom-checkbox">
                                     <input type="checkbox" name="chk5" class="custom-control-input" />
                                     <span class="custom-control-label"></span>
                                   </label>
-                                  <p data-toggle="collapse" data-target="#ex3-Depth2" aria-expanded="false" aria-controls="ex3-Depth2">앱관리</p>
-                                  <div class="collapse depth_2" id="ex3-Depth2">
-                                    <div class="list-group-item">
-                                      <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="chk5" class="custom-control-input" />
-                                        <span class="custom-control-label"></span>
-                                      </label>
-                                      <p>앱관리</p>
-                                    </div>
+                                  <!-- 3depth가 없을 경우 -->
+                                  <p>앱관리</p>
                                 </div>
+                                <!-- // 2depth -->
                               </dd>
                             </dl>
+                            <!-- // 메뉴 리스트 아이템 -->
                           </div>
                         </div>
                         <div class="modal-footer">
