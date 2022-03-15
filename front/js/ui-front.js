@@ -2649,8 +2649,8 @@ ui.Form = {
   },
   inpBtn: function () {
     //input 삭제버튼
-    $(document).on('keyup focusin', '.input input, .input2 input', function () {
-      const $this = $(this);
+    const insertDel = function (el) {
+      const $this = $(el);
       const $val = $this.val();
       if ($this.data('removeDelBtn') !== undefined) clearTimeout($this.data('removeDelBtn'));
       if ($this.data('removePwdBtn') !== undefined) clearTimeout($this.data('removePwdBtn'));
@@ -2691,8 +2691,14 @@ ui.Form = {
           $this.data('removePwdBtn', removePwdBtn);
         }
       }
+    };
+    $('.input.show-del input, .textarea.show-del textarea').each(function () {
+      insertDel(this);
     });
-    $(document).on('focusout', '.input input, .textarea textarea', function () {
+    $(document).on('keyup focusin', '.input input, .textarea.del textarea', function () {
+      insertDel(this);
+    });
+    $(document).on('focusout', '.input:not(.show-del) input, .textarea.del:not(.show-del) textarea', function () {
       const $this = $(this);
       if ($this.siblings('.btn-inp-del').length) {
         const removeDelBtn = setTimeout(function () {
@@ -5284,6 +5290,7 @@ const Layer = {
     $cancelBtn.on('click', function () {
       $result = false;
       const $cancelEvt = function () {
+        if (!!option.cancel) option.cancel();
         if (!!option.callback) option.callback($result);
         if (typeof callback === 'function') callback($result);
         if (typeof callback2 === 'function') callback2($result);

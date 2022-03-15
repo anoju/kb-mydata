@@ -1,11 +1,11 @@
 [
   {
-    "depth1": "MY"
+    "depth1": "MY(PFM)"
   },
   {
-    "id":"MDB02-0100001",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0100001",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 소비스 소개",
     "name": "서비스소개 1",
@@ -14,9 +14,9 @@
     "etc": "디자인 추후 추가 예정"
   },
   {
-    "id":"MDB02-0100002",
-    "url":"../../front/html/MDB/MDB02-0100001.html",
-    "type":"page",
+    "id": "MDB02-0100002",
+    "url": "../../front/html/MDB/MDB02-0100001.html",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 소비스 소개",
     "name": "서비스소개 2",
@@ -25,9 +25,9 @@
     "etc": "MDB02-0100001 안에 포함"
   },
   {
-    "id":"MDB02-0100003",
-    "url":"../../front/html/MDB/MDB02-0100001.html",
-    "type":"page",
+    "id": "MDB02-0100003",
+    "url": "../../front/html/MDB/MDB02-0100001.html",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 소비스 소개",
     "name": "서비스소개 3",
@@ -36,9 +36,9 @@
     "etc": "MDB02-0100001 안에 포함"
   },
   {
-    "id":"MDB02-0201001",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0201001",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 가입",
     "depth4": "마이데이터 서비스안내",
@@ -47,9 +47,9 @@
     "complete": "2022-02-07"
   },
   {
-    "id":"MDB02-0201003",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0201003",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 가입",
     "depth4": "마이데이터 서비스안내",
@@ -59,9 +59,9 @@
     "etc": "상세내용은 관리자에서 입력"
   },
   {
-    "id":"MDB02-0201006",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0201006",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 가입",
     "depth4": "마이데이터 서비스안내",
@@ -70,9 +70,9 @@
     "complete": "2022-02-07"
   },
   {
-    "id":"MDB02-0303003",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0303003",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -81,9 +81,9 @@
     "complete": "2022-02-10"
   },
   {
-    "id":"MDB02-0303004",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0303004",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -92,9 +92,9 @@
     "complete": "2022-02-10"
   },
   {
-    "id":"MDB02-0303005",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0303005",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -103,9 +103,9 @@
     "complete": "2022-02-10"
   },
   {
-    "id":"MDB02-0303007",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0303007",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -115,9 +115,9 @@
     "etc": ""
   },
   {
-    "id":"MDB02-0303008",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0303008",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -127,9 +127,9 @@
     "etc": ""
   },
   {
-    "id":"MDB02-0303009",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0303009",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -139,57 +139,57 @@
     "etc": ""
   },
   {
-    "id":"MDB02-0305004",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0305004",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "상세정보전송",
     "name": "상세정보 전송요구서",
     "worker": "안효주",
     "complete": "2020-02-10",
-    "change":"2022-03-04"
+    "change": "2022-03-04"
   },
   {
-    "id":"MDB02-0305006",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0305006",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "상세정보전송",
     "name": "개인(신용)정보 수집·이용 동의",
     "worker": "안효주",
     "complete": "2022-02-10",
-    "change":"2022-03-04"
+    "change": "2022-03-04"
   },
   {
-    "id":"MDB02-0306001",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0306001",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "개별인증",
     "name": "선택한 기관목록",
     "worker": "안효주",
     "complete": "2022-02-07",
-    "change":"2022-03-04"
+    "change": "2022-03-04"
   },
   {
-    "id":"MDB02-0306003",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0306003",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "개별인증",
     "name": "개인정보수집 이용동의",
     "worker": "안효주",
     "complete": "2022-02-10",
-    "change":"2022-03-04"
+    "change": "2022-03-04"
   },
   {
-    "id":"MDB02-0306004",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0306004",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "개별인증",
@@ -198,9 +198,9 @@
     "complete": "2022-03-04"
   },
   {
-    "id":"MDB02-0306005",
-    "url":"../../front/html/MDB/MDB02-0306001.html",
-    "type":"page",
+    "id": "MDB02-0306005",
+    "url": "../../front/html/MDB/MDB02-0306001.html",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "개별인증",
@@ -210,9 +210,9 @@
     "etc": "MDB02-0306001과 동일화면"
   },
   {
-    "id":"MDB02-0502002",
-    "url":"../../front/html/MDB/",
-    "type":"page",
+    "id": "MDB02-0502002",
+    "url": "../../front/html/MDB/",
+    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 설정",
     "depth4": "개별인증 연결변경",
@@ -220,5 +220,60 @@
     "worker": "안효주",
     "complete": "2022-02-07"
   }
-  
+  ,{
+    "depth1": "MY(소비)"
+  }
+  ,{
+    "id": "MDB04-0302001-1",
+    "url": "../../front/html/MDB/MDB04-0302001-1.html",
+    "type": "page",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "depth4": "상세",
+    "name": "지출상세(신용카드/체크카드)",
+    "worker": "변상우",
+    "complete": "2022-03-15",
+    "etc": ""
+  }
+  ,{
+    "id":"MDB04-0204p01",
+    "url":"../../front/html/MDB/",
+    "type":"pop",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "name": "카테고리 등록",
+    "worker": "안효주",
+    "complete": "2022-03-15"
+  }
+  ,{
+    "id":"MDB04-0205p01",
+    "url":"../../front/html/MDB/MDB04-0204p01.html?type=change",
+    "type":"pop",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "name": "카테고리 수정",
+    "worker": "안효주",
+    "complete": "2022-03-15",
+    "etc": "MDB04-0204p01 동일화면"
+  }
+  ,{
+    "id":"MDB04-0302002",
+    "url":"../../front/html/MDB/",
+    "type":"pop",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "name": "메모 등록",
+    "worker": "안효주",
+    "complete": "2022-03-15"
+  }
+  ,{
+    "id":"MDB04-0302003",
+    "url":"../../front/html/MDB/MDB04-0302002.html?type=change",
+    "type":"pop",
+    "depth2": "소비",
+    "depth3": "지출내역",
+    "name": "메모 수정",
+    "worker": "안효주",
+    "complete": "2022-03-15"
+  }
 ]

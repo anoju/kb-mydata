@@ -103,6 +103,13 @@ i.require {
   + .form-box {
     margin-top: 1.6rem;
   }
+  + .validate-txt {
+    margin-top: 0.8rem;
+    padding: 0 2rem;
+    + .form-box {
+      margin-top: 1.6rem;
+    }
+  }
 }
 .validate-item {
   &.is-error {
