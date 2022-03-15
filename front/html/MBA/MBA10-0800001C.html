@@ -35,42 +35,29 @@
       <main id="container">
         <div class="section ground-wrap pt-0 pb-0">
           <h1 class="tit-h1">이번엔 내가 우승! 내가 싫어요...이길거야 나 한번만 제발</h1>
-          <div class="flex not-full align-center mt-10">
-            <span class="inline-flex"><i class="i-ico-eye mr-3"></i>658</span>
-            <span class="inline-flex"><i class="i-ico-chatbubble mr-3"></i>57</span>
-            <span class="ml-auto fz-14 fc-979797">58분 전</span>
+
+          <div class="img-box mt-24 mb-15"><img src="../../images/match/sample_result.png" alt="" /></div>
+
+          <div class="quizOX-box">
+            <input type="radio" id="o" name="quizOX" />
+            <label for="o" class="quizO">퀴즈 O</label>
+            <input type="radio" id="x" name="quizOX" />
+            <label for="x" class="quizX">퀴즈 X</label>
           </div>
 
-          <div class="mt-24 fz-16 fc-424242">게시물 내용게시물 내용게시물 내용게시물 내용게시물 내용게시물 내용게시물 내용게시물 내용게시물 내용게시물 내용게시물 내용게시물</div>
-
-          <div class="img-thumb-group type2">
-            <div class="img-box-wrap ui-expend">
-              <a href="#" class="img-box"><img src="../../images/temp/thumb-temp.jpg" alt="" /></a>
-              <a href="#" class="img-box"><img src="../../images/temp/thumb-temp4-2.jpg" alt="" /></a>
-              <a href="#" class="img-box"><img src="../../images/temp/thumb-temp5.jpg" alt="" /></a>
-              <a href="#" class="img-box"><img src="../../images/temp/thumb-temp.jpg" alt="" /></a>
-              <a href="#" class="img-box"><img src="../../images/temp/thumb-temp4-2.jpg" alt="" /></a>
-              <a href="#" class="img-box"><img src="../../images/temp/thumb-temp5.jpg" alt="" /></a>
-            </div>
-          </div>
-
-          <hr class="hr-line mt-24" aria-hidden="true" />
-          <div class="flex pd-18y justify-center">
-            <p class="btn-share on fz-16 fc-424242"><i class="i-ico-heart"></i>658</p>
-          </div>
           <hr class="hr-line" aria-hidden="true" />
 
           <div class="ground-talk">
             <div class="user-detail-talk-box mt-0">
               <!-- 기본 -->
               <div class="user-detail-talk">
-                <a href="#" class="nick-name">
+                <div class="nick-name">
                   <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
                   <div class="tit-box">
                     <p class="name">입질만삼년째</p>
                     <p class="time">3분 전</p>
                   </div>
-                </a>
+                </div>
                 <p class="text ellipsis-2 mt-6 fc-424242">
                   상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
                   상세내용상세내용상세내용상세내용상세내용상세내
@@ -84,33 +71,6 @@
                 </div>
               </div>
               <!-- //기본 -->
-
-              <!-- 답글 형태 -->
-              <div class="user-detail-talk comment">
-                <a href="#" class="nick-name">
-                  <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
-                  <div class="tit-box">
-                    <!--
-                      me : 내 계정에서 등록된 정보 - 게시글 작성자가 본인인 경우
-                      writer : 작성자 - 게시글이 다른사람이 작성한경우, 댓글은 작성자만
-                    -->
-                    <p class="name writer">입질만삼년째</p>
-                    <p class="time">3분 전</p>
-                  </div>
-                </a>
-                <p class="text ellipsis-2 mt-6 fc-424242">
-                  상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
-                  상세내용상세내용상세내용상세내용상세내용상세내
-                </p>
-
-                <button class="btn-menu"><i>메뉴 펼치기</i></button>
-                <div class="btn-menu-over">
-                  <div class="btn-group">
-                    <a href="#" class="btn-alarm"><i class="i-ico-alarm"></i>신고</a>
-                  </div>
-                </div>
-              </div>
-              <!-- //답글 형태 -->
 
               <!-- 나 -->
               <div class="user-detail-talk">
@@ -140,16 +100,12 @@
               </div>
               <!-- //나 -->
 
-              <!-- 작성자 -->
+              <!-- 타 사용자 -->
               <div class="user-detail-talk">
                 <a href="#" class="nick-name">
                   <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
                   <div class="tit-box">
-                    <!--
-                      me : 내 계정에서 등록된 정보
-                      writer : 작성자
-                    -->
-                    <p class="name writer">입질만삼년째</p>
+                    <p class="name">입질만삼년째</p>
                     <p class="time">3분 전</p>
                   </div>
                 </a>
@@ -165,7 +121,7 @@
                   </div>
                 </div>
               </div>
-              <!-- //작성자 -->
+              <!-- //타 사용자 -->
 
               <!-- 차단된 게시물 -->
               <div class="user-detail-talk pd-14y">
@@ -198,5 +154,44 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script>
+      $(function () {
+        userTalk();
+      });
+
+      const userTalk = function () {
+        $(document).on('click', '.user-detail-talk .btn-menu', function () {
+          const $this = $(this);
+          $this.next().addClass('on');
+          setTimeout(function () {
+            $this.next().removeClass('on');
+          }, 3000);
+          return false;
+        });
+      };
+
+      $(function () {
+        let choiceSelect = false;
+        $('.quizOX-box :radio').click(function () {
+          if (!choiceSelect) {
+            $('.quizOX-box :radio').removeClass('on off');
+            $(this).addClass('on').siblings('input').addClass('off');
+            choice();
+          }
+        });
+
+        function choice() {
+          Layer.confirm('[선택된 보기 값]으로 선택 할까요? <br />선택 완료 후 변경할 수 없습니다.', '확인', '선택 완료', '다시 선택', function (e) {
+            if (e) {
+              Layer.toast('정답 선택이 완료 되었어요.');
+              choiceSelect = true;
+            } else {
+              $('.quizOX-box :radio').removeClass('on off');
+              $('.quizOX-box :radio:checked').prop('checked', false);
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1405,3 +1405,127 @@
     transform: rotate(450deg);
   }
 }
+
+.round-box-list {
+  margin-top: 1.6rem;
+  .list {
+    padding: 1.6rem;
+    background: #fafafa;
+    border: 0.1rem solid #ebebeb;
+    box-sizing: border-box;
+    border-radius: 1.6rem;
+
+    .tit {
+      font-size: 1.6rem;
+      color: #424242;
+      word-break: break-all;
+    }
+    .date {
+      margin-top: 0.8rem;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    + .list {
+      margin-top: 1.2rem;
+    }
+  }
+}
+
+.quizOX-box {
+  display: flex;
+  position: relative;
+  margin-left: -1.6rem;
+  margin-bottom: 3.2rem;
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+  label {
+    position: relative;
+    width: calc(50% - 1.6rem);
+    height: 14.2rem;
+    margin-left: 1.6rem;
+    border: 1px solid red;
+    background: #fff;
+    border-radius: 1.2rem;
+    font-size: 0;
+    transition: all 0.3 ease;
+
+    &.quizO {
+      border-color: #ddebff;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5.8rem;
+        height: 5.8rem;
+        transform: translate(-50%, -50%);
+        border: 0.8rem solid #3887fd;
+        border-radius: 50%;
+        box-sizing: border-box;
+      }
+    }
+    &.quizX {
+      border-color: #ffdede;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5.5rem;
+        height: 0.9rem;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background: #eb5757;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5.5rem;
+        height: 0.9rem;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        background: #eb5757;
+      }
+    }
+  }
+
+  .on + label {
+    &.quizO {
+      background: #eaf2ff;
+      &:before {
+        box-shadow: 0px 4px 10px rgba(56, 135, 253, 0.4), 0px 4px 10px rgba(56, 135, 253, 0.4) inset;
+      }
+    }
+    &.quizX {
+      background: #ffebee;
+      &:before,
+      &:after {
+        box-shadow: 0px 4px 10px rgba(235, 87, 87, 0.3);
+      }
+    }
+  }
+
+  .off + label {
+    &.quizO {
+      border-color: #ebeef1;
+      background: #ebeef1;
+      &:before {
+        border-color: #d6dbe1;
+        box-shadow: 0px 4px 10px rgba(214, 219, 225, 0.5);
+      }
+    }
+    &.quizX {
+      border-color: #ebeef1;
+      background: #ebeef1;
+      &:before,
+      &:after {
+        background: #d6dbe1;
+        box-shadow: 0px 4px 10px rgba(214, 219, 225, 0.5);
+      }
+    }
+  }
+}
