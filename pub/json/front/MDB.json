@@ -220,5 +220,25 @@
     "worker": "안효주",
     "complete": "2022-02-07"
   }
-  
+  ,{
+    "id":"MDB04-0204p01",
+    "url":"../../front/html/MDB/",
+    "type":"page",
+    "depth2": "소비",
+    "depth3": "카테고리",
+    "name": "카테고리 등록",
+    "worker": "안효주",
+    "complete": "2022-03-15"
+  }
+  ,{
+    "id":"MDB04-0205p01",
+    "url":"../../front/html/MDB/MDB04-0204p01.html",
+    "type":"page",
+    "depth2": "소비",
+    "depth3": "카테고리",
+    "name": "카테고리 수정",
+    "worker": "안효주",
+    "complete": "2022-03-15",
+    "etc": "MDB04-0204p01 동일화면"
+  }
 ]

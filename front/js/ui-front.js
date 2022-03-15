@@ -5284,6 +5284,7 @@ const Layer = {
     $cancelBtn.on('click', function () {
       $result = false;
       const $cancelEvt = function () {
+        if (!!option.cancel) option.cancel();
         if (!!option.callback) option.callback($result);
         if (typeof callback === 'function') callback($result);
         if (typeof callback2 === 'function') callback2($result);
