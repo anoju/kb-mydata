@@ -89,6 +89,11 @@
               <div class="input"><input type="text" placeholder="내용을 입력하세요" title="내용입력" readonly value="readonly" /></div>
               <div class="input"><input type="text" placeholder="내용을 입력하세요" title="내용입력" disabled value="disabled" /></div>
 
+              <h2 class="gd__h2">line</h2>
+              <div class="input line"><input type="text" placeholder="내용을 입력하세요" title="내용입력" /></div>
+              <div class="input line"><input type="text" placeholder="내용을 입력하세요" title="내용입력" readonly value="readonly" /></div>
+              <div class="input line"><input type="text" placeholder="내용을 입력하세요" title="내용입력" disabled value="disabled" /></div>
+
               <h2 class="gd__h2">패스워드</h2>
               <div class="input password"><input type="password" placeholder="비밀번호 입력" title="비밀번호입력" /></div>
 
@@ -532,16 +537,16 @@
               <h2 class="gd__h2">기본</h2>
               <div>
                 <div class="select">
-                  <select id="inpSel1" title="날짜 선택">
-                    <option value="">날짜 선택</option>
-                    <option value="1">1일</option>
-                    <option value="2">2일</option>
-                    <option value="3">3일</option>
+                  <select title="선택">
+                    <option value="">선택</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
                   </select>
                 </div>
 
                 <div class="select">
-                  <select id="inpSel2" title="날짜 선택" disabled>
+                  <select title="날짜 선택" disabled>
                     <option value="">날짜 선택</option>
                     <option value="1">1일</option>
                     <option value="2">2일</option>
@@ -549,6 +554,27 @@
                   </select>
                 </div>
               </div>
+              <h2 class="gd__h2">line</h2>
+              <div>
+                <div class="select line">
+                  <select title="선택">
+                    <option value="">선택</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+
+                <div class="select line">
+                  <select title="날짜 선택" disabled>
+                    <option value="">날짜 선택</option>
+                    <option value="1">1일</option>
+                    <option value="2">2일</option>
+                    <option value="3">3일</option>
+                  </select>
+                </div>
+              </div>
+
               <h2 class="gd__h2">inline</h2>
               <div>
                 <div class="select inline">
@@ -562,6 +588,29 @@
                 </div>
               </div>
             </div>
+
+            <h1 class="gd__h1">textarea</h1>
+            <div>
+              <h2 class="gd__h2">일반</h2>
+              <div class="textarea">
+                <textarea rows="1">textarea</textarea>
+              </div>
+              <div class="textarea">
+                <textarea rows="3">textarea</textarea>
+              </div>
+              <h2 class="gd__h2">line</h2>
+              <div class="textarea line">
+                <textarea rows="1">textarea</textarea>
+              </div>
+              <div class="textarea line">
+                <textarea rows="3">textarea</textarea>
+              </div>
+              <h2 class="gd__h2">auto height</h2>
+              <div class="textarea auto-height">
+                <textarea>textarea</textarea>
+              </div>
+            </div>
+
             <h2 class="gd__h1">line-lbl-inp</h2>
             <div>
               <div class="input line-lbl-inp">
@@ -584,21 +633,6 @@
                   <option value="4">옵션4</option>
                 </select>
                 <div class="lbl">선택</div>
-              </div>
-            </div>
-
-            <h1 class="gd__h1">textarea</h1>
-            <div>
-              <h2 class="gd__h2">일반</h2>
-              <div class="textarea">
-                <textarea rows="1">textarea</textarea>
-              </div>
-              <div class="textarea">
-                <textarea rows="3" disabled>textarea</textarea>
-              </div>
-              <h2 class="gd__h2">auto height</h2>
-              <div class="textarea auto-height">
-                <textarea>textarea</textarea>
               </div>
             </div>
 
@@ -626,6 +660,8 @@
                 <div class="form-lbl">문의 내용</div>
                 <textarea id="textarea" rows="7" placeholder="내용을 입력해주세요" title="제목입력"></textarea>
               </div>
+
+              <h2 class="gd__h2">임시(쓸까?)</h2>
 
               <div class="form-lbl">
                 <div class="left">
