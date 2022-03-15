@@ -16,10 +16,6 @@
     <article id="wrap">
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
-        <div class="section">
-          <button class="button line" onclick="openOpt()">팝업 열기</button>
-        </div>
-
         <!-- 선택 및 기본값 임시 저장-->
         <input type="hidden" name="optAge" value="30" />
         <input type="hidden" name="optMnyS" value="2" />
@@ -28,6 +24,91 @@
     </article>
 
     <!-- 팝업 -->
+    <div id="fullPopup" class="popup full" role="dialog" aria-hidden="true">
+      <article class="pop-wrap">
+        <div class="pop-head">
+          <div>
+            <h1>로즈마리스테이크맛있어요 매치 전적</h1>
+            <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+          </div>
+        </div>
+        <div class="pop-body pt-26">
+          <div class="section">
+            <div class="title-bar align-center mt-0">
+              <div><p class="tit-h2">내 랭킹</p></div>
+              <div class="right">
+                <button aria-label="새로고침"><i class="i-ico-refresh"></i></button>
+              </div>
+            </div>
+
+            <div class="top-100-box mt-28">
+              <a href="#" class="btn-click">
+                <div class="number-info">
+                  <span class="number">999</span>
+                  <!-- 
+                  상승 : up 
+                  하락 : down
+                -->
+                  <span class="block updown up mt-0 ml-auto mr-auto t-center">85</span>
+                </div>
+                <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
+                <div class="text-box">
+                  <p class="name">닉네임닉네임닉네임닉네임닉닉네임닉네임닉네임닉네임닉</p>
+                  <p class="score">22.22%</p>
+                </div>
+              </a>
+            </div>
+
+            <hr class="hr-line mt-24 mb-32" aria-hidden="true" />
+
+            <div class="title-bar align-center mt-0">
+              <div><p class="tit-h2">전체 랭킹</p></div>
+              <div class="right">
+                <button aria-label="전체 랭킹" onclick="openOpt()"><i class="i-ico-filter2"></i></button>
+              </div>
+            </div>
+
+            <div class="filter-info"><i class="i-ico-filter-alt"></i>30대, 1백만원 ~ 1억원</div>
+
+            <div class="top-100-box">
+              <a href="#" class="btn-click">
+                <span class="number">1</span>
+                <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
+                <div class="text-box">
+                  <p class="name">닉네임닉네임닉네임닉네임닉닉네임닉네임닉네임닉네임닉</p>
+                  <p class="score">910점</p>
+                </div>
+              </a>
+              <a href="#" class="btn-click">
+                <span class="number">1</span>
+                <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
+                <div class="text-box">
+                  <p class="name">닉네임닉네임닉네임닉네임닉닉네임닉네임닉네임닉네임닉</p>
+                  <p class="score">910점</p>
+                </div>
+              </a>
+              <a href="#" class="btn-click">
+                <span class="number">1</span>
+                <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
+                <div class="text-box">
+                  <p class="name">닉네임닉네임닉네임닉네임닉닉네임닉네임닉네임닉네임닉</p>
+                  <p class="score">910점</p>
+                </div>
+              </a>
+              <a href="#" class="btn-click">
+                <span class="number">1</span>
+                <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
+                <div class="text-box">
+                  <p class="name">닉네임닉네임닉네임닉네임닉닉네임닉네임닉네임닉네임닉</p>
+                  <p class="score">910점</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
     <div id="popMatchOpt" class="popup bottom" role="dialog" aria-hidden="true">
       <article class="pop-wrap">
         <div class="pop-head">
@@ -133,7 +214,8 @@
           $optValSet();
         });
       };
-      openOpt();
+
+      Layer.open('#fullPopup');
     </script>
   </body>
 </html>

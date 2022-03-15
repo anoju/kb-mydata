@@ -24,9 +24,6 @@
             <button type="button" class="head-back button" role="button" aria-label="이전화면"></button>
           </div>
           <h1 class="t-left">그라운드</h1>
-          <div class="head-right">
-            <button type="button" class="button" role="button">신고</button>
-          </div>
         </div>
       </header>
       <!-- //헤더 -->
@@ -45,19 +42,27 @@
             <label for="x" class="quizX">퀴즈 X</label>
           </div>
 
-          <hr class="hr-line" aria-hidden="true" />
+          <!-- 내 댓글만 체크 -->
+          <div class="flex mt-32 mb-13">
+            <div class="checkbox btn w-auto btn-chk-toggle ml-auto">
+              <input type="checkbox" id="" /><i aria-hidden="true"></i>
+              <label for="" class="lbl h-26 fz-14 pd-12x"><i class="i-ico-check-off-14 mr-5" aria-hidden="true"></i>내댓글만</label>
+            </div>
+          </div>
+          <!-- // 내 댓글만 체크 -->
 
           <div class="ground-talk">
             <div class="user-detail-talk-box mt-0">
               <!-- 기본 -->
               <div class="user-detail-talk">
-                <div class="nick-name">
+                <!-- 프로필이 없는 경우 에러 메시지-->
+                <a href="#" class="nick-name" onclick="noProfile();">
                   <p class="img-box"><img src="../../images/match/sample_result.png" alt="" /></p>
                   <div class="tit-box">
                     <p class="name">입질만삼년째</p>
                     <p class="time">3분 전</p>
                   </div>
-                </div>
+                </a>
                 <p class="text ellipsis-2 mt-6 fc-424242">
                   상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
                   상세내용상세내용상세내용상세내용상세내용상세내
@@ -192,6 +197,15 @@
           });
         }
       });
+      function noProfile() {
+        const text = '<p>선택하신 사용자의 프로필을 확인 할 수 없어요.</p><p class="mt-8">앱 탈퇴 또는 그라운드에서 퇴실하거나 이용정지 된 사용자의 정보는 접근이 제한됩니다.</p>';
+        Layer.confirm(text, '알림', '확인', function (e) {
+          if (e) {
+            Layer.toast('정답 선택이 완료 되었어요.');
+            choiceSelect = true;
+          }
+        });
+      }
     </script>
   </body>
 </html>

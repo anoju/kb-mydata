@@ -616,12 +616,18 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
   .checkbox {
     .lbl {
       padding-right: 3rem;
+      font-size: 1.4rem;
+      color: #212121;
     }
-    .i-ico-arr-right-16 {
+    .agree-btn {
+      display: block;
       position: absolute;
-      top: 0.4rem;
+      top: 0;
       right: 0;
       margin-top: 0;
+      [class*='i-ico-'] {
+        margin-top: 0;
+      }
     }
   }
   &.folding {
