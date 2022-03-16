@@ -3,6 +3,16 @@
     "depth1": "매치"
   },
   {
+    "id":"MBA01-0400p01C",
+    "url":"../../front/html/MBA/",
+    "type":"pop",
+    "depth2": "매치 이용약관",
+    "depth3": "",
+    "name": "이용약관",
+    "worker": "장영석",
+    "complete": "2022-03-15"
+  },
+  {
     "id":"MBA05-0200p01C",
     "url":"../../front/html/MBA/",
     "type":"pop",
