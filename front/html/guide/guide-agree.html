@@ -128,9 +128,9 @@
             <h2 class="gd__h2">상세확인 필수</h2>
             <div class="agree-dl ui-agree">
               <div class="agree-dt">
-                <div class="checkbox ty2">
+                <div class="checkbox">
                   <input type="checkbox" id="agreeAll2" class="ui-all-agree-chk" data-agree-check="#agree2-1, #agree2-2, #agree2-3" /><i aria-hidden="true"></i>
-                  <label class="lbl fz-18 fc-424242" for="agreeAll2"><strong>전체 동의</strong></label>
+                  <label class="lbl fz-16 fc-424242" for="agreeAll2"><strong>전체 동의</strong></label>
                 </div>
               </div>
               <div class="agree-dd">
@@ -159,50 +159,62 @@
             </div>
 
             <h2 class="gd__h2">아코디언</h2>
-            <div class="agree-dl ui-agree folding">
-              <div class="agree-dt">
-                <div class="checkbox ty2">
-                  <input type="checkbox" id="agreeAll3" class="ui-all-agree-chk" /><i aria-hidden="true"></i>
-                  <label class="lbl fz-18 fc-424242" for="agreeAll3"><strong>전체 동의</strong></label>
-                  <a href="#" class="ui-folding-btn open" aria-label="약관상세목록 확인"><i class="i-ico-arr-down-24" aria-hidden="true"></i></a>
+            <div>
+              <h3 class="gd__h3">사용</h3>
+              <div class="chk-item folding">
+                <div class="checkbox">
+                  <input type="checkbox" id="agreeChk1" /><i aria-hidden="true"></i>
+                  <label for="agreeChk1" class="lbl">[선택] 적요 또는 거래메모정보 수집·이용에 동의</label>
+                  <a href="#" role="button" class="ui-folding-btn" aria-label="약관상세내용 확인"><i class="i-ico-arr-down-24" aria-hidden="true"></i></a>
+                </div>
+                <div class="lbl-child folding-panel">
+                  송금인/수취인명 정보 등 본인의 사생활 및 경제활동등에 관련된 상세한 정보입니다. 정보 전송은 본인의 책임과 판단 하에 신중하게 결정하여 주시기 바랍니다.
                 </div>
               </div>
-              <div class="agree-dd folding-panel">
-                <div class="checkbox ty2">
-                  <input type="checkbox" id="agree3-1" class="ui-agree-chk" /><i aria-hidden="true"></i>
-                  <div class="lbl">
-                    <label for="agree3-1">(필수) 서비스 이용약관 동의</label>
-                    <a href="#" class="agree-btn" onclick="Layer.open('#agreeDetail0')" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+              <h3 class="gd__h3">미사용</h3>
+              <div class="agree-dl ui-agree folding">
+                <div class="agree-dt">
+                  <div class="checkbox">
+                    <input type="checkbox" id="agreeAll3" class="ui-all-agree-chk" /><i aria-hidden="true"></i>
+                    <label class="lbl fz-16 fc-424242" for="agreeAll3"><strong>전체 동의</strong></label>
+                    <a href="#" class="ui-folding-btn open" aria-label="약관상세목록 확인"><i class="i-ico-arr-down-24" aria-hidden="true"></i></a>
                   </div>
                 </div>
-                <div class="checkbox ty2">
-                  <input type="checkbox" id="agree3-2" class="ui-agree-chk" /><i aria-hidden="true"></i>
-                  <div class="lbl">
-                    <label for="agree3-2">(필수) 개인정보의 제공 및 활용 동의</label>
-                    <a href="#" class="agree-btn" onclick="Layer.open('#agreeDetail0')" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                <div class="agree-dd folding-panel">
+                  <div class="checkbox ty2">
+                    <input type="checkbox" id="agree3-1" class="ui-agree-chk" /><i aria-hidden="true"></i>
+                    <div class="lbl">
+                      <label for="agree3-1">(필수) 서비스 이용약관 동의</label>
+                      <a href="#" class="agree-btn" onclick="Layer.open('#agreeDetail0')" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                    </div>
                   </div>
-                </div>
-                <div class="checkbox ty2">
-                  <input type="checkbox" id="agree3-3" class="ui-agree-chk" data-agree-target="#agree3-3-sms, #agree3-3-mail" /><i aria-hidden="true"></i>
-                  <div class="lbl">
-                    <label for="agree3-3">(선택) 마케팅 정보 제공 및 활용 동의</label>
-                    <a href="#" class="agree-btn" onclick="Layer.open('#agreeDetail0')" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                  <div class="checkbox ty2">
+                    <input type="checkbox" id="agree3-2" class="ui-agree-chk" /><i aria-hidden="true"></i>
+                    <div class="lbl">
+                      <label for="agree3-2">(필수) 개인정보의 제공 및 활용 동의</label>
+                      <a href="#" class="agree-btn" onclick="Layer.open('#agreeDetail0')" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                    </div>
                   </div>
-                </div>
-                <div class="mt-14 pl-28">
-                  <span class="checkbox ty2">
-                    <input type="checkbox" id="agree3-3-sms" /><i aria-hidden="true"></i>
-                    <label for="agree3-3-sms" class="lbl fz-14">문자 수신</label>
-                  </span>
-                  <span class="checkbox ty2">
-                    <input type="checkbox" id="agree3-3-mail" /><i aria-hidden="true"></i>
-                    <label for="agree3-3-mail" class="lbl fz-14">메일 수신</label>
-                  </span>
+                  <div class="checkbox ty2">
+                    <input type="checkbox" id="agree3-3" class="ui-agree-chk" data-agree-target="#agree3-3-sms, #agree3-3-mail" /><i aria-hidden="true"></i>
+                    <div class="lbl">
+                      <label for="agree3-3">(선택) 마케팅 정보 제공 및 활용 동의</label>
+                      <a href="#" class="agree-btn" onclick="Layer.open('#agreeDetail0')" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                  <div class="mt-14 pl-28">
+                    <span class="checkbox ty2">
+                      <input type="checkbox" id="agree3-3-sms" /><i aria-hidden="true"></i>
+                      <label for="agree3-3-sms" class="lbl fz-14">문자 수신</label>
+                    </span>
+                    <span class="checkbox ty2">
+                      <input type="checkbox" id="agree3-3-mail" /><i aria-hidden="true"></i>
+                      <label for="agree3-3-mail" class="lbl fz-14">메일 수신</label>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <br />
             <br />
             <br />
             <br />
