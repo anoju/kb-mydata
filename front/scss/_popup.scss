@@ -1,6 +1,6 @@
 :root {
-  --pop-move-time: 0.45s;
-  --pop-dimm-time: 0.15s;
+  --pop-move-time: 0.4s;
+  --pop-dimm-time: 0.1s;
 }
 /*popup*/
 .pop-wrap {
@@ -173,9 +173,10 @@
     width: 100%;
     max-height: 100%;
     background-color: #fff;
-    transform: translate3d(0, 120%, 0);
+    transform: translate3d(0, 10%, 0);
     transition: transform var(--pop-move-time), margin var(--pop-move-time), opacity var(--pop-move-time), visibility var(--pop-move-time);
     visibility: hidden;
+    opacity: 0;
   }
 
   .pop-body {
@@ -198,8 +199,6 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      transform: translate3d(0, 10%, 0);
-      opacity: 0;
     }
     .pop-head {
       flex-shrink: 0;
@@ -273,6 +272,8 @@
       position: fixed;
       bottom: 0;
       border-radius: 2rem 2rem 0 0;
+      transform: translate3d(0, 110%, 0);
+      opacity: 1;
     }
     > .pop-wrap {
       html.mobile & {
@@ -349,9 +350,7 @@
       width: 100%;
       max-width: 64rem;
       border-radius: 1.6rem;
-      margin: 5rem auto 0;
-      opacity: 0;
-      transform: translate3d(0, 0, 0);
+      margin: 0 auto;
     }
     .pop-head {
       > div {
@@ -361,8 +360,9 @@
         text-align: left;
       }
       .pop-close {
-        top: 2.6rem;
+        top: 2.1rem;
         right: 1.6rem;
+        display: none;
       }
     }
     .pop-foot {
@@ -432,6 +432,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      opacity: 1;
     }
     .pop-head {
       flex-shrink: 0;
@@ -442,20 +443,16 @@
     }
   }
   &.side-left {
+    > .pop-scl-wrap,
     > .pop-wrap {
       transform: translate3d(-120%, 0, 0);
     }
-    &.show {
-      transform: translate3d(0, 0, 0);
-    }
   }
   &.side-right {
+    > .pop-scl-wrap,
     > .pop-wrap {
       float: right;
       transform: translate3d(120%, 0, 0);
-    }
-    &.show {
-      transform: translate3d(0, 0, 0);
     }
   }
 
@@ -469,7 +466,6 @@
       transition-delay: var(--pop-dimm-time);
       visibility: visible;
       opacity: 1;
-      margin-top: 0;
     }
   }
   .pop-close.last-focus {

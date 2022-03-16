@@ -5804,6 +5804,7 @@ const Layer = {
       */
 
       const $openDelay = 50 * Layer.opening;
+      const $callbackDelay = 100;
 
       // pop-scl-wrap
       if (ui.PC.any() && ($popup.hasClass('modal') || $popup.hasClass('bottom')) && !$popup.find('.' + Layer.sclWrapClass).length) {
@@ -5933,7 +5934,7 @@ const Layer = {
         setTimeout(function () {
           if (!!callback) callback();
           $popup.trigger('Layer.show');
-        }, 200);
+        }, $callbackDelay);
         Layer.opening--;
       }, $openDelay);
     } else {
@@ -5954,8 +5955,8 @@ const Layer = {
     const $popup = $(tar);
     if (!$popup.hasClass(Layer.showClass)) return console.log(tar, '해당팝업 안열려있음');
     const $id = $popup.attr('id');
-    let $closeDelay = 610;
-    let $callbackDelay = 300;
+    let $closeDelay = 510;
+    let $callbackDelay = 510;
     let $lastPop = '';
     const $visible = $('.' + Layer.popClass + '.' + Layer.showClass).length;
 
