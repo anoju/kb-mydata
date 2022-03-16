@@ -133,7 +133,7 @@
           <!-- //컨텐츠본문 -->
 
           <!-- 그룹 메뉴권한설정 팝업 -->
-          <div class="modal modal-selectMenu fade" id="registAuthority" tabindex="-1" aria-labelledby="registAuthorityLabel" aria-hidden="true">
+          <div class="modal modal-selectMenu fade show" id="registAuthority" tabindex="-1" aria-labelledby="registAuthorityLabel" aria-hidden="true" style="display: block">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
@@ -152,113 +152,95 @@
                           <button type="button" class="btn btn-sm btn-secondary float-right">권한 초기화</button>
                         </div>
 
-                        <div class="menu_list mt-3">
+                        <div class="menu-list mt-3">
                           <h5>메뉴명</h5>
-                          <div class="scroll_content">
-                            <!-- 메뉴 리스트 아이템 -->
-                            <dl class="list-group">
+                          <div class="scroll-content">
+                            <div class="list-group menu-group">
                               <!-- 1depth -->
-                              <dt class="list-group-item">
+                              <div class="list-group-item dep-1">
                                 <label class="custom-control custom-checkbox">
                                   <input type="checkbox" name="chk5" class="custom-control-input" />
-                                  <span class="custom-control-label"></span>
+                                  <span class="custom-control-label">1뎁스 메뉴명 1</span>
                                 </label>
-                                <p class="collapsed" data-toggle="collapse" data-target="#ex1-Depth1" aria-expanded="false" aria-controls="ex1-Depth1">관리자</p>
-                              </dt>
-                              <!-- // 1depth -->
-                              <dd>
-                                <!-- 2depth -->
-                                <div class="list-group-item collapse" id="ex1-Depth1">
-                                  <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" name="chk5" class="custom-control-input" />
-                                    <span class="custom-control-label"></span>
-                                  </label>
-                                  <p class="collapsed depth_2_btn" data-toggle="collapse" data-target="#ex1-Depth2" aria-expanded="false" aria-controls="ex1-Depth2">관리자 관리</p>
-                                  <!-- 3depth -->
-                                  <div class="collapse depth_2" id="ex1-Depth2">
-                                    <div class="list-group-item">
-                                      <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="chk5" class="custom-control-input" />
-                                        <span class="custom-control-label"></span>
-                                      </label>
-                                      <p>Admin 관리자 관리</p>
-                                    </div>
-                                    <div class="list-group-item">
-                                      <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="chk5" class="custom-control-input" />
-                                        <span class="custom-control-label"></span>
-                                      </label>
-                                      <p>권한 설정</p>
-                                    </div>
-                                  </div>
-                                  <!-- // 3depth -->
-                                </div>
-                                <!-- // 2depth -->
-                              </dd>
-                            </dl>
-                            <!-- // 메뉴 리스트 아이템 -->
+                                <!-- 하위메뉴 있으면 button 추가-->
+                                <button class="btn" data-dep="1"><span class="sr-only">하위메뉴</span></button>
+                              </div>
+                              <!-- //1depth -->
 
-                            <!-- 메뉴 리스트 아이템 -->
-                            <dl class="list-group">
-                              <!-- 1depth -->
-                              <dt class="list-group-item">
+                              <!-- 2depth -->
+                              <div class="list-group-item dep-2">
                                 <label class="custom-control custom-checkbox">
                                   <input type="checkbox" name="chk5" class="custom-control-input" />
-                                  <span class="custom-control-label"></span>
+                                  <span class="custom-control-label">2뎁스 메뉴명 1</span>
                                 </label>
-                                <p class="collapsed" data-toggle="collapse" data-target="#ex2-Depth1" aria-expanded="false" aria-controls="ex2-Depth1">회원관리</p>
-                              </dt>
-                              <!-- // 1depth -->
-                              <dd>
-                                <!-- 2depth -->
-                                <div class="list-group-item collapse" id="ex2-Depth1">
-                                  <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" name="chk5" class="custom-control-input" />
-                                    <span class="custom-control-label"></span>
-                                  </label>
-                                  <p class="depth_2_btn collapsed" data-toggle="collapse" data-target="#ex2-Depth2" aria-expanded="false" aria-controls="ex2-Depth2">회원 관리</p>
-                                  <!-- 3depth -->
-                                  <div class="collapse depth_2" id="ex2-Depth2">
-                                    <div class="list-group-item">
-                                      <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="chk5" class="custom-control-input" />
-                                        <span class="custom-control-label"></span>
-                                      </label>
-                                      <p>회원 관리</p>
-                                    </div>
-                                  </div>
-                                  <!-- // 3depth -->
-                                </div>
-                                <!-- // 2depth -->
-                              </dd>
-                            </dl>
-                            <!-- // 메뉴 리스트 아이템 -->
+                              </div>
+                              <div class="list-group-item dep-2">
+                                <label class="custom-control custom-checkbox">
+                                  <input type="checkbox" name="chk5" class="custom-control-input" />
+                                  <span class="custom-control-label">2뎁스 메뉴명 2</span>
+                                </label>
+                                <!-- 하위메뉴 있으면 button 추가-->
+                                <button class="btn" data-dep="2"><span class="sr-only">하위메뉴</span></button>
+                              </div>
+                              <!-- //2depth -->
 
-                            <!-- 메뉴 리스트 아이템 -->
-                            <dl class="list-group">
-                              <!-- 1depth -->
-                              <dt class="list-group-item">
+                              <!-- 3depth -->
+                              <div class="list-group-item dep-3">
                                 <label class="custom-control custom-checkbox">
                                   <input type="checkbox" name="chk5" class="custom-control-input" />
-                                  <span class="custom-control-label"></span>
+                                  <span class="custom-control-label">3뎁스 메뉴명 1</span>
                                 </label>
-                                <p class="collapsed" data-toggle="collapse" data-target="#ex3-Depth1" aria-expanded="false" aria-controls="ex3-Depth1">앱관리</p>
-                              </dt>
-                              <!-- // 1depth -->
-                              <dd>
-                                <!-- 2depth -->
-                                <div class="list-group-item collapse" id="ex3-Depth1">
-                                  <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" name="chk5" class="custom-control-input" />
-                                    <span class="custom-control-label"></span>
-                                  </label>
-                                  <!-- 3depth가 없을 경우 -->
-                                  <p>앱관리</p>
-                                </div>
-                                <!-- // 2depth -->
-                              </dd>
-                            </dl>
-                            <!-- // 메뉴 리스트 아이템 -->
+                              </div>
+                              <div class="list-group-item dep-3">
+                                <label class="custom-control custom-checkbox">
+                                  <input type="checkbox" name="chk5" class="custom-control-input" />
+                                  <span class="custom-control-label">3뎁스 메뉴명 2</span>
+                                </label>
+                              </div>
+                              <!-- //3depth -->
+
+                              <!-- 1depth -->
+                              <div class="list-group-item dep-1">
+                                <label class="custom-control custom-checkbox">
+                                  <input type="checkbox" name="chk5" class="custom-control-input" />
+                                  <span class="custom-control-label">1뎁스 메뉴명 2</span>
+                                </label>
+                                <!-- 하위메뉴 있으면 button 추가-->
+                                <button class="btn" data-dep="1"><span class="sr-only">하위메뉴</span></button>
+                              </div>
+                              <!-- //1depth -->
+
+                              <!-- 2depth -->
+                              <div class="list-group-item dep-2">
+                                <label class="custom-control custom-checkbox">
+                                  <input type="checkbox" name="chk5" class="custom-control-input" />
+                                  <span class="custom-control-label">2뎁스 메뉴명 1</span>
+                                </label>
+                                <!-- 하위메뉴 있으면 button 추가-->
+                                <button class="btn" data-dep="2"><span class="sr-only">하위메뉴</span></button>
+                              </div>
+                              <!-- 3depth -->
+                              <div class="list-group-item dep-3">
+                                <label class="custom-control custom-checkbox">
+                                  <input type="checkbox" name="chk5" class="custom-control-input" />
+                                  <span class="custom-control-label">3뎁스 메뉴명 1</span>
+                                </label>
+                              </div>
+                              <div class="list-group-item dep-3">
+                                <label class="custom-control custom-checkbox">
+                                  <input type="checkbox" name="chk5" class="custom-control-input" />
+                                  <span class="custom-control-label">3뎁스 메뉴명 2</span>
+                                </label>
+                              </div>
+                              <!-- //3depth -->
+                              <div class="list-group-item dep-2">
+                                <label class="custom-control custom-checkbox">
+                                  <input type="checkbox" name="chk5" class="custom-control-input" />
+                                  <span class="custom-control-label">2뎁스 메뉴명 2</span>
+                                </label>
+                              </div>
+                              <!-- //2depth -->
+                            </div>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -303,6 +285,24 @@
         });
       }
       initTable();
+
+      function MenuListUI() {
+        $('.menu-group .btn').click(function (e) {
+          e.preventDefault();
+          var $this = $(this);
+          var $dep = $this.data('dep');
+          var $thisItem = $this.closest('.list-group-item');
+          var $items = $thisItem.nextUntil('.dep-' + $dep, '.dep-' + ($dep + 1));
+          if ($this.hasClass('on')) {
+            $this.removeClass('on');
+            $items.stop(false, true).slideUp(300);
+          } else {
+            $this.addClass('on');
+            $items.stop(false, true).slideDown(300);
+          }
+        });
+      }
+      MenuListUI();
 
       // 팝업
       //접근권한없음 팝업

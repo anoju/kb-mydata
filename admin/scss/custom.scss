@@ -13,6 +13,16 @@ $mobile-size: 768;
     @content;
   }
 }
+@mixin bi-icon() {
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: text-bottom;
+  -webkit-font-smoothing: antialiased;
+}
 
 //width-0, width-1, width-2 ... width-50
 @for $i from 0 through 50 {
@@ -1519,7 +1529,7 @@ html:not(.mobile) {
     padding: 0 1rem;
   }
 }
-.scroll_content {
+.scroll-content {
   overflow-y: auto;
   overflow-x: hidden;
   height: 5rem;
@@ -1550,7 +1560,7 @@ html:not(.mobile) {
 /** BSW 작업 **/
 //그룹 권한 설정 팝업
 .modal-selectMenu {
-  .menu_list {
+  .menu-list {
     h5 {
       padding: 0.75rem 3rem;
       background: #495057;
@@ -1560,82 +1570,50 @@ html:not(.mobile) {
     }
   }
 
-  .scroll_content {
+  .scroll-content {
     white-space: inherit;
     height: 20rem;
-    p {
-      margin: 0;
-      position: relative;
-      padding: 0.75rem 3rem;
-    }
-    .list-group {
-      dt {
-        p:not(.collapsed) {
-          //color: #fff;
-          background: #dee2e6;
-        }
-      }
-      dd {
-        position: relative;
-        top: -0.02rem;
-      }
-      & + & {
-        margin-top: 1rem;
-      }
-    }
-    //더보기 아이콘 시작
-    dt p,
-    p.depth_2_btn {
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        width: 1rem;
-        height: 0.1rem;
-        right: 1rem;
-        top: 50%;
-        background: #222;
-      }
-      &::before {
-        transform: rotate(90deg);
-      }
-      &:not(.collapsed) {
-        font-weight: bold;
-        background: #f5f5f5;
-      }
-      &:not(.collapsed):before {
-        content: none;
-      }
-    }
-    //더보기 아이콘 끝
-    .depth_2 {
-      p {
-        font-weight: 400;
-        background: #fff;
-      }
-    }
+    padding: 0.5rem 0.5rem 0.5rem 0;
+  }
+  .menu-group {
     .list-group-item {
-      padding: 0;
-      .list-group-item {
-        border: 0;
+      padding: 0.5rem 2rem 0.5rem 1rem;
+      label {
+        margin-bottom: 0;
       }
-
-      .custom-control {
-        margin: 0;
-        left: 1rem;
+      .btn {
         position: absolute;
-        top: 0.75rem;
-      }
-    }
-    .depth_2 {
-      .list-group-item {
-        border-top: 0.063em solid #ddd;
-      }
-      p {
-        &::before,
-        &::after {
-          content: none;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 2rem;
+        background: none;
+        // background: $gray-400;
+        color: $gray-900;
+        font-size: 1.5rem;
+        border-radius: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:before {
+          display: block;
+          content: '\f4d7';
+          @include bi-icon;
         }
+        &.on:before {
+          content: '\f2ca';
+        }
+      }
+      &.dep-2 {
+        display: none;
+        padding-left: 1.5rem;
+        background: $gray-100;
+      }
+      &.dep-3 {
+        display: none;
+        padding-left: 2rem;
+        background: $gray-200;
       }
     }
   }
@@ -1678,7 +1656,7 @@ html:not(.mobile) {
         content: none;
       }
     }
-    .scroll_content {
+    .scroll-content {
       height: 15rem;
     }
     ul {
