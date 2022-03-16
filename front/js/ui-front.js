@@ -5433,6 +5433,33 @@ const Layer = {
       });
     });
   },
+  pdfIdx: 0,
+  pdf: function (url, title) {
+    const pdfPopId = 'uiPopPdf' + Layer.pdfIdx;
+    let $src = '/pdfjs/web/viewer.html?file=' + url;
+    if (location.pathname.indexOf('/front/') > -1) $src = '/front' + $src;
+    if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $src = '/kyobo-mydata-pub' + $src;
+    if (location.pathname.indexOf('dev-mydata.mykkl.com') > -1) $src = '/mydata/resources/static' + $src;
+
+    let $html = '<div id="' + pdfPopId + '" class="' + Layer.popClass + ' full pop-pdf ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
+    $html += '<article class="' + Layer.wrapClass + '">';
+    $html += '<div class="' + Layer.headClass + '"><div><h1>' + title + '</h1><button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button></div></div>';
+    $html += '<div class="' + Layer.bodyClass + ' iframe-full-box">';
+    $html += '<iframe src="' + $src + '" frameborder="0"></iframe>';
+    $html += '</div>';
+    $html += '<div class="pop-foot"><div><div class="flex"><button type="button" class="button primary ui-pop-close">확인</button></div></div></div>';
+    $html += '</div>';
+    $html += '</article>';
+    $html += '</div>';
+
+    if ($('#wrap').length) {
+      $('#wrap').append($html);
+    } else {
+      $('body').append($html);
+    }
+    Layer.pdfIdx += 1;
+    Layer.open('#' + pdfPopId);
+  },
   selectId: 'uiSelectLayer',
   selectIdx: 0,
   selectClass: 'ui-pop-select',
@@ -6683,6 +6710,14 @@ const Layer = {
           Layer.close($pop);
         }
       }
+    });
+
+    //pdf
+    $(document).on('click', '[data-agree-pdf]', function (e) {
+      e.preventDefault();
+      console.log('aaa');
+      const $url = $(this).data('agree-pdf');
+      Layer.pdf($url, '약관상세');
     });
   }
 };
