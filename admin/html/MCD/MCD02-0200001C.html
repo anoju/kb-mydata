@@ -297,14 +297,14 @@
           if ($this.hasClass('on')) {
             //닫기
             $this.removeClass('on');
-            $items = $thisItem.nextUntil('.dep-' + $dep);
+            $items = $thisItem.nextUntil('.dep-' + $dep + ', .dep-' + ($dep - 1));
             $items.find('.btn.on').removeClass('on');
-            $items.stop(false, true).slideUp(300);
+            $items.stop(false, true).slideUp(200);
           } else {
             //열기
             $this.addClass('on');
             $items = $thisItem.nextUntil('.dep-' + $dep, '.dep-' + ($dep + 1));
-            $items.stop(false, true).slideDown(300);
+            $items.stop(false, true).slideDown(200);
           }
         });
       }
