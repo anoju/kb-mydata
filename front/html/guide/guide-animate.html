@@ -93,14 +93,27 @@
             <p>무료 라이센스</p>
             <!-- <div class="gd__lottie-box _loop" data-lottie="../../temp/loading-small.json"></div> -->
             <br />
-            <div class="gd__lottie-box" data-lottie="../../temp/success.json"></div>
-            <div class="gd__lottie-box" data-lottie="../../temp/warning.json"></div>
+
             <div class="gd__lottie-box _loop" data-lottie="../../temp/loading.json"></div>
             <div class="gd__lottie-box _loop" data-lottie="../../temp/haloween.json"></div>
             <div class="gd__lottie-box _loop" data-lottie="../../temp/love.json"></div>
+            <div class="gd__lottie-box" data-lottie="../../temp/success.json"></div>
+            <div>
+              <button class="button line h32 gd-confetti-btn">다시</button>
+            </div>
+            <div class="gd__lottie-box" data-lottie="../../temp/warning.json"></div>
+            <div>
+              <button class="button line h32 gd-confetti-btn">다시</button>
+            </div>
             <p class="mt-60">지마켓에서 사용한 로띠(샘플)</p>
-            <div class="gd__lottie-confetti loop" data-lottie="../../temp/confetti.json"></div>
+            <div id="gd-confetti" class="gd__lottie-confetti" data-lottie="../../temp/confetti.json" style="background-color: #fafafa"></div>
+            <div>
+              <button class="button line h32 gd-confetti-btn">다시</button>
+            </div>
             <div class="gd__lottie-complete" data-lottie="../../temp/complete.json"></div>
+            <div>
+              <button class="button line h32 gd-confetti-btn">다시</button>
+            </div>
           </div>
           <h1 class="gd__h1">scroll event</h1>
           <div>
@@ -261,5 +274,11 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script>
+      $('.gd-confetti-btn').click(function () {
+        const anim = $(this).parent().prev().data('lottie-opt');
+        if (anim) anim.goToAndPlay(0, true);
+      });
+    </script>
   </body>
 </html>
