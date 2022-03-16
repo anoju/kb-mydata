@@ -139,12 +139,23 @@
             <div>
               <h4 class="gd__h3">종류</h4>
               <div>
-                <a href="#" class="button line h32" onclick="Layer.open('#fullPopup')">풀팝업 열기</a>
+                <a href="#" class="button line h32" onclick="Layer.open('#fullPopup', function(){console.log('풀팝업 열림')})">풀팝업 열기</a>
                 <a href="#modalPopup" class="button line h32 ui-pop-open">모달팝업 열기</a>
-                <a href="#" class="button line h32" onclick="Layer.open('#bottomPopup')">바텀시트팝업 열기</a>
+                <a href="#" class="button line h32" onclick="Layer.open('#bottomPopup1')">바텀시트팝업 열기</a>
                 <a href="#" class="button line h32" onclick="Layer.open('#sidePopup1')">사이드팝업(왼쪽) 열기</a>
                 <a href="#" class="button line h32" onclick="Layer.open('#sidePopup2')">사이드팝업(오른쪽) 열기</a>
               </div>
+              <script>
+                $(function () {
+                  $('#modalPopup').on('Layer.show', function () {
+                    console.log('모달팝업 열림');
+                  });
+
+                  $('#bottomPopup1').on('Layer.hide', function () {
+                    console.log('바텀팝업 닫힘');
+                  });
+                });
+              </script>
               <br />
               <div class="txt-list">
                 <ul>
@@ -157,7 +168,10 @@
               <h4 class="gd__h3">오픈 방법</h4>
               <h5 class="gd__h4">함수로 오픈</h5>
               <div class="txt-list mt-20">
-                <pre><code class="language-javascript">Layer.open('#팝업ID');</code></pre>
+                <pre><code class="language-javascript">Layer.open('#팝업ID');
+Layer.open('#팝업ID', function(){
+  //팝업 오픈후 콜백이벤트 삽입
+});</code></pre>
                 <ul class="mt-10">
                   <li class="dot">띄울려는 <strong class="fc-red">팝업의 ID</strong>를 넣어주면 됩니다.</li>
                 </ul>
@@ -165,8 +179,12 @@
 
               <h5 class="gd__h4">클래스로 오픈</h5>
               <div class="txt-list mt-20">
-                <pre><code class="language-xml">&lt;a href="#팝업ID" class="button line h32 ui-pop-open"&gt;버튼텍스트&lt;/a&gt;
-</code></pre>
+                <pre><code class="language-xml">&lt;a href="#팝업ID" class="button line h32 ui-pop-open"&gt;버튼텍스트&lt;/a&gt;</code></pre>
+                <pre><code class="language-javascript">// 클래스로 팝업 열때 콜백이벤트 사용법
+//Layer.open 함수로 열때도 사용가능
+$('#팝업ID').on('Layer.show',function(){
+  //팝업 오픈후 콜백이벤트 삽입
+});</code></pre>
                 <ul class="mt-10">
                   <li class="dot">클래스로 <strong class="fc-red">ui-pop-open</strong>를 넣어주시고 href속성에 <strong class="fc-red">팝업의 ID</strong>를 넣어주면 됩니다.</li>
                   <li class="dot"><strong class="fc-red">ui-pop-open</strong>클래스는 해당 용도가 아니면 에러를 발생할수 있으니 안쓸때는 삭제해주세요.</li>
@@ -176,7 +194,10 @@
               <h4 class="gd__h3">닫기 방법</h4>
               <h5 class="gd__h4">함수로 닫기</h5>
               <div class="txt-list mt-20">
-                <pre><code class="language-javascript">Layer.close('#팝업ID');</code></pre>
+                <pre><code class="language-javascript">Layer.close('#팝업ID');
+Layer.close('#팝업ID', function(){
+  //팝업 닫은 후 콜백이벤트 삽입
+});</code></pre>
                 <ul class="mt-10">
                   <li class="dot">숨기려는 <strong class="fc-red">팝업의 ID</strong>를 넣어주면 됩니다.</li>
                 </ul>
@@ -190,6 +211,11 @@
 &lt;-- 닫으려는 팝업안에 있는 버튼이라면: href에 안넣어도 됨 --&gt;
 &lt;a href="#" class="button line h32 ui-pop-close"&gt;버튼텍스트&lt;/a&gt;
 </code></pre>
+                <pre><code class="language-javascript">// 클래스로 팝업 닫을때 콜백이벤트 사용법
+//Layer.close 함수로 닫을때도 사용가능
+$('#팝업ID').on('Layer.hide',function(){
+  //팝업 닫은후 콜백이벤트 삽입
+});</code></pre>
                 <ul class="mt-10">
                   <li class="dot">클래스로 <strong class="fc-red">ui-pop-close</strong>를 넣어주시고 href속성에 <strong class="fc-red">팝업의 ID</strong>를 넣어주면 됩니다.</li>
                   <li class="dot">만약 닫으려는 팝업 안에 있는 버튼이라면 href속성에 <strong class="fc-red">팝업의 ID를 넣지 않아도 됩니다.</strong></li>
