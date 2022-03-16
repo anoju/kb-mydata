@@ -1576,9 +1576,27 @@ html:not(.mobile) {
     padding: 0.5rem 0;
   }
   .menu-group {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      list-style: none;
+      + li {
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+      }
+    }
     .list-group-item {
       padding: 0.5rem 2rem 0.5rem 1rem;
       border-radius: 0;
+      border-width: 0;
+      + .list-group-item {
+        border-top-width: 1px;
+      }
       label {
         margin-bottom: 0;
       }
@@ -1607,15 +1625,17 @@ html:not(.mobile) {
         }
       }
       &.dep-2 {
-        display: none;
         padding-left: 1.5rem;
         background: $gray-100;
       }
       &.dep-3 {
-        display: none;
         padding-left: 2rem;
         background: $gray-200;
       }
+    }
+    .sub-wrap {
+      display: none;
+      border-top: 1px solid rgba(0, 0, 0, 0.125);
     }
   }
 }
