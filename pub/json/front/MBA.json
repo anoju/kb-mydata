@@ -70,7 +70,7 @@
     "depth1": "매치(그라운드)"
   },
   {
-    "id":"MBA10-0101p03C",
+    "id":"MBA10-0201p03C",
     "url":"../../front/html/MBA/",
     "type":"pop",
     "depth2": "그라운드",
@@ -79,10 +79,10 @@
     "name": "그라운드",
     "worker": "장영석",
     "complete": "2022-03-15",
-    "etc":""
+    "etc":"파일명 변경"
   },
   {
-    "id":"MBA10-0200p01C",
+    "id":"MBA10-0100p01C",
     "url":"../../front/html/MBA/",
     "type":"pop",
     "depth2": "그라운드",
@@ -90,7 +90,7 @@
     "name": "그라운드 소개 팝업",
     "worker": "장영석",
     "complete": "2022-03-15",
-    "etc":"참여가능, 참여불가 케이스 존재"
+    "etc":"참여가능, 참여불가 케이스 존재<br /> 파일명 변경"
   },
   {
     "id":"MBA10-0212p01C",
@@ -126,7 +126,7 @@
     "etc":""
   },
   {
-    "id":"MBA10-0100001C",
+    "id":"MBA10-0200001C",
     "url":"../../front/html/MBA/",
     "type":"page",
     "depth2": "그라운드",
@@ -134,7 +134,7 @@
     "name": "",
     "worker": "장영석",
     "complete": "2022-03-10",
-    "etc":"삭제확인, 신고하기 팝업 추가"
+    "etc":"삭제확인, 신고하기 팝업 추가<br /> 파일명 변경"
   },
   {
     "id":"MBA10-0211p01C",
@@ -148,7 +148,7 @@
     "etc":""
   },
   {
-    "id":"MBA10-0101001C",
+    "id":"MBA10-0201001C",
     "url":"../../front/html/MBA/",
     "type":"page",
     "depth2": "그라운드",
@@ -157,10 +157,10 @@
     "name": "",
     "worker": "장영석",
     "complete": "2022-03-15",
-    "etc":""
+    "etc":"파일명 변경"
   },
   {
-    "id":"MBA10-0102001C",
+    "id":"MBA10-0202001C",
     "url":"../../front/html/MBA/",
     "type":"page",
     "depth2": "그라운드",
@@ -169,10 +169,10 @@
     "name": "",
     "worker": "장영석",
     "complete": "2022-03-15",
-    "etc":""
+    "etc":"파일명 변경"
   },
   {
-    "id":"MBA10-0103001C",
+    "id":"MBA10-0203001C",
     "url":"../../front/html/MBA/",
     "type":"page",
     "depth2": "그라운드",
@@ -181,10 +181,10 @@
     "name": "",
     "worker": "장영석",
     "complete": "2022-03-15",
-    "etc":""
+    "etc":"파일명 변경"
   },
   {
-    "id":"MBA10-0104001C",
+    "id":"MBA10-0204001C",
     "url":"../../front/html/MBA/",
     "type":"page",
     "depth2": "그라운드",
@@ -193,7 +193,7 @@
     "name": "",
     "worker": "장영석",
     "complete": "2022-03-15",
-    "etc":""
+    "etc":"파일명 변경"
   },
   {
     "id":"MBA10-0800001C",
