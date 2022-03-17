@@ -30,6 +30,20 @@
   &.end-img-complate {
     background-image: url(../images/end/end-img-complate.png);
   }
+
+  &.avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    /*
+    img {
+      top: 50%;
+      left: 50%;
+      width: 115%;
+      height: 115%;
+      transform: translate(-50%, -50%);
+    }
+    */
+  }
 }
 .img-area {
   text-align: center;
