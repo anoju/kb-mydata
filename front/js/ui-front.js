@@ -1201,11 +1201,12 @@ ui.Util = {
       }, 1000);
     }
   },
-  lazy: function () {
+  lazyImg: function () {
     let lazyloadImages;
-
+    let lazyloadThrottleTimeout;
+    lazyloadImages = document.querySelectorAll('.lazy');
+    if (!lazyloadImages.length) return false;
     if ('IntersectionObserver' in window) {
-      lazyloadImages = document.querySelectorAll('.lazy');
       const imageObserver = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -1221,10 +1222,7 @@ ui.Util = {
         imageObserver.observe(image);
       });
     } else {
-      let lazyloadThrottleTimeout;
-      const lazyloadImages = document.querySelectorAll('.lazy');
-
-      function lazyload() {
+      const lazyload = function () {
         if (lazyloadThrottleTimeout) {
           clearTimeout(lazyloadThrottleTimeout);
         }
@@ -1243,7 +1241,7 @@ ui.Util = {
             window.removeEventListener('orientationChange', lazyload);
           }
         }, 20);
-      }
+      };
 
       document.addEventListener('scroll', lazyload);
       window.addEventListener('resize', lazyload);
@@ -1253,6 +1251,7 @@ ui.Util = {
   init: function () {
     ui.Util.paint();
     ui.Util.iframe();
+    ui.Util.lazyImg();
   }
 };
 
