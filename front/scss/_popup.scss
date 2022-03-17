@@ -149,6 +149,9 @@
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0);
   transition: background var(--pop-move-time) var(--pop-dimm-time);
+  html.pc & {
+    outline: none;
+  }
   .pop-wrap {
     overflow-x: hidden;
     overflow-y: auto;
