@@ -463,6 +463,20 @@
                 <button type="button" class="button line gray more" role="button">더보기<span>20/28</span></button>
               </div>
             </div> -->
+
+            <h1 class="gd__h1">scroll list loading</h1>
+            <div>
+              <div id="List">
+                <div class="dummy mt-10">스크롤 로딩창 확인용<br />임시 영역</div>
+                <div class="dummy mt-10">스크롤 로딩창 확인용<br />임시 영역</div>
+                <div class="dummy mt-10">스크롤 로딩창 확인용<br />임시 영역</div>
+              </div>
+              <div class="loading-bar off">
+                <svg width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -471,5 +485,27 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script>
+      // 임시: 스크롤로딩 이벤트
+      let LoadingIdx = 3;
+      ui.Scroll.loading('.loading-bar', function () {
+        if (LoadingIdx <= 0) {
+          // 스크롤 이벤트 중지
+          ui.Scroll.loading('.loading-bar', false);
+        } else {
+          console.log('리스트 로딩할때', LoadingIdx);
+          // 로딩영역 보이게
+          $('.loading-bar').removeClass('off');
+
+          // 임시데이터 로딩시간 3초 setTimeout 세팅
+          setTimeout(function () {
+            console.log('리스트 로딩끝나고');
+            LoadingIdx -= 1;
+            $('#List').append('<div class="dummy mt-10">스크롤 로딩창 확인용<br />임시 영역</div>');
+            $('.loading-bar').addClass('off');
+          }, 3000);
+        }
+      });
+    </script>
   </body>
 </html>
