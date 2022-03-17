@@ -170,6 +170,9 @@
   }
   .pop-scl-wrap {
     overflow: hidden;
+    &.pop-body-scroll {
+      overflow: visible;
+    }
   }
   > .pop-scl-wrap,
   > .pop-wrap {

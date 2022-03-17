@@ -5870,6 +5870,7 @@ const Layer = {
       // pop-scl-wrap
       if (ui.PC.any() && ($popup.hasClass('modal') || $popup.hasClass('bottom')) && !$popup.find('.' + Layer.sclWrapClass).length) {
         $popWrap.wrap('<div class="' + Layer.sclWrapClass + '"></div>');
+        if ($popWrap.hasClass('pop-body-scroll')) $popWrap.parent().addClass('pop-body-scroll');
       }
 
       //scl-title-hide
