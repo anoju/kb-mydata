@@ -2,17 +2,6 @@
   --loading-svg-offset: 187;
   --loading-svg-duration: 1.4s;
 }
-.loading-bar {
-  display: flex;
-  height: 8rem;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
-  &.off {
-    height: 0.1rem;
-    opacity: 0;
-  }
-}
 .loading-bar,
 .loading-svg {
   text-align: center;
@@ -29,6 +18,17 @@
       stroke: var(--primary-color);
       animation: loading-dash var(--loading-svg-duration) ease-in-out infinite;
     }
+  }
+}
+.loading-bar {
+  display: flex;
+  height: 8rem;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  &.off {
+    height: 0.1rem;
+    opacity: 0;
   }
 }
 @keyframes loading-rotator {
@@ -76,6 +76,12 @@
   }
   .txt {
     margin-top: 3rem;
+  }
+  .loading-svg {
+    svg {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
   }
 }
 .loading-icon {

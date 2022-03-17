@@ -1106,7 +1106,7 @@ ui.Util = {
     };
   },
   loadScript: function (url, callback) {
-    var script = document.createElement('script');
+    const script = document.createElement('script');
     script.type = 'text/javascript';
     if (script.readyState) {
       //IE
@@ -1145,7 +1145,7 @@ ui.Util = {
     const drawRotated = function (degrees) {
       // if (canvas) document.body.removeChild(canvas);
       // canvas = document.createElement("canvas");
-      // var canvas = document.getElementById("canvas");
+      // const canvas = document.getElementById("canvas");
 
       const ctx = canvas.getContext('2d');
 
@@ -1199,6 +1199,55 @@ ui.Util = {
       setTimeout(function () {
         iframeHeight();
       }, 1000);
+    }
+  },
+  lazy: function () {
+    let lazyloadImages;
+
+    if ('IntersectionObserver' in window) {
+      lazyloadImages = document.querySelectorAll('.lazy');
+      const imageObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const image = entry.target;
+            if (image.dataset.src) image.src = image.dataset.src;
+            image.classList.remove('lazy');
+            imageObserver.unobserve(image);
+          }
+        });
+      });
+
+      lazyloadImages.forEach(function (image) {
+        imageObserver.observe(image);
+      });
+    } else {
+      let lazyloadThrottleTimeout;
+      const lazyloadImages = document.querySelectorAll('.lazy');
+
+      function lazyload() {
+        if (lazyloadThrottleTimeout) {
+          clearTimeout(lazyloadThrottleTimeout);
+        }
+
+        lazyloadThrottleTimeout = setTimeout(function () {
+          const scrollTop = window.pageYOffset;
+          lazyloadImages.forEach(function (img) {
+            if (img.offsetTop < window.innerHeight + scrollTop) {
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+            }
+          });
+          if (lazyloadImages.length == 0) {
+            document.removeEventListener('scroll', lazyload);
+            window.removeEventListener('resize', lazyload);
+            window.removeEventListener('orientationChange', lazyload);
+          }
+        }, 20);
+      }
+
+      document.addEventListener('scroll', lazyload);
+      window.addEventListener('resize', lazyload);
+      window.addEventListener('orientationChange', lazyload);
     }
   },
   init: function () {
@@ -1260,7 +1309,7 @@ ui.Button = {
     });
   },
   disabledChk: function () {
-    var checking = function () {
+    const checking = function () {
       setTimeout(function () {
         ui.Button.disabled();
       }, 100);
@@ -6995,7 +7044,7 @@ const getOffset = function (element) {
 
 // Convert radians to degrees
 const radToDeg = function (radians) {
-  var pi = Math.PI;
+  const pi = Math.PI;
   return radians * (180 / pi);
 };
 
@@ -7033,7 +7082,7 @@ const hexToRgb = function (h) {
 };
 const rgbToHex = function (r, g, b) {
   function componentToHex(c) {
-    var hex = c.toString(16);
+    const hex = c.toString(16);
     return hex.length == 1 ? '0' + hex : hex;
   }
   return '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
