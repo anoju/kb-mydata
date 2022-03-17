@@ -4485,19 +4485,25 @@ ui.Scroll = {
     $obj.y = Math.abs($(element).scrollTop() / ui.Scroll.is(element).height) * 100;
     return $obj;
   },
-  loading: function () {
-    $(window).scroll(function () {
-      $('.loading_area').each(function () {
-        const $this = $(this);
-        const $href = $this.data('href');
-        if (ui.Scroll.inCheck(this)) {
-          $this.load($href, function (res, sta, xhr) {
-            if (sta == 'success') {
-              $this.children().unwrap();
-            }
-          });
-        }
-      });
+  loading: function (el, showCallback, hideCallback) {
+    const io = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            if (showCallback === false) observer.unobserve(entry.target);
+            else if (!!showCallback) showCallback();
+          } else {
+            if (!!hideCallback) hideCallback();
+          }
+        });
+      },
+      {
+        threshold: 0.03
+      }
+    );
+    const $items = document.querySelectorAll(el);
+    $items.forEach(function (odj) {
+      io.observe(odj);
     });
   },
   /*
@@ -4580,7 +4586,6 @@ ui.Scroll = {
     $(window).scroll($scrollEvt);
   },
   init: function () {
-    ui.Scroll.loading();
     ui.Scroll.agree();
   }
 };
@@ -5085,15 +5090,23 @@ const Loading = {
     let $html = '<div class="loading-wrap" class="hide">';
     $html += '<div class="tl">';
     $html += '<div>';
+    /*
     $html += '<div class="loading-icon" role="img"';
-    //$html += '<div class="ld_img" role="img"';
     if (!txt) {
       $html += ' aria-label="화면을 불러오는중입니다."';
     }
     $html += '>';
-    $html += '<div></div>';
-    //$html += '<div class="ld_logo"></div>';
-    //$html += '<div class="ld_dot"><i></i><i></i><i></i><i></i></div>';
+    $html += '</div>';
+    */
+
+    $html += '<div class="loading-svg" role="img"';
+    if (!txt) {
+      $html += ' aria-label="화면을 불러오는중입니다."';
+    }
+    $html += '>';
+    $html += '<svg width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">';
+    $html += '<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>';
+    $html += '</svg>';
     $html += '</div>';
     if (!!txt) {
       $html += '<div class="txt">' + txt + '</div>';

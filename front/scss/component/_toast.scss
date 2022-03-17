@@ -1,0 +1,55 @@
+// toast
+.toast-box,
+.alarm-box {
+  position: fixed;
+  bottom: 2.4rem;
+  left: var(--base-padding);
+  right: var(--base-padding);
+  z-index: 120;
+  // overflow: hidden;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.5s, transform 0.5s;
+  > div {
+    display: flex;
+    align-items: center;
+    border-radius: 0.4rem;
+  }
+  .txt {
+    display: block;
+    flex: 1 1 auto;
+    padding: 1.1rem 0.5rem 1.1rem 0;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    &:first-child {
+      padding-left: 1.5rem;
+    }
+    &:last-child {
+      padding-right: 1.5rem;
+    }
+  }
+  .close {
+    display: block;
+    padding: 1.5rem 1.5rem 1.5rem 0.5rem;
+    flex-shrink: 0;
+    font-size: 1.3rem;
+  }
+  &.on {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+  }
+}
+.toast-box {
+  color: #fff;
+  > div {
+    text-align: center;
+    background: rgba(33, 33, 33, 0.8);
+  }
+}
+.alarm-box {
+  > div {
+    background: #fff;
+    box-shadow: 0 0.3rem 0.7rem rgba(33, 33, 33, 0.3);
+  }
+}
