@@ -466,11 +466,7 @@
 
             <h1 class="gd__h1">scroll list loading</h1>
             <div>
-              <div id="List">
-                <div class="dummy mt-10">스크롤 로딩창 확인용<br />임시 영역</div>
-                <div class="dummy mt-10">스크롤 로딩창 확인용<br />임시 영역</div>
-                <div class="dummy mt-10">스크롤 로딩창 확인용<br />임시 영역</div>
-              </div>
+              <ul id="List" class="line-list-1"></ul>
               <div class="loading-bar off">
                 <svg width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                   <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
@@ -487,25 +483,51 @@
     </article>
     <script>
       // 임시: 스크롤로딩 이벤트
-      let LoadingIdx = 3;
-      ui.Scroll.loading('.loading-bar', function () {
-        if (LoadingIdx <= 0) {
-          // 스크롤 이벤트 중지
-          ui.Scroll.loading('.loading-bar', false);
-        } else {
-          console.log('리스트 로딩할때', LoadingIdx);
-          // 로딩영역 보이게
-          $('.loading-bar').removeClass('off');
+      const scrollLoaindList = function () {
+        let LoadingIdx = 3;
+        let listIdx = 0;
+        let $li = function (idx) {
+          let item = '<li>';
+          item += '<a href="#" class="list-item-1 btn-click">';
+          item += '<div class="item-tit">' + idx + '번째 스크롤로딩 테스트용 list item</div>';
+          item += '<div class="item-sub">2022.02.16</div>';
+          item += '</a>';
+          item += '</li>';
+          return item;
+        };
 
-          // 임시데이터 로딩시간 3초 setTimeout 세팅
-          setTimeout(function () {
-            console.log('리스트 로딩끝나고');
-            LoadingIdx -= 1;
-            $('#List').append('<div class="dummy mt-10">스크롤 로딩창 확인용<br />임시 영역</div>');
-            $('.loading-bar').addClass('off');
-          }, 3000);
+        let firstAppendHtml = '';
+        for (let i = 0; i < 5; i++) {
+          listIdx += 1;
+          firstAppendHtml += $li(listIdx);
         }
-      });
+        $('#List').append(firstAppendHtml);
+
+        ui.Scroll.loading('.loading-bar', function () {
+          if (LoadingIdx <= 0) {
+            // 스크롤 이벤트 중지
+            ui.Scroll.loading('.loading-bar', false);
+          } else {
+            console.log('리스트 로딩할때', LoadingIdx);
+            // 로딩영역 보이게
+            $('.loading-bar').removeClass('off');
+
+            // 임시데이터 로딩시간 3초 setTimeout 세팅
+            setTimeout(function () {
+              console.log('리스트 로딩끝나고');
+              LoadingIdx -= 1;
+              let appendHtml = '';
+              for (let i = 0; i < 3; i++) {
+                listIdx += 1;
+                appendHtml += $li(listIdx);
+              }
+              $('#List').append(appendHtml);
+              $('.loading-bar').addClass('off');
+            }, 3000);
+          }
+        });
+      };
+      scrollLoaindList();
     </script>
   </body>
 </html>
