@@ -378,6 +378,12 @@ a.visited {
 .i-ico-heart {
   //background-image: url('../images/icon/ico-heart.png');
   background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.33645 3.59998C4.76124 3.59998 2.6729 5.66686 2.6729 8.21689C2.6729 10.2754 3.48902 15.1609 11.5225 20.0996C11.6664 20.1872 11.8316 20.2335 12 20.2335C12.1685 20.2335 12.3337 20.1872 12.4776 20.0996C20.511 15.1609 21.3271 10.2754 21.3271 8.21689C21.3271 5.66686 19.2388 3.59998 16.6636 3.59998C14.0883 3.59998 12 6.39811 12 6.39811C12 6.39811 9.91167 3.59998 7.33645 3.59998Z' stroke='%23C2C2C2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+
+  .button.on & {
+    animation: bounceIn 0.8s linear;
+    // background-image: url('../images/icon/ico-heart-on.png');
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7.33645 3.6001C4.76124 3.6001 2.6729 5.66699 2.6729 8.21702C2.6729 10.2755 3.48902 15.161 11.5225 20.0998C11.6664 20.1873 11.8316 20.2336 12 20.2336C12.1685 20.2336 12.3337 20.1873 12.4776 20.0998C20.511 15.161 21.3271 10.2755 21.3271 8.21702C21.3271 5.66699 19.2388 3.6001 16.6636 3.6001C14.0883 3.6001 12 6.39823 12 6.39823C12 6.39823 9.91167 3.6001 7.33645 3.6001Z' fill='%23FC1C5B'/%3E%3C/svg%3E");
+  }
 }
 
 .i-ico-chatbubble {

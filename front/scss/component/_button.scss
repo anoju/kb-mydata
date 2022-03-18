@@ -160,6 +160,20 @@
     opacity: 0;
     transition-delay: 0s, 0.3s;
   }
+  &.btn-heart {
+    padding: 0;
+    height: auto;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    i {
+      margin-right: 0.4rem;
+    }
+    &.on {
+      font-weight: 500;
+      color: #424242;
+    }
+  }
 }
 .btn-txt {
   display: inline-flex;
