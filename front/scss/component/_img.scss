@@ -61,6 +61,7 @@
     @include outer(true);
   }
   @include scroll-x;
+  @include scroll-hide;
   .img-box + .img-box {
     margin-left: 0.8rem;
   }
