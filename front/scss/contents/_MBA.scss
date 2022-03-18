@@ -768,33 +768,6 @@
     transform: translateX(-50%);
   }
 
-  .info-total-box {
-    display: flex;
-    position: relative;
-    margin-top: 1.6rem;
-    padding: 1.6rem 0;
-    border-radius: 1.2rem;
-    background: #fafafa;
-    > div {
-      position: relative;
-      width: 50%;
-      text-align: center;
-      font-size: 0;
-
-      &:nth-child(2):after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 0.1rem;
-        height: 7.2rem;
-        background: #ebebeb;
-        transform: translateY(-50%);
-      }
-    }
-  }
-
   .hashtag-box {
     overflow: hidden;
     display: flex;
@@ -914,6 +887,33 @@
     span {
       font-size: 2.4rem;
       filter: blur(0.8rem);
+    }
+  }
+}
+
+.info-total-box {
+  display: flex;
+  position: relative;
+  margin-top: 1.6rem;
+  padding: 1.6rem 0;
+  border-radius: 1.2rem;
+  background: #fafafa;
+  > div {
+    position: relative;
+    width: 50%;
+    text-align: center;
+    font-size: 0;
+
+    + div:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0.1rem;
+      height: 7.2rem;
+      background: #ebebeb;
+      transform: translateY(-50%);
     }
   }
 }
@@ -1349,6 +1349,33 @@
     }
     color: #eb5757;
   }
+
+  &.type2 {
+    &.up {
+      &:before {
+        content: '▲';
+      }
+      color: #eb5757;
+    }
+    &.down {
+      &:before {
+        content: '▼';
+      }
+      color: #3887fd;
+    }
+  }
+  &.noIcon {
+    &.up {
+      &:before {
+        display: none;
+      }
+    }
+    &.down {
+      &:before {
+        display: none;
+      }
+    }
+  }
 }
 
 .filter-info {
@@ -1493,6 +1520,30 @@
         background: #d6dbe1;
         box-shadow: 0px 4px 10px rgba(214, 219, 225, 0.5);
       }
+    }
+  }
+}
+
+.profile-info {
+  .avatar-box {
+    position: relative;
+    width: 8rem;
+    margin: 0 auto;
+    .img-box {
+      width: 8rem;
+    }
+    .btn-setting {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 2.8rem;
+      height: 2.8rem;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+      background: #f2f4f6;
     }
   }
 }
