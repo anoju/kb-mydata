@@ -88,10 +88,10 @@
   }
   &.notice-dl {
     @include outer;
-    border-top: 8px solid #f3f3f3;
+    border-top: 0.8rem solid #f3f3f3;
     border-bottom-color: var(--line-color);
     .folding-head {
-      border-top: 1px solid var(--line-color);
+      border-top: 0.1rem solid var(--line-color);
     }
     .folding-btn {
       display: flex;

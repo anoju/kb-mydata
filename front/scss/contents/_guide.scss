@@ -355,7 +355,7 @@
   }
 
   .circle-bg {
-    stroke: #ebebeb;
+    stroke: var(--line-color);
     fill: none;
     stroke-width: 1;
     // vector-effect: non-scaling-stroke;
@@ -388,7 +388,7 @@
   }
 
   .circle-bg {
-    stroke: #ebebeb;
+    stroke: var(--line-color);
     fill: none;
     stroke-width: 4;
   }

@@ -9,7 +9,7 @@
   align-items: center;
   transition: border 0.3s;
   &.line {
-    border-color: #ebebeb;
+    border-color: var(--line-color);
     background-color: #fff;
   }
   &.readonly,

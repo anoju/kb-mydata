@@ -1,7 +1,7 @@
 .line-round-btn {
   position: relative;
   display: block;
-  border: 1px solid var(--line-color);
+  border: 0.1rem solid var(--line-color);
   background: #fff;
   border-radius: 1.6rem;
   padding: 2.4rem;
@@ -50,7 +50,7 @@
   }
   &.pop-body {
     padding: 0 !important;
-    border: 0.1rem solid #ebebeb;
+    border: 0.1rem solid var(--line-color);
     &:before {
       content: none;
     }

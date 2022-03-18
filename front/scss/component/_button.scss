@@ -171,7 +171,7 @@
     }
     &.on {
       font-weight: 500;
-      color: #424242;
+      color: var(--strong-txt-color2);
     }
   }
 }
@@ -376,7 +376,7 @@ button.btn-click {
         transition: background 0.2s 0s, visibility 0s 0.2s;
       }
       > div {
-        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.12);
         background: #fff;
         padding-top: 1rem;
         padding-bottom: 1rem;

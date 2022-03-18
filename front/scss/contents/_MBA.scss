@@ -330,7 +330,7 @@
     align-items: center;
     margin: 0 2rem;
     padding: 4.5rem 0rem 2rem;
-    border-top: 1px dashed rgba(255, 255, 255, 0.5);
+    border-top: 0.1rem dashed rgba(255, 255, 255, 0.5);
     .img {
       width: 6rem;
       // height: 6rem;
@@ -361,7 +361,7 @@
   }
 
   &.loss {
-    background: #606060;
+    background: var(--base-txt-color);
     .top-text-motion {
       span {
         &:after {
@@ -436,11 +436,11 @@
       .tit {
         &:before {
           content: '무승부';
-          color: #424242;
+          color: var(--strong-txt-color2);
         }
       }
       .number {
-        color: #606060;
+        color: var(--base-txt-color);
         span {
           color: rgba(96, 96, 96, 0.6);
         }
@@ -450,13 +450,13 @@
           display: none;
         }
         .text {
-          color: #424242;
+          color: var(--strong-txt-color2);
         }
       }
     }
 
     .loss-info {
-      border-top: 1px dashed rgba(0, 0, 0, 0.3);
+      border-top: 0.1rem dashed rgba(0, 0, 0, 0.3);
       .img {
         img {
           filter: grayscale(0);
@@ -464,10 +464,10 @@
       }
       .text-box {
         .name {
-          color: #424242;
+          color: var(--strong-txt-color2);
         }
         .number {
-          color: #424242;
+          color: var(--strong-txt-color2);
         }
       }
     }
@@ -553,7 +553,7 @@
   .tit-box {
     display: flex;
     padding-bottom: 1.2rem;
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 0.1rem solid var(--line-color);
     .tit {
       font-size: 1.6rem;
       strong {
@@ -565,7 +565,7 @@
       margin-left: auto;
       padding-top: 0.2rem;
       font-size: 1.2rem;
-      color: #606060;
+      color: var(--base-txt-color);
     }
   }
   .score-list {
@@ -594,7 +594,7 @@
           margin: 0 0.8rem;
           font-size: 1.6rem;
           font-weight: 500;
-          color: #424242;
+          color: var(--strong-txt-color2);
         }
 
         &:nth-child(2) {
@@ -619,7 +619,7 @@
       span {
         display: flex;
         align-items: center;
-        color: #424242;
+        color: var(--strong-txt-color2);
         &:before {
           content: '';
           display: inline-block;
@@ -665,7 +665,7 @@
               }
             }
             .text {
-              color: #424242;
+              color: var(--strong-txt-color2);
             }
           }
         }
@@ -688,7 +688,7 @@
               }
             }
             .text {
-              color: #424242;
+              color: var(--strong-txt-color2);
             }
           }
           &:nth-child(2) {
@@ -702,7 +702,7 @@
               }
             }
             .text {
-              color: #424242;
+              color: var(--strong-txt-color2);
             }
           }
         }
@@ -727,7 +727,7 @@
       text-align: center;
       font-size: 1.8rem;
       font-weight: 500;
-      color: #212121;
+      color: var(--strong-txt-color);
     }
     .img-box {
       flex: 0 0 auto;
@@ -740,7 +740,7 @@
       .name {
         overflow: hidden;
         font-size: 1.6rem;
-        color: #424242;
+        color: var(--strong-txt-color2);
         font-weight: 500;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -821,8 +821,8 @@
         font-size: 1.2rem;
         i {
           display: inline-block;
-          width: 6px;
-          height: 6px;
+          width: 0.6rem;
+          height: 0.6rem;
           border-radius: 50%;
           margin-top: -0.4rem;
           margin-right: 0.4rem;
@@ -832,7 +832,7 @@
       .number {
         padding-left: 0.4rem;
         font-size: 1.8rem;
-        color: #424242;
+        color: var(--strong-txt-color2);
         font-weight: 500;
       }
     }
@@ -848,9 +848,9 @@
       .tit {
         padding-bottom: 0.8rem;
         margin-bottom: 1.6rem;
-        border-bottom: 0.1rem solid #ebebeb;
+        border-bottom: 0.1rem solid var(--line-color);
         font-size: 1.2rem;
-        color: #424242;
+        color: var(--strong-txt-color2);
         span {
           color: #b0b0b0;
         }
@@ -912,7 +912,7 @@
       left: 0;
       width: 0.1rem;
       height: 7.2rem;
-      background: #ebebeb;
+      background: var(--line-color);
       transform: translateY(-50%);
     }
   }
@@ -938,7 +938,7 @@
     .tit {
       padding-right: 5.5rem;
       font-size: 2.2rem;
-      color: #424242;
+      color: var(--strong-txt-color2);
       font-weight: bold;
     }
     .sub-tit {
@@ -978,7 +978,7 @@
         width: calc(33.333% - 0.8rem);
         margin-left: 0.8rem;
         text-align: center;
-        border-radius: 16px 46px 16px 16px;
+        border-radius: 1.6rem 4.6rem 1.6rem 1.6rem;
         a {
           padding: 1.8rem 1rem;
         }
@@ -995,7 +995,7 @@
         .tit {
           margin-top: 1rem;
           font-size: 1.4rem;
-          color: #424242;
+          color: var(--strong-txt-color2);
         }
         .number {
           margin-top: 0.3rem;
@@ -1028,7 +1028,7 @@
         flex: 1 1 auto;
         .name {
           font-size: 1.6rem;
-          color: #424242;
+          color: var(--strong-txt-color2);
         }
         .percent {
           font-size: 1.2rem;
@@ -1037,7 +1037,7 @@
       }
       .rank {
         font-size: 1.8rem;
-        color: #212121;
+        color: var(--strong-txt-color);
         text-align: right;
         .updown {
           display: block;
@@ -1060,8 +1060,8 @@
     margin-top: 1.4rem;
     .user-detail-talk {
       position: relative;
-      border-top: 1px solid #f2f4f6;
-      border-bottom: 1px solid #f2f4f6;
+      border-top: 0.1rem solid #f2f4f6;
+      border-bottom: 0.1rem solid #f2f4f6;
       padding: 1.7rem 2.4rem;
       margin: 0.4rem -2.4rem 0;
       .nick-name {
@@ -1124,7 +1124,7 @@
       .tit {
         margin-top: 1.2rem;
         font-size: 1.6rem;
-        color: #424242;
+        color: var(--strong-txt-color2);
         font-weight: 500;
       }
       .text {
@@ -1219,7 +1219,7 @@
             width: 7.4rem;
             height: 3.6rem;
             font-size: 1.4rem;
-            border-radius: 6px;
+            border-radius: 0.6rem;
             color: #fff;
             i {
               margin-right: 0.4rem;
@@ -1229,11 +1229,11 @@
               background: #8657eb;
             }
             &.btn-edit {
-              border-radius: 6px 0 0 6px;
+              border-radius: 0.6rem 0 0 0.6rem;
               background: #5e6170;
             }
             &.btn-trash {
-              border-radius: 0px 6px 6px 0px;
+              border-radius: 0 0.6rem 0.6rem 0px;
               background: #eb5757;
             }
           }
@@ -1397,13 +1397,13 @@
   .list {
     padding: 1.6rem;
     background: #fafafa;
-    border: 0.1rem solid #ebebeb;
+    border: 0.1rem solid var(--line-color);
     box-sizing: border-box;
     border-radius: 1.6rem;
 
     .tit {
       font-size: 1.6rem;
-      color: #424242;
+      color: var(--strong-txt-color2);
       word-break: break-all;
     }
     .date {
@@ -1433,7 +1433,7 @@
     width: calc(50% - 1.6rem);
     height: 14.2rem;
     margin-left: 1.6rem;
-    border: 1px solid red;
+    border: 0.1rem solid red;
     background: #fff;
     border-radius: 1.2rem;
     font-size: 0;
@@ -1483,14 +1483,14 @@
     &.quizO {
       background: #eaf2ff;
       &:before {
-        box-shadow: 0px 4px 10px rgba(56, 135, 253, 0.4), 0px 4px 10px rgba(56, 135, 253, 0.4) inset;
+        box-shadow: 0 0.4rem 1rem rgba(56, 135, 253, 0.4), 0 0.4rem 1rem rgba(56, 135, 253, 0.4) inset;
       }
     }
     &.quizX {
       background: #ffebee;
       &:before,
       &:after {
-        box-shadow: 0px 4px 10px rgba(235, 87, 87, 0.3);
+        box-shadow: 0 0.4rem 1rem rgba(235, 87, 87, 0.3);
       }
     }
   }
@@ -1501,7 +1501,7 @@
       background: #ebeef1;
       &:before {
         border-color: #d6dbe1;
-        box-shadow: 0px 4px 10px rgba(214, 219, 225, 0.5);
+        box-shadow: 0 0.4rem 1rem rgba(214, 219, 225, 0.5);
       }
     }
     &.quizX {
@@ -1510,7 +1510,7 @@
       &:before,
       &:after {
         background: #d6dbe1;
-        box-shadow: 0px 4px 10px rgba(214, 219, 225, 0.5);
+        box-shadow: 0 0.4rem 1rem rgba(214, 219, 225, 0.5);
       }
     }
   }
@@ -1534,7 +1534,7 @@
       border-radius: 50%;
       align-items: center;
       justify-content: center;
-      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
       background: #f2f4f6;
     }
   }

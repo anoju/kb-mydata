@@ -33,7 +33,7 @@
   &.line {
     select,
     .btn-select {
-      border-color: #ebebeb;
+      border-color: var(--line-color);
       background-color: #fff;
     }
   }

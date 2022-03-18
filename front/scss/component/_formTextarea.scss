@@ -5,7 +5,7 @@
   min-height: 4.8rem;
   background: #fafafa;
   &.line {
-    border-color: #ebebeb;
+    border-color: var(--line-color);
     background-color: #fff;
   }
   &.focus {
