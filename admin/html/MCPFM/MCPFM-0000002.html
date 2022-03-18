@@ -76,13 +76,15 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 아이콘등록</div>
                 <div class="form-box-cont">
                   <!-- 미리보기 아이콘 이미지 -->
-                  <span class="border p-2 d-inline-block mb-2">
-                    <img src="https://source.unsplash.com/user/c_v_r/100x100" height="100" alt="아이콘 이미지" />
-                  </span>
+                  <!-- 이미지 없을때 -->
+                  <div class="img-box w-120 mb-2"></div>
+
+                  <!-- 이미지 있을때 -->
+                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
 
                   <div class="custom-file">
                     <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
-                    <label class="custom-file-label" for="inputGroupFile01">등록종류 : JPG, JPEG, PNG, GIF / 사이즈 00 * 00</label>
+                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
                   </div>
                 </div>
               </div>
