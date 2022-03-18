@@ -1022,6 +1022,12 @@ $bdTypes: (solid, dashed, dotted);
   z-index: 1000;
   word-break: break-all;
 }
+.pointer-events-none {
+  pointer-events: none;
+}
+.pointer-events-auto {
+  pointer-events: auto;
+}
 
 // empty
 .empty-txt {

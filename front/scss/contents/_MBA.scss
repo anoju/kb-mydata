@@ -1206,7 +1206,7 @@
           transform: translateY(10%);
           transition: all 0.3s ease;
           opacity: 0;
-          a {
+          .button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -1292,8 +1292,9 @@
 
 /* 공통 일거 같은 애들 */
 
-.btn-share {
-  display: inline-flex;
+.button.btn-heart {
+  padding: 0;
+  height: auto;
   i {
     margin-right: 0.4rem;
   }

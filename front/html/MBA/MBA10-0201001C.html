@@ -52,8 +52,9 @@
           </div>
 
           <hr class="hr-line mt-24" aria-hidden="true" />
-          <div class="flex pd-18y justify-center">
-            <p class="btn-share on fz-16 fc-424242"><i class="i-ico-heart"></i>658</p>
+          <div class="flex justify-center">
+            <!-- 활성화 시 .on 클래스 추가 -->
+            <button type="button" class="button btn-heart pd-18 fz-16 fc-424242"><i class="i-ico-heart"></i>658</button>
           </div>
           <hr class="hr-line" aria-hidden="true" />
 
@@ -76,7 +77,7 @@
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-alarm"><i class="i-ico-alarm"></i>신고</a>
+                    <button type="button" class="button btn-alarm"><i class="i-ico-alarm"></i>신고</button>
                   </div>
                 </div>
               </div>
@@ -103,7 +104,7 @@
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-alarm"><i class="i-ico-alarm"></i>신고</a>
+                    <button type="button" class="button btn-alarm"><i class="i-ico-alarm"></i>신고</button>
                   </div>
                 </div>
               </div>
@@ -130,8 +131,8 @@
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-edit"><i class="i-ico-edit"></i>수정</a>
-                    <a href="#" class="btn-trash"><i class="i-ico-trash"></i>삭제</a>
+                    <button type="button" class="button btn-edit"><i class="i-ico-edit"></i>수정</button>
+                    <button type="button" class="button btn-trash"><i class="i-ico-trash"></i>삭제</button>
                   </div>
                 </div>
               </div>
@@ -158,20 +159,20 @@
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-alarm"><i class="i-ico-alarm"></i>신고</a>
+                    <button type="button" class="button btn-alarm"><i class="i-ico-alarm"></i>신고</button>
                   </div>
                 </div>
               </div>
               <!-- //작성자 -->
 
-              <!-- 차단된 게시물 -->
+              <!-- 차단된 댓글 -->
               <div class="user-detail-talk pd-14y">
                 <div class="list-empty pd-0">
                   <i class="i-ico-warning-28 mg-8" aria-hidden="true"></i>
-                  <p class="fz-14">서비스 운영정책에 의해 차단된 게시물 입니다.</p>
+                  <p class="fz-14">서비스 운영정책에 의해 차단된 댓글 입니다.</p>
                 </div>
               </div>
-              <!-- //차단된 게시물 -->
+              <!-- //차단된 댓글 -->
             </div>
 
             <div class="btn-wrap">
@@ -182,10 +183,10 @@
           </div>
         </div>
         <div class="btn-wrap bottom-fixed btn-comment">
-          <div class="pd-10y">
-            <div class="textarea auto-height add-btn">
-              <textarea style="max-height: 9.4rem" class="line"></textarea>
-              <button type="button" class="button h32 line" onclick="Layer.toast('입력하신 댓글이 등록 되었어요.');">입력</button>
+          <div>
+            <div class="textarea line auto-height add-btn">
+              <textarea></textarea>
+              <button type="button" class="button h32 primary" onclick="Layer.toast('입력하신 댓글이 등록 되었어요.');">게시</button>
             </div>
           </div>
         </div>
@@ -195,5 +196,15 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+
+    <script>
+      const btnHeart = function () {
+        $(document).on('click', '.btn-heart', function () {
+          $(this).toggleClass('on');
+          return false;
+        });
+      };
+      btnHeart();
+    </script>
   </body>
 </html>

@@ -1391,7 +1391,6 @@ ui.Button = {
       }
     });
   },
-
   star: function () {
     $(document).on('click', '.ico-star-wrap > button', function (e) {
       e.preventDefault();
@@ -1504,6 +1503,38 @@ ui.Button = {
       Body.unlock();
     });
   },
+  overlay: function () {
+    if ($('.user-detail-talk .btn-menu').length) {
+      $(document).on('click', '.user-detail-talk .btn-menu', function () {
+        const $this = $(this);
+        const $next = $this.next();
+        const $dataTimer = $next.data('timer');
+        if ($dataTimer) clearTimeout($dataTimer);
+        $next.addClass('on');
+        let timer = setTimeout(function () {
+          $next.removeClass('on');
+          $next.removeData('timer');
+        }, 3000);
+        $next.data('timer', timer);
+        return false;
+      });
+
+      // 버튼 외 터치시 숨김
+      $(document).on('touchstart', function (e) {
+        const $btnOverlay = $('.btn-menu-over.on');
+        if ($btnOverlay.length) {
+          const $target = $(e.target);
+          if ($target.hasClass('button') && $target.parent().hasClass('btn-group')) return;
+          $btnOverlay.each(function () {
+            const $dataTimer = $(this).data('timer');
+            if ($dataTimer) clearTimeout($dataTimer);
+            $(this).removeClass('on');
+            $(this).removeData('timer');
+          });
+        }
+      });
+    }
+  },
   init: function () {
     ui.Button.default();
     ui.Button.disabledChk();
@@ -1512,6 +1543,7 @@ ui.Button = {
     ui.Button.imgBox();
     ui.Button.tap();
     ui.Button.etc();
+    ui.Button.overlay();
     ui.Tab.init();
 
     ui.Touch.init();
@@ -2529,9 +2561,13 @@ ui.Form = {
       if ($this.is('textarea') && $this.closest('.textarea').length) $this.closest('.textarea').addClass('focus');
 
       //bottom-fixed
-      if ($this.closest('.bottom-fixed').length) {
+      const $bottom = $this.closest('.bottom-fixed');
+      if ($bottom.length) {
         $('html').addClass('overflow-hidden');
-        $('.bottom-fixed').addClass('dim');
+        if ($bottom.hasClass('btn-comment')) {
+          $bottom.addClass('dim');
+          $bottom.siblings('.section').addClass('pointer-events-none');
+        }
       }
     });
     $(document).on('focusout', $inpEls, function (e) {
@@ -2544,9 +2580,16 @@ ui.Form = {
       if ($this.is('textarea') && $this.closest('.textarea').length) $this.closest('.textarea').removeClass('focus');
 
       //bottom-fixed
-      if ($this.closest('.bottom-fixed').length) {
+      const $bottom = $this.closest('.bottom-fixed');
+      if ($bottom.length) {
         $('html').removeClass('overflow-hidden');
-        $('.bottom-fixed').removeClass('dim');
+        if ($bottom.hasClass('btn-comment')) {
+          $bottom.removeClass('dim');
+          // body 클릭요소들 이벤트 막기
+          setTimeout(function () {
+            $bottom.siblings('.section').removeClass('pointer-events-none');
+          }, 100);
+        }
       }
     });
   },
@@ -4534,9 +4577,8 @@ ui.Scroll = {
     return $obj;
   },
   horizonScl: function () {
-    const $wrap = '.tab-inner';
+    const $wrap = '.tab-inner, .img-box-wrap';
     if (!$($wrap).length || ui.Mobile.any()) return;
-    console.log('aaa');
     $($wrap)
       .off('mousewheel')
       .on('mousewheel', function (e) {
