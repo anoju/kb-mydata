@@ -229,6 +229,17 @@
   .evt-img {
     text-align: center;
   }
+
+  &.ty2 {
+    .view-tit {
+      font-size: 2.2rem;
+      line-height: inherit;
+    }
+    .view-cont {
+      font-size: 1.6rem;
+      line-height: inherit;
+    }
+  }
 }
 
 // temp

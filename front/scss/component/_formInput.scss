@@ -92,6 +92,12 @@
       }
     }
   }
+  &.large {
+    border-radius: 1.2rem;
+    input {
+      height: 5.4rem;
+    }
+  }
 
   &.small {
     input {
@@ -113,6 +119,9 @@
   }
   > .button:last-child {
     margin-right: 0.8rem;
+  }
+  > .button.icon:last-child {
+    margin-right: 1.6rem;
   }
   .timer {
     color: var(--gray-txt-color);
