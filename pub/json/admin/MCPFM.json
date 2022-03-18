@@ -1,0 +1,27 @@
+[
+  {
+    "depth1": "PFM관리"
+  },
+  {
+    "id": "MCPFM-0000001",
+    "url": "../../admin/html/MCPFM/",
+    "type": "page",
+    "depth2": "PFM관리",
+    "depth3": "PFM관리",
+    "name": "PFM관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-10",
+    "etc": "임시 화면 ID / 임시 이미지"
+  },
+  {
+    "id": "MCPFM-0000002",
+    "url": "../../admin/html/MCPFM/",
+    "type": "page",
+    "depth2": "PFM관리",
+    "depth3": "PFM관리",
+    "name": "상세(등록)",
+    "worker": "변상우",
+    "complete": "2022-03-10",
+    "etc": "임시 화면 ID / 임시 이미지"
+  }
+]
