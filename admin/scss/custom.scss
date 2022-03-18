@@ -159,11 +159,12 @@ html:not(.mobile) {
   }
   img {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    left: 50%;
+    top: 50%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
+    transform: translate(-50%, -50%);
   }
   small {
     position: absolute;
