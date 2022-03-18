@@ -4533,6 +4533,45 @@ ui.Scroll = {
     $obj.y = Math.abs($(element).scrollTop() / ui.Scroll.is(element).height) * 100;
     return $obj;
   },
+  horizonScl: function () {
+    const $wrap = '.tab-inner';
+    if (!$($wrap).length || ui.Mobile.any()) return;
+    console.log('aaa');
+    $($wrap)
+      .off('mousewheel')
+      .on('mousewheel', function (e) {
+        const $wheelDelta = e.originalEvent.wheelDelta;
+        const $this = $(this);
+        const $thisW = $this.outerWidth();
+        const $thisSclW = $this[0].scrollWidth;
+        const $widthGap = $thisSclW - $thisW;
+        const $thisSclL = $this.scrollLeft();
+        // console.log($thisSclW, $thisW, $widthGap, $thisSclL, $wheelDelta);
+        let $isMove = false;
+        const $move = function () {
+          if ($isMove) return;
+          $isMove = true;
+          // $this.scrollLeft($thisSclL - $wheelDelta);
+          $this.stop(false, true).animate({ scrollLeft: $thisSclL - $wheelDelta }, 100, function () {
+            $isMove = false;
+          });
+        };
+
+        if ($wheelDelta > 0) {
+          //up
+          if ($thisSclL > 0) {
+            e.preventDefault();
+            $move();
+          }
+        } else {
+          //down
+          if ($thisSclL + $thisW < $thisSclW) {
+            e.preventDefault();
+            $move();
+          }
+        }
+      });
+  },
   loading: function (el, showCallback, hideCallback) {
     const io = new IntersectionObserver(
       function (entries, observer) {
@@ -4635,6 +4674,7 @@ ui.Scroll = {
   },
   init: function () {
     ui.Scroll.agree();
+    ui.Scroll.horizonScl();
   }
 };
 
