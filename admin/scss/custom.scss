@@ -165,6 +165,19 @@ html:not(.mobile) {
     height: 100%;
     object-fit: contain;
   }
+  small {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    color: $gray-300;
+  }
 }
 
 @for $i from 1 through 100 {
