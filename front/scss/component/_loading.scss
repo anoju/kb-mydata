@@ -127,7 +127,7 @@ html {
     height: 40px;
     border-radius: 50%;
     // background: rgba(0, 0, 0, 0.9);
-    background: #fe7d65;
+    background: var(--primary-color);
     opacity: 0;
     transform: scale(0);
     &.ing {
