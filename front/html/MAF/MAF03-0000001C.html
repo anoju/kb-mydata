@@ -40,7 +40,8 @@
         </div>
         <div class="section">
           <div class="select form-box">
-            <div class="form-lbl">문의 유형</div>
+            <!-- 2022-03-21: 필수 추가 -->
+            <div class="form-lbl">문의 유형<i class="require" aria-label="필수"></i></div>
             <select id="select">
               <option value="">문의 유형을 선택해주세요</option>
               <option value="1">매치</option>
@@ -52,15 +53,23 @@
             </select>
           </div>
 
+          <!-- 2022-03-21: 필수 추가, 카운팅 추가 -->
           <div class="input form-box">
-            <div class="form-lbl">문의 제목</div>
-            <input id="input" type="text" placeholder="제목을 입력해주세요" title="제목입력" />
+            <div class="form-lbl">
+              <p class="left">문의 제목<i class="require" aria-label="필수"></i></p>
+              <p class="right txt-count"><strong id="count1">0</strong>/300</p>
+            </div>
+            <input id="input" type="text" placeholder="제목을 입력해주세요" title="제목입력" maxlength="300" data-text-count="count1" />
           </div>
 
           <div class="textarea form-box">
-            <div class="form-lbl">문의 내용</div>
-            <textarea id="textarea" rows="7" placeholder="내용을 입력해주세요" title="제목입력"></textarea>
+            <div class="form-lbl">
+              <p class="left">문의 내용<i class="require" aria-label="필수"></i></p>
+              <p class="right txt-count"><strong id="count2">0</strong>/800</p>
+            </div>
+            <textarea id="textarea" rows="7" placeholder="내용을 입력해주세요" title="내용입력" maxlength="800" data-text-count="count2"></textarea>
           </div>
+          <!-- //2022-03-21: 필수 추가, 카운팅 추가 -->
 
           <div id="date" class="flex not-full align-center fz-14 mt-16" style="display: none">
             <div>등록일(최종수정일)</div>

@@ -22,6 +22,9 @@
 
   --base-padding: 2.4rem;
   --outer-padding: -2.4rem;
+
+  --loading-svg-offset: 187;
+  --loading-svg-duration: 1.4s;
 }
 html {
   height: 100%;
@@ -30,27 +33,6 @@ html {
   // -webkit-touch-callout:none;
   // -webkit-tap-highlight-color: transparent;
   text-size-adjust: none;
-  &.not-refresh,
-  &.refreshing {
-    height: 100%;
-    overflow: hidden;
-    body {
-      height: 100%;
-      overflow: hidden;
-    }
-  }
-  // &.not-refresh{
-  //   touch-action: none;
-  // }
-  // &.not-refresh{
-  //   position: fixed;
-  //   left: 0;
-  //   top: 0;
-  //   width: 100%;
-  // }
-  &.refreshing {
-    pointer-events: none;
-  }
 }
 body {
   font: normal 1.6rem/1.44 'Roboto', 'Noto Sans KR', 'Apple SD Gothic Neo', 'AppleSDGothicNeo', sans-serif;
@@ -456,6 +438,9 @@ html.lock,
 }
 .fc-b0b0b0 {
   color: #b0b0b0 !important;
+}
+.fc-15B071 {
+  color: #15b071 !important;
 }
 .fc-168b68 {
   color: #168b68 !important;

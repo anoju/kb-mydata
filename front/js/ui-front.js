@@ -2312,7 +2312,9 @@ ui.Touch = {
     if (!$('#container.refresh').length) return;
     const _speed = 200;
     const _min = 20;
+    let _startX = 0;
     let _startY = 0;
+    let _distansX = 0;
     let _distansY = 0;
     let _moveTop = 0;
     let _maxTop = 150;
@@ -2332,7 +2334,7 @@ ui.Touch = {
 
     const _className = 'page-refresh';
     let $refresh = $('.' + _className);
-    const _ready = function (val) {
+    const _ready = function (Y, X) {
       let _html = '<div class="' + _className + '" role="img" aria-label="새로고침">';
       _html += '<div aria-hidden="true" class="ico">';
       // _html += '<div class="ico-in"></div>';
@@ -2342,7 +2344,8 @@ ui.Touch = {
       _html += '</div>';
 
       _isRefresh = true;
-      _startY = val;
+      _startY = Y;
+      _startX = X;
       $refresh = $('.' + _className);
       if (!$refresh.length) {
         $wrap.before(_html);
@@ -2354,14 +2357,15 @@ ui.Touch = {
     const _reset = function () {
       ui.Touch.isRefreshing = false;
       _isRefresh = false;
+      _startX = 0;
       _startY = 0;
+      _distansX = 0;
       _distansY = 0;
       _moveTop = 0;
       $html.removeClass('not-refresh refreshing');
-      // $html.removeClass('refreshing');
-      $wrap.stop(true, false).animate({ top: 0 }, _speed, function () {
-        $wrap.removeAttr('style');
-      });
+      // $wrap.stop(true, false).animate({ top: 0 }, _speed, function () {
+      //   $wrap.removeAttr('style');
+      // });
       $refresh.stop(true, false).animate({ height: 0 }, _speed, function () {
         $refresh.remove();
       });
@@ -2379,16 +2383,17 @@ ui.Touch = {
     const _start = function (e) {
       if (ui.Touch.isRefreshing) return;
       const _Y = getPos(e).Y;
+      const _X = getPos(e).X;
       const _sclTop = window.pageYOffset;
       if (_sclTop > _min / 2 || $html.hasClass('lock')) return;
       // $html.addClass('not-refresh');
-      _ready(_Y);
+      _ready(_Y, _X);
     };
 
     const _wrapTop = function (val) {
       $html.addClass('not-refresh');
       _moveTop = Math.min(_maxTop, val / 2);
-      $wrap.stop(true, false).css('top', _moveTop);
+      // $wrap.stop(true, false).css('top', _moveTop);
       $refresh.stop(true, false).css('height', _moveTop);
       const $ratio = _moveTop / _maxTop;
       const $ico = $refresh.find('.ico');
@@ -2403,8 +2408,12 @@ ui.Touch = {
 
     const _move = function (e) {
       if (!_isRefresh || ui.Touch.isRefreshing) return;
+
       const _Y = getPos(e).Y;
+      const _X = getPos(e).X;
       _distansY = _Y - _startY;
+      _distansX = _X - _startX;
+      if (_distansX > _distansY) return;
       if (_distansY < 0) {
         _reset();
       } else if (_distansY > _min) {
@@ -2415,7 +2424,7 @@ ui.Touch = {
     const _refreshing = function () {
       ui.Touch.isRefreshing = true;
       $html.addClass('refreshing');
-      $wrap.stop(true, false).animate({ top: _maxTop }, _speed);
+      // $wrap.stop(true, false).animate({ top: _maxTop }, _speed);
 
       const $ico = $refresh.find('.ico');
       $ico.addClass('ing').css({

@@ -192,6 +192,7 @@
   .view-tit {
     font-size: 2.2rem;
     font-weight: 700;
+    color: var(--strong-txt-color);
     + .view-info {
       margin-top: 0.8rem;
     }
@@ -215,6 +216,7 @@
     margin-top: 3.2rem;
     font-size: 1.6rem;
     min-height: 10rem;
+    color: var(--strong-txt-color);
     &.evt-view {
       margin-top: 1.2rem;
       padding-top: 1.2rem;
