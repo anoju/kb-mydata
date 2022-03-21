@@ -6663,6 +6663,7 @@ const Layer = {
           .find('.' + Layer.headClass + ' .pop-close')
           .addClass('ui-pop-close');
         Layer.open('#' + popId);
+        /*
         if ($(res).find('script').length) {
           $(res)
             .find('script')
@@ -6670,6 +6671,7 @@ const Layer = {
               $(this).appendTo($this);
             });
         }
+        */
       } else {
         $('#' + popId).remove();
       }
