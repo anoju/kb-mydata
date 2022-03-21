@@ -16,8 +16,8 @@
     "id": "MBA03-0103p01C",
     "url": "../../front/html/MBA/",
     "type": "pop",
-    "depth2": "매치 프로필",
-    "depth3": "",
+    "depth2": "사용자 프로필",
+    "depth3": "태그정보",
     "name": "태그정보 팝업",
     "worker": "변상우",
     "complete": "2022-03-21"
@@ -26,8 +26,8 @@
     "id": "MBA03-0104p01C",
     "url": "../../front/html/MBA/",
     "type": "pop",
-    "depth2": "매치 프로필",
-    "depth3": "",
+    "depth2": "사용자 프로필",
+    "depth3": "뱃지정보",
     "name": "뱃지정보 팝업",
     "worker": "변상우",
     "complete": "2022-03-21"
