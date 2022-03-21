@@ -403,6 +403,13 @@ button.btn-click {
       }
     }
   }
+
+  &.full {
+    margin: 0 -2.4rem;
+  }
+  &.lineT {
+    border-top: 0.1rem solid #f2f4f6;
+  }
 }
 
 .btn-inline-wrap {
