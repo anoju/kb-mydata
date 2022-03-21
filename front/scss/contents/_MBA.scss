@@ -1686,10 +1686,31 @@
 
 /* bsw */
 .benefit-swiper {
+  margin-bottom: 1.2rem;
+  .swiper-pagination {
+    display: none;
+  }
+  .swiper-button {
+    &.swiper-button-disabled {
+      opacity: 0;
+    }
+  }
   .swiper-slide {
     text-align: center;
     img {
       width: 14rem;
+      height: 9.4rem;
+      object-fit: contain;
+    }
+    .list {
+    }
+    .hashTag {
+      font-size: 1.8rem;
+      color: var(--strong-txt-color2);
+      &:before {
+        content: '#';
+        color: #f134c8;
+      }
     }
     .tit {
       display: block;
@@ -1699,6 +1720,7 @@
       display: block;
       margin-top: 1.2rem;
       font-size: 1.2rem;
+      color: #818892;
     }
   }
 }
