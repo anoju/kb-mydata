@@ -153,7 +153,7 @@
                   상세내용상세내용상세내용상세내용상세내용상세내
                 </p>
                 <p class="t-right mt-16">
-                  <a href="#" class="button gray3 h39">@답글 남기기</a>
+                  <button type="button" class="button gray3 h38 _replyBtn">@답글 남기기</button>
                 </p>
 
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
@@ -183,10 +183,12 @@
           </div>
         </div>
         <div class="btn-wrap bottom-fixed btn-comment">
+          <!-- prettier-ignore -->
           <div>
+            <div class="user-info hide">@댓글아이디</div> <!-- 답글 남기기 클릭시 상대방 아이 노출-->
             <div class="textarea line auto-height add-btn">
               <textarea></textarea>
-              <button type="button" class="button h32 primary" onclick="Layer.toast('입력하신 댓글이 등록 되었어요.');">게시</button>
+              <button type="button" class="button h32 gray3" onclick="Layer.toast('입력하신 댓글이 등록 되었어요.');">게시</button>
             </div>
           </div>
         </div>
@@ -204,6 +206,25 @@
         });
       };
       btnHeart();
+
+      // 답글남기기
+      // let isReply = false;
+      $('._replyBtn').click(function () {
+        // isReply = true;
+        const $comment = $('.bottom-fixed.btn-comment');
+        $comment.find('.user-info').removeClass('hide');
+        $comment.find('textarea').focus();
+      });
+
+      // 댓글창 blur 시 초기화
+      $('.bottom-fixed.btn-comment textarea').blur(function () {
+        // if (isReply) {
+        const $comment = $('.bottom-fixed.btn-comment');
+        $comment.find('.user-info').addClass('hide');
+        $comment.find('textarea').val('').change();
+        // isReply = false;
+        // }
+      });
     </script>
   </body>
 </html>
