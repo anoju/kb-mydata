@@ -2,17 +2,13 @@
 i.require {
   display: inline-flex;
   align-items: center;
-  margin-left: 0.4rem;
-  &:first-child {
-    margin-left: 0;
-    margin-right: 0.4rem;
-  }
+  margin-left: 0.5rem;
+  color: var(--primary-color);
+  line-height: 1;
+  font-size: 1.2rem;
+  font-weight: bold;
   &:after {
-    content: '';
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 50%;
-    background-color: #f0431a;
+    content: '*';
   }
 }
 .form-lbl {
@@ -36,6 +32,13 @@ i.require {
   + .form-item,
   + .validate-item {
     margin-top: 1.6rem;
+  }
+  .txt-count {
+    color: #b9c1c9;
+    strong {
+      font-weight: normal;
+      color: #818892;
+    }
   }
 }
 .form-item {
@@ -183,21 +186,17 @@ i.require {
   .button {
     width: 100%;
     height: 5.5rem;
-    border: 0.1rem solid #ebebeb;
-    border-radius: 1.8rem;
+    border: 0.1rem solid var(--line-color);
+    border-radius: 1rem;
     margin: 1.9rem 0 1.2rem;
+    color: var(--base-txt-color);
     font-size: 1.6rem;
-    color: #606060;
   }
   .img-viewer {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -1.3rem;
-    margin-bottom: -1.6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.6rem 1.3rem;
     .img-box {
-      width: calc(33.333% - 1.3rem);
-      margin-left: 1.3rem;
-      margin-bottom: 1.6rem;
       img {
         border-radius: 1rem;
       }

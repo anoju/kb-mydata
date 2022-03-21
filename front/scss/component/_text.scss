@@ -197,7 +197,7 @@
   line-height: 2rem;
   &.top-line {
     padding-top: 2.4rem;
-    border-top: 1px solid var(--line-color);
+    border-top: 0.1rem solid var(--line-color);
   }
   > li {
     display: flex;
@@ -351,7 +351,7 @@
   }
   .terms-box {
     margin-top: 0.8rem;
-    border: 1px solid var(--line-color);
+    border: 0.1rem solid var(--line-color);
     border-radius: 1.2rem;
     padding: 2rem;
   }

@@ -21,6 +21,9 @@
   opacity: 1;
   transition: 0.3s, visibility 0s;
   // white-space:nowrap;
+  i {
+    pointer-events: none;
+  }
 
   &.icon {
     width: 2.4rem;
@@ -156,6 +159,20 @@
     visibility: hidden;
     opacity: 0;
     transition-delay: 0s, 0.3s;
+  }
+  &.btn-heart {
+    padding: 0;
+    height: auto;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    i {
+      margin-right: 0.4rem;
+    }
+    &.on {
+      font-weight: 500;
+      color: var(--strong-txt-color2);
+    }
   }
 }
 .btn-txt {
@@ -345,24 +362,33 @@ button.btn-click {
 
     /* */
     &.btn-comment {
+      z-index: 51;
+      &:before {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0);
+        visibility: hidden;
+        transition: background 0.2s 0s, visibility 0s 0.2s;
+      }
       > div {
-        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.12);
         background: #fff;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        z-index: 1;
       }
       &.dim {
         &:before {
-          content: '';
-          display: block;
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 55;
+          visibility: visible;
           background: rgba(0, 0, 0, 0.5);
+          transition-delay: 0s;
         }
         > div {
-          z-index: 60;
           background: #fff;
         }
       }

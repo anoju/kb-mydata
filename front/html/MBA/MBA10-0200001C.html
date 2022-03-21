@@ -21,11 +21,11 @@
       <header id="header">
         <div>
           <div class="head-left">
-            <button type="button" class="head-back button" role="button" aria-label="이전화면"></button>
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
           </div>
           <h1 class="t-left">그라운드</h1>
           <div class="head-right">
-            <button type="button" class="button" role="button">퇴실</button>
+            <button type="button" class="button">퇴실</button>
           </div>
         </div>
       </header>
@@ -151,13 +151,13 @@
                 <div class="info-box">
                   <span><i class="i-ico-eye"></i>658</span>
                   <span><i class="i-ico-chatbubble"></i>57</span>
-                  <a href="#" class="btn-share"><i class="i-ico-heart"></i>658</a>
+                  <button type="button" class="button btn-heart"><i class="i-ico-heart"></i>658</button>
                 </div>
 
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-alarm" onclick="Layer.open('#bottomPopup1-1')"><i class="i-ico-alarm"></i>신고</a>
+                    <button type="button" class="button btn-alarm" onclick="Layer.open('#popPenaltyInfo')"><i class="i-ico-alarm"></i>신고</button>
                   </div>
                 </div>
               </div>
@@ -187,14 +187,14 @@
                 <div class="info-box">
                   <span><i class="i-ico-eye"></i>658</span>
                   <span><i class="i-ico-chatbubble"></i>57</span>
-                  <a href="#" class="btn-share"><i class="i-ico-heart"></i>658</a>
+                  <button type="button" class="button btn-heart"><i class="i-ico-heart"></i>658</button>
                 </div>
 
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-edit"><i class="i-ico-edit"></i>수정</a>
-                    <a href="#" class="btn-trash" onclick="Layer.open('#bottomPopup1-2')"><i class="i-ico-trash"></i>삭제</a>
+                    <button type="button" class="button btn-edit"><i class="i-ico-edit"></i>수정</button>
+                    <button type="button" class="button btn-trash" onclick="Layer.open('#popDeleteChk')"><i class="i-ico-trash"></i>삭제</button>
                   </div>
                 </div>
               </div>
@@ -225,13 +225,13 @@
                 <div class="info-box">
                   <span><i class="i-ico-eye"></i>658</span>
                   <span><i class="i-ico-chatbubble"></i>57</span>
-                  <a href="#" class="btn-share"><i class="i-ico-heart"></i>658</a>
+                  <button type="button" class="button btn-heart"><i class="i-ico-heart"></i>658</button>
                 </div>
 
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-alarm" onclick="Layer.open('#bottomPopup1-1')"><i class="i-ico-alarm"></i>신고</a>
+                    <button type="button" class="button btn-alarm" onclick="Layer.open('#popPenaltyInfo')"><i class="i-ico-alarm"></i>신고</button>
                   </div>
                 </div>
               </div>
@@ -266,17 +266,17 @@
 
       <!-- 팝업 -->
       <!-- 신고 팝업 -->
-      <div id="bottomPopup1-1" class="popup bottom" role="dialog" aria-hidden="true">
+      <div id="popPenaltyInfo" class="popup bottom" role="dialog" aria-hidden="true">
         <article class="pop-wrap">
           <div class="pop-head">
             <div>
-              <h1>신고안내</h1>
+              <h1>신고 안내</h1>
               <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
             </div>
           </div>
           <div class="pop-body">
             <div class="section mb-10">
-              <p class="fz-16">그라운드 이용 중 <span class="fc-168b68">유해한 게시물 또는 불량 사용자를 경혐하셨다면,</span> 서비스 운영자에게 신고해주세요.</p>
+              <p class="fz-16">매치 서비스 이용 중 <span class="fc-168b68">유해한 게시물 또는 불량 사용자를 경혐하셨다면,</span> 서비스 운영자에게 신고해주세요.</p>
               <ul class="txt-list mt-33">
                 <li class="dot">신고하신 내용은 서비스 이용약관과 운영정책에 따라 서비스 운영자가 확인 및 판단하여 적절한 조치를 취하겠습니다.</li>
                 <li class="dot">
@@ -296,7 +296,7 @@
       </div>
 
       <!-- 삭제 팝업 -->
-      <div id="bottomPopup1-2" class="popup bottom" role="dialog" aria-hidden="true">
+      <div id="popDeleteChk" class="popup bottom" role="dialog" aria-hidden="true">
         <article class="pop-wrap">
           <div class="pop-head">
             <div>
@@ -325,29 +325,17 @@
     <script>
       $(function () {
         filterSearch();
-        userTalk();
-        btnShare();
+        btnHeart();
       });
 
-      const btnShare = function () {
-        $(document).on('click', '.btn-share', function () {
+      const btnHeart = function () {
+        $(document).on('click', '.btn-heart', function () {
           $(this).toggleClass('on');
           return false;
         });
       };
 
-      const userTalk = function () {
-        $(document).on('click', '.user-detail-talk .btn-menu', function () {
-          const $this = $(this);
-          $this.next().addClass('on');
-          setTimeout(function () {
-            $this.next().removeClass('on');
-          }, 3000);
-          return false;
-        });
-      };
-
-      const filterSearch = () => {
+      const filterSearch = function () {
         let idx = 0;
         const text = ['최신', '조회', '관심'];
         const length = text.length - 1;

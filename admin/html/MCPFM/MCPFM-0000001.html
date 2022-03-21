@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">PFM관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">PFM관리</li>
+                  </ol>
+                </nav>
+                <h1>PFM 관리</h1>
+              </div>
+              <div class="kb-page-btn">
+                <button type="button" class="btn btn-primary"><i class="bi bi-plus"></i> 카테고리등록</button>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">카테고리</h2>
+            </div>
+          </div>
+
+          <table id="table1" class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">번호</th>
+                <th scope="col">사용여부</th>
+                <th scope="col">카테고리명</th>
+                <th scope="col">아이콘이미지</th>
+                <th scope="col">등록자</th>
+                <th scope="col">최초등록일</th>
+                <th scope="col">최근수정일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>11</td>
+                <td>비노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>10</td>
+                <td>비노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>9</td>
+                <td>노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>8</td>
+                <td>노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>7</td>
+                <td>노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>6</td>
+                <td>비노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>5</td>
+                <td>비노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>4</td>
+                <td>비노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>3</td>
+                <td>비노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>2</td>
+                <td>비노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only mb-0">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>1</td>
+                <td>비노출</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-flex align-items-center mt-2">
+            <!-- 고정컨텐츠 이동 버튼 -->
+            <button type="button" class="btn btn-secondary btn-sm mr-1">위로 ↑</button>
+            <button type="button" class="btn btn-secondary btn-sm mr-1">아래로 ↓</button>
+            <button type="button" class="btn btn-primary btn-sm mr-1">순서저장</button>
+            <button type="button" class="btn btn-outline-dark btn-sm mr-1">취소</button>
+            <!-- // 고정컨텐츠 이동 버튼 -->
+          </div>
+
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table1').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+
+      // 팝업
+      //접근권한없음 팝업
+      // Modal.alert('해당 메뉴에 접속권한이 없습니다.', function (e) {
+      //   console.log('접속권한 - 확인');
+      // });
+    </script>
+  </body>
+</html>

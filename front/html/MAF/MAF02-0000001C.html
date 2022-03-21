@@ -21,7 +21,7 @@
       <header id="header">
         <div>
           <div class="head-left">
-            <button type="button" class="head-back button" role="button" aria-label="이전화면"></button>
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
           </div>
         </div>
       </header>
@@ -32,14 +32,18 @@
         <div class="section">
           <h1 class="tit-h1">자주묻는 질문</h1>
           <div class="form-item mt-16">
-            <div class="input">
+            <!-- 2022-03-18: 클래스수정 -->
+            <div class="input large">
               <input id="searchInp" type="text" placeholder="궁금한 것을 검색해보세요" title="검색어입력" />
-              <button type="button" class="button h32 search" aria-label="검색"><i class="i-btn-search-24" aria-hidden="true"></i></button>
+              <!-- 2022-03-18: 클래스수정 -->
+              <button type="button" class="button icon search" aria-label="검색"><i class="i-btn-search-24" aria-hidden="true"></i></button>
             </div>
           </div>
 
           <!-- 카테고리 -->
           <div id="cate">
+            <!-- 2022-03-18: 추가 -->
+            <hr class="hr-line mt-32" aria-hidden="true" />
             <h2 class="tit-h3 mt-32">카테고리</h2>
             <!-- 2022-03-15: list-arr-item 추가 -->
             <ul class="mt-13 list-arr-item">
@@ -93,7 +97,8 @@
 
           <!-- 검색결과 있음 -->
           <div id="result" style="display: none">
-            <ul class="line-list-2 mt-24">
+            <!-- 2022-03-18: 클래스수정 -->
+            <ul class="line-list-2 mt-16">
               <li>
                 <a href="#" class="list-item-2 no-arr btn-click">
                   <div class="item-tit"><span class="fc-primary">매치</span>란 무엇인가요?</div>

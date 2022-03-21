@@ -21,7 +21,7 @@
       <header id="header">
         <div>
           <div class="head-left">
-            <button type="button" class="head-back button" role="button" aria-label="이전화면"></button>
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
           </div>
           <h1 class="t-left">그라운드</h1>
         </div>
@@ -71,7 +71,7 @@
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-alarm"><i class="i-ico-alarm"></i>신고</a>
+                    <button type="button" class="button btn-alarm"><i class="i-ico-alarm"></i>신고</button>
                   </div>
                 </div>
               </div>
@@ -98,8 +98,8 @@
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-edit"><i class="i-ico-edit"></i>수정</a>
-                    <a href="#" class="btn-trash"><i class="i-ico-trash"></i>삭제</a>
+                    <button type="button" class="button btn-edit"><i class="i-ico-edit"></i>수정</button>
+                    <button type="button" class="button btn-trash"><i class="i-ico-trash"></i>삭제</button>
                   </div>
                 </div>
               </div>
@@ -122,7 +122,7 @@
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
                 <div class="btn-menu-over">
                   <div class="btn-group">
-                    <a href="#" class="btn-alarm"><i class="i-ico-alarm"></i>신고</a>
+                    <button type="button" class="button btn-alarm"><i class="i-ico-alarm"></i>신고</button>
                   </div>
                 </div>
               </div>
@@ -132,7 +132,7 @@
               <div class="user-detail-talk pd-14y">
                 <div class="list-empty pd-0">
                   <i class="i-ico-warning-28 mg-8" aria-hidden="true"></i>
-                  <p class="fz-14">서비스 운영정책에 의해 차단된 게시물 입니다.</p>
+                  <p class="fz-14">서비스 운영정책에 의해 차단된 댓글 입니다.</p>
                 </div>
               </div>
               <!-- //차단된 게시물 -->
@@ -146,10 +146,10 @@
           </div>
         </div>
         <div class="btn-wrap bottom-fixed btn-comment">
-          <div class="pd-10y">
-            <div class="textarea auto-height add-btn">
-              <textarea style="max-height: 9.4rem" class="line"></textarea>
-              <button type="button" class="button h32 line" onclick="Layer.toast('입력하신 댓글이 등록 되었어요.');">입력</button>
+          <div>
+            <div class="textarea line auto-height add-btn">
+              <textarea></textarea>
+              <button type="button" class="button h32 primary" onclick="Layer.toast('입력하신 댓글이 등록 되었어요.');">게시</button>
             </div>
           </div>
         </div>
@@ -160,52 +160,32 @@
       <!-- //팝업 -->
     </article>
     <script>
-      $(function () {
-        userTalk();
-      });
-
-      const userTalk = function () {
-        $(document).on('click', '.user-detail-talk .btn-menu', function () {
-          const $this = $(this);
-          $this.next().addClass('on');
-          setTimeout(function () {
-            $this.next().removeClass('on');
-          }, 3000);
-          return false;
-        });
-      };
-
-      $(function () {
-        let choiceSelect = false;
-        $('.quizOX-box :radio').click(function () {
-          if (!choiceSelect) {
-            $('.quizOX-box :radio').removeClass('on off');
-            $(this).addClass('on').siblings('input').addClass('off');
-            choice();
-          }
-        });
-
-        function choice() {
-          Layer.confirm('[선택된 보기 값]으로 선택 할까요? <br />선택 완료 후 변경할 수 없습니다.', '확인', '선택 완료', '다시 선택', function (e) {
-            if (e) {
-              Layer.toast('정답 선택이 완료 되었어요.');
-              choiceSelect = true;
-            } else {
-              $('.quizOX-box :radio').removeClass('on off');
-              $('.quizOX-box :radio:checked').prop('checked', false);
-            }
-          });
+      // 임시: OX 선택UI
+      let choiceSelect = false;
+      $('.quizOX-box :radio').click(function () {
+        if (!choiceSelect) {
+          $('.quizOX-box :radio').removeClass('on off');
+          $(this).addClass('on').siblings('input').addClass('off');
+          choice();
         }
       });
-      function noProfile() {
-        const text = '<p>선택하신 사용자의 프로필을 확인 할 수 없어요.</p><p class="mt-8">앱 탈퇴 또는 그라운드에서 퇴실하거나 이용정지 된 사용자의 정보는 접근이 제한됩니다.</p>';
-        Layer.confirm(text, '알림', '확인', function (e) {
+      const choice = function () {
+        Layer.confirm('[선택된 보기 값]으로 선택 할까요? <br />선택 완료 후 변경할 수 없습니다.', '확인', '선택 완료', '다시 선택', function (e) {
           if (e) {
             Layer.toast('정답 선택이 완료 되었어요.');
             choiceSelect = true;
+          } else {
+            $('.quizOX-box :radio').removeClass('on off');
+            $('.quizOX-box :radio:checked').prop('checked', false);
           }
         });
-      }
+      };
+
+      // 프로필 못 봄
+      const noProfile = function () {
+        const text = '<p>선택하신 사용자의 프로필을 확인 할 수 없어요.</p><p class="mt-8">앱 탈퇴 또는 그라운드에서 퇴실하거나 이용정지 된 사용자의 정보는 접근이 제한됩니다.</p>';
+        Layer.alert(text, '알림');
+      };
     </script>
   </body>
 </html>
