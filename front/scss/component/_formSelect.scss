@@ -113,12 +113,13 @@
       }
     }
   }
-
-  & + .flex,
-  & + .input,
-  & + .select,
-  & + .textarea {
-    margin-top: 0.8rem;
+  &:not(.form-box) {
+    & + .flex,
+    & + .input,
+    & + .select,
+    & + .textarea {
+      margin-top: 0.8rem;
+    }
   }
 
   &.inline {

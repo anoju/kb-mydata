@@ -153,12 +153,13 @@
   input[type='text'] ~ .btn-inp-pwd {
     background-image: url(../images/icon/Ico-eye-on@3x.png);
   }
-
-  & + .flex,
-  & + .input,
-  & + .select,
-  & + .textarea {
-    margin-top: 0.8rem;
+  &:not(.form-box) {
+    & + .flex,
+    & + .input,
+    & + .select,
+    & + .textarea {
+      margin-top: 0.8rem;
+    }
   }
 
   &.line-lbl-inp {
