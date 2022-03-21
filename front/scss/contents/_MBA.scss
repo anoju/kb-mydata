@@ -1436,7 +1436,15 @@
       color: var(--primary-color);
       font-weight: bold;
     }
-
+    &.noBorder {
+      border: 0;
+      border-radius: 1.2rem;
+    }
+    .txt {
+      font-size: 1.4rem;
+      color: var(--base-txt-color);
+      word-break: break-all;
+    }
     + .list {
       margin-top: 1.2rem;
     }
@@ -1648,6 +1656,25 @@
         margin-right: 0.4rem;
         font-size: 1.6rem;
       }
+    }
+  }
+}
+
+/* bsw */
+.benefit-swiper {
+  .swiper-slide {
+    text-align: center;
+    img {
+      width: 14rem;
+    }
+    .tit {
+      display: block;
+      font-size: 1.6rem;
+    }
+    span {
+      display: block;
+      margin-top: 1.2rem;
+      font-size: 1.2rem;
     }
   }
 }
