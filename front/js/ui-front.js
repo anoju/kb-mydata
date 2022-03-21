@@ -7501,6 +7501,7 @@ ui.Chart = {
         const idx = $(this).data('circle-val');
         const color = $(this).data('circle-color');
         const size = $(this).data('circle-size');
+        const dasharray = 2 * Math.PI * (18 - strokeWidth / 2);
 
         let html = '';
         html += '<svg viewBox="0 0 36 36" class="circular-chart"';
@@ -7524,7 +7525,7 @@ ui.Chart = {
           html += '" ';
         }
         if (color) html += ' stroke="' + color + '"';
-        html += ' stroke-dasharray="' + idx + ', 100"';
+        html += ' stroke-dasharray="' + dasharray * (idx / 100) + ', ' + dasharray + '"';
         // html += ' d="M18 2.0845';
         // html += ' a 15.9155 15.9155 0 0 1 0 31.831';
         // html += ' a 15.9155 15.9155 0 0 1 0 -31.831"';
