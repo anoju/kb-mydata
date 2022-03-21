@@ -6665,6 +6665,12 @@ const Layer = {
       } else {
         $('#' + popId).remove();
       }
+      const $this = $(this);
+      $(res)
+        .find('script')
+        .each(function () {
+          $(this).appendTo($this);
+        });
     });
   },
   toast: function (txt, fn, type, delayTime) {
