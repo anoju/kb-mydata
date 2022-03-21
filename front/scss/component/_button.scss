@@ -353,6 +353,7 @@ button.btn-click {
     /* */
     &.btn-comment {
       z-index: 51;
+      text-align: left;
       &:before {
         content: '';
         display: block;
@@ -381,6 +382,10 @@ button.btn-click {
         > div {
           background: #fff;
         }
+      }
+      .user-info {
+        margin-bottom: 0.8rem;
+        color: #23adfa;
       }
     }
   }
