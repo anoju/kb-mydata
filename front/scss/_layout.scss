@@ -100,6 +100,9 @@
 }
 .head-right {
   margin-left: auto !important;
+  .button {
+    font-weight: normal;
+  }
 }
 .head-back {
   // background-image: url(../images/icon/btn-back-24.png);

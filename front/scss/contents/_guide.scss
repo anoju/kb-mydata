@@ -390,12 +390,12 @@
   .circle-bg {
     stroke: var(--line-color);
     fill: none;
-    stroke-width: 4;
+    //stroke-width: 4;
   }
 
   .circle {
     fill: none;
-    stroke-width: 4;
+    //stroke-width: 4;
     opacity: 1;
     animation: progress 1s ease-out both;
   }

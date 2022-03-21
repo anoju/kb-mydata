@@ -7485,6 +7485,7 @@ ui.Chart = {
       let $firstSize = 0;
       let $firstBgLineW = 0;
       let $firstLineW = 0;
+      let strokeWidth = $(this).data('circle-width') ? parseInt($(this).data('circle-width')) : 5;
       const typeCheck = _this.data('circle-box');
       _this.addClass(typeCheck);
       _this.find('[data-circle-val]').each(function (e) {
@@ -7497,14 +7498,15 @@ ui.Chart = {
         if (size) html += ' style="width:' + size + 'px;height:' + size + 'px;"';
         html += ' aria-hidden="true">';
         if (!e || typeCheck !== 'type2') {
-          html += '<path';
-          html += ' class="circle-bg"';
-          html += ' d="M18 2.0845';
-          html += ' a 15.9155 15.9155 0 0 1 0 31.831';
-          html += ' a 15.9155 15.9155 0 0 1 0 -31.831"';
-          html += ' />';
+          // html += '<path';
+          // html += ' class="circle-bg"';
+          // html += ' d="M18 2.0845';
+          // html += ' a 15.9155 15.9155 0 0 1 0 31.831';
+          // html += ' a 15.9155 15.9155 0 0 1 0 -31.831"';
+          // html += ' />';
+          html += '<circle class="circle-bg" fill="none" stroke-width="' + strokeWidth + '" cx="18" cy="18" r="' + (18 - strokeWidth / 2) + '"></circle>';
         }
-        html += '<path';
+        html += '<circle';
         html += ' class="circle"';
         if (typeCheck === 'type1') {
           html += ' style="';
@@ -7514,9 +7516,10 @@ ui.Chart = {
         }
         if (color) html += ' stroke="' + color + '"';
         html += ' stroke-dasharray="' + idx + ', 100"';
-        html += ' d="M18 2.0845';
-        html += ' a 15.9155 15.9155 0 0 1 0 31.831';
-        html += ' a 15.9155 15.9155 0 0 1 0 -31.831"';
+        // html += ' d="M18 2.0845';
+        // html += ' a 15.9155 15.9155 0 0 1 0 31.831';
+        // html += ' a 15.9155 15.9155 0 0 1 0 -31.831"';
+        html += ' stroke-width="' + strokeWidth + '" cx="18" cy="18" r="' + (18 - strokeWidth / 2) + '"';
         html += ' />';
         html += '</svg>';
         $(this).append(html);
