@@ -321,7 +321,8 @@
   }
   &.tab-fixed {
     .tab-list {
-      padding: 0 0.8rem;
+      padding: 0;
+      // padding: 0 0.8rem;
       &:before {
         left: 0;
         right: 0;

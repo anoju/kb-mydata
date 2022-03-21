@@ -33,6 +33,13 @@ i.require {
   + .validate-item {
     margin-top: 1.6rem;
   }
+  .txt-count {
+    color: #b9c1c9;
+    strong {
+      font-weight: normal;
+      color: #818892;
+    }
+  }
 }
 .form-item {
   position: relative;

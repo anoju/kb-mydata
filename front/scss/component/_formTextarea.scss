@@ -28,7 +28,7 @@
       padding-right: 0.8rem;
     }
   }
-  > *:not(textarea) {
+  > *:not(textarea):last-child {
     margin-right: 1.6rem;
   }
   &.disabled textarea,

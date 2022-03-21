@@ -159,8 +159,8 @@
     line-height: 2rem;
     color: var(--strong-txt-color);
     .i-ico-new {
-      margin-right: 0.8rem;
-      vertical-align: -0.3rem;
+      margin-right: 0.4rem;
+      vertical-align: -0.1rem;
     }
     + .item-sub {
       margin-top: 0.6rem;
@@ -190,8 +190,7 @@
     font-weight: 500;
   }
   .view-tit {
-    font-size: 1.8rem;
-    line-height: 2.6rem;
+    font-size: 2.2rem;
     font-weight: 700;
     + .view-info {
       margin-top: 0.8rem;
@@ -214,8 +213,7 @@
   }
   .view-cont {
     margin-top: 3.2rem;
-    font-size: 1.4rem;
-    line-height: (2 / 1.4);
+    font-size: 1.6rem;
     min-height: 10rem;
     &.evt-view {
       margin-top: 1.2rem;
@@ -228,17 +226,6 @@
   }
   .evt-img {
     text-align: center;
-  }
-
-  &.ty2 {
-    .view-tit {
-      font-size: 2.2rem;
-      line-height: inherit;
-    }
-    .view-cont {
-      font-size: 1.6rem;
-      line-height: inherit;
-    }
   }
 }
 
