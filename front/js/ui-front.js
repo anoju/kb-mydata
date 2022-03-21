@@ -6648,6 +6648,7 @@ const Layer = {
     const $pop = $('#' + popId);
     const $loadId = '#load';
     $pop.load($url + ' ' + $loadId, function (res, sta, xhr) {
+      const $this = $(this);
       if (sta == 'success') {
         const $popWrap = $('#' + popId).find($loadId);
         if ($popWrap.hasClass(Layer.wrapClass)) {
@@ -6662,15 +6663,16 @@ const Layer = {
           .find('.' + Layer.headClass + ' .pop-close')
           .addClass('ui-pop-close');
         Layer.open('#' + popId);
+        if ($(res).find('script').length) {
+          $(res)
+            .find('script')
+            .each(function () {
+              $(this).appendTo($this);
+            });
+        }
       } else {
         $('#' + popId).remove();
       }
-      const $this = $(this);
-      $(res)
-        .find('script')
-        .each(function () {
-          $(this).appendTo($this);
-        });
     });
   },
   toast: function (txt, fn, type, delayTime) {
