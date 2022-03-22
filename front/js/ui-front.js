@@ -614,6 +614,15 @@ ui.Common = {
       const $headerTit = $header.find('h1');
       if ($fadeTitle.length && $headerTit.length) ui.Common.scrollShowTitle($fadeTitle[0], window, $header[0], $headerTit[0]);
 
+      const $sclHead = $('.ui-scroll-head');
+      if ($header.length && $sclHead.length) {
+        if ($sclHead.offset().top - $headerH < $SclTop) {
+          $header.addClass('bg-origin');
+        } else {
+          $header.removeClass('bg-origin');
+        }
+      }
+
       // 스크롤시 헤더 숨기기
       /*
       if ($SclTop < $lastSclTop) {
