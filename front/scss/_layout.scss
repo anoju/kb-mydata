@@ -19,7 +19,10 @@
   flex-shrink: 0;
   z-index: 50;
   background: #fff;
-  transition: box-shadow 0.3s, transform 0.3s;
+  transition: backgound-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  &.bg-origin {
+    background: #fff !important;
+  }
   html.ios & {
     @include ios-top(padding-top);
   }
@@ -445,6 +448,13 @@
   }
   > div:first-child:not(.section) + .section {
     padding-top: var(--base-padding);
+  }
+}
+.outer-content {
+  padding-left: var(--base-padding);
+  padding-right: var(--base-padding);
+  .section & {
+    @include outer;
   }
 }
 .center-contents {

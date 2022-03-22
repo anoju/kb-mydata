@@ -18,7 +18,7 @@
   <body>
     <article id="wrap">
       <!-- 헤더 -->
-      <header id="header">
+      <header id="header" class="bg-fa">
         <div>
           <div class="head-left">
             <button type="button" class="head-back button" aria-label="이전화면"></button>
@@ -29,16 +29,23 @@
 
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
-        <div class="section">
-          <div class="select inline fz-16 fw-500 fc-212121">
-            <select title="월을 선택해주세요" data-type="date">
-              <option value="202202">2022.02</option>
-              <option value="202201">2022.01.31</option>
-              <option value="202112">2021.12</option>
-              <option value="202111">2021.11</option>
-            </select>
+        <div class="section pt-0">
+          <div class="outer-content bg-fa pt-24 pb-24">
+            <div class="select inline fz-16 fw-500 fc-212121">
+              <select title="월을 선택해주세요" data-type="date">
+                <option value="202202">2022.02</option>
+                <option value="202201">2022.01.31</option>
+                <option value="202112">2021.12</option>
+                <option value="202111">2021.11</option>
+              </select>
+            </div>
+
+            <i class="badge gray">200건</i>
+            <div class="price"><strong>120,000</strong>원</div>
+
+            <a href="#" class="btn-txt">이번 달 어때?<i class="i-ico-arr-right-24"></i></a>
           </div>
-          <hr class="hr-line mt-24 mb-20" aria-hidden="true" />
+          <hr class="hr-line mb-20 ui-scroll-head" aria-hidden="true" />
           <div class="tab-round-menu ui-tab">
             <div class="tab-inner">
               <ul class="tab-list">
@@ -57,7 +64,7 @@
               <option value="4" data-sub="시티카드">씨티 뉴클리어카드</option>
             </select>
           </div>
-          <div></div>
+          <div style="height: 300vh"></div>
           <div class="btn-wrap">
             <button class="button line">더보기</button>
           </div>

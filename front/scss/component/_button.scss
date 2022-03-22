@@ -49,7 +49,7 @@
     font-size: 1.4rem;
     border-radius: 0.6rem;
   }
-  .popup:not(.modal) .pop-foot &,
+  .popup:not(.modal) .pop-foot &:not(.h48),
   &.h60 {
     height: 6rem;
     font-size: 1.8rem;

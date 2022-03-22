@@ -614,6 +614,15 @@ ui.Common = {
       const $headerTit = $header.find('h1');
       if ($fadeTitle.length && $headerTit.length) ui.Common.scrollShowTitle($fadeTitle[0], window, $header[0], $headerTit[0]);
 
+      const $sclHead = $('.ui-scroll-head');
+      if ($header.length && $sclHead.length) {
+        if ($sclHead.offset().top - $headerH < $SclTop) {
+          $header.addClass('bg-origin');
+        } else {
+          $header.removeClass('bg-origin');
+        }
+      }
+
       // 스크롤시 헤더 숨기기
       /*
       if ($SclTop < $lastSclTop) {
@@ -798,7 +807,7 @@ ui.Common = {
         // $(this).empty();
         if (!$this.hasClass('lottie__init')) {
           const $data = $this.data('lottie');
-          $this.addClass('lottie__init').removeAttr('data-lottie');
+          $this.addClass('lottie__init').removeAttr('data-lottie').aria('hidden', true);
           const isLoop = $this.hasClass('_loop');
           const $lottieOpt = lottie.loadAnimation({
             container: this,
@@ -5644,6 +5653,8 @@ const Layer = {
         $txt = $split[0] + '년 ' + $split[1] + '월';
       } else if ($split.length == 3) {
         $txt = $split[0] + '년 ' + $split[1] + '월 ' + $split[2] + '일';
+      } else {
+        $txt = $split.join('.');
       }
       return $txt;
     };
