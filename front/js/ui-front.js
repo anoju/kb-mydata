@@ -5653,6 +5653,8 @@ const Layer = {
         $txt = $split[0] + '년 ' + $split[1] + '월';
       } else if ($split.length == 3) {
         $txt = $split[0] + '년 ' + $split[1] + '월 ' + $split[2] + '일';
+      } else {
+        $txt = $split.join('.');
       }
       return $txt;
     };
