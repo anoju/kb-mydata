@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('메모');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <button type="button" class="button line" onclick="Layer.open('#popMemo')">팝업열기</button>
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+
+      <!-- 팝업 -->
+      <!-- 적요제공동의유도팝업 -->
+      <div id="popRemarks" class="popup bottom" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="section">
+              <div class="remarks-animation-box">
+                <div class="top-text">
+                  <p class="off">
+                    <span class="one">앗?!</span>
+                    <span class="two">어디서 썼더라?</span>
+                  </p>
+                  <p class="on">
+                    <span class="one">아하!</span>
+                    <span class="two">여기서 썼네요!</span>
+                  </p>
+                </div>
+                <div class="cash-info">
+                  <p class="left">
+                    <span class="off">알수없음</span>
+                    <span class="on">맛있는치킨집</span>
+                  </p>
+                  <p class="right">
+                    <strong>50,000</strong>
+                    원 출금
+                  </p>
+                </div>
+                <div class="switch-ani-box">
+                  <p class="tit">적요정보제공동의</p>
+                  <span class="checkbox switch"><input type="checkbox" /><i aria-hidden="true"></i></span>
+                </div>
+
+                <div class="gd__lottie-box" data-lottie="../../lottie/fireworks.json"></div>
+              </div>
+
+              <p class="fz-18 fw-bold t-center fc-212121">어디서 사용했는지 알려드리고 싶어요.</p>
+              <p class="mt-16 fz-14 t-center">
+                적요/거래메모 및 가맹점 명/사업자등록번호 전송/수집에 동의를 하지 않아 정보를 표시할 수 없어요. <br />
+                전송/수집에 동의하면 사용처 확인이 가능하여 카테고리 분류를 편하게 할 수 있어요.
+              </p>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="flex">
+                <button type="button" class="button primary ui-pop-close h-48 fz-16">좋아요. 동의할게요.</button>
+              </div>
+              <div class="pop-foot-close"><button type="button" class="button ui-pop-close">괜찮아요.</button></div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <!-- //팝업 -->
+    </article>
+  </body>
+  <script>
+    Layer.open('#popRemarks', function () {
+      const target = $('.remarks-animation-box');
+      const topText = target.find('.top-text');
+      const cashInfo = target.find('.cash-info');
+      const switchInp = target.find('.switch input');
+      const lottieAni = target.find('.gd__lottie-box');
+      let ani = anime.timeline({
+        easing: 'easeOutExpo',
+        loop: true,
+        duration: 800
+      });
+      ani.add({
+        targets: topText.find('.off .one')[0],
+        delay: 800,
+        translateY: ['100%', 0]
+      });
+      ani.add(
+        {
+          targets: topText.find('.off .two')[0],
+          translateY: ['20%', 0],
+          opacity: [0, 1],
+          changeComplete: function (anim) {
+            switchInp.prop('checked', true);
+          }
+        },
+        '-=300'
+      );
+      ani.add(
+        {
+          targets: cashInfo.find('.left .off')[0],
+          opacity: [1, 0],
+          changeBegin: function () {
+            cashInfo.addClass('action');
+            lottieAni.css('opacity', 1);
+
+            const anim = lottieAni.data('lottie-opt');
+            if (anim) anim.goToAndPlay(0, true);
+          }
+        },
+        '+=500'
+      );
+      ani.add(
+        {
+          targets: cashInfo.find('.left .on')[0],
+          opacity: [0, 1]
+        },
+        '-=800'
+      );
+      ani.add(
+        {
+          changeBegin: function () {
+            topText.addClass('show');
+          }
+        },
+        '-=600'
+      );
+      ani.add(
+        {
+          targets: topText.find('.on .one')[0],
+          translateY: ['100%', 0],
+          delay: 800
+        },
+        '-=600'
+      );
+      ani.add(
+        {
+          targets: topText.find('.on .two')[0],
+          translateY: ['20%', 0],
+          opacity: [0, 1]
+        },
+        '-=600'
+      );
+      ani.add({
+        changeComplete: function () {
+          switchInp.prop('checked', false);
+          topText.removeClass('show').find('*').removeAttr('style');
+          cashInfo.removeClass('action').find('*').removeAttr('style');
+          lottieAni.css('opacity', 0);
+        }
+      });
+    });
+  </script>
+</html>
