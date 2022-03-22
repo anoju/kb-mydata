@@ -1,4 +1,9 @@
 // select
+.select {
+  font-weight: 500;
+  color: var(--strong-txt-color);
+  font-size: 1.6rem;
+}
 .select select,
 .btn-select {
   position: relative;
@@ -15,9 +20,6 @@
   white-space: nowrap;
   background-color: #fafafa;
   overflow: hidden;
-  font-weight: 500;
-  color: var(--strong-txt-color);
-  font-size: 1.6rem;
   line-height: 3.6rem;
   &.off {
     color: var(--placeholder-txt-color);
@@ -125,11 +127,14 @@
   &.inline {
     display: inline-flex;
     width: auto;
+    font-weight: inherit;
+    color: inherit;
+    font-size: 1.4rem;
     select,
     .btn-select {
       border: 0 none;
       height: 2.4rem;
-      font-size: 1.4rem;
+      line-height: 2.4rem;
       padding: 0 2.4rem 0 0;
       border-radius: 0;
       background: none;
@@ -225,6 +230,9 @@
       transform: rotate3d(1, 0, 0, 180deg);
     }
   }
+  .btn-select-val {
+    display: block;
+  }
 }
 // @media (max-width: 320px) {
 //   .select select,
@@ -249,11 +257,11 @@
   > a {
     position: relative;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     padding: 1rem calc(var(--base-padding) * 2) 1rem var(--base-padding);
     font-size: 1.6rem;
     color: var(--base-txt-color);
-    font-weight: 500;
     min-height: 6rem;
     word-break: break-all;
     transition: color 0.2s;
@@ -274,14 +282,23 @@
       color: var(--disabled-color);
       background-color: var(--disabled-bg-color);
     }
-    > div {
-      line-height: 1.2;
+    .select-item-txt {
+      font-weight: 500;
+    }
+    .select-item-sub {
+      font-size: 1.4rem;
+      margin-top: 0.2rem;
     }
   }
   &.selected > a {
     color: var(--primary-color);
     &:after {
       opacity: 1;
+    }
+  }
+  &:not(.disabled, .selected) {
+    .select-item-sub {
+      color: #818892;
     }
   }
 }
@@ -296,5 +313,17 @@
   }
   &.col3 > li {
     width: 33.33%;
+  }
+  &.ty2 {
+    .select-item {
+      > a {
+        min-height: 7.7rem;
+      }
+      &:not(.disabled, .selected) {
+        .select-item-txt {
+          color: var(--strong-txt-color2);
+        }
+      }
+    }
   }
 }
