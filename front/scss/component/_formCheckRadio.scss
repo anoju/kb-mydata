@@ -418,6 +418,9 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
   &.ty2 {
     > i {
       border-width: 0;
+      + .lbl {
+        padding-left: 0 !important;
+      }
     }
     > input {
       &:checked {
@@ -437,6 +440,11 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
         &:checked + i {
           background-color: transparent;
         }
+      }
+    }
+    .lbl {
+      &:first-child {
+        padding-right: 0 !important;
       }
     }
   }
@@ -638,5 +646,48 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
         right: 0;
       }
     }
+  }
+}
+
+//chech-list-item
+.chech-list-item {
+  position: relative;
+  .checkbox,
+  .radio {
+    display: block;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    input,
+    i {
+      left: auto;
+      right: 0;
+      top: 50%;
+      margin-top: -1.2rem;
+    }
+    .lbl {
+      padding: 0;
+      font-size: inherit;
+      line-height: inherit;
+      margin-right: 3rem;
+    }
+    .section & {
+      @include outer(true);
+      input,
+      i {
+        right: var(--base-padding);
+      }
+    }
+  }
+  .item-tit {
+    font-size: 1.6rem;
+    color: var(--strong-txt-color2);
+    strong {
+      font-weight: 500;
+    }
+  }
+  .item-sub {
+    color: #818892;
+    // margin-top: 0.2rem;
+    font-size: 1.4rem;
   }
 }
