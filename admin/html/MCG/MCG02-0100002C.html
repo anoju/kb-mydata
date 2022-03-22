@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">PFM관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">투자채널관리</li>
+                  </ol>
+                </nav>
+                <h1>투자채널등록</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">등록구분</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>채널구분</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" value="investMain" name="investChannel" class="custom-control-input" />
+                      <span class="custom-control-label">투자메인</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" value="artInvest" name="investChannel" class="custom-control-input" />
+                      <span class="custom-control-label">미술품투자</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" value="k-contentsInvest" name="investChannel" class="custom-control-input" />
+                      <span class="custom-control-label">K-콘텐츠</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" value="musicInvest" name="investChannel" class="custom-control-input" />
+                      <span class="custom-control-label">음악저작권투자</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" value="realtyInvest" name="investChannel" class="custom-control-input" />
+                      <span class="custom-control-label">소액부동산</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div data-table="artInvest-table" class="form-box-row channel-title">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>채널 타이틀</div>
+                <div class="form-box-cont">
+                  <textarea id="editor-1" name="editordata1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">기본정보</h2>
+            </div>
+          </div>
+          <!-- 투자 메인 등록테이블 -->
+          <div data-table="investMain-table" class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 썸네일</div>
+                <div class="form-box-cont">
+                  <!-- 미리보기 아이콘 이미지 -->
+                  <!-- 이미지 없을때 -->
+                  <div class="img-box w-120 mb-2">
+                    <small>등록된 이미지가<br />없습니다.</small>
+                  </div>
+
+                  <!-- 이미지 있을때 -->
+                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
+                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 링크선택</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" checked name="selectLink" value="innerLinkTable" class="custom-control-input" />
+                      <span class="custom-control-label">내부링크</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="selectLink" value="outerLinkTable" class="custom-control-input" />
+                      <span class="custom-control-label">외부링크</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>링크 주소</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 내부링크 화면설정 -->
+          <div data-table="investMain-table" class="innerLink-table">
+            <div class="title-wrap mt-5">
+              <div class="left">
+                <h2 class="h3">내부링크 화면설정</h2>
+              </div>
+            </div>
+            <div data-table="investMain-table" class="form-box">
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label"><i class="fc-red mr-1">*</i>내용</div>
+                  <div class="form-box-cont">
+                    <textarea id="editor-2" name="editordata2"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label"><i class="fc-red mr-1">*</i>버튼명</div>
+                  <div class="form-box-cont">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label"><i class="fc-red mr-1">*</i>외부링크</div>
+                  <div class="form-box-cont">
+                    <div class="custom-control-wrap">
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label">외부</span>
+                      </label>
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label">내부</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label"><i class="fc-red mr-1">*</i>링크 주소</div>
+                  <div class="form-box-cont">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 미술품투자 등록테이블 -->
+          <div data-table="artInvest-table" class="form-box hide">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>작품제목</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>작가명</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 썸네일</div>
+                <div class="form-box-cont">
+                  <!-- 미리보기 아이콘 이미지 -->
+                  <!-- 이미지 없을때 -->
+                  <div class="img-box w-120 mb-2">
+                    <small>등록된 이미지가<br />없습니다.</small>
+                  </div>
+
+                  <!-- 이미지 있을때 -->
+                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
+                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 투자종류</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">모집예정</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">모집 중</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">모집 완료</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">렌탈중</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">매각진행중</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">수익배분</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">운영종료</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>금액타이틀</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                  <div class="mt-1 text-info">※ 예)매각금액, 모집중 / 금액 왼쪽에 붙은 설명입니다.</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>금액</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-6">
+                      <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-6 d-flex align-items-center">원</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>링크주소</div>
+                <div class="form-box-cont"><input type="text" class="form-control" /></div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>태그</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                  <div class="mt-1 text-info">※ 예시) #옥션진행중/입력 시 태그값만 노출됩니다. 6자 이내로 입력해 주세요.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- k-콘텐츠 등록테이블 -->
+          <div data-table="k-ContentsInvest-table" class="form-box hide">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>제목</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>작가 / <br />출연자명</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 썸네일</div>
+                <div class="form-box-cont">
+                  <!-- 미리보기 아이콘 이미지 -->
+                  <!-- 이미지 없을때 -->
+                  <div class="img-box w-120 mb-2">
+                    <small>등록된 이미지가<br />없습니다.</small>
+                  </div>
+
+                  <!-- 이미지 있을때 -->
+                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
+                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 투자종류</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">모집예정</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">모집 중</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">모집 완료</span>
+                    </label>
+                  </div>
+                  <div class="mt-1 text-info">※ 모집완료 선택 시 해당 게시물은 비노출 처리됩니다.</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>링크 주소</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>태그</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                  <div class="mt-1 text-info">※ 예) #영화, 전시회 등 / 태그값과 동일하게 라벨이 적용됩니다. 6자 이내로 입력해 주세요.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 음악저작권 투자 등록테이블 -->
+          <div data-table="musicInvest-table" class="form-box hide">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>노래제목</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>가수명</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 썸네일</div>
+                <div class="form-box-cont">
+                  <!-- 미리보기 아이콘 이미지 -->
+                  <!-- 이미지 없을때 -->
+                  <div class="img-box w-120 mb-2">
+                    <small>등록된 이미지가<br />없습니다.</small>
+                  </div>
+
+                  <!-- 이미지 있을때 -->
+                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
+                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 투자종류</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">모집예정</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">모집 중</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">모집 완료</span>
+                    </label>
+                  </div>
+                  <div class="mt-1 text-info">※ 모집완료 선택 시 해당 게시물은 비노출 처리됩니다.</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>링크 주소</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>태그</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                  <div class="mt-1 text-info">※ 예시) #옥션진행중/입력 시 태그값만 노출됩니다. 6자 이내로 입력해 주세요.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 소액부동산 등록테이블 -->
+          <div data-table="realtyInvest-table" class="form-box hide">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>건물명</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>건물주소</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>면적</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-8">
+                      <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-4 d-flex align-items-center">m<sup>2</sup></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 썸네일</div>
+                <div class="form-box-cont">
+                  <!-- 미리보기 아이콘 이미지 -->
+                  <!-- 이미지 없을때 -->
+                  <div class="img-box w-120 mb-2">
+                    <small>등록된 이미지가<br />없습니다.</small>
+                  </div>
+
+                  <!-- 이미지 있을때 -->
+                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
+                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 투자종류</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">공동구매</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">작품매각</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">모집 완료</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">운영 완료</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>금액</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-6">
+                      <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-6 d-flex align-items-center">원</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>링크 주소</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>태그</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                  <div class="mt-1 text-info">※ 예시) #옥션진행중/입력 시 태그값만 노출됩니다. 6자 이내로 입력해 주세요.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">게시설정</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 게시기간</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">사용</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">사용안함</span>
+                    </label>
+                  </div>
+                  <div class="mt-1 text-info">※ 게시기간은 시작일의 0시 0분부터 종료일의 23:59분을 기준으로 합니다.</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 게시일</div>
+                <div class="form-box-cont">
+                  <div class="input-daterange-btn">
+                    <div class="input-group">
+                      <input type="date" class="form-control" placeholder="시작일" />
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">~</div>
+                      </div>
+                      <input type="date" class="form-control" placeholder="종료일" />
+                    </div>
+
+                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                      <button type="button" class="btn btn-outline-secondary">1개월</button>
+                      <button type="button" class="btn btn-outline-secondary">3개월</button>
+                      <button type="button" class="btn btn-outline-secondary">6개월</button>
+                      <button type="button" class="btn btn-outline-secondary active">전체</button>
+                      <!-- active 클래스로  활성화 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 마감일</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-6">
+                      <input type="date" class="form-control" placeholder="마감일" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">등록자정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">
+                  <label for="select1">최초등록</label>
+                </div>
+                <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">
+                  <label for="select1">최근수정</label>
+                </div>
+                <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-wrap kb-page-btn text-center mt-5">
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 등록</button>
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 저장</button>
+          </div>
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      //에디터
+      CKEDITOR.replace('editor-1');
+      CKEDITOR.replace('editor-2');
+
+      //투자 채널 별 테이블
+      $('input[name="investChannel"]').click(function () {
+        let radioVal = $(this).val();
+        console.log(radioVal);
+        if (radioVal !== 'investMain') {
+          $('.channel-title').fadeIn('300');
+        } else {
+          $('.channel-title').hide();
+        }
+        $('[data-table]').hide();
+        switch (radioVal) {
+          case 'investMain':
+            $('[data-table="investMain-table"]').fadeIn('300');
+            break;
+          case 'artInvest':
+            $('[data-table="artInvest-table"]').fadeIn('300');
+            break;
+          case 'k-contentsInvest':
+            $('[data-table="k-ContentsInvest-table"]').fadeIn('300');
+            break;
+          case 'musicInvest':
+            $('[data-table="musicInvest-table"]').fadeIn('300');
+            break;
+          case 'realtyInvest':
+            $('[data-table="realtyInvest-table"]').fadeIn('300');
+            break;
+          default:
+            break;
+        }
+      });
+
+      //투자메인 - 링크선택 별 내부링크테이블
+      $('input[name="selectLink"]').click(function () {
+        let radioVal = $(this).val();
+        console.log(radioVal);
+        if (radioVal !== 'innerLinkTable') {
+          $('.innerLink-table').hide();
+        } else {
+          $('.innerLink-table').show();
+        }
+      });
+
+      //팝업
+    </script>
+  </body>
+</html>
