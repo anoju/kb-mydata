@@ -54,17 +54,6 @@
     "etc": ""
   },
   {
-    "id": "MBA05-0300p01C",
-    "url": "../../front/html/MBA/",
-    "type": "pop",
-    "depth2": "1:1 매치",
-    "depth3": "상대 정보 확인",
-    "name": "상대 정보 확인",
-    "worker": "장영석",
-    "complete": "2022-03-04",
-    "etc": "기획 수정 예정(일부 변경)"
-  },
-  {
     "id": "MBA05-0400p01C",
     "url": "../../front/html/MBA/",
     "type": "pop",
@@ -76,6 +65,19 @@
     "etc": ""
   },
   {
+    "depth1": "매치 프로필"
+  },
+  {
+    "id": "MBA03-0100001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "내프로필",
+    "depth3": "",
+    "name": "내프로필",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  },
+  {
     "id": "MBA06-0200p01C",
     "url": "../../front/html/MBA/",
     "type": "pop",
@@ -83,8 +85,129 @@
     "depth3": "매치 전적",
     "name": "매치 전적",
     "worker": "장영석",
-    "complete": "2022-03-04",
-    "etc": ""
+    "complete": "2022-03-15",
+    "etc": "top 100, 매치 전적"
+  },
+  {
+    "id": "MBA03-0103p01C",
+    "url": "../../front/html/MBA/",
+    "type": "pop",
+    "depth2": "태그정보",
+    "depth3": "",
+    "name": "태그정보",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  },
+  {
+    "id": "MBA03-0104p01C",
+    "url": "../../front/html/MBA/",
+    "type": "pop",
+    "depth2": "뱃지정보",
+    "depth3": "",
+    "name": "뱃지정보",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  },
+  {
+    "id": "MBA03-0105001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "게시물 모아보기",
+    "depth3": "내 Talk",
+    "name": "게시물 모아보기",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  },
+  {
+    "id": "MBA03-0106001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "게시물 모아보기",
+    "depth3": "관심 Talk",
+    "name": "게시물 모아보기",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  },
+  {
+    "id": "MBA03-0107001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "프로필 관리",
+    "depth3": "케릭터",
+    "name": "프로필 관리",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  },
+  {
+    "id": "MBA03-0107p01C",
+    "url": "../../front/html/MBA/",
+    "type": "pop",
+    "depth2": "프로필 관리",
+    "depth3": "케릭터",
+    "depth4": "케릭터 변경",
+    "name": "프로필 관리",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  }, 
+  {
+    "id": "MBA03-0108001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "프로필 관리",
+    "depth3": "태그",
+    "name": "프로필 관리",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  },
+  {
+    "id": "MBA03-0900001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "프로필 관리",
+    "depth3": "뱃지",
+    "name": "프로필 관리",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  },
+  {
+    "id": "MBA03-0110p01C",
+    "url": "../../front/html/MBA/",
+    "type": "pop",
+    "depth2": "프로필 관리",
+    "depth3": "상품 지급 내역",
+    "name": "프로필 관리",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  },
+  {
+    "id": "MBA03-0200001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "사용자 프로필",
+    "depth3": "",
+    "name": "사용자 프로필",
+    "worker": "장영석",
+    "complete": "2022-03-23"
+  },
+  {
+    "id": "MBA03-0300p01C",
+    "url": "../../front/html/MBA/",
+    "type": "pop",
+    "depth2": "인플루언서 프로필",
+    "depth3": "",
+    "name": "인플루언서 프로필",
+    "worker": "장영석",
+    "complete": ""
+  },
+  {
+    "id": "MBA05-0300p01C",
+    "url": "../../front/html/MBA/",
+    "type": "pop",
+    "depth2": "약식 프로필",
+    "depth3": "",
+    "name": "약식 프로필",
+    "worker": "장영석",
+    "complete": "2022-03-23"
   },
   {
     "depth1": "매치(그라운드)"
