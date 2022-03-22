@@ -5618,6 +5618,9 @@ const Layer = {
   select: function (target, col) {
     const $target = $(target);
     const $targetVal = $target.val();
+    const $addClass = $target.data('class');
+    const $type = $target.data('type');
+    console.log($target);
     let $title = $target.attr('title');
     const $popId = Layer.selectId + Layer.selectIdx;
     const $length = $target.children().length;
@@ -5632,6 +5635,17 @@ const Layer = {
 
     Layer.selectIdx++;
     if ($title == undefined) $title = '선택';
+    const $monthTxt = function (txt) {
+      let $txt = txt;
+      const $split = $txt.split('.');
+      if ($split.length == 2) {
+        $txt = $split[0] + '년 ' + $split[1] + '월';
+      } else if ($split.length == 3) {
+        $txt = $split[0] + '년 ' + $split[1] + '월 ' + $split[2] + '일';
+      }
+      return $txt;
+    };
+
     $popHtml +=
       '<div id="' +
       $popId +
@@ -5655,11 +5669,13 @@ const Layer = {
 
     $popHtml += '<ul class="select-item-wrap';
     if (!!col) $popHtml += ' col' + col;
+    if ($addClass) $popHtml += ' ' + $addClass;
     $popHtml += '">';
     for (let i = 0; i < $length; i++) {
       $option = $target.children().eq(i);
       $opDisabled = $option.prop('disabled');
-      $opTxt = $option.text();
+      $opTxt = $option.data('txt') ? $option.data('txt') : $option.text();
+      $opSub = $option.data('sub');
       $opVal = $option.attr('value');
       if ($opVal != '') {
         $popHtml += '<li>';
@@ -5668,7 +5684,17 @@ const Layer = {
         if ($targetVal == $opVal) $popHtml += ' title="' + ($opTxt.length > 20 ? $opTxt.substring(20, $opTxt.lastIndexOf('(')) : $opTxt) + ' 선택됨"';
         $popHtml += '>';
         // $popHtml += '<div class="checkbox ty2"><i aria-hidden="true"></i></div>';
-        $popHtml += '<div>' + $opTxt + '</div>';
+        if ($opSub && $type === 'reverse') {
+          $popHtml += '<div class="select-item-txt">' + $opSub + '</div>';
+          $popHtml += '<div class="select-item-sub">' + $opTxt + '</div>';
+        } else {
+          if ($type === 'month') {
+            $popHtml += '<div class="select-item-txt">' + $monthTxt($opTxt) + '</div>';
+          } else {
+            $popHtml += '<div class="select-item-txt">' + $opTxt + '</div>';
+          }
+          if ($opSub) $popHtml += '<div class="select-item-sub">' + $opSub + '</div>';
+        }
         $popHtml += '</a>';
         $popHtml += '</div>';
         $popHtml += '</li>';
