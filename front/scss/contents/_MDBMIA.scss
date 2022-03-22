@@ -1,0 +1,95 @@
+.line-round-btn {
+  position: relative;
+  display: block;
+  border: 0.1rem solid var(--line-color);
+  background: #fff;
+  border-radius: 1.6rem;
+  padding: 2.3rem 2rem 2.3rem 6rem;
+  transition: border 0.3s;
+  &:active {
+    border-color: var(--primary-color);
+  }
+  + .line-round-btn2 {
+    margin-top: 0.8rem;
+  }
+  .btn-tit {
+    color: var(--strong-txt-color2);
+  }
+  .btn-txt {
+    font-size: 1.4rem;
+    margin-top: 0.3rem;
+  }
+  .btn-ico {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 6rem;
+    height: 3.2rem;
+    margin-top: -1.6rem;
+    @include bg-etc;
+    &.ico-1 {
+      background-image: url(../images/MY/connect2-ico-1.png);
+    }
+  }
+}
+.line-round-btn2 {
+  position: relative;
+  display: block;
+  border: 0.1rem solid var(--line-color);
+  background: #fff;
+  border-radius: 1.6rem;
+  padding: 2.4rem;
+  transition: border 0.3s;
+  &:active {
+    border-color: var(--primary-color);
+  }
+  + .line-round-btn2 {
+    margin-top: 0.8rem;
+  }
+  .btn-inner {
+    position: relative;
+  }
+  .btn-tit {
+    color: var(--strong-txt-color);
+  }
+  .btn-txt {
+    padding-right: 7.6rem;
+    min-height: 4.6rem;
+    margin-top: 1rem;
+  }
+  .btn-ico {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 48px;
+    height: 48px;
+    @include bg-etc;
+    img {
+      @include img-fit;
+    }
+    &.ico-1 {
+      background-image: url(../images/MY/connect-ico-1.png);
+    }
+
+    &.ico-2 {
+      background-image: url(../images/MY/connect-ico-2.png);
+    }
+  }
+}
+
+.iframe-full-box {
+  flex: 1 1 auto;
+  iframe {
+    height: -vh(100, 14.8rem, true);
+  }
+  &.pop-body {
+    padding: 0 !important;
+    border: 0.1rem solid var(--line-color);
+    &:before {
+      content: none;
+    }
+    iframe {
+      height: 100%;
+    }
+  }
+}

@@ -19,6 +19,9 @@
     margin-left: 2rem;
     white-space: nowrap;
     align-self: flex-end;
+    &:first-child {
+      margin-left: auto;
+    }
   }
   &.line-gray {
     @include outer(true);

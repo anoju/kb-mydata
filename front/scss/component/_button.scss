@@ -78,8 +78,8 @@
   &.primary {
     background: var(--primary-color);
     color: #fff;
-    &.disabled,
-    &:disabled {
+    &.disabled:not(.line),
+    &:disabled:not(.line) {
       opacity: 1;
       color: var(--primary-disabled-color);
       background-color: var(--primary-disabled-bg-color);
