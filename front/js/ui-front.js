@@ -2616,7 +2616,7 @@ ui.Form = {
           if ($selId == undefined) $selId = 'none';
           if ($title == undefined) $title = '선택';
           const $btnTitle = '팝업으로 ' + $title;
-          const $btnHtml = '<a href="#' + $selId + '" class="btn-select ui-select-open" title="' + $btnTitle + '" role="button"><span class="val"></span></a>';
+          const $btnHtml = '<a href="#' + $selId + '" class="btn-select ui-select-open" title="' + $btnTitle + '" role="button"><span class="btn-select-val"></span></a>';
 
           if (!$sel.siblings('.btn-select').length) {
             $sel.hide().after($btnHtml);
@@ -2630,7 +2630,7 @@ ui.Form = {
               ('');
               let $selectTxt = $(this).find(':selected').text();
               if ($selectTxt == '') $selectTxt = '선택';
-              $(this).siblings('.btn-select').find('.val').html($selectTxt);
+              $(this).siblings('.btn-select').find('.btn-select-val').html($selectTxt);
               if ($val == '') {
                 $(this).siblings('.btn-select').addClass('off');
               } else {
@@ -2682,6 +2682,7 @@ ui.Form = {
     }
   },
   selectUI: function () {
+    /*
     $(document).on('click', '.select.inline .btn-select', function (e) {
       e.preventDefault();
       const $closest = $(this).closest('.select');
@@ -2699,6 +2700,7 @@ ui.Form = {
       $select.val($val).change();
       $(this).closest('.select').removeClass('option-open');
     });
+    */
 
     $(document).on('change', '.datepicker-etc-select', function (e) {
       const $val = $(this).val();

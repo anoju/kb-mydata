@@ -1,4 +1,9 @@
 // select
+.select {
+  font-weight: 500;
+  color: var(--strong-txt-color);
+  font-size: 1.6rem;
+}
 .select select,
 .btn-select {
   position: relative;
@@ -15,9 +20,6 @@
   white-space: nowrap;
   background-color: #fafafa;
   overflow: hidden;
-  font-weight: 500;
-  color: var(--strong-txt-color);
-  font-size: 1.6rem;
   line-height: 3.6rem;
   &.off {
     color: var(--placeholder-txt-color);
@@ -125,11 +127,14 @@
   &.inline {
     display: inline-flex;
     width: auto;
+    font-weight: inherit;
+    color: inherit;
+    font-size: 1.4rem;
     select,
     .btn-select {
       border: 0 none;
       height: 2.4rem;
-      font-size: 1.4rem;
+      line-height: 2.4rem;
       padding: 0 2.4rem 0 0;
       border-radius: 0;
       background: none;
@@ -224,6 +229,9 @@
     &:after {
       transform: rotate3d(1, 0, 0, 180deg);
     }
+  }
+  .btn-select-val {
+    display: block;
   }
 }
 // @media (max-width: 320px) {
