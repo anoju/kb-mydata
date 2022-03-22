@@ -798,7 +798,7 @@ ui.Common = {
         // $(this).empty();
         if (!$this.hasClass('lottie__init')) {
           const $data = $this.data('lottie');
-          $this.addClass('lottie__init').removeAttr('data-lottie');
+          $this.addClass('lottie__init').removeAttr('data-lottie').aria('hidden', true);
           const isLoop = $this.hasClass('_loop');
           const $lottieOpt = lottie.loadAnimation({
             container: this,

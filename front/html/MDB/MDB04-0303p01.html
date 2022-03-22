@@ -20,7 +20,7 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="section">
-          <button type="button" class="button line" onclick="Layer.open('#popMemo')">팝업열기</button>
+          <button type="button" class="button line" onclick="Layer.open('#popRemarks')">팝업열기</button>
         </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
@@ -36,8 +36,8 @@
           </div>
           <div class="pop-body">
             <div class="section">
-              <div class="remarks-animation-box">
-                <div class="top-text">
+              <div class="remarks-animation-box" role="img" aira-label="적요정보제공동의">
+                <div class="top-text" aria-hidden="true">
                   <p class="off">
                     <span class="one">앗?!</span>
                     <span class="two">어디서 썼더라?</span>
@@ -47,7 +47,7 @@
                     <span class="two">여기서 썼네요!</span>
                   </p>
                 </div>
-                <div class="cash-info">
+                <div class="cash-info" aria-hidden="true">
                   <p class="left">
                     <span class="off">알수없음</span>
                     <span class="on">맛있는치킨집</span>
@@ -57,12 +57,12 @@
                     원 출금
                   </p>
                 </div>
-                <div class="switch-ani-box">
+                <div class="switch-ani-box" aria-hidden="true">
                   <p class="tit">적요정보제공동의</p>
                   <span class="checkbox switch"><input type="checkbox" /><i aria-hidden="true"></i></span>
                 </div>
 
-                <div class="gd__lottie-box" data-lottie="../../lottie/fireworks.json"></div>
+                <div class="lottie" data-lottie="../../lottie/fireworks.json"></div>
               </div>
 
               <p class="fz-18 fw-bold t-center fc-212121">어디서 사용했는지 알려드리고 싶어요.</p>
@@ -91,7 +91,7 @@
       const topText = target.find('.top-text');
       const cashInfo = target.find('.cash-info');
       const switchInp = target.find('.switch input');
-      const lottieAni = target.find('.gd__lottie-box');
+      const lottieAni = target.find('.lottie');
       let ani = anime.timeline({
         easing: 'easeOutExpo',
         loop: true,
