@@ -5690,7 +5690,7 @@ const Layer = {
           $popHtml += '<div class="select-item-txt">' + $opSub + '</div>';
           $popHtml += '<div class="select-item-sub">' + $opTxt + '</div>';
         } else {
-          if ($type === 'month') {
+          if ($type === 'date') {
             $popHtml += '<div class="select-item-txt">' + $monthTxt($opTxt) + '</div>';
           } else {
             $popHtml += '<div class="select-item-txt">' + $opTxt + '</div>';
