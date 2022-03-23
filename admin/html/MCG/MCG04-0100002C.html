@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">PFM관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">투자채널 배너관리</li>
+                  </ol>
+                </nav>
+                <h1>투자채널 배너등록</h1>
+              </div>
+              <div class="kb-page-btn">
+                <button type="button" class="btn btn-primary"><i class="bi bi-plus"></i> 배너등록</button>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">기본 정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 회사명</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 전화번호</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 아이콘등록</div>
+                <div class="form-box-cont">
+                  <!-- 미리보기 아이콘 이미지 -->
+                  <!-- 이미지 없을때 -->
+                  <div class="img-box w-120 mb-2">
+                    <small>등록된 이미지가<br />없습니다.</small>
+                  </div>
+
+                  <!-- 이미지 있을때 -->
+                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
+                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">홈페이지 링크</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 설명</div>
+                <div class="form-box-cont">
+                  <textarea id="editor" name="editordata1">
+                    예) 조세,부동산 등 금융/비금융 자산관련 법률 문제상담
+                    상속, 유류분, 상속재산분할 청구 등
+                  </textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">태그</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                  <div class="mt-1 text-info">※ 입력예시 : #태그명, 최대 0개</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">등록/수정정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">
+                  <label for="select1">등록자</label>
+                </div>
+                <div class="form-box-cont d-flex align-items-center">홍길동</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">
+                  <label for="select1">최근수정</label>
+                </div>
+                <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap kb-page-btn text-center mt-5">
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 등록</button>
+            <button type="button" class="btn btn-lg btn-default"><i class="bi bi-trash"></i> 삭제</button>
+          </div>
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      //에디터
+      CKEDITOR.replace('editor');
+
+      //팝업
+      /*
+      //유효성 오류팝업(제목미입력)
+      Modal.alert('제목을 입력해주세요.', function () {
+        console.log('제목미입력 - 확인');
+      });
+      //유효성 오류팝업(내용미입력)
+      Modal.alert('내용을 입력해주세요.', function () {
+        console.log('내용미입력 - 확인');
+      });
+      //유효성 오류팝업(우선노출 5개 초과)
+      Modal.alert('우선노출 등록은 \<br>\ 5개를 초과할 수 없습니다.', function () {
+        console.log('우선노출 5개 초과 - 확인');
+      });
+      //유효성 오류팝업(등록된 콘테츠 삭제 지정오류)
+      Modal.alert('기 등록된 콘테츠 삭제 후 \<br>\ 지정해 주세요.', function () {
+        console.log('등록된 콘테츠 삭제 지정오류 - 확인');
+      });
+      //유효성 오류팝업(게시일 지정오류)
+      Modal.alert('게시 시작일은 \<br>\ 종료일을 확인해 주세요.', function () {
+        console.log('게시일 지정오류- 확인');
+      });
+      //유효성 오류팝업(게시일 지정오류)
+      Modal.alert('게시 시작일은 \<br>\ 0개월 이내부터 가능합니다.', function () {
+        console.log('게시일 지정오류- 확인');
+      });
+
+      //등록팝업
+      Modal.confirm('공지사항 등록을하시겠습니까?', function (e) {
+        if (e) {
+          console.log('등록 - 확인');
+        } else {
+          console.log('등록 - 취소');
+        }
+      });
+
+      //등록팝업
+      Modal.confirm('공지사항 등록을 \<br>\ 취소하시겠습니까?', function (e) {
+        if (e) {
+          console.log('등록취소 - 확인');
+        } else {
+          console.log('등록취소 - 취소');
+        }
+      });
+      */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">PFM관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">투자채널배너 전시관리</li>
+                  </ol>
+                </nav>
+                <h1>투자채널배너 전시관리</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="row mt-5">
+            <div class="col-md-2">
+              <div class="title-wrap">
+                <div class="left">
+                  <h2 class="h3 mb-0">배너위치 선택</h2>
+                  <p class="mb-0">모바일 배너 화면 위치입니다.</p>
+                </div>
+              </div>
+              <table id="table0" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">배너위치</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-radio only mb-0">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>상단배너</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-radio only mb-0">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>중간배너</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-radio only mb-0">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>하단배너</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- 콘텐츠 선택 -->
+            <div class="col-md-5 mt-5 mt-md-0">
+              <div class="title-wrap">
+                <div class="left">
+                  <h2 class="h3 mb-0">배너(콘텐츠) 선택</h2>
+                  <p class="mb-0">배너를 선택합니다. 배너위치별 최대 3개까지 가능합니다.</p>
+                </div>
+              </div>
+              <table id="table1" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">번호</th>
+                    <th scope="col">투자채널명</th>
+                    <th scope="col">썸네일</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-checkbox only mb-0">
+                        <input type="checkbox" name="chk1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>99</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-checkbox only mb-0">
+                        <input type="checkbox" name="chk1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>98</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-checkbox only mb-0">
+                        <input type="checkbox" name="chk1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>97</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-checkbox only mb-0">
+                        <input type="checkbox" name="chk1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>96</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-checkbox only mb-0">
+                        <input type="checkbox" name="chk1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>95</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-checkbox only mb-0">
+                        <input type="checkbox" name="chk1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>94</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-checkbox only mb-0">
+                        <input type="checkbox" name="chk1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>93</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- // 콘텐츠 선택 -->
+
+            <!-- 선택된 콘텐츠 -->
+            <div class="col-md-5 mt-5 mt-md-0">
+              <div class="title-wrap">
+                <div class="left">
+                  <h2 class="h3 mb-0">선택한 배너</h2>
+                  <p class="mb-0">목록 선택 후 롤링순서를 조정할 수 있습니다.</p>
+                </div>
+              </div>
+              <table id="table2" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">순서</th>
+                    <th scope="col">투자 채널명</th>
+                    <th scope="col">썸네일</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-radio only mb-0">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>1</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-radio only mb-0">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>2</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-radio only mb-0">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>3</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-radio only mb-0">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>4</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="custom-control custom-radio only mb-0">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label"></span>
+                      </label>
+                    </td>
+                    <td>5</td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                    <td>
+                      <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="d-flex align-items-center mt-2">
+                <!-- 고정컨텐츠 이동 버튼 -->
+                <button type="button" class="btn btn-secondary btn-sm mr-1">위로 ↑</button>
+                <button type="button" class="btn btn-secondary btn-sm mr-1">아래로 ↓</button>
+                <!-- // 고정컨텐츠 이동 버튼 -->
+              </div>
+            </div>
+            <!--// 콘선택된 콘텐츠 -->
+          </div>
+          <!-- // 콘텐츠 선택 & 선택된 콘텐츠 -->
+          <div class="btn-wrap kb-page-btn text-center mt-5">
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 저장</button>
+          </div>
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table0, #table2').bootstrapTable('destroy').bootstrapTable({
+          locale: 'ko-KR'
+        });
+        $('#table1').bootstrapTable('destroy').bootstrapTable({
+          height: 400,
+          locale: 'ko-KR'
+        });
+
+        setTimeout(function () {
+          $(window).resize();
+        }, 500);
+      }
+      initTable();
+
+      // 팝업
+      //접근권한없음 팝업
+      // Modal.alert('해당 메뉴에 접속권한이 없습니다.', function (e) {
+      //   console.log('접속권한 - 확인');
+      // });
+    </script>
+  </body>
+</html>

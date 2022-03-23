@@ -644,7 +644,7 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 마감일</div>
                 <div class="form-box-cont">
                   <div class="form-row">
-                    <div class="col-6">
+                    <div class="col-md-5">
                       <input type="date" class="form-control" placeholder="마감일" />
                     </div>
                   </div>
@@ -702,28 +702,28 @@
       //투자 채널 별 테이블
       $('input[name="investChannel"]').click(function () {
         let radioVal = $(this).val();
-        console.log(radioVal);
-        if (radioVal !== 'investMain') {
-          $('.channel-title').fadeIn('300');
-        } else {
-          $('.channel-title').hide();
-        }
+        //`console.log(radioVal);
         $('[data-table]').hide();
         switch (radioVal) {
           case 'investMain':
             $('[data-table="investMain-table"]').fadeIn('300');
+            $('.channel-title').hide();
             break;
           case 'artInvest':
             $('[data-table="artInvest-table"]').fadeIn('300');
+            $('.channel-title').fadeIn('300');
             break;
           case 'k-contentsInvest':
             $('[data-table="k-ContentsInvest-table"]').fadeIn('300');
+            $('.channel-title').fadeIn('300');
             break;
           case 'musicInvest':
             $('[data-table="musicInvest-table"]').fadeIn('300');
+            $('.channel-title').fadeIn('300');
             break;
           case 'realtyInvest':
             $('[data-table="realtyInvest-table"]').fadeIn('300');
+            $('.channel-title').fadeIn('300');
             break;
           default:
             break;
