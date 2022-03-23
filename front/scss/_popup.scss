@@ -103,7 +103,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background: #fff;
+  // background: #fff;
   z-index: 10;
   > div {
     padding: 2.4rem 2rem;
@@ -112,10 +112,8 @@
     margin-top: 0;
   }
   &.pop-bottom-fixed {
-    // box-shadow: 0 -0.3rem 0.6rem 0 rgba(0, 0, 0, 0.08);
-    // box-shadow: 0 -0.8rem 1.6rem 0.8rem rgba(255, 255, 255, 1);
     background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 1.6rem, #fff 100%);
+    // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 1.6rem, #fff 100%);
   }
 }
 .pop-foot-close {
@@ -131,12 +129,9 @@
     text-decoration: underline;
   }
 }
-.pop-top-fixed {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(2px);
-}
-// .pop-top-fixed:not(.no-shadow) {
-//   box-shadow: 0 0.4rem 0.8rem 0.4rem rgba(255, 255, 255, 1);
+// .pop-top-fixed {
+//   background: rgba(255, 255, 255, 0.9);
+//   backdrop-filter: blur(2px);
 // }
 .popup {
   display: none;

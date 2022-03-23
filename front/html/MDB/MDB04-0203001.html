@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('카테고리 선택');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <h1 class="tit-h1">어떤 카테고리에 담을까요?</h1>
+          <p class="mt-16">선택한 지출을 담을 카테고리 분류를 선택해주세요.</p>
+          <div class="check-list-2 mt-24">
+            <div class="check-list-item">
+              <label class="checkbox">
+                <div class="lbl">
+                  <div class="logo-info-txt">
+                    <i class="ico-logo"><img src="../../images/category/icon-logo.png" alt="" /></i>
+                    <strong class="txt-name">사용자정의1</strong>
+                  </div>
+                </div>
+                <input type="checkbox" /><i aria-hidden="true"></i>
+              </label>
+              <button class="button line2 h24 add-btn">수정</button>
+            </div>
+            <div class="check-list-item">
+              <label class="checkbox">
+                <div class="lbl">
+                  <div class="logo-info-txt">
+                    <i class="ico-logo"><img src="../../images/category/icon-logo.png" alt="" /></i>
+                    <strong class="txt-name">사용자정의2</strong>
+                  </div>
+                </div>
+                <input type="checkbox" /><i aria-hidden="true"></i>
+              </label>
+              <button class="button line2 h24 add-btn">수정</button>
+            </div>
+            <div class="check-list-item">
+              <label class="checkbox">
+                <div class="lbl">
+                  <div class="logo-info-txt">
+                    <i class="ico-logo"><img src="../../images/category/icon-none.png" alt="" /></i>
+                    <strong class="txt-name">미지정</strong>
+                  </div>
+                </div>
+                <input type="checkbox" /><i aria-hidden="true"></i>
+              </label>
+            </div>
+            <div class="check-list-item">
+              <label class="checkbox">
+                <div class="lbl">
+                  <div class="logo-info-txt">
+                    <i class="ico-logo"><img src="../../images/category/icon-1.png" alt="" /></i>
+                    <strong class="txt-name">엄빠용돈</strong>
+                  </div>
+                </div>
+                <input type="checkbox" /><i aria-hidden="true"></i>
+              </label>
+            </div>
+            <div class="check-list-item">
+              <label class="checkbox">
+                <div class="lbl">
+                  <div class="logo-info-txt">
+                    <i class="ico-logo"><img src="../../images/category/icon-2.png" alt="" /></i>
+                    <strong class="txt-name">주문·배달</strong>
+                  </div>
+                </div>
+                <input type="checkbox" /><i aria-hidden="true"></i>
+              </label>
+            </div>
+            <div class="check-list-item">
+              <label class="checkbox">
+                <div class="lbl">
+                  <div class="logo-info-txt">
+                    <i class="ico-logo"><img src="../../images/category/icon-3.png" alt="" /></i>
+                    <strong class="txt-name">관리비·공과금</strong>
+                  </div>
+                </div>
+                <input type="checkbox" /><i aria-hidden="true"></i>
+              </label>
+            </div>
+            <div class="check-list-item">
+              <label class="checkbox">
+                <div class="lbl">
+                  <div class="logo-info-txt">
+                    <i class="ico-logo"><img src="../../images/category/icon-4.png" alt="" /></i>
+                    <strong class="txt-name">데이트비용</strong>
+                  </div>
+                </div>
+                <input type="checkbox" /><i aria-hidden="true"></i>
+              </label>
+            </div>
+            <div class="check-list-item">
+              <label class="checkbox">
+                <div class="lbl">
+                  <div class="logo-info-txt">
+                    <i class="ico-logo"><img src="../../images/category/icon-5.png" alt="" /></i>
+                    <strong class="txt-name">구독료</strong>
+                  </div>
+                </div>
+                <input type="checkbox" /><i aria-hidden="true"></i>
+              </label>
+            </div>
+            <div class="check-list-item">
+              <label class="checkbox">
+                <div class="lbl">
+                  <div class="logo-info-txt">
+                    <i class="ico-logo"><img src="../../images/category/icon-6.png" alt="" /></i>
+                    <strong class="txt-name">문화생활</strong>
+                  </div>
+                </div>
+                <input type="checkbox" /><i aria-hidden="true"></i>
+              </label>
+            </div>
+          </div>
+          <!-- 사용자 카테고리 5개 이상이면 비노출 -->
+          <div class="check-list-item">
+            <button class="button item-btn">
+              <div class="logo-info-txt">
+                <i class="ico-logo"><img src="../../images/category/icon-plus.png" alt="" /></i>
+                <strong class="txt-name">카테고리 추가</strong>
+              </div>
+              <i class="i-ico-arr-right-24 ml-auto" aria-hidden="true"></i>
+            </button>
+          </div>
+          <!-- //사용자 카테고리 5개 이상이면 비노출 -->
+        </div>
+        <div class="btn-wrap bottom-fixed">
+          <div class="flex">
+            <button type="button" class="button h60 primary">확인</button>
+          </div>
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+
+      <!-- 팝업 -->
+      <!-- //팝업 -->
+    </article>
+  </body>
+</html>
