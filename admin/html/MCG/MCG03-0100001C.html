@@ -56,76 +56,51 @@
           <!-- //컨텐츠헤더 -->
 
           <!-- 컨텐츠본문 -->
-          <div class="row mt-5">
-            <div class="col-md-2">
-              <div class="title-wrap">
-                <div class="left">
-                  <h2 class="h3 mb-0">카테고리 목록</h2>
-                  <p class="mb-0">모바일 배너 화면 위치입니다.</p>
+          <div class="title-wrap mt-3">
+            <div class="left">
+              <h2 class="h3 mb-0">카테고리 목록</h2>
+              <p class="mb-0">모바일 배너 화면 위치입니다.</p>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">카테고리</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">메인</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">미술품</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">K-콘텐츠</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">음악저작권투자</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">소액부동산</span>
+                    </label>
+                  </div>
                 </div>
               </div>
-              <table id="table0" class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">&nbsp;</th>
-                    <th scope="col">카테고리</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <label class="custom-control custom-radio only mb-0">
-                        <input type="radio" name="rdo1" class="custom-control-input" />
-                        <span class="custom-control-label"></span>
-                      </label>
-                    </td>
-                    <td>메인</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="custom-control custom-radio only mb-0">
-                        <input type="radio" name="rdo1" class="custom-control-input" />
-                        <span class="custom-control-label"></span>
-                      </label>
-                    </td>
-                    <td>미술품</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="custom-control custom-radio only mb-0">
-                        <input type="radio" name="rdo1" class="custom-control-input" />
-                        <span class="custom-control-label"></span>
-                      </label>
-                    </td>
-                    <td>K-콘텐츠</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="custom-control custom-radio only mb-0">
-                        <input type="radio" name="rdo1" class="custom-control-input" />
-                        <span class="custom-control-label"></span>
-                      </label>
-                    </td>
-                    <td>음악저작권투자</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="custom-control custom-radio only mb-0">
-                        <input type="radio" name="rdo1" class="custom-control-input" />
-                        <span class="custom-control-label"></span>
-                      </label>
-                    </td>
-                    <td>소액부동산</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
+          </div>
+          <!-- 콘텐츠 선택 & 선택된 콘텐츠 -->
+          <div class="row mt-5">
             <!-- 콘텐츠 선택 -->
-            <div class="col-md-5 mt-5 mt-md-0">
+            <div class="col-md-6">
               <div class="title-wrap">
                 <div class="left">
-                  <h2 class="h3 mb-0">콘텐츠 선택 <small>(사용안함, 마감일 초과 콘텐츠 리스트 제외)</small></h2>
-                  <p class="mb-0">콘텐츠를 선택합니다. 카테고리별 최대 5개까지 가능합니다.</p>
+                  <h2 class="h3 mb-0">콘텐츠 선택</h2>
+                  <p class="mb-0">(사용안함, 마감일 초과 콘텐츠 리스트 제외) 콘텐츠를 선택합니다. 카테고리별 최대 5개까지 가능합니다.</p>
                 </div>
               </div>
               <table id="table1" class="table table-hover">
@@ -133,7 +108,7 @@
                   <tr>
                     <th scope="col">&nbsp;</th>
                     <th scope="col">번호</th>
-                    <th scope="col">투자채널명</th>
+                    <th scope="col">노출여부</th>
                     <th scope="col">썸네일</th>
                   </tr>
                 </thead>
@@ -146,7 +121,7 @@
                       </label>
                     </td>
                     <td>99</td>
-                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YNA TAKE ME TO YOU WAN</a></td>
                     <td>
                       <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
                     </td>
@@ -159,7 +134,7 @@
                       </label>
                     </td>
                     <td>98</td>
-                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YNA TAKE ME TO YOU WAN</a></td>
                     <td>
                       <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
                     </td>
@@ -172,7 +147,7 @@
                       </label>
                     </td>
                     <td>97</td>
-                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YNA TAKE ME TO YOU WAN</a></td>
                     <td>
                       <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
                     </td>
@@ -185,7 +160,7 @@
                       </label>
                     </td>
                     <td>96</td>
-                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YNA TAKE ME TO YOU WAN</a></td>
                     <td>
                       <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
                     </td>
@@ -198,7 +173,7 @@
                       </label>
                     </td>
                     <td>95</td>
-                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YNA TAKE ME TO YOU WAN</a></td>
                     <td>
                       <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
                     </td>
@@ -211,7 +186,7 @@
                       </label>
                     </td>
                     <td>94</td>
-                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YNA TAKE ME TO YOU WAN</a></td>
                     <td>
                       <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
                     </td>
@@ -224,7 +199,7 @@
                       </label>
                     </td>
                     <td>93</td>
-                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO</a></td>
+                    <td class="text-left"><a href="#" class="ellipsis d-block w-250">YNA TAKE ME TO YOU WAN</a></td>
                     <td>
                       <span class="img-box w-40"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
                     </td>
@@ -235,7 +210,7 @@
             <!-- // 콘텐츠 선택 -->
 
             <!-- 선택된 콘텐츠 -->
-            <div class="col-md-5 mt-5 mt-md-0">
+            <div class="col-md-6 mt-5 mt-md-0">
               <div class="title-wrap">
                 <div class="left">
                   <h2 class="h3 mb-0">선택한 콘텐츠</h2>
@@ -347,14 +322,14 @@
     <script>
       // 테이블
       function initTable() {
-        $('#table0, #table2').bootstrapTable('destroy').bootstrapTable({
-          locale: 'ko-KR'
-        });
         $('#table1').bootstrapTable('destroy').bootstrapTable({
           height: 400,
           locale: 'ko-KR'
         });
-
+        $('#table2').bootstrapTable('destroy').bootstrapTable({
+          height: 400,
+          locale: 'ko-KR'
+        });
         setTimeout(function () {
           $(window).resize();
         }, 500);
