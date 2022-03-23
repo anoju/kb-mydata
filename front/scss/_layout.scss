@@ -19,7 +19,7 @@
   flex-shrink: 0;
   z-index: 50;
   background: #fff;
-  transition: backgound-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  transition: backgound-color 0.5s, box-shadow 0.3s, transform 0.3s;
   &.bg-origin {
     background: #fff !important;
   }

@@ -614,7 +614,7 @@ ui.Common = {
       const $headerTit = $header.find('h1');
       if ($fadeTitle.length && $headerTit.length) ui.Common.scrollShowTitle($fadeTitle[0], window, $header[0], $headerTit[0]);
 
-      const $sclHead = $('.ui-scroll-head');
+      const $sclHead = $('.ui-header-bg-origin');
       if ($header.length && $sclHead.length) {
         if ($sclHead.offset().top - $headerH < $SclTop) {
           $header.addClass('bg-origin');

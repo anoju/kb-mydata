@@ -311,3 +311,27 @@
     }
   }
 }
+
+.date-line-list {
+  > li + li {
+    margin-top: 3.2rem;
+  }
+  .dt-date {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #818892;
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      flex: 1 1 auto;
+      height: 0.1rem;
+      margin-left: 2rem;
+      background: #f2f4f6;
+    }
+  }
+}
+.list-item-price {
+}

@@ -1,0 +1,30 @@
+.banner-btn-box {
+  position: relative;
+  display: block;
+  &.banner-1 {
+    border-radius: 1.2rem;
+    background: #fe7d65;
+    height: 5.4rem;
+    padding: 1rem 1.6rem;
+    font-size: 1.2rem;
+    color: #fff;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 7.3rem;
+      @include bg-etc(cover, left center);
+      background-image: url(../images/MY/banner-btn-box-1.png);
+    }
+    > div {
+      position: relative;
+    }
+    .banner-tit {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

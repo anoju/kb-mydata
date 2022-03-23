@@ -31,42 +31,78 @@
       <main id="container">
         <div class="section pt-0">
           <div class="outer-content bg-fa pt-24 pb-24">
-            <div class="select inline fz-16 fw-500 fc-212121">
-              <select title="월을 선택해주세요" data-type="date">
-                <option value="202202">2022.02</option>
-                <option value="202201">2022.01.31</option>
-                <option value="202112">2021.12</option>
-                <option value="202111">2021.11</option>
-              </select>
-            </div>
+            <div class="round-line-box price-info-box">
+              <div class="box-top">
+                <div class="flex not-full align-center">
+                  <div class="select inline fz-16 fw-500 fc-212121">
+                    <select title="월을 선택해주세요" data-type="date">
+                      <option value="202202">2022.02</option>
+                      <option value="202201">2022.01</option>
+                      <option value="202112">2021.12</option>
+                      <option value="202111">2021.11</option>
+                    </select>
+                  </div>
 
-            <i class="badge gray">200건</i>
-            <div class="price"><strong>120,000</strong>원</div>
-
-            <a href="#" class="btn-txt">이번 달 어때?<i class="i-ico-arr-right-24"></i></a>
-          </div>
-          <hr class="hr-line mb-20 ui-scroll-head" aria-hidden="true" />
-          <div class="tab-round-menu ui-tab">
-            <div class="tab-inner">
-              <ul class="tab-list">
-                <li class="tab"><a href="#">전체</a></li>
-                <li class="tab"><a href="#">카드</a></li>
-                <li class="tab"><a href="#">페이</a></li>
-                <li class="tab"><a href="#">계좌</a></li>
-              </ul>
+                  <i class="badge gray">200건</i>
+                </div>
+                <div class="t-price"><strong>120,000</strong>원</div>
+              </div>
+              <div class="link-wrap">
+                <button class="button link">이번 달 어때?<i class="i-ico-arr-right-24"></i></button>
+              </div>
+            </div>
+            <div class="mt-16">
+              <a href="#" class="banner-btn-box banner-1">
+                <div class="banner-sub">꼭 기억하고 싶은 정보를 담아보세요!</div>
+                <div class="banner-tit"><strong>카테고리 분류하기</strong><i class="i-ico-arr-right-w-16"></i></div>
+              </a>
             </div>
           </div>
-          <div class="select inline">
-            <select title="지출수단을 선택해주세요" data-class="ty2" data-type="reverse">
-              <option value="1">전체</option>
-              <option value="2" data-sub="IBK기업은행">보통예금(신IBK급여통장)</option>
-              <option value="3" data-sub="IBK기업은행">IBK부자통커카드</option>
-              <option value="4" data-sub="시티카드">씨티 뉴클리어카드</option>
-            </select>
+          <hr class="hr-line ui-header-bg-origin" aria-hidden="true" />
+          <div>
+            <div class="list-empty">
+              <i class="i-ico-warning-40" aria-hidden="true"></i>
+              <p>이번 달은 지출한 내역이 없어요.</p>
+            </div>
           </div>
-          <div style="height: 300vh"></div>
-          <div class="btn-wrap">
-            <button class="button line">더보기</button>
+          <div>
+            <div class="tab-round-menu mt-20 ui-tab">
+              <div class="tab-inner">
+                <ul class="tab-list">
+                  <li class="tab"><a href="#">전체</a></li>
+                  <li class="tab"><a href="#">카드</a></li>
+                  <li class="tab"><a href="#">페이</a></li>
+                  <li class="tab"><a href="#">계좌</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-26">
+              <div class="select inline">
+                <select title="지출수단을 선택해주세요" data-class="ty2">
+                  <option value="1">전체</option>
+                  <option value="2" data-sub="IBK기업은행">보통예금(신IBK급여통장)</option>
+                  <option value="3" data-sub="IBK기업은행">IBK부자통커카드</option>
+                  <option value="4" data-sub="시티카드">씨티 뉴클리어카드</option>
+                </select>
+              </div>
+            </div>
+            <ul class="date-line-list mt-22">
+              <li>
+                <div class="dt-date"><span>2022.12.18(토)</span></div>
+                <div class="items">
+                  <div class="list-item-price">
+                    <div class="item-info"></div>
+                    <div class="item-tit">
+                      <div class="left">스타벅스여의도점</div>
+                      <div class="right"><strong>31,081</strong>원</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="btn-wrap mt-24">
+              <button class="button line">더보기</button>
+            </div>
           </div>
         </div>
       </main>
