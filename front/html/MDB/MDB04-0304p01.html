@@ -159,7 +159,7 @@
 
         Highcharts.chart('chart1', {
           chart: {
-            type: 'area',
+            type: 'line',
             scrollablePlotArea: {
               minWidth: 2000,
               opacity: 1,
@@ -167,7 +167,7 @@
               scrollPositionY: 0
             }
           },
-          colors: ['#D6DBE1', '#FE7D65'],
+          colors: ['#FE7D65', '#D6DBE1'],
           title: false,
           legend: {
             align: 'right',
@@ -208,11 +208,11 @@
               '12/31'
             ],
             allowDecimals: false,
-            labels: {
-              formatter: function () {
-                return this.value; // clean, unformatted number for year
-              }
-            },
+            // labels: {
+            //   formatter: function () {
+            //     return this.value; // clean, unformatted number for year
+            //   }
+            // },
             lineColor: '#ebebeb',
             labels: {
               style: {
@@ -242,7 +242,7 @@
             useHTML: true
           },
           plotOptions: {
-            area: {
+            line: {
               marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -252,12 +252,19 @@
                     enabled: true
                   }
                 }
-              },
-              fillOpacity: 0.4
-              // fillColor: '#fafafa'
+              }
             }
           },
           series: [
+            {
+              name: '이번달',
+              //prettier-ignore
+              data: [
+                369, 640, 1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468,
+                20434, 24126, 27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342,
+                26662, 26956, 27912, 28999, 28965, 27826, 25579
+              ]
+            },
             {
               name: '저번달',
               //prettier-ignore
@@ -266,15 +273,6 @@
               11643, 13092, 14478, 15915, 17385, 19055, 21205, 23044, 25393, 27935,
               30062, 32049, 33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000,
               37000
-              ]
-            },
-            {
-              name: '이번달',
-              //prettier-ignore
-              data: [
-                369, 640, 1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468,
-                20434, 24126, 27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342,
-                26662, 26956, 27912, 28999, 28965, 27826, 25579
               ]
             }
           ]
