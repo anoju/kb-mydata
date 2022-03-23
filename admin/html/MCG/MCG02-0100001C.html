@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">PFM관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">투자채널관리</li>
+                  </ol>
+                </nav>
+                <h1>투자채널관리</h1>
+              </div>
+              <div class="kb-page-btn">
+                <button type="button" class="btn btn-primary"><i class="bi bi-plus"></i> 투자채널등록</button>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">투자채널 검색</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">검색어</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-md-5">
+                      <select class="custom-select">
+                        <option value="1">제목</option>
+                      </select>
+                    </div>
+                    <div class="col-md-7 mt-2 mt-md-0">
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">노출여부</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">전체</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">노출 중</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">미노출</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">사용여부</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">전체</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">사용</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">사용안함</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">마감여부</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">전체</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">마감</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">진행 중</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">분야</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">전체</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">미술품투자</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">K-콘텐츠</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">음악저작권투자</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">소액부동산</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">기간검색</div>
+                <div class="form-box-cont">
+                  <div class="input-daterange-btn">
+                    <div class="input-group">
+                      <input type="date" class="form-control" placeholder="시작일" />
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">~</div>
+                      </div>
+                      <input type="date" class="form-control" placeholder="종료일" />
+                    </div>
+
+                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                      <button type="button" class="btn btn-outline-secondary">1개월</button>
+                      <button type="button" class="btn btn-outline-secondary">3개월</button>
+                      <button type="button" class="btn btn-outline-secondary">6개월</button>
+                      <button type="button" class="btn btn-outline-secondary active">전체</button>
+                      <!-- active 클래스로  활성화 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <button type="button" class="btn large btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개</div>
+            <div class="right">
+              <select class="custom-select custom-select-sm">
+                <option value="1">등록일 ↓</option>
+                <option value="2">등록일 ↑</option>
+              </select>
+            </div>
+          </div>
+          <table id="table1" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">노출여부</th>
+                <th scope="col">분야</th>
+                <th scope="col">제목</th>
+                <th scope="col">썸네일</th>
+                <th scope="col">사용여부</th>
+                <th scope="col">게시일</th>
+                <th scope="col">마감여부</th>
+                <th scope="col">등록자</th>
+                <th scope="col">최초등록일</th>
+                <th scope="col">최근수정일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 일치하는 검색결과가 없습니다. -->
+              <tr class="no-records-found">
+                <td colspan="11">일치하는 검색결과가 없습니다.</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>노출 중</td>
+                <td>투자메인</td>
+                <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp1.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>사용</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>마감</td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>노출 중</td>
+                <td>투자메인</td>
+                <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>사용</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>마감</td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>노출 중</td>
+                <td>투자메인</td>
+                <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>사용</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>마감</td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>노출 중</td>
+                <td>투자메인</td>
+                <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>사용</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>마감</td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>노출 중</td>
+                <td>투자메인</td>
+                <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>사용</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>마감</td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>노출 중</td>
+                <td>투자메인</td>
+                <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>사용</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>마감</td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>노출 중</td>
+                <td>투자메인</td>
+                <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>사용</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>마감</td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>노출 중</td>
+                <td>투자메인</td>
+                <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>사용</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>마감</td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>노출 중</td>
+                <td>투자메인</td>
+                <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>사용</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>마감</td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>노출 중</td>
+                <td>투자메인</td>
+                <td class="text-left"><a href="#" class="ellipsis d-block w-250">YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO YOU WANNA TAKE ME TO</a></td>
+                <td>
+                  <span class="img-box w-60"><img src="../../images/temp/thumb-temp3.jpg" alt="아이콘 이미지" /></span>
+                </td>
+                <td>사용</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>마감</td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table1').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+
+      // 팝업
+      //접근권한없음 팝업
+      // Modal.alert('해당 메뉴에 접속권한이 없습니다.', function (e) {
+      //   console.log('접속권한 - 확인');
+      // });
+    </script>
+  </body>
+</html>

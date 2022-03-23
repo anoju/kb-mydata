@@ -142,7 +142,12 @@ html:not(.mobile) {
 .pre-line {
   white-space: pre-line;
 }
-
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
 .img-box {
   position: relative;
   display: inline-block;
@@ -1094,6 +1099,9 @@ html:not(.mobile) {
 .form-box {
   border: 0 solid #ddd;
   border-width: 0.063em 0;
+  &.hide {
+    display: none;
+  }
   .form-box-row {
     display: flex;
     + .form-box-row {

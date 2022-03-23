@@ -11,7 +11,7 @@
     "name": "PFM관리 목록",
     "worker": "변상우",
     "complete": "2022-03-10",
-    "etc": "임시 화면 ID / 임시 이미지"
+    "etc": ""
   },
   {
     "id": "MCG01-0100002C",
@@ -22,6 +22,72 @@
     "name": "상세(등록)",
     "worker": "변상우",
     "complete": "2022-03-10",
+    "etc": ""
+  },
+  {
+    "id": "MCG02-0100001C",
+    "url": "../../admin/html/MCG/",
+    "type": "page",
+    "depth2": "PFM관리",
+    "depth3": "투자채널관리",
+    "name": "투자채널목록",
+    "worker": "변상우",
+    "complete": "2022-03-22",
     "etc": "임시 화면 ID / 임시 이미지"
+  },
+  {
+    "id": "MCG02-0100002C",
+    "url": "../../admin/html/MCG/",
+    "type": "page",
+    "depth2": "PFM관리",
+    "depth3": "투자채널관리",
+    "name": "투자채널등록",
+    "worker": "변상우",
+    "complete": "2022-03-22",
+    "etc": "임시 화면 ID / 임시 이미지"
+  },
+  {
+    "id": "MCG03-0100001C",
+    "url": "../../admin/html/MCG/",
+    "type": "page",
+    "depth2": "PFM관리",
+    "depth3": "투자채널 전시관리",
+    "name": "투자채널 전시관리",
+    "worker": "변상우",
+    "complete": "2022-03-22",
+    "etc": "임시 화면 ID / 임시 이미지(상단섹션 + 화면 2분할)"
+  },
+  {
+    "id": "MCG04-0100001C",
+    "url": "../../admin/html/MCG/",
+    "type": "page",
+    "depth2": "PFM관리",
+    "depth3": "투자채널 배너관리",
+    "name": "투자채널 배너목록",
+    "worker": "변상우",
+    "complete": "2022-03-22",
+    "etc": "임시 화면 ID / 임시 이미지"
+  },
+  {
+    "id": "MCG04-0100002C",
+    "url": "../../admin/html/MCG/",
+    "type": "page",
+    "depth2": "PFM관리",
+    "depth3": "투자채널 배너관리",
+    "name": "투자채널 배너등록",
+    "worker": "변상우",
+    "complete": "2022-03-22",
+    "etc": "임시 화면 ID / 임시 이미지"
+  },
+  {
+    "id": "MCG05-0100001C",
+    "url": "../../admin/html/MCG/",
+    "type": "page",
+    "depth2": "PFM관리",
+    "depth3": "투자채널배너 전시관리",
+    "name": "투자채널배너 전시관리",
+    "worker": "변상우",
+    "complete": "2022-03-22",
+    "etc": "임시 화면 ID / 임시 이미지(화면 3분할)"
   }
 ]
