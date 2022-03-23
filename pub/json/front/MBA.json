@@ -13,24 +13,14 @@
     "complete": "2022-03-15"
   },
   {
-    "id": "MBA03-0103p01C",
+    "id": "MBA01-0200p01C",
     "url": "../../front/html/MBA/",
     "type": "pop",
-    "depth2": "사용자 프로필",
-    "depth3": "태그정보",
-    "name": "태그정보 팝업",
-    "worker": "변상우",
-    "complete": "2022-03-21"
-  },
-  {
-    "id": "MBA03-0104p01C",
-    "url": "../../front/html/MBA/",
-    "type": "pop",
-    "depth2": "사용자 프로필",
-    "depth3": "뱃지정보",
-    "name": "뱃지정보 팝업",
-    "worker": "변상우",
-    "complete": "2022-03-21"
+    "depth2": "마이데이터 연동 안내",
+    "depth3": "",
+    "name": "마이데이터 연동 안내",
+    "worker": "장영석",
+    "complete": "2022-03-25"
   },
   {
     "id": "MBA05-0200p01C",
@@ -63,6 +53,16 @@
     "worker": "장영석",
     "complete": "2022-03-04",
     "etc": ""
+  },
+  {
+    "id": "MBA05-0600p01C",
+    "url": "../../front/html/MBA/",
+    "type": "pop",
+    "depth2": "1:1 매치",
+    "depth3": "주식 정보 연동 안내",
+    "name": "주식 정보 연동 안내",
+    "worker": "장영석",
+    "complete": "2022-03-25"
   },
   {
     "depth1": "매치 프로필"
@@ -197,7 +197,7 @@
     "depth3": "",
     "name": "인플루언서 프로필",
     "worker": "장영석",
-    "complete": ""
+    "complete": "2022-03-25"
   },
   {
     "id": "MBA05-0300p01C",

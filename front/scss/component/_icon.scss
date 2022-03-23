@@ -440,6 +440,16 @@ a.visited {
   //background-image: url('../images/icon/ico_arrow_primary.png');
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.22922 7.21967C9.53485 6.92678 10.0304 6.92678 10.336 7.21967L14.7708 11.4697C15.0764 11.7626 15.0764 12.2375 14.7708 12.5303L10.336 16.7803C10.0304 17.0732 9.53485 17.0732 9.22922 16.7803C8.92359 16.4874 8.92359 16.0126 9.22922 15.7197L13.1106 12L9.22922 8.28033C8.92359 7.98744 8.92359 7.51256 9.22922 7.21967Z' fill='%23FE7D65'/%3E%3C/svg%3E");
 }
+.i-ico-winning-rate {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url('../images/icon/ico-winning-rate.png');
+}
+.i-ico-influencer {
+  width: 2rem;
+  height: 2rem;
+  background-image: url('../images/icon/ico-influencer-badge.png');
+}
 
 // i-img-
 .i-img-victory {
@@ -483,7 +493,7 @@ a.visited {
   background-image: url('../images/icon/ico-gold-star3.png');
 }
 .i-img-gift {
-  width: 2.3rem;
+  width: 2.5rem;
   height: 2rem;
   background-image: url('../images/icon/ico-giftbox-small.png');
 }
@@ -491,4 +501,9 @@ a.visited {
   width: 3.8rem;
   height: 3.4rem;
   background-image: url('../images/icon/ico-img-gift.png');
+}
+.i-img-gift3 {
+  width: 2.6rem;
+  height: 2.2rem;
+  background-image: url('../images/icon/ico-giftbox2-small.png');
 }

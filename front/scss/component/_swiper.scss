@@ -62,6 +62,19 @@
     font-size: 1.2rem;
     line-height: 1;
   }
+
+  &.type2 {
+    .swiper-pagination-bullet {
+      opacity: 1;
+      border: 0.2rem solid #979797;
+      background: none;
+      box-sizing: border-box;
+    }
+    .swiper-pagination-bullet-active {
+      border-color: #606060;
+      background: #606060;
+    }
+  }
 }
 .swiper-button {
   position: absolute;

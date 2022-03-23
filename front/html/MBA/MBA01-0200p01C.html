@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+  </head>
+  <body>
+    <div id="popMatchAgree" class="popup bottom" role="dialog" aria-hidden="true">
+      <article class="pop-wrap">
+        <div class="pop-head">
+          <div>
+            <h1>자산 연결하기</h1>
+            <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="section">
+            <p class="fz-16 fc-424242 fw-500">투자 고수들의 노하우가 궁금하세요?</p>
+            <p class="fz-14 mt-16">
+              매치 서비스의 원활한 이용을 위해 <strong><span class="fc-primary">마이데이터서비스 가입과 금융정보 연결</span>이 반드시 필요해요.</strong>
+            </p>
+
+            <div class="ui-swiper mt-24" data-view="1">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="match-info-swiper type1">
+                      <p class="tit">오늘의 매치</p>
+
+                      <p class="text">매치에서 나와 대결한 투자 고수들이 <br />어떤 주식에 얼마나 투자를 하고 있는지 <br />확인해 보세요.</p>
+
+                      <p class="img"><img src="../../images/match/match-info-swiper1.png" alt="" /></p>
+
+                      <ul class="txt-list">
+                        <li class="dot">1개월의 도전 기간 동안 획득한 승점으로 랭킹이 산정되고, 보상으로 다양한 혜택까지 받을 수 있어요.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="match-info-swiper type2">
+                      <p class="tit">그라운드와 커뮤니티</p>
+
+                      <p class="text">여러 투자 고수들과 자신만의 <br />투자 노하우를 교류해 보세요.</p>
+
+                      <p class="img"><img src="../../images/match/match-info-swiper2.png" alt="" /></p>
+
+                      <ul class="txt-list">
+                        <li class="dot">다양한 금융 활동과 끌(KKL)활동 내역에 따라 그라운드에 참여 할 수 있는 태그와 뱃지를 받을 수 있어요.</li>
+                        <li class="dot">매치 랭킹과 별도의 그라운드 랭킹이 운영되고, 랭킹에 따라 지급 받는 다양한 혜택은 덤이에요.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination type2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="pop-foot">
+          <div>
+            <div class="flex">
+              <button type="button" class="button primary">마이데이터 시작하기</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <script>
+      $(function () {
+        Layer.open('#popMatchAgree');
+      });
+    </script>
+  </body>
+</html>

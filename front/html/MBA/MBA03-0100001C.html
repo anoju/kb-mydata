@@ -21,13 +21,14 @@
             <button type="button" class="head-back button" aria-label="이전화면"></button>
           </div>
           <div class="head-right">
-            <button type="button" class="button">Talk</button>
+            <button type="button" class="button">Talk 모아보기</button>
           </div>
         </div>
       </header>
       <!-- //헤더 -->
 
       <!-- 컨테이너(컨텐츠) -->
+      <!-- 2022-03-23 전체적으로 변경 -->
       <main id="container">
         <div class="section pb-0">
           <div class="profile-info">
@@ -38,7 +39,7 @@
               <a href="#" class="btn-setting" aria-label="설정"><i class="i-ico-setting"></i></a>
             </div>
             <p class="mt-16 fz-18 fw-bold t-center fc-424242">입질만삼년째</p>
-            <p class="mt-12 fz-12 fc-818892 t-center">최근 업데이트 2022.12.12 16:29</p>
+            <p class="mt-12 fz-14 t-center">커피한잔의여유를아는자♥</p>
 
             <div class="info-total-box line2">
               <div>
@@ -73,21 +74,28 @@
               </div>
             </div>
 
-            <a href="#" class="btn-click gift-link-box">
-              <p class="tit"><i class="i-img-gift mr-6"></i>상품 지급</p>
-              <p class="text">매치를 통해 지급받은 상품을 확인해보세요!</p>
-            </a>
+            <p class="mt-12 t-right fz-12 fc-818892">최근 업데이트 2022.12.12 16:29</p>
 
-            <!-- 매치 전적은 작업 예정 -->
+            <div class="gift-link-box">
+              <a href="#" class="btn-click"><i class="i-img-gift mr-6"></i>상품 지급 내역</a>
+              <a href="#" class="btn-click"><i class="i-img-gift3 mr-6"></i>상품 교환하기</a>
+            </div>
+
+            <!-- 매치 전적 -->
             <div class="title-bar mt-32">
               <div>
                 <h2 class="tit-h4">
                   <a href="#" class="flex not-full align-center">매치전적 <i class="i-ico-arr-right-24" aria-hidden="true"></i></a>
                 </h2>
               </div>
+              <div class="right fz-12 fc-979797 fw-500"><i class="i-ico-winning-rate mr-4 va-middle"></i>승률 67%</div>
             </div>
-            <div class="match-myscore-box">매치 전적은 작업 예정</div>
-            <!-- //매치 전적은 작업 예정 -->
+            <div class="match-myscore-box">
+              <p class="type1">승리<span>11</span></p>
+              <p class="type2">무승부<span>11</span></p>
+              <p class="type3">패배<span>11</span></p>
+            </div>
+            <!-- //매치 전적 -->
 
             <!-- 태그 -->
             <div class="title-bar mt-32">
@@ -97,11 +105,21 @@
                 </h2>
               </div>
             </div>
+            <!-- 태그가 있는 경우-->
             <div class="hashtag-box type2">
               <a href="#"><span>태그명태그명태그명태그명태그명태그명태그명태그명태그명</span></a>
               <a href="#"><span>태그명태그명태그명</span></a>
               <a href="#"><span>태그명</span></a>
             </div>
+            <!-- //태그가 있는 경우-->
+
+            <!-- 태그가 없는 경우-->
+            <div class="hashtag-box type2">
+              <p class="ml-8 mb-12 fz-14 fc-b0b0b0">다양한 투자/소비 활동으로태그(#)가 부여되요.</p>
+              <p class="tag"><span>나만태그없어</span></p>
+              <p class="tag"><span>슬픈사용자</span></p>
+            </div>
+            <!-- //태그가 없는 경우-->
           </div>
           <!-- //태그 -->
 
@@ -113,6 +131,10 @@
               </h2>
             </div>
           </div>
+          <!-- 뱃지가 없는 경우 -->
+          <p class="mt-13 fz-14 fc-b0b0b0">아직 획득한 뱃지가 없군요! <br />매치를 열심히 하면 뱃지를 획득 할 수 있어요.</p>
+          <!-- //뱃지가 없는 경우 -->
+
           <div class="badge-list-box">
             <a href="#">
               <p class="img-box">
@@ -146,30 +168,33 @@
                 상승 : up 
                 하락 : down
               -->
-              <p class="updown type2 up noIcon fz-14">+111.11%</p>
+              <p class="updown type2 up noIcon fz-14 fw-500">+111.11%</p>
             </div>
             <div class="ml-auto fz-16 fc-424242"><span class="fz-24 fw-500">136,100,586</span> 원</div>
           </div>
 
-          <div class="circle-info-box type2 mt-12">
-            <div>
+          <div class="bar-process-info-box type2 mt-12">
+            <div class="label-box">
               <div class="label-text">
-                <p class="tit"><i style="background: #ffae34"></i>국내주식 <span class="fz-11 fc-b0b0b0">(40%)</span></p>
-                <p class="mt-4 fz-14 ml-12"><strong class="fz-15 fc-bold">53,499,100</strong>원</p>
+                <p class="tit"><i style="background: #ffae34"></i>국내주식</p>
+                <p class="number">32%</p>
               </div>
-              <div class="label-text mt-18">
-                <p class="tit"><i style="background: #9e6dee"></i>해외주식 <span class="fz-11 fc-b0b0b0">(60%)</span></p>
-                <p class="mt-4 fz-14 ml-12"><strong class="fz-15 fc-bold">53,499,100</strong>원</p>
+              <div class="label-text">
+                <p class="tit"><i style="background: #9e6dee"></i>해외주식</p>
+                <p class="number">32%</p>
               </div>
             </div>
-            <div class="circle-svg" data-circle-box="type2">
-              <!-- data-circle-val 이동할 값 : 퍼센트 비율--->
-              <div data-circle-color="#9E6DEE" data-circle-val="60" aria-label="해외주식 60%"></div>
-              <div data-circle-color="#ffae34" data-circle-val="40" aria-label="국내주식 40%"></div>
+            <div class="bar-process">
+              <span class="type1" aria-label="국내주식 : 32%" style="width: 32%; background: #ffae34"></span>
+              <span class="type2" aria-label="해외주식 : 68%" style="width: 68%; background: #9e6dee"></span>
+            </div>
+            <div class="flex mt-12">
+              <p class="fz-12"><strong class="blind">국내주식</strong><strong class="fz-14 fw-500">53,499,100</strong>원</p>
+              <p class="ml-auto fz-12 t-right"><strong class="blind">해외주식</strong><strong class="fz-14 fw-500">53,499,100</strong>원</p>
             </div>
           </div>
 
-          <div class="tab-line-menu ui-tab mt-11">
+          <div class="tab-line-menu ui-tab mt-20">
             <div class="tab-inner">
               <i class="tab-line" aria-hidden="true"></i>
               <ul class="tab-list">
@@ -180,7 +205,7 @@
           </div>
           <div class="tab-panels">
             <div id="lineTabCont1" class="tab-panel">
-              <div class="total-box mt-12">
+              <div class="total-box mt-16">
                 <div class="left">
                   수익률
                   <!-- 
@@ -191,6 +216,12 @@
                 </div>
                 <div class="right"><strong>53,499,100</strong>원</div>
               </div>
+
+              <div class="list-empty">
+                <i class="i-ico-warning-40" aria-hidden="true"></i>
+                <p>보유하신 투자 종목을 찾을 수 없어요.</p>
+              </div>
+
               <div class="list-ranking-box">
                 <div class="list">
                   <p class="number">1</p>
@@ -210,7 +241,43 @@
                 </div>
               </div>
             </div>
-            <div id="lineTabCont2" class="tab-panel"></div>
+            <div id="lineTabCont2" class="tab-panel">
+              <div class="total-box mt-16">
+                <div class="left">
+                  수익률
+                  <!-- 
+                    상승 : up 
+                    하락 : down
+                  -->
+                  <span class="updown type2 up noIcon fz-14">+111.11%</span>
+                </div>
+                <div class="right"><strong>53,499,100</strong>원</div>
+              </div>
+
+              <div class="list-empty">
+                <i class="i-ico-warning-40" aria-hidden="true"></i>
+                <p>보유하신 투자 종목을 찾을 수 없어요.</p>
+              </div>
+
+              <div class="list-ranking-box">
+                <div class="list">
+                  <p class="number">1</p>
+                  <p class="text">삼성전자</p>
+                  <p class="cash"><span>42,100,000</span>원</p>
+                </div>
+                <div class="list">
+                  <p class="number">1</p>
+                  <p class="text">삼성전자삼성전자삼성전자삼성전자삼성전자삼성전자삼성전자</p>
+                  <p class="cash"><span>42,100,000,000,000</span>원</p>
+                </div>
+              </div>
+
+              <div class="btn-wrap full lineT">
+                <div class="flex">
+                  <button class="button fc-primary h-72">내 자산 모두 보기<i class="i-ico-arrow-primary"></i></button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
