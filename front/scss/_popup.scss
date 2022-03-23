@@ -27,7 +27,10 @@
   top: 0;
   background: #fff;
   z-index: 20;
-  transition: box-shadow 0.5s;
+  transition: background 0.5s;
+  &.bg-origin {
+    background: #fff !important;
+  }
   &.no-title {
     height: 0 !important;
     padding-top: 0 !important;

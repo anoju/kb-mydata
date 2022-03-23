@@ -6557,12 +6557,12 @@ const Layer = {
 
     let $lastSclTop = 0;
     $wrap.off('scroll').on('scroll', function () {
-      const $agreeBtn = $wrap.find('.' + Layer.agreeBtnClassName);
+      const $this = $(this);
+      const $agreeBtn = $this.find('.' + Layer.agreeBtnClassName);
+      const $wrapSclTop = $this.scrollTop();
+      const $wrapH = $this.outerHeight();
+      const $wrapSclH = $this[0].scrollHeight;
       if ($isAgree && $agreeBtn.length) {
-        $wrap = $(this);
-        $wrapH = $wrap.outerHeight();
-        $wrapSclH = $wrap[0].scrollHeight;
-        $wrapSclTop = $wrap.scrollTop();
         if ($lastSclTop === 0) $lastSclTop = -1;
         if ($wrapSclTop + $wrapH >= $wrapSclH - 10 && $lastSclTop < $wrapSclTop) {
           $agreeBtn.each(function () {
@@ -6575,11 +6575,23 @@ const Layer = {
         }
         $lastSclTop = $wrapSclTop;
       }
-      Layer.fixed($wrap);
+      Layer.fixed($this);
 
-      const $fadeTitle = $wrap.find('.' + Layer.scrollShowTitleClass);
+      const $sclHead = $this.find('.ui-pop-header-bg-origin');
+      const $headH = $head.outerHeight();
+      console.log($head.length, $sclHead.length);
+      if ($head.length && $sclHead.length) {
+        console.log($sclHead.offset().top, $headH, $wrapSclTop);
+        if ($sclHead.offset().top - $headH < $headH) {
+          $head.addClass('bg-origin');
+        } else {
+          $head.removeClass('bg-origin');
+        }
+      }
+
+      const $fadeTitle = $this.find('.' + Layer.scrollShowTitleClass);
       const $headerTit = $head.find('h1');
-      if ($fadeTitle.length && $headerTit.length) ui.Common.scrollShowTitle($fadeTitle[0], $wrap[0], $head[0], $headerTit[0]);
+      if ($fadeTitle.length && $headerTit.length) ui.Common.scrollShowTitle($fadeTitle[0], $this[0], $head[0], $headerTit[0]);
     });
   },
   focusMove: function (tar) {
