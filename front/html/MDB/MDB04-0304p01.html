@@ -40,6 +40,7 @@
               지출이 가장 큰 날은<span class="fc-primary"><strong class="fz-20">28</strong>일</span><br />
               <span class="fc-primary"><strong class="fz-20">11,350,000</strong>원</span>을 썼어요
             </div>
+            <div id="chart1" class="mt-32 h-200"></div>
 
             <hr class="hr-line mt-32" aria-hiddem="true" />
             <!-- prettier-ignore -->
@@ -70,6 +71,124 @@
             thousandsSep: ','
           }
         });
+
+        Highcharts.chart('chart1', {
+          chart: {
+            type: 'area'
+          },
+          colors: ['#D6DBE1', '#FE7D65'],
+          title: false,
+          legend: {
+            align: 'right',
+            verticalAlign: 'top'
+          },
+          xAxis: {
+            categories: [
+              '12/01',
+              '12/02',
+              '12/03',
+              '12/04',
+              '12/05',
+              '12/06',
+              '12/07',
+              '12/08',
+              '12/09',
+              '12/10',
+              '12/11',
+              '12/12',
+              '12/13',
+              '12/14',
+              '12/15',
+              '12/16',
+              '12/17',
+              '12/18',
+              '12/19',
+              '12/20',
+              '12/21',
+              '12/22',
+              '12/23',
+              '12/24',
+              '12/25',
+              '12/26',
+              '12/27',
+              '12/28',
+              '12/29',
+              '12/30',
+              '12/31'
+            ],
+            allowDecimals: false,
+            labels: {
+              formatter: function () {
+                return this.value; // clean, unformatted number for year
+              }
+            },
+            lineColor: '#ebebeb',
+            labels: {
+              style: {
+                color: '#424242',
+                fontSize: '12px'
+              }
+            }
+          },
+
+          yAxis: {
+            visible: false,
+            title: false
+          },
+          tooltip: {
+            headerFormat: '<dl class="cht-tooltip-dl"><dt>{point.key}</dt>',
+            pointFormat: '<dd><span>{series.name}</span><span><strong>{point.y:,.0f}</strong>원</span></dd>',
+            footerFormat: '</dl>',
+            backgroundColor: 'rgba(33, 33, 33, 0.8)',
+            borderWidth: 0,
+            borderRadius: 8,
+            shadow: false,
+            style: {
+              color: '#fff',
+              fontSize: '12px'
+            },
+            shared: true,
+            useHTML: true
+          },
+          plotOptions: {
+            area: {
+              marker: {
+                enabled: false,
+                symbol: 'circle',
+                radius: 2,
+                states: {
+                  hover: {
+                    enabled: true
+                  }
+                }
+              },
+              fillOpacity: 0.4
+              // fillColor: '#fafafa'
+            }
+          },
+          series: [
+            {
+              name: '저번달',
+              //prettier-ignore
+              data: [
+              1605, 2471, 3322, 4238, 5221, 6129, 7089, 8339, 9399, 10538,
+              11643, 13092, 14478, 15915, 17385, 19055, 21205, 23044, 25393, 27935,
+              30062, 32049, 33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000,
+              37000
+              ]
+            },
+            {
+              name: '이번달',
+              //prettier-ignore
+              data: [
+                369, 640, 1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468,
+                20434, 24126, 27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342,
+                26662, 26956, 27912, 28999, 28965, 27826, 25579
+              ]
+            }
+          ]
+        });
+
         Highcharts.chart('chart2', {
           chart: {
             type: 'column'
@@ -102,6 +221,7 @@
             backgroundColor: 'rgba(33, 33, 33, 0.8)',
             borderWidth: 0,
             borderRadius: 8,
+            shadow: false,
             style: {
               color: '#fff',
               fontSize: '12px'
@@ -113,21 +233,10 @@
             column: {
               pointPadding: 0.2,
               borderWidth: 0,
-              // borderRadius: 4,
               states: {
                 hover: {
-                  enabled: false
-                },
-                inactive: {
-                  enabled: false
-                },
-                select: {
-                  enabled: false
+                  brightness: 0
                 }
-                // ,
-                // style: {
-                //   borderRadius: '4px 4px 0 0'
-                // }
               }
             }
           },
