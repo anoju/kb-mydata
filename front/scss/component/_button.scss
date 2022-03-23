@@ -39,6 +39,12 @@
       border-radius: 50%;
     }
   }
+  &.h24 {
+    height: 2.4rem;
+    padding: 0 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 0.4rem;
+  }
   &.h32 {
     height: 3.2rem;
     font-size: 1.2rem;
@@ -116,6 +122,12 @@
     &.checked {
       color: var(--primary-color);
     }
+  }
+  &.line2 {
+    border-width: 0.1rem;
+    border-color: #ebebeb;
+    color: #818892;
+    background: #fff;
   }
 
   [class*='i-ico-check-'] {
