@@ -13,6 +13,8 @@
     <script type="text/javascript" src="../../js/ui-front.js"></script>
   </head>
   <body>
+    <a href="#popTodayInfo" class="button ui-pop-open">팝업열기</a>
+
     <!-- 팝업 -->
     <div id="popTodayInfo" class="popup full" role="dialog" aria-hidden="true">
       <article class="pop-wrap">
@@ -35,7 +37,9 @@
                 <p>이번달은<br /><span class="fc-down"><strong class="fz-20">22,000</strong>원 적게</span>썼어요</p>
               </div>
             </div>
-            <div id="chart1" class="mt-32 h-200"></div>
+
+            <div id="chart1" class="mt-32 h-200 ui-pop-header-bg-origin"></div>
+
             <hr class="hr-line mt-32" aria-hiddem="true" />
             <div class="round-line-box no-line bg-fa pd-16 mt-32 fw-500 fc-424242 lh-23">
               지출이 가장 큰 날은<span class="fc-primary"><strong class="fz-20">28</strong>일</span><br />
@@ -102,6 +106,41 @@
             <div class="round-line-box no-line bg-fa pd-16 mt-32 fw-500 fc-424242 fz-18 lh-26">
               <p>한번에 가장 크게 질렀던 금액은<br /><span class="fc-primary"><strong class="fz-20">5,500,000</strong>원</span> 이에요</p>
             </div>
+            <ol class="bar-chart-rank mt-7 pd-32y">
+              <li>
+                <div class="item-chart-wrap">
+                  <i class="ico-rank">1</i>
+                  <div class="bar-chart"><i style="width: 70%"></i></div>
+                </div>
+                <div class="item-info">
+                  <div class="item-date">12/28</div>
+                  <div class="item-txt">샤넬광화문힐스테이트</div>
+                  <div class="t-price"><strong>5,500,000</strong>원</div>
+                </div>
+              </li>
+              <li>
+                <div class="item-chart-wrap">
+                  <i class="ico-rank">2</i>
+                  <div class="bar-chart"><i style="width: 40%"></i></div>
+                </div>
+                <div class="item-info">
+                  <div class="item-date">12/15</div>
+                  <div class="item-txt">-</div>
+                  <div class="t-price"><strong>2,300,000</strong>원</div>
+                </div>
+              </li>
+              <li>
+                <div class="item-chart-wrap">
+                  <i class="ico-rank">3</i>
+                  <div class="bar-chart"><i style="width: 20%"></i></div>
+                </div>
+                <div class="item-info">
+                  <div class="item-date">12/15</div>
+                  <div class="item-txt">김밥천국홍대점</div>
+                  <div class="t-price"><strong>120,000</strong>원</div>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
       </article>

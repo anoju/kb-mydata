@@ -71,6 +71,105 @@
   }
 }
 
+.bar-chart-rank {
+  .item-chart-wrap {
+    display: flex;
+    align-items: center;
+  }
+  .bar-chart {
+    flex: 1 1 auto;
+    margin-left: 0.8rem;
+  }
+  .item-info {
+    display: flex;
+    align-items: center;
+    margin-top: 0.6rem;
+    font-size: 1.2rem;
+  }
+  .item-date {
+    width: 4rem;
+    text-align: center;
+    margin-right: 0.8rem;
+    color: #979797;
+  }
+  .item-txt {
+    color: var(--strong-txt-color);
+  }
+  .t-price {
+    margin-left: auto;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    strong {
+      font-size: 1.6rem;
+    }
+  }
+  > li {
+    + li {
+      margin-top: 2.4rem;
+    }
+    &:nth-child(1) {
+      .ico-rank {
+        &:after {
+          position: absolute;
+          top: -0.7rem;
+          left: 50%;
+          margin-left: -0.8rem;
+          @include ico-after-apend(1.6rem, 1.5rem);
+          background-image: url(../images/icon/ico-rank-crown.png);
+        }
+      }
+      .ico-rank,
+      .bar-chart i {
+        background: var(--primary-color);
+      }
+      .t-price {
+        color: var(--primary-color);
+      }
+    }
+    &:nth-child(2) {
+      .ico-rank,
+      .bar-chart i {
+        background: #818892;
+      }
+    }
+    &:nth-child(3) {
+      .ico-rank,
+      .bar-chart i {
+        background: #b9c1c9;
+      }
+    }
+  }
+}
+.bar-chart {
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background: #f2f4f6;
+  i {
+    display: block;
+    width: 0;
+    height: 1.2rem;
+    border-radius: 0.6rem;
+  }
+  &.color-1,
+  .bar-color-1 & {
+    i {
+      background: var(--primary-color);
+    }
+  }
+  &.color-2,
+  .bar-color-2 & {
+    i {
+      background: #818892;
+    }
+  }
+  &.color-3,
+  .bar-color-3 & {
+    i {
+      background: #b9c1c9;
+    }
+  }
+}
+
 .cht-tooltip-dl {
   font-size: 1.2rem;
   color: #fff;
