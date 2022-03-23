@@ -6782,8 +6782,8 @@ const Layer = {
     Layer.toast(txt, fn, 'alarm', delayTime);
   },
   init: function () {
-    if ($('.' + Layer.popClass + '.' + Layer.showClass).length) {
-      Layer.open('.' + Layer.popClass + '.' + Layer.showClass);
+    if ($('.' + Layer.popClass + '.' + Layer.showClass + '[aria-hidden="true"]').length) {
+      Layer.open('.' + Layer.popClass + '.' + Layer.showClass + '[aria-hidden="true"]');
     }
     const $winpop = $('.' + Layer.wrapClass + '.' + Layer.pageClass);
     if ($winpop.length) {
