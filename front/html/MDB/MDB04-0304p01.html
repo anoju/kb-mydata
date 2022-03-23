@@ -38,7 +38,7 @@
               </div>
             </div>
 
-            <div id="chart1" class="mt-32 h-200 ui-pop-header-bg-origin"></div>
+            <div id="chart1" class="mt-32 chart-area chart-scroll ui-pop-header-bg-origin"></div>
 
             <hr class="hr-line mt-32" aria-hiddem="true" />
             <div class="round-line-box no-line bg-fa pd-16 mt-32 fw-500 fc-424242 lh-23">
@@ -99,7 +99,7 @@
               <p>가장 많이 지출한 요일은<br /><span class="fc-primary"><strong class="fz-20">3</strong>개</span> 있어요</p>
             </div>
 
-            <div id="chart2" class="mt-32 h-200"></div>
+            <div id="chart2" class="mt-32 chart-area"></div>
 
             <hr class="hr-line mt-32" aria-hiddem="true" />
             <!-- prettier-ignore -->
@@ -172,6 +172,8 @@
           legend: {
             align: 'right',
             verticalAlign: 'top'
+            // itemMarginTop: 24
+            // margin: 24
           },
           xAxis: {
             categories: [

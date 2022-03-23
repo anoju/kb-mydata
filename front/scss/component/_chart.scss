@@ -196,3 +196,21 @@
     }
   }
 }
+.chart-area {
+  height: 20rem;
+  &.chart-scroll {
+    .highcharts-legend {
+      position: relative;
+      right: var(--base-padding);
+    }
+    .highcharts-inner-container {
+      > div {
+        padding: 0 var(--base-padding);
+        box-sizing: content-box;
+      }
+    }
+    .section & {
+      @include outer;
+    }
+  }
+}
