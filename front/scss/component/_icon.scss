@@ -236,6 +236,12 @@
   // background-image: url(../images/icon/ico-arr-right-16.png);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.21967 3.21967C6.51256 2.92678 6.98744 2.92678 7.28033 3.21967L11.5303 7.46967C11.8232 7.76256 11.8232 8.23744 11.5303 8.53033L7.28033 12.7803C6.98744 13.0732 6.51256 13.0732 6.21967 12.7803C5.92678 12.4874 5.92678 12.0126 6.21967 11.7197L9.93934 8L6.21967 4.28033C5.92678 3.98744 5.92678 3.51256 6.21967 3.21967Z' fill='%23C1C1C1'/%3E%3C/svg%3E");
 }
+.i-ico-arr-right-w-16 {
+  width: 1.6rem;
+  height: 1.6rem;
+  // background-image: url(../images/icon/ico-arr-right-w-16.png);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.69102 4.17573C5.9457 3.94142 6.35865 3.94142 6.61333 4.17573L10.309 7.57574C10.5637 7.81006 10.5637 8.18996 10.309 8.42427L6.61333 11.8243C6.35865 12.0586 5.9457 12.0586 5.69102 11.8243C5.43633 11.5899 5.43633 11.2101 5.69102 10.9758L8.92553 8.00001L5.69102 5.02426C5.43633 4.78995 5.43633 4.41005 5.69102 4.17573Z' fill='white'/%3E%3C/svg%3E");
+}
 .i-ico-arr-right-24 {
   @include ico-arr-right;
 }

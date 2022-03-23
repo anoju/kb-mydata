@@ -649,33 +649,33 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
   }
 }
 
-//chech-list-item
-.chech-list-item {
+//check-list-item
+.check-list-item {
   position: relative;
   .checkbox,
   .radio {
-    display: block;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    input,
-    i {
-      left: auto;
-      right: 0;
-      top: 50%;
-      margin-top: -1.2rem;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 6rem;
+    padding: 1rem var(--base-padding);
+    margin: 0;
     .lbl {
       padding: 0;
       font-size: inherit;
       line-height: inherit;
       margin-right: 3rem;
+
+      ~ input,
+      ~ input + i {
+        left: auto;
+        right: var(--base-padding);
+        top: 50%;
+        margin-top: -1.2rem;
+      }
     }
     .section & {
-      @include outer(true);
-      input,
-      i {
-        right: var(--base-padding);
-      }
+      @include outer;
     }
   }
   .item-tit {
@@ -689,5 +689,32 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
     color: #818892;
     // margin-top: 0.2rem;
     font-size: 1.4rem;
+  }
+  .item-btn.button {
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 0;
+    height: 6rem;
+    padding: 1.5rem var(--base-padding);
+    font-size: 1.6rem;
+    color: var(--strong-txt-color2);
+    &:where(button) {
+      width: 100%;
+    }
+    .section & {
+      @include outer;
+      &:where(button) {
+        width: calc(100% + (var(--base-padding) * 2));
+      }
+    }
+  }
+  .add-btn.button {
+    position: absolute;
+    top: 50%;
+    right: 6.4rem;
+    transform: translateY(-50%);
+    .section & {
+      right: 4rem;
+    }
   }
 }

@@ -408,11 +408,10 @@ html.lock,
   color: var(--primary-color) !important;
 }
 .fc-up {
-  color: #eb5757 !important;
+  // color: #eb5757 !important;
+  color: #e45055 !important;
 }
-.fc-down {
-  color: #3887fd !important;
-}
+.fc-down,
 .fc-blue {
   color: #447eee !important;
 }
@@ -469,6 +468,9 @@ html.lock,
 @for $i from 6 through 40 {
   .fz-#{$i} {
     font-size: $i * 0.1rem !important;
+  }
+  .lh-#{$i} {
+    line-height: $i * 0.1rem !important;
   }
 }
 

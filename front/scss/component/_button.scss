@@ -39,6 +39,12 @@
       border-radius: 50%;
     }
   }
+  &.h24 {
+    height: 2.4rem;
+    padding: 0 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 0.4rem;
+  }
   &.h32 {
     height: 3.2rem;
     font-size: 1.2rem;
@@ -49,7 +55,7 @@
     font-size: 1.4rem;
     border-radius: 0.6rem;
   }
-  .popup:not(.modal) .pop-foot &,
+  .popup:not(.modal) .pop-foot &:not(.h48),
   &.h60 {
     height: 6rem;
     font-size: 1.8rem;
@@ -116,6 +122,12 @@
     &.checked {
       color: var(--primary-color);
     }
+  }
+  &.line2 {
+    border-width: 0.1rem;
+    border-color: #ebebeb;
+    color: #818892;
+    background: #fff;
   }
 
   [class*='i-ico-check-'] {
@@ -323,24 +335,23 @@ button.btn-click {
       width: 100%;
       padding: 2.4rem 2rem;
       background-color: transparent;
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 1.6rem, #fff 100%);
+      // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 1.6rem, #fff 100%);
       transition: box-shadow 0.3s;
       z-index: 50;
       html.ios & {
         @include ios-bottom(padding-bottom, 2.4rem);
       }
     }
-    &.no-shadow {
-      > div {
-        // box-shadow: none;
-        background-color: #fff;
-      }
-    }
-    &.none-bg {
-      > div {
-        background: none;
-      }
-    }
+    // &.no-shadow {
+    //   > div {
+    //     background-color: #fff;
+    //   }
+    // }
+    // &.none-bg {
+    //   > div {
+    //     background: none;
+    //   }
+    // }
     &.fixed-none {
       > div {
         position: relative;

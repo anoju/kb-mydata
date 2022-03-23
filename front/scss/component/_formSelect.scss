@@ -284,14 +284,22 @@
     }
     .select-item-txt {
       font-weight: 500;
+      + .select-item-sub {
+        margin-top: 0.2rem;
+      }
     }
     .select-item-sub {
       font-size: 1.4rem;
-      margin-top: 0.2rem;
+      + .select-item-txt {
+        margin-top: 0.2rem;
+      }
     }
   }
   &.selected > a {
-    color: var(--primary-color);
+    color: var(--strong-txt-color);
+    .select-item-sub {
+      color: var(--base-txt-color);
+    }
     &:after {
       opacity: 1;
     }

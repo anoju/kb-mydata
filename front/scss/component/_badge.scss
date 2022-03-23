@@ -11,8 +11,9 @@
   font-weight: 500;
 
   &.gray {
-    background: var(--line-color);
-    color: #979797;
+    // background: var(--line-color);
+    background: #f2f4f6;
+    color: #818892;
   }
   &.red {
     background: #ffebee;
@@ -21,6 +22,14 @@
   &.green {
     background: #e5f5ed;
     color: #15b071;
+  }
+  &.blue {
+    background: rgba(68, 126, 238, 0.1);
+    color: #447eee;
+  }
+  &.orange {
+    background: #fff3d2;
+    color: #f99336;
   }
   &.black {
     background: var(--strong-txt-color);

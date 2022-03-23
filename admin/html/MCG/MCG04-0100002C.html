@@ -46,10 +46,13 @@
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">홈</a></li>
                     <li class="breadcrumb-item"><a href="#">PFM관리</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">PFM관리</li>
+                    <li class="breadcrumb-item active" aria-current="page">투자채널 배너관리</li>
                   </ol>
                 </nav>
-                <h1>카테고리 등록</h1>
+                <h1>투자채널 배너등록</h1>
+              </div>
+              <div class="kb-page-btn">
+                <button type="button" class="btn btn-primary"><i class="bi bi-plus"></i> 배너등록</button>
               </div>
             </div>
           </div>
@@ -58,19 +61,26 @@
           <!-- 컨텐츠본문 -->
           <div class="title-wrap">
             <div class="left">
-              <h2 class="h3">카테고리 등록정보</h2>
+              <h2 class="h3">기본 정보</h2>
             </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i>카테고리명</div>
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 회사명</div>
                 <div class="form-box-cont">
                   <input type="text" class="form-control" />
                 </div>
               </div>
             </div>
-
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 전화번호</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 아이콘등록</div>
@@ -91,37 +101,31 @@
                 </div>
               </div>
             </div>
-
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">홈페이지 링크</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 설명</div>
                 <div class="form-box-cont">
-                  <textarea id="editor" name="editordata1">카테고리 입니다...</textarea>
+                  <textarea id="editor" name="editordata1">
+                    예) 조세,부동산 등 금융/비금융 자산관련 법률 문제상담
+                    상속, 유류분, 상속재산분할 청구 등
+                  </textarea>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="title-wrap mt-5">
-            <div class="left">
-              <h2 class="h3">노출하기 설정</h2>
-            </div>
-          </div>
-          <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label">노출여부</div>
+                <div class="form-box-label">태그</div>
                 <div class="form-box-cont">
-                  <div class="custom-control-wrap">
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">노출</span>
-                    </label>
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">비노출</span>
-                    </label>
-                  </div>
+                  <input type="text" class="form-control" />
+                  <div class="mt-1 text-info">※ 입력예시 : #태그명, 최대 0개</div>
                 </div>
               </div>
             </div>
@@ -129,14 +133,22 @@
 
           <div class="title-wrap mt-5">
             <div class="left">
-              <h2 class="h3">등록자정보</h2>
+              <h2 class="h3">등록/수정정보</h2>
             </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label">
-                  <label for="select1">최초등록</label>
+                  <label for="select1">등록자</label>
+                </div>
+                <div class="form-box-cont d-flex align-items-center">홍길동</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">
+                  <label for="select1">최근수정</label>
                 </div>
                 <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
               </div>
@@ -145,7 +157,7 @@
           <div class="btn-wrap kb-page-btn text-center mt-5">
             <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
             <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 등록</button>
-            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 저장</button>
+            <button type="button" class="btn btn-lg btn-default"><i class="bi bi-trash"></i> 삭제</button>
           </div>
           <!-- //컨텐츠본문 -->
         </main>
@@ -164,8 +176,8 @@
       CKEDITOR.replace('editor');
 
       //팝업
-      //유효성 오류팝업(제목미입력)
       /*
+      //유효성 오류팝업(제목미입력)
       Modal.alert('제목을 입력해주세요.', function () {
         console.log('제목미입력 - 확인');
       });
@@ -173,9 +185,25 @@
       Modal.alert('내용을 입력해주세요.', function () {
         console.log('내용미입력 - 확인');
       });
+      //유효성 오류팝업(우선노출 5개 초과)
+      Modal.alert('우선노출 등록은 \<br>\ 5개를 초과할 수 없습니다.', function () {
+        console.log('우선노출 5개 초과 - 확인');
+      });
+      //유효성 오류팝업(등록된 콘테츠 삭제 지정오류)
+      Modal.alert('기 등록된 콘테츠 삭제 후 \<br>\ 지정해 주세요.', function () {
+        console.log('등록된 콘테츠 삭제 지정오류 - 확인');
+      });
+      //유효성 오류팝업(게시일 지정오류)
+      Modal.alert('게시 시작일은 \<br>\ 종료일을 확인해 주세요.', function () {
+        console.log('게시일 지정오류- 확인');
+      });
+      //유효성 오류팝업(게시일 지정오류)
+      Modal.alert('게시 시작일은 \<br>\ 0개월 이내부터 가능합니다.', function () {
+        console.log('게시일 지정오류- 확인');
+      });
 
       //등록팝업
-      Modal.confirm('FAQ 등록을하시겠습니까?', function (e) {
+      Modal.confirm('공지사항 등록을하시겠습니까?', function (e) {
         if (e) {
           console.log('등록 - 확인');
         } else {
@@ -184,7 +212,7 @@
       });
 
       //등록팝업
-      Modal.confirm('FAQ 등록을 \<br>\ 취소하시겠습니까?', function (e) {
+      Modal.confirm('공지사항 등록을 \<br>\ 취소하시겠습니까?', function (e) {
         if (e) {
           console.log('등록취소 - 확인');
         } else {
