@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+  </head>
+  <body>
+    <!-- 팝업 -->
+    <div id="popTodayInfo" class="popup full" role="dialog" aria-hidden="true">
+      <article class="pop-wrap">
+        <div class="pop-head bg-fa">
+          <div>
+            <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+          </div>
+        </div>
+        <div class="pop-body pt-0">
+          <div class="section">
+            <div class="outer-content bg-fa pd-24y">
+              <h1 class="tit-h1">이번 달 어때?</h1>
+              <dl class="mt-32">
+                <dt class="fc-818892">오늘까지 지출</dt>
+                <dd class="t-price mt-4"><strong>120,000</strong>원</dd>
+              </dl>
+              <!-- prettier-ignore -->
+              <div class="round-line-box no-line pd-16 mt-24 fw-500 fc-424242 lh-23">
+                <p>이번달은<br /><span class="fc-up"><strong class="fz-20">22,000</strong>원 초과</span>했어요</p>
+                <p>이번달은<br /><span class="fc-down"><strong class="fz-20">22,000</strong>원 적게</span>썻어요</p>
+              </div>
+            </div>
+            <hr class="hr-line" aria-hiddem="true" />
+            <div class="round-line-box no-line bg-fa pd-16 mt-32 fw-500 fc-424242 lh-23">
+              지출이 가장 큰 날은<span class="fc-primary"><strong class="fz-20">28</strong>일</span><br />
+              <span class="fc-primary"><strong class="fz-20">11,350,000</strong>원</span>을 썼어요
+            </div>
+
+            <hr class="hr-line mt-32" aria-hiddem="true" />
+            <!-- prettier-ignore -->
+            <div class="round-line-box no-line bg-fa pd-16 mt-32 fw-500 fc-424242 fz-18 lh-26">
+              <p>가장 많이 지출한 요일은<br /><span class="fc-primary">수요일</span>이에요</p>
+              <p>가장 많이 지출한 요일은<br /><span class="fc-primary"><strong class="fz-20">3</strong>개</span> 있어요</p>
+            </div>
+
+            <div id="chart2" class="mt-32 h-200"></div>
+
+            <hr class="hr-line mt-32" aria-hiddem="true" />
+            <!-- prettier-ignore -->
+            <div class="round-line-box no-line bg-fa pd-16 mt-32 fw-500 fc-424242 fz-18 lh-26">
+              <p>한번에 가장 크게 질렀던 금액은<br /><span class="fc-primary"><strong class="fz-20">5,500,000</strong>원</span> 이에요</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <!-- //팝업 -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+      Layer.open('#popTodayInfo');
+
+      const chartInit = function () {
+        Highcharts.setOptions({
+          lang: {
+            thousandsSep: ','
+          }
+        });
+        Highcharts.chart('chart2', {
+          chart: {
+            type: 'column'
+          },
+          colors: ['#FE7D65', '#D6DBE1'],
+          title: false,
+          legend: {
+            align: 'right',
+            verticalAlign: 'top'
+          },
+          xAxis: {
+            categories: ['일', '월', '화', '수', '목', '금', '토', '일'],
+            crosshair: true,
+            lineColor: '#ebebeb',
+            labels: {
+              style: {
+                color: '#424242',
+                fontSize: '12px'
+              }
+            }
+          },
+          yAxis: {
+            visible: false,
+            title: false
+          },
+          tooltip: {
+            headerFormat: '<dl class="cht-tooltip-dl"><dt>{point.key}요일</dt>',
+            pointFormat: '<dd><span>{series.name}</span><span><strong>{point.y:,.0f}</strong>원</span></dd>',
+            footerFormat: '</dl>',
+            backgroundColor: 'rgba(33, 33, 33, 0.8)',
+            borderWidth: 0,
+            borderRadius: 8,
+            style: {
+              color: '#fff',
+              fontSize: '12px'
+            },
+            shared: true,
+            useHTML: true
+          },
+          plotOptions: {
+            column: {
+              pointPadding: 0.2,
+              borderWidth: 0,
+              // borderRadius: 4,
+              states: {
+                hover: {
+                  enabled: false
+                },
+                inactive: {
+                  enabled: false
+                },
+                select: {
+                  enabled: false
+                }
+                // ,
+                // style: {
+                //   borderRadius: '4px 4px 0 0'
+                // }
+              }
+            }
+          },
+          series: [
+            {
+              name: '이번달',
+              data: [49900, 71500, 106400, 129200, 144000, 176000, 135600, 148500]
+            },
+            {
+              name: '저번달',
+              data: [83600, 78800, 98500, 93400, 106000, 84500, 105000, 104300]
+            }
+          ]
+        });
+      };
+      chartInit();
+    </script>
+  </body>
+</html>

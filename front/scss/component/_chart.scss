@@ -70,3 +70,27 @@
     transform: rotate(0deg);
   }
 }
+
+.cht-tooltip-dl {
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  strong {
+    font-weight: 500;
+  }
+  dt {
+    margin: 0;
+  }
+  dd {
+    display: flex;
+    margin: 0;
+    span {
+      &:first-child {
+        margin-right: 1rem;
+      }
+      + span {
+        margin-left: auto;
+      }
+    }
+  }
+}
