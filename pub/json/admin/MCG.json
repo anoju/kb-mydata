@@ -44,10 +44,10 @@
     "name": "투자채널등록",
     "worker": "변상우",
     "complete": "2022-03-22",
-    "etc": "임시 화면 ID / 임시 이미지"
+    "etc": "MCG02-0100002C ~ MCG02-0100013C(한 화면)"
   },
   {
-    "id": "MCG03-0100001C",
+    "id": "MCG02-0200001C",
     "url": "../../admin/html/MCG/",
     "type": "page",
     "depth2": "PFM관리",
@@ -55,10 +55,10 @@
     "name": "투자채널 전시관리",
     "worker": "변상우",
     "complete": "2022-03-22",
-    "etc": "임시 화면 ID / 임시 이미지(상단섹션 + 화면 2분할)"
+    "etc": ""
   },
   {
-    "id": "MCG04-0100001C",
+    "id": "MCG02-0300001C",
     "url": "../../admin/html/MCG/",
     "type": "page",
     "depth2": "PFM관리",
@@ -69,7 +69,7 @@
     "etc": "임시 화면 ID / 임시 이미지"
   },
   {
-    "id": "MCG04-0100002C",
+    "id": "MCG02-0300002C",
     "url": "../../admin/html/MCG/",
     "type": "page",
     "depth2": "PFM관리",
@@ -80,7 +80,7 @@
     "etc": "임시 화면 ID / 임시 이미지"
   },
   {
-    "id": "MCG05-0100001C",
+    "id": "MCG02-0400001C",
     "url": "../../admin/html/MCG/",
     "type": "page",
     "depth2": "PFM관리",
