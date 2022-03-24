@@ -23,6 +23,18 @@ $mobile-size: 768;
   vertical-align: text-bottom;
   -webkit-font-smoothing: antialiased;
 }
+@mixin ellipsis($line: 0) {
+  overflow: hidden;
+  word-break: break-all;
+  @if ($line == 0) {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  }
+}
 
 //width-0, width-1, width-2 ... width-50
 @for $i from 0 through 50 {
@@ -147,6 +159,11 @@ html:not(.mobile) {
   white-space: nowrap;
   text-overflow: ellipsis;
   word-break: break-all;
+}
+@for $i from 1 through 5 {
+  .ellipsis-#{$i} {
+    @include ellipsis($i);
+  }
 }
 .img-box {
   position: relative;
@@ -1192,10 +1209,14 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   .form-box {
     .form-box-row {
       display: block;
+      + .form-box-row {
+        margin-top: 1rem;
+      }
     }
     .form-box-item {
       display: block;
       + .form-box-item {
+        margin-top: 1rem;
         border-top: 0.063em solid #ddd;
       }
     }
@@ -1206,7 +1227,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
       text-align: left;
     }
     .form-box-cont {
-      padding: 1rem 0;
+      padding: 1rem 0.5rem;
     }
   }
   .input-daterange-btn {
