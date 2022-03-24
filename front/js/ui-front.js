@@ -4821,8 +4821,6 @@ ui.Animation = {
       if ($matrixY === undefined) $matrixY = 0;
       let $elTop = $el.offset().top - $matrixY;
       if (!$isWin) $elTop = $elTop + $scrollTop;
-      console.log($elTop);
-      // console.log($el.offset().top, $matrixY, $elTop)
       const $elCenter = $elTop + $elHeight / 2;
       const $elBottom = $elTop + $elHeight;
 
