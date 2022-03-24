@@ -114,9 +114,7 @@
               <div class="form-box-item">
                 <div class="form-box-label">템플릿</div>
                 <div class="form-box-cont">
-                  <div class="text-right mb-2">
-                    <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#previewModal">템플릿 선택</button>
-                  </div>
+                  <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#templateModal"><i class="bi bi-card-checklist"></i> 템플릿 선택</button>
                 </div>
               </div>
             </div>
@@ -124,7 +122,16 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>변수설정</div>
                 <div class="form-box-cont">
-                  <input type="text" class="form-control" />
+                  <div class="d-flex align-items-center">
+                    <select class="custom-select width-100 mr-1">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="4">5</option>
+                    </select>
+                    <div class="help-txt">※ 변수 선택값과 메시지의 변수개수는 동일해야 합니다.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -156,7 +163,12 @@
                   <div class="text-right mb-2">
                     <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#previewModal"><i class="bi bi-eye-fill"></i> 미리보기</button>
                   </div>
-                  <textarea class=""></textarea>
+                  <textarea class="form-control" rows="10">
+(광고) {1}님, 회원가입을 축하드립니다. 
+회원가입 축하기념으로 {2}포인트를 드립니다. 
+자세한 사항은 {3}을 참고 부탁드립니다.
+                  </textarea>
+
                   <div class="text-right">
                     <small>0 / 90 Bytes</small>
                   </div>
@@ -288,8 +300,46 @@
             <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 등록</button>
           </div>
           <!-- //컨텐츠본문 -->
-          <!-- 미리보기 팝업 -->
-          <div class="modal fade" id="templateModal" tabindex="-1" aria-labelledby="templateModalLabel" aria-hidden="true"></div>
+          <!-- 템플릿 팝업 -->
+          <div class="modal fade show" id="templateModal" tabindex="-1" aria-labelledby="templateModalLabel" aria-hidden="true" style="display: block">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="templateModalLabel">SMS 템플릿 선택</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <table id="table1" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">&nbsp;</th>
+                        <th scope="col">분류</th>
+                        <th scope="col">제목</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only mb-0">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>상품관련</td>
+                        <td class="text-left">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-md btn-default" data-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-md btn-primary" data-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- 미리보기 팝업 -->
           <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -300,9 +350,16 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body scrollspy-example h-50 pre-line">(광고) {1}님, 회원가입을 축하드립니다. 회원가입 축하기념으로 {2}포인트를 드립니다. 자세한 사항은 {3}을 참고 부탁드립니다.</div>
+                <div class="form-group p-2">
+                  <textarea class="form-control" rows="10">
+(광고) {1}님, 회원가입을 축하드립니다. 
+회원가입 축하기념으로 {2}포인트를 드립니다. 
+자세한 사항은 {3}을 참고 부탁드립니다.
+                  </textarea>
+                </div>
+
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">확인</button>
+                  <button type="button" class="btn btn-md btn-primary" data-dismiss="modal">확인</button>
                 </div>
               </div>
             </div>
