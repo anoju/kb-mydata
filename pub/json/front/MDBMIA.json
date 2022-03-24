@@ -441,4 +441,16 @@
     "worker": "안효주",
     "complete": "2022-03-22"
   }
+  ,{
+    "depth1": "내정보관리"
+  }
+  ,{
+    "id":"MAI01-0000001",
+    "url":"../../front/html/MAI/",
+    "type":"page",
+    "depth2": "내정보확인",
+    "name": "내정보관리",
+    "worker": "안효주",
+    "complete": "2022-03-24"
+  }
 ]
