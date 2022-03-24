@@ -199,18 +199,20 @@
 .chart-area {
   height: 20rem;
   &.chart-scroll {
-    .highcharts-legend {
-      position: relative;
-      right: var(--base-padding);
-    }
-    .highcharts-inner-container {
-      > div {
-        padding: 0 var(--base-padding);
-        box-sizing: content-box;
-      }
+    .highcharts-container {
+      padding: 0 var(--base-padding);
+      box-sizing: content-box;
     }
     .section & {
       @include outer;
     }
   }
+}
+body > .highcharts-tooltip-container {
+  margin-left: var(--base-padding);
+  z-index: 250 !important;
+}
+.highcharts-credits,
+.highcharts-scrollable-mask {
+  display: none;
 }
