@@ -3,6 +3,36 @@
     "depth1": "매치"
   },
   {
+    "id": "MBA01-0000000C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "매치 메인",
+    "depth3": "정회원",
+    "name": "",
+    "worker": "장영석",
+    "complete": "진행중"
+  },
+  {
+    "id": "MBA01-0000001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "매치 메인",
+    "depth3": "준회원",
+    "name": "",
+    "worker": "장영석",
+    "complete": "진행중"
+  },
+  {
+    "id": "MBA01-0100p01C",
+    "url": "../../front/html/MBA/",
+    "type": "pop",
+    "depth2": "매치 서비스 안내",
+    "depth3": "",
+    "name": "",
+    "worker": "장영석",
+    "complete": "진행중"
+  },
+  {
     "id": "MBA01-0400p01C",
     "url": "../../front/html/MBA/",
     "type": "pop",
@@ -377,6 +407,45 @@
     "name": "",
     "worker": "장영석",
     "complete": "2022-03-15",
+    "etc": ""
+  },
+  {
+    "depth1": "신고현황"
+  },
+  {
+    "id": "MBA11-0000001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "신고현황",
+    "depth3": "",
+    "depth4": "",
+    "name": "",
+    "worker": "장영석",
+    "complete": "진행중",
+    "etc": ""
+  },
+  {
+    "id": "MBA11-0100001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "신고내용",
+    "depth3": "",
+    "depth4": "",
+    "name": "",
+    "worker": "장영석",
+    "complete": "진행중",
+    "etc": ""
+  },
+  {
+    "id": "MBA11-0300p01C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "서비스 이용제한",
+    "depth3": "",
+    "depth4": "",
+    "name": "",
+    "worker": "장영석",
+    "complete": "진행중",
     "etc": ""
   }
 ]
