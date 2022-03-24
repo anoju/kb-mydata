@@ -1,5 +1,4 @@
-// 테스트
-
+// 1:1 매치
 .match-animation {
   overflow: hidden;
   position: relative;
@@ -339,6 +338,19 @@
         // height: 100%;
         filter: grayscale(100);
       }
+
+      &.influencer {
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: url('../images/match/ico_influencer.png') no-repeat center center / 100%;
+        }
+      }
     }
     .text-box {
       margin-left: 1rem;
@@ -519,6 +531,69 @@
   }
   100% {
     transform: translateX(-33.333%);
+  }
+}
+
+/* 매치 결과 */
+.match-result-wrap {
+  .result {
+    font-size: 1.8rem;
+    color: #fe7d65;
+    font-weight: bold;
+  }
+  .tit {
+    margin-top: 0.8rem;
+    margin-bottom: 1.2rem;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #212121;
+    line-height: 1.275;
+  }
+  .text {
+    font-size: 1.6rem;
+    color: #979797;
+    strong {
+      color: #424242;
+    }
+    + .text {
+      margin-top: 0.7rem;
+    }
+  }
+  .img-box {
+    width: 18.6rem;
+    margin: 4rem auto 0;
+
+    &.influencer {
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../images/match/ico_influencer.png') no-repeat center center / 100%;
+      }
+    }
+  }
+  .comment-label {
+    position: relative;
+    margin-top: -2.2rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    background: #212121;
+  }
+  .sns-link-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      margin: 0 1.3rem;
+    }
   }
 }
 
