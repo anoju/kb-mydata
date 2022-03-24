@@ -46,10 +46,10 @@
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">홈</a></li>
                     <li class="breadcrumb-item"><a href="#">앱관리</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+                    <li class="breadcrumb-item active" aria-current="page">SMS 발송관리</li>
                   </ol>
                 </nav>
-                <h1>FAQ 등록</h1>
+                <h1>SMS 발송등록</h1>
               </div>
             </div>
           </div>
@@ -58,86 +58,126 @@
           <!-- 컨텐츠본문 -->
           <div class="title-wrap">
             <div class="left">
-              <h2 class="h3">FAQ 등록정보</h2>
+              <h2 class="h3">발송대상</h2>
             </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
-              <!-- 2022-03-14 .form-box-item 누락태그 추가  -->
               <div class="form-box-item">
-                <div class="form-box-label">카테고리</div>
+                <div class="form-box-label">발송분류</div>
                 <div class="form-box-cont">
                   <select class="custom-select">
-                    <option value="1">제목</option>
+                    <option value="1">전체</option>
+                    <option value="2">알림</option>
+                    <option value="3">이벤트</option>
+                    <option value="4">공지</option>
                   </select>
                 </div>
               </div>
-            </div>
-            <div class="form-box-row">
-              <!-- 2022-03-14 .form-box-item 누락태그 추가  -->
               <div class="form-box-item">
-                <div class="form-box-label">제목</div>
+                <div class="form-box-label">발송분류</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">전체</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">정회원</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">준회원</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">메세지</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>제목</div>
                 <div class="form-box-cont">
                   <input type="text" class="form-control" />
                 </div>
               </div>
             </div>
             <div class="form-box-row">
-              <!-- 2022-03-14 .form-box-item 누락태그 추가  -->
               <div class="form-box-item">
-                <div class="form-box-label">내용</div>
+                <div class="form-box-label">템플릿</div>
+                <div class="form-box-cont"></div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>변수설정</div>
                 <div class="form-box-cont">
-                  <textarea id="editor" name="editordata1"></textarea>
+                  <input type="text" class="form-control" />
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="title-wrap mt-5">
-            <div class="left">
-              <h2 class="h3">게시설정</h2>
-            </div>
-          </div>
-          <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label">사용여부</div>
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>대상선택</div>
                 <div class="form-box-cont">
                   <div class="custom-control-wrap">
                     <label class="custom-control custom-radio custom-control-inline">
                       <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">사용</span>
+                      <span class="custom-control-label">선택없음</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
                       <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">사용안함</span>
+                      <span class="custom-control-label">광고</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">마케팅</span>
                     </label>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- 2022-03-15: 게시기간 삭제 -->
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>메시지</div>
+                <div class="form-box-cont">
+                  <div class="row">
+                    <div class="col-lg-11">
+                      <textarea id="editor1" name="editordata1"></textarea>
+                    </div>
+                    <div class="col-lg-1 p-lg-0 text-right">
+                      <small>0 / 90 Bytes</small>
+                    </div>
+                  </div>
+                  <strong class="fc-red">*90 Byte 초과 시 LMS로 자동 전환됩니다.</strong>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="title-wrap mt-5">
             <div class="left">
-              <h2 class="h3">등록자정보</h2>
+              <h2 class="h3">발송정보 업로드</h2>
             </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
-                <!-- 2022-03-24: 수정 -->
-                <div class="form-box-label">최초등록자</div>
-                <div class="form-box-cont d-flex align-items-center">홍길동</div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <!-- 2022 03 24 label 태그 삭제 -->
-                <div class="form-box-label">최근수정</div>
-                <!--// 2022 03 24 label 태그 삭제 -->
-                <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
+                <div class="form-box-label">Excel 업로드</div>
+                <div class="form-box-cont">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="" aria-describedby="" />
+                    <label class="custom-file-label" for=""></label>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -159,11 +199,11 @@
 
     <script>
       //에디터
-      CKEDITOR.replace('editor');
-
+      CKEDITOR.replace('editor1');
+      CKEDITOR.replace('editor2');
       //팝업
-      //유효성 오류팝업(제목미입력)
       /*
+      //유효성 오류팝업(제목미입력)
       Modal.alert('제목을 입력해주세요.', function () {
         console.log('제목미입력 - 확인');
       });
@@ -171,9 +211,25 @@
       Modal.alert('내용을 입력해주세요.', function () {
         console.log('내용미입력 - 확인');
       });
+      //유효성 오류팝업(우선노출 5개 초과)
+      Modal.alert('우선노출 등록은 \<br>\ 5개를 초과할 수 없습니다.', function () {
+        console.log('우선노출 5개 초과 - 확인');
+      });
+      //유효성 오류팝업(등록된 콘테츠 삭제 지정오류)
+      Modal.alert('기 등록된 콘테츠 삭제 후 \<br>\ 지정해 주세요.', function () {
+        console.log('등록된 콘테츠 삭제 지정오류 - 확인');
+      });
+      //유효성 오류팝업(게시일 지정오류)
+      Modal.alert('게시 시작일은 \<br>\ 종료일을 확인해 주세요.', function () {
+        console.log('게시일 지정오류- 확인');
+      });
+      //유효성 오류팝업(게시일 지정오류)
+      Modal.alert('게시 시작일은 \<br>\ 0개월 이내부터 가능합니다.', function () {
+        console.log('게시일 지정오류- 확인');
+      });
 
       //등록팝업
-      Modal.confirm('FAQ 등록을하시겠습니까?', function (e) {
+      Modal.confirm('공지사항 등록을하시겠습니까?', function (e) {
         if (e) {
           console.log('등록 - 확인');
         } else {
@@ -182,7 +238,7 @@
       });
 
       //등록팝업
-      Modal.confirm('FAQ 등록을 \<br>\ 취소하시겠습니까?', function (e) {
+      Modal.confirm('공지사항 등록을 \<br>\ 취소하시겠습니까?', function (e) {
         if (e) {
           console.log('등록취소 - 확인');
         } else {

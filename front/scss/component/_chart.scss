@@ -139,6 +139,13 @@
       }
     }
   }
+  &[data-animation]:not(.on) {
+    .bar-chart {
+      i {
+        width: 0 !important;
+      }
+    }
+  }
 }
 .bar-chart {
   border-radius: 0.6rem;
@@ -149,6 +156,7 @@
     width: 0;
     height: 1.2rem;
     border-radius: 0.6rem;
+    transition: width 0.5s;
   }
   &.color-1,
   .bar-color-1 & {

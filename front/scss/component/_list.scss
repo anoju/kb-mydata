@@ -338,7 +338,7 @@
   padding-top: 1.7rem;
   padding-bottom: 1.7rem;
   //결제 취소
-  &._canceled {
+  &.canceled {
     opacity: 0.5;
     .item-tit {
       strong {
@@ -347,18 +347,21 @@
     }
   }
   .item-info {
-    .badge {
-      margin-right: 0.4rem;
-      vertical-align: top;
-      font-weight: 400;
-    }
+    display: flex;
     line-height: 2.4rem;
     color: var(--gray-txt-color);
+    font-size: 1.4rem;
+    .badge {
+      margin-right: 0.4rem;
+      font-weight: 400;
+    }
   }
   .item-tit {
     display: flex;
     margin-top: 0.5rem;
+    color: var(--strong-txt-color);
     .left {
+      flex: 1 1 auto;
       font-size: 1.6rem;
       box-sizing: border-box;
       padding-right: 1rem;
@@ -367,7 +370,7 @@
     .right {
       margin-left: auto;
       font-size: 1.6rem;
-      color: var(--strong-txt-color);
+      flex-shrink: 0;
       strong {
         font-size: 1.8rem;
         margin-right: 0.4rem;
@@ -377,7 +380,8 @@
   }
   .item-bottom {
     display: flex;
-    margin-top: 0.7rem;
+    align-items: center;
+    margin-top: 0.5rem;
     .left {
       font-size: 1.4rem;
       span {
@@ -390,9 +394,34 @@
       }
     }
     .right {
+      flex-shrink: 0;
+      display: flex;
       font-size: 1.3rem;
       margin-left: auto;
       color: #818892;
+      > span {
+        position: relative;
+        padding: 0 0.6rem 0 0.7rem;
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+        + span {
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0.1rem;
+            height: 1.1rem;
+            background: #b9c1c9;
+            transform: translateY(-50%);
+          }
+        }
+      }
     }
   }
 }
