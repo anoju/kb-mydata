@@ -258,6 +258,7 @@
       common.menuActive();
       common.btnTop();
       common.pageTitle();
+      common.lightBox();
     },
     header: function () {
       $(document).on('click', '.kb-navbar-btn, .kb-sidebar-close', function (e) {
@@ -421,6 +422,13 @@
             $title.removeClass('fixed');
           }
         }
+      });
+    },
+    lightBox: function () {
+      // lightbox 라이브러리 연결필요
+      $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
       });
     }
   };
