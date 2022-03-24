@@ -162,6 +162,7 @@ html:not(.mobile) {
     display: block;
     padding-top: 100%;
   }
+
   img {
     position: absolute;
     left: 50%;
@@ -186,9 +187,26 @@ html:not(.mobile) {
   }
 }
 
-@for $i from 1 through 100 {
-  .w-#{$i}0 {
-    width: $i * 10px !important;
+$ratios: (
+  3: 2,
+  4: 3,
+  5: 3,
+  16: 9,
+  17: 10,
+  25: 16
+);
+@each $w, $h in $ratios {
+  .img-ratio-#{$w}-#{$h} {
+    &:before {
+      // width: $w;
+      padding-top: ($h / $w) * 100%;
+    }
+  }
+}
+
+@for $i from 1 through 200 {
+  .w-#{$i * 5} {
+    width: $i * 5px !important;
   }
 }
 
