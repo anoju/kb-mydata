@@ -198,6 +198,9 @@
   &.full {
     pointer-events: none;
     background: rgba(255, 255, 255, 0);
+    html.ios & {
+      @include ios-top(padding-top);
+    }
     .pop-bg-close {
       display: none;
     }
@@ -273,7 +276,10 @@
 
   // bottom
   &.bottom {
-    padding-top: -vh(13);
+    padding-top: 6rem;
+    html.ios & {
+      @include ios-top(padding-top, 6rem);
+    }
     > .pop-scl-wrap,
     > .pop-wrap {
       position: fixed;
