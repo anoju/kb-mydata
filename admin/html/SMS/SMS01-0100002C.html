@@ -149,13 +149,12 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>메시지</div>
                 <div class="form-box-cont">
-                  <div class="row">
-                    <div class="col-lg-11">
-                      <textarea id="editor1" name="editordata1"></textarea>
-                    </div>
-                    <div class="col-lg-1 p-lg-0 text-right">
-                      <small>0 / 90 Bytes</small>
-                    </div>
+                  <div class="text-right mb-2">
+                    <button type="button" class="btn btn-md btn-secondary" data-toggle="modal" data-target=""><i class="bi bi-eye"></i> 미리보기</button>
+                  </div>
+                  <textarea id="editor1" name="editordata1"></textarea>
+                  <div class="text-right">
+                    <small>0 / 90 Bytes</small>
                   </div>
                   <strong class="fc-red">*90 Byte 초과 시 LMS로 자동 전환됩니다.</strong>
                 </div>
@@ -172,15 +171,114 @@
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label">Excel 업로드</div>
-                <div class="form-box-cont">
+                <div class="form-box-cont d-flex">
                   <div class="custom-file">
                     <input type="file" class="custom-file-input" id="" aria-describedby="" />
                     <label class="custom-file-label" for=""></label>
+                  </div>
+                  <div class="ml-3">
+                    <button type="button" class="btn btn-md text-nowrap btn-secondary" data-toggle="modal" data-target=""><i class="bi bi-file-earmark-excel-fill"></i> 양식다운로드</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="alert alert-secondary mt-4" role="alert">
+            <h4 class="alert-heading">[영리 목적의 광고성 정보 발송 안내]</h4>
+            <hr />
+            <ul class="mt-2">
+              <li>필수정보 안내 목적의 "주문접수 안내"와 같은 SMS는 수신동의 없이 보낼 수 있지만 영리 목적의 광고성 정보 발송 시에는 반드시 수신동의한 회원에게만 발송해야 합니다.</li>
+              <li>반드시 수신동의를 받은 회원에게만 발송 해야 합니다.</li>
+              <li>오후 9시 부터 그 다음날 오전 8시에는 별도의 사전동의를 받은 경우가 아니면 발송해서는 안됩니다.</li>
+              <li>SMS 내용에 전송자의 명칭/연락처/수신거부기능(수신거부방법과 수신자가 비용부담하지 않는다는 내용(예시) 무료수신거부 080-000-0000))이 포함되어야 합니다.</li>
+              <li>SMS내용 시작 부분에 (광고)를 명시해야 합니다.</li>
+              <li>위 내용을 위반하는 경우 3천만원 이하의 과태료가 부과 됩니다.</li>
+            </ul>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">발송시각</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">발송시각</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">즉시발송</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">예약발송</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">예약시간</div>
+                <div class="form-box-cont form-row">
+                  <div class="input-daterange-btn col-7">
+                    <div class="input-group">
+                      <input type="date" class="form-control" placeholder="시작일" />
+                    </div>
+                  </div>
+                  <div class="col-5 d-flex">
+                    <div class="input-group">
+                      <input type="tel" class="form-control" maxlength="2" />
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">:</div>
+                      </div>
+                      <input type="tel" class="form-control" maxlength="2" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">발송결과</div>
+                <div class="form-box-cont d-flex align-items-center">2/22</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">수신거부확인</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">수신거부제외</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">수신거부포함</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">발송시각</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">발송자</div>
+                <div class="form-box-cont d-flex align-items-center">홍길동</div>
+              </div>
+            </div>
+          </div>
+
           <div class="btn-wrap kb-page-btn text-center mt-5">
             <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
             <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 등록</button>
@@ -198,9 +296,10 @@
     <!-- //wrap -->
 
     <script>
+      //var messageH = 300;
       //에디터
       CKEDITOR.replace('editor1');
-      CKEDITOR.replace('editor2');
+      //CKEDITOR.replace('editor2').config.height = messageH + 'px';
       //팝업
       /*
       //유효성 오류팝업(제목미입력)
