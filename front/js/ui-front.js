@@ -6579,9 +6579,7 @@ const Layer = {
 
       const $sclHead = $this.find('.ui-pop-header-bg-origin');
       const $headH = $head.outerHeight();
-      console.log($head.length, $sclHead.length);
       if ($head.length && $sclHead.length) {
-        console.log($sclHead.offset().top, $headH, $wrapSclTop);
         if ($sclHead.offset().top - $headH < $headH) {
           $head.addClass('bg-origin');
         } else {
