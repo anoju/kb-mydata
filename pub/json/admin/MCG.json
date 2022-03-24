@@ -5,7 +5,6 @@
   {
     "id": "MCG01-0100001C",
     "url": "../../admin/html/MCG/",
-    "type": "page",
     "depth2": "PFM관리",
     "depth3": "PFM관리",
     "name": "PFM관리 목록",
@@ -16,18 +15,17 @@
   {
     "id": "MCG01-0100002C",
     "url": "../../admin/html/MCG/",
-    "type": "page",
     "depth2": "PFM관리",
     "depth3": "PFM관리",
     "name": "상세(등록)",
     "worker": "변상우",
     "complete": "2022-03-10",
+    "change": "2022-03-24",
     "etc": ""
   },
   {
     "id": "MCG02-0100001C",
     "url": "../../admin/html/MCG/",
-    "type": "page",
     "depth2": "PFM관리",
     "depth3": "투자채널관리",
     "name": "투자채널목록",
@@ -38,7 +36,6 @@
   {
     "id": "MCG02-0100002C",
     "url": "../../admin/html/MCG/",
-    "type": "page",
     "depth2": "PFM관리",
     "depth3": "투자채널관리",
     "name": "투자채널등록",
@@ -50,7 +47,6 @@
   {
     "id": "MCG02-0200001C",
     "url": "../../admin/html/MCG/",
-    "type": "page",
     "depth2": "PFM관리",
     "depth3": "투자채널 전시관리",
     "name": "투자채널 전시관리",
@@ -61,7 +57,6 @@
   {
     "id": "MCG02-0300001C",
     "url": "../../admin/html/MCG/",
-    "type": "page",
     "depth2": "PFM관리",
     "depth3": "투자채널 배너관리",
     "name": "투자채널 배너목록",
@@ -72,7 +67,6 @@
   {
     "id": "MCG02-0300002C",
     "url": "../../admin/html/MCG/",
-    "type": "page",
     "depth2": "PFM관리",
     "depth3": "투자채널 배너관리",
     "name": "투자채널 배너등록",
@@ -84,7 +78,6 @@
   {
     "id": "MCG02-0400001C",
     "url": "../../admin/html/MCG/",
-    "type": "page",
     "depth2": "PFM관리",
     "depth3": "투자채널배너 전시관리",
     "name": "투자채널배너 전시관리",

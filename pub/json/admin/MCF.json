@@ -5,7 +5,6 @@
   {
     "id": "MCF05-0100001C",
     "url": "../../admin/html/MCF/",
-    "type": "page",
     "depth2": "게시판관리",
     "depth3": "공지사항",
     "name": "공지사항 목록",
@@ -17,7 +16,6 @@
   {
     "id": "MCF05-0100004C",
     "url": "../../admin/html/MCF/",
-    "type": "page",
     "depth2": "게시판관리",
     "depth3": "공지사항",
     "name": "공지사항 상세(등록)",
@@ -29,7 +27,6 @@
   {
     "id": "MCF05-0200001C",
     "url": "../../admin/html/MCF/",
-    "type": "page",
     "depth2": "게시판관리",
     "depth3": "FAQ",
     "name": "FAQ 목록",
@@ -41,7 +38,6 @@
   {
     "id": "MCF05-0200003C",
     "url": "../../admin/html/MCF/",
-    "type": "page",
     "depth2": "게시판관리",
     "depth3": "FAQ",
     "name": "FAQ 상세(등록)",
@@ -53,7 +49,6 @@
   {
     "id": "MCF05-0300001C",
     "url": "../../admin/html/MCF/",
-    "type": "page",
     "depth2": "게시판관리",
     "depth3": "문의하기",
     "name": "문의하기 목록",
@@ -64,7 +59,6 @@
   {
     "id": "MCF05-0300002C",
     "url": "../../admin/html/MCF/",
-    "type": "page",
     "depth2": "게시판관리",
     "depth3": "문의하기",
     "name": "문의하기 상세(등록)",
@@ -76,7 +70,6 @@
   {
     "id": "MCF06-0100001C",
     "url": "../../admin/html/MCF/",
-    "type": "page",
     "depth2": "팝업관리",
     "name": "팝업관리 목록",
     "worker": "안효주",
@@ -86,17 +79,16 @@
   {
     "id": "MCF06-0100002C",
     "url": "../../admin/html/MCF/",
-    "type": "page",
     "depth2": "팝업관리",
     "name": "팝업등록",
     "worker": "안효주",
     "complete": "2022-03-24",
+    "change": "2022-03-24",
     "etc": "label 태그 수정"
   },
   {
     "id": "SMS01-0100001C",
     "url": "../../admin/html/SMS/",
-    "type": "page",
     "depth2": "SMS 발송관리",
     "name": "SMS 발송내역 목록",
     "worker": "변상우",
@@ -106,7 +98,6 @@
   {
     "id": "SMS01-0100002C",
     "url": "../../admin/html/SMS/",
-    "type": "page",
     "depth2": "SMS 발송등록",
     "name": "SMS 발송 등록",
     "worker": "변상우",

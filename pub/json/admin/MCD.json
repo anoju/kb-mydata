@@ -5,7 +5,6 @@
   {
     "id": "MCD01-0100001C",
     "url": "../../admin/html/MCD/",
-    "type": "page",
     "depth2": "관리자관리",
     "depth3": "관리자등록",
     "worker": "변상우",
@@ -15,7 +14,6 @@
   {
     "id": "MCD01-0100002C",
     "url": "../../admin/html/MCD/",
-    "type": "page",
     "depth2": "관리자관리",
     "depth3": "관리자상세(등록)",
     "worker": "변상우",
@@ -25,7 +23,6 @@
   {
     "id": "MCD01-0200001C",
     "url": "../../admin/html/MCD/",
-    "type": "page",
     "depth2": "관리자관리",
     "depth3": "관리자이력관리",
     "worker": "변상우",
@@ -35,7 +32,6 @@
   {
     "id": "MCD02-0100001C",
     "url": "../../admin/html/MCD/",
-    "type": "page",
     "depth2": "권한설정",
     "depth3": "관리자그룹관리",
     "worker": "변상우",
@@ -45,7 +41,6 @@
   {
     "id": "MCD02-0200001C",
     "url": "../../admin/html/MCD/",
-    "type": "page",
     "depth2": "권한설정",
     "depth3": "관리자메뉴관리",
     "worker": "변상우",

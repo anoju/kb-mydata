@@ -5,7 +5,6 @@
   {
     "id": "MDB02-0100001",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 소비스 소개",
     "name": "서비스소개 1",
@@ -16,7 +15,6 @@
   {
     "id": "MDB02-0100002",
     "url": "../../front/html/MDB/MDB02-0100001.html",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 소비스 소개",
     "name": "서비스소개 2",
@@ -27,7 +25,6 @@
   {
     "id": "MDB02-0100003",
     "url": "../../front/html/MDB/MDB02-0100001.html",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 소비스 소개",
     "name": "서비스소개 3",
@@ -38,7 +35,6 @@
   {
     "id": "MDB02-0201001",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 가입",
     "depth4": "마이데이터 서비스안내",
@@ -49,7 +45,6 @@
   {
     "id": "MDB02-0201003",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 가입",
     "depth4": "마이데이터 서비스안내",
@@ -61,7 +56,6 @@
   {
     "id": "MDB02-0201006",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 가입",
     "depth4": "마이데이터 서비스안내",
@@ -72,7 +66,6 @@
   {
     "id": "MDB02-0303003",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -84,7 +77,6 @@
   {
     "id": "MDB02-0303004",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -96,7 +88,6 @@
   {
     "id": "MDB02-0303005",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -107,7 +98,6 @@
   {
     "id": "MDB02-0303007",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -119,7 +109,6 @@
   {
     "id": "MDB02-0303008",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -131,7 +120,6 @@
   {
     "id": "MDB02-0303009",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "통합인증",
@@ -143,7 +131,6 @@
   {
     "id": "MDB02-0305004",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "상세정보전송",
@@ -156,7 +143,6 @@
   {
     "id": "MDB02-0305006",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "상세정보전송",
@@ -169,7 +155,6 @@
   {
     "id": "MDB02-0306001",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "개별인증",
@@ -182,7 +167,6 @@
   {
     "id": "MDB02-0306003",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "개별인증",
@@ -195,7 +179,6 @@
   {
     "id": "MDB02-0306004",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "개별인증",
@@ -206,7 +189,6 @@
   {
     "id": "MDB02-0306005",
     "url": "../../front/html/MDB/MDB02-0306001.html",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "금융자산",
     "depth4": "개별인증",
@@ -218,7 +200,6 @@
   {
     "id": "MDB02-0502002",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "통합자산조회",
     "depth3": "마이데이터 설정",
     "depth4": "개별인증 연결변경",
@@ -232,7 +213,6 @@
   ,{
     "id": "MDB04-0301001",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "소비",
     "depth3": "지출내역",
     "depth4": "목록",
@@ -244,7 +224,6 @@
   ,{
     "id": "MDB04-0303p01",
     "url": "../../front/html/MDB/",
-    "type": "pop",
     "depth2": "소비",
     "depth3": "지출내역",
     "depth4": "적요제공동의유도",
@@ -255,7 +234,6 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/",
-    "type": "page",
     "depth2": "소비",
     "depth3": "지출내역",
     "depth4": "상세",
@@ -267,7 +245,6 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=pay",
-    "type": "page",
     "depth2": "소비",
     "depth3": "지출내역",
     "depth4": "상세",
@@ -278,7 +255,6 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=card2",
-    "type": "page",
     "depth2": "소비",
     "depth3": "지출내역",
     "depth4": "상세",
@@ -289,7 +265,6 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=pay2",
-    "type": "page",
     "depth2": "소비",
     "depth3": "지출내역",
     "depth4": "상세",
@@ -300,7 +275,6 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=pay3",
-    "type": "page",
     "depth2": "소비",
     "depth3": "지출내역",
     "depth4": "상세",
@@ -311,7 +285,6 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=bank",
-    "type": "page",
     "depth2": "소비",
     "depth3": "지출내역",
     "depth4": "상세",
@@ -322,7 +295,6 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=none",
-    "type": "page",
     "depth2": "소비",
     "depth3": "지출내역",
     "depth4": "상세",

@@ -5,7 +5,6 @@
   {
     "id": "MCC01-0000001C",
     "url": "../../admin/html/MCC/",
-    "type": "page",
     "depth2": "로그인",
     "worker": "변상우",
     "complete": "2022-03-10",
@@ -14,7 +13,6 @@
   {
     "id": "MCC01-0000002C",
     "url": "../../admin/html/MCC/",
-    "type": "page",
     "depth2": "비밀번호 변경",
     "worker": "변상우",
     "complete": "2022-03-10",
@@ -23,7 +21,6 @@
   {
     "id": "MCC02-0000001C",
     "url": "../../admin/html/MCC/",
-    "type": "page",
     "depth2": "비밀번호 변경(초기화 후 변경)",
     "worker": "변상우",
     "complete": "2022-03-10",
@@ -32,7 +29,6 @@
   {
     "id": "MCC02-0000002C",
     "url": "../../admin/html/MCC/",
-    "type": "page",
     "depth2": "비밀번호 변경(선택적 변경 화면)",
     "worker": "변상우",
     "complete": "2022-03-10",
