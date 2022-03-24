@@ -4744,7 +4744,7 @@ ui.Scroll = {
 ui.Animation = {
   sclIdx: 0,
   sclReady: function (target) {
-    const $animations = $.find('*[data-animation]');
+    const $animations = $('[data-animation]');
     $.each($animations, function () {
       const $el = $(this);
       const $delay = parseInt($el.data('delay'));
@@ -4799,14 +4799,16 @@ ui.Animation = {
     }
     return returnVal;
   },
-  sclCheckIn: function () {
-    const $target = $.find('*[data-animation]');
-    const $window = $(window);
-    const $wHeight = $window.height();
-    const $scrollTop = $window.scrollTop();
-    const $winTop = $scrollTop + $wHeight / 10;
-    const $winCenter = $scrollTop + $wHeight / 2;
-    const $winBottom = $scrollTop + ($wHeight / 10) * 9;
+  sclCheckIn: function (target, wrap) {
+    // const $target = $.find('*[data-animation]');
+    const $target = target;
+    const $isWin = wrap === window ? true : false;
+    const $wrap = $(wrap);
+    const $wHeight = $wrap.height();
+    const $scrollTop = $wrap.scrollTop();
+    const $wrapTop = $scrollTop + $wHeight / 10;
+    const $wrapCenter = $scrollTop + $wHeight / 2;
+    const $wrapBottom = $scrollTop + ($wHeight / 10) * 9;
 
     $.each($target, function () {
       const $el = $(this);
@@ -4817,7 +4819,9 @@ ui.Animation = {
       if ($matrixX === undefined) $matrixX = 0;
       let $matrixY = $matrixAry[13] || $matrixAry[5];
       if ($matrixY === undefined) $matrixY = 0;
-      const $elTop = $el.offset().top - $matrixY;
+      let $elTop = $el.offset().top - $matrixY;
+      if (!$isWin) $elTop = $elTop + $scrollTop;
+      console.log($elTop);
       // console.log($el.offset().top, $matrixY, $elTop)
       const $elCenter = $elTop + $elHeight / 2;
       const $elBottom = $elTop + $elHeight;
@@ -4825,7 +4829,7 @@ ui.Animation = {
       const $animationClass = ui.Animation.sclTypeChk($el);
 
       if ($el.data('init')) return;
-      if (($winTop <= $elTop && $elTop <= $winBottom) || ($winTop <= $elBottom && $elBottom <= $winBottom)) {
+      if (($wrapTop <= $elTop && $elTop <= $wrapBottom) || ($wrapTop <= $elBottom && $elBottom <= $wrapBottom)) {
         ui.Animation.sclAction($el);
       } else {
         const $timer = $el.data('time');
@@ -5030,15 +5034,26 @@ ui.Animation = {
   },
   sclAray: [],
   init: function () {
-    const $animations = $.find('*[data-animation]');
+    const $animations = $('[data-animation]');
     if ($animations.length > 0) {
       ui.Animation.sclReady();
-      // $(window).on('scroll resize', function () {
-      //   ui.Animation.sclCheckIn($animations);
-      // });
-      ui.Animation.sclCheckIn();
-      window.addEventListener('scroll', ui.Util.debounce(ui.Animation.sclCheckIn, 100));
-      window.addEventListener('resize', ui.Util.debounce(ui.Animation.sclCheckIn, 100));
+      const $boayEl = function () {
+        const rtnVal = [];
+        $animations.each(function () {
+          const $this = $(this);
+          if (!$this.closest('.popup').length) rtnVal.push(this);
+        });
+        return rtnVal;
+      };
+      if ($boayEl().length) {
+        ui.Animation.sclCheckIn($boayEl(), window);
+        $(window).on(
+          'scroll resize',
+          _.debounce(function () {
+            ui.Animation.sclCheckIn($boayEl(), window);
+          }, 100)
+        );
+      }
 
       /*
       if (!'IntersectionObserver' in window && !'IntersectionObserverEntry' in window && !'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
@@ -5623,6 +5638,155 @@ const Layer = {
     Layer.pdfIdx += 1;
     Layer.open('#' + pdfPopId);
   },
+  agreeAllIdx: 0,
+  agreeTitClassName: 'pop-agree-tit',
+  agreeBtnClassName: 'ui-pop-agree-btn',
+  agreeCheckedClassName: 'ui-pop-agree-checked',
+  agreeCheckboxClassName: 'ui-pop-agree-chk',
+  agreeAll: function ($ary) {
+    const $setPopup = function (targetId) {
+      const $input = $(targetId);
+      const $pop = $input.data('agree-pop');
+      $($pop)
+        .addClass(Layer.agreePopClass)
+        .find('.' + Layer.footClass + ' .button')
+        .data('agree-input', targetId);
+      return $pop;
+    };
+    const $popAry = [];
+    for (let i = 0; i < $ary.length; i++) {
+      const $inputId = $.trim($ary[i]);
+      const $pop = $setPopup($inputId);
+      const $obj = {
+        input: $inputId,
+        pop: $pop
+      };
+      $popAry.push($obj);
+    }
+
+    const agreePopId = 'uiPopAgreeAll' + Layer.agreeAllIdx;
+    let $html =
+      '<div id="' + agreePopId + '" class="' + Layer.popClass + ' full ' + Layer.agreePopClass + ' ' + Layer.agreePopSwiperClass + ' ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
+    $html += '<article class="' + Layer.wrapClass + '">';
+    $html += '<div class="' + Layer.headClass + '">';
+    $html += '  <div class="' + Layer.agreeTitClassName + '">';
+    $html += '    <div class="swiper-pagination" aria-hidden="true"></div>';
+    $html += '    <h1></h1>';
+    $html += '    <a href="#none" class="pop-close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>';
+    $html += '  </div>';
+    $html += '</div>';
+    $html += '<div class="' + Layer.bodyClass + '">';
+    $html += '  <div class="ui-swiper agree-swiper">';
+    $html += '    <div class="swiper">';
+    $html += '      <div class="swiper-wrapper"></div>';
+    $html += '      </div>';
+    $html += '  </div>';
+    $html += '</div>';
+    $html += '<div class="' + Layer.footClass + '">';
+    $html += '  <div>';
+    // $html += '    <div class="flex">';
+    // $html += '      <a href="#none" class="button primary ui-pop-agree-all-btn" role="button"></a>';
+    // $html += '    </div>';
+    $html += '  </div>';
+    $html += '</div>';
+    $html += '</article>';
+    $html += '</div>';
+
+    if ($('#wrap').length) {
+      $('#wrap').append($html);
+    } else {
+      $('body').append($html);
+    }
+    Layer.agreeAllIdx += 1;
+    const $popup = $('#' + agreePopId);
+    const $popupTit = $popup.find('.' + Layer.headClass + ' .' + Layer.agreeTitClassName + ' h1');
+    const $popupWrapper = $popup.find('.swiper-wrapper');
+    const $popupFoot = $popup.find('.' + Layer.footClass);
+    for (let i = 0; i < $popAry.length; i++) {
+      const $inp = $popAry[i].input;
+      const $inpPop = $($popAry[i].pop);
+      const $inpPopTit = $inpPop.find('.' + Layer.headClass + ' h1').html();
+      $popupTit.append('<span>' + $inpPopTit + '</span>');
+      const $btnHtml =
+        '<div class="flex"><button type="button" class="button primary ' + Layer.agreeCheckedClassName + '" role="button" data-agree-input="' + $inp + '" data-index="' + i + '">확인</button></div>';
+      $popupFoot.find('>div').append($btnHtml);
+      const $slideHtml = '<div class="swiper-slide"></div>';
+      $popupWrapper.append($slideHtml);
+      const $inpPopBody = $inpPop
+        .find('.' + Layer.bodyClass)
+        .children()
+        .clone();
+      $popupWrapper.find('.swiper-slide').last().append($inpPopBody);
+      if (i !== 0) {
+        $popupTit.find('>span').eq(i).hide();
+        $popupFoot.find('.flex').eq(i).hide();
+      }
+    }
+
+    let agreeSwiper;
+    Layer.open($popup, function () {
+      const $popWrap = $popup.find('.' + Layer.wrapClass);
+      const $popSwiper = $popup.find('.agree-swiper .swiper');
+      const $popSwiperPagination = $popup.find('.swiper-pagination');
+      agreeSwiper = new Swiper($popSwiper[0], {
+        pagination: {
+          el: $popSwiperPagination[0],
+          type: 'progressbar',
+          clickable: false
+        },
+        allowTouchMove: false,
+        autoHeight: true,
+        on: {
+          slideChangeTransitionEnd: function (e) {
+            const $idx = e.realIndex;
+            $popupTit.find('>span').eq($idx).show().siblings('span').hide();
+            $popupFoot.find('.flex').eq($idx).show().siblings().hide();
+            $popWrap.animate({ scrollTop: 0 }, 100).scroll();
+          }
+        }
+      });
+      $popup.find('.agree-swiper').data('swiper', agreeSwiper);
+      $popWrap.scroll();
+    });
+    $popup.find('.pop-close').click(function (e) {
+      e.preventDefault();
+      Layer.close('#' + agreePopId, function () {
+        agreeSwiper.destroy();
+      });
+    });
+  },
+  agree: function (element) {
+    const $ary = element.split(',');
+    const $setPopup = function (targetId) {
+      const $input = $(targetId);
+      const $pop = $input.data('agree-pop');
+      $($pop)
+        .addClass(Layer.agreePopClass)
+        .find('.' + Layer.footClass + ' .button')
+        .data('agree-input', targetId);
+      return $pop;
+    };
+
+    if ($ary.length > 1) {
+      Layer.agreeAll($ary);
+      /*
+      for (let i = 0; i < $ary.length; i++) {
+        const $inputId = $.trim($ary[$ary.length - i - 1]);
+        const $pop = $setPopup($inputId);
+        setTimeout(function () {
+          Layer.open($pop);
+        }, i * 100);
+      }
+      */
+    } else {
+      const $pop = $setPopup($ary[0]);
+      Layer.open($pop, function () {
+        $($pop)
+          .find('.' + Layer.bodyClass)
+          .scroll();
+      });
+    }
+  },
   selectId: 'uiSelectLayer',
   selectIdx: 0,
   selectClass: 'ui-pop-select',
@@ -5948,6 +6112,132 @@ const Layer = {
         $this.removeData('is-full');
         // $distanceAry = [];
       });
+  },
+  toast: function (txt, fn, type, delayTime) {
+    if (type === undefined) type = 'toast';
+    const $isAlarm = type === 'alarm';
+    const $isFn = !!fn;
+    const $className = '.' + type + '-box';
+
+    if (delayTime == undefined) delayTime = 2000;
+
+    let $boxHtml = '<div class="' + $className.substring(1) + '">';
+    $boxHtml += '<div>';
+    if ($isFn) {
+      $boxHtml += '<a href="#" role="button" class="txt">' + txt + '</a>';
+    } else {
+      $boxHtml += '<div class="txt">' + txt + '</div>';
+    }
+    if ($isAlarm) {
+      $boxHtml += '<button type="button" class="close">닫기</button>';
+    }
+    $boxHtml += '</div>';
+    $boxHtml += '</div>';
+    $('#container').before($boxHtml);
+    const $toast = $($className).last();
+    const $toastClose = function () {
+      $toast.removeClass('on');
+      $toast.one('transitionend', function () {
+        $(this).remove();
+      });
+    };
+    const $spaceH = $('.bottom-fixed-space').outerHeight();
+    if ($spaceH) {
+      // const $top = parseInt($toast.css('bottom'));
+      // $toast.css('bottom', $top + $spaceH);
+      $toast.css('bottom', $spaceH);
+    }
+    $toast.addClass('on');
+    let $closeTime;
+    if (!$isAlarm) {
+      $closeTime = setTimeout($toastClose, delayTime);
+    }
+    if ($isFn) {
+      $toast.find('a.txt').one('click', function (e) {
+        e.preventDefault();
+        fn();
+
+        // 이벤트 실행시 바로 닫기
+        clearTimeout($closeTime);
+        $toastClose();
+      });
+    }
+  },
+  alarm: function (txt, fn, delayTime) {
+    Layer.toast(txt, fn, 'alarm', delayTime);
+  },
+  page: function (elment) {
+    const $elment = $(elment);
+    /*
+    $elment.each(function () {
+      const $this = $(this);
+      if (!$this.closest('.popup').length) {
+        $this.addClass('page');
+        const $body = $this.find('.pop-body');
+        const $foot = $this.find('.pop-foot');
+        if ($body.length && $foot.length) $body.addClass('next-foot');
+      }
+    });
+    */
+
+    if ($elment.closest('.' + Layer.popClass).length) {
+      $elment.removeClass(Layer.pageClass);
+      return;
+    }
+    const $wrap = $elment.hasClass(Layer.wrapClass) ? $elment : $elment.find('.' + Layer.wrapClass);
+    const $body = $wrap.find('.' + Layer.bodyClass);
+    const $foot = $wrap.find('.' + Layer.footClass);
+    if ($body.length && $foot.length) $body.addClass('next-foot');
+
+    Layer.fixed($wrap);
+    $(window).scroll(function () {
+      Layer.fixed($wrap);
+    });
+  },
+  loadIdx: 0,
+  load: function ($url, $type) {
+    const popId = 'popLoad-' + Layer.loadIdx;
+    Layer.loadIdx += 1;
+    let $html = '<div id="' + popId + '" class="' + Layer.popClass + ' ' + $type + ' ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
+    $html += '</div>';
+
+    if ($('#wrap').length) {
+      $('#wrap').append($html);
+    } else {
+      $('body').append($html);
+    }
+
+    const $pop = $('#' + popId);
+    const $loadId = '#load';
+    $pop.load($url + ' ' + $loadId, function (res, sta, xhr) {
+      const $this = $(this);
+      if (sta == 'success') {
+        const $popWrap = $('#' + popId).find($loadId);
+        if ($popWrap.hasClass(Layer.wrapClass)) {
+          $popWrap.removeAttr('id');
+        } else {
+          $popWrap.children().unwrap();
+        }
+        $('#' + popId)
+          .find('.' + Layer.wrapClass)
+          .removeClass(Layer.pageClass);
+        $('#' + popId)
+          .find('.' + Layer.headClass + ' .pop-close')
+          .addClass('ui-pop-close');
+        Layer.open('#' + popId);
+        /*
+        if ($(res).find('script').length) {
+          $(res)
+            .find('script')
+            .each(function () {
+              $(this).appendTo($this);
+            });
+        }
+        */
+      } else {
+        $('#' + popId).remove();
+      }
+    });
   },
   reOpen: false,
   openEl: '',
@@ -6354,155 +6644,6 @@ const Layer = {
       });
     }
   },
-  agreeAllIdx: 0,
-  agreeTitClassName: 'pop-agree-tit',
-  agreeBtnClassName: 'ui-pop-agree-btn',
-  agreeCheckedClassName: 'ui-pop-agree-checked',
-  agreeCheckboxClassName: 'ui-pop-agree-chk',
-  agreeAll: function ($ary) {
-    const $setPopup = function (targetId) {
-      const $input = $(targetId);
-      const $pop = $input.data('agree-pop');
-      $($pop)
-        .addClass(Layer.agreePopClass)
-        .find('.' + Layer.footClass + ' .button')
-        .data('agree-input', targetId);
-      return $pop;
-    };
-    const $popAry = [];
-    for (let i = 0; i < $ary.length; i++) {
-      const $inputId = $.trim($ary[i]);
-      const $pop = $setPopup($inputId);
-      const $obj = {
-        input: $inputId,
-        pop: $pop
-      };
-      $popAry.push($obj);
-    }
-
-    const agreePopId = 'uiPopAgreeAll' + Layer.agreeAllIdx;
-    let $html =
-      '<div id="' + agreePopId + '" class="' + Layer.popClass + ' full ' + Layer.agreePopClass + ' ' + Layer.agreePopSwiperClass + ' ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
-    $html += '<article class="' + Layer.wrapClass + '">';
-    $html += '<div class="' + Layer.headClass + '">';
-    $html += '  <div class="' + Layer.agreeTitClassName + '">';
-    $html += '    <div class="swiper-pagination" aria-hidden="true"></div>';
-    $html += '    <h1></h1>';
-    $html += '    <a href="#none" class="pop-close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>';
-    $html += '  </div>';
-    $html += '</div>';
-    $html += '<div class="' + Layer.bodyClass + '">';
-    $html += '  <div class="ui-swiper agree-swiper">';
-    $html += '    <div class="swiper">';
-    $html += '      <div class="swiper-wrapper"></div>';
-    $html += '      </div>';
-    $html += '  </div>';
-    $html += '</div>';
-    $html += '<div class="' + Layer.footClass + '">';
-    $html += '  <div>';
-    // $html += '    <div class="flex">';
-    // $html += '      <a href="#none" class="button primary ui-pop-agree-all-btn" role="button"></a>';
-    // $html += '    </div>';
-    $html += '  </div>';
-    $html += '</div>';
-    $html += '</article>';
-    $html += '</div>';
-
-    if ($('#wrap').length) {
-      $('#wrap').append($html);
-    } else {
-      $('body').append($html);
-    }
-    Layer.agreeAllIdx += 1;
-    const $popup = $('#' + agreePopId);
-    const $popupTit = $popup.find('.' + Layer.headClass + ' .' + Layer.agreeTitClassName + ' h1');
-    const $popupWrapper = $popup.find('.swiper-wrapper');
-    const $popupFoot = $popup.find('.' + Layer.footClass);
-    for (let i = 0; i < $popAry.length; i++) {
-      const $inp = $popAry[i].input;
-      const $inpPop = $($popAry[i].pop);
-      const $inpPopTit = $inpPop.find('.' + Layer.headClass + ' h1').html();
-      $popupTit.append('<span>' + $inpPopTit + '</span>');
-      const $btnHtml =
-        '<div class="flex"><button type="button" class="button primary ' + Layer.agreeCheckedClassName + '" role="button" data-agree-input="' + $inp + '" data-index="' + i + '">확인</button></div>';
-      $popupFoot.find('>div').append($btnHtml);
-      const $slideHtml = '<div class="swiper-slide"></div>';
-      $popupWrapper.append($slideHtml);
-      const $inpPopBody = $inpPop
-        .find('.' + Layer.bodyClass)
-        .children()
-        .clone();
-      $popupWrapper.find('.swiper-slide').last().append($inpPopBody);
-      if (i !== 0) {
-        $popupTit.find('>span').eq(i).hide();
-        $popupFoot.find('.flex').eq(i).hide();
-      }
-    }
-
-    let agreeSwiper;
-    Layer.open($popup, function () {
-      const $popWrap = $popup.find('.' + Layer.wrapClass);
-      const $popSwiper = $popup.find('.agree-swiper .swiper');
-      const $popSwiperPagination = $popup.find('.swiper-pagination');
-      agreeSwiper = new Swiper($popSwiper[0], {
-        pagination: {
-          el: $popSwiperPagination[0],
-          type: 'progressbar',
-          clickable: false
-        },
-        allowTouchMove: false,
-        autoHeight: true,
-        on: {
-          slideChangeTransitionEnd: function (e) {
-            const $idx = e.realIndex;
-            $popupTit.find('>span').eq($idx).show().siblings('span').hide();
-            $popupFoot.find('.flex').eq($idx).show().siblings().hide();
-            $popWrap.animate({ scrollTop: 0 }, 100).scroll();
-          }
-        }
-      });
-      $popup.find('.agree-swiper').data('swiper', agreeSwiper);
-      $popWrap.scroll();
-    });
-    $popup.find('.pop-close').click(function (e) {
-      e.preventDefault();
-      Layer.close('#' + agreePopId, function () {
-        agreeSwiper.destroy();
-      });
-    });
-  },
-  agree: function (element) {
-    const $ary = element.split(',');
-    const $setPopup = function (targetId) {
-      const $input = $(targetId);
-      const $pop = $input.data('agree-pop');
-      $($pop)
-        .addClass(Layer.agreePopClass)
-        .find('.' + Layer.footClass + ' .button')
-        .data('agree-input', targetId);
-      return $pop;
-    };
-
-    if ($ary.length > 1) {
-      Layer.agreeAll($ary);
-      /*
-      for (let i = 0; i < $ary.length; i++) {
-        const $inputId = $.trim($ary[$ary.length - i - 1]);
-        const $pop = $setPopup($inputId);
-        setTimeout(function () {
-          Layer.open($pop);
-        }, i * 100);
-      }
-      */
-    } else {
-      const $pop = $setPopup($ary[0]);
-      Layer.open($pop, function () {
-        $($pop)
-          .find('.' + Layer.bodyClass)
-          .scroll();
-      });
-    }
-  },
   position: function (tar) {
     const $popup = $(tar);
     if (!$popup.hasClass(Layer.showClass)) return false;
@@ -6556,18 +6697,20 @@ const Layer = {
     Layer.fixed($wrap);
 
     let $lastSclTop = 0;
-    $wrap.off('scroll').on('scroll', function () {
+    $wrap.off('scroll resize').on('scroll', function () {
       const $this = $(this);
       const $agreeBtn = $this.find('.' + Layer.agreeBtnClassName);
       const $wrapSclTop = $this.scrollTop();
       const $wrapH = $this.outerHeight();
       const $wrapSclH = $this[0].scrollHeight;
+
+      //약관
       if ($isAgree && $agreeBtn.length) {
         if ($lastSclTop === 0) $lastSclTop = -1;
         if ($wrapSclTop + $wrapH >= $wrapSclH - 10 && $lastSclTop < $wrapSclTop) {
           $agreeBtn.each(function () {
             const $parent = $(this).parent();
-            if ($(this).parent().is(':visible')) {
+            if ($parent.is(':visible')) {
               $(this).next().show();
               $(this).remove();
             }
@@ -6575,8 +6718,11 @@ const Layer = {
         }
         $lastSclTop = $wrapSclTop;
       }
+
+      // 고정확인
       Layer.fixed($this);
 
+      // bg origin
       const $sclHead = $this.find('.ui-pop-header-bg-origin');
       const $headH = $head.outerHeight();
       if ($head.length && $sclHead.length) {
@@ -6587,10 +6733,28 @@ const Layer = {
         }
       }
 
+      // title show
       const $fadeTitle = $this.find('.' + Layer.scrollShowTitleClass);
       const $headerTit = $head.find('h1');
       if ($fadeTitle.length && $headerTit.length) ui.Common.scrollShowTitle($fadeTitle[0], $this[0], $head[0], $headerTit[0]);
     });
+
+    // const $sclEvt = $wrap.data('sclEvt');
+    // if (!$sclEvt) {
+    //   $wrap.data('sclEvt', true);
+    const $animation = $wrap.find('[data-animation]');
+    if ($animation.length) {
+      setTimeout(function () {
+        ui.Animation.sclCheckIn($animation, $wrap);
+      }, 500);
+      $wrap.on(
+        'scroll resize',
+        _.debounce(function () {
+          ui.Animation.sclCheckIn($animation, $wrap);
+        }, 100)
+      );
+    }
+    // }
   },
   focusMove: function (tar) {
     if (!$(tar).hasClass(Layer.showClass)) return false;
@@ -6652,132 +6816,6 @@ const Layer = {
         $firstFocus.focus();
       }
     });
-  },
-  page: function (elment) {
-    const $elment = $(elment);
-    /*
-    $elment.each(function () {
-      const $this = $(this);
-      if (!$this.closest('.popup').length) {
-        $this.addClass('page');
-        const $body = $this.find('.pop-body');
-        const $foot = $this.find('.pop-foot');
-        if ($body.length && $foot.length) $body.addClass('next-foot');
-      }
-    });
-    */
-
-    if ($elment.closest('.' + Layer.popClass).length) {
-      $elment.removeClass(Layer.pageClass);
-      return;
-    }
-    const $wrap = $elment.hasClass(Layer.wrapClass) ? $elment : $elment.find('.' + Layer.wrapClass);
-    const $body = $wrap.find('.' + Layer.bodyClass);
-    const $foot = $wrap.find('.' + Layer.footClass);
-    if ($body.length && $foot.length) $body.addClass('next-foot');
-
-    Layer.fixed($wrap);
-    $(window).scroll(function () {
-      Layer.fixed($wrap);
-    });
-  },
-  loadIdx: 0,
-  load: function ($url, $type) {
-    const popId = 'popLoad-' + Layer.loadIdx;
-    Layer.loadIdx += 1;
-    let $html = '<div id="' + popId + '" class="' + Layer.popClass + ' ' + $type + ' ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
-    $html += '</div>';
-
-    if ($('#wrap').length) {
-      $('#wrap').append($html);
-    } else {
-      $('body').append($html);
-    }
-
-    const $pop = $('#' + popId);
-    const $loadId = '#load';
-    $pop.load($url + ' ' + $loadId, function (res, sta, xhr) {
-      const $this = $(this);
-      if (sta == 'success') {
-        const $popWrap = $('#' + popId).find($loadId);
-        if ($popWrap.hasClass(Layer.wrapClass)) {
-          $popWrap.removeAttr('id');
-        } else {
-          $popWrap.children().unwrap();
-        }
-        $('#' + popId)
-          .find('.' + Layer.wrapClass)
-          .removeClass(Layer.pageClass);
-        $('#' + popId)
-          .find('.' + Layer.headClass + ' .pop-close')
-          .addClass('ui-pop-close');
-        Layer.open('#' + popId);
-        /*
-        if ($(res).find('script').length) {
-          $(res)
-            .find('script')
-            .each(function () {
-              $(this).appendTo($this);
-            });
-        }
-        */
-      } else {
-        $('#' + popId).remove();
-      }
-    });
-  },
-  toast: function (txt, fn, type, delayTime) {
-    if (type === undefined) type = 'toast';
-    const $isAlarm = type === 'alarm';
-    const $isFn = !!fn;
-    const $className = '.' + type + '-box';
-
-    if (delayTime == undefined) delayTime = 2000;
-
-    let $boxHtml = '<div class="' + $className.substring(1) + '">';
-    $boxHtml += '<div>';
-    if ($isFn) {
-      $boxHtml += '<a href="#" role="button" class="txt">' + txt + '</a>';
-    } else {
-      $boxHtml += '<div class="txt">' + txt + '</div>';
-    }
-    if ($isAlarm) {
-      $boxHtml += '<button type="button" class="close">닫기</button>';
-    }
-    $boxHtml += '</div>';
-    $boxHtml += '</div>';
-    $('#container').before($boxHtml);
-    const $toast = $($className).last();
-    const $toastClose = function () {
-      $toast.removeClass('on');
-      $toast.one('transitionend', function () {
-        $(this).remove();
-      });
-    };
-    const $spaceH = $('.bottom-fixed-space').outerHeight();
-    if ($spaceH) {
-      // const $top = parseInt($toast.css('bottom'));
-      // $toast.css('bottom', $top + $spaceH);
-      $toast.css('bottom', $spaceH);
-    }
-    $toast.addClass('on');
-    let $closeTime;
-    if (!$isAlarm) {
-      $closeTime = setTimeout($toastClose, delayTime);
-    }
-    if ($isFn) {
-      $toast.find('a.txt').one('click', function (e) {
-        e.preventDefault();
-        fn();
-
-        // 이벤트 실행시 바로 닫기
-        clearTimeout($closeTime);
-        $toastClose();
-      });
-    }
-  },
-  alarm: function (txt, fn, delayTime) {
-    Layer.toast(txt, fn, 'alarm', delayTime);
   },
   init: function () {
     if ($('.' + Layer.popClass + '.' + Layer.showClass + '[aria-hidden="true"]').length) {
