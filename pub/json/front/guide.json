@@ -5,7 +5,6 @@
   {
     "id":"guide-layout",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "레이아웃",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -13,7 +12,6 @@
   {
     "id":"guide-layout2",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "레이아웃2",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -21,7 +19,6 @@
   {
     "id":"guide-dev",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "개발 참고 퍼블가이드",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -29,7 +26,6 @@
   {
     "id":"guide-txt",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "텍스트 가이드",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -37,7 +33,6 @@
   {
     "id":"guide-font",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "폰트 가이드",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -45,7 +40,6 @@
   {
     "id":"guide-btn",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "버튼 가이드",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -54,7 +48,6 @@
   {
     "id":"guide-form",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "form 가이드",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -62,7 +55,6 @@
   {
     "id":"guide-form2",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "기타 입력 UI",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -70,7 +62,6 @@
   {
     "id":"guide-agree",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "약관",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -78,7 +69,6 @@
   {
     "id":"guide-list",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "리스트 가이드",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -86,7 +76,6 @@
   {
     "id":"guide-table",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "테이블 가이드",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -94,7 +83,6 @@
   {
     "id":"guide-popup",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "팝업 가이드",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -102,7 +90,6 @@
   {
     "id":"guide-chart",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "차트",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -110,7 +97,6 @@
   {
     "id":"guide-animate",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "애니메이션",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -118,7 +104,6 @@
   {
     "id":"guide-swiper",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "swiper",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -126,7 +111,6 @@
   {
     "id":"guide-address",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "우편번호",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -134,7 +118,6 @@
   {
     "id":"guide-etc",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "기타",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -142,7 +125,6 @@
   {
     "id":"guide-search",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "검색",
     "worker": "안효주",
     "complete": "9999-99-99"
@@ -150,7 +132,6 @@
   {
     "id":"guide-test",
     "url":"../../front/html/guide/",
-    "type":"page",
     "name": "테스트",
     "worker": "안효주",
     "complete": "9999-99-99"

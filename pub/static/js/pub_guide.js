@@ -180,10 +180,12 @@ const makeBoard = function () {
             trHtml += '<td class="id"><a href="' + $url + '" target="_blank">' + obj.id + '</a></td>';
           }
         }
-        if (obj.type === undefined || obj.type === '') {
+        if (obj.id === undefined || obj.id === '') {
           trHtml += '<td></td>';
+        } else if (obj.id.indexOf('p') >= 0) {
+          trHtml += '<td> popup </td>';
         } else {
-          trHtml += '<td>' + obj.type + '</td>';
+          trHtml += '<td> page </td>';
         }
         if (obj.depth2 === undefined || obj.depth2 === '') {
           trHtml += '<td></td>';
