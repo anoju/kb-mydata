@@ -1403,7 +1403,11 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     min-height: 1rem;
     padding-left: 1rem;
     display: inline-block;
+    vertical-align: middle;
     margin-bottom: 0;
+    .custom-control-input {
+      height: 1rem;
+    }
     .custom-control-label {
       position: static;
       &:before {
