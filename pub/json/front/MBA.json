@@ -23,6 +23,9 @@
     "complete": "2022-03-25"
   },
   {
+    "depth1": "1:1 매치"
+  },
+  {
     "id": "MBA05-0200p01C",
     "url": "../../front/html/MBA/",
     "type": "pop",
@@ -33,7 +36,7 @@
     "complete": "2022-03-04"
   },
   {
-    "id": "MBA05-0201p01C",
+    "id": "MBA05-0100001C",
     "url": "../../front/html/MBA/",
     "type": "page",
     "depth2": "1:1 매치",
@@ -41,6 +44,29 @@
     "name": "매치중",
     "worker": "장영석",
     "complete": "2022-03-15",
+    "change":"2022-03-24",
+    "etc": "화면 ID 변경 <br />승리, 패배, 무승부 케이스 존재"
+  },
+  {
+    "id": "MBA05-0101001C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "1:1 매치",
+    "depth3": "매치결과",
+    "name": "매치결과",
+    "worker": "장영석",
+    "complete": "2022-03-24",
+    "etc": ""
+  },
+  {
+    "id": "MBA05-0101002C",
+    "url": "../../front/html/MBA/",
+    "type": "page",
+    "depth2": "1:1 매치",
+    "depth3": "매치결과 공유 컨텐츠",
+    "name": "매치결과 공유 컨텐츠",
+    "worker": "장영석",
+    "complete": "2022-03-24",
     "etc": ""
   },
   {
