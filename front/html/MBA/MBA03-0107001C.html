@@ -66,7 +66,8 @@
               <p class="left">별명</p>
               <p class="right txt-count"><strong id="count1">0</strong>/12</p>
             </div>
-            <input id="input" type="text" maxlength="12" placeholder="변경할 별명을 입력하세요" title="별명입력" maxlength="60" data-text-count="count1" />
+            <!-- 2022-03-24 : 중복속성 및 불필요 제거 -->
+            <input type="text" placeholder="변경할 별명을 입력하세요" title="별명입력" maxlength="12" data-text-count="count1" />
           </div>
           <p class="mg-20x mt-8 fz-12 fc-b9c1c9"><strong class="fc-818892 fw-500">3</strong>회 남음 : 최근 7일 이내 3회 변경 가능</p>
 
@@ -74,9 +75,11 @@
           <div class="input form-box mt-32">
             <div class="form-lbl">
               <p class="left">자기소개</p>
-              <p class="right txt-count"><strong id="count1">0</strong>/20</p>
+              <!-- 2022-03-24 : 중복 ID 변경 -->
+              <p class="right txt-count"><strong id="count2">0</strong>/20</p>
             </div>
-            <input id="input" type="text" maxlength="20" placeholder="나를 소개하는 한마디를 적어주세요" title="자기소개입력" maxlength="60" data-text-count="count1" />
+            <!-- 2022-03-24 : 중복속성 및 불필요 제거 -->
+            <input type="text" placeholder="나를 소개하는 한마디를 적어주세요" title="자기소개입력" maxlength="20" data-text-count="count2" />
           </div>
         </div>
 
