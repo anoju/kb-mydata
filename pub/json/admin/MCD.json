@@ -34,6 +34,7 @@
     "url": "../../admin/html/MCD/",
     "depth2": "권한설정",
     "depth3": "관리자그룹관리",
+    "name": "권한설정 관리자그룹관리",
     "worker": "변상우",
     "complete": "2022-03-14",
     "etc": "그룹등록 및 그룹수정팝업 포함"
@@ -43,6 +44,7 @@
     "url": "../../admin/html/MCD/",
     "depth2": "권한설정",
     "depth3": "관리자메뉴관리",
+    "name": "권한설정 관리자메뉴관리",
     "worker": "변상우",
     "complete": "2022-03-14",
     "change": "2022-03-25",
@@ -53,7 +55,8 @@
       "url": "../../admin/html/MCD/",
       "type": "page",
       "depth2": "권한설정",
-      "depth3": "관리자 권한 설정",
+      "depth3": "관리자권한설정",
+      "name": "권한설정 관리자권한설정",
       "worker": "변상우",
       "complete": "2022-03-14",
       "etc": ""
