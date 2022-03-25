@@ -1,0 +1,14 @@
+[
+  {
+    "depth1": "시스템관리"
+  },
+  {
+    "state": "del",
+    "id": "MCH01-0100001C",
+    "url": "../../admin/html/MCH/",
+    "depth2": "코드관리",
+    "name": "코드관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-25"
+  }
+]

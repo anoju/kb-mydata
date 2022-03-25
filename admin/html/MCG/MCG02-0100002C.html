@@ -22,6 +22,10 @@
     <script src="../../lib/ckeditor/ckeditor.js"></script>
     <script src="../../js/custom.lib.min.js"></script>
     <script src="../../js/custom.js"></script>
+
+    <!-- 2022-03-25: lightbox -->
+    <link rel="stylesheet" href="../../lib/lightbox/ekko-lightbox.css" />
+    <script src="../../lib/lightbox/ekko-lightbox.min.js"></script>
   </head>
   <body>
     <!-- wrap -->
@@ -68,7 +72,7 @@
                 <div class="form-box-cont">
                   <div class="custom-control-wrap">
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" value="investMain" name="investChannel" class="custom-control-input" />
+                      <input type="radio" value="investMain" name="investChannel" class="custom-control-input" checked />
                       <span class="custom-control-label">투자메인</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
@@ -92,11 +96,12 @@
               </div>
             </div>
 
-            <div data-table="artInvest-table" class="form-box-row channel-title">
+            <div data-table="artInvest-table" class="form-box-row channel-title" style="display: none">
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>채널 타이틀</div>
                 <div class="form-box-cont">
-                  <textarea id="editor-1" name="editordata1"></textarea>
+                  <!-- 2022-03-25: 에디터 제외 처리-->
+                  <textarea class="form-control" rows="2"></textarea>
                 </div>
               </div>
             </div>
@@ -114,13 +119,17 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 썸네일</div>
                 <div class="form-box-cont">
                   <!-- 미리보기 아이콘 이미지 -->
+
+                  <!-- 2022-03-25: lightbox -->
                   <!-- 이미지 없을때 -->
                   <div class="img-box w-120 mb-2">
                     <small>등록된 이미지가<br />없습니다.</small>
                   </div>
-
                   <!-- 이미지 있을때 -->
-                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+                  <div class="img-box w-120 mb-2">
+                    <a href="../../images/temp/thumb-temp2.jpg" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
+                  </div>
+
                   <div class="custom-file">
                     <!-- 2022-03-24: aria-describedby 속성 제거 및 텍스트 수정 -->
                     <input type="file" class="custom-file-input" id="inputGroupFile01" />
@@ -236,13 +245,17 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 썸네일</div>
                 <div class="form-box-cont">
                   <!-- 미리보기 아이콘 이미지 -->
+
+                  <!-- 2022-03-25: lightbox -->
                   <!-- 이미지 없을때 -->
                   <div class="img-box w-120 mb-2">
                     <small>등록된 이미지가<br />없습니다.</small>
                   </div>
-
                   <!-- 이미지 있을때 -->
-                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+                  <div class="img-box w-120 mb-2">
+                    <a href="../../images/temp/thumb-temp2.jpg" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
+                  </div>
+
                   <!-- 2022-03-24 id값 수정,aria-describedby 속성 제거 -->
                   <div class="custom-file">
                     <input type="file" class="custom-file-input" id="inputGroupFile02" />
@@ -293,7 +306,8 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>금액타이틀</div>
                 <div class="form-box-cont">
                   <input type="text" class="form-control" />
-                  <div class="mt-1 text-info">※ 예)매각금액, 모집중 / 금액 왼쪽에 붙은 설명입니다.</div>
+                  <!-- 2022-03-25: 도움말 클래스 .help-txt로 통일(수정) -->
+                  <div class="mt-1 help-txt">※ 예)매각금액, 모집중 / 금액 왼쪽에 붙은 설명입니다.</div>
                 </div>
               </div>
             </div>
@@ -321,7 +335,8 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>태그</div>
                 <div class="form-box-cont">
                   <input type="text" class="form-control" />
-                  <div class="mt-1 text-info">※ 예시) #옥션진행중/입력 시 태그값만 노출됩니다. 6자 이내로 입력해 주세요.</div>
+                  <!-- 2022-03-25: 도움말 클래스 .help-txt로 통일(수정) -->
+                  <div class="mt-1 help-txt">※ 예시) #옥션진행중/입력 시 태그값만 노출됩니다. 6자 이내로 입력해 주세요.</div>
                 </div>
               </div>
             </div>
@@ -350,13 +365,16 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 썸네일</div>
                 <div class="form-box-cont">
                   <!-- 미리보기 아이콘 이미지 -->
+
+                  <!-- 2022-03-25: lightbox -->
                   <!-- 이미지 없을때 -->
                   <div class="img-box w-120 mb-2">
                     <small>등록된 이미지가<br />없습니다.</small>
                   </div>
-
                   <!-- 이미지 있을때 -->
-                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+                  <div class="img-box w-120 mb-2">
+                    <a href="../../images/temp/thumb-temp2.jpg" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
+                  </div>
 
                   <div class="custom-file">
                     <!-- 2022-03-24 id값 수정,aria-describedby 속성 제거 -->
@@ -384,7 +402,8 @@
                       <span class="custom-control-label">모집 완료</span>
                     </label>
                   </div>
-                  <div class="mt-1 text-info">※ 모집완료 선택 시 해당 게시물은 비노출 처리됩니다.</div>
+                  <!-- 2022-03-25: 도움말 클래스 .help-txt로 통일(수정) -->
+                  <div class="mt-1 help-txt">※ 모집완료 선택 시 해당 게시물은 비노출 처리됩니다.</div>
                 </div>
               </div>
             </div>
@@ -401,7 +420,8 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>태그</div>
                 <div class="form-box-cont">
                   <input type="text" class="form-control" />
-                  <div class="mt-1 text-info">※ 예) #영화, 전시회 등 / 태그값과 동일하게 라벨이 적용됩니다. 6자 이내로 입력해 주세요.</div>
+                  <!-- 2022-03-25: 도움말 클래스 .help-txt로 통일(수정) -->
+                  <div class="mt-1 help-txt">※ 예) #영화, 전시회 등 / 태그값과 동일하게 라벨이 적용됩니다. 6자 이내로 입력해 주세요.</div>
                 </div>
               </div>
             </div>
@@ -430,13 +450,17 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 썸네일</div>
                 <div class="form-box-cont">
                   <!-- 미리보기 아이콘 이미지 -->
+
+                  <!-- 2022-03-25: lightbox -->
                   <!-- 이미지 없을때 -->
                   <div class="img-box w-120 mb-2">
                     <small>등록된 이미지가<br />없습니다.</small>
                   </div>
-
                   <!-- 이미지 있을때 -->
-                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+                  <div class="img-box w-120 mb-2">
+                    <a href="../../images/temp/thumb-temp2.jpg" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
+                  </div>
+
                   <!-- 2022-03-24 id값 수정,aria-describedby 속성 제거 -->
                   <div class="custom-file">
                     <input type="file" class="custom-file-input" id="inputGroupFile04" />
@@ -463,7 +487,8 @@
                       <span class="custom-control-label">모집 완료</span>
                     </label>
                   </div>
-                  <div class="mt-1 text-info">※ 모집완료 선택 시 해당 게시물은 비노출 처리됩니다.</div>
+                  <!-- 2022-03-25: 도움말 클래스 .help-txt로 통일(수정) -->
+                  <div class="mt-1 help-txt">※ 모집완료 선택 시 해당 게시물은 비노출 처리됩니다.</div>
                 </div>
               </div>
             </div>
@@ -480,7 +505,8 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>태그</div>
                 <div class="form-box-cont">
                   <input type="text" class="form-control" />
-                  <div class="mt-1 text-info">※ 예시) #옥션진행중/입력 시 태그값만 노출됩니다. 6자 이내로 입력해 주세요.</div>
+                  <!-- 2022-03-25: 도움말 클래스 .help-txt로 통일(수정) -->
+                  <div class="mt-1 help-txt">※ 예시) #옥션진행중/입력 시 태그값만 노출됩니다. 6자 이내로 입력해 주세요.</div>
                 </div>
               </div>
             </div>
@@ -520,13 +546,17 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 썸네일</div>
                 <div class="form-box-cont">
                   <!-- 미리보기 아이콘 이미지 -->
+
+                  <!-- 2022-03-25: lightbox -->
                   <!-- 이미지 없을때 -->
                   <div class="img-box w-120 mb-2">
                     <small>등록된 이미지가<br />없습니다.</small>
                   </div>
-
                   <!-- 이미지 있을때 -->
-                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="아이콘 이미지" /></div>
+                  <div class="img-box w-120 mb-2">
+                    <a href="../../images/temp/thumb-temp2.jpg" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
+                  </div>
+
                   <!-- 2022-03-24 id값 수정,aria-describedby 속성 제거 -->
                   <div class="custom-file">
                     <input type="file" class="custom-file-input" id="inputGroupFile05" />
@@ -586,7 +616,8 @@
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>태그</div>
                 <div class="form-box-cont">
                   <input type="text" class="form-control" />
-                  <div class="mt-1 text-info">※ 예시) #옥션진행중/입력 시 태그값만 노출됩니다. 6자 이내로 입력해 주세요.</div>
+                  <!-- 2022-03-25: 도움말 클래스 .help-txt로 통일(수정) -->
+                  <div class="mt-1 help-txt">※ 예시) #옥션진행중/입력 시 태그값만 노출됩니다. 6자 이내로 입력해 주세요.</div>
                 </div>
               </div>
             </div>
@@ -614,7 +645,8 @@
                         <span class="custom-control-label">사용안함</span>
                       </label>
                     </div>
-                    <div class="help-txt">* 게시기간은 시작일의 0시 0분부터 종료일의 23:59을 기준으로 합니다.</div>
+                    <!-- 2022-03-25: * => ※, 도움말 클래스 .help-txt로 통일(수정) -->
+                    <div class="help-txt">※ 게시기간은 시작일의 0시 0분부터 종료일의 23:59을 기준으로 합니다.</div>
                   </div>
                   <!-- // 2022.03.24 게시기간 수정 -->
                 </div>
@@ -699,7 +731,7 @@
 
     <script>
       //에디터
-      CKEDITOR.replace('editor-1');
+      // CKEDITOR.replace('editor-1');
       CKEDITOR.replace('editor-2');
 
       //투자 채널 별 테이블

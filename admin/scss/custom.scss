@@ -68,6 +68,10 @@ pre,
 code {
   font-family: inherit;
 }
+ul,
+ol {
+  padding-inline-start: 1.2rem;
+}
 select,
 input,
 textarea,
@@ -163,6 +167,28 @@ html:not(.mobile) {
 @for $i from 1 through 5 {
   .ellipsis-#{$i} {
     @include ellipsis($i);
+  }
+}
+
+$grays: (
+  'gray-100': $gray-100,
+  'gray-200': $gray-200,
+  'gray-300': $gray-300,
+  'gray-400': $gray-400,
+  'gray-500': $gray-500,
+  'gray-600': $gray-600,
+  'gray-700': $gray-700,
+  'gray-800': $gray-800,
+  'gray-900': $gray-900,
+  'gray-eee': $gray-eee,
+  'gray-darh': $gray-dark
+);
+@each $key, $val in $grays {
+  .fc-#{$key} {
+    color: $val;
+  }
+  .bg-#{$key} {
+    background-color: $val;
   }
 }
 .img-box {
@@ -1245,6 +1271,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 .help-txt {
   color: $gray-600;
   font-size: 0.813rem;
+  line-height: 1.2;
 }
 
 // img
@@ -1403,7 +1430,11 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     min-height: 1rem;
     padding-left: 1rem;
     display: inline-block;
+    vertical-align: middle;
     margin-bottom: 0;
+    .custom-control-input {
+      height: 1rem;
+    }
     .custom-control-label {
       position: static;
       &:before {
@@ -1639,6 +1670,23 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     display: block;
     width: 100%;
     height: 100%;
+  }
+}
+.box-scroll {
+  overflow: auto;
+}
+.box-scroll-y {
+  overflow: hidden auto;
+}
+.box-scroll-x {
+  overflow: auto hidden;
+}
+.text-line-box {
+  padding: 1rem;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  > *:last-child {
+    margin-bottom: 0;
   }
 }
 
