@@ -138,23 +138,7 @@ html:not(.mobile) {
 .fc-cyan {
   color: $cyan;
 }
-// skip-navi
-.skippy {
-  background-color: #563d7c;
-  a {
-    color: #fff;
-  }
-  &:focus-within a {
-    position: static !important;
-    width: auto !important;
-    height: auto !important;
-    padding: 0.5rem !important;
-    margin: 0.25rem !important;
-    overflow: visible !important;
-    clip: auto !important;
-    white-space: normal !important;
-  }
-}
+
 .pre-line {
   white-space: pre-line;
 }
@@ -171,6 +155,8 @@ html:not(.mobile) {
 }
 
 $grays: (
+  'white': $white,
+  'black': $black,
   'gray-100': $gray-100,
   'gray-200': $gray-200,
   'gray-300': $gray-300,
@@ -181,7 +167,7 @@ $grays: (
   'gray-800': $gray-800,
   'gray-900': $gray-900,
   'gray-eee': $gray-eee,
-  'gray-darh': $gray-dark
+  'gray-dark': $gray-dark
 );
 @each $key, $val in $grays {
   .fc-#{$key} {
@@ -189,6 +175,29 @@ $grays: (
   }
   .bg-#{$key} {
     background-color: $val;
+  }
+}
+.fz-lg {
+  font-size: $font-size-lg;
+}
+.fz-sm {
+  font-size: $font-size-sm;
+}
+// skip-navi
+.skippy {
+  background-color: #563d7c;
+  a {
+    color: #fff;
+  }
+  &:focus-within a {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0.5rem !important;
+    margin: 0.25rem !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
   }
 }
 .img-box {
@@ -1219,9 +1228,13 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     flex: 1 1 auto;
   }
   > div {
-    + div {
+    + div,
+    + .btn {
       margin-left: 1rem;
     }
+  }
+  .btn {
+    white-space: nowrap;
   }
 }
 .custom-control-wrap {
@@ -1262,6 +1275,11 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
       + div {
         margin-left: 0;
         margin-top: 0.5rem;
+      }
+      + .btn {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        float: right;
       }
     }
   }
@@ -1682,9 +1700,10 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   overflow: auto hidden;
 }
 .text-line-box {
-  padding: 1rem;
+  background: #fff;
+  padding: 1.5rem;
   border: $border-width solid $border-color;
-  border-radius: $border-radius;
+  border-radius: $border-radius-lg;
   > *:last-child {
     margin-bottom: 0;
   }

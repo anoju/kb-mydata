@@ -3,12 +3,12 @@
     "depth1": "메인"
   },
   {
-    "id": "MCC01-0000000C",
-    "url": "../../admin/html/MCC/",
+    "id": "MCA01-0000001C",
+    "url": "../../admin/html/MCA/",
     "name": "메인",
     "worker": "변상우",
     "complete": "",
-    "etc": "임시 ID"
+    "etc": ""
   },
   {
     "depth1": "로그인"
