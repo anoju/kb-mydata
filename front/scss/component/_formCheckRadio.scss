@@ -647,6 +647,11 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
       }
     }
   }
+
+  .line-bottom {
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid #ebebeb;
+  }
 }
 
 //check-list-item

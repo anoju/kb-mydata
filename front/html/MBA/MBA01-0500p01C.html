@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+  </head>
+  <body>
+    <div id="popMatchAgree" class="popup bottom" role="dialog" aria-hidden="true">
+      <article class="pop-wrap">
+        <div class="pop-head">
+          <div>
+            <h1>개인신용정보 동의서</h1>
+            <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="section">
+            <p class="fz-16 mb-32">하나의 동의서를 선택해 주세요.</p>
+            <div class="tg-btn-wrap group">
+              <div class="flex">
+                <div class="radio btn">
+                  <input type="radio" id="tglrdo2-1" name="rdo1" checked /><i aria-hidden="true"></i>
+                  <label for="tglrdo2-1" class="lbl">상세 동의서</label>
+                </div>
+                <div class="radio btn">
+                  <input type="radio" id="tglrdo2-2" name="rdo1" /><i aria-hidden="true"></i>
+                  <label for="tglrdo2-2" class="lbl">요약 동의서</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="agree-dl ui-agree">
+              <div class="checkbox ty2 mt-32 line-bottom">
+                <input type="checkbox" id="agree1-1" class="ui-agree-chk" /><i aria-hidden="true"></i>
+                <div class="lbl">
+                  <label for="agree1-1">(필수) 클릭하면 약관용 pdf샘플 확인가능</label>
+                  <a href="#none" class="agree-btn ml-auto" aria-label="약관상세 확인" role="button"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <p class="mt-24 fz-16 fw-500 fc-424242">정보 수신 채널 선택</p>
+            <div class="form-item">
+              <div class="chk-wrap">
+                <span class="checkbox">
+                  <input type="checkbox" id="userMarketing1" /><i aria-hidden="true"></i>
+                  <label for="userMarketing1" class="lbl">앱 Push</label>
+                </span>
+                <span class="checkbox">
+                  <input type="checkbox" id="userMarketing2" /><i aria-hidden="true"></i>
+                  <label for="userMarketing2" class="lbl">SMS</label>
+                </span>
+                <span class="checkbox">
+                  <input type="checkbox" id="userMarketing3" /><i aria-hidden="true"></i>
+                  <label for="userMarketing3" class="lbl">전화</label>
+                </span>
+              </div>
+            </div>
+
+            <ul class="txt-list mt-25">
+              <li class="dot">상세 또는 약식의 개인신용정보 동의서에 동의하셔야 매치 서비스를 이용할 수 있습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pop-foot">
+          <div>
+            <div class="flex">
+              <button type="button" class="button primary">동의하고 진행</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <script>
+      $(function () {
+        Layer.open('#popMatchAgree');
+      });
+    </script>
+  </body>
+</html>

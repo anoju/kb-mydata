@@ -4246,7 +4246,6 @@ ui.Folding = {
           .removeAttr('aria-hidden')
           .stop(true, false)
           .slideDown(speed, function () {
-            console.log('aa');
             ui.Scroll.inScreen($this, $($panel));
             slideCallback();
           });
@@ -6964,7 +6963,7 @@ const Layer = {
     //pdf
     $(document).on('click', '[data-agree-pdf]', function (e) {
       e.preventDefault();
-      console.log('aaa');
+      //console.log('aaa');
       const $url = $(this).data('agree-pdf');
       Layer.pdf($url, '약관상세');
     });

@@ -3,19 +3,19 @@
     "depth1": "매치"
   },
   {
-    "id": "MBA01-0000000C",
+    "id": "MBA01-0000001C",
     "url": "../../front/html/MBA/",
     "depth2": "매치 메인",
-    "depth3": "정회원",
+    "depth3": "준회원",
     "name": "",
     "worker": "장영석",
     "complete": "진행중"
   },
   {
-    "id": "MBA01-0000001C",
+    "id": "MBA02-0000001C",
     "url": "../../front/html/MBA/",
     "depth2": "매치 메인",
-    "depth3": "준회원",
+    "depth3": "정회원",
     "name": "",
     "worker": "장영석",
     "complete": "진행중"
@@ -36,7 +36,18 @@
     "depth3": "",
     "name": "이용약관",
     "worker": "장영석",
-    "complete": "2022-03-15"
+    "complete": "2022-03-15",
+    "change":"2022-03-25",
+    "etc":"기획변경에 따른 수정"
+  },
+  {
+    "id": "MBA01-0500p01C",
+    "url": "../../front/html/MBA/",
+    "depth2": "매치 이용약관",
+    "depth3": "개인신용정보 동의서 동의 팝업",
+    "name": "개인신용정보 동의서 동의 팝업",
+    "worker": "장영석",
+    "complete": "2022-03-25"
   },
   {
     "id": "MBA01-0200p01C",
@@ -119,7 +130,8 @@
     "depth3": "",
     "name": "내프로필",
     "worker": "장영석",
-    "complete": "2022-03-23"
+    "complete": "2022-03-23",
+    "change":"2022-03-25"
   },
   {
     "id": "MBA06-0200p01C",
@@ -221,7 +233,8 @@
     "depth3": "",
     "name": "사용자 프로필",
     "worker": "장영석",
-    "complete": "2022-03-23"
+    "complete": "2022-03-23",
+    "change":"2022-03-25"
   },
   {
     "id": "MBA03-0300p01C",
