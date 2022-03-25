@@ -824,7 +824,7 @@ ui.Common = {
       let $url = '/js/lib/lottie.5.7.13.min.js';
       if (location.pathname.indexOf('/front/') > -1) $url = '/front' + $url;
       if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $url = '/kyobo-mydata-pub' + $url;
-      if (location.pathname.indexOf('dev-mydata.mykkl.com') > -1) $url = '/mydata/resources/static' + $url;
+      if (location.pathname.indexOf('mykkl.com/') > -1) $url = '/mydata/resources/static' + $url;
       ui.Util.loadScript($url, $lottieInit);
     } else {
       $lottieInit();
@@ -1139,7 +1139,7 @@ ui.Util = {
     let $url = '/js/lib/paint.min.js';
     if (location.pathname.indexOf('/front/') > -1) $url = '/front' + $url;
     if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $url = '/kyobo-mydata-pub' + $url;
-    if (location.pathname.indexOf('dev-mydata.mykkl.com') > -1) $url = '/mydata/resources/static' + $url;
+    if (location.pathname.indexOf('mykkl.com/') > -1) $url = '/mydata/resources/static' + $url;
     if (CSS && 'paintWorklet' in CSS) CSS.paintWorklet.addModule($url);
   },
   canvasRotateImg: function (target, src, deg) {
@@ -1185,7 +1185,7 @@ ui.Util = {
         let $src = $this.attr('src');
         if (($src.indexOf('//') < 0 || $src.indexOf('//') > 9) && $src.indexOf('../') !== 0) {
           if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $src = '/kyobo-mydata-pub' + $src;
-          if (location.pathname.indexOf('dev-mydata.mykkl.com') > -1 && location.pathname.indexOf('/front/') === 0) {
+          if (location.pathname.indexOf('mykkl.com/') > -1 && location.pathname.indexOf('/front/') === 0) {
             $src = $src.replace('/front/', '/');
             $src = '/mydata/resources/static' + $src;
           }
@@ -5615,7 +5615,7 @@ const Layer = {
     let $src = '/pdfjs/web/viewer.html?file=' + url;
     if (location.pathname.indexOf('/front/') > -1) $src = '/front' + $src;
     if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $src = '/kyobo-mydata-pub' + $src;
-    if (location.pathname.indexOf('dev-mydata.mykkl.com') > -1) $src = '/mydata/resources/static' + $src;
+    if (location.pathname.indexOf('mykkl.com/') > -1) $src = '/mydata/resources/static' + $src;
 
     let $html = '<div id="' + pdfPopId + '" class="' + Layer.popClass + ' full pop-pdf ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
     $html += '<article class="' + Layer.wrapClass + '">';
