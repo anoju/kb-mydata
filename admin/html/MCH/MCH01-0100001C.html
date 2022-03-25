@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">시스템관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">코드관리</li>
+                  </ol>
+                </nav>
+                <h1>코드관리</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">관리자 선택</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">코드그룹선택</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-md-4">
+                      <select class="custom-select">
+                        <option value="1">FAQ</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="help-txt mt-5">※ 설정 혹은 입력 후 저장버튼을 눌러야 최종 저장됩니다.</p>
+          <table id="table1" class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">번호</th>
+                <th scope="col">코드번호</th>
+                <th scope="col">항목병</th>
+                <th scope="col">사용설정</th>
+                <th scope="col">저장/삭제</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>1</td>
+                <td>000001</td>
+                <td><input type="text" class="form-control" value="마이데이터" /></td>
+                <td>
+                  <select class="custom-select">
+                    <option value="1">사용</option>
+                  </select>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-secondary">저장</button>
+                  <button type="button" class="btn btn-sm btn-default">삭제</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>2</td>
+                <td>000002</td>
+                <td><input type="text" class="form-control" value="회원탈퇴" /></td>
+                <td>
+                  <select class="custom-select">
+                    <option value="1">사용</option>
+                  </select>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-secondary">저장</button>
+                  <button type="button" class="btn btn-sm btn-default">삭제</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>3</td>
+                <td>000003</td>
+                <td><input type="text" class="form-control" value="포인트" /></td>
+                <td>
+                  <select class="custom-select">
+                    <option value="1">사용</option>
+                  </select>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-secondary">저장</button>
+                  <button type="button" class="btn btn-sm btn-default">삭제</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-radio only">
+                    <input type="radio" name="rdo1" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>4</td>
+                <td>000004</td>
+                <td><input type="text" class="form-control" value="매치/그라운드" /></td>
+                <td>
+                  <select class="custom-select">
+                    <option value="1">사용</option>
+                  </select>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-secondary">저장</button>
+                  <button type="button" class="btn btn-sm btn-default">삭제</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-flex align-items-center mt-2">
+            <button type="button" class="btn btn-secondary btn-sm mr-1">↑ 위로</button>
+            <button type="button" class="btn btn-secondary btn-sm mr-1">↓ 아래로</button>
+            <button type="button" class="btn btn-dark btn-sm mr-1"><i class="bi bi-check"></i> 순서저장</button>
+            <button type="button" class="btn btn-default btn-sm mr-1"><i class="bi bi-x"></i> 취소</button>
+
+            <button type="button" class="btn btn-primary btn-sm ml-auto"><i class="bi bi-plus"></i> 추가</button>
+          </div>
+
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table1').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+    </script>
+  </body>
+</html>

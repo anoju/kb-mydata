@@ -101,111 +101,152 @@
               <h2 class="h3">메세지</h2>
             </div>
           </div>
-          <div class="form-box">
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i>제목</div>
-                <div class="form-box-cont">
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">템플릿</div>
-                <div class="form-box-cont">
-                  <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#templateModal"><i class="bi bi-card-checklist"></i> 템플릿 선택</button>
-                </div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i>변수설정</div>
-                <div class="form-box-cont">
-                  <div class="form-row align-items-center">
-                    <div class="col-md-3">
-                      <select class="custom-select">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="4">5</option>
-                      </select>
-                    </div>
-                    <div class="mt-2 col-md-9 mt-md-0">
-                      <div class="help-txt">※ 변수 선택값과 메시지의 변수개수는 동일해야 합니다.</div>
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-box">
+                <div class="form-box-row">
+                  <div class="form-box-item">
+                    <div class="form-box-label"><i class="fc-red mr-1">*</i>제목</div>
+                    <div class="form-box-cont">
+                      <input type="text" class="form-control" />
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i>대상선택</div>
-                <div class="form-box-cont">
-                  <div class="custom-control-wrap">
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo2" class="custom-control-input" />
-                      <span class="custom-control-label">선택없음</span>
-                    </label>
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo2" class="custom-control-input" />
-                      <span class="custom-control-label">광고</span>
-                    </label>
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo2" class="custom-control-input" />
-                      <span class="custom-control-label">마케팅</span>
-                    </label>
+                <div class="form-box-row">
+                  <div class="form-box-item">
+                    <div class="form-box-label">템플릿</div>
+                    <div class="form-box-cont">
+                      <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#templateModal"><i class="bi bi-card-checklist"></i> 템플릿 선택</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i>메시지</div>
-                <div class="form-box-cont">
-                  <div class="text-right mb-2">
-                    <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#previewModal"><i class="bi bi-eye-fill"></i> 미리보기</button>
+                <div class="form-box-row">
+                  <div class="form-box-item">
+                    <div class="form-box-label"><i class="fc-red mr-1">*</i>변수설정</div>
+                    <div class="form-box-cont">
+                      <div class="form-row align-items-center">
+                        <div class="col-md-3">
+                          <select class="custom-select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="4">5</option>
+                          </select>
+                        </div>
+                        <div class="mt-2 col-md-9 mt-md-0">
+                          <div class="help-txt">※ 변수 선택값과 메시지의 변수개수는 동일해야 합니다.</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <textarea class="form-control" rows="10">
+                </div>
+                <div class="form-box-row">
+                  <div class="form-box-item">
+                    <div class="form-box-label"><i class="fc-red mr-1">*</i>대상선택</div>
+                    <div class="form-box-cont">
+                      <div class="custom-control-wrap">
+                        <label class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" name="rdo2" class="custom-control-input" />
+                          <span class="custom-control-label">선택없음</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" name="rdo2" class="custom-control-input" />
+                          <span class="custom-control-label">광고</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" name="rdo2" class="custom-control-input" />
+                          <span class="custom-control-label">마케팅</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-box-row">
+                  <div class="form-box-item">
+                    <div class="form-box-label"><i class="fc-red mr-1">*</i>메시지</div>
+                    <div class="form-box-cont">
+                      <div class="text-right mb-2">
+                        <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#previewModal"><i class="bi bi-eye-fill"></i> 미리보기</button>
+                      </div>
+                      <textarea class="form-control" rows="10">
 (광고) {1}님, 회원가입을 축하드립니다. 
 회원가입 축하기념으로 {2}포인트를 드립니다. 
 자세한 사항은 {3}을 참고 부탁드립니다.
-                  </textarea>
+                  </textarea
+                      >
 
-                  <div class="d-flex align-items-center mt-1">
-                    <small class="fc-red">*90 Byte 초과 시 LMS로 자동 전환됩니다.</small>
-                    <small class="ml-auto">0 / 90 Bytes</small>
+                      <div class="d-flex align-items-center mt-1">
+                        <small class="fc-red">*90 Byte 초과 시 LMS로 자동 전환됩니다.</small>
+                        <small class="ml-auto">0 / 90 Bytes</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="title-wrap mt-5">
+                <div class="left">
+                  <h2 class="h3">발송정보 업로드</h2>
+                </div>
+              </div>
+              <div class="form-box">
+                <div class="form-box-row">
+                  <div class="form-box-item">
+                    <div class="form-box-label">Excel 업로드</div>
+                    <div class="form-box-cont d-flex">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="" aria-describedby="" />
+                        <label class="custom-file-label" for=""></label>
+                      </div>
+                      <div class="ml-2">
+                        <button type="button" class="btn btn-md text-nowrap btn-secondary" data-toggle="modal" data-target=""><i class="bi bi-file-earmark-excel-fill"></i> 양식다운로드</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="title-wrap mt-5">
-            <div class="left">
-              <h2 class="h3">발송정보 업로드</h2>
-            </div>
-          </div>
-          <div class="form-box">
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">Excel 업로드</div>
-                <div class="form-box-cont d-flex">
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="" aria-describedby="" />
-                    <label class="custom-file-label" for=""></label>
-                  </div>
-                  <div class="ml-2">
-                    <button type="button" class="btn btn-md text-nowrap btn-secondary" data-toggle="modal" data-target=""><i class="bi bi-file-earmark-excel-fill"></i> 양식다운로드</button>
-                  </div>
-                </div>
+            <div class="col-md-5 mt-5 mt-md-0">
+              <div class="text-line-box box-scroll-y" style="height: 100%">
+                <h4>[SMS등록방법]</h4>
+                <hr />
+                <ul class="mt-2">
+                  <li>
+                    <strong>직접 작성방법</strong>
+                    <ol>
+                      <li>변수설정</li>
+                      <li>메시지 내용 입력</li>
+                      <li>입력 중 설정한 변수 개수와 동일하게 맞춤</li>
+                    </ol>
+                    <ul class="fc-gray-600 mt-2">
+                      <li>
+                        <strong>예시) 포인트 지급직접 입력</strong>
+                        <ol>
+                          <li>{name}: 회원명 변수</li>
+                          <li>{point}: 포인트 변수</li>
+                          <li>{url}: 경로 변수</li>
+                        </ol>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="mt-4">
+                    <strong>엑셀 업로드 작성방법</strong>
+                    <ol>
+                      <li>템플릿양식 다운로드</li>
+                      <li>다운로드 양식에 포함될 내용(변수포함) 입력</li>
+                      <li>저장 후 Excel 셀과 동일하게 변수설정</li>
+                      <li>메시지 입력 중 설정한 변수 개수와 동일하게 맞춤</li>
+                    </ol>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
 
-          <div class="alert alert-secondary mt-4" role="alert">
-            <h4 class="alert-heading">[영리 목적의 광고성 정보 발송 안내]</h4>
+          <div class="text-line-box bg-gray-100 mt-5">
+            <h4>[영리 목적의 광고성 정보 발송 안내]</h4>
             <hr />
             <ul class="mt-2">
               <li>필수정보 안내 목적의 "주문접수 안내"와 같은 SMS는 수신동의 없이 보낼 수 있지만 영리 목적의 광고성 정보 발송 시에는 반드시 수신동의한 회원에게만 발송해야 합니다.</li>
