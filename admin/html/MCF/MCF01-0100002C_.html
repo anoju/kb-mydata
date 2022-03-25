@@ -122,15 +122,19 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>변수설정</div>
                 <div class="form-box-cont">
-                  <div class="d-flex align-items-center">
-                    <select class="custom-select width-100 mr-1">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="4">5</option>
-                    </select>
-                    <div class="help-txt">※ 변수 선택값과 메시지의 변수개수는 동일해야 합니다.</div>
+                  <div class="form-row align-items-center">
+                    <div class="col-md-3">
+                      <select class="custom-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="4">5</option>
+                      </select>
+                    </div>
+                    <div class="mt-2 col-md-9 mt-md-0">
+                      <div class="help-txt">※ 변수 선택값과 메시지의 변수개수는 동일해야 합니다.</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -169,10 +173,10 @@
 자세한 사항은 {3}을 참고 부탁드립니다.
                   </textarea>
 
-                  <div class="text-right">
-                    <small>0 / 90 Bytes</small>
+                  <div class="d-flex align-items-center mt-1">
+                    <small class="fc-red">*90 Byte 초과 시 LMS로 자동 전환됩니다.</small>
+                    <small class="ml-auto">0 / 90 Bytes</small>
                   </div>
-                  <strong class="fc-red">*90 Byte 초과 시 LMS로 자동 전환됩니다.</strong>
                 </div>
               </div>
             </div>
@@ -192,7 +196,7 @@
                     <input type="file" class="custom-file-input" id="" aria-describedby="" />
                     <label class="custom-file-label" for=""></label>
                   </div>
-                  <div class="ml-3">
+                  <div class="ml-2">
                     <button type="button" class="btn btn-md text-nowrap btn-secondary" data-toggle="modal" data-target=""><i class="bi bi-file-earmark-excel-fill"></i> 양식다운로드</button>
                   </div>
                 </div>
@@ -301,7 +305,7 @@
           </div>
           <!-- //컨텐츠본문 -->
           <!-- 템플릿 팝업 -->
-          <div class="modal fade show" id="templateModal" tabindex="-1" aria-labelledby="templateModalLabel" aria-hidden="true" style="display: block">
+          <div class="modal fade" id="templateModal" tabindex="-1" aria-labelledby="templateModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
@@ -311,7 +315,19 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <table id="table1" class="table table-hover">
+                  <div class="form-box mb-3">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">발송분류</div>
+                        <div class="form-box-cont">
+                          <select class="custom-select">
+                            <option value="1">전체</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <table id="table1" class="table table-hover" data-pagination="true">
                     <thead>
                       <tr>
                         <th scope="col">&nbsp;</th>
@@ -322,27 +338,168 @@
                     <tbody>
                       <tr>
                         <td>
-                          <label class="custom-control custom-radio only mb-0">
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>이벤트</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>공지사항</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
                             <input type="radio" name="rdo1" class="custom-control-input" />
                             <span class="custom-control-label"></span>
                           </label>
                         </td>
                         <td>상품관련</td>
-                        <td class="text-left">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>이벤트</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>공지사항</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>상품관련</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>이벤트</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>공지사항</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>상품관련</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>이벤트</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>공지사항</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>상품관련</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>이벤트</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>공지사항</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>상품관련</td>
+                        <td class="text-left">제목입니다. 제목입니다.</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-md btn-default" data-dismiss="modal">취소</button>
-                  <button type="button" class="btn btn-md btn-primary" data-dismiss="modal">확인</button>
+                  <button type="button" class="btn btn-lg btn-outline-dark" data-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-lg btn-primary" onclick="$('#templateModal').modal('hide')">확인</button>
                 </div>
               </div>
             </div>
           </div>
+
           <!-- 미리보기 팝업 -->
           <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="previewModalLabel">SMS 내용 미리보기</h5>
@@ -350,16 +507,19 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="form-group p-2">
-                  <textarea class="form-control" rows="10">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <textarea class="form-control" rows="10">
 (광고) {1}님, 회원가입을 축하드립니다. 
 회원가입 축하기념으로 {2}포인트를 드립니다. 
 자세한 사항은 {3}을 참고 부탁드립니다.
-                  </textarea>
+                  </textarea
+                    >
+                  </div>
                 </div>
 
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-md btn-primary" data-dismiss="modal">확인</button>
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">확인</button>
                 </div>
               </div>
             </div>
@@ -376,55 +536,14 @@
     <!-- //wrap -->
 
     <script>
-      //var messageH = 300;
-      //에디터
-      CKEDITOR.replace('editor1');
-      //CKEDITOR.replace('editor2').config.height = messageH + 'px';
-      //팝업
-      /*
-      //유효성 오류팝업(제목미입력)
-      Modal.alert('제목을 입력해주세요.', function () {
-        console.log('제목미입력 - 확인');
-      });
-      //유효성 오류팝업(내용미입력)
-      Modal.alert('내용을 입력해주세요.', function () {
-        console.log('내용미입력 - 확인');
-      });
-      //유효성 오류팝업(우선노출 5개 초과)
-      Modal.alert('우선노출 등록은 \<br>\ 5개를 초과할 수 없습니다.', function () {
-        console.log('우선노출 5개 초과 - 확인');
-      });
-      //유효성 오류팝업(등록된 콘테츠 삭제 지정오류)
-      Modal.alert('기 등록된 콘테츠 삭제 후 \<br>\ 지정해 주세요.', function () {
-        console.log('등록된 콘테츠 삭제 지정오류 - 확인');
-      });
-      //유효성 오류팝업(게시일 지정오류)
-      Modal.alert('게시 시작일은 \<br>\ 종료일을 확인해 주세요.', function () {
-        console.log('게시일 지정오류- 확인');
-      });
-      //유효성 오류팝업(게시일 지정오류)
-      Modal.alert('게시 시작일은 \<br>\ 0개월 이내부터 가능합니다.', function () {
-        console.log('게시일 지정오류- 확인');
-      });
-
-      //등록팝업
-      Modal.confirm('공지사항 등록을하시겠습니까?', function (e) {
-        if (e) {
-          console.log('등록 - 확인');
-        } else {
-          console.log('등록 - 취소');
-        }
-      });
-
-      //등록팝업
-      Modal.confirm('공지사항 등록을 \<br>\ 취소하시겠습니까?', function (e) {
-        if (e) {
-          console.log('등록취소 - 확인');
-        } else {
-          console.log('등록취소 - 취소');
-        }
-      });
-      */
+      // 테이블
+      function initTable() {
+        $('#table1').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
     </script>
   </body>
 </html>
