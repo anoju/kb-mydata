@@ -3,6 +3,7 @@
     "depth1": "시스템관리"
   },
   {
+    "state": "del",
     "id": "MCH01-0100001C",
     "url": "../../admin/html/MCH/",
     "depth2": "코드관리",

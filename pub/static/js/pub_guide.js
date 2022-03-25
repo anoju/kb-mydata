@@ -162,12 +162,14 @@ const makeBoard = function () {
         trHtml += '<tr class="hr">';
         trHtml += '<th scope="col" colspan="12">' + obj.depth1 + '</th>';
       } else {
-        trHtml += '<tr>';
+        if (obj.state) {
+          trHtml += '<tr class="' + obj.state + '">';
+        } else {
+          trHtml += '<tr>';
+        }
         trHtml += '<td class="no">' + idx + '</td>';
         idx += 1;
-        if (obj.id === undefined || obj.id === '') {
-          trHtml += '<td class="id"></td>';
-        } else {
+        if (obj.id) {
           let $url = obj.url;
           if ($host) {
             $url = $url.replace('../..', $protocol + '//' + $host);
@@ -179,58 +181,60 @@ const makeBoard = function () {
           } else {
             trHtml += '<td class="id"><a href="' + $url + '" target="_blank">' + obj.id + '</a></td>';
           }
-        }
-        if (obj.id === undefined || obj.id === '') {
-          trHtml += '<td></td>';
-        } else if (obj.id.indexOf('p') >= 0) {
-          trHtml += '<td> popup </td>';
+
+          if (obj.id.indexOf('p') >= 0) {
+            trHtml += '<td> popup </td>';
+          } else {
+            trHtml += '<td> page </td>';
+          }
         } else {
-          trHtml += '<td> page </td>';
-        }
-        if (obj.depth2 === undefined || obj.depth2 === '') {
+          trHtml += '<td class="id"></td>';
           trHtml += '<td></td>';
-        } else {
+        }
+        if (obj.depth2) {
           trHtml += '<td>' + obj.depth2 + '</td>';
-        }
-        if (obj.depth3 === undefined || obj.depth3 === '') {
-          trHtml += '<td></td>';
         } else {
+          trHtml += '<td></td>';
+        }
+        if (obj.depth3) {
           trHtml += '<td>' + obj.depth3 + '</td>';
-        }
-        if (obj.depth4 === undefined || obj.depth4 === '') {
-          trHtml += '<td></td>';
         } else {
+          trHtml += '<td></td>';
+        }
+        if (obj.depth4) {
           trHtml += '<td>' + obj.depth4 + '</td>';
-        }
-        if (obj.depth5 === undefined || obj.depth5 === '') {
+        } else {
           trHtml += '<td></td>';
-        } else {
+        }
+        if (obj.depth5) {
           trHtml += '<td>' + obj.depth5 + '</td>';
-        }
-        if (obj.name === undefined || obj.name === '') {
-          trHtml += '<td class="name"></td>';
         } else {
+          trHtml += '<td></td>';
+        }
+        if (obj.name) {
           trHtml += '<td class="name">' + obj.name + '</td>';
-        }
-        if (obj.worker === undefined || obj.worker === '') {
-          trHtml += '<td class="worker"></td>';
         } else {
+          trHtml += '<td class="name"></td>';
+        }
+        if (obj.worker) {
           trHtml += '<td class="worker">' + obj.worker + '</td>';
-        }
-        if (obj.complete === undefined || obj.complete === '') {
-          trHtml += '<td class="c_date"></td>';
         } else {
+          trHtml += '<td class="worker"></td>';
+        }
+        if (obj.complete) {
           trHtml += '<td class="c_date">' + obj.complete + '</td>';
-        }
-        if (obj.change === undefined || obj.change === '') {
-          trHtml += '<td class="m_date"></td>';
         } else {
+          trHtml += '<td class="c_date"></td>';
+        }
+        if (obj.change) {
           trHtml += '<td class="m_date">' + obj.change + '</td>';
-        }
-        if (obj.etc === undefined || obj.etc === '') {
-          trHtml += '<td class="etc"></td>';
         } else {
+          trHtml += '<td class="m_date"></td>';
+        }
+        if (obj.etc) {
           trHtml += '<td class="etc">' + obj.etc + '</td>';
+        } else {
+          trHtml += '<td class="etc"></td>';
         }
       }
 
