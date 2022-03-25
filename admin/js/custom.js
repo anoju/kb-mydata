@@ -316,7 +316,7 @@
         var $link = $('.kb-lnb-dep2 .kb-lnb-link');
         var $path = location.pathname;
         var $title = $('.breadcrumb-item.active').length ? $('.breadcrumb-item.active').text() : $('.kb-title h1').text();
-        var isActiveOn = false;
+        // var isActiveOn = false;
         $link.each(function () {
           var $this = $(this);
           var $text = $this.text();
@@ -326,19 +326,19 @@
             $this.addClass('open');
             $this.next().show();
           }
-          if (!isActiveOn) {
-            var isActive = false;
-            if ($path.indexOf($href) > -1) {
-              isActive = true;
-            } else if ($text === $title) {
-              isActive = true;
-            }
-
-            if (isActive) {
-              isActiveOn = true;
-              $this.parents('li').addClass('active');
-            }
+          //if (!isActiveOn) {
+          var isActive = false;
+          if ($path.indexOf($href) > -1) {
+            isActive = true;
+          } else if ($text === $title) {
+            isActive = true;
           }
+
+          if (isActive) {
+            // isActiveOn = true;
+            $this.parents('li').addClass('active');
+          }
+          //}
         });
 
         var dep1Active = $('.kb-lnb-dep1>.active');
