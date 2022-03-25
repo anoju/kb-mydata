@@ -1052,6 +1052,9 @@
       }
     }
   }
+  p:not(.tag) {
+    width: 100%;
+  }
   &.type2 {
     margin-top: 0.9rem;
     flex-flow: wrap;
@@ -1060,6 +1063,19 @@
       margin-top: 0.4rem;
       margin-bottom: 0.4rem;
       max-width: 100%;
+    }
+  }
+
+  &.text-type {
+    margin-top: 1.1rem;
+    flex-flow: wrap;
+    > p.tag,
+    a {
+      height: auto;
+      padding: 0;
+      max-width: 100%;
+      padding: 0.1rem 0;
+      background: none;
     }
   }
 }
@@ -2424,6 +2440,381 @@
     }
     + a {
       margin-top: 0.5rem;
+    }
+  }
+}
+
+/* 매치 메인*/
+.match-main-visual {
+  position: relative;
+  height: 24.7rem;
+  background: radial-gradient(83.19% 350.89% at 50% 35.05%, #ff8a60 0%, #fe7668 100%);
+  .img {
+    width: 20.6rem;
+    height: 20.6rem;
+    margin: -3.7rem auto 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .point,
+  .ranking {
+    position: absolute;
+    top: 3rem;
+    width: 6rem;
+    color: #fff;
+    text-align: center;
+    .tit {
+      margin-top: 0.4rem;
+      font-size: 1rem;
+      line-height: 1;
+      font-weight: 500;
+      opacity: 0.66;
+    }
+    .number {
+      display: block;
+      font-size: 2.6rem;
+      font-weight: 500;
+    }
+    .text {
+      margin-top: 0.6rem;
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+
+  .ranking {
+    left: 3.2rem;
+  }
+  .point {
+    right: 3.2rem;
+  }
+
+  + .section {
+    overflow: hidden;
+    position: relative;
+    margin-top: -9.3rem;
+    border-radius: 3.2rem 3.2rem 0 0;
+    background: #fff;
+  }
+}
+.match-main-label {
+  position: relative;
+  max-width: 31.2rem;
+  height: 9.4rem;
+  margin: 2.4rem auto;
+  > div {
+    position: absolute;
+    top: 0;
+    width: 17.6rem;
+    height: 100%;
+    border-radius: 2rem;
+    padding: 1.8rem 2.7rem;
+    margin-top: -0.4rem;
+    .tit {
+      font-size: 1.2rem;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .text {
+      margin-top: 0.8rem;
+      font-size: 1.6rem;
+      color: #fff;
+      line-height: 1;
+      i {
+        margin-right: 0.6rem;
+      }
+      strong {
+        font-size: 2.6rem;
+      }
+    }
+  }
+  .point {
+    left: -1rem;
+    background: url('../images/match/bg-main-label1.svg') no-repeat center center / 100%;
+  }
+  .score {
+    text-align: right;
+    right: -1rem;
+    background: url('../images/match/bg-main-label2.svg') no-repeat center center / 100%;
+  }
+
+  @include media-max-width(340) {
+    height: auto;
+    > div {
+      position: static;
+      width: 100%;
+      height: 7.4rem;
+      text-align: center;
+      margin-top: -0rem;
+      padding: 1.4rem 1.7rem;
+    }
+    .point {
+      background: linear-gradient(279.73deg, #ad8aff 22.77%, #936ff6 81.58%);
+      box-shadow: 0px 6px 10px rgba(150, 114, 247, 0.25);
+    }
+    .score {
+      text-align: center;
+      margin-top: 0.8rem;
+      background: linear-gradient(271.7deg, #fe99ab 25.97%, #ff7c8d 91.04%);
+      box-shadow: 0px 6px 10px rgba(255, 131, 148, 0.25);
+      border-radius: 20px;
+    }
+  }
+}
+
+.today-match-box {
+  margin-top: 2.4rem;
+  .swiper {
+    overflow: visible;
+    padding: 0 1.8rem;
+  }
+  .ui-swiper .swiper-slide {
+    overflow: visible;
+    width: auto;
+    height: auto;
+    padding: 0 0.8rem;
+    > .influencer {
+      position: relative;
+      display: flex;
+      width: 30.6rem;
+      height: 100%;
+      padding: 2.1rem 2.4rem;
+      align-items: flex-start;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 1.6rem;
+      background: #fff;
+      .img-box {
+        flex: 0 0 auto;
+        width: 7.5rem;
+        i {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 8rem;
+          height: 8rem;
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 50%;
+            background: #fff;
+          }
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8rem;
+            height: 8rem;
+            background: url('../images/match/ico_influencer2.png') no-repeat center center / 100%;
+          }
+        }
+      }
+      .text-box {
+        margin-left: 1.6rem;
+        .tit {
+          font-size: 1.8rem;
+          font-weight: bold;
+        }
+        .text {
+          margin-top: 1.2rem;
+          font-size: 1.4rem;
+        }
+        .hashtag {
+          .tag {
+            color: #979797;
+          }
+        }
+      }
+      .label-top {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 4.6rem;
+        height: 2.7rem;
+        font-size: 1.2rem;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        background: #fe7d65;
+        border-radius: 1.6rem 1.6rem 0px 1.6rem;
+      }
+    }
+    .user {
+      position: relative;
+      display: block;
+      width: 8.8rem;
+      .img-box {
+        width: 6.4rem;
+        margin: 0 auto;
+      }
+      .text {
+        margin-top: 0.8rem;
+        font-size: 1.2rem;
+      }
+      .label-top {
+        position: absolute;
+        top: -1rem;
+        right: 0.3rem;
+        padding: 0.6rem 0.7rem;
+        border: 0.1rem solid #11ae89;
+        border-radius: 3rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: gray;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+        background: #fff;
+
+        &.win {
+          border-color: #11ae89;
+          color: #11ae89;
+        }
+        &.loss {
+          border-color: #fb6e37;
+          color: #fb6e37;
+        }
+        &.draw {
+          border-color: #505050;
+          color: #505050;
+        }
+        &.revenge {
+          border-color: #8624dd;
+          color: #8624dd;
+        }
+      }
+
+      &.refresh {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        height: 9rem;
+      }
+    }
+  }
+}
+
+.ground-list-swiper.ui-swiper {
+  margin-top: 2.4rem;
+  .swiper {
+    overflow: visible;
+    padding: 0 1.8rem;
+  }
+  .swiper-slide {
+    overflow: visible;
+    width: auto;
+    height: auto;
+    padding: 0 0.8rem;
+    a {
+      position: relative;
+      display: block;
+      width: 23.2rem;
+      height: 100%;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 1.6rem;
+      background: #fff;
+
+      .label-top {
+        position: absolute;
+        top: 1.2rem;
+        left: 1.2rem;
+        z-index: 1;
+        padding: 0.7rem;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 0.8rem;
+        font-size: 1.2rem;
+        color: #fff;
+        i {
+          vertical-align: middle;
+          margin-top: -0.2rem;
+          margin-right: 0.4rem;
+        }
+      }
+      .img-box {
+        overflow: hidden;
+        border-radius: 16px 16px 0px 0px;
+        &:before {
+          padding-top: -xyPercent(232, 170);
+        }
+      }
+      .text-box {
+        padding: 1.6rem 1.6rem 4.4rem;
+        .tit {
+          font-size: 1.8rem;
+          color: #212121;
+          font-weight: 500;
+        }
+        .hashtag {
+          margin-top: 1.6rem;
+        }
+        .participant {
+          position: absolute;
+          bottom: 1.6rem;
+          left: 1.6rem;
+          margin-top: 0.8rem;
+          font-size: 1.4rem;
+          color: #818892;
+        }
+      }
+    }
+  }
+
+  &.type2 {
+    .swiper-slide {
+      a {
+        padding: 1.6rem 1.6rem 4.4rem;
+        .label-top2 {
+          font-size: 1.2rem;
+          color: #25b69c;
+          i {
+            vertical-align: middle;
+            margin-top: -0.2rem;
+            margin-right: 0.4rem;
+          }
+        }
+        width: 18rem;
+        .img-box {
+          margin-top: 1rem;
+          border-radius: 0;
+          &:before {
+            padding-top: -xyPercent(148, 78);
+          }
+        }
+        .text-box {
+          padding: 0;
+          .tit {
+            margin-top: 1.6rem;
+          }
+        }
+
+        &.lock {
+          background: #ebebeb;
+          .text-box {
+            .tit {
+              color: #818892;
+            }
+            .hashtag-box {
+              color: #818892;
+              .tag span:before {
+                color: #818892;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

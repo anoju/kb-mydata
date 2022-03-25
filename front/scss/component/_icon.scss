@@ -359,6 +359,10 @@ a.visited {
   //background-image: url('../images/icon/ico-refresh@3x.png');
   background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.9104 10.2C16.3312 14.0488 13.0104 17 9 17C4.5816 17 1 13.4184 1 9C1 4.5816 4.5816 1 9 1C12.28 1 15.1 2.9744 16.3344 5.8' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13 5.80005H16.52C16.583 5.80005 16.6455 5.78763 16.7037 5.76351C16.7619 5.73939 16.8148 5.70403 16.8594 5.65946C16.904 5.61489 16.9393 5.56197 16.9635 5.50374C16.9876 5.4455 17 5.38308 17 5.32005V1.80005' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
+.i-ico-refresh2 {
+  //background-image: url('../images/icon/ico-refresh2.png');
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M21.168 8C20.3892 6.21646 19.107 4.69884 17.4786 3.63311C15.8501 2.56738 13.9462 1.99983 12 2C6.815 2 2.55 5.947 2.05 11' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M17 8H21.4C21.4788 8 21.5568 7.98448 21.6296 7.95433C21.7024 7.92418 21.7685 7.87998 21.8243 7.82426C21.88 7.76855 21.9242 7.70241 21.9543 7.62961C21.9845 7.55682 22 7.47879 22 7.4V3' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2.881 16C4.425 19.532 7.949 22 12.049 22C17.235 22 21.499 18.053 22 13' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.05 16H2.65C2.49087 16 2.33826 16.0632 2.22574 16.1757C2.11322 16.2883 2.05 16.4409 2.05 16.6V21' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
 .i-ico-date {
   width: 1.4rem;
   height: 1.4rem;
@@ -430,6 +434,11 @@ a.visited {
   //background-image: url('../images/icon/ico-alarm.png');
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 10.8333C5 8.07183 7.23858 5.83325 10 5.83325V5.83325C12.7614 5.83325 15 8.07183 15 10.8333V17.4999H5V10.8333Z' stroke='white' stroke-width='1.5'/%3E%3Cpath d='M3.33331 16.75C2.9191 16.75 2.58331 17.0858 2.58331 17.5C2.58331 17.9142 2.9191 18.25 3.33331 18.25V16.75ZM16.6666 18.25C17.0809 18.25 17.4166 17.9142 17.4166 17.5C17.4166 17.0858 17.0809 16.75 16.6666 16.75V18.25ZM3.33331 18.25H16.6666V16.75H3.33331V18.25Z' fill='white'/%3E%3Cpath d='M10 1.66663V3.74996' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M5.09683 2.80518L6.56997 4.27832' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M14.9031 2.80518L13.43 4.27832' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
+.i-ico-alarm2 {
+  width: 4rem;
+  height: 4rem;
+  background-image: url('../images/icon/ico-alarm2.png');
+}
 
 .i-ico-edit {
   width: 2rem;
@@ -488,6 +497,23 @@ a.visited {
   width: 2rem;
   height: 2rem;
   background-image: url('../images/icon/ico-influencer-badge.png');
+}
+
+.i-ico-header-info {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url('../images/icon/ico-header-info.png');
+}
+.i-ico-point-label {
+  width: 2rem;
+  height: 2rem;
+  //background-image: url('../images/icon/ico-point-label.png');
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Ccircle cx='10' cy='10' r='9' stroke='white' stroke-width='2'/%3E%3Cpath d='M10.7275 11.2822H8.76172V9.92334H10.7275C11.0176 9.92334 11.2503 9.875 11.4258 9.77832C11.6048 9.68164 11.7355 9.54915 11.8179 9.38086C11.9038 9.20898 11.9468 9.01562 11.9468 8.80078C11.9468 8.57878 11.9038 8.37288 11.8179 8.18311C11.7355 7.98975 11.6048 7.83398 11.4258 7.71582C11.2503 7.59766 11.0176 7.53857 10.7275 7.53857H9.39551V14H7.64453V6.17969H10.7275C11.3506 6.17969 11.8841 6.29248 12.3281 6.51807C12.7757 6.74365 13.1177 7.05339 13.354 7.44727C13.5939 7.83757 13.7139 8.28516 13.7139 8.79004C13.7139 9.29492 13.5939 9.73356 13.354 10.106C13.1177 10.4784 12.7757 10.7684 12.3281 10.9761C11.8841 11.1802 11.3506 11.2822 10.7275 11.2822Z' fill='white'/%3E%3C/svg%3E");
+}
+.i-ico-fire {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url('../images/icon/ico-fire.png');
 }
 
 // i-img-
