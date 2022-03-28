@@ -109,6 +109,12 @@
   &:after {
     border: 0.2rem solid var(--primary-color);
   }
+  &:before {
+    background: var(--primary-color);
+  }
+  &:after {
+    background: #fff;
+  }
   i {
     display: block;
     position: absolute;
@@ -135,6 +141,12 @@
   &:before,
   &:after {
     border: 0.2rem solid #dedede;
+  }
+  &:before {
+    background: #dedede;
+  }
+  &:after {
+    background: #fff;
   }
   i {
     display: block;
@@ -188,7 +200,7 @@
   }
   65% {
     transform: scale(1);
-    background: transparent;
+    //background: transparent;
     opacity: 1;
   }
   95% {
@@ -196,7 +208,7 @@
   }
   100% {
     transform: scale(1.25);
-    background: transparent;
+    //background: transparent;
     opacity: 0;
   }
 }
