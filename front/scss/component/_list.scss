@@ -86,12 +86,7 @@
   }
   &.ty2 {
     .list-item-2 {
-      .flex {
-        font-size: 1.4rem;
-        color: var(--gray-txt-color);
-      }
       .item-tit {
-        margin-top: 0.8rem;
         color: var(--strong-txt-color);
         @include ellipsis(2);
       }
@@ -173,6 +168,13 @@
 }
 
 .list-item-2 {
+  > .flex {
+    font-size: 1.4rem;
+    color: var(--gray-txt-color);
+    + .item-tit {
+      margin-top: 0.8rem;
+    }
+  }
   .item-tit {
     font-size: var(--strong-txt-color2);
   }
