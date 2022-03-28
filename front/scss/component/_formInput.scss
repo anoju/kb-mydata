@@ -12,7 +12,14 @@
     border-color: var(--line-color);
     background-color: #fff;
   }
-  &.readonly,
+  // &.readonly {
+  //   background: none;
+  //   border-width: 0;
+  // }
+  &.readonly input,
+  input[readonly] {
+    color: var(--base-txt-color);
+  }
   &.disabled {
     background: #f8f8f8;
   }
@@ -20,7 +27,6 @@
     border-color: #eee;
   }
   &.disabled input,
-  // input[readonly],
   input:disabled {
     opacity: 0.4;
   }

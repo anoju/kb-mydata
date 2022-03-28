@@ -35,6 +35,10 @@
   textarea:disabled {
     opacity: 0.4;
   }
+  &.readonly input,
+  input[readonly] {
+    color: var(--base-txt-color);
+  }
   .btn-inp-del {
     position: absolute;
     top: 1.5rem;

@@ -54,6 +54,7 @@
 [class*='i-ico-'],
 [class*='i-btn-'],
 [class*='i-img-'],
+[class*='i-head-'],
 [class*='i-ani-'] {
   position: relative;
   display: inline-block;
@@ -62,6 +63,15 @@
   @include bg-etc;
   flex-shrink: 0;
   font-size: 0;
+}
+.i-head-alarm {
+  background-image: url('../images/icon/head-alarm.png');
+  &.new {
+    background-image: url('../images/icon/head-alarm-new.png');
+  }
+}
+.i-head-setting {
+  background-image: url('../images/icon/head-setting.png');
 }
 .i-ani-success,
 .i-ani-warning {
@@ -434,11 +444,6 @@ a.visited {
   //background-image: url('../images/icon/ico-alarm.png');
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 10.8333C5 8.07183 7.23858 5.83325 10 5.83325V5.83325C12.7614 5.83325 15 8.07183 15 10.8333V17.4999H5V10.8333Z' stroke='white' stroke-width='1.5'/%3E%3Cpath d='M3.33331 16.75C2.9191 16.75 2.58331 17.0858 2.58331 17.5C2.58331 17.9142 2.9191 18.25 3.33331 18.25V16.75ZM16.6666 18.25C17.0809 18.25 17.4166 17.9142 17.4166 17.5C17.4166 17.0858 17.0809 16.75 16.6666 16.75V18.25ZM3.33331 18.25H16.6666V16.75H3.33331V18.25Z' fill='white'/%3E%3Cpath d='M10 1.66663V3.74996' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M5.09683 2.80518L6.56997 4.27832' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M14.9031 2.80518L13.43 4.27832' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
-.i-ico-alarm2 {
-  width: 4rem;
-  height: 4rem;
-  background-image: url('../images/icon/ico-alarm2.png');
-}
 
 .i-ico-edit {
   width: 2rem;
@@ -514,6 +519,14 @@ a.visited {
   width: 1.6rem;
   height: 1.6rem;
   background-image: url('../images/icon/ico-fire.png');
+}
+.i-ico-btn-my {
+  // background-image: url('../images/icon/ico-btn-my.png');
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7734 13.7049H9.22626C7.59363 13.786 6.14719 14.7832 5.49084 16.2803C4.69919 17.8345 6.27913 19.3036 8.11661 19.3036H15.8831C17.7217 19.3036 19.3016 17.8345 18.5088 16.2803C17.8525 14.7832 16.406 13.786 14.7734 13.7049Z' stroke='%23424242' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.359 7.48419C15.359 9.33942 13.8551 10.8434 11.9998 10.8434C10.1446 10.8434 8.64066 9.33942 8.64066 7.48419C8.64066 5.62896 10.1446 4.125 11.9998 4.125C12.8908 4.125 13.7452 4.47891 14.3752 5.10888C15.0051 5.73886 15.359 6.59328 15.359 7.48419Z' stroke='%23424242' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.i-ico-btn-alarm {
+  // background-image: url('../images/icon/ico-btn-alarm.png');
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7.33465 8.61319C7.59878 6.23596 9.60814 4.4375 12 4.4375V4.4375C14.3919 4.4375 16.4012 6.23596 16.6654 8.61319L16.8769 10.5174C16.9855 11.4943 17.3034 12.4363 17.8091 13.2791L18.2948 14.0886C18.6067 14.6084 18.7627 14.8683 18.7887 15.0783C18.843 15.5158 18.6044 15.9372 18.2013 16.1157C18.0079 16.2014 17.7048 16.2014 17.0986 16.2014H6.90139C6.29521 16.2014 5.99212 16.2014 5.79867 16.1157C5.39562 15.9372 5.15703 15.5158 5.2113 15.0783C5.23734 14.8683 5.39328 14.6084 5.70516 14.0886L6.19087 13.2791C6.69656 12.4363 7.01452 11.4943 7.12306 10.5174L7.33465 8.61319Z' stroke='%23424242' stroke-width='2'/%3E%3Cpath d='M9.5651 16.7599C9.70873 17.5639 10.0252 18.2744 10.4655 18.7811C10.9057 19.2878 11.4451 19.5625 12 19.5625C12.555 19.5625 13.0944 19.2878 13.5346 18.7811C13.9749 18.2744 14.2914 17.5639 14.435 16.7599' stroke='%23424242' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 // i-img-
@@ -593,4 +606,19 @@ a.visited {
   width: 6rem;
   height: 6rem;
   background-image: url('../images/icon/ico-save.png');
+}
+.i-img-more-my {
+  background-image: url('../images/icon/ico-more-my.png');
+}
+.i-img-more-cs {
+  background-image: url('../images/icon/ico-more-cs.png');
+}
+.i-img-more-inv {
+  background-image: url('../images/icon/ico-more-inv.png');
+}
+.i-img-more-cert {
+  background-image: url('../images/icon/ico-more-cert.png');
+}
+.i-img-more-match {
+  background-image: url('../images/icon/ico-more-match.png');
 }

@@ -2558,9 +2558,9 @@ ui.Form = {
     });
 
     //페이지 로딩 후 검색박스에 입력값이 있으면 X 버튼 추가
-    $('.search_box .input input').each(function () {
-      if ($(this).val() != '') $(this).after('<a href="#" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>');
-    });
+    // $('.search_box .input input').each(function () {
+    //   if ($(this).val() != '') $(this).after('<a href="#" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>');
+    // });
 
     //입력 텍스트 카운팅(로딩)
     $('[data-text-count]').each(function (e) {
@@ -2806,13 +2806,12 @@ ui.Form = {
         }
       }
     };
-    $('.input input, .textarea.del textarea').each(function () {
-      insertDel(this);
-    });
+    // $('.input input, .textarea.del textarea').each(function () {
+    //   insertDel(this);
+    // });
     $(document).on('keyup focusin', '.input input, .textarea.del textarea', function () {
       insertDel(this);
     });
-    /*
     $(document).on('focusout', '.input:not(.show-del) input, .textarea.del:not(.show-del) textarea', function () {
       const $this = $(this);
       if ($this.siblings('.btn-inp-del').length) {
@@ -2823,7 +2822,6 @@ ui.Form = {
         $this.data('removeDelBtn', removeDelBtn);
       }
     });
-    */
     $(document).on('click', '.btn-inp-del', function () {
       const $inp = $(this).prev();
       $inp.val('').change().focus().keyup();
