@@ -509,7 +509,7 @@ const guide = {
       }
     });
     $('.g_content tbody .m_date').each(function () {
-      if (!$.trim($(this).html()) == '') {
+      if (!$.trim($(this).html()) == '' && !$(this).parent('tr').hasClass('del')) {
         $(this).parent('tr').addClass('modify');
       }
     });
