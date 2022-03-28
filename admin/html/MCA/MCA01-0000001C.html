@@ -38,12 +38,279 @@
         <!-- 컨텐츠 -->
         <main class="kb-content" role="main">
           <!-- 컨텐츠본문 -->
-          <div class="row">
-            <div class="col-md-9">
+
+          <!-- 회원현황 -->
+          <div>
+            <div class="d-flex">
+              <div class="ml-auto">
+                <small>YYYY.MM.DD 기준</small>
+              </div>
+            </div>
+            <div class="dashboard-box mt-1">
+              <div class="dashboard">
+                <dl>
+                  <dt>신규회원</dt>
+                  <dd><strong class="fz-lg fc-yellow">321</strong>명</dd>
+                </dl>
+                <dl>
+                  <dt>탈퇴회원</dt>
+                  <dd><strong class="fz-lg fc-yellow">11</strong>명</dd>
+                </dl>
+                <dl>
+                  <dt>총 회원수</dt>
+                  <dd><strong class="fz-lg fc-yellow">120,321</strong>명</dd>
+                </dl>
+                <dl>
+                  <dt>총 누적회원수</dt>
+                  <dd><strong class="fz-lg fc-yellow">320,321</strong>명</dd>
+                </dl>
+                <dl class="line">
+                  <dt>당일 매치건수</dt>
+                  <dd><strong class="fz-lg fc-yellow">333</strong>건</dd>
+                </dl>
+                <dl>
+                  <dt>당일 그라운드 게시글수</dt>
+                  <dd><strong class="fz-lg fc-yellow">33</strong>건</dd>
+                </dl>
+                <dl>
+                  <dt>이벤트 진행</dt>
+                  <dd><strong class="fz-lg fc-yellow">3</strong>건</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-9">
+                <div class="text-line-box">
+                  <div class="title-wrap">
+                    <div class="left">
+                      <h2 class="h3">회원현황</h2>
+                    </div>
+                  </div>
+                  <div class="form-box">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">기간검색</div>
+                        <div class="form-box-cont">
+                          <div class="input-daterange-btn">
+                            <div class="input-group">
+                              <input type="date" class="form-control" placeholder="시작일" />
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">~</div>
+                              </div>
+                              <input type="date" class="form-control" placeholder="종료일" />
+                            </div>
+
+                            <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                              <button type="button" class="btn btn-outline-secondary active">오늘</button>
+                              <button type="button" class="btn btn-outline-secondary">1개월</button>
+                              <button type="button" class="btn btn-outline-secondary">3개월</button>
+                              <button type="button" class="btn btn-outline-secondary">6개월</button>
+                              <!-- active 클래스로  활성화 -->
+                            </div>
+
+                            <button type="button" class="btn btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row mt-4 align-items-center">
+                    <div class="col-md-9">
+                      <div id="chart1" class="chart-area"></div>
+                    </div>
+                    <div class="col-md-3 mt-3 mt-md-0">
+                      <ul class="dashboard-list">
+                        <li>
+                          <div class="tit">
+                            <strong>전체회원</strong>
+                            <span>
+                              <strong>100,000,000</strong>
+                              명
+                            </span>
+                          </div>
+                          <div class="sub">(기간최대: 10,000명)</div>
+                        </li>
+                        <li>
+                          <div class="tit">
+                            <strong>신규회원</strong>
+                            <span>
+                              <strong>100,000,000</strong>
+                              명
+                            </span>
+                          </div>
+                          <div class="sub">(기간최대: 10,000명)</div>
+                        </li>
+                        <li>
+                          <div class="tit">
+                            <strong>탈퇴회원</strong>
+                            <span>
+                              <strong>100,000,000</strong>
+                              명
+                            </span>
+                          </div>
+                          <div class="sub">(기간최대: 10,000명)</div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mt-3 mt-md-0">
+                <div class="list-group">
+                  <a href="#" class="list-group-item text-center bg-gray-700 fc-white"> 1:1 문의 미답변 <strong class="fz-lg fc-yellow">14</strong>건</a>
+                  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    회원가입
+                    <span class="badge badge-secondary badge-pill">14</span>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    이벤트/쿠폰
+                    <span class="badge badge-secondary badge-pill">14</span>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    리워드
+                    <span class="badge badge-secondary badge-pill">14</span>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    포인트
+                    <span class="badge badge-secondary badge-pill">14</span>
+                  </a>
+                </div>
+                <div class="text-right mt-1">
+                  <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
+                </div>
+
+                <div class="list-group mt-3">
+                  <div class="list-group-item text-center bg-gray-700 fc-white">주요 공지사항</div>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
+                </div>
+                <div class="text-right mt-1">
+                  <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //회원현황 -->
+
+          <!-- 업권별등록현황 -->
+          <div class="mt-5">
+            <div class="d-flex">
+              <div class="ml-auto">
+                <small>YYYY.MM.DD 기준</small>
+              </div>
+            </div>
+            <div class="dashboard-box mt-1">
+              <div class="dashboard">
+                <dl>
+                  <dt>연동 회원수</dt>
+                  <dd>
+                    <strong class="fz-lg fc-yellow">572,234</strong>건
+                    <span class="fc-gray-400 ml-1">(43%↑)</span>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>철회 회원수</dt>
+                  <dd>
+                    <strong class="fz-lg fc-yellow">572,234</strong>건
+                    <span class="fc-gray-400 ml-1">(43%↑)</span>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>정기적 정송 회원수</dt>
+                  <dd>
+                    <strong class="fz-lg fc-yellow">572,234</strong>건
+                    <span class="fc-gray-400 ml-1">(43%↑)</span>
+                  </dd>
+                </dl>
+                <dl class="line">
+                  <dt>금융자산 연결건</dt>
+                  <dd>
+                    <strong class="fz-lg fc-yellow">572,234</strong>건
+                    <span class="fc-gray-400 ml-1">(43%↑)</span>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>비금융자산 연결건</dt>
+                  <dd>
+                    <strong class="fz-lg fc-yellow">572,234</strong>건
+                    <span class="fc-gray-400 ml-1">(43%↑)</span>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+            <div class="mt-4">
               <div class="text-line-box">
                 <div class="title-wrap">
                   <div class="left">
-                    <h2 class="h3">회원현황</h2>
+                    <h2 class="h3">업권별 등록현황</h2>
+                  </div>
+                </div>
+
+                <div class="mt-4 align-items-center">
+                  <div id="chart2" class="chart-area"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //업권별등록현황 -->
+
+          <!-- 매치/그라운드 현황 -->
+          <div class="mt-5">
+            <div class="d-flex">
+              <div class="ml-auto">
+                <small>YYYY.MM.DD 기준</small>
+              </div>
+            </div>
+            <div class="dashboard-box mt-1">
+              <div class="dashboard">
+                <dl>
+                  <dt>당일 매치건수</dt>
+                  <dd><strong class="fz-lg fc-yellow">321</strong>건</dd>
+                </dl>
+                <dl>
+                  <dt>당일 그라운드 게시글수</dt>
+                  <dd><strong class="fz-lg fc-yellow">11</strong>건</dd>
+                </dl>
+                <dl>
+                  <dt>누적 매치 건수</dt>
+                  <dd><strong class="fz-lg fc-yellow">120,321</strong>건</dd>
+                </dl>
+                <dl>
+                  <dt>총 그라운드 게시글</dt>
+                  <dd><strong class="fz-lg fc-yellow">320,321</strong>건</dd>
+                </dl>
+                <dl class="line">
+                  <dt>당일 신고건수</dt>
+                  <dd><strong class="fz-lg fc-yellow">333</strong>건</dd>
+                </dl>
+                <div class="text-line-box">
+                  <div>
+                    <div>게시글</div>
+                    <div>00건</div>
+                  </div>
+                  <div>
+                    <div>답글</div>
+                    <div>00건</div>
+                  </div>
+                  <div>
+                    <div>댓글</div>
+                    <div>00건</div>
+                  </div>
+                  <div>
+                    <div>계정신고</div>
+                    <div>00건</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <div class="text-line-box">
+                <div class="title-wrap">
+                  <div class="left">
+                    <h2 class="h3">매치 현황</h2>
                   </div>
                 </div>
                 <div class="form-box">
@@ -74,269 +341,261 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="form-row mt-4 align-items-center">
+                  <div class="col-md-9">
+                    <div id="chart3" class="chart-area"></div>
+                  </div>
+                  <div class="col-md-3 mt-3 mt-md-0">
+                    <ul class="dashboard-list">
+                      <li>
+                        <div class="tit">
+                          <strong>매치 참여</strong>
+                          <span>
+                            총
+                            <strong>100,000,000</strong>
+                            건
+                          </span>
+                        </div>
+                        <div class="sub">(기간최대: 10,000건)</div>
+                      </li>
+                      <li>
+                        <div class="tit">
+                          <strong>일평균 매치</strong>
+                          <span>
+                            <strong>100</strong>
+                            건
+                          </span>
+                        </div>
+                        <div class="sub">(기간최대: 10,000건)</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="col-md-9">
+                <div class="text-line-box">
+                  <div class="title-wrap">
+                    <div class="left">
+                      <h2 class="h3">그라운드 현황</h2>
+                    </div>
+                  </div>
+                  <div class="form-box">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">기간검색</div>
+                        <div class="form-box-cont">
+                          <div class="input-daterange-btn">
+                            <div class="input-group">
+                              <input type="date" class="form-control" placeholder="시작일" />
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">~</div>
+                              </div>
+                              <input type="date" class="form-control" placeholder="종료일" />
+                            </div>
+
+                            <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                              <button type="button" class="btn btn-outline-secondary active">오늘</button>
+                              <button type="button" class="btn btn-outline-secondary">1개월</button>
+                              <button type="button" class="btn btn-outline-secondary">3개월</button>
+                              <button type="button" class="btn btn-outline-secondary">6개월</button>
+                              <!-- active 클래스로  활성화 -->
+                            </div>
+
+                            <button type="button" class="btn btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row mt-4 align-items-center">
+                    <div class="col-md-9">
+                      <div id="chart4" class="chart-area"></div>
+                    </div>
+                    <div class="col-md-3 mt-3 mt-md-0">
+                      <ul class="dashboard-list">
+                        <li>
+                          <div class="tit">
+                            <strong>그라운드 새글</strong>
+                            <span>
+                              총
+                              <strong>100,000,000</strong>
+                              건
+                            </span>
+                          </div>
+                          <div class="sub">(기간최대: 10,000건)</div>
+                        </li>
+                        <li>
+                          <div class="tit">
+                            <strong>일평균 게시글</strong>
+                            <span>
+                              <strong>100</strong>
+                              건
+                            </span>
+                          </div>
+                          <div class="sub">(기간최대: 10,000건)</div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mt-3 mt-md-0">
+                <div class="list-group">
+                  <div class="list-group-item text-center bg-gray-700 fc-white">신고게시글 <strong class="fz-lg fc-yellow">14</strong>건</div>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">신고글입니다.신고글입니다.신고글입니다.신고글입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">신고글입니다.신고글입니다.신고글입니다.신고글입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">신고글입니다.신고글입니다.신고글입니다.신고글입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">신고글입니다.신고글입니다.신고글입니다.신고글입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">신고글입니다.신고글입니다.신고글입니다.신고글입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">신고글입니다.신고글입니다.신고글입니다.신고글입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">신고글입니다.신고글입니다.신고글입니다.신고글입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">신고글입니다.신고글입니다.신고글입니다.신고글입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">신고글입니다.신고글입니다.신고글입니다.신고글입니다.</a>
+                  <a href="#" class="list-group-item list-group-item-action ellipsis">신고글입니다.신고글입니다.신고글입니다.신고글입니다.</a>
+                </div>
+                <div class="text-right mt-1">
+                  <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // 매치/그라운드 현황 -->
+
+          <!-- 이벤트, 배너, 수신동의 -->
+          <div class="row mt-5">
+            <div class="col-md-9">
+              <div class="text-line-box">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="title-wrap">
+                      <div class="left">
+                        <h2 class="h3">진행 중 이벤트</h2>
+                      </div>
+                      <div class="right">
+                        <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
+                      </div>
+                    </div>
+
+                    <table id="table1" class="table table-hover mt-1">
+                      <thead>
+                        <tr>
+                          <th scope="col">제목</th>
+                          <th scope="col">기간</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
+                          </td>
+                          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
+                          </td>
+                          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
+                          </td>
+                          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
+                          </td>
+                          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
+                          </td>
+                          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-md-6 mt-3 mt-md-0">
+                    <div class="title-wrap">
+                      <div class="left">
+                        <h2 class="h3">배너노출</h2>
+                      </div>
+                      <div class="right">
+                        <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
+                      </div>
+                    </div>
+
+                    <table id="table2" class="table table-hover mt-1">
+                      <thead>
+                        <tr>
+                          <th scope="col">제목</th>
+                          <th scope="col">기간</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
+                          </td>
+                          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
+                          </td>
+                          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
+                          </td>
+                          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
+                          </td>
+                          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
+                          </td>
+                          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-md-3 mt-3 mt-md-0">
               <div class="list-group">
-                <a href="#" class="list-group-item text-center bg-gray-700 fc-white"> 1:1 문의 미답변 <strong class="fz-lg fc-yellow">14</strong>건</a>
-                <!-- <a href="#" class="list-group-item list-group-item-action">
-                  <dl class="d-flex align-content-center mb-0">
-                    <dt class="font-weight-normal">회원가입</dt>
-                    <dd class="ml-auto mb-0">
-                      <strong><u>00</u>건</strong>
-                    </dd>
-                  </dl>
-                </a> -->
-                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <div class="list-group-item text-center bg-gray-700 fc-white">전체수신동의회원 <strong class="fz-lg fc-yellow">14</strong>건</div>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                   회원가입
-                  <span class="badge badge-secondary badge-pill">14</span>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                  이벤트/쿠폰
-                  <span class="badge badge-secondary badge-pill">14</span>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                  리워드
-                  <span class="badge badge-secondary badge-pill">14</span>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                  포인트
-                  <span class="badge badge-secondary badge-pill">14</span>
-                </a>
-              </div>
-
-              <div class="list-group mt-3">
-                <div class="list-group-item text-center bg-gray-700 fc-white">주요 공지사항</div>
-                <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
-                <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
-                <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
-                <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="title-wrap mt-5">
-            <div class="left">
-              <h2 class="h3">관리자 검색</h2>
-            </div>
-          </div>
-          <div class="form-box">
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">검색어</div>
-                <div class="form-box-cont">
-                  <div class="form-row">
-                    <div class="col-md-5">
-                      <select class="custom-select">
-                        <option value="1">이름</option>
-                      </select>
-                    </div>
-                    <div class="col-md-7 mt-2 mt-md-0">
-                      <input type="text" class="form-control" />
-                    </div>
-                  </div>
+                  <u class="fc-gray-600 font-weight-bold">00,000/00,000</u>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                  SMS
+                  <u class="fc-gray-600 font-weight-bold">00,000/00,000</u>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                  PUSH
+                  <u class="fc-gray-600 font-weight-bold">00,000/00,000</u>
                 </div>
               </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">분류</div>
-                <div class="form-box-cont">
-                  <div class="custom-control-wrap">
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">전체</span>
-                    </label>
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">수퍼관리자</span>
-                    </label>
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">일반관리자</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
+              <div class="text-right mt-2 fc-gray-600">(동의/미동의)</div>
             </div>
           </div>
-          <div class="btn-wrap">
-            <button type="button" class="btn large btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
-          </div>
-
-          <div class="title-wrap mt-5">
-            <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개</div>
-            <div class="right">
-              <select class="custom-select custom-select-sm">
-                <option value="1">등록일 ↓</option>
-                <option value="2">등록일 ↑</option>
-              </select>
-            </div>
-          </div>
-
-          <table id="table" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
-            <thead>
-              <tr>
-                <th scope="col">번호</th>
-                <th scope="col">분류</th>
-                <th scope="col">이름</th>
-                <th scope="col">사번</th>
-                <th scope="col">계정상태</th>
-                <th scope="col">권한그룹</th>
-                <th scope="col">그룹명</th>
-                <th scope="col">연락처</th>
-                <th scope="col">등록일</th>
-                <th scope="col">최종로그인</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="tr-fixed">
-                <td>-</td>
-                <td>수퍼관리자</td>
-                <td>홍길동</td>
-                <td>20010125</td>
-                <td>-</td>
-                <td>A</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>일반관리자</td>
-                <td>강백호</td>
-                <td>20010125</td>
-                <td>사용중지</td>
-                <td>B</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>일반관리자</td>
-                <td>이강철</td>
-                <td>20010125</td>
-                <td>-</td>
-                <td>C</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>일반관리자</td>
-                <td>봉중근</td>
-                <td>20081209</td>
-                <td>-</td>
-                <td>D</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>일반관리자</td>
-                <td>이강철</td>
-                <td>20080603</td>
-                <td>-</td>
-                <td>E</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>일반관리자</td>
-                <td>봉중근</td>
-                <td>20010125</td>
-                <td>사용중지</td>
-                <td>F</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>일반관리자</td>
-                <td>봉중근</td>
-                <td>20010125</td>
-                <td>사용중지</td>
-                <td>F</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>일반관리자</td>
-                <td>봉중근</td>
-                <td>20010125</td>
-                <td>사용중지</td>
-                <td>F</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>일반관리자</td>
-                <td>봉중근</td>
-                <td>20010125</td>
-                <td>사용중지</td>
-                <td>F</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>일반관리자</td>
-                <td>봉중근</td>
-                <td>20010125</td>
-                <td>사용중지</td>
-                <td>F</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td>일반관리자</td>
-                <td>봉중근</td>
-                <td>20010125</td>
-                <td>사용중지</td>
-                <td>F</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>일반관리자</td>
-                <td>봉중근</td>
-                <td>20010125</td>
-                <td>사용중지</td>
-                <td>F</td>
-                <td>회원 관리 관리자</td>
-                <td>010-0000-0000</td>
-                <td>2022.12.01</td>
-                <td>2022.12.01</td>
-              </tr>
-            </tbody>
-          </table>
+          <!--// 이벤트, 배너, 수신동의 -->
           <!-- //컨텐츠본문 -->
         </main>
         <!-- //컨텐츠 -->
@@ -350,20 +609,296 @@
     <!-- //wrap -->
 
     <script>
+      // chart
+      function initChart() {
+        Highcharts.chart('chart1', {
+          colors: ['#dc3545', '#007bff'],
+          title: false,
+
+          legend: {
+            align: 'center'
+          },
+          yAxis: {
+            title: false
+          },
+          xAxis: {
+            categories: ['2022.07.01', '2022.07.02', '2022.07.03', '2022.07.04', '2022.07.05', '2022.07.06', '2022.07.07']
+          },
+          plotOptions: {
+            series: {
+              dataLabels: {
+                enabled: true,
+                format: '{point.y}'
+              }
+            }
+          },
+          series: [
+            {
+              name: '가입',
+              data: [30, 25, 39, 37, 54, 42, 58]
+            },
+            {
+              name: '탈퇴',
+              data: [2, 3, 8, 0, 9, 2, 8]
+            }
+          ]
+        });
+
+        // Create the chart
+        Highcharts.chart('chart2', {
+          chart: {
+            type: 'column'
+          },
+          title: false,
+          xAxis: {
+            type: 'category'
+          },
+          yAxis: {
+            title: false
+          },
+          legend: {
+            enabled: false
+          },
+          plotOptions: {
+            series: {
+              dataLabels: {
+                enabled: true,
+                format: '{point.y}'
+              }
+            }
+          },
+          series: [
+            {
+              colorByPoint: true,
+              data: [
+                {
+                  name: '은행',
+                  y: 30
+                },
+                {
+                  name: '카드',
+                  y: 20
+                },
+                {
+                  name: '보험',
+                  y: 23
+                },
+                {
+                  name: '업권 1',
+                  y: 87
+                },
+                {
+                  name: '업권 2',
+                  y: 65
+                },
+                {
+                  name: '업권 3',
+                  y: 54
+                },
+                {
+                  name: '업권 4',
+                  y: 21
+                },
+                {
+                  name: '업권 5',
+                  y: 21
+                },
+                {
+                  name: '업권 6',
+                  y: 21
+                },
+                {
+                  name: '은행',
+                  y: 30
+                },
+                {
+                  name: '카드',
+                  y: 20
+                },
+                {
+                  name: '보험',
+                  y: 23
+                },
+                {
+                  name: '업권 1',
+                  y: 87
+                },
+                {
+                  name: '업권 2',
+                  y: 65
+                },
+                {
+                  name: '업권 3',
+                  y: 54
+                },
+                {
+                  name: '업권 4',
+                  y: 21
+                },
+                {
+                  name: '업권 5',
+                  y: 21
+                },
+                {
+                  name: '업권 6',
+                  y: 21
+                },
+                {
+                  name: '업권 7',
+                  y: 21
+                },
+                {
+                  name: '업권 8',
+                  y: 21
+                },
+                {
+                  name: '업권 9',
+                  y: 21
+                },
+                {
+                  name: '업권 10',
+                  y: 21
+                },
+                {
+                  name: '업권 11',
+                  y: 21
+                },
+                {
+                  name: '업권 12',
+                  y: 21
+                },
+                {
+                  name: '업권 13',
+                  y: 21
+                },
+                {
+                  name: '업권 14',
+                  y: 21
+                },
+                {
+                  name: '업권 15',
+                  y: 21
+                },
+                {
+                  name: '업권 16',
+                  y: 21
+                },
+                {
+                  name: '업권 17',
+                  y: 21
+                },
+                {
+                  name: '업권 18',
+                  y: 21
+                },
+                {
+                  name: '업권 19',
+                  y: 21
+                },
+                {
+                  name: '업권 20',
+                  y: 21
+                },
+                {
+                  name: '업권 21',
+                  y: 21
+                }
+              ]
+            }
+          ]
+        });
+
+        Highcharts.chart('chart3', {
+          colors: ['#dc3545', '#007bff'],
+          title: false,
+
+          legend: {
+            align: 'center'
+          },
+
+          yAxis: {
+            title: false
+          },
+          xAxis: {
+            categories: ['2022.07.01', '2022.07.02', '2022.07.03', '2022.07.04', '2022.07.05', '2022.07.06', '2022.07.07']
+          },
+          plotOptions: {
+            series: {
+              dataLabels: {
+                enabled: true,
+                format: '{point.y}'
+              }
+            }
+          },
+          series: [
+            {
+              name: '1:1매치',
+              data: [30, 25, 39, 37, 54, 42, 58]
+            },
+            {
+              name: '리벤치매치',
+              data: [22, 32, 28, 29, 49, 25, 49]
+            }
+          ]
+        });
+
+        Highcharts.chart('chart4', {
+          colors: ['#dc3545', '#007bff', '#28a745', '#6f42c1'],
+          title: false,
+
+          legend: {
+            align: 'center'
+          },
+
+          yAxis: {
+            title: false
+          },
+          xAxis: {
+            categories: ['2022.07.01', '2022.07.02', '2022.07.03', '2022.07.04', '2022.07.05', '2022.07.06', '2022.07.07']
+          },
+          plotOptions: {
+            series: {
+              dataLabels: {
+                enabled: true,
+                format: '{point.y}'
+              }
+            }
+          },
+          series: [
+            {
+              name: '게시글',
+              data: [30, 25, 39, 37, 54, 42, 58]
+            },
+            {
+              name: '댓글',
+              data: [122, 82, 78, 69, 149, 85, 99]
+            },
+            {
+              name: '답글',
+              data: [22, 32, 28, 29, 49, 25, 49]
+            },
+            {
+              name: '좋아요',
+              data: [2, 2, 8, 9, 4, 5, 9]
+            }
+          ]
+        });
+      }
+      initChart();
+
       // 테이블
       function initTable() {
-        $('#table').bootstrapTable('destroy').bootstrapTable({
+        $('#table1').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+
+        $('#table2').bootstrapTable('destroy').bootstrapTable({
           // height: 550,
           locale: 'ko-KR'
         });
       }
       initTable();
-
-      // 팝업
-      //접근권한없음 팝업
-      // Modal.alert('해당 메뉴에 접속권한이 없습니다.', function (e) {
-      //   console.log('접속권한 - 확인');
-      // });
     </script>
   </body>
 </html>

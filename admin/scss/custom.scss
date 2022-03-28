@@ -177,6 +177,9 @@ $grays: (
     background-color: $val;
   }
 }
+.bg-none {
+  background: none !important;
+}
 .fz-lg {
   font-size: $font-size-lg;
 }
@@ -1706,6 +1709,100 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   border-radius: $border-radius-lg;
   > *:last-child {
     margin-bottom: 0;
+  }
+}
+
+.dashboard-box {
+  background: $dark;
+  border-radius: $border-radius-lg;
+  color: $white;
+  padding: 1rem;
+  overflow: auto hidden;
+  .text-line-box {
+    font-size: 0.875em;
+    background: none;
+    padding: 0.2rem 0.8rem;
+    color: $gray-400;
+    align-items: center;
+    > div {
+      width: 100%;
+      padding: 0.3rem;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+.dashboard {
+  font-size: $font-size-sm;
+  word-break: keep-all;
+  white-space: nowrap;
+  display: flex;
+  > div {
+    display: flex;
+    width: 100%;
+    + div {
+      border-left: 1px solid $gray-600;
+    }
+  }
+  .line {
+    border-left: 1px solid $gray-600;
+  }
+  dl {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0 0.5rem;
+    // min-width: 6rem;
+  }
+  dt {
+    display: flex;
+    font-weight: $font-weight-normal;
+    line-height: 1.1;
+    min-height: 1.688rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  dd {
+    margin: 0.25rem 0 0 0;
+  }
+}
+.chart-area {
+  height: 22rem;
+}
+.dashboard-list {
+  height: 22rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  // font-size: $font-size-sm;
+  > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    height: 100%;
+    background: $gray-100;
+    padding: 1rem;
+    border-radius: $border-radius-lg;
+    + li {
+      margin-top: 1rem;
+    }
+  }
+  .tit {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    > span {
+      margin-left: auto;
+      text-align: right;
+    }
+  }
+  .sub {
+    text-align: right;
+    margin-top: 0.3rem;
+    color: $gray-600;
   }
 }
 
