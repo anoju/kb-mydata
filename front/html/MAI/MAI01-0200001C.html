@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('내정보수정');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button type="button" class="head-back button" aria-label="이전화면" onclick="backBtn()"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <h1 class="tit-h1">내 정보 수정</h1>
+
+          <p class="img-box avatar w-80 mg-autox mt-25">
+            <img src="../../images/match/sample_result.png" alt="" />
+          </p>
+          <div class="mt-32">
+            <div class="input form-box readonly">
+              <div class="form-lbl">닉네임</div>
+              <input type="text" title="닉네임" value="운좋은나무늘보012" readonly />
+              <div>
+                <button class="button h24 line">변경</button>
+              </div>
+            </div>
+            <div class="input form-box readonly">
+              <div class="form-lbl">이름(필수)</div>
+              <input type="text" title="이름" value="홍길동" readonly />
+            </div>
+            <div class="select form-box">
+              <div class="form-lbl">통신사(필수)</div>
+              <select title="통신사">
+                <option value="1">SKT</option>
+                <option value="2">KT</option>
+                <option value="3">LG U+</option>
+              </select>
+            </div>
+            <div class="input form-box">
+              <div class="form-lbl">휴대폰 번호(필수)</div>
+              <input type="text" title="휴대폰 번호" value="010-1234-1234" />
+            </div>
+            <div class="input form-box">
+              <div class="form-lbl">이메일 주소(필수)</div>
+              <input type="text" title="이메일 주소" value="kyobo1234@gmail.com" />
+            </div>
+          </div>
+        </div>
+        <div class="btn-wrap bottom-fixed">
+          <div class="flex">
+            <button type="button" class="button h60 primary" onclick="mainBtn()">수정완료</button>
+          </div>
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+
+      <!-- 팝업 -->
+      <!-- //팝업 -->
+    </article>
+    <script>
+      const backBtn = function () {
+        Layer.confirm('정보 수정을 취소하고 돌아갈까요?<br />바꾼 정보를 저장합니다.', null, '예', '아니오', function (e) {
+          if (e) {
+            console.log('예');
+          } else {
+            console.log('아니오');
+          }
+        });
+      };
+
+      const mainBtn = function () {
+        Layer.confirm('이름, 휴대폰 번호를 변경하려면<br />본인인증을 해야해요.', null, '예', '아니오', function (e) {
+          if (e) {
+            console.log('예');
+            Layer.alert('내 정보가 안전하게 변경되었어요.');
+          } else {
+            console.log('아니오');
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
