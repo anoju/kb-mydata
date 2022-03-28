@@ -96,23 +96,5 @@
     "complete": "2022-03-24",
     "change": "2022-03-24",
     "etc": "label 태그 수정"
-  },
-  {
-    "id": "SMS01-0100001C",
-    "url": "../../admin/html/SMS/",
-    "depth2": "SMS 발송관리",
-    "name": "SMS 발송내역 목록",
-    "worker": "변상우",
-    "complete": "2022-03-24",
-    "etc": "임시 화면 ID"
-  },
-  {
-    "id": "SMS01-0100002C",
-    "url": "../../admin/html/SMS/",
-    "depth2": "SMS 발송등록",
-    "name": "SMS 발송 등록",
-    "worker": "변상우",
-    "complete": "2022-03-24",
-    "etc": "임시 화면 ID"
   }
 ]
