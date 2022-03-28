@@ -22,9 +22,6 @@
     <script src="../../lib/ckeditor/ckeditor.js"></script>
     <script src="../../js/custom.lib.min.js"></script>
     <script src="../../js/custom.js"></script>
-
-    <link rel="stylesheet" href="../../lib/lightbox/ekko-lightbox.css" />
-    <script src="../../lib/lightbox/ekko-lightbox.min.js"></script>
   </head>
   <body>
     <!-- wrap -->
@@ -49,13 +46,13 @@
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">홈</a></li>
                     <li class="breadcrumb-item"><a href="#">매치관리</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">뱃지 관리</li>
+                    <li class="breadcrumb-item active" aria-current="page">인플루언서 관리</li>
                   </ol>
                 </nav>
-                <h1>뱃지 관리</h1>
+                <h1>인플루언서 관리</h1>
               </div>
               <div class="kb-page-btn">
-                <button type="button" class="btn btn-primary"><i class="bi bi-plus"></i> 뱃지 등록</button>
+                <button type="button" class="btn btn-primary"><i class="bi bi-plus"></i> 인플루언서 등록</button>
               </div>
             </div>
           </div>
@@ -64,10 +61,31 @@
           <!-- 컨텐츠본문 -->
           <div class="title-wrap mt-5">
             <div class="left">
-              <h2 class="h3">시즌 검색</h2>
+              <h2 class="h3">인풀루언서 검색</h2>
             </div>
           </div>
           <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">공개여부</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo4" class="custom-control-input" />
+                      <span class="custom-control-label">전체</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo4" class="custom-control-input" />
+                      <span class="custom-control-label">공개</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo4" class="custom-control-input" />
+                      <span class="custom-control-label">비공개</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label">검색어</div>
@@ -75,11 +93,11 @@
                   <div class="form-row">
                     <div class="col-md-5">
                       <select class="custom-select">
-                        <option value="1">뱃지 이름</option>
+                        <option value="1">매치 시즌 이름</option>
                       </select>
                     </div>
                     <div class="col-md-7 mt-2 mt-md-0">
-                      <input type="text" class="form-control" />
+                      <input type="text" class="form-control" placeholder="최대 20글자" />
                     </div>
                   </div>
                 </div>
@@ -118,8 +136,8 @@
             <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개</div>
             <div class="right">
               <select class="custom-select custom-select-sm">
-                <option value="1">최종수정일 ↓</option>
-                <option value="2">최종수정일 ↑</option>
+                <option value="1">계약종료일 ↓</option>
+                <option value="2">계약종료일 ↑</option>
               </select>
             </div>
           </div>
@@ -128,9 +146,12 @@
             <thead>
               <tr>
                 <th scope="col">번호</th>
-                <th scope="col">이미지</th>
-                <th scope="col">뱃지 이름</th>
-                <th scope="col">뱃지 설명</th>
+                <th scope="col">닉네임</th>
+                <th scope="col">회원번호</th>
+                <th scope="col">회원이름</th>
+                <th scope="col">연락처</th>
+                <th scope="col">계약 기간</th>
+                <th scope="col">공개여부</th>
                 <th scope="col">최초등록자</th>
                 <th scope="col">최종수정자</th>
                 <th scope="col">최종수정일</th>
@@ -139,125 +160,136 @@
             <tbody>
               <!-- 일치하는 검색결과가 없습니다. -->
               <tr class="no-records-found">
-                <td colspan="7">일치하는 검색결과가 없습니다.</td>
+                <td colspan="10">일치하는 검색결과가 없습니다.</td>
               </tr>
               <tr>
                 <td>1</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp2.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp3.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp3.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp1.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp1.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp2.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp3.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp3.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
                 <td>6</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp1.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp1.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
                 <td>7</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp2.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
                 <td>8</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp3.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp3.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
                 <td>9</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp1.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp1.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
                 <td>10</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp2.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
                 <td>11</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp3.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp3.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>0000</td>
+                <td>아이유</td>
+                <td>000-0000-0000</td>
+                <td>2022.12.01 ~ 2022.12.01</td>
+                <td>공개</td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
