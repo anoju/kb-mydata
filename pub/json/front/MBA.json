@@ -9,7 +9,7 @@
     "depth3": "준회원",
     "name": "",
     "worker": "장영석",
-    "complete": "진행중"
+    "complete": "2022-03-28"
   },
   {
     "id": "MBA02-0000001C",
@@ -18,7 +18,7 @@
     "depth3": "정회원",
     "name": "",
     "worker": "장영석",
-    "complete": "진행중"
+    "complete": "2022-03-28"
   },
   {
     "id": "MBA01-0100p01C",
@@ -27,7 +27,8 @@
     "depth3": "",
     "name": "",
     "worker": "장영석",
-    "complete": "진행중"
+    "complete": "2022-03-28",
+    "etc":"내용은 하드코딩 영역이라 포맷만 잡아주시면 됩니다."
   },
   {
     "id": "MBA01-0400p01C",
@@ -397,7 +398,7 @@
     "depth4": "",
     "name": "",
     "worker": "장영석",
-    "complete": "진행중",
+    "complete": "2022-03-28",
     "etc": ""
   },
   {
@@ -408,7 +409,7 @@
     "depth4": "",
     "name": "",
     "worker": "장영석",
-    "complete": "진행중",
+    "complete": "2022-03-28",
     "etc": ""
   },
   {
@@ -419,7 +420,7 @@
     "depth4": "",
     "name": "",
     "worker": "장영석",
-    "complete": "진행중",
+    "complete": "2022-03-28",
     "etc": ""
   },
   {
@@ -430,7 +431,7 @@
     "depth4": "",
     "name": "",
     "worker": "장영석",
-    "complete": "진행중",
+    "complete": "2022-03-28",
     "etc": ""
   }
 ]
