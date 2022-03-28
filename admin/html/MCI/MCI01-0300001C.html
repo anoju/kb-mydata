@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">매치관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">매치 필터링 관리</li>
+                  </ol>
+                </nav>
+                <h1>매치 필터링 관리</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">투자 규모 필터링 구간 설정</h2>
+            </div>
+          </div>
+
+          <table id="table" class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">사용여부</th>
+                <th scope="col">금액(만원)</th>
+                <th scope="col">최초등록자</th>
+                <th scope="col">최종수정자</th>
+                <th scope="col">최종수정일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="tr-fixed">
+                <td>
+                  <label class="custom-control custom-checkbox only">
+                    <input type="checkbox" name="chk1" class="custom-control-input" checked />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>이하</td>
+                <td>홍길동</td>
+                <td>홍길동</td>
+                <td>2022.12.01 00:00:00</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-checkbox only">
+                    <input type="checkbox" name="chk2" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td><input type="text" class="form-control text-center" value="10,000,000" /></td>
+                <td>홍길동</td>
+                <td>홍길동</td>
+                <td>2022.12.01 00:00:00</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-checkbox only">
+                    <input type="checkbox" name="chk3" class="custom-control-input" checked />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td><input type="text" class="form-control text-center" value="30,000,000" /></td>
+                <td>홍길동</td>
+                <td>홍길동</td>
+                <td>2022.12.01 00:00:00</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="custom-control custom-checkbox only">
+                    <input type="checkbox" name="chk4" class="custom-control-input" />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td><input type="text" class="form-control text-center" value="100,000,000" /></td>
+                <td>홍길동</td>
+                <td>홍길동</td>
+                <td>2022.12.01 00:00:00</td>
+              </tr>
+              <tr class="tr-fixed">
+                <td>
+                  <label class="custom-control custom-checkbox only">
+                    <input type="checkbox" name="chk5" class="custom-control-input" checked />
+                    <span class="custom-control-label"></span>
+                  </label>
+                </td>
+                <td>이상</td>
+                <td>홍길동</td>
+                <td>홍길동</td>
+                <td>2022.12.01 00:00:00</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="help-txt mt-2">※ 구간 설정 변경 시 매치 필터링 조건, 그라운드 랭킹 검색조건에 동일하게 적용됩니다.</div>
+
+          <div class="btn-wrap kb-page-btn text-center mt-5">
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 저장</button>
+          </div>
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+    </script>
+  </body>
+</html>
