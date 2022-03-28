@@ -2500,6 +2500,29 @@
     border-radius: 3.2rem 3.2rem 0 0;
     background: #fff;
   }
+
+  &.type2 {
+    .point,
+    .ranking {
+      display: flex;
+      width: 7rem;
+      flex-wrap: wrap;
+      align-items: center;
+      i {
+        width: 100%;
+      }
+      .tit {
+        opacity: 0.3;
+      }
+      .number {
+        margin-left: auto;
+        opacity: 0.3;
+        span {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
 }
 .match-main-label {
   position: relative;
@@ -2564,6 +2587,21 @@
       border-radius: 20px;
     }
   }
+}
+
+.match-label-button {
+  display: flex;
+  width: 100%;
+  height: 6rem;
+  margin-top: 2.4rem;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(272.33deg, #ffdb4f -1.36%, #ffb912 69.27%);
+  box-shadow: 0px 0.6rem 1rem rgba(255, 185, 18, 0.25);
+  border-radius: 1.2rem;
 }
 
 .today-match-box {
