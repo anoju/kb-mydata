@@ -5,8 +5,8 @@
   {
     "id": "MCG01-0100001C",
     "url": "../../admin/html/MCG/",
-    "depth2": "PFM관리",
-    "name": "PFM관리 목록",
+    "depth2": "자산 카테고리 관리",
+    "name": "목록",
     "worker": "변상우",
     "complete": "2022-03-20",
     "change": "2022-03-25",
@@ -15,7 +15,7 @@
   {
     "id": "MCG01-0100002C",
     "url": "../../admin/html/MCG/",
-    "depth2": "PFM관리",
+    "depth2": "자산 카테고리 관리",
     "name": "상세(등록)",
     "worker": "변상우",
     "complete": "2022-03-20",
