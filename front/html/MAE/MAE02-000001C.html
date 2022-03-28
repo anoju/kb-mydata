@@ -30,12 +30,13 @@
 
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
-        <div class="tab-line-menu tab-fixed">
+        <!--- 2022-03-29: .ui-tab 추가 -->
+        <div class="tab-line-menu tab-fixed ui-tab">
           <div class="tab-inner">
             <i class="tab-line" aria-hidden="true"></i>
             <ul class="tab-list">
-              <li class="tab active"><a href="MAE02-000001C.html">진행중 이벤트</a></li>
-              <li class="tab"><a href="MAE02-000001C-2.html">종료 이벤트</a></li>
+              <li class="tab"><a href="#">진행중 이벤트</a></li>
+              <li class="tab"><a href="#">종료 이벤트</a></li>
             </ul>
           </div>
         </div>
@@ -122,5 +123,16 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script>
+      // 2022-03-29: 임시 스크립트
+      $('.tab-line-menu a').click(function () {
+        const $text = $(this).text();
+        if ($text === '종료 이벤트') {
+          $('.event-list').addClass('end');
+        } else {
+          $('.event-list').removeClass('end');
+        }
+      });
+    </script>
   </body>
 </html>
