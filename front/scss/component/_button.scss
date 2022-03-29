@@ -345,7 +345,8 @@ button.btn-click {
     }
     &.no-shadow {
       > div {
-        background-color: #fff;
+        // background-color: #fff;
+        background: none;
       }
     }
     &.none-bg {
