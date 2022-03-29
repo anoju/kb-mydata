@@ -107,5 +107,51 @@
     "name": "관리목록",
     "worker": "변상우",
     "complete": "2022-03-28"
+  },
+  {
+    "id": "MCI03-0100002C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "그라운드 관리",
+    "depth3": "기본 그라운드 관리",
+    "name": "등록(상세)",
+    "worker": "변상우",
+    "complete": "2022-03-29",
+    "etc":"MCI03-0100p02C,MCI03-0100p03C,MCI03-0100p07C(한 화면)"
+  },
+  {
+    "id": "MCI03-0200001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "그라운드 관리",
+    "depth3": "기본 그라운드 게시물 관리",
+    "name": "관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-29"
+  },
+  {
+    "id": "MCI03-0200001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "그라운드 관리",
+    "depth3": "기본 그라운드 게시물 관리",
+    "name": "관리 상세",
+    "worker": "변상우",
+    "complete": "2022-03-29"
+  },
+  {
+    "id": "MCI03-0300001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "그라운드 관리",
+    "depth3": "이벤트 그라운드 관리",
+    "name": "관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-29"
+  },
+  {
+    "id": "MCI03-0300002C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "그라운드 관리",
+    "depth3": "이벤트 그라운드 관리",
+    "name": "관리 상세",
+    "worker": "변상우",
+    "complete": "2022-03-29"
   }
 ]
