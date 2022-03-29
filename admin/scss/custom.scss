@@ -186,6 +186,12 @@ $grays: (
 .fz-sm {
   font-size: $font-size-sm;
 }
+.d-flex {
+  .custom-control-label,
+  .btn {
+    white-space: nowrap;
+  }
+}
 .flex-auto {
   flex: 1 1 auto;
 }
