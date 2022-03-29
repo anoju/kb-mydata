@@ -10,7 +10,7 @@
     "name": "SMS발송관리 목록",
     "worker": "변상우",
     "complete": "2022-03-24",
-    "change": "2022-03-25",
+    "change": "2022-03-29",
     "etc": ""
   },
   {
@@ -83,8 +83,9 @@
     "url": "../../admin/html/MCF/",
     "depth2": "팝업관리",
     "name": "팝업관리 목록",
-    "worker": "안효주",
+    "worker": "변상우",
     "complete": "2022-03-10",
+    "change": "2022-03-29",
     "etc": ""
   },
   {
@@ -92,7 +93,7 @@
     "url": "../../admin/html/MCF/",
     "depth2": "팝업관리",
     "name": "팝업등록",
-    "worker": "안효주",
+    "worker": "변상우",
     "complete": "2022-03-24",
     "change": "2022-03-24",
     "etc": "label 태그 수정"
