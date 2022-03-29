@@ -1,6 +1,5 @@
 // select
 .select {
-  font-weight: 500;
   color: var(--strong-txt-color);
   font-size: 1.6rem;
 }
@@ -21,6 +20,7 @@
   background-color: #fafafa;
   overflow: hidden;
   line-height: 3.6rem;
+  font-weight: 500;
   &.off {
     color: var(--placeholder-txt-color);
   }
