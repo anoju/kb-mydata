@@ -7,6 +7,7 @@
     "url": "../../admin/html/MCD/",
     "depth2": "관리자관리",
     "depth3": "관리자등록",
+    "name": "관리자등록 목록",
     "worker": "변상우",
     "complete": "2022-03-14",
     "change": "2022-03-29",
@@ -16,7 +17,8 @@
     "id": "MCD01-0100002C",
     "url": "../../admin/html/MCD/",
     "depth2": "관리자관리",
-    "depth3": "관리자상세(등록)",
+    "depth3": "관리자등록",
+    "name": "관리자등록 등록",
     "worker": "변상우",
     "complete": "2022-03-14",
     "etc": ""
@@ -26,11 +28,23 @@
     "url": "../../admin/html/MCD/",
     "depth2": "관리자관리",
     "depth3": "관리자이력관리",
+    "name": "관리자이력관리 목록",
     "worker": "변상우",
     "complete": "2022-03-10",
     "change": "2022-03-29",
     "etc": ""
   },
+  {
+    "id": "MCD01-0300001C",
+    "url": "../../admin/html/MCD/",
+    "depth2": "관리자관리",
+    "depth3": "승인이력",
+    "name": "승인이력 목록",
+    "worker": "변상우",
+    "complete": "2022-03-29",
+    "etc": ""
+  },
+  
   {
     "id": "MCD02-0100001C",
     "url": "../../admin/html/MCD/",

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">관리자</a></li>
+                    <li class="breadcrumb-item"><a href="#">관리자관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">승인이력</li>
+                  </ol>
+                </nav>
+                <h1>승인이력</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">승인이력 검색</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">검색어</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-md-5">
+                      <select class="custom-select">
+                        <option value="1">이름</option>
+                      </select>
+                    </div>
+                    <div class="col-md-7 mt-2 mt-md-0">
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">분류</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">전체</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">승인자</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">요청자</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <button type="button" class="btn large btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개</div>
+          </div>
+
+          <table id="table" class="table table-hover" data-pagination="true">
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">상태</th>
+                <th scope="col">요청일</th>
+                <th scope="col">요청자</th>
+                <th scope="col">승인자</th>
+                <th scope="col">사유</th>
+                <th scope="col">메뉴</th>
+                <th scope="col">승인일시</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 일치하는 검색결과가 없습니다. -->
+              <tr class="no-records-found">
+                <td colspan="9">일치하는 검색결과가 없습니다.</td>
+              </tr>
+              <tr class="tr-fixed">
+                <td>-</td>
+                <td>승인요청중</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-secondary">승인</button>
+                </td>
+              </tr>
+              <tr class="tr-fixed">
+                <td>-</td>
+                <td>승인요청중</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-secondary">승인</button>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>승인완료</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>2022.12.01 12:12:12</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>승인완료</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>2022.12.01 12:12:12</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>승인완료</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>2022.12.01 12:12:12</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>승인완료</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>2022.12.01 12:12:12</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>승인완료</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>2022.12.01 12:12:12</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>승인완료</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>2022.12.01 12:12:12</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>승인완료</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>2022.12.01 12:12:12</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>승인완료</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>2022.12.01 12:12:12</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>승인완료</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>2022.12.01 12:12:12</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>승인완료</td>
+                <td>2022.12.01</td>
+                <td>홍길동</td>
+                <td>임꺽정</td>
+                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
+                <td>이벤트</td>
+                <td>2022.12.01 12:12:12</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+
+      // 팝업
+      //접근권한없음 팝업
+      // Modal.alert('해당 메뉴에 접속권한이 없습니다.', function (e) {
+      //   console.log('접속권한 - 확인');
+      // });
+    </script>
+  </body>
+</html>
