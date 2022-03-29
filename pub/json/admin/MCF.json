@@ -3,6 +3,16 @@
     "depth1": "앱관리"
   },
   {
+    "id": "",
+    "url": "../../admin/html/MCF/",
+    "depth2": "약관관리",
+    "depth3": "약관관리",
+    "name": "약관관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-29",
+    "etc": ""
+  },
+  {
     "id": "MCF02-0100001C",
     "url": "../../admin/html/MCF/",
     "depth2": "메시지/알림관리",
