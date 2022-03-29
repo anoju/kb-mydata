@@ -37,9 +37,12 @@
     "depth2": "이벤트",
     "name": "(진행중) 이벤트 목록",
     "worker": "안효주",
-    "complete": "2022-03-02"
+    "complete": "2022-03-02",
+    "change": "2022-03-29",
+    "etc" : "(종료) 이벤트 목록와 합침"
   },
   {
+    "state": "del",
     "id": "MAE02-000001C-2",
     "url": "../../front/html/MAE/",
     "depth2": "이벤트",
