@@ -60,10 +60,9 @@
           <!-- //컨텐츠헤더 -->
 
           <!-- 컨텐츠본문 -->
-          <!-- 2022-03-29: .mt-5 클래스 제거 -->
           <div class="title-wrap">
             <div class="left">
-              <h2 class="h3">발송내역 검색</h2>
+              <h2 class="h3">등록내역 검색</h2>
             </div>
           </div>
           <div class="form-box">
@@ -93,27 +92,6 @@
                       <option value="3">이벤트</option>
                       <option value="4">공지</option>
                     </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">발송대상</div>
-                <div class="form-box-cont">
-                  <div class="custom-control-wrap">
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">전체</span>
-                    </label>
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">정회원</span>
-                    </label>
-                    <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">준회원</span>
-                    </label>
                   </div>
                 </div>
               </div>
@@ -151,128 +129,146 @@
             <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개</div>
             <div class="right">
               <select class="custom-select custom-select-sm">
-                <option value="1">발송일 ↓</option>
-                <option value="2">발송일 ↑</option>
+                <option value="1">등록일 ↓</option>
+                <option value="2">등록일 ↑</option>
               </select>
             </div>
           </div>
-          <table id="table1" class="table table-hover">
+          <table id="table1" class="table table-hover" data-pagination="true">
             <thead>
               <tr>
                 <th scope="col">번호</th>
                 <th scope="col">분류</th>
-                <th scope="col">발송대상</th>
                 <th scope="col">제목</th>
-                <th scope="col">총 대상건수</th>
-                <th scope="col">지외건수</th>
-                <th scope="col">발송자</th>
-                <th scope="col">발송(예약)일시</th>
+                <th scope="col">최초등록</th>
+                <th scope="col">최초등록일</th>
+                <th scope="col">최근수정일</th>
               </tr>
             </thead>
             <tbody>
               <!-- 일치하는 검색결과가 없습니다. -->
               <tr class="no-records-found">
-                <td colspan="8">일치하는 검색결과가 없습니다.</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>알림</td>
-                <td>전체</td>
-                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>100</td>
-                <td>2</td>
-                <td>홍길동</td>
-                <td>2022.12.01 00:00</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>이벤트</td>
-                <td>정회원</td>
-                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>100</td>
-                <td>2</td>
-                <td>홍길동</td>
-                <td>2022.12.01 00:00</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>이벤트</td>
-                <td>전체</td>
-                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>100</td>
-                <td>2</td>
-                <td>홍길동</td>
-                <td>2022.12.01 00:00</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>공지사항</td>
-                <td>정회원</td>
-                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>100</td>
-                <td>2</td>
-                <td>홍길동</td>
-                <td>2022.12.01 00:00</td>
+                <td colspan="6">일치하는 검색결과가 없습니다.</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>알림</td>
-                <td>전체</td>
+                <td>이벤트광고</td>
                 <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>100</td>
-                <td>2</td>
                 <td>홍길동</td>
-                <td>2022.12.01 00:00</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
               </tr>
               <tr>
-                <td>6</td>
-                <td>이벤트</td>
-                <td>정회원</td>
+                <td>4</td>
+                <td>이벤트광고</td>
                 <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>100</td>
-                <td>2</td>
                 <td>홍길동</td>
-                <td>2022.12.01 00:00</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
               </tr>
               <tr>
-                <td>7</td>
-                <td>이벤트</td>
-                <td>전체</td>
+                <td>3</td>
+                <td>이벤트광고</td>
                 <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>100</td>
-                <td>2</td>
                 <td>홍길동</td>
-                <td>2022.12.01 00:00</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
               </tr>
               <tr>
-                <td>8</td>
-                <td>공지사항</td>
-                <td>정회원</td>
-                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>100</td>
                 <td>2</td>
+                <td>이벤트광고</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
                 <td>홍길동</td>
-                <td>2022.12.01 00:00</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
               </tr>
               <tr>
-                <td>9</td>
-                <td>이벤트</td>
-                <td>전체</td>
+                <td>1</td>
+                <td>이벤트광고</td>
                 <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>100</td>
-                <td>2</td>
                 <td>홍길동</td>
-                <td>2022.12.01 00:00</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
               </tr>
               <tr>
-                <td>10</td>
-                <td>공지사항</td>
-                <td>정회원</td>
+                <td>5</td>
+                <td>이벤트광고</td>
                 <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
-                <td>100</td>
-                <td>2</td>
                 <td>홍길동</td>
-                <td>2022.12.01 00:00</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>이벤트광고</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>이벤트광고</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>이벤트광고</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>이벤트광고</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>이벤트광고</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>이벤트광고</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>이벤트광고</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>이벤트광고</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>이벤트광고</td>
+                <td class="text-left"><a href="#">제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</a></td>
+                <td>홍길동</td>
+                <td>2022.12.01</td>
+                <td>2022.12.01</td>
               </tr>
             </tbody>
           </table>
