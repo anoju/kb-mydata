@@ -3,6 +3,16 @@
     "depth1": "앱관리"
   },
   {
+    "id": "MCF01-0100001C",
+    "url": "../../admin/html/MCF/",
+    "depth2": "약관관리",
+    "depth3": "약관관리",
+    "name": "약관관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-29",
+    "etc": ""
+  },
+  {
     "id": "MCF02-0100001C",
     "url": "../../admin/html/MCF/",
     "depth2": "메시지/알림관리",
@@ -10,7 +20,7 @@
     "name": "SMS발송관리 목록",
     "worker": "변상우",
     "complete": "2022-03-24",
-    "change": "2022-03-25",
+    "change": "2022-03-29",
     "etc": ""
   },
   {
@@ -22,7 +32,26 @@
     "worker": "변상우",
     "complete": "2022-03-24",
     "change": "2022-03-29",
-    "etc": "알림발송 승인 요청 팝업 추가"
+    "etc": "템플릿 팝업,미리보기 팝업, 알림발송 승인요청 팝업"
+  },
+  {
+    "id": "MCF02-0200001C",
+    "url": "../../admin/html/MCF/",
+    "depth2": "메시지/알림관리",
+    "depth3": "SMS 템플릿관리",
+    "name": "SMS템플릿 목록",
+    "worker": "변상우",
+    "complete": "2022-03-29"
+  },
+  {
+    "id": "MCF02-0200002C",
+    "url": "../../admin/html/MCF/",
+    "depth2": "메시지/알림관리",
+    "depth3": "SMS 템플릿관리",
+    "name": "SMS템플릿 등록",
+    "worker": "변상우",
+    "complete": "2022-03-29",
+    "etc": "미리보기 팝업"
   },
   {
     "id": "MCF05-0100004C",
@@ -83,8 +112,9 @@
     "url": "../../admin/html/MCF/",
     "depth2": "팝업관리",
     "name": "팝업관리 목록",
-    "worker": "안효주",
+    "worker": "변상우",
     "complete": "2022-03-10",
+    "change": "2022-03-29",
     "etc": ""
   },
   {
@@ -92,7 +122,7 @@
     "url": "../../admin/html/MCF/",
     "depth2": "팝업관리",
     "name": "팝업등록",
-    "worker": "안효주",
+    "worker": "변상우",
     "complete": "2022-03-24",
     "change": "2022-03-24",
     "etc": "label 태그 수정"

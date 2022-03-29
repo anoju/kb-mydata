@@ -186,6 +186,15 @@ $grays: (
 .fz-sm {
   font-size: $font-size-sm;
 }
+.d-flex {
+  .custom-control-label,
+  .btn {
+    white-space: nowrap;
+  }
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
 // skip-navi
 .skippy {
   background-color: #563d7c;
@@ -1360,6 +1369,9 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   }
 }
 .table {
+  a:not(.btn) {
+    text-decoration: underline;
+  }
   tr {
     &:not(:hover) {
       &.tr-fixed {
