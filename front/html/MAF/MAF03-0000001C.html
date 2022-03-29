@@ -74,7 +74,8 @@
           </div>
           <!-- //2022-03-21: 필수 추가, 카운팅 추가 -->
 
-          <div id="date" class="flex not-full align-center fz-14 mt-16" style="display: none">
+          <!-- 2022-03-29: 등록할때도 보이게 수정 -->
+          <div class="flex not-full align-center fz-14 mt-16">
             <div>등록일(최종수정일)</div>
             <div class="ml-auto">
               <strong class="fw-500 fc-212121">2022.01.03</strong>
@@ -118,7 +119,6 @@
         $select.val('1').change();
         $input.val('문의 제목입니다.');
         $textarea.val('문의 내용입니다.\n문의 내용입니다.\n문의 내용입니다.\n문의 내용입니다.');
-        $('#date').show();
         $('#btnMain').prop('disabled', true).text('수정');
       }
     </script>
