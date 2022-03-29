@@ -5,7 +5,7 @@
   {
     "id": "MCI01-0100001C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
+    "depth2": "매치정책관리",
     "depth3": "매치 시즌 관리",
     "name": "관리 목록",
     "worker": "변상우",
@@ -14,7 +14,7 @@
   {
     "id": "MCI01-0100002C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
+    "depth2": "매치정책관리",
     "depth3": "매치 시즌 관리",
     "name": "등록(상세)",
     "worker": "변상우",
@@ -23,7 +23,7 @@
   {
     "id": "MCI01-0200001C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
+    "depth2": "매치정책관리",
     "depth3": "매치 상대노출 관리",
     "name": "관리 목록",
     "worker": "변상우",
@@ -32,7 +32,7 @@
   {
     "id": "MCI01-0300001C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
+    "depth2": "매치정책관리",
     "depth3": "매치 필터링 관리",
     "name": "매치 필터링 관리",
     "worker": "변상우",
@@ -41,7 +41,7 @@
   {
     "id": "MCI01-0400001C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
+    "depth2": "매치정책관리",
     "depth3": "메인 대표 이미지 관리",
     "name": "메인 대표 이미지 관리",
     "worker": "변상우",
@@ -50,7 +50,7 @@
   {
     "id": "MCI01-0500001C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
+    "depth2": "매치정책관리",
     "depth3": "태그 관리",
     "name": "관리 목록",
     "worker": "변상우",
@@ -59,7 +59,7 @@
   {
     "id": "MCI01-0500002C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
+    "depth2": "매치정책관리",
     "depth3": "태그 관리",
     "name": "등록(상세)",
     "worker": "변상우",
@@ -68,7 +68,7 @@
   {
     "id": "MCI01-0600001C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
+    "depth2": "매치정책관리",
     "depth3": "뱃지 관리",
     "name": "관리 목록",
     "worker": "변상우",
@@ -77,7 +77,7 @@
   {
     "id": "MCI01-0600002C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
+    "depth2": "매치정책관리",
     "depth3": "뱃지 관리",
     "name": "등록(상세)",
     "worker": "변상우",
@@ -86,8 +86,7 @@
   {
     "id": "MCI02-0100001C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
-    "depth3": "인플루언서 관리",
+    "depth2": "인플루언서 관리",
     "name": "관리 목록",
     "worker": "변상우",
     "complete": "2022-03-28"
@@ -95,8 +94,7 @@
   {
     "id": "MCI02-0100002C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
-    "depth3": "인플루언서 관리",
+    "depth2": "인플루언서 관리",
     "name": "등록(상세)",
     "worker": "변상우",
     "complete": "2022-03-28"
@@ -104,7 +102,7 @@
   {
     "id": "MCI03-0100001C",
     "url": "../../admin/html/MCI/",
-    "depth2": "매치관리",
+    "depth2": "그라운드 관리",
     "depth3": "기본 그라운드 관리",
     "name": "관리목록",
     "worker": "변상우",
