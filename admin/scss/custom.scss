@@ -186,6 +186,9 @@ $grays: (
 .fz-sm {
   font-size: $font-size-sm;
 }
+.flex-auto {
+  flex: 1 1 auto;
+}
 // skip-navi
 .skippy {
   background-color: #563d7c;
