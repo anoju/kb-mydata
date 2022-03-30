@@ -513,7 +513,7 @@
 var Modal = {
   alertIdx: 0,
   alertHtml: function (type, msg, popId, btnActionId, btnCancelId) {
-    var $html = '<div class="modal alert fade" id="' + popId + '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">';
+    var $html = '<article class="modal alert fade" id="' + popId + '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">';
     $html += '<div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">';
     $html += '<div class="modal-content">';
     $html += '<div class="modal-body">';
@@ -527,7 +527,7 @@ var Modal = {
     $html += '</div>';
     $html += '</div>';
     $html += '</div>';
-    $html += '</div>';
+    $html += '</article>';
     return $html;
   },
   alertEvt: function (type, msg, callback) {
