@@ -6,8 +6,16 @@
     "id": "MCF01-0100001C",
     "url": "../../admin/html/MCF/",
     "depth2": "약관관리",
-    "depth3": "약관관리",
     "name": "약관관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-29",
+    "etc": ""
+  },
+  {
+    "id": "MCF01-0100003C",
+    "url": "../../admin/html/MCF/",
+    "depth2": "약관관리",
+    "name": "약관관리 등록(관리)",
     "worker": "변상우",
     "complete": "2022-03-29",
     "etc": ""

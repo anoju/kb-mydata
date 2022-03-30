@@ -1175,6 +1175,9 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 .form-box {
   border: 0 solid #ddd;
   border-width: 0.063em 0;
+  a:not(.btn) {
+    text-decoration: underline;
+  }
   &.hide {
     display: none;
   }
