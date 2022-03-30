@@ -54,7 +54,7 @@
     "etc": "미리보기 팝업"
   },
   {
-    "id": "MCF05-0100004C",
+    "id": "MCF03-0100004C",
     "url": "../../admin/html/MCF/",
     "depth2": "게시판관리",
     "depth3": "공지사항",
@@ -65,7 +65,7 @@
     "etc": "label 태그 수정"
   },
   {
-    "id": "MCF05-0200001C",
+    "id": "MCF03-0200001C",
     "url": "../../admin/html/MCF/",
     "depth2": "게시판관리",
     "depth3": "FAQ",
@@ -76,7 +76,7 @@
     "etc": "접근권한팝업 & 유효성팝업"
   },
   {
-    "id": "MCF05-0200003C",
+    "id": "MCF03-0200003C",
     "url": "../../admin/html/MCF/",
     "depth2": "게시판관리",
     "depth3": "FAQ",
@@ -87,7 +87,7 @@
     "etc": "label 태그 수정"
   },
   {
-    "id": "MCF05-0300001C",
+    "id": "MCF03-0300001C",
     "url": "../../admin/html/MCF/",
     "depth2": "게시판관리",
     "depth3": "문의하기",
@@ -97,7 +97,7 @@
     "etc": "접근권한팝업 & 유효성팝업"
   },
   {
-    "id": "MCF05-0300002C",
+    "id": "MCF03-0300002C",
     "url": "../../admin/html/MCF/",
     "depth2": "게시판관리",
     "depth3": "문의하기",
@@ -108,7 +108,7 @@
     "etc": "label 태그 수정"
   },
   {
-    "id": "MCF06-0100001C",
+    "id": "MCF04-0100001C",
     "url": "../../admin/html/MCF/",
     "depth2": "팝업관리",
     "name": "팝업관리 목록",
@@ -118,7 +118,7 @@
     "etc": ""
   },
   {
-    "id": "MCF06-0100002C",
+    "id": "MCF04-0100002C",
     "url": "../../admin/html/MCF/",
     "depth2": "팝업관리",
     "name": "팝업등록",
