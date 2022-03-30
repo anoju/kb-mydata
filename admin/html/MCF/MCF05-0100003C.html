@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+
+    <link rel="stylesheet" href="../../lib/lightbox/ekko-lightbox.css" />
+    <script src="../../lib/lightbox/ekko-lightbox.min.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">앱관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">이벤트관리</li>
+                  </ol>
+                </nav>
+                <h1>이벤트</h1>
+              </div>
+              <div class="kb-page-btn">
+                <button type="button" class="btn btn-primary"><i class="bi bi-plus"></i> 이벤트등록</button>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">이벤트 정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>이벤트명</div>
+                <div class="form-box-cont"><input type="text" class="form-control" /></div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">준법감시인</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                  <div class="mt-1 help-txt">※ 준법감시를 받은 경우에 기재해 주세요.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 리스트썸네일</div>
+                <div class="form-box-cont">
+                  <!-- 미리보기 아이콘 이미지 -->
+                  <!-- 이미지 없을때 -->
+                  <div class="img-box w-120 mb-2">
+                    <small>등록된 이미지가<br />없습니다.</small>
+                  </div>
+
+                  <!-- 이미지 있을때 -->
+                  <div class="img-box w-120 mb-2">
+                    <a href="../../images/temp/thumb-temp2.jpg" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
+                  </div>
+
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file1" />
+                    <label class="custom-file-label" for="file1">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>내용</div>
+                <div class="form-box-cont">
+                  <textarea id="editor" name="editordata1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">참여하기 버튼설정</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-9">
+              <div class="form-box">
+                <div class="form-box-row">
+                  <div class="form-box-item">
+                    <div class="form-box-label"><i class="fc-red mr-1">*</i>사용여부</div>
+                    <div class="form-box-cont">
+                      <div class="custom-control-wrap">
+                        <label class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" name="rdo1" class="custom-control-input" />
+                          <span class="custom-control-label">사용</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" name="rdo1" class="custom-control-input" />
+                          <span class="custom-control-label">사용안함</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-box-row">
+                  <div class="form-box-item">
+                    <div class="form-box-label"><i class="fc-red mr-1">*</i>버튼명</div>
+                    <div class="form-box-cont">
+                      <input type="text" class="form-control" />
+                      <div class="mt-1 help-txt">※ 이벤트 본문의 버튼명을 직접 설정 할 수 있습니다.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-box-row">
+                  <div class="form-box-item">
+                    <div class="form-box-label">외부링크</div>
+                    <div class="form-box-cont">
+                      <div class="custom-control-wrap">
+                        <label class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" name="rdo2" class="custom-control-input" />
+                          <span class="custom-control-label">외부</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" name="rdo2" class="custom-control-input" />
+                          <span class="custom-control-label">내부</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-box-row">
+                  <div class="form-box-item">
+                    <div class="form-box-label"><i class="fc-red mr-1">*</i>링크주소</div>
+                    <div class="form-box-cont">
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mt-md-0 mt-3 d-flex justify-content-center align-items-center">
+              <div class="text-center">
+                <small>[버튼 sample]</small>
+                <div class="evt-sample mt-1">
+                  <div class="evt-sample-in">이벤트 상세</div>
+                  <div class="evt-sample-btn">참여하기</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">게시설정</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>이벤트기간</div>
+                <div class="form-box-cont">
+                  <div class="d-flex align-items-center">
+                    <div class="custom-control-wrap">
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="rdo3" class="custom-control-input" />
+                        <span class="custom-control-label">사용</span>
+                      </label>
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="rdo3" class="custom-control-input" />
+                        <span class="custom-control-label">사용안함</span>
+                      </label>
+                    </div>
+                    <div class="help-txt">※ 게시기간은 시작일의 0시 0분부터 종료일의 23:59을 기준으로 합니다.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>게시일</div>
+                <div class="form-box-cont">
+                  <div class="input-daterange-btn">
+                    <div class="input-group">
+                      <input type="date" class="form-control" placeholder="시작일" />
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">~</div>
+                      </div>
+                      <input type="date" class="form-control" placeholder="종료일" />
+                    </div>
+
+                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                      <button type="button" class="btn btn-outline-secondary">7일</button>
+                      <button type="button" class="btn btn-outline-secondary">15일</button>
+                      <button type="button" class="btn btn-outline-secondary">1개월</button>
+                      <button type="button" class="btn btn-outline-secondary">3개월</button>
+                      <!-- active 클래스로  활성화 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">참여현황 및 당첨자처리</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">참여현황</div>
+                <div class="form-box-cont">
+                  <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                      <span class="text-nowrap mr-1">YYYY.MM.DD</span>
+                      <span class="text-nowrap mr-1">HH:MM기준</span>
+                      <span class="text-nowrap">총 000명</span>
+                    </div>
+                    <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#evtMemberModal">참여현황 상세보기</button>
+                  </div>
+                  <div class="help-txt fc-red mt-1">※ 외부링크 이벤트일 경우 참여 현황은 확인 할 수 없습니다.</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">당첨자 등록</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <button class="btn btn-sm btn-secondary mr-3" data-toggle="modal" data-target="#winnerUploadModal">업로드</button>
+                  <div class="help-txt">※ 이벤트 종료 후 당첨자 등록이 가능합니다.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 수정일때만 노출 -->
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">당첨자 발표일</div>
+                <div class="form-box-cont d-flex align-items-center">YYYY.MM.DD</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">당첨자 발표우뮤</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <div class="mr-3">등록(미등록)</div>
+                  <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#evtWinnerModal">당첨자 상세보기</button>
+                </div>
+              </div>
+            </div>
+            <!-- //수정일때만 노출 -->
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">등록자 정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">최초등록</div>
+                <div class="form-box-cont d-flex align-items-center">YYYY.MM.DD 홍길동</div>
+              </div>
+            </div>
+            <!-- 수정일때만 노출 -->
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">최근수정</div>
+                <div class="form-box-cont d-flex align-items-center">YYYY.MM.DD 홍길동</div>
+              </div>
+            </div>
+            <!-- // 수정일때만 노출 -->
+          </div>
+
+          <div class="btn-wrap kb-page-btn text-center mt-5">
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
+            <!-- 등록일때 -->
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 등록</button>
+            <!-- 수정일때 -->
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 저장</button>
+          </div>
+          <!-- //컨텐츠본문 -->
+
+          <!-- 이벤트 참여현황 팝업 -->
+          <article class="modal fade" id="evtMemberModal" tabindex="-1" aria-labelledby="evtMemberModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="evtMemberModalLabel">이벤트 참여현황</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h2 class="text-center">OX 금융 상식 퀴즈 이벤트</h2>
+                  <div class="title-wrap mt-3">
+                    <div class="left">YYYY.MM.DD기준 총<strong class="fc-red">000</strong>명</div>
+                    <div class="right">
+                      <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#approvalModal">참여현황 다운로드</button>
+                    </div>
+                  </div>
+                  <table id="table1" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col" rowspan="2">번호</th>
+                        <th scope="col" rowspan="2">이름</th>
+                        <th scope="col" rowspan="2">연락처</th>
+                        <th scope="col" rowspan="2">참여일</th>
+                        <th scope="col" rowspan="2">당첨이력</th>
+                        <th scope="colgroup" colspan="3">개인정보 수집 및 이용동의</th>
+                        <th scope="colgroup" colspan="3">마케팅 동의</th>
+                      </tr>
+                      <tr>
+                        <th scope="col">Push</th>
+                        <th scope="col">SMS</th>
+                        <th scope="col">전화</th>
+                        <th scope="col">Push</th>
+                        <th scope="col">SMS</th>
+                        <th scope="col">전화</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 일치하는 검색결과가 없습니다. -->
+                      <tr class="no-records-found">
+                        <td colspan="11">일치하는 검색결과가 없습니다.</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- //이벤트 참여현황 팝업 -->
+
+          <!-- 당첨자 팝업 -->
+          <article class="modal fade" id="evtWinnerModal" tabindex="-1" aria-labelledby="evtWinnerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="evtWinnerModalLabel">이벤트 당첨자</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h2 class="text-center">OX 금융 상식 퀴즈 이벤트 당첨자</h2>
+                  <div class="title-wrap mt-3">
+                    <div class="left">YYYY.MM.DD기준 총<strong class="fc-red">000</strong>명</div>
+                    <div class="right">
+                      <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#approvalModal">당첨자 다운로드</button>
+                    </div>
+                  </div>
+                  <table id="table2" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col" rowspan="2">번호</th>
+                        <th scope="col" rowspan="2">이름</th>
+                        <th scope="col" rowspan="2">연락처</th>
+                        <th scope="col" rowspan="2">참여일</th>
+                        <th scope="col" rowspan="2">당첨이력</th>
+                        <th scope="colgroup" colspan="3">개인정보 수집 및 이용동의</th>
+                        <th scope="colgroup" colspan="3">마케팅 동의</th>
+                      </tr>
+                      <tr>
+                        <th scope="col">Push</th>
+                        <th scope="col">SMS</th>
+                        <th scope="col">전화</th>
+                        <th scope="col">Push</th>
+                        <th scope="col">SMS</th>
+                        <th scope="col">전화</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 일치하는 검색결과가 없습니다. -->
+                      <tr class="no-records-found">
+                        <td colspan="11">일치하는 검색결과가 없습니다.</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>홍*동</td>
+                        <td>010-****-5678</td>
+                        <td>2022.12.31</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                        <td>N</td>
+                        <td>Y</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- //당첨자 팝업 -->
+
+          <!-- 참여현황 다운로드 승인 요청 팝업 -->
+          <article class="modal fade" id="approvalModal" tabindex="-1" aria-labelledby="approvalModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="approvalModalLabel">참여현황 다운로드 승인 요청</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <h6>승인자 : 홍길동</h6>
+                    <textarea class="form-control" rows="2" placeholder="사유입력"></textarea>
+                  </div>
+                  <div class="mt-2 fc-red text-center">승인요청 사유를 입력해주세요</div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-outline-dark" data-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-lg btn-primary">확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- //참여현황 다운로드 승인 요청 팝업 -->
+
+          <!-- 당첨자 등록 팝업 -->
+          <article class="modal fade" id="winnerUploadModal" tabindex="-1" aria-labelledby="winnerUploadModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="winnerUploadModalLabel">당첨자 등록</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="text-line-box bg-gray-100">
+                    <strong>※ 당첨자 발표일 이후에는 고객혼란 방지를 위해 수정이 불가능합니다.</strong>
+                  </div>
+                  <div class="title-wrap mt-4">
+                    <div class="left">
+                      <h2 class="h4">당첨자등록</h2>
+                    </div>
+                    <div class="right">
+                      <button class="btn btn-sm btn-default">참여현황 다운로드</button>
+                    </div>
+                  </div>
+                  <div class="form-box">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label w-100">첨부파일</div>
+                        <div class="form-box-cont">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="file2" />
+                            <label class="custom-file-label" for="file2"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="help-txt fc-red mt-1">※ 참여현황 다운로드 당첨자를 체크하여 등록해 주세요.</div>
+                  <div class="help-txt fc-red mt-1">※ 당첨자 등록 시 Excel 파일은 '암호화 해제 후' 등록해 주세요.</div>
+                  <div class="help-txt fc-red mt-1">※ 등록은 Excel 파일(참여현황 다운로드)만 가능합니다.</div>
+
+                  <div class="title-wrap mt-4">
+                    <div class="left">
+                      <h2 class="h4">당첨자발표일</h2>
+                    </div>
+                  </div>
+                  <div class="form-box">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label w-100">발표일</div>
+                        <div class="form-box-cont form-row">
+                          <div class="col-6">
+                            <div class="input-group">
+                              <input type="date" class="form-control" placeholder="시작일" />
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="input-group">
+                              <input type="tel" class="form-control" maxlength="2" />
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">:</div>
+                              </div>
+                              <input type="tel" class="form-control" maxlength="2" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="help-txt fc-red mt-1">※ 당첨자 발표일 이후에는 재등록(수정)이 불가능합니다.</div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-outline-dark" data-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-lg btn-primary">확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- //당첨자 등록 팝업 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      //에디터
+      CKEDITOR.replace('editor');
+
+      // 테이블
+      function initTable() {
+        $('#table1').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+
+        $('#table2').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+    </script>
+  </body>
+</html>

@@ -109,34 +109,34 @@ html:not(.mobile) {
   }
 }
 .fc-blue {
-  color: $blue;
+  color: $blue !important;
 }
 .fc-indigo {
-  color: $indigo;
+  color: $indigo !important;
 }
 .fc-purple {
-  color: $purple;
+  color: $purple !important;
 }
 .fc-pink {
-  color: $pink;
+  color: $pink !important;
 }
 .fc-red {
-  color: $red;
+  color: $red !important;
 }
 .fc-orange {
-  color: $orange;
+  color: $orange !important;
 }
 .fc-yellow {
-  color: $yellow;
+  color: $yellow !important;
 }
 .fc-green {
-  color: $green;
+  color: $green !important;
 }
 .fc-teal {
-  color: $teal;
+  color: $teal !important;
 }
 .fc-cyan {
-  color: $cyan;
+  color: $cyan !important;
 }
 
 .pre-line {
@@ -171,10 +171,10 @@ $grays: (
 );
 @each $key, $val in $grays {
   .fc-#{$key} {
-    color: $val;
+    color: $val !important;
   }
   .bg-#{$key} {
-    background-color: $val;
+    background-color: $val !important;
   }
 }
 .bg-none {
@@ -879,7 +879,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 }
 .kb-page-title {
   margin-top: -2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   height: 4.375rem;
   & > div {
     display: flex;
@@ -1207,6 +1207,11 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     flex: 1 1 auto;
     padding: 0.5rem 1rem;
     min-height: 3.188rem;
+    // &:not(.d-flex) {
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    // }
   }
 
   .btn-group {
@@ -1302,6 +1307,9 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   color: $gray-600;
   font-size: 0.813rem;
   line-height: 1.2;
+  &.fc-red {
+    color: $red;
+  }
 }
 
 // img
@@ -1319,6 +1327,43 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     top: 0;
     left: 0;
     object-fit: cover;
+  }
+}
+
+.evt-sample {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 150px;
+  background: #f1f1f1;
+  margin: 0 auto;
+}
+.evt-sample-in {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  color: #979797;
+}
+.evt-sample-btn {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  background: #fe7d65;
+  color: #fff;
+  height: 18px;
+  font-size: 8px;
+  align-items: center;
+  justify-content: center;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 2px solid red;
+    left: -6px;
+    right: -6px;
+    top: -6px;
+    bottom: -6px;
   }
 }
 
