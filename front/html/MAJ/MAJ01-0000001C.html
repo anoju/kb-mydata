@@ -12,6 +12,10 @@
     <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      // 2022-03-30: 추가
+      ui.Common.title('더보기 메인');
+    </script>
   </head>
   <body>
     <article id="wrap">
@@ -34,7 +38,10 @@
           <div class="btn-wrap mt-0">
             <div class="flex">
               <button class="button gray"><i class="i-ico-btn-my mr-4" aria-hidden="true"></i>내 정보 관리</button>
+              <!-- new 없을때 -->
               <button class="button gray"><i class="i-ico-btn-alarm mr-4" aria-hidden="true"></i>알림</button>
+              <!-- 2022-03-30: new 있을때 .i-ico-btn-alarm 에 .new 클래스 -->
+              <!-- <button class="button gray"><i class="i-ico-btn-alarm new mr-4" aria-hidden="true"></i>알림</button> -->
             </div>
           </div>
 

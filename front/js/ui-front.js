@@ -4849,7 +4849,8 @@ ui.Animation = {
         threshold: 0.03
       }
     );
-    io.observe(el);
+    // io.observe(el);
+    io.unobserve(el);
     return io;
   },
   sclAction: function (el) {
@@ -6280,8 +6281,8 @@ const Layer = {
       }
       */
 
-      const $openDelay = 50 * Layer.opening;
-      const $callbackDelay = 100;
+      const $openDelay = 20 * Layer.opening;
+      const $callbackDelay = 450;
 
       // pop-scl-wrap
       if (ui.PC.any() && ($popup.hasClass('modal') || $popup.hasClass('bottom')) && !$popup.find('.' + Layer.sclWrapClass).length) {
@@ -6299,7 +6300,7 @@ const Layer = {
         $popup.show();
       }
 
-      setTimeout(function () {
+      const $FocusEvt = function () {
         //리턴 포커스
         let $focusEl = '';
         try {
@@ -6319,12 +6320,11 @@ const Layer = {
           $focusEl.addClass(Layer.focusedClass);
           if ($focusEl.hasClass('btn-select')) $focusEl.closest('.select').addClass('focused');
         }
-
         //팝업 in 포커스
         if (!ui.Mobile.any()) {
           //PC
           if ($popup.hasClass(Layer.alertClass)) {
-            $popup.find('.pop_btn .button').last().focus();
+            $popup.find('.pop-foot .button').last().focus();
           } else {
             $popup.attr({ tabindex: 0 }).focus();
           }
@@ -6334,13 +6334,10 @@ const Layer = {
           let $thisTxt = '';
           let $childrenTxt = '';
           //모바일
-          if ($popup.find('.' + Layer.headClass).length) {
-            $first = $popup
-              .find('.' + Layer.headClass)
-              .children()
-              .first();
-            if (!$first.is($focusableEl)) $first.attr('tabindex', -1);
-            $first.focus();
+          if ($popup.find('.' + Layer.headClass + ' h1').length) {
+            $popup.attr({ tabindex: 0 }).focus();
+          } else if ($popup.find('.' + Layer.headClass + ' .pop-close').length) {
+            $popup.find('.' + Layer.headClass + ' .pop-close').focus();
           } else {
             if (!$focusInEl.length) {
               $focusInEl = $popup.find('.' + Layer.bodyClass);
@@ -6361,6 +6358,9 @@ const Layer = {
             $focusInEl.focus();
           }
         }
+      };
+
+      setTimeout(function () {
         $(Layer.etcCont).attr('aria-hidden', true);
 
         //열려있는 팝업
@@ -6410,6 +6410,7 @@ const Layer = {
         }, 10);
 
         setTimeout(function () {
+          $FocusEvt();
           if (!!callback) callback();
           $popup.trigger('Layer.show');
         }, $callbackDelay);
@@ -6447,29 +6448,32 @@ const Layer = {
     if ($lastPop != '') $($lastPop).attr('aria-hidden', false);
 
     //포커스
-    const $returnFocus = $popup.data('returnFocus');
-    if ($returnFocus != undefined) {
-      $returnFocus.removeClass(Layer.focusedClass).focus();
-      if ($returnFocus.hasClass('btn-select')) $returnFocus.closest('.select').removeClass('focused');
-      //플루팅 버튼
-      if ($returnFocus.closest('.floating-btn').length && $returnFocus.closest('.floating-btn').hasClass('pop-on')) {
-        $returnFocus.closest('.floating-btn').removeCss('z-index').removeClass('pop-on');
-      }
-    } else {
-      //리턴 포커스가 없을때
-      if ($('#header').length) {
-        if ($('.head-back').length) {
-          $('.head-back').focus();
-        } else if ($('#header h1.logo').length) {
-          $('#header h1.logo a').focus();
-        } else {
-          $('#header').focus();
+    const $focusEvt = function () {
+      const $returnFocus = $popup.data('returnFocus');
+      if ($returnFocus != undefined) {
+        $returnFocus.removeClass(Layer.focusedClass).focus();
+        if ($returnFocus.hasClass('btn-select')) $returnFocus.closest('.select').removeClass('focused');
+        //플루팅 버튼
+        if ($returnFocus.closest('.floating-btn').length && $returnFocus.closest('.floating-btn').hasClass('pop-on')) {
+          $returnFocus.closest('.floating-btn').removeCss('z-index').removeClass('pop-on');
         }
       } else {
-        $popup.find(':focus').blur();
-        $('#container').find($focusableEl).first().focus();
+        //리턴 포커스가 없을때
+        if ($('#header').length) {
+          if ($('.head-back').length) {
+            $('.head-back').focus();
+          } else {
+            $('#header').attr({ tabindex: 0 }).focus();
+          }
+        } else {
+          // $popup.find(':focus').blur();
+          $('#container').find($focusableEl).first().focus();
+        }
       }
-    }
+    };
+    setTimeout(function () {
+      $focusEvt();
+    }, 100);
 
     //닫기
     $popup.removeClass(Layer.showClass).data('focusMove', false).data('popPosition', false);
