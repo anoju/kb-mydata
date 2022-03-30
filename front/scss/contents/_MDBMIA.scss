@@ -383,3 +383,174 @@
     }
   }
 }
+
+/* 소비 메인 */
+.main-head-tab {
+  display: flex;
+  li {
+    a {
+      display: block;
+      padding: 0 1.2rem;
+      color: #979797;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    &.active {
+      a {
+        color: #424242;
+      }
+    }
+  }
+}
+.consumption-link {
+  display: flex;
+  margin-top: 3.2rem;
+  margin-left: -0.8rem;
+  > a {
+    width: calc(50% - 0.8rem);
+    margin-left: 0.8rem;
+    border-radius: 0.8rem;
+    padding: 2rem;
+    .tit {
+      font-size: 1.6rem;
+      color: #424242;
+      font-weight: 500;
+      line-height: 1.4375;
+    }
+    .text {
+      margin-top: 0.8rem;
+      font-size: 1.4rem;
+    }
+    i {
+      margin-top: 2rem;
+    }
+
+    &.type1 {
+      background: #fff3ca;
+    }
+    &.type2 {
+      background: #fff2f4;
+    }
+  }
+}
+
+.main-gray-box {
+  margin-top: 2.4rem;
+  padding: 2.7rem 1.6rem 2.4rem;
+  border-radius: 1.4rem;
+  background: #fafafa;
+
+  .date-line-list-wrap {
+    background: #fff;
+  }
+  .date-line-list {
+    padding: 2rem 1.6rem;
+    border-radius: 1.4rem;
+    background: #ffffff;
+    .list-item-price {
+      margin-left: -1.6rem;
+      margin-right: -1.6rem;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+    }
+  }
+}
+
+.bank-list-box {
+  margin-top: 2.5rem;
+  > a {
+    display: block;
+    position: relative;
+    padding: 1.6rem;
+    padding-left: 5.8rem;
+    border-radius: 1.4rem;
+    background: #fff;
+    .img-box {
+      position: absolute;
+      top: 1.6rem;
+      left: 1.6rem;
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+    .tit {
+      font-size: 1.6rem;
+      color: #212121;
+      font-weight: 500;
+    }
+    .text {
+      margin-top: 0.2rem;
+      font-size: 1.2rem;
+      color: #979797;
+    }
+    .number {
+      margin-top: 1.8rem;
+      font-size: 1.6rem;
+      color: #424242;
+      text-align: right;
+      strong {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-right: 0.4rem;
+      }
+    }
+
+    + a {
+      margin-top: 0.8rem;
+    }
+  }
+}
+
+.line-link-box {
+  display: flex;
+  margin-top: 4.8rem;
+  align-items: center;
+  justify-content: center;
+  p + p {
+    position: relative;
+    margin-left: 3.2rem;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -1.5rem;
+      width: 0.1rem;
+      height: 1.5rem;
+      background: #d6dbe1;
+      transform: translateY(-50%);
+    }
+  }
+  a {
+    font-size: 1.6rem;
+    color: #979797;
+  }
+}
+
+.unclassified-info {
+  position: fixed;
+  bottom: 2.4rem;
+  left: 50%;
+  padding: 1.4rem 2rem;
+  border: 0.15rem solid #fe7d65;
+  font-size: 1.4rem;
+  color: #424242;
+  transform: translateX(-50%) translateY(100%);
+  border-radius: 6rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
+  background: #fff;
+  transition: all 0.3s ease;
+  opacity: 0;
+  strong {
+    margin-left: 0.8rem;
+    font-size: 1.6rem;
+    color: #fe7d65;
+    span {
+      font-size: 1.4rem;
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0%);
+  }
+}

@@ -385,6 +385,17 @@ a.visited {
   //background-image: url('../images/icon/ico-refresh2.png');
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M21.168 8C20.3892 6.21646 19.107 4.69884 17.4786 3.63311C15.8501 2.56738 13.9462 1.99983 12 2C6.815 2 2.55 5.947 2.05 11' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M17 8H21.4C21.4788 8 21.5568 7.98448 21.6296 7.95433C21.7024 7.92418 21.7685 7.87998 21.8243 7.82426C21.88 7.76855 21.9242 7.70241 21.9543 7.62961C21.9845 7.55682 22 7.47879 22 7.4V3' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2.881 16C4.425 19.532 7.949 22 12.049 22C17.235 22 21.499 18.053 22 13' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.05 16H2.65C2.49087 16 2.33826 16.0632 2.22574 16.1757C2.11322 16.2883 2.05 16.4409 2.05 16.6V21' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
+.i-ico-refresh3 {
+  //background-image: url('../images/icon/ico-refresh3.png');
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23EBEBEB'/%3E%3Cpath d='M11.9146 5.09078C12.1685 4.83693 12.58 4.83693 12.8339 5.09078L14.7839 7.04078C15.0377 7.29463 15.0377 7.70617 14.7839 7.96002L12.8339 9.91002C12.58 10.1638 12.1685 10.1638 11.9146 9.91002C11.6608 9.65617 11.6608 9.24463 11.9146 8.99078L12.755 8.15039H11.7242C9.41816 8.15039 7.49922 10.0693 7.49922 12.3754C7.49922 14.6815 9.41816 16.6004 11.7242 16.6004C14.0303 16.6004 15.9493 14.6815 15.9493 12.3754C15.9493 12.0164 16.2403 11.7254 16.5993 11.7254C16.9582 11.7254 17.2493 12.0164 17.2493 12.3754C17.2493 15.3993 14.7482 17.9004 11.7242 17.9004C8.7003 17.9004 6.19922 15.3993 6.19922 12.3754C6.19922 9.35146 8.7003 6.85039 11.7242 6.85039H12.755L11.9146 6.01001C11.6608 5.75616 11.6608 5.34462 11.9146 5.09077V5.09078Z' fill='%23979797'/%3E%3C/svg%3E");
+}
+
+.i-ico-refresh-small {
+  width: 1.6rem;
+  height: 1.6rem;
+  //background-image: url('../images/icon/ico-refresh-small.png');
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Crect width='16' height='16' rx='8' fill='%23D6DBE1'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.0001 3.75C12.0001 3.47386 11.7763 3.25 11.5001 3.25C11.224 3.25 11.0001 3.47386 11.0001 3.75V4.89601C10.6249 4.56035 10.1935 4.2878 9.72207 4.09254C8.80688 3.71346 7.79216 3.64695 6.83531 3.90334C5.87846 4.15972 5.03295 4.72468 4.42991 5.51058C3.82687 6.29647 3.5 7.2594 3.5 8.25C3.5 9.24061 3.82687 10.2035 4.42991 10.9894C5.03295 11.7753 5.87846 12.3403 6.83531 12.5967C7.79216 12.8531 8.80688 12.7865 9.72208 12.4075C10.6373 12.0284 11.4018 11.3579 11.8971 10.5C12.0352 10.2609 11.9532 9.95506 11.7141 9.81699C11.475 9.67892 11.1692 9.76086 11.0311 10C10.6459 10.6672 10.0512 11.1887 9.33939 11.4836C8.62757 11.7784 7.83835 11.8302 7.09413 11.6307C6.34992 11.4313 5.6923 10.9919 5.22326 10.3807C4.75423 9.76941 4.5 9.02047 4.5 8.25C4.5 7.47953 4.75423 6.73059 5.22326 6.11934C5.6923 5.50808 6.34992 5.06867 7.09413 4.86926C7.83835 4.66985 8.62757 4.72158 9.33939 5.01642C9.84142 5.22437 10.2852 5.54504 10.6383 5.95008L9.37885 6.26493C9.11095 6.3319 8.94807 6.60337 9.01505 6.87127C9.08202 7.13917 9.35349 7.30205 9.62139 7.23507L11.6214 6.73507C11.844 6.67943 12.0001 6.47943 12.0001 6.25V3.75Z' fill='white'/%3E%3C/svg%3E");
+}
 .i-ico-date {
   width: 1.4rem;
   height: 1.4rem;
@@ -637,4 +648,14 @@ a.visited {
 }
 .i-img-more-match {
   background-image: url('../images/icon/ico-more-match.png');
+}
+.i-img-consumption-link1 {
+  width: 5.036rem;
+  height: 4.8rem;
+  background-image: url('../images/icon/ico-consumption-link1.png');
+}
+.i-img-consumption-link2 {
+  width: 5.036rem;
+  height: 4.8rem;
+  background-image: url('../images/icon/ico-consumption-link2.png');
 }

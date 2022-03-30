@@ -340,7 +340,7 @@
   padding-top: 1.7rem;
   padding-bottom: 1.7rem;
   //결제 취소
-  &.canceled {
+  &.disabled {
     opacity: 0.5;
     .item-tit {
       strong {
