@@ -126,5 +126,23 @@
     "complete": "2022-03-24",
     "change": "2022-03-24",
     "etc": "label 태그 수정"
+  },
+  {
+    "id": "MCF05-0100001C",
+    "url": "../../admin/html/MCF/",
+    "depth2": "이벤트관리",
+    "name": "이벤트관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-30",
+    "etc": ""
+  },
+  {
+    "id": "MCF05-0100003C",
+    "url": "../../admin/html/MCF/",
+    "depth2": "이벤트관리",
+    "name": "이벤트관리 등록(수정)",
+    "worker": "변상우",
+    "complete": "2022-03-30",
+    "etc": ""
   }
 ]

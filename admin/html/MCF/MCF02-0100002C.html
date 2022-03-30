@@ -286,12 +286,14 @@
               <div class="form-box-item">
                 <div class="form-box-label">예약시간</div>
                 <div class="form-box-cont form-row">
-                  <div class="input-daterange-btn col-7">
+                  <!-- 2022-03-30: .input-daterange-btn 불필요 클래스 제거 -->
+                  <div class="col-7">
                     <div class="input-group">
                       <input type="date" class="form-control" placeholder="시작일" />
                     </div>
                   </div>
-                  <div class="col-5 d-flex">
+                  <!-- 2022-03-30: .d-flex 불필요 클래스 제거 -->
+                  <div class="col-5">
                     <div class="input-group">
                       <input type="tel" class="form-control" maxlength="2" />
                       <div class="input-group-prepend">
@@ -570,7 +572,7 @@
 
           <!-- 알람발송 승인 요청 팝업 -->
           <div class="modal fade" id="alaramModal" tabindex="-1" aria-labelledby="alaramModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="alaramModalLabel">알람발송 승인 요청</h5>
@@ -581,9 +583,8 @@
                 <div class="modal-body">
                   <div class="form-group">
                     <h6>승인자 : 홍길동</h6>
-                    <textarea class="form-control" rows="2">
-사유입력
-                    </textarea>
+                    <!-- 2022-03-30: placeholder 추가 -->
+                    <textarea class="form-control" rows="2" placeholder="사유입력"></textarea>
                   </div>
                   <div class="mt-2 fc-red text-center">승인요청 사유를 입력해주세요</div>
                 </div>
