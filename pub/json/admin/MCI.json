@@ -202,5 +202,15 @@
     "worker": "변상우",
     "complete": "2022-03-30",
     "etc": ""
+  },
+  {
+    "id": "MCI05-0100001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "신고 관리",
+    "depth3": "게시물 신고 관리",
+    "name": "관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-30",
+    "etc": ""
   }
 ]
