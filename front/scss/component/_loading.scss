@@ -96,18 +96,18 @@
 
 // refresh
 html {
-  &.not-refresh,
-  &.refreshing {
-    height: 100%;
-    overflow: hidden;
-    body {
-      height: 100%;
-      overflow: hidden;
-    }
-  }
-  &.refreshing {
-    pointer-events: none;
-  }
+  // &.not-refresh,
+  // &.refreshing {
+  //   height: 100%;
+  //   overflow: hidden;
+  //   body {
+  //     height: 100%;
+  //     overflow: hidden;
+  //   }
+  // }
+  // &.refreshing {
+  //   pointer-events: none;
+  // }
 }
 .page-refresh {
   position: fixed;

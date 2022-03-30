@@ -390,9 +390,10 @@
       <!-- //팝업 -->
     </article>
     <script>
+      // refresh 시킬 함수
       ui.Refresh = function () {
-        console.log('ui.Refresh');
         setTimeout(function () {
+          console.log('ui.Refresh end');
           ui.RefreshEnd();
         }, 1000);
       };
