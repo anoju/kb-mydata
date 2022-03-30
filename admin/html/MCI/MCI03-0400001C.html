@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">매치관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">이벤트 그라운드 퀴즈 관리</li>
+                  </ol>
+                </nav>
+                <h1>이벤트 그라운드 퀴즈 관리</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">이벤트 그라운드 퀴즈 내역 검색</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">검색어</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-md-5">
+                      <select class="custom-select">
+                        <option value="1">그라운드 이름</option>
+                      </select>
+                    </div>
+                    <div class="col-md-7 mt-2 mt-md-0">
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">기간검색</div>
+                <div class="form-box-cont">
+                  <div class="input-daterange-btn">
+                    <div class="input-group">
+                      <input type="date" class="form-control" placeholder="시작일" />
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">~</div>
+                      </div>
+                      <input type="date" class="form-control" placeholder="종료일" />
+                    </div>
+
+                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                      <button type="button" class="btn btn-outline-secondary">1개월</button>
+                      <button type="button" class="btn btn-outline-secondary">3개월</button>
+                      <button type="button" class="btn btn-outline-secondary">6개월</button>
+                      <button type="button" class="btn btn-outline-secondary active">전체</button>
+                      <!-- active 클래스로  활성화 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <button type="button" class="btn large btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개</div>
+            <div class="right">
+              <select class="custom-select custom-select-sm">
+                <option value="1">참여일 ↓</option>
+                <option value="2">참여일 ↑</option>
+              </select>
+            </div>
+          </div>
+
+          <table id="table" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">그라운드 이름</th>
+                <th scope="col">시즌기간</th>
+                <th scope="col">참여자</th>
+                <th scope="col">연락처</th>
+                <th scope="col">당첨이력</th>
+                <th scope="col">퀴즈 선택 결과</th>
+                <th scope="col">참여일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 일치하는 검색결과가 없습니다. -->
+              <tr class="no-records-found">
+                <td colspan="8">일치하는 검색결과가 없습니다.</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>Y</td>
+                <td>O</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>N</td>
+                <td>X</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>N</td>
+                <td>O</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>N</td>
+                <td>O</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>Y</td>
+                <td>O</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>N</td>
+                <td>X</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>N</td>
+                <td>O</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>N</td>
+                <td>O</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>Y</td>
+                <td>O</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>N</td>
+                <td>X</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>N</td>
+                <td>O</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td><a href="#">OOOOOOOO</a></td>
+                <td>2022.00.00 ~ 2022.00.00</td>
+                <td>홍길동</td>
+                <td>000-0000-0000</td>
+                <td>N</td>
+                <td>O</td>
+                <td>2022.00.00 00:00:00</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btn-wrap kb-page-btn text-left mt-3">
+            <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#downloadConfirmModal"><i class="bi bi-download"></i> 퀴즈 참여 내역 다운로드</button>
+          </div>
+          <!-- //컨텐츠본문 -->
+
+          <!-- 다운로드 승인 요청 팝업 -->
+          <div class="modal fade" id="downloadConfirmModal" tabindex="-1" aria-labelledby="downloadConfirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="downloadConfirmModalLabel">다운로드 승인요청</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h6 class="mb-4">승인자 : 홍길동</h6>
+                  <textarea class="form-control" rows="5" placeholder="사유입력"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 승인요청</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+    </script>
+  </body>
+</html>

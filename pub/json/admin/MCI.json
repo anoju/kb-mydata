@@ -132,7 +132,7 @@
     "url": "../../admin/html/MCI/",
     "depth2": "그라운드 관리",
     "depth3": "기본 그라운드 게시물 관리",
-    "name": "관리 상세",
+    "name": "관리 목록",
     "worker": "변상우",
     "complete": "2022-03-29"
   },
@@ -150,8 +150,67 @@
     "url": "../../admin/html/MCI/",
     "depth2": "그라운드 관리",
     "depth3": "이벤트 그라운드 관리",
-    "name": "관리 상세",
+    "name": "등록 (상세)",
     "worker": "변상우",
     "complete": "2022-03-29"
+  },
+  {
+    "id": "MCI03-0400001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "그라운드 관리",
+    "depth3": "이벤트 그라운드 퀴즈 관리",
+    "name": "관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-30",
+    "etc" : "MCI03-0400p02C 다운로드 승인 요청 팝업(한 화면)"
+  },
+  {
+    "id": "MCI03-0500001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "그라운드 관리",
+    "depth3": "퀴즈 당첨자 관리",
+    "name": "관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-30",
+    "etc": "MCI03-0500p02C 퀴즈 당첨자 등록 팝업(한 화면)"
+  },
+  {
+    "id": "MCI04-0100001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "리워드 관리",
+    "depth3": "리워드 관리",
+    "name": "관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-30",
+    "etc": "MCI04-0100p02C 다운로드 승인 요청 팝업(한 화면)"
+  },
+  {
+    "id": "MCI04-0200001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "리워드 관리",
+    "depth3": "리워드 상품 관리",
+    "name": "관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-30"
+  },
+  {
+    "id": "MCI04-0200002C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "리워드 관리",
+    "depth3": "리워드 상품 관리",
+    "name": "등록 (상세)",
+    "worker": "변상우",
+    "complete": "2022-03-30",
+    "etc": ""
+  },
+  {
+    "id": "MCI05-0100001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "신고 관리",
+    "depth3": "게시물 신고 관리",
+    "name": "관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-30",
+    "etc": ""
   }
 ]
