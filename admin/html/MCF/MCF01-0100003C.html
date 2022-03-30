@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+
+    <link rel="stylesheet" href="../../lib/lightbox/ekko-lightbox.css" />
+    <script src="../../lib/lightbox/ekko-lightbox.min.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">앱관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">약관관리</li>
+                  </ol>
+                </nav>
+                <h1>약관등록</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">약과 정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>분류</div>
+                <div class="form-box-cont">
+                  <div class="form-row align-items-center">
+                    <div class="col-md-5">
+                      <select class="custom-select">
+                        <option value="1">회원가입</option>
+                      </select>
+                    </div>
+                    <div class="col-md-5">
+                      <div class="help-txt">※ 동일한 약관이 있는지 확인후 등록해 주세요.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>유형</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">필수</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">선택</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>약관구분</div>
+                <div class="form-box-cont">
+                  <select class="custom-select">
+                    <option value="1">하위약관</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>약관제목</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>등록방법</div>
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" data-rdo-target="pdf" />
+                      <span class="custom-control-label">PDF</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" data-rdo-target="html" />
+                      <span class="custom-control-label">HTML</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" data-rdo-target="link" />
+                      <span class="custom-control-label">외부링크</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" data-rdo-target="none" />
+                      <span class="custom-control-label">내용관리 안함</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- PDF -->
+            <div class="form-box-row __cont _pdf__cont">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>약관첨부</div>
+                <div class="form-box-cont">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file1" />
+                    <label class="custom-file-label" for="file1">등록종류 : PDF, 용량: 5MB이하, DRM: 해제필수</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 약관 관리때만 노출 -->
+            <div class="form-box-row __cont _pdf__cont">
+              <div class="form-box-item">
+                <div class="form-box-label">PDF URL</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#">PDF URL</a>
+                </div>
+              </div>
+            </div>
+            <!-- //약관 관리때만 노출 -->
+            <!-- //PDF -->
+
+            <!-- HTML -->
+            <div class="form-box-row __cont _html__cont">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>약관입력</div>
+                <div class="form-box-cont">
+                  <textarea id="editor" name="editordata1"></textarea>
+                </div>
+              </div>
+            </div>
+            <!-- //HTML -->
+
+            <!-- 외부링크 -->
+            <div class="form-box-row __cont _link__cont">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>링크주소</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <!-- // 외부링크 -->
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">사용여부</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>사용여부</div>
+                <div class="form-box-cont">
+                  <div class="d-flex align-items-center">
+                    <div class="custom-control-wrap">
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="rdo3" class="custom-control-input" />
+                        <span class="custom-control-label">사용</span>
+                      </label>
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="rdo3" class="custom-control-input" />
+                        <span class="custom-control-label">사용안함</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>시작일설정</div>
+                <div class="form-box-cont">
+                  <input type="date" class="form-control" placeholder="시작일" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">약관 등록안내</h2>
+            </div>
+          </div>
+          <div class="text-line-box bg-gray-100">
+            <ul>
+              <li>등록된 약관은 개시일 이후에는 수정 불가능</li>
+              <li>개시일 이후에는 새로운 버전으로 등록이 필요하며, 약관 시작일을 새로 설정해야합니다.</li>
+              <li>미래에 계시되는 약관은 시작일자가 변경되어도 마지막 등록분이 반영됩니다.</li>
+              <li>약관 시작일은 오늘 이후부터 가능합니다.</li>
+            </ul>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">개정사유</h2>
+            </div>
+            <div class="right">
+              <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#historyModal">이력보기</button>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>개정사유</div>
+                <div class="form-box-cont">
+                  <textarea class="form-control" rows="2"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">등록자 정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">최초등록</div>
+                <div class="form-box-cont d-flex align-items-center">YYYY.MM.DD 홍길동</div>
+              </div>
+            </div>
+            <!-- 수정일때만 노출 -->
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">최근수정</div>
+                <div class="form-box-cont d-flex align-items-center">YYYY.MM.DD 홍길동</div>
+              </div>
+            </div>
+            <!-- // 수정일때만 노출 -->
+          </div>
+
+          <div class="btn-wrap kb-page-btn text-center mt-5">
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
+            <!-- 등록일때 -->
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 등록</button>
+            <!-- 수정일때 -->
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 저장</button>
+          </div>
+          <!-- //컨텐츠본문 -->
+
+          <!-- 약관이력 팝업 -->
+          <article class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="historyModalLabel">약관이력</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <table id="table1" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">등록자</th>
+                        <th scope="col">등록/수정일</th>
+                        <th scope="col">게시일</th>
+                        <th scope="col">개정사유</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 일치하는 검색결과가 없습니다. -->
+                      <tr class="no-records-found">
+                        <td colspan="4">등록 내역이 없습니다.</td>
+                      </tr>
+                      <tr>
+                        <td>홍길동</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td class="text-left">서비스 이용약관도의 약관 변경</td>
+                      </tr>
+                      <tr>
+                        <td>홍길동</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td class="text-left">서비스 이용약관도의 약관 변경</td>
+                      </tr>
+                      <tr>
+                        <td>홍길동</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td class="text-left">서비스 이용약관도의 약관 변경</td>
+                      </tr>
+                      <tr>
+                        <td>홍길동</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td class="text-left">서비스 이용약관도의 약관 변경</td>
+                      </tr>
+                      <tr>
+                        <td>홍길동</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td class="text-left">서비스 이용약관도의 약관 변경</td>
+                      </tr>
+                      <tr>
+                        <td>홍길동</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td class="text-left">서비스 이용약관도의 약관 변경</td>
+                      </tr>
+                      <tr>
+                        <td>홍길동</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td class="text-left">서비스 이용약관도의 약관 변경</td>
+                      </tr>
+                      <tr>
+                        <td>홍길동</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td class="text-left">서비스 이용약관도의 약관 변경</td>
+                      </tr>
+                      <tr>
+                        <td>홍길동</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td class="text-left">서비스 이용약관도의 약관 변경</td>
+                      </tr>
+                      <tr>
+                        <td>홍길동</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td>YYYY.MM.DD hh:mm:ss</td>
+                        <td class="text-left">서비스 이용약관도의 약관 변경</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- //약관이력 팝업 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      //에디터
+      CKEDITOR.replace('editor');
+
+      // 테이블
+      function initTable() {
+        $('#table1').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+
+      // 등록방법
+      const $typeShow = function () {
+        $('.__cont').hide();
+        const $target = $('[data-rdo-target]:checked').data('rdo-target');
+        if ($target && $target !== 'none') {
+          $('._' + $target + '__cont').show();
+        }
+      };
+      $typeShow();
+      $('[data-rdo-target]').change(function () {
+        $typeShow();
+      });
+    </script>
+  </body>
+</html>
