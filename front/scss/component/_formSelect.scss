@@ -119,17 +119,17 @@
   &.inline {
     display: inline-flex;
     width: auto;
-    font-weight: inherit;
     color: inherit;
     font-size: 1.4rem;
+    border: 0 none;
+    border-radius: 0;
+    background: none;
     select,
     .btn-select {
-      border: 0 none;
       height: 2.4rem;
       line-height: 2.4rem;
       padding: 0 2.4rem 0 0;
-      border-radius: 0;
-      background: none;
+      font-weight: inherit;
     }
     .btn-select {
       &:after {
