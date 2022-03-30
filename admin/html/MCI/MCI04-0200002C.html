@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+
+    <link rel="stylesheet" href="../../lib/lightbox/ekko-lightbox.css" />
+    <script src="../../lib/lightbox/ekko-lightbox.min.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">매치관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">리워드 상품 관리</li>
+                  </ol>
+                </nav>
+                <h1>리워드 상품 등록</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">기본정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>상품 이름</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" placeholder="최대 20글자" />
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 상품 이미지</div>
+                <div class="form-box-cont">
+                  <!-- 미리보기 아이콘 이미지 -->
+                  <!-- 이미지 없을때 -->
+                  <div class="img-box w-120 mb-2">
+                    <small>등록된 이미지가<br />없습니다.</small>
+                  </div>
+
+                  <!-- 이미지 있을때 -->
+                  <div class="img-box w-120 mb-2">
+                    <a href="../../images/temp/thumb-temp2.jpg" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
+                  </div>
+
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" />
+                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>설명</div>
+                <div class="form-box-cont">
+                  <textarea class="form-control" rows="8" placeholder="최대 50글자"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">사용정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>구매가능 포인트</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                  <div class="mt-1 help-txt">※ 숫자만 입력해 주세요.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">등록자정보</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">최초등록</div>
+                <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">최초수정</div>
+                <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap kb-page-btn text-center mt-5">
+            <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 등록</button>
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 저장</button>
+            <button type="button" class="btn btn-lg btn-default"><i class="bi bi-trash"></i> 삭제</button>
+          </div>
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+    </script>
+  </body>
+</html>
