@@ -2,25 +2,25 @@
 .select {
   color: var(--strong-txt-color);
   font-size: 1.6rem;
+  background-color: #fafafa;
+  border: 0.1rem solid #fafafa;
+  border-radius: 1rem;
+  transition: border 0.3s;
 }
 .select select,
 .btn-select {
   position: relative;
   width: 100%;
   padding: 0.5rem 4.1rem 0.5rem 1.6rem;
-  border: 0.1rem solid #fafafa;
+  border-width: 0;
   vertical-align: middle;
   box-sizing: border-box;
-  -webkit-appearance: none;
-  appearance: none;
-  transition: border 0.3s;
-  border-radius: 1rem;
-  height: 4.8rem;
+  height: 4.6rem;
   white-space: nowrap;
-  background-color: #fafafa;
-  overflow: hidden;
+  background-color: transparent;
   line-height: 3.6rem;
   font-weight: 500;
+  appearance: none;
   &.off {
     color: var(--placeholder-txt-color);
   }
@@ -33,11 +33,13 @@
   position: relative;
   width: 100%;
   &.line {
-    select,
-    .btn-select {
-      border-color: var(--line-color);
-      background-color: #fff;
-    }
+    border-color: var(--line-color);
+    background-color: #fff;
+    // select,
+    // .btn-select {
+    //   border-color: var(--line-color);
+    //   background-color: #fff;
+    // }
   }
   select {
     @include bg-etc(2.4rem auto, right 1.2rem center);
@@ -62,10 +64,7 @@
   }
   &.focus,
   &.focused {
-    select,
-    .btn-select {
-      border-color: var(--primary-color);
-    }
+    border-color: var(--primary-color);
   }
   &.disabled {
     select,
@@ -76,14 +75,7 @@
   &.is-error {
     select,
     .btn-select {
-      // border-color: var(--alert-txt-color);
       color: var(--alert-txt-color);
-    }
-  }
-  &.is-success {
-    select,
-    .btn-select {
-      border-color: var(--primary-color);
     }
   }
   &.option-open {
@@ -174,6 +166,7 @@
     border-bottom: 0.2rem solid #d6dbe1;
     border-radius: 0;
     padding-top: 1.6rem;
+    background-color: transparent;
     select,
     .btn-select {
       height: 3.6rem;
@@ -183,7 +176,6 @@
       // color: #818892;
       border-width: 0;
       border-radius: 0;
-      background-color: transparent;
       transition: color 0.3s ease;
       &.off {
         color: transparent;

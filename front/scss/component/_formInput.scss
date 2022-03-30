@@ -34,16 +34,12 @@
     border-color: var(--primary-color);
   }
   &.is-error {
-    // border-color: var(--alert-txt-color);
     input:not(:focus) {
       color: var(--alert-txt-color);
       // @include bg-etc(1.6rem auto, right 1.2rem center);
       // background-image: url(../images/icon/ico-error@3x.png);
     }
   }
-  // &.is-success {
-  //   border-color: var(--primary-color);
-  // }
 
   &.date {
     input {
@@ -59,8 +55,8 @@
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
     margin: 0;
+    appearance: none;
   }
   input {
     width: 100%;
@@ -70,12 +66,12 @@
     border: 0 none;
     color: inherit;
     background: none;
-    -webkit-appearance: none;
     border-radius: 1rem;
     outline: none;
     font-size: 1.6rem;
     font-weight: 500;
     color: var(--strong-txt-color);
+    appearance: none;
     &[type='file'] {
       font-size: 1.4rem;
       line-height: 2.2rem;

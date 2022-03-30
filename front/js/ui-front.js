@@ -2571,6 +2571,7 @@ ui.Form = {
     const $inpEls = 'input:not(:checkbox):not(:radio):not(:hidden), select, textarea, .btn-select';
     $(document).on('focusin', $inpEls, function (e) {
       const $this = $(this);
+      if ($this.prop('readonly') || $this.prop('disabled')) return;
       // if (!$this.prop('readonly') && !$this.prop('disabled')) $('html').addClass('inp-focus');
       if ($this.closest('.form-item').length) $this.closest('.form-item').addClass('focus');
       if ($this.is('input') && $this.closest('.input').length) $this.closest('.input').addClass('focus');

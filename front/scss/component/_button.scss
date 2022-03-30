@@ -12,7 +12,6 @@
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 1rem;
-  -webkit-appearance: none;
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
@@ -20,6 +19,7 @@
   vertical-align: middle;
   opacity: 1;
   transition: 0.3s, visibility 0s;
+  appearance: none;
   // white-space:nowrap;
   i {
     pointer-events: none;

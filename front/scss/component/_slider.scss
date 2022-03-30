@@ -258,18 +258,18 @@
     height: 100%;
     margin: 0;
     /*pointer-events: none;*/
-    -webkit-appearance: none;
     z-index: 3;
     opacity: 0;
+    appearance: none;
     &::-ms-track {
-      -webkit-appearance: none;
       background: transparent;
       color: transparent;
+      appearance: none;
     }
     &::-moz-range-track {
-      -moz-appearance: none;
       background: transparent;
       color: transparent;
+      appearance: none;
     }
     &:focus::-webkit-slider-runnable-track {
       background: transparent;
@@ -301,7 +301,7 @@
       border-radius: 0px;
       border: 0 none;
       background: red;
-      -webkit-appearance: none;
+      appearance: none;
     }
     &::-ms-fill-lower {
       background: transparent;
