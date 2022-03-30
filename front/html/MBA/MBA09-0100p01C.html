@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../js/ui-front.js"></script>
   </head>
   <body>
+    <button class="button gray">버튼</button>
     <div id="popMatchTutorial" class="popup full" role="dialog" aria-hidden="true">
       <article class="pop-wrap">
         <div class="pop-head">
@@ -46,7 +47,7 @@
                     <p class="img"><img src="../../images/match/img-match-tutorilal2.png" alt="" /></p>
                     <p class="text">끌린이</p>
                   </div>
-                  <span class="vs"></span>
+                  <span class="vs" aria-label="vs"></span>
                   <div>
                     <p class="tit">상대방 수익률</p>
                     <p class="number">??</p>
@@ -74,7 +75,9 @@
 
     <script>
       $(function () {
-        Layer.open('#popMatchTutorial');
+        $('.button.gray').click(function () {
+          Layer.open('#popMatchTutorial');
+        });
       });
     </script>
   </body>
