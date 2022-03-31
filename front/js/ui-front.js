@@ -5348,17 +5348,21 @@ const Layer = {
     const $wrap = $('#wrap').length ? $('#wrap') : $('body');
     const $html = '<div class="layer-like" aria-hidden="true"><div class="lottie" data-lottie="../../temp/love.json"></div></div>';
     if ($('.layer-like').length) return;
+    // 넣고
     $wrap.append($html);
-    $('.layer-like').addClass('show');
-    ui.Common.lottie();
-    // 숨기고
+    // 보여주고
     setTimeout(function () {
-      $('.layer-like').removeClass('show');
-      // 지우고
+      $('.layer-like').addClass('show');
+      ui.Common.lottie();
+      // 숨기고
       setTimeout(function () {
-        $('.layer-like').remove();
-      }, 310);
-    }, $delayTime);
+        $('.layer-like').removeClass('show');
+        // 지우고
+        setTimeout(function () {
+          $('.layer-like').remove();
+        }, 310);
+      }, $delayTime);
+    }, 10);
   },
   overlapChk: function () {
     //focus 이벤트 시 중복열림 방지

@@ -511,27 +511,22 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 120px;
-  height: 120px;
+  width: 14rem;
+  height: 14rem;
+  padding: 2rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
+  // background: #fff;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
   opacity: 0;
   z-index: 250;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
   pointer-events: none;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(2px);
-  transform: translate(-50%, 0%);
-  // > div {
-  //   width: 50px;
-  //   height: 50px;
-  //   margin: 15px auto 0;
-  //   background-repeat: no-repeat;
-  //   background-position: center center;
-  //   background-size: contain;
-  // }
+  // box-shadow: 0 0 20px 10px #fff;
+  // backdrop-filter: blur(2px);
+  transform: translate(-50%, -40%);
   &.show {
     transform: translate(-50%, -50%);
+    transition-delay: 0.2s, 0s;
     opacity: 1;
     > div {
       animation: bounceIn 1.6s;
