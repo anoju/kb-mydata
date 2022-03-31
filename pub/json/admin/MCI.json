@@ -242,5 +242,45 @@
     "worker": "변상우",
     "complete": "2022-03-30",
     "etc": ""
+  },
+  {
+    "id": "MCI06-0100001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "프로필 관리",
+    "depth3": "닉네임 프리셋 관리",
+    "name": "관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-31",
+    "etc": ""
+  },
+  {
+    "id": "MCI06-0100002C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "프로필 관리",
+    "depth3": "닉네임 프리셋 관리",
+    "name": "등록 (상세)",
+    "worker": "변상우",
+    "complete": "2022-03-31",
+    "etc": ""
+  },
+  {
+    "id": "MCI06-0200001C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "프로필 관리",
+    "depth3": "아바타 프리셋 관리",
+    "name": "관리 목록",
+    "worker": "변상우",
+    "complete": "2022-03-31",
+    "etc": ""
+  },
+  {
+    "id": "MCI06-0200002C",
+    "url": "../../admin/html/MCI/",
+    "depth2": "프로필 관리",
+    "depth3": "아바타 프리셋 관리",
+    "name": "등록 (상세)",
+    "worker": "변상우",
+    "complete": "2022-03-31",
+    "etc": ""
   }
 ]
