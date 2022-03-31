@@ -4805,9 +4805,12 @@ ui.Animation = {
     const $wrap = $(wrap);
     const $wHeight = $wrap.height();
     const $scrollTop = $wrap.scrollTop();
-    const $wrapTop = $scrollTop + $wHeight / 10;
-    const $wrapCenter = $scrollTop + $wHeight / 2;
-    const $wrapBottom = $scrollTop + ($wHeight / 10) * 9;
+    const $topFixedH = $isWin ? ui.Common.getTopFixedHeight($target) : ui.Common.getTopFixedHeight($target, 'pop-top-fixed');
+    const $bottomFixedH = $isWin ? $('.bottom-fixed-space').height() : $wrap.find('.pop-foot').height();
+    // console.log($topFixedH);
+    const $wrapTop = $scrollTop + $topFixedH;
+    const $wrapCenter = $scrollTop + ($wHeight - $topFixedH - $bottomFixedH) / 2;
+    const $wrapBottom = $scrollTop + ($wHeight - $bottomFixedH);
 
     $.each($target, function () {
       const $el = $(this);
