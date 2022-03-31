@@ -808,12 +808,17 @@ ui.Common = {
         if (!$this.hasClass('lottie__init')) {
           const $data = $this.data('lottie');
           $this.addClass('lottie__init').removeAttr('data-lottie').aria('hidden', true);
-          const isLoop = $this.hasClass('_loop');
+          const $loopOpt = $this.hasClass('_loop');
+          const $sclAnimation = $this.data('animation');
+          let $autoplayOpt = true;
+          if ($sclAnimation) {
+            $autoplayOpt = false;
+          }
           const $lottieOpt = lottie.loadAnimation({
             container: this,
             renderer: 'svg',
-            loop: isLoop,
-            autoplay: true,
+            loop: $loopOpt,
+            autoplay: $autoplayOpt,
             path: $data
           });
           $(this).data('lottie-opt', $lottieOpt);
@@ -4741,6 +4746,7 @@ ui.Scroll = {
 //data-animation
 ui.Animation = {
   sclIdx: 0,
+  sclAry: [],
   sclReady: function (target) {
     const $animations = $('[data-animation]');
     $.each($animations, function () {
@@ -4804,9 +4810,12 @@ ui.Animation = {
     const $wrap = $(wrap);
     const $wHeight = $wrap.height();
     const $scrollTop = $wrap.scrollTop();
-    const $wrapTop = $scrollTop + $wHeight / 10;
-    const $wrapCenter = $scrollTop + $wHeight / 2;
-    const $wrapBottom = $scrollTop + ($wHeight / 10) * 9;
+    const $topFixedH = $isWin ? ui.Common.getTopFixedHeight($target) : ui.Common.getTopFixedHeight($target, 'pop-top-fixed');
+    const $bottomFixedH = $isWin ? $('.bottom-fixed-space').height() : $wrap.find('.pop-foot').height();
+    // console.log($topFixedH);
+    const $wrapTop = $scrollTop + $topFixedH;
+    const $wrapCenter = $scrollTop + ($wHeight - $topFixedH - $bottomFixedH) / 2;
+    const $wrapBottom = $scrollTop + ($wHeight - $bottomFixedH);
 
     $.each($target, function () {
       const $el = $(this);
@@ -4826,7 +4835,14 @@ ui.Animation = {
 
       if ($el.data('init')) return;
       if (($wrapTop <= $elTop && $elTop <= $wrapBottom) || ($wrapTop <= $elBottom && $elBottom <= $wrapBottom)) {
-        ui.Animation.sclAction($el);
+        ui.Animation.sclAction($el, $elTop);
+        if (($el.hasClass('lottie__init'), $el.data('lottie'))) {
+          setTimeout(function () {
+            const $lottie = $el.data('lottie-opt');
+            // if ($el.hasClass('_loop')) $lottie.loop = true;
+            $lottie.play();
+          }, 100);
+        }
       } else {
         const $timer = $el.data('time');
         if ($timer !== undefined) {
@@ -4853,16 +4869,31 @@ ui.Animation = {
     io.unobserve(el);
     return io;
   },
-  sclAction: function (el) {
+  sclAction: function (el, top) {
     const $el = $(el);
     const $animationClass = ui.Animation.sclTypeChk(el);
+    const $delay = 200;
 
     if ($el.data('time') !== undefined) return;
-    ui.Animation.sclIdx += 1;
-    const timer = ui.Animation.sclIdx * 200;
+    let $isSameTop = false;
+    let timer;
+    if (top) {
+      const AryIdx = ui.Animation.sclAry.indexOf(top);
+      if (AryIdx >= 0) {
+        $isSameTop = true;
+        timer = AryIdx * $delay;
+      } else {
+        ui.Animation.sclAry.push(top);
+      }
+    }
+    if (!$isSameTop) {
+      timer = ui.Animation.sclIdx * $delay;
+      ui.Animation.sclIdx += 1;
+    }
     const initTimer = setTimeout(function () {
       $el.data('init', true);
-      if (ui.Animation.sclIdx > 0) ui.Animation.sclIdx -= 1;
+      if (ui.Animation.sclIdx > 0 || !$isSameTop) ui.Animation.sclIdx -= 1;
+      if (ui.Animation.sclIdx === 0) ui.Animation.sclAry = [];
       const $slide = $el.closest('.swiper-slide');
       if ($el.hasClass('animate__animated')) {
         if ($el.closest('.tab-panel').length && !$el.closest('.tab-panel').hasClass('active')) return;
@@ -5315,9 +5346,23 @@ const Layer = {
   like: function () {
     const $delayTime = 2000;
     const $wrap = $('#wrap').length ? $('#wrap') : $('body');
-    const $html = '<div class="layer_like" aria-hidden="true"><div></div></div>';
-    if (!$('.layer_like').length) $wrap.append($html);
-    if (!$('.layer_like').hasClass('show')) $('.layer_like').addRemoveClass('show', 0, $delayTime);
+    const $html = '<div class="layer-like" aria-hidden="true"><div class="lottie" data-lottie="../../temp/love.json"></div></div>';
+    if ($('.layer-like').length) return;
+    // 넣고
+    $wrap.append($html);
+    // 보여주고
+    setTimeout(function () {
+      $('.layer-like').addClass('show');
+      ui.Common.lottie();
+      // 숨기고
+      setTimeout(function () {
+        $('.layer-like').removeClass('show');
+        // 지우고
+        setTimeout(function () {
+          $('.layer-like').remove();
+        }, 310);
+      }, $delayTime);
+    }, 10);
   },
   overlapChk: function () {
     //focus 이벤트 시 중복열림 방지

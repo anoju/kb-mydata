@@ -507,3 +507,29 @@
 .msie .popup.show {
   display: block;
 }
+.layer-like {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 14rem;
+  height: 14rem;
+  padding: 2rem;
+  border-radius: 50%;
+  // background: #fff;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  z-index: 250;
+  transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+  pointer-events: none;
+  // box-shadow: 0 0 20px 10px #fff;
+  // backdrop-filter: blur(2px);
+  transform: translate(-50%, -40%);
+  &.show {
+    transform: translate(-50%, -50%);
+    transition-delay: 0.2s, 0s;
+    opacity: 1;
+    > div {
+      animation: bounceIn 1.6s;
+    }
+  }
+}

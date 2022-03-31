@@ -92,8 +92,8 @@
                   <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></div>
 
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile02" />
-                    <label class="custom-file-label" for="inputGroupFile02">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" />
+                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
                   </div>
                 </div>
               </div>
@@ -102,12 +102,11 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 연락처</div>
                 <div class="form-box-cont">
-                  <div class="form-row align-items-center">
-                    <div class="col-md-6">
-                      <input type="text" class="form-control" />
-                    </div>
-                    <div class="mt-2 col-md-6 mt-md-0">
-                      <div class="help-txt">※ 숫자만 입력해 주세요.</div>
+                  <!-- 2022-03-31: 연락처 검색 팝업 추가 -->
+                  <div class="d-flex align-items-center">
+                    <button type="button" class="btn btn-sm btn-default mr-2" data-toggle="modal" data-target="#memberModal"><i class="bi bi-person-bounding-box"></i> 회원 검색</button>
+                    <div class="flex-auto">
+                      <input type="text" class="form-control" readonly value="010-0000-0000" />
                     </div>
                   </div>
                 </div>
@@ -220,7 +219,7 @@
             </div>
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label">최초수정</div>
+                <div class="form-box-label">최종수정</div>
                 <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
               </div>
             </div>
@@ -232,6 +231,114 @@
             <button type="button" class="btn btn-lg btn-default"><i class="bi bi-trash"></i> 삭제</button>
           </div>
           <!-- //컨텐츠본문 -->
+
+          <!-- 2022-03-31: 연락처 검색 팝업 추가 -->
+          <!-- 연락처 검색 팝업 -->
+          <article class="modal fade" id="memberModal" tabindex="-1" aria-labelledby="memberModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title h5" id="memberModalLabel">회원 선택(인플루언서 설정)</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="title-wrap">
+                    <div class="left">
+                      <h2 class="h3">회원 검색 검색</h2>
+                    </div>
+                  </div>
+                  <div class="form-box">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">휴대폰 번호</div>
+                        <div class="form-box-cont">
+                          <div class="flex-auto">
+                            <input type="text" class="form-control" />
+                          </div>
+                          <div class="help-txt mt-2">※ 숫자만 입력해 주세요.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btn-wrap">
+                    <button type="button" class="btn large btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
+                  </div>
+
+                  <div class="title-wrap">
+                    <div class="left">
+                      <h2 class="h3">검색 결과</h2>
+                    </div>
+                  </div>
+                  <table id="table" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">선택</th>
+                        <th scope="col">번호</th>
+                        <th scope="col">관리번호</th>
+                        <th scope="col">회원명</th>
+                        <th scope="col">연락처</th>
+                        <th scope="col">생년월일</th>
+                        <th scope="col">이메일</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="no-records-found">
+                        <td colspan="7">검색 결과를 찾을 수 없습니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>1</td>
+                        <td>XXXXXXXX</td>
+                        <td>아이유</td>
+                        <td>010-0000-0000</td>
+                        <td>2022.00.00</td>
+                        <td>aaaa1234@naver.com</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>2</td>
+                        <td>XXXXXXXX</td>
+                        <td>홍길동</td>
+                        <td>010-0000-0000</td>
+                        <td>2022.00.00</td>
+                        <td>aaaa1234@naver.com</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo1" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>1</td>
+                        <td>XXXXXXXX</td>
+                        <td>유재석</td>
+                        <td>010-0000-0000</td>
+                        <td>2022.00.00</td>
+                        <td>aaaa1234@naver.com</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-outline-dark" data-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-lg btn-primary">확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
         </main>
         <!-- //컨텐츠 -->
       </div>
@@ -243,6 +350,15 @@
     </section>
     <!-- //wrap -->
 
-    <script></script>
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+    </script>
   </body>
 </html>

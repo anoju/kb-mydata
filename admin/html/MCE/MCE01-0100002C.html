@@ -45,13 +45,11 @@
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">홈</a></li>
-                    <li class="breadcrumb-item"><a href="#">매치관리</a></li>
-                    <!-- 2022-03-31: 2뎁스 추가 -->
-                    <li class="breadcrumb-item"><a href="#">매치정책관리</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">메인 대표 이미지 관리</li>
+                    <li class="breadcrumb-item"><a href="#">회원관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">회원관리</li>
                   </ol>
                 </nav>
-                <h1>메인 대표 이미지 관리</h1>
+                <h1>회원정보</h1>
               </div>
             </div>
           </div>
@@ -60,27 +58,15 @@
           <!-- 컨텐츠본문 -->
           <div class="title-wrap">
             <div class="left">
-              <h2 class="h3">인플루언서 대표 이미지</h2>
+              <h2 class="h3">가입정보</h2>
             </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i> 이미지</div>
+                <div class="form-box-label">이름(외국인)</div>
                 <div class="form-box-cont">
-                  <!-- 미리보기 아이콘 이미지 -->
-                  <!-- 이미지 없을때 -->
-                  <div class="img-box w-120 mb-2">
-                    <small>등록된 이미지가<br />없습니다.</small>
-                  </div>
-
-                  <!-- 이미지 있을때 -->
-                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></div>
-
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01" />
-                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
-                  </div>
+                  <input type="text" class="form-control" />
                 </div>
               </div>
             </div>
@@ -88,35 +74,23 @@
 
           <div class="title-wrap mt-5">
             <div class="left">
-              <h2 class="h3">그라운드 App 대표 이미지</h2>
+              <h2 class="h3">단말기/서비스 이용정보</h2>
             </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i> 이미지</div>
-                <div class="form-box-cont">
-                  <!-- 미리보기 아이콘 이미지 -->
-                  <!-- 이미지 없을때 -->
-                  <div class="img-box w-120 mb-2">
-                    <small>등록된 이미지가<br />없습니다.</small>
-                  </div>
-
-                  <!-- 이미지 있을때 -->
-                  <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></div>
-
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile02" />
-                    <label class="custom-file-label" for="inputGroupFile02">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
-                  </div>
-                </div>
+                <div class="form-box-label">KKL 앱버전정보</div>
+                <div class="form-box-cont d-flex align-items-center">1.0</div>
               </div>
             </div>
           </div>
           <div class="btn-wrap kb-page-btn text-center mt-5">
-            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 저장</button>
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 확인</button>
           </div>
           <!-- //컨텐츠본문 -->
+
+          <!-- 권한설정 팝업 -->
         </main>
         <!-- //컨텐츠 -->
       </div>
@@ -128,6 +102,54 @@
     </section>
     <!-- //wrap -->
 
-    <script></script>
+    <script>
+      //에디터
+      CKEDITOR.replace('editor');
+
+      //팝업
+      //유효성 오류팝업(제목미입력)
+      /*
+      Modal.alert('이름을 입력해주세요.', function () {
+        console.log('이름미입력 - 확인');
+      });
+      //유효성 오류팝업(아이디(사번))
+      Modal.alert('아이디(사번)를 입력해주세요.', function () {
+        console.log('아이디(사번)미입력  - 확인');
+      });
+      //유효성 오류팝업(핸드폰 번호를 미입력)
+      Modal.alert('핸드폰 번호를 입력해 주세요.', function () {
+        console.log('핸드폰 번호미입력  - 확인');
+      });
+      //유효성 오류팝업(이메일 주소를 미입력)
+      Modal.alert('이메일 주소를 입력해 주세요.', function () {
+        console.log('이메일 주소미입력  - 확인');
+      });
+      //유효성 오류팝업(권한미설정)
+      Modal.alert('권한을 설정해 주세요', function () {
+        console.log('권한미설정- 확인');
+      });
+
+      //등록팝업
+      Modal.confirm('관리자를 등록하시겠습니까?', function (e) {
+        if (e) {
+          console.log('등록 - 확인');
+        } else {
+          console.log('등록 - 취소');
+        }
+      });
+
+      //등록팝업
+      Modal.confirm('관리자 등록을 \<br>\ 취소하시겠습니까?', function (e) {
+        if (e) {
+          console.log('등록취소 - 확인');
+        } else {
+          console.log('등록취소 - 취소');
+        }
+      });
+      */
+
+      //권한설정 팝업
+      //$('#menuModal').modal('');
+    </script>
   </body>
 </html>

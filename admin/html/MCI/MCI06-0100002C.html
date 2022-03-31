@@ -50,11 +50,11 @@
                     <li class="breadcrumb-item"><a href="#">홈</a></li>
                     <li class="breadcrumb-item"><a href="#">매치관리</a></li>
                     <!-- 2022-03-31: 2뎁스 추가 -->
-                    <li class="breadcrumb-item"><a href="#">리워드 관리</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">리워드 상품 관리</li>
+                    <li class="breadcrumb-item"><a href="#">프로필 관리</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">닉네임 프리셋 관리</li>
                   </ol>
                 </nav>
-                <h1>리워드 상품 등록</h1>
+                <h1>닉네임 프리셋 등록</h1>
               </div>
             </div>
           </div>
@@ -63,63 +63,32 @@
           <!-- 컨텐츠본문 -->
           <div class="title-wrap">
             <div class="left">
-              <h2 class="h3">기본정보</h2>
+              <h2 class="h3">기본 정보</h2>
             </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i> 상품 이름</div>
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 분류</div>
                 <div class="form-box-cont">
-                  <input type="text" class="form-control" placeholder="최대 20글자" />
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo4" class="custom-control-input" />
+                      <span class="custom-control-label">형용사</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo4" class="custom-control-input" />
+                      <span class="custom-control-label">명사</span>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i> 상품 이미지</div>
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 프리셋 이름</div>
                 <div class="form-box-cont">
-                  <!-- 미리보기 아이콘 이미지 -->
-                  <!-- 이미지 없을때 -->
-                  <div class="img-box w-120 mb-2">
-                    <small>등록된 이미지가<br />없습니다.</small>
-                  </div>
-
-                  <!-- 이미지 있을때 -->
-                  <div class="img-box w-120 mb-2">
-                    <a href="../../images/temp/thumb-temp2.jpg" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
-                  </div>
-
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01" />
-                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i> 설명</div>
-                <div class="form-box-cont">
-                  <textarea class="form-control" rows="8" placeholder="최대 50글자"></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="title-wrap mt-5">
-            <div class="left">
-              <h2 class="h3">사용정보</h2>
-            </div>
-          </div>
-          <div class="form-box">
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i> 구매가능 포인트</div>
-                <div class="form-box-cont">
-                  <input type="text" class="form-control" />
-                  <div class="mt-1 help-txt">※ 숫자만 입력해 주세요.</div>
+                  <input type="text" class="form-control" placeholder="최대 4글자" />
                 </div>
               </div>
             </div>
@@ -162,15 +131,6 @@
     </section>
     <!-- //wrap -->
 
-    <script>
-      // 테이블
-      function initTable() {
-        $('#table').bootstrapTable('destroy').bootstrapTable({
-          // height: 550,
-          locale: 'ko-KR'
-        });
-      }
-      initTable();
-    </script>
+    <script></script>
   </body>
 </html>

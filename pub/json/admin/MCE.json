@@ -1,0 +1,21 @@
+[
+  {
+    "depth1": "회원관리"
+  },
+  {
+    "id": "MCE01-0100001C",
+    "url": "../../admin/html/MCE/",
+    "name": "메인",
+    "worker": "변상우",
+    "complete": "",
+    "etc": ""
+  },
+  {
+    "id": "MCE01-0100002C",
+    "url": "../../admin/html/MCE/",
+    "name": "메인",
+    "worker": "변상우",
+    "complete": "",
+    "etc": ""
+  }
+]
