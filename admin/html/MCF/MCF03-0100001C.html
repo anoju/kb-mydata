@@ -73,8 +73,10 @@
                 <div class="form-box-cont">
                   <div class="form-row">
                     <div class="col-md-5">
+                      <!-- 2022-03-31: 검색조건 추가 -->
                       <select class="custom-select">
                         <option value="1">제목</option>
+                        <option value="2">등록자</option>
                       </select>
                     </div>
                     <div class="col-md-7 mt-2 mt-md-0">
@@ -147,8 +149,10 @@
                 <th scope="col">제목</th>
                 <th scope="col">게시기간</th>
                 <th scope="col">조회수</th>
-                <th scope="col">등록자</th>
-                <th scope="col">등록일</th>
+                <!-- 2022-03-31: 명칭변경(등록자  > 최초등록) -->
+                <th scope="col">최초등록</th>
+                <!-- 2022-03-31: 명칭변경(등록자  > 최초등록일) -->
+                <th scope="col">최초등록일</th>
                 <th scope="col">최근수정일</th>
               </tr>
             </thead>
