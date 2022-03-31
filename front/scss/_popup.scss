@@ -507,3 +507,34 @@
 .msie .popup.show {
   display: block;
 }
+.layer-like {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  z-index: 250;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
+  transform: translate(-50%, 0%);
+  // > div {
+  //   width: 50px;
+  //   height: 50px;
+  //   margin: 15px auto 0;
+  //   background-repeat: no-repeat;
+  //   background-position: center center;
+  //   background-size: contain;
+  // }
+  &.show {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    > div {
+      animation: bounceIn 1.6s;
+    }
+  }
+}

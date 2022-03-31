@@ -808,12 +808,17 @@ ui.Common = {
         if (!$this.hasClass('lottie__init')) {
           const $data = $this.data('lottie');
           $this.addClass('lottie__init').removeAttr('data-lottie').aria('hidden', true);
-          const isLoop = $this.hasClass('_loop');
+          const $loopOpt = $this.hasClass('_loop');
+          const $sclAnimation = $this.data('animation');
+          let $autoplayOpt = true;
+          if ($sclAnimation) {
+            $autoplayOpt = false;
+          }
           const $lottieOpt = lottie.loadAnimation({
             container: this,
             renderer: 'svg',
-            loop: isLoop,
-            autoplay: true,
+            loop: $loopOpt,
+            autoplay: $autoplayOpt,
             path: $data
           });
           $(this).data('lottie-opt', $lottieOpt);
@@ -4831,6 +4836,13 @@ ui.Animation = {
       if ($el.data('init')) return;
       if (($wrapTop <= $elTop && $elTop <= $wrapBottom) || ($wrapTop <= $elBottom && $elBottom <= $wrapBottom)) {
         ui.Animation.sclAction($el, $elTop);
+        if (($el.hasClass('lottie__init'), $el.data('lottie'))) {
+          setTimeout(function () {
+            const $lottie = $el.data('lottie-opt');
+            // if ($el.hasClass('_loop')) $lottie.loop = true;
+            $lottie.play();
+          }, 100);
+        }
       } else {
         const $timer = $el.data('time');
         if ($timer !== undefined) {
@@ -5334,9 +5346,19 @@ const Layer = {
   like: function () {
     const $delayTime = 2000;
     const $wrap = $('#wrap').length ? $('#wrap') : $('body');
-    const $html = '<div class="layer_like" aria-hidden="true"><div></div></div>';
-    if (!$('.layer_like').length) $wrap.append($html);
-    if (!$('.layer_like').hasClass('show')) $('.layer_like').addRemoveClass('show', 0, $delayTime);
+    const $html = '<div class="layer-like" aria-hidden="true"><div class="lottie" data-lottie="../../temp/love.json"></div></div>';
+    if ($('.layer-like').length) return;
+    $wrap.append($html);
+    $('.layer-like').addClass('show');
+    ui.Common.lottie();
+    // 숨기고
+    setTimeout(function () {
+      $('.layer-like').removeClass('show');
+      // 지우고
+      setTimeout(function () {
+        $('.layer-like').remove();
+      }, 310);
+    }, $delayTime);
   },
   overlapChk: function () {
     //focus 이벤트 시 중복열림 방지
