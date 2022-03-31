@@ -4741,6 +4741,7 @@ ui.Scroll = {
 //data-animation
 ui.Animation = {
   sclIdx: 0,
+  sclAry: [],
   sclReady: function (target) {
     const $animations = $('[data-animation]');
     $.each($animations, function () {
@@ -4826,7 +4827,7 @@ ui.Animation = {
 
       if ($el.data('init')) return;
       if (($wrapTop <= $elTop && $elTop <= $wrapBottom) || ($wrapTop <= $elBottom && $elBottom <= $wrapBottom)) {
-        ui.Animation.sclAction($el);
+        ui.Animation.sclAction($el, $elTop);
       } else {
         const $timer = $el.data('time');
         if ($timer !== undefined) {
@@ -4853,16 +4854,31 @@ ui.Animation = {
     io.unobserve(el);
     return io;
   },
-  sclAction: function (el) {
+  sclAction: function (el, top) {
     const $el = $(el);
     const $animationClass = ui.Animation.sclTypeChk(el);
+    const $delay = 200;
 
     if ($el.data('time') !== undefined) return;
-    ui.Animation.sclIdx += 1;
-    const timer = ui.Animation.sclIdx * 200;
+    let $isSameTop = false;
+    let timer;
+    if (top) {
+      const AryIdx = ui.Animation.sclAry.indexOf(top);
+      if (AryIdx >= 0) {
+        $isSameTop = true;
+        timer = AryIdx * $delay;
+      } else {
+        ui.Animation.sclAry.push(top);
+      }
+    }
+    if (!$isSameTop) {
+      timer = ui.Animation.sclIdx * $delay;
+      ui.Animation.sclIdx += 1;
+    }
     const initTimer = setTimeout(function () {
       $el.data('init', true);
-      if (ui.Animation.sclIdx > 0) ui.Animation.sclIdx -= 1;
+      if (ui.Animation.sclIdx > 0 || !$isSameTop) ui.Animation.sclIdx -= 1;
+      if (ui.Animation.sclIdx === 0) ui.Animation.sclAry = [];
       const $slide = $el.closest('.swiper-slide');
       if ($el.hasClass('animate__animated')) {
         if ($el.closest('.tab-panel').length && !$el.closest('.tab-panel').hasClass('active')) return;
