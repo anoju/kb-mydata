@@ -211,6 +211,24 @@
     "depth1": "MY(소비)"
   }
   ,{
+    "id": "MDB04-0101001",
+    "url": "../../front/html/MDB/",
+    "depth2": "소비",
+    "depth3": "메인",
+    "name": "소비 메인",
+    "worker": "장영석",
+    "complete": "2022-04-01"
+  }
+  ,{
+    "id": "MDB04-0209001",
+    "url": "../../front/html/MDB/",
+    "depth2": "카테고리",
+    "depth3": "카테고리 분류",
+    "name": "카테고리 분류",
+    "worker": "장영석",
+    "complete": "2022-04-01"
+  }
+  ,{
     "id": "MDB04-0301001",
     "url": "../../front/html/MDB/",
     "depth2": "소비",

@@ -386,7 +386,15 @@
 
 /* 소비 메인 */
 .main-head-tab {
+  position: sticky;
+  top: 5rem;
+  left: 0;
   display: flex;
+  align-items: center;
+  height: 6.6rem;
+  margin: 0 1.2rem;
+  background: #fff;
+  z-index: 10;
   li {
     a {
       display: block;
@@ -398,8 +406,58 @@
 
     &.active {
       a {
+        font-weight: bold;
         color: #424242;
       }
+    }
+  }
+}
+.my-expense {
+  display: flex;
+  height: 11.7rem;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  .show {
+    .tit {
+      font-size: 1.6rem;
+    }
+    .text {
+      margin-top: 0.8rem;
+      font-size: 1.6rem;
+      color: #666;
+      strong {
+        margin-right: 0.2rem;
+        font-size: 3.2rem;
+        color: #212121;
+        letter-spacing: -0.1rem;
+        line-height: 1;
+      }
+    }
+  }
+  .hide {
+    .tit {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #212121;
+      i {
+        margin-left: 0.2rem;
+        vertical-align: middle;
+      }
+    }
+    .text {
+      margin-top: 0.8rem;
+      font-size: 1.2rem;
+      color: #979797;
+    }
+  }
+
+  &.hidden {
+    .show {
+      display: none;
+    }
+    .hide {
+      display: block;
     }
   }
 }
@@ -552,5 +610,17 @@
   &.show {
     opacity: 1;
     transform: translateX(-50%) translateY(0%);
+  }
+
+  &.type2 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    opacity: 1;
+    margin-bottom: 0;
+    transform: translate(0, 0);
   }
 }
