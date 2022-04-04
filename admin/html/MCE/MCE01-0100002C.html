@@ -60,14 +60,357 @@
             <div class="left">
               <h2 class="h3">가입정보</h2>
             </div>
+            <div class="right">
+              <span class="fc-gray-600">최근 로그인 : 2022.00.00 00:00:00</span>
+            </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label">이름(외국인)</div>
-                <div class="form-box-cont">
-                  <input type="text" class="form-control" />
+                <div class="form-box-label">이름 (외국인)</div>
+                <div class="form-box-cont d-flex align-items-center">홍길동 (외국인)</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">생년월일</div>
+                <div class="form-box-cont d-flex align-items-center">1977.02.01 (만 00세)</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">회원관리번호</div>
+                <div class="form-box-cont d-flex align-items-center">00000000</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">성별</div>
+                <div class="form-box-cont d-flex align-items-center">남/여</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">회원구분</div>
+                <div class="form-box-cont d-flex align-items-center">정회원 (준회원), 탈퇴회원</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">인풀루언서</div>
+                <div class="form-box-cont d-flex align-items-center">Y</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">연락처(통신사)</div>
+                <div class="form-box-cont d-flex align-items-center">010-0000-0000 (SKT)</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">이메일주소</div>
+                <div class="form-box-cont d-flex align-items-center"><a href="#none">hong@naver.com</a></div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">가입일(탈퇴일)</div>
+                <div class="form-box-cont d-flex align-items-center">2022.00.00 (2022.00.00 00:00:00)</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">활동(차단)현황</div>
+                <div class="form-box-cont d-flex align-items-center">활동 중 / 차단 (사유, 2022.00.00)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">포인트/리워드 현황</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">포인트</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  000점
+                  <button type="button" class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#pointHistoryModal">포인트내역</button>
                 </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">리워드 지급</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  누적 총 000점
+                  <button type="button" class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#rewardHistoryModal">리워드내역</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">1:1 매치참여 현황</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">닉네임</div>
+                <div class="form-box-cont d-flex align-items-center">LEGEND</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">랭킹</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  2
+                  <button type="button" class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#rankingHistoryModal">랭킹내역</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">태그</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  #레전드1, #레전드2, #레전드3
+                  <button type="button" class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#tagHistoryModal">태그내역</button>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">뱃지</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  뱃지1, 뱃지2, 뱃지3
+                  <button type="button" class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#badgeHistoryModal">뱃지내역</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">승률</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  67%(8승 1무 1패)
+                  <button type="button" class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#oddsHistoryModal">승률내역</button>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">1:1 참여회수</div>
+                <div class="form-box-cont d-flex align-items-center">000회</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">리벤지 참여횟수</div>
+                <div class="form-box-cont d-flex align-items-center">000회</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">매치 참여현황</div>
+                <div class="form-box-cont d-flex align-items-center"><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#matchJoinHistoryModal">참여내역</button></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">그라운드 참여 현황</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">현재 참여 중</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  랭킹매치(랭킹 : 00위)
+                  <button type="button" class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#groundJoinHistoryModal">참여내역</button>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">총 참여회수</div>
+                <div class="form-box-cont d-flex align-items-center">000회</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">게시글</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#none">000회</a>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">댓글</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#none">000회</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">신고현황(타회원 → 회원)</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">게시물 신고</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#none">14회</a>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">댓글/답글신고</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#none">3회</a>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">계정신고</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#none">4회</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">투자내역<span class="fc-gray-600 ml-2 fz-sm">2022.00.00 기준</span></h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">총 투자금액</div>
+                <div class="form-box-cont d-flex align-items-center">1,000,000원</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">수익률</div>
+                <div class="form-box-cont d-flex align-items-center">00%</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">국내주식</div>
+                <div class="form-box-cont d-flex align-items-center">1,000,000원 <span class="fc-red ml-1">(10% ↑)</span></div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">해외주식</div>
+                <div class="form-box-cont d-flex align-items-center">1,000,000원 <span class="fc-cyan ml-1">(10% ↓)</span></div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">마이데이터</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  가입
+                  <button type="button" class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#mydataLinkHistoryModal">연동내역</button>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">연동수단</div>
+                <div class="form-box-cont d-flex align-items-center">공동(금융,네이버인증서)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">1:1 문의내역</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">총 문의횟수</div>
+                <div class="form-box-cont d-flex align-items-center">000회</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">답변</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#none">00회</a>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">미답변</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#none">00회</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">마케팅 동의 여부</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">전화</div>
+                <div class="form-box-cont d-flex align-items-center">거부(2022.00.00)</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">PUSH(거부일)</div>
+                <div class="form-box-cont d-flex align-items-center">거부(2022.00.00)</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">SMS(거부일)</div>
+                <div class="form-box-cont d-flex align-items-center">거부(2022.00.00)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">서비스 필수 동의</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">개인정보 수집·이용</div>
+                <div class="form-box-cont d-flex align-items-center">동의</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">개인정보 취급위탁</div>
+                <div class="form-box-cont d-flex align-items-center">동의</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">개인정보 제 3자 제공</div>
+                <div class="form-box-cont d-flex align-items-center">동의</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">
+              <h2 class="h3">매치 이용 동의</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">매치 서비스 이용 약관</div>
+                <div class="form-box-cont d-flex align-items-center">동의</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">개인정보 수집 및 이용 동의</div>
+                <div class="form-box-cont d-flex align-items-center">동의</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">이메일(거부일)</div>
+                <div class="form-box-cont d-flex align-items-center">거부 (2022.00.00)</div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">PUSH(거부일)</div>
+                <div class="form-box-cont d-flex align-items-center">거부 (2022.00.00)</div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">SMS(거부일)</div>
+                <div class="form-box-cont d-flex align-items-center">거부 (2022.00.00)</div>
               </div>
             </div>
           </div>
@@ -90,7 +433,1290 @@
           </div>
           <!-- //컨텐츠본문 -->
 
-          <!-- 권한설정 팝업 -->
+          <!-- 포인트 히스토리 팝업 -->
+          <article class="modal fade" id="pointHistoryModal" tabindex="-1" aria-labelledby="pointHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title h5" id="pointHistoryModalLabel">포인트 히스토리</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                  <h4 class="h2 mb-4">홍길동 회원 포인트 히스토리</h4>
+
+                  <div class="d-flex">
+                    <div class="mr-auto mb-2">
+                      <select class="custom-select">
+                        <option value="1">적립일 ↓</option>
+                        <option value="2">적립일 ↑</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <table id="table1" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+                    <thead>
+                      <tr>
+                        <th scope="col">적립일시</th>
+                        <th scope="col">포인트구분</th>
+                        <th scope="col">포인트</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>적립</td>
+                        <td>9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>교환</td>
+                        <td>-9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>만료</td>
+                        <td>9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>적립</td>
+                        <td>9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>교환</td>
+                        <td>-9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>만료</td>
+                        <td>9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>적립</td>
+                        <td>9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>교환</td>
+                        <td>-9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>만료</td>
+                        <td>9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>적립</td>
+                        <td>9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>교환</td>
+                        <td>-9,990 P</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>만료</td>
+                        <td>9,990 P</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 리워드 히스토리 팝업 -->
+          <article class="modal fade" id="rewardHistoryModal" tabindex="-1" aria-labelledby="rewardHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title h5" id="rewardHistoryModalLabel">리워드 히스토리</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                  <h4 class="h2 mb-4">홍길동 회원 리워드 히스토리</h4>
+
+                  <div class="d-flex">
+                    <div class="mr-auto mb-2">
+                      <select class="custom-select">
+                        <option value="1">상품 교환일 ↓</option>
+                        <option value="2">상품 교환일 ↑</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <table id="table2" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+                    <thead>
+                      <tr>
+                        <th scope="col">리워드 상품 이름</th>
+                        <th scope="col">상품 교환일</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                      <tr>
+                        <td>OOOOOOOOOO</td>
+                        <td>2022.00.00 00:00:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 랭킹 히스토리 팝업 -->
+          <article class="modal fade" id="rankingHistoryModal" tabindex="-1" aria-labelledby="rankingHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title h5" id="rankingHistoryModalLabel">랭킹 히스토리</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                  <h4 class="h2 mb-4">홍길동 회원 랭킹 히스토리</h4>
+
+                  <div class="d-flex">
+                    <div class="mr-auto mb-2">
+                      <select class="custom-select">
+                        <option value="1">전체</option>
+                        <option value="2">시즌5</option>
+                        <option value="3">시즌4</option>
+                        <option value="4">시즌3</option>
+                        <option value="5">시즌2</option>
+                        <option value="6">시즌1</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <table id="table3" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+                    <thead>
+                      <tr>
+                        <th scope="col">시즌명</th>
+                        <th scope="col">참여일시</th>
+                        <th scope="col">랭킹</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>시즌 20</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 19</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>3위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 18</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>10위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 17</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 16</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 15</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 14</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 13</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 12</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 11</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 10</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1위</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 9</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1위</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 승률 히스토리 팝업 -->
+          <article class="modal fade" id="oddsHistoryModal" tabindex="-1" aria-labelledby="oddsHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title h5" id="oddsHistoryModalLabel">승률 히스토리</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                  <h4 class="h2 mb-4">홍길동 회원 승률 히스토리</h4>
+
+                  <div class="d-flex">
+                    <div class="mr-auto mb-2">
+                      <select class="custom-select">
+                        <option value="1">전체</option>
+                        <option value="2">시즌5</option>
+                        <option value="3">시즌4</option>
+                        <option value="4">시즌3</option>
+                        <option value="5">시즌2</option>
+                        <option value="6">시즌1</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <table id="table4" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+                    <thead>
+                      <tr>
+                        <th scope="col">시즌명</th>
+                        <th scope="col">참여일시</th>
+                        <th scope="col">승률</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>시즌 20</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 19</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 18</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 17</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 16</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 15</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 14</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 13</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 12</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 11</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 10</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 9</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 태그 히스토리 팝업 -->
+          <article class="modal fade" id="tagHistoryModal" tabindex="-1" aria-labelledby="tagHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title h5" id="tagHistoryModalLabel">태그 히스토리</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                  <h4 class="h2 mb-5">홍길동 회원 태그 히스토리</h4>
+
+                  <div class="text-left row h5 mb-4">
+                    <div class="col-lg-2 mb-sm-2 pr-0">현재 보유태그 :</div>
+                    <div class="col-lg-10 fa-w">
+                      #레전드1, #레전드2, #레전드3, #레전드4, #레전드5, #레전드6, #레전드7, #레전드8, #레전드1, #레전드2, #레전드3, #레전드4, #레전드5, #레전드6, #레전드7, #레전드8,
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <div class="mr-auto mb-2">
+                      <select class="custom-select">
+                        <option value="1">전체</option>
+                        <option value="2">시즌5</option>
+                        <option value="3">시즌4</option>
+                        <option value="4">시즌3</option>
+                        <option value="5">시즌2</option>
+                        <option value="6">시즌1</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <table id="table5" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+                    <thead>
+                      <tr>
+                        <th scope="col">시즌명</th>
+                        <th scope="col">참여일시</th>
+                        <th scope="col">획득태그</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>#1억 자산가 태그 획득</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 뱃지 히스토리 팝업 -->
+          <article class="modal fade" id="badgeHistoryModal" tabindex="-1" aria-labelledby="badgeHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title h5" id="badgeHistoryModalLabel">뱃지 히스토리</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                  <h4 class="h2 mb-4">홍길동 회원 뱃지 히스토리</h4>
+
+                  <div class="text-left h5 mb-2">현재 보유뱃지 현황</div>
+                  <!-- prettier-ignore -->
+                  <textarea class="form-control mb-4" readonly rows="4">000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지, 
+000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지,
+000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지, 
+000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지,</textarea>
+
+                  <div class="d-flex">
+                    <div class="mr-auto mb-2">
+                      <select class="custom-select">
+                        <option value="1">전체</option>
+                        <option value="2">시즌5</option>
+                        <option value="3">시즌4</option>
+                        <option value="4">시즌3</option>
+                        <option value="5">시즌2</option>
+                        <option value="6">시즌1</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <table id="table6" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+                    <thead>
+                      <tr>
+                        <th scope="col">시즌명</th>
+                        <th scope="col">참여일시</th>
+                        <th scope="col">획득뱃지</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                      <tr>
+                        <td>시즌5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>000 뱃지 획득</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 매치참여현황 팝업 -->
+          <article class="modal fade" id="matchJoinHistoryModal" tabindex="-1" aria-labelledby="matchJoinHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title h5" id="matchJoinHistoryModalLabel">매치참여현황</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                  <h4 class="h2 mb-4">홍길동 회원 매치 참여현황</h4>
+
+                  <div class="text-left h6 mb-2">최근 업데이트 : 2022.00.00</div>
+                  <table id="table7" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">최초가입일</th>
+                        <th scope="col">수익률</th>
+                        <th scope="col">전적</th>
+                        <th scope="col">보유승점</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="tr-fixed">
+                        <td>2022.00.00 00:00:00</td>
+                        <td>00%</td>
+                        <td>67%(8승 1무 1패)</td>
+                        <td>000 점</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="d-flex">
+                    <div class="mr-auto mb-2 mt-4">
+                      <select class="custom-select">
+                        <option value="1">전체</option>
+                        <option value="2">시즌5</option>
+                        <option value="3">시즌4</option>
+                        <option value="4">시즌3</option>
+                        <option value="5">시즌2</option>
+                        <option value="6">시즌1</option>
+                      </select>
+                    </div>
+                  </div>
+                  <table id="table8" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+                    <thead>
+                      <tr>
+                        <th scope="col">시즌명</th>
+                        <th scope="col">참여일시</th>
+                        <th scope="col">종류</th>
+                        <th scope="col">승/패</th>
+                        <th scope="col">획득승점</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1:1 매치</td>
+                        <td>승</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지 매치</td>
+                        <td>승</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지 매치</td>
+                        <td>패</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1:1 매치</td>
+                        <td>승</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지 매치</td>
+                        <td>승</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지 매치</td>
+                        <td>패</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1:1 매치</td>
+                        <td>승</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지 매치</td>
+                        <td>승</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지 매치</td>
+                        <td>패</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1:1 매치</td>
+                        <td>승</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지 매치</td>
+                        <td>승</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지 매치</td>
+                        <td>패</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1:1 매치</td>
+                        <td>승</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지 매치</td>
+                        <td>승</td>
+                        <td>00 점</td>
+                      </tr>
+                      <tr>
+                        <td>시즌 5</td>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지 매치</td>
+                        <td>패</td>
+                        <td>00 점</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 그라운드 참여현황 팝업 -->
+          <article class="modal fade" id="groundJoinHistoryModal" tabindex="-1" aria-labelledby="groundJoinHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title h5" id="groundJoinHistoryModalLabel">그라운드 참여현황</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                  <h4 class="h2 mb-4">홍길동 회원 그라운드 참여현황</h4>
+
+                  <table id="table9" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+                    <thead>
+                      <tr>
+                        <th scope="col">참여일시</th>
+                        <th scope="col">그라운드명</th>
+                        <th scope="col">참여내역</th>
+                        <th scope="col">퇴장일시</th>
+                        <th scope="col">입장/참여조건</th>
+                        <th scope="col">게시글</th>
+                        <th scope="col">댓글</th>
+                        <th scope="col">답글</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1:1 매치</td>
+                        <td>자발입장</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지매치</td>
+                        <td>강제퇴장</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>51</td>
+                        <td>12</td>
+                        <td>111</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1:1 매치</td>
+                        <td>입장조건상실</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지매치</td>
+                        <td>자발입장</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지매치</td>
+                        <td>입장조건상실</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지매치</td>
+                        <td>자발입장</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1:1 매치</td>
+                        <td>강제퇴장</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지매치</td>
+                        <td>입장조건상실</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지매치</td>
+                        <td>자발입장</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>1:1 매치</td>
+                        <td>강제퇴장</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>리벤지매치</td>
+                        <td>입장조건상실</td>
+                        <td>2022.00.00</td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 마이데이터 연동 팝업 -->
+          <article class="modal fade" id="mydataLinkHistoryModal" tabindex="-1" aria-labelledby="mydataLinkHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title h5" id="mydataLinkHistoryModalLabel">마이데이터 연동정보</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                  <h4 class="h2 mb-4">홍길동 회원 마이데이터 연동정보</h4>
+
+                  <div class="d-flex align-items-center mb-2">
+                    <h5 class="h6 mr-2">연동정보</h5>
+                  </div>
+                  <table id="table10" class="table">
+                    <thead>
+                      <tr class="tr-fixed">
+                        <th scope="col">최초가입일</th>
+                        <th scope="col">연동수단</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>금융인증서</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="d-flex align-items-center mb-2 mt-4">
+                    <h5 class="h6 mr-2">연결기관</h5>
+                  </div>
+                  <table id="table11" class="table">
+                    <thead>
+                      <tr class="tr-fixed">
+                        <th scope="col">연동기관 수</th>
+                        <th scope="col">은행</th>
+                        <th scope="col">증권</th>
+                        <th scope="col">카드</th>
+                        <th scope="col">업권1</th>
+                        <th scope="col">업권2</th>
+                        <th scope="col">업권3</th>
+                        <th scope="col">업권4</th>
+                        <th scope="col">업권5</th>
+                        <th scope="col">업권6</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>24</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>11</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="d-flex align-items-center mb-2 mt-4">
+                    <h5 class="h6 mr-2">연동내역</h5>
+                    <div class="mr-auto">
+                      <select class="custom-select">
+                        <option value="1">상품 교환일 ↓</option>
+                        <option value="2">상품 교환일 ↑</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <table id="table12" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+                    <thead>
+                      <tr>
+                        <th scope="col">연동일시</th>
+                        <th scope="col">업권구분</th>
+                        <th scope="col">기관명</th>
+                        <th scope="col">적요동의</th>
+                        <th scope="col">정기전송주기</th>
+                        <th scope="col">연동/철회여부</th>
+                        <th scope="col">연동수단</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>은행업권</td>
+                        <td>기업</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                            <li>상품구매정보</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>연동</td>
+                        <td>네이버인증</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>카드업권</td>
+                        <td>우리</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>철회</td>
+                        <td>금융인증서</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>은행업권</td>
+                        <td>기업</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                            <li>상품구매정보</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>연동</td>
+                        <td>네이버인증</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>카드업권</td>
+                        <td>우리</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>철회</td>
+                        <td>금융인증서</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>은행업권</td>
+                        <td>기업</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                            <li>상품구매정보</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>연동</td>
+                        <td>네이버인증</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>카드업권</td>
+                        <td>우리</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>철회</td>
+                        <td>금융인증서</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>은행업권</td>
+                        <td>기업</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                            <li>상품구매정보</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>연동</td>
+                        <td>네이버인증</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>카드업권</td>
+                        <td>우리</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>철회</td>
+                        <td>금융인증서</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>은행업권</td>
+                        <td>기업</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                            <li>상품구매정보</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>연동</td>
+                        <td>네이버인증</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>카드업권</td>
+                        <td>우리</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>철회</td>
+                        <td>금융인증서</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>은행업권</td>
+                        <td>기업</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                            <li>상품구매정보</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>연동</td>
+                        <td>네이버인증</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>카드업권</td>
+                        <td>우리</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>철회</td>
+                        <td>금융인증서</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>은행업권</td>
+                        <td>기업</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                            <li>상품구매정보</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>연동</td>
+                        <td>네이버인증</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>카드업권</td>
+                        <td>우리</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>철회</td>
+                        <td>금융인증서</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>은행업권</td>
+                        <td>기업</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                            <li>상품구매정보</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>연동</td>
+                        <td>네이버인증</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>카드업권</td>
+                        <td>우리</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>철회</td>
+                        <td>금융인증서</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>은행업권</td>
+                        <td>기업</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                            <li>상품구매정보</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>연동</td>
+                        <td>네이버인증</td>
+                      </tr>
+                      <tr>
+                        <td>2022.00.00 00:00:00</td>
+                        <td>카드업권</td>
+                        <td>우리</td>
+                        <td>
+                          <ul class="fz-sm text-left">
+                            <li>적요/거래메모</li>
+                            <li>가맹점/사업자번호</li>
+                          </ul>
+                        </td>
+                        <td>1년</td>
+                        <td>철회</td>
+                        <td>금융인증서</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
         </main>
         <!-- //컨텐츠 -->
       </div>
@@ -103,53 +1729,31 @@
     <!-- //wrap -->
 
     <script>
-      //에디터
-      CKEDITOR.replace('editor');
+      // 테이블
+      function initTable() {
+        $('#table7, #table9, #table10, #table11').bootstrapTable('destroy').bootstrapTable({
+          //height: 550,
+          locale: 'ko-KR'
+        });
 
-      //팝업
-      //유효성 오류팝업(제목미입력)
-      /*
-      Modal.alert('이름을 입력해주세요.', function () {
-        console.log('이름미입력 - 확인');
-      });
-      //유효성 오류팝업(아이디(사번))
-      Modal.alert('아이디(사번)를 입력해주세요.', function () {
-        console.log('아이디(사번)미입력  - 확인');
-      });
-      //유효성 오류팝업(핸드폰 번호를 미입력)
-      Modal.alert('핸드폰 번호를 입력해 주세요.', function () {
-        console.log('핸드폰 번호미입력  - 확인');
-      });
-      //유효성 오류팝업(이메일 주소를 미입력)
-      Modal.alert('이메일 주소를 입력해 주세요.', function () {
-        console.log('이메일 주소미입력  - 확인');
-      });
-      //유효성 오류팝업(권한미설정)
-      Modal.alert('권한을 설정해 주세요', function () {
-        console.log('권한미설정- 확인');
-      });
+        let tableH_Id = '#table1, #table2, #table3, #table4, #table5, #table12';
+        $(tableH_Id).bootstrapTable('destroy').bootstrapTable({
+          height: 400,
+          locale: 'ko-KR'
+        });
+        $('#table6, #table8').bootstrapTable('destroy').bootstrapTable({
+          height: 320,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
 
-      //등록팝업
-      Modal.confirm('관리자를 등록하시겠습니까?', function (e) {
-        if (e) {
-          console.log('등록 - 확인');
-        } else {
-          console.log('등록 - 취소');
-        }
+      //버튼 클릭 후 테이블 reset
+      $('.btn[data-toggle="modal"]').click(function () {
+        setTimeout(function () {
+          $(window).resize();
+        }, 300);
       });
-
-      //등록팝업
-      Modal.confirm('관리자 등록을 \<br>\ 취소하시겠습니까?', function (e) {
-        if (e) {
-          console.log('등록취소 - 확인');
-        } else {
-          console.log('등록취소 - 취소');
-        }
-      });
-      */
-
-      //권한설정 팝업
-      //$('#menuModal').modal('');
     </script>
   </body>
 </html>

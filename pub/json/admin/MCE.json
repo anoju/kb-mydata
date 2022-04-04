@@ -5,17 +5,19 @@
   {
     "id": "MCE01-0100001C",
     "url": "../../admin/html/MCE/",
-    "name": "메인",
+    "depth2": "회원관리",
+    "name": "회원 목록",
     "worker": "변상우",
-    "complete": "",
+    "complete": "2022-04-04",
     "etc": ""
   },
   {
     "id": "MCE01-0100002C",
     "url": "../../admin/html/MCE/",
-    "name": "메인",
+    "depth2": "회원관리",
+    "name": "회원 정보",
     "worker": "변상우",
-    "complete": "",
-    "etc": ""
+    "complete": "2022-04-04",
+    "etc": "MCE01-0100p01C ~ MCE01-0100p09C 팝업(한화면)"
   }
 ]
