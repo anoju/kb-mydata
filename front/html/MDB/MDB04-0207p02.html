@@ -105,11 +105,15 @@
   <script>
     Layer.open('#thisMonthNoData');
 
-    //const swiper = ui.Swiper.base('.month-no-data-box .swiper', 1);
-
-    const swiper = new Swiper('.month-no-data-box .swiper');
-    swiper.on('slideChange', function (e) {
-      console.log(e.activeIndex);
+    $(window).load(function () {
+      const swiper = $('#thisMonthNoData .ui-swiper').data('swiper');
+      swiper.on('slideChange', function (e) {
+        if (e.activeIndex >= e.slides.length - 1) {
+          $('#btnMain').prop('disabled', false);
+        } else {
+          $('#btnMain').prop('disabled', true);
+        }
+      });
     });
   </script>
 </html>
