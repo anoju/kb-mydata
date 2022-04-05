@@ -93,7 +93,7 @@
           <div class="pop-foot bg-none">
             <div>
               <div class="flex">
-                <button type="button" id="btnMain" class="button primary" disabled>지출내역 분류하러 가기</button>
+                <button type="button" id="btnSubmit" class="button primary" disabled>지출내역 분류하러 가기</button>
               </div>
             </div>
           </div>
@@ -106,12 +106,12 @@
     Layer.open('#thisMonthNoData');
 
     $(window).load(function () {
-      const swiper = $('#thisMonthNoData .ui-swiper').data('swiper');
+      const swiper = $('.month-no-data-box .ui-swiper').data('swiper');
       swiper.on('slideChange', function (e) {
         if (e.activeIndex >= e.slides.length - 1) {
-          $('#btnMain').prop('disabled', false);
+          $('#btnSubmit').prop('disabled', false);
         } else {
-          $('#btnMain').prop('disabled', true);
+          $('#btnSubmit').prop('disabled', true);
         }
       });
     });
