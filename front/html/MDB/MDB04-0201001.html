@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('카테고리 선택');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header" class="bg-fa">
+        <div>
+          <div class="head-left">
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section bg-fa">
+          <div class="select inline fz-16 fw-500 fc-212121">
+            <select title="월을 선택해주세요" data-type="date">
+              <option value="202202">2022.02</option>
+              <option value="202201">2022.01</option>
+              <option value="202112">2021.12</option>
+              <option value="202111">2021.11</option>
+            </select>
+          </div>
+          <p class="mt-20 fz-16 fc-212121">이번달은</p>
+          <p class="fz-24 fc-212121">
+            <strong class="fz-28 fc-primary">200<span class="fz-24">번</span></strong
+            >결제했어요
+          </p>
+
+          <div class="kind-white-box">
+            <i class="i-ico-kind"></i>
+            <div>
+              <p class="tit">분류 대기중</p>
+              <p class="count"><strong class="fc-primary">150</strong>건</p>
+            </div>
+            <a href="#" class="btn-txt">분류하기<i class="i-ico-arr-right-24"></i></a>
+
+            <!-- 미분류 건수가 1개 이상일 경우에만 노출 그외에는 hiden 클래스 적용-->
+            <div class="alert"><strong>분류해주시길</strong> <br />기다리고 있어요!! <a href="#" class="btn-close" aria-label="툴팁 닫기"></a></div>
+          </div>
+
+          <!-- 도넛 차트-->
+          <div id="dounutChart" class="mt-32"></div>
+
+          <div class="consume-event">
+            <a href="#" style="background: #e4f9ff">
+              <div class="mr-24">
+                <p class="tit">이번달 내 지출 키워드는?</p>
+                <p class="text">지출 키워드 보러가기</p>
+              </div>
+              <i class="i-ico-consume-event1"></i>
+            </a>
+            <a href="#" style="background: #ffeff5">
+              <div class="mr-24">
+                <p class="tit">다른 사람들의 지출은?</p>
+                <p class="text fc-606060">다른 사람들의 지출 보러가기</p>
+              </div>
+              <i class="i-ico-consume-event2"></i>
+            </a>
+          </div>
+        </div>
+        <hr class="hr-line ui-header-bg-origin" aria-hidden="true" />
+
+        <div class="section">
+          <div class="list-box mt-10">
+            <a href="#" class="list btn-click">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume21.png" alt="" /></span>
+              </p>
+              <p class="tit">미지정</p>
+              <p class="money"><strong>9,116,200</strong>원</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <!-- 
+              분류가 없을시
+              disabled 클래스 추가
+            -->
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume1.png" alt="" /></span>
+              </p>
+              <p class="tit">외식</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume2.png" alt="" /></span>
+              </p>
+              <p class="tit">주문·배달</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume3.png" alt="" /></span>
+              </p>
+              <p class="tit">중고거래</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume4.png" alt="" /></span>
+              </p>
+              <p class="tit">월세</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume5.png" alt="" /></span>
+              </p>
+              <p class="tit">데이트비용</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume6.png" alt="" /></span>
+              </p>
+              <p class="tit">구독료</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume7.png" alt="" /></span>
+              </p>
+              <p class="tit">건강</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume8.png" alt="" /></span>
+              </p>
+              <p class="tit">엄빠용돈</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume9.png" alt="" /></span>
+              </p>
+              <p class="tit">자기개발</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume10.png" alt="" /></span>
+              </p>
+              <p class="tit">덕질</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume11.png" alt="" /></span>
+              </p>
+              <p class="tit">교통비</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume12.png" alt="" /></span>
+              </p>
+              <p class="tit">경조사</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume13.png" alt="" /></span>
+              </p>
+              <p class="tit">관리비·공과금</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume14.png" alt="" /></span>
+              </p>
+              <p class="tit">패션</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume15.png" alt="" /></span>
+              </p>
+              <p class="tit">문화생활</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume16.png" alt="" /></span>
+              </p>
+              <p class="tit">뷰티</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume17.png" alt="" /></span>
+              </p>
+              <p class="tit">애완동물</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume18.png" alt="" /></span>
+              </p>
+              <p class="tit">소확행</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume19.png" alt="" /></span>
+              </p>
+              <p class="tit">플렉스</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume20.png" alt="" /></span>
+              </p>
+              <p class="tit">ㅅㅂ비용</p>
+              <p class="money"><strong>9,116,200</strong>원</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+            <a href="#" class="list btn-click disabled">
+              <p class="img-circle">
+                <span class="img-box w-22"><img src="../../images/consume/ico_consume22.png" alt="" /></span>
+              </p>
+              <p class="tit">사용자카테고리5</p>
+              <p class="money">분류가 없어요</p>
+              <i class="i-ico-arr-right-24"></i>
+            </a>
+          </div>
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+
+      <!-- 팝업 -->
+      <!-- //팝업 -->
+    </article>
+    <script type="text/javascript" src="../../js/lib/highcharts.js"></script>
+    <script>
+      $('.kind-white-box .alert .btn-close').click(function () {
+        $(this).closest('.alert').fadeOut();
+        return false;
+      });
+
+      dounutChart();
+
+      function dounutChart() {
+        Highcharts.setOptions({
+          colors: ['#F66FA0', '#FBC846', '#FE7D65', '#B1E6F6', '#999DFE']
+        });
+        var chart = new Highcharts.Chart({
+          chart: {
+            renderTo: 'dounutChart',
+            type: 'pie',
+            margin: [0, 0, 0, 0],
+            spacing: [0, 0, 0, 0],
+            height: 134,
+            style: {
+              color: '#424242',
+              fontFamily: 'notoSans',
+              fontWeight: '400',
+              fontSize: '12'
+            },
+            backgroundColor: 'rgba(255, 255, 255, 0)'
+          },
+          credits: { enabled: false }, //highchart 워터마크 숨김처리
+          title: {
+            text: ''
+          },
+          legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            itemMarginTop: 4,
+            itemMarginBottom: 4,
+            labelFormatter: function () {
+              return this.name + ' (' + this.y + '%)';
+            }
+          },
+          tooltip: {
+            headerFormat: '<div>',
+            pointFormat:
+              '<div class="flex"><span class="mr-5">{point.month} 분류</span><span class="fc-primary t-right">{point.count}건</span></div><div class="flex"><span class="mr-5">총지출</span><span class="fc-primary  t-right">{point.money}건</span></div>',
+            footerFormat: '</div>',
+            backgroundColor: 'rgba(33, 33, 33, 0.8)',
+            borderWidth: 0,
+            borderRadius: 8,
+            shadow: false,
+            padding: 16,
+            style: {
+              color: '#fff',
+              fontSize: '12px'
+            },
+            shared: true,
+            useHTML: true
+          },
+          plotOptions: {
+            pie: {
+              //도넛(파이)차트 전체 옵션 지정.
+              dataLabels: {
+                enabled: true
+              },
+              slicedOffset: 0,
+              center: [67, 67],
+              showInLegend: true,
+              states: {
+                hover: {
+                  halo: {
+                    size: 0
+                  }
+                }
+              }
+            }
+          },
+          series: [
+            {
+              type: 'pie',
+              innerSize: '50%',
+              data: [
+                {
+                  name: 'ㅅㅂ비용',
+                  y: 50,
+                  month: '12월',
+                  count: '130',
+                  money: '9,800'
+                },
+                {
+                  name: '엄빠용돈',
+                  y: 25,
+                  month: '12월',
+                  count: '130',
+                  money: '9,800'
+                },
+                {
+                  name: '건강',
+                  y: 10,
+                  month: '12월',
+                  count: '130',
+                  money: '9,800'
+                },
+                {
+                  name: '문화생활',
+                  y: 10,
+                  month: '12월',
+                  count: '130',
+                  money: '9,800'
+                },
+                {
+                  name: '주문·배달',
+                  y: 5,
+                  month: '12월',
+                  count: '130',
+                  money: '9,800'
+                }
+                /* 미지정일때 */
+                /*
+                {
+                  color:'#C2C2C2',
+                  name: '미지정',
+                  y: 100,
+                  month: '12월',
+                  money: '9,000',
+                  count: '30'
+                }
+                */
+              ],
+              dataLabels: {
+                enabled: false
+              }
+            }
+          ]
+        });
+      }
+    </script>
+  </body>
+</html>

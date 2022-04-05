@@ -1518,7 +1518,7 @@ ui.Button = {
     });
   },
   overlay: function () {
-    if ($('.user-detail-talk .btn-menu').length) {
+    if ($('.user-detail-talk-box').length) {
       $(document).on('click', '.user-detail-talk .btn-menu', function () {
         const $this = $(this);
         const $next = $this.next();

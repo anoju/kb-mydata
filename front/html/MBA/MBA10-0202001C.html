@@ -126,8 +126,8 @@
                   </div>
                 </a>
                 <p class="text ellipsis-2 mt-6 fc-424242">
-                  상세내용상세내용상세내용상세내용상세내용상세내용 상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용
-                  상세내용상세내용상세내용상세내용상세내용상세내
+                  상세내용상세내용상세내용상세내용상세내용상세내용
+                  상세내용상세내용상세내용상세내용상세내용상세내상세내용상세내용상세내용상세내용상세내용상세내용상세내용상세내용상세내용상세내용상세내용상세내
                 </p>
 
                 <button class="btn-menu"><i>메뉴 펼치기</i></button>
@@ -225,6 +225,12 @@
         $comment.find('textarea').val('').change();
         // isReply = false;
         // }
+      });
+
+      $('.btn-edit').click(function () {
+        const $comment = $('.bottom-fixed.btn-comment');
+        const text = $(this).closest('.user-detail-talk').find('> .text').text();
+        $comment.find('textarea').val(text).focus().change();
       });
     </script>
   </body>
