@@ -844,6 +844,7 @@
   margin-top: 1.6rem;
   > .left,
   > .right {
+    position: relative;
     flex: 1 1 auto;
     padding: 1.6rem 0;
     border-radius: 1.2rem;
@@ -892,6 +893,18 @@
         color: #fe7d65;
       }
     }
+    &.kkl {
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -0.4rem;
+        right: 1.2rem;
+        width: 3.1rem;
+        height: 3.1rem;
+        background: url('../images/consume/ico-badge-KKL.png') no-repeat center center / 100%;
+      }
+    }
   }
   .left {
     .tit {
@@ -907,6 +920,7 @@
   .state {
     flex: 0 0 auto;
     position: relative;
+    z-index: 1;
     width: 0.8rem;
     i {
       position: absolute;
