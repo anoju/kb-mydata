@@ -213,13 +213,79 @@
   ,{
     "id": "MDB04-0101001",
     "url": "../../front/html/MDB/",
-    "depth2": "소비",
-    "depth3": "메인",
+    "depth2": "메인",
     "name": "소비 메인",
     "worker": "장영석",
     "complete": "2022-04-01",
     "change":"2022-04-05",
     "etc":"비활성화 상태 추가"
+  }
+  ,{
+    "id": "MDB04-0201001",
+    "url": "../../front/html/MDB/",
+    "depth2": "카테고리",
+    "depth3": "목록",
+    "name": "카테고리 목록",
+    "worker": "장영석",
+    "complete": "2022-04-07"
+  }
+  ,{
+    "id": "MDB04-0202001",
+    "url": "../../front/html/MDB/",
+    "depth2": "카테고리",
+    "depth3": "상세",
+    "name": "카테고리 목록",
+    "worker": "장영석",
+    "complete": "2022-04-07"
+  }
+  ,{
+    "id":"MDB04-0203001",
+    "url":"../../front/html/MDB/",
+    "depth2": "카테고리",
+    "depth3": "카테고리 항목 선택",
+    "name": "카테고리 선택",
+    "worker": "안효주",
+    "complete": "2022-03-23"
+  }
+  ,{
+    "id":"MDB04-0204p01",
+    "url":"../../front/html/MDB/",
+    "depth2": "카테고리",
+    "depth3": "카테고리 사용자 등록",
+    "name": "카테고리 등록",
+    "worker": "안효주",
+    "complete": "2022-03-15",
+    "change": "2022-03-21"
+  }
+  ,{
+    "id":"MDB04-0207p01",
+    "url":"../../front/html/MDB/",
+    "depth2": "카테고리",
+    "depth3": "카테고리 통계",
+    "depth4": "이번달 어때?",
+    "name": "이번달 어때?",
+    "worker": "장영석",
+    "complete": "2022-04-07"
+  }
+  ,{
+    "id":"MDB04-0207p02",
+    "url":"../../front/html/MDB/",
+    "depth2": "카테고리",
+    "depth3": "카테고리 통계",
+    "depth4": "이번달 데이터 없음",
+    "name": "이번달 데이터 없음",
+    "worker": "장영석",
+    "complete": "2022-04-07"
+  }
+  ,{
+    "id":"MDB04-0208p01",
+    "url":"../../front/html/MDB/",
+    "depth2": "카테고리",
+    "depth3": "카테고리 통계",
+    "depth4": "다른사람들은 어때?",
+    "name": "다른사람들은 어때?",
+    "worker": "장영석",
+    "complete": "2022-04-07"
   }
   ,{
     "id": "MDB04-0209001",
@@ -233,9 +299,8 @@
   ,{
     "id": "MDB04-0301001",
     "url": "../../front/html/MDB/",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "목록",
+    "depth2": "지출내역",
+    "depth3": "목록",
     "name": "지출내역 목록",
     "worker": "안효주",
     "complete": "2022-03-23",
@@ -245,9 +310,8 @@
   ,{
     "id": "MDB04-0303p01",
     "url": "../../front/html/MDB/",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "적요제공동의유도",
+    "depth2": "지출내역",
+    "depth3": "적요제공동의유도",
     "name": "지출내역 적요제공동의유도",
     "worker": "안효주",
     "complete": "2022-03-23"
@@ -255,9 +319,8 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "상세",
+    "depth2": "지출내역",
+    "depth3": "상세",
     "name": "지출상세(신용카드/체크카드)",
     "worker": "안효주",
     "complete": "2022-03-15",
@@ -266,9 +329,8 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=pay",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "상세",
+    "depth2": "지출내역",
+    "depth3": "상세",
     "name": "지출상세(페이)",
     "worker": "안효주",
     "complete": "2022-03-15"
@@ -276,9 +338,8 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=card2",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "상세",
+    "depth2": "지출내역",
+    "depth3": "상세",
     "name": "지출상세(선불카드)",
     "worker": "안효주",
     "complete": "2022-03-15"
@@ -286,9 +347,8 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=pay2",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "상세",
+    "depth2": "지출내역",
+    "depth3": "상세",
     "name": "지출상세(페이송금, 본인거래)",
     "worker": "안효주",
     "complete": "2022-03-15"
@@ -296,9 +356,8 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=pay3",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "상세",
+    "depth2": "지출내역",
+    "depth3": "상세",
     "name": "지출상세(페이송금, 타인거래)",
     "worker": "안효주",
     "complete": "2022-03-15"
@@ -306,9 +365,8 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=bank",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "상세",
+    "depth2": "지출내역",
+    "depth3": "상세",
     "name": "지출상세(계좌)",
     "worker": "안효주",
     "complete": "2022-03-15"
@@ -316,9 +374,8 @@
   ,{
     "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=none",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "상세",
+    "depth2": "지출내역",
+    "depth3": "상세",
     "name": "지출상세(적요 정보 미동의)",
     "worker": "안효주",
     "complete": "2022-03-15"
@@ -326,9 +383,8 @@
   ,{
     "id":"MDB04-0302p01",
     "url":"../../front/html/MDB/",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "메모",
+    "depth2": "지출내역",
+    "depth3": "메모",
     "name": "메모 등록",
     "worker": "안효주",
     "complete": "2022-03-15",
@@ -337,41 +393,18 @@
   ,{
     "id":"MDB04-0302p02",
     "url":"../../front/html/MDB/MDB04-0302p01.html?type=change",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "메모",
+    "depth2": "지출내역",
+    "depth3": "메모",
     "name": "메모 수정",
     "worker": "안효주",
     "complete": "2022-03-15",
     "etc": "MDB04-0302p01 동일화면"
   }
   ,{
-    "id":"MDB04-0203001",
-    "url":"../../front/html/MDB/",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "카테고리",
-    "name": "카테고리 선택",
-    "worker": "안효주",
-    "complete": "2022-03-23"
-  }
-  ,{
-    "id":"MDB04-0204p01",
-    "url":"../../front/html/MDB/",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "카테고리",
-    "name": "카테고리 등록",
-    "worker": "안효주",
-    "complete": "2022-03-15",
-    "change": "2022-03-21"
-  }
-  ,{
     "id":"MDB04-0205p01",
     "url":"../../front/html/MDB/MDB04-0204p01.html?type=change",
-    "depth2": "소비",
-    "depth3": "지출내역",
-    "depth4": "카테고리",
+    "depth2": "지출내역",
+    "depth3": "카테고리",
     "name": "카테고리 수정",
     "worker": "안효주",
     "complete": "2022-03-15",
@@ -380,8 +413,7 @@
   ,{
     "id":"MDB04-0304p01",
     "url":"../../front/html/MDB/",
-    "depth2": "소비",
-    "depth3": "지출내역",
+    "depth2": "지출내역",
     "name": "이번달 어때?",
     "worker": "안효주",
     "complete": "2022-03-23",
