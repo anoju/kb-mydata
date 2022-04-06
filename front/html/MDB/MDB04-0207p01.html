@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <button type="button" class="button line" onclick="Layer.open('#thisMonthData')">팝업열기</button>
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+
+      <!-- 팝업 -->
+      <div id="thisMonthData" class="popup full" role="dialog" aria-hidden="true">
+        <article class="pop-wrap bg-fa">
+          <div class="pop-head bg-fa">
+            <div>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body bg-fa">
+            <div class="section">
+              <h2 class="tit-h1">이번 달 어때?</h2>
+
+              <!-- 분류 비교1-->
+              <div class="white-box mt-32">
+                <!--
+                  많다,높다 : fc-e45055
+                  적다,낮다 : fc-447eee
+                -->
+                <p class="tit-h4 fw-500">
+                  이번달은 <strong class="fc-primary">엄빠용돈</strong><br />
+                  분류를 <strong class="fw-500 fc-e45055">많이</strong> 했어요.
+                </p>
+
+                <div class="consume-compare-box">
+                  <!-- 승리시 win 클래스 적용-->
+                  <div class="left">
+                    <p class="tit">저번달</p>
+                    <p class="img-circle w-56 h-56">
+                      <span class="img-box w-40"><img src="../../images/consume/ico_consume3.png" alt="" /></span>
+                    </p>
+                    <p class="text">건강</p>
+                    <i class="badge">45번 분류</i>
+                    <p class="amount"><strong>430,000</strong>원</p>
+                  </div>
+                  <!--
+                    상태에 따른 클래스 적용
+                    vs : 대결
+                    winR : 이번달이 이긴거 ( < )
+                    winL : 저번달이 이긴거 ( > )
+                    question : 물음표 ?
+                    same : 같음
+                  -->
+                  <div class="state vs"><i></i></div>
+                  <!-- 승리시 win 클래스 적용-->
+                  <div class="right win">
+                    <p class="tit">이번달</p>
+                    <p class="img-circle w-56 h-56">
+                      <span class="img-box w-40"><img src="../../images/consume/ico_consume3.png" alt="" /></span>
+                    </p>
+                    <p class="text">건강</p>
+                    <i class="badge">45번 분류</i>
+                    <p class="amount"><strong>430,000</strong>원</p>
+                  </div>
+                </div>
+              </div>
+              <!-- //분류 비교1-->
+
+              <!-- 분류 비교2 -->
+              <div class="white-box mt-12">
+                <!--
+                  많다,높다 : fc-e45055
+                  적다,낮다 : fc-447eee
+                -->
+                <p class="tit-h4 fw-500">
+                  이번달은 <strong class="fc-primary">주문·배달</strong><br />
+                  지출을 가장 <strong class="fw-500 fc-e45055">많이</strong> 했어요.
+                </p>
+
+                <div class="consume-compare-box type2">
+                  <!-- 승리시 win 클래스 적용-->
+                  <div class="left win">
+                    <p class="tit">저번달</p>
+                    <p class="img-box"><img src="../../images/consume/ico_consume3.png" alt="" /></p>
+                    <p class="amount"><strong>430,000</strong>원</p>
+                  </div>
+                  <!--
+                    상태에 따른 클래스 적용
+                    vs : 대결
+                    winR : 이번달이 이긴거 ( < )
+                    winL : 저번달이 이긴거 ( > )
+                    question : 물음표 ?
+                  -->
+                  <div class="state winL"><i></i></div>
+                  <!-- 승리시 win 클래스 적용-->
+                  <div class="right">
+                    <p class="tit">이번달</p>
+                    <p class="img-box"><img src="../../images/consume/ico_consume3.png" alt="" /></p>
+                    <p class="amount"><strong>430,000</strong>원</p>
+                  </div>
+                </div>
+
+                <div class="consume-compare-info-box">
+                  <!-- 
+                    감소 : fc-447eee
+                    상승 : fc-e45055
+                  -->
+                  저번 달 대비 <span class="fc-447eee">12% 금액이 감소했어요</span>
+                </div>
+              </div>
+              <!-- //분류 비교2 -->
+
+              <!-- 분류 비교3 -->
+              <div class="white-box mt-12">
+                <p class="tit-h4 fw-500">
+                  이번 달 총 지출 건은 <span class="fc-primary fw-500"><strong class="fz-18">450</strong>건</span>이고<br />
+                  <span class="fc-primary fw-500"><strong class="fz-18">300</strong>번</span> 분류 했어요.
+                </p>
+
+                <div class="consume-process-bar">
+                  <span style="width: 67%">
+                    <span class="tip-box">67% 달성</span>
+                  </span>
+                </div>
+
+                <!-- 완료 (미지정건 없는경우) : end 클래스 추가 -->
+                <div class="consume-compare-info-box">
+                  <!-- 
+                    감소 : fc-447eee
+                    상승 : fc-e45055
+                  -->
+                  이번달 미지정 <span class="fc-primary fw-500"><strong class="fz-14">450</strong>건</span>에 관심이 필요해요
+                </div>
+              </div>
+              <!-- //분류 비교3 -->
+
+              <!-- 분류 비교4 -->
+              <div class="white-box mt-12">
+                <p class="tit-h4 fw-500">이번 달 분류가 많은 카테고리 Top3를 보여드릴게요</p>
+                <div class="tab-list-group mt-48">
+                  <div id="dounutChart" class="active"></div>
+                  <div id="dounutChart2"></div>
+                </div>
+                <div class="tab-btn-group mt-16">
+                  <button class="btn-click active">분류를 많이 한</button>
+                  <button class="btn-click">지출이 큰</button>
+                </div>
+              </div>
+              <!-- //분류 비교4 -->
+
+              <!-- 분류 비교5 -->
+              <div class="white-box mt-12">
+                <!--
+                  많다,높다 : fc-e45055
+                  적다,낮다 : fc-447eee
+                -->
+                <p class="tit-h4 fw-500">
+                  이번달은 <strong class="fc-primary">플렉스</strong><br />
+                  분류를 가장 <strong class="fw-500 fc-447eee">적게</strong> 했어요.
+                </p>
+
+                <div class="consume-compare-box">
+                  <!-- 승리시 win 클래스 적용-->
+                  <div class="left">
+                    <p class="tit">저번달</p>
+                    <p class="img-circle w-56 h-56">
+                      <span class="img-box w-40"><img src="../../images/consume/ico_consume3.png" alt="" /></span>
+                    </p>
+                    <p class="text">건강</p>
+                    <i class="badge">45번 분류</i>
+                    <p class="amount"><span class="fc-979797">알수없음</span></p>
+                  </div>
+                  <!--
+                    상태에 따른 클래스 적용
+                    vs : 대결
+                    winR : 이번달이 이긴거 ( < )
+                    winL : 저번달이 이긴거 ( > )
+                    question : 물음표 ?
+                  -->
+                  <div class="state vs"><i></i></div>
+                  <!-- 승리시 win 클래스 적용-->
+                  <div class="right">
+                    <p class="tit">이번달</p>
+                    <p class="img-circle w-56 h-56">
+                      <span class="img-box w-40"><img src="../../images/consume/ico_consume3.png" alt="" /></span>
+                    </p>
+                    <p class="text">건강</p>
+                    <i class="badge">45번 분류</i>
+                    <p class="amount"><strong>430,000</strong>원</p>
+                  </div>
+                </div>
+              </div>
+              <!-- //분류 비교5 -->
+
+              <!-- 분류 비교6 -->
+              <div class="white-box mt-12">
+                <!--
+                  많다,높다 : fc-e45055
+                  적다,낮다 : fc-447eee
+                -->
+                <p class="tit-h4 fw-500">
+                  이번달은 <strong class="fc-primary">플렉스</strong><br />
+                  분류를 가장 <strong class="fw-500 fc-447eee">적게</strong> 했어요.
+                </p>
+
+                <div class="consume-compare-box type2">
+                  <!-- 승리시 win 클래스 적용-->
+                  <div class="left">
+                    <p class="tit">저번달</p>
+                    <p class="img-box"><img src="../../images/consume/ico_consume3.png" alt="" /></p>
+                    <p class="amount"><strong>430,000</strong>원</p>
+                  </div>
+                  <!--
+                    상태에 따른 클래스 적용
+                    vs : 대결
+                    winR : 이번달이 이긴거 ( < )
+                    winL : 저번달이 이긴거 ( > )
+                    question : 물음표 ?
+                  -->
+                  <div class="state question"><i></i></div>
+                  <!-- 승리시 win 클래스 적용-->
+                  <div class="right">
+                    <p class="tit">이번달</p>
+                    <p class="img-box"><img src="../../images/consume/ico_consume3.png" alt="" /></p>
+                    <p class="amount"><strong>430,000</strong>원</p>
+                  </div>
+                </div>
+              </div>
+              <!-- //분류 비교6 -->
+            </div>
+          </div>
+        </article>
+      </div>
+      <!-- //팝업 -->
+    </article>
+  </body>
+  <script type="text/javascript" src="../../js/lib/highcharts.js"></script>
+  <script>
+    Layer.open('#thisMonthData');
+
+    $(window).load(function () {
+      consumeProcessBar();
+      dounutChart();
+      dounutChart2();
+
+      $('.tab-btn-group button').click(function () {
+        const idx = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.tab-list-group > div').eq(idx).addClass('active').siblings().removeClass('active');
+        return false;
+      });
+    });
+
+    function consumeProcessBar() {
+      const target = $('.consume-process-bar');
+      const bar = target.find('>span');
+      const tip = target.find('.tip-box');
+
+      if (bar.outerWidth() < tip.outerWidth() / 2) {
+        tip.addClass('left');
+      }
+      console.log(target.outerWidth() - bar.outerWidth());
+      if (target.outerWidth() - bar.outerWidth() < tip.outerWidth() / 2) {
+        tip.addClass('right');
+      }
+    }
+
+    function dounutChart() {
+      Highcharts.setOptions({
+        colors: ['#F66FA0', '#FBC846', '#B1E6F6']
+      });
+      var chart = new Highcharts.Chart({
+        chart: {
+          renderTo: 'dounutChart',
+          type: 'pie',
+          margin: [0, 0, 0, 0],
+          spacing: [0, 0, 0, 0],
+          height: 134,
+          style: {
+            color: '#424242',
+            fontFamily: 'notoSans',
+            fontWeight: '400',
+            fontSize: '12'
+          },
+          backgroundColor: 'rgba(255, 255, 255, 0)'
+        },
+        credits: { enabled: false }, //highchart 워터마크 숨김처리
+        title: {
+          text: ''
+        },
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'middle',
+          itemMarginTop: 4,
+          itemMarginBottom: 4,
+          labelFormatter: function () {
+            return this.name + ' (' + this.y + '%)';
+          }
+        },
+        tooltip: {
+          headerFormat: '<div>',
+          pointFormat: '<span class="mr-5">{point.month}</span><span class="mr-3">{point.money}</span>원<span class="ml-3">({point.count}건)</span>',
+          footerFormat: '</div>',
+          backgroundColor: 'rgba(33, 33, 33, 0.8)',
+          borderWidth: 0,
+          borderRadius: 8,
+          shadow: false,
+          padding: 16,
+          style: {
+            color: '#fff',
+            fontSize: '12px'
+          },
+          shared: true,
+          useHTML: true
+        },
+        plotOptions: {
+          pie: {
+            //도넛(파이)차트 전체 옵션 지정.
+            dataLabels: {
+              enabled: true
+            },
+            slicedOffset: 0,
+            center: [67, 67],
+            showInLegend: true,
+            states: {
+              hover: {
+                halo: {
+                  size: 0
+                }
+              }
+            }
+          }
+        },
+        series: [
+          {
+            type: 'pie',
+            innerSize: '50%',
+            data: [
+              {
+                name: '엄빠용돈',
+                y: 50,
+                month: '12월',
+                money: '9,800',
+                count: '130'
+              },
+              {
+                name: '문화생활',
+                y: 35,
+                month: '12월',
+                money: '800',
+                count: '10'
+              },
+              {
+                name: '주문·배달',
+                y: 15,
+                month: '12월',
+                money: '9,000',
+                count: '30'
+              }
+            ],
+            dataLabels: {
+              enabled: false
+            }
+          }
+        ]
+      });
+    }
+
+    function dounutChart2() {
+      Highcharts.setOptions({
+        colors: ['#F66FA0', '#FBC846', '#B1E6F6']
+      });
+      var chart = new Highcharts.Chart({
+        chart: {
+          renderTo: 'dounutChart2',
+          type: 'pie',
+          margin: [0, 0, 0, 0],
+          spacing: [0, 0, 0, 0],
+          height: 134,
+          style: {
+            color: '#424242',
+            fontFamily: 'notoSans',
+            fontWeight: '400',
+            fontSize: '12'
+          },
+          backgroundColor: 'rgba(255, 255, 255, 0)'
+        },
+        credits: { enabled: false }, //highchart 워터마크 숨김처리
+        title: {
+          text: ''
+        },
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'middle',
+          itemMarginTop: 4,
+          itemMarginBottom: 4,
+          labelFormatter: function () {
+            return this.name + ' (' + this.y + '%)';
+          }
+        },
+        tooltip: {
+          headerFormat: '<div>',
+          pointFormat: '<span class="mr-5">{point.month}</span><span class="mr-3">{point.money}</span>원<span class="ml-3">({point.count}건)</span>',
+          footerFormat: '</div>',
+          backgroundColor: 'rgba(33, 33, 33, 0.8)',
+          borderWidth: 0,
+          borderRadius: 8,
+          shadow: false,
+          padding: 16,
+          style: {
+            color: '#fff',
+            fontSize: '12px'
+          },
+          shared: true,
+          useHTML: true
+        },
+        plotOptions: {
+          pie: {
+            //도넛(파이)차트 전체 옵션 지정.
+            dataLabels: {
+              enabled: true
+            },
+            slicedOffset: 0,
+            center: [67, 67],
+            showInLegend: true,
+            states: {
+              hover: {
+                halo: {
+                  size: 0
+                }
+              }
+            }
+          }
+        },
+        series: [
+          {
+            type: 'pie',
+            innerSize: '50%',
+            data: [
+              {
+                name: '현질',
+                y: 20,
+                month: '12월',
+                money: '9,800',
+                count: '130'
+              },
+              {
+                name: '덕질',
+                y: 40,
+                month: '12월',
+                money: '800',
+                count: '10'
+              },
+              {
+                name: 'ㅅㅂ비용',
+                y: 40,
+                month: '12월',
+                money: '9,000',
+                count: '30'
+              }
+            ],
+            dataLabels: {
+              enabled: false
+            }
+          }
+        ]
+      });
+    }
+  </script>
+</html>
