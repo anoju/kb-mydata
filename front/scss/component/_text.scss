@@ -392,6 +392,30 @@
   .tg-btn-wrap {
     margin-top: 1.6rem;
   }
+
+  .table {
+    table {
+      border: 0.1rem solid #dedede;
+      border-top: 0;
+      tbody {
+        th {
+          font-size: 1.4rem;
+          color: #212121;
+          font-weight: bold;
+          text-align: center;
+          border-right: 0.1rem solid #dedede;
+          border-top: 0.1rem solid #dedede;
+          background: #fafafa;
+        }
+        td {
+          border-top: 0.1rem solid #dedede !important;
+          font-size: 1.4rem;
+          color: #424242;
+          font-weight: 500;
+        }
+      }
+    }
+  }
 }
 
 //준법 사전심사

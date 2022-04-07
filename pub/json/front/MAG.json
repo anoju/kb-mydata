@@ -1,0 +1,41 @@
+[
+  {
+    "depth1": "설정"
+  }
+  ,{
+    "id": "MAG01-0000001C",
+    "url": "../../front/html/MAG/",
+    "depth2": "설정목록",
+    "depth3": "",
+    "name": "설정목록화면",
+    "worker": "장영석",
+    "complete": "2022-04-07"
+  }
+  ,{
+    "id": "MAG01-0000002C",
+    "url": "../../front/html/MAG/",
+    "depth2": "알림설정",
+    "depth3": "",
+    "name": "알림설정화면",
+    "worker": "장영석",
+    "complete": "2022-04-07"
+  }
+  ,{
+    "id": "MAG01-0000p01C",
+    "url": "../../front/html/MAG/",
+    "depth2": "마케팅 알림동의/철회하기",
+    "depth3": "",
+    "name": "마케팅 알림동의/철회하기",
+    "worker": "장영석",
+    "complete": "2022-04-07"
+  }
+  ,{
+    "id": "MAG01-0000p02C",
+    "url": "../../front/html/MAG/",
+    "depth2": "앱정보 업데이트",
+    "depth3": "",
+    "name": "앱정보 업데이트",
+    "worker": "장영석",
+    "complete": "2022-04-07"
+  }
+]
