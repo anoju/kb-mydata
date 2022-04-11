@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('자동차 조회정보 입력');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <h1 class="tit-h1">소유하고 있는 <br />차량 번호를 알려주세요</h1>
+
+          <div class="input form-box mt-32">
+            <div class="form-lbl">차량번호</div>
+            <input id="carNum" type="text" placeholder="123가1234" title="차량번호입력" />
+          </div>
+
+          <div class="select form-box">
+            <div class="form-lbl">주행거리</div>
+            <select title="타입선택">
+              <option value="">주행거리를 선택해주세요</option>
+              <option value="1">1만Km 미만</option>
+              <option value="2">1만Km 이상 ~ 2만Km 미만</option>
+              <option value="3">2만Km 이상 ~ 3만Km 미만</option>
+              <option value="4">3만Km 이상 ~ 4만Km 미만</option>
+              <option value="5">4만Km 이상 ~ 5만Km 미만</option>
+              <option value="6">5만Km 이상 ~ 6만Km 미만</option>
+              <option value="7">6만Km 이상 ~ 7만Km 미만</option>
+              <option value="8">7만Km 이상 ~ 8만Km 미만</option>
+              <option value="9">8만Km 이상 ~ 9만Km 미만</option>
+              <option value="10">9만Km 이상 ~ 10만Km 미만</option>
+              <option value="11">10만Km 이상 ~ 11만Km 미만</option>
+              <option value="12">11만Km 이상 ~ 12만Km 미만</option>
+              <option value="13">12만Km 이상 ~ 12만Km 미만</option>
+              <option value="14">13만Km 이상 ~ 13만Km 미만</option>
+              <option value="15">14만Km 이상</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="btn-wrap bottom-fixed">
+          <div class="flex">
+            <button type="button" id="btnMain" class="button h60 primary" disabled>조회</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- 팝업 -->
+      <!-- //팝업 -->
+    </article>
+    <script>
+      const btnChk = function () {
+        let isInsertVal = false;
+        $('.input input, .select select').each(function () {
+          const $val = $(this).val();
+          if ($(this).parent().is(':visible')) {
+            if ($val === '') {
+              isInsertVal = false;
+            } else {
+              isInsertVal = true;
+            }
+          }
+        });
+        if (isInsertVal) {
+          $('#btnMain').prop('disabled', false);
+        } else {
+          $('#btnMain').prop('disabled', true);
+        }
+      };
+      $('#carNum').on('focus keyup', function () {
+        const $val = $(this).val();
+        if ($val.length < 7) {
+          ui.Form.error('#carNum', '차량번호를 확인하세요');
+        } else {
+          ui.Form.error('#carNum', false);
+          btnChk();
+        }
+      });
+      $('.select select').on('change', function () {
+        btnChk();
+      });
+    </script>
+  </body>
+</html>

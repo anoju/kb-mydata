@@ -1261,6 +1261,10 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     white-space: nowrap;
   }
 }
+.form-control.disabled,
+.custom-select.disabled {
+  pointer-events: none;
+}
 .custom-control-wrap {
   padding: 0.25rem 0;
   .custom-control {

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('부동산 자산등록');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <h1 class="tit-h1">대치동 은마아파트</h1>
+          <p class="fz-14 fc-818892">서울특별시 강남구 삼성로 212</p>
+
+          <div class="select form-box mt-32">
+            <div class="form-lbl">타입</div>
+            <select title="타입선택">
+              <option value="">타입을 선택해주세요</option>
+              <option value="1">59.97㎡</option>
+              <option value="2">76.79㎡</option>
+              <option value="3">84.43㎡</option>
+            </select>
+          </div>
+
+          <div class="btn-wrap mt-16">
+            <div class="flex">
+              <label class="radio btn">
+                <input type="radio" name="rdo1" value="1" checked /><i aria-hidden="true"></i>
+                <div class="lbl">자가</div>
+              </label>
+              <label class="radio btn">
+                <input type="radio" name="rdo1" value="2" /><i aria-hidden="true"></i>
+                <div class="lbl">전세</div>
+              </label>
+              <label class="radio btn">
+                <input type="radio" name="rdo1" value="3" /><i aria-hidden="true"></i>
+                <div class="lbl">월세</div>
+              </label>
+            </div>
+          </div>
+
+          <div id="price1" class="input form-box mt-16" style="display: none">
+            <div class="form-lbl">구입가</div>
+            <input class="t-right" type="tel" placeholder="0" title="구입가입력" />
+            <div class="unit">원</div>
+          </div>
+
+          <div id="price2" class="input form-box" style="display: none">
+            <div class="form-lbl">보증금</div>
+            <input class="t-right" type="tel" placeholder="0" title="보증금입력" />
+            <div class="unit">원</div>
+          </div>
+
+          <div id="price3" class="input form-box" style="display: none">
+            <div class="form-lbl">월세</div>
+            <input class="t-right" type="tel" placeholder="0" title="월세입력" />
+            <div class="unit">원</div>
+          </div>
+
+          <div class="input form-box">
+            <div class="form-lbl">계약일</div>
+            <input type="text" placeholder="20120304로 입력" title="계약일입력" />
+          </div>
+        </div>
+
+        <div class="btn-wrap bottom-fixed">
+          <div class="flex">
+            <button type="button" id="btnMain" class="button h60 primary" disabled>등록</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- 팝업 -->
+      <!-- //팝업 -->
+    </article>
+    <script>
+      const showInput = function () {
+        const $val = $('[name=rdo1]:checked').val();
+        switch ($val) {
+          case '1':
+            $('#price1').show();
+            $('#price2').hide();
+            $('#price3').hide();
+            break;
+          case '2':
+            $('#price1').hide();
+            $('#price2').show();
+            $('#price3').hide();
+            break;
+          case '3':
+            $('#price1').hide();
+            $('#price2').show();
+            $('#price3').show();
+            break;
+          default:
+            break;
+        }
+      };
+      showInput();
+
+      $('[name=rdo1]').on('input', function () {
+        showInput();
+      });
+
+      const btnChk = function () {
+        let isInsertVal = false;
+        $('.input input, .select select').each(function () {
+          const $val = $(this).val();
+          if ($(this).parent().is(':visible')) {
+            if ($val === '') {
+              isInsertVal = false;
+            } else {
+              isInsertVal = true;
+            }
+          }
+        });
+        if (isInsertVal) {
+          $('#btnMain').prop('disabled', false);
+        } else {
+          $('#btnMain').prop('disabled', true);
+        }
+      };
+      $('.input input').on('focus keyup', function () {
+        btnChk();
+      });
+      $('.select select').on('change', function () {
+        btnChk();
+      });
+    </script>
+  </body>
+</html>
