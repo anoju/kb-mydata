@@ -41,7 +41,9 @@
               </div>
             </div>
             <h2 class="tit-h1">본인 소유의 차량인지<br />확인 중이에요</h2>
-            <p class="mt-16">잠시만 기다려주세요.</p>
+            <p class="mt-16">
+              잠시만 기다려주세요<i class="dot-animation"><span>.</span></i>
+            </p>
           </div>
         </div>
         <!-- 소유 확인중 -->
@@ -73,5 +75,47 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script>
+      const topVal = '-80';
+      let ani = anime.timeline({
+        duration: 2000,
+        loop: true
+      });
+      ani.add({
+        targets: $('.car-motion i')[1],
+        delay: 400,
+        easing: 'easeOutExpo',
+        opacity: [0, 1],
+        translateY: {
+          value: [topVal, 0],
+          delay: 500
+        }
+      });
+      ani.add(
+        {
+          targets: $('.car-motion i')[2],
+          delay: 400,
+          easing: 'easeOutExpo',
+          opacity: [0, 1],
+          translateY: {
+            value: [topVal, 0],
+            delay: 500
+          }
+        },
+        '-=1500'
+      );
+      ani.add({
+        targets: $('.car-motion i')[1],
+        easing: 'easeOutExpo',
+        duration: 400,
+        opacity: [1, 0]
+      });
+      ani.add({
+        targets: $('.car-motion i')[2],
+        easing: 'easeOutExpo',
+        duration: 400,
+        opacity: [1, 0]
+      });
+    </script>
   </body>
 </html>
