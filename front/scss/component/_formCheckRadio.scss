@@ -134,6 +134,7 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
     }
   }
   &.btn {
+    margin-right: 0;
     > input {
       width: 100%;
       height: 100%;
@@ -147,7 +148,7 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
         border-color: var(--primary-color);
         // color: var(--strong-txt-color);
         color: var(--primary-color);
-        font-weight: 500;
+        font-weight: bold;
       }
       &:checked:not(:disabled) ~ .lbl {
         z-index: 1;
@@ -176,15 +177,16 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
       vertical-align: middle;
       margin: 0;
       border: 0.1rem solid var(--line-color);
-      color: #979797;
+      color: var(--strong-txt-color);
       transition: 0.3s;
       font-size: 1.4rem;
-      background: #fafafa;
+      background: #fff;
       appearance: none;
     }
 
     + .btn {
       margin-top: 0;
+      margin-left: 1.2rem;
     }
 
     .tg-btn-wrap & {

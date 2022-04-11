@@ -198,6 +198,122 @@
     "etc": "MDB02-0306001과 동일화면"
   },
   {
+    "id": "MDB02-0401001",
+    "url": "../../front/html/MDB/",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "자산선택",
+    "name": "자산선택",
+    "worker": "안효주",
+    "complete": "2022-04-11"
+  },
+  {
+    "id": "MDB02-0402001",
+    "url": "../../front/html/MDB/",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "부동산",
+    "name": "부동산검색",
+    "worker": "안효주",
+    "complete": "2022-04-11"
+  },
+  {
+    "id": "MDB02-0402002",
+    "url": "../../front/html/MDB/",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "부동산",
+    "name": "부동산검색 결과",
+    "worker": "안효주",
+    "complete": "2022-04-11"
+  },
+  {
+    "id": "MDB02-0402003",
+    "url": "../../front/html/MDB/MDB02-0402002.html",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "부동산",
+    "name": "부동산검색 결과(결과없음)",
+    "worker": "안효주",
+    "complete": "2022-04-11",
+    "etc": "MDB02-0402002과 동일화면"
+  },
+  {
+    "id": "MDB02-0402004",
+    "url": "../../front/html/MDB/",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "부동산",
+    "name": "부동산건물선택",
+    "worker": "안효주",
+    "complete": "2022-04-11"
+  },
+  {
+    "id": "MDB02-0402005",
+    "url": "../../front/html/MDB/MDB02-0402004.html",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "부동산",
+    "name": "부동산건물선택(결과없음)",
+    "worker": "안효주",
+    "complete": "2022-04-11",
+    "etc": "MDB02-0402004과 동일화면"
+  },
+  {
+    "id": "MDB02-0402006",
+    "url": "../../front/html/MDB/",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "부동산",
+    "name": "부동산 등록",
+    "worker": "안효주",
+    "complete": "2022-04-11",
+    "etc": "자가, 전세, 월세 포함"
+  },
+  {
+    "id": "MDB02-0402p01",
+    "url": "../../front/html/MDB/MDB02-0402006.html",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "부동산",
+    "name": "부동산 등록시 타입선택",
+    "worker": "안효주",
+    "complete": "2022-04-11",
+    "etc": "MDB02-0402006안에 포함"
+  },
+  {
+    "id": "MDB02-0403001",
+    "url": "../../front/html/MDB/",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "자동차",
+    "name": "자동차조회정보입력",
+    "worker": "안효주",
+    "complete": "2022-04-11"
+  },
+  {
+    "id": "MDB02-0403p02",
+    "url": "../../front/html/MDB/MDB02-0403001.html",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "자동차",
+    "name": "자동차조회정보입력시 주행거리선택",
+    "worker": "안효주",
+    "complete": "2022-04-11",
+    "etc": "MDB02-0403001안에 포함"
+  },
+  {
+    "id": "MDB02-0403002",
+    "url": "../../front/html/MDB/",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "자동차",
+    "name": "자동차소유여부 확인",
+    "worker": "안효주",
+    "complete": "2022-04-11"
+  },
+  
+  {
     "id": "MDB02-0502002",
     "url": "../../front/html/MDB/",
     "depth2": "통합자산조회",
@@ -207,6 +323,12 @@
     "worker": "안효주",
     "complete": "2022-02-07"
   }
+  
+  ,{
+    "depth1": "MY(비자산금융)"
+  }
+  
+
   ,{
     "depth1": "MY(소비)"
   }

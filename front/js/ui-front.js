@@ -2780,8 +2780,8 @@ ui.Form = {
         $this.hasClass('hasDatepicker') ||
         $this.hasClass('time') ||
         $this.attr('type') === 'date' ||
-        // $this.hasClass('t-right') ||
-        // $this.hasClass('t-center') ||
+        $this.hasClass('t-right') ||
+        $this.hasClass('t-center') ||
         $this.hasClass('no-del')
       ) {
         return false;
@@ -5837,7 +5837,6 @@ const Layer = {
     const $targetVal = $target.val();
     const $addClass = $target.data('class');
     const $type = $target.data('type');
-    console.log($target);
     let $title = $target.attr('title');
     const $popId = Layer.selectId + Layer.selectIdx;
     const $length = $target.children().length;

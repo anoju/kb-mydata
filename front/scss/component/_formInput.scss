@@ -88,11 +88,11 @@
     &:disabled {
       color: var(--placeholder-txt-color);
     }
-    &.t-right {
-      &::placeholder {
-        text-align: left;
-      }
-    }
+    // &.t-right {
+    //   &::placeholder {
+    //     text-align: left;
+    //   }
+    // }
   }
   &.h56 {
     border-radius: 1.2rem;
@@ -162,6 +162,9 @@
     & + .textarea {
       margin-top: 0.8rem;
     }
+  }
+  .unit {
+    color: var(--strong-txt-color2);
   }
 
   &.line-lbl-inp {
