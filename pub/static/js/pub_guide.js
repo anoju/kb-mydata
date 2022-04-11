@@ -160,7 +160,15 @@ const makeBoard = function () {
 
       if (obj.depth1 !== undefined && obj.depth1 !== '') {
         trHtml += '<tr class="hr">';
-        trHtml += '<th scope="col" colspan="12">' + obj.depth1 + '</th>';
+        // 2022-04-11 스토리보드 영역 수정
+        if (obj.lastVer_SB !== undefined && obj.lastVer_SB !== '') {
+          console.log(11);
+          trHtml += '<th scope="col" colspan="2">' + obj.depth1 + '</th>';
+          trHtml += '<th scope="col" class="sb" colspan="10">' + obj.lastVer_SB + '</th>';
+        } else {
+          console.log(22);
+          trHtml += '<th scope="col" colspan="12">' + obj.depth1 + '</th>';
+        }
       } else {
         if (obj.state) {
           trHtml += '<tr class="' + obj.state + '">';
@@ -729,11 +737,18 @@ const guide = {
       const $hr = $('tr.hr th');
       const windowWidth = $(window).width();
       if (windowWidth < 1024) {
-        $hr.attr('colspan', '2');
+        $hr.attr('colspan', '1');
       } else {
-        $hr.attr('colspan', '12');
+        // 2022-04-11 스토리보드 영역 수정.
+        if ($('.hr').children('th').length >= 2) {
+          $hr.attr('colspan', '2');
+          $hr.next($hr).attr('colspan', '10');
+          console.log(11);
+        } else {
+          $hr.attr('colspan', '12');
+          console.log(22);
+        }
       }
-
       //if($('.g_board').length)$('.g_board').scroll();
     });
   },
