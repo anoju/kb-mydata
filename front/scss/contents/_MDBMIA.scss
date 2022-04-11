@@ -50,19 +50,21 @@
     position: relative;
   }
   .btn-tit {
-    color: var(--strong-txt-color);
+    font-size: 1.8rem;
+    color: var(--strong-txt-color2);
   }
   .btn-txt {
-    padding-right: 7.6rem;
-    min-height: 4.6rem;
     margin-top: 1rem;
+    padding-right: 7.2rem;
+    min-height: 4.6rem;
+    line-height: 2.3rem;
   }
   .btn-ico {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 48px;
-    height: 48px;
+    width: 4.8rem;
+    height: 4.8rem;
     @include bg-etc;
     img {
       @include img-fit;
@@ -73,6 +75,18 @@
 
     &.ico-2 {
       background-image: url(../images/MY/connect-ico-2.png);
+    }
+    &.ico-reg-1 {
+      background-image: url(../images/MY/ico-reg-property-1.png);
+    }
+    &.ico-reg-2 {
+      background-image: url(../images/MY/ico-reg-property-2.png);
+    }
+    &.ico-reg-3 {
+      background-image: url(../images/MY/ico-reg-property-3.png);
+    }
+    &.ico-reg-4 {
+      background-image: url(../images/MY/ico-reg-property-4.png);
     }
   }
 }
