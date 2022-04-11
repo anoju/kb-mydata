@@ -341,11 +341,12 @@
       }
 
       &.influencer {
+        overflow: visible;
         img {
           top: 50%;
           left: 50%;
-          width: 4.9rem;
-          height: 4.9rem;
+          width: 6.4rem;
+          height: 6.4rem;
           transform: translate(-50%, -50%);
         }
         &:after {
@@ -354,22 +355,22 @@
           position: absolute;
           top: 50%;
           left: 50%;
-          width: 6rem;
-          height: 6rem;
+          width: 8rem;
+          height: 8rem;
           background: url('../images/match/ico_influencer.png') no-repeat center center / 100%;
           transform: translate(-50%, -50%);
         }
       }
     }
     .text-box {
-      margin-left: 1rem;
+      margin-left: 2.4rem;
       .name {
         color: rgba(0, 0, 0, 0.5);
-        font-size: 1.6rem;
+        font-size: 2.2rem;
       }
       .number {
         color: rgba(0, 0, 0, 0.5);
-        font-size: 1.8rem;
+        font-size: 2.3rem;
       }
     }
   }
@@ -545,63 +546,284 @@
 
 /* 매치 결과 */
 .match-result-wrap {
+  font-family: 'Gmarket';
+  > .section {
+    padding: 1.9rem 2rem 2.4rem;
+    text-align: center;
+    background: #25cb9f;
+  }
   .result {
-    font-size: 1.8rem;
-    color: #fe7d65;
+    font-size: 2.2rem;
+    color: #fff;
     font-weight: bold;
   }
-  .tit {
-    margin-top: 0.8rem;
-    margin-bottom: 1.2rem;
-    font-size: 4rem;
-    font-weight: bold;
-    color: #212121;
-    line-height: 1.275;
+  .result-info {
+    font-size: 1.4rem;
+    color: #fff;
   }
-  .text {
-    font-size: 1.6rem;
-    color: #979797;
-    strong {
-      color: #424242;
-    }
-    + .text {
-      margin-top: 0.7rem;
-    }
-  }
-  .img-box {
-    width: 18.6rem;
-    margin: 4rem auto 0;
 
-    &.influencer {
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('../images/match/ico_influencer.png') no-repeat center center / 100%;
+  .box {
+    position: relative;
+    margin: 1.9rem 0;
+    padding: 2.5rem 2rem 1.6rem;
+    border-radius: 2rem;
+    background: #fff;
+    .text {
+      font-size: 1.9rem;
+      color: #505050;
+      font-weight: bold;
+      strong {
+        color: #25cb9f;
       }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0.4rem;
+      left: 0.4rem;
+      right: 0.4rem;
+      bottom: 0.4rem;
+      border-radius: 2rem;
+      border: 0.1rem solid #25cb9f;
+      pointer-events: none;
+    }
+  }
+
+  .img-box.avatar {
+    width: 16.6rem;
+    margin: 1.2rem auto 0;
+    background: none;
+    border-radius: 0;
+    img {
+      z-index: 1;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 3.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      width: 16rem;
+      height: 16rem;
+      background: rgba(42, 214, 168, 0.2);
     }
   }
   .comment-label {
     position: relative;
-    margin-top: -2.2rem;
-    padding: 1rem;
-    border-radius: 2rem;
+    z-index: 1;
+    padding: 1.2rem 0;
+    border-radius: 0.6rem;
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
     text-align: center;
-    background: #212121;
+    background: rgba(25, 174, 134, 0.8);
+    box-shadow: 0px 4px 14px rgba(19, 167, 140, 0.2);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 1px solid transparent;
+      border-width: 0 0.8rem 1.6rem 0.8rem;
+      border-color: transparent transparent rgba(25, 174, 134, 0.8) transparent;
+      transform: translateX(-50%);
+    }
   }
-  .sns-link-box {
+
+  hr.line {
+    overflow: visible;
+    position: relative;
+    margin: 3.2rem 0.8rem 1.1rem;
+    border: 0;
+    border-top: 0.1rem dashed #7b7b7b;
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -50%;
+      width: 3.2rem;
+      height: 3.2rem;
+      transform: translateY(-50%);
+    }
+    &:before {
+      left: -4.4rem;
+      background: url('../images/match/ico-match-line1.png') no-repeat center center / 100%;
+    }
+    &:after {
+      right: -4.4rem;
+      background: url('../images/match/ico-match-line1.png') no-repeat center center / 100%;
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  .comment {
+    font-size: 2.7rem;
+    font-weight: bold;
+    color: #25cb9f;
+    line-height: 1.22;
+  }
+
+  .sub-text {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+
+  // 패배 했을때
+  &.loss {
+    > .section {
+      background: #5846ff;
+    }
+    .box {
+      .text {
+        strong {
+          color: #5846ff;
+        }
+      }
+
+      &:before {
+        border-color: #5846ff;
+      }
+    }
+
+    .img-box.avatar {
+      &:after {
+        background: rgba(88, 70, 255, 0.2);
+      }
+    }
+    .comment-label {
+      background: rgba(50, 32, 214, 0.8);
+      box-shadow: 0px 4px 14px rgba(71, 61, 185, 0.2);
+
+      &:before {
+        border-color: transparent transparent rgba(55, 38, 214, 0.8) transparent;
+      }
+    }
+
+    hr.line {
+      &:before,
+      &:after {
+        background-image: url('../images/match/ico-match-line2.png');
+      }
+    }
+
+    .comment {
+      color: #5846ff;
+    }
+  }
+
+  // 무승부 했을때
+  &.draw {
+    > .section {
+      background: #15cccc;
+    }
+    .box {
+      .text {
+        strong {
+          color: #15cccc;
+        }
+      }
+
+      &:before {
+        border-color: #15cccc;
+      }
+    }
+
+    .img-box.avatar {
+      &:after {
+        background: rgba(0, 220, 220, 0.15);
+      }
+    }
+    .comment-label {
+      background: rgba(26, 182, 182, 0.8);
+      box-shadow: 0px 4px 14px rgba(0, 220, 220, 0.2);
+      &:before {
+        border-color: transparent transparent rgba(26, 182, 182, 0.8) transparent;
+      }
+    }
+
+    hr.line {
+      &:before,
+      &:after {
+        background-image: url('../images/match/ico-match-line3.png');
+      }
+    }
+
+    .comment {
+      color: #15cccc;
+    }
+  }
+
+  &.influencer {
+    .img-box.avatar {
+      overflow: visible;
+      width: 15rem;
+      margin: 3rem auto 0;
+      &:after {
+        top: -1.8rem;
+        left: -1.8rem;
+        width: 18.6rem;
+        height: 18.6rem;
+        z-index: 1;
+        background: url('../images/match/ico_influencer.png') no-repeat center center / 100%;
+        transform: none;
+      }
+    }
+
+    &.win {
+      > .section {
+        background: #fd7e64;
+      }
+      .box {
+        .text {
+          strong {
+            color: #fd7e64;
+          }
+        }
+
+        &:before {
+          border-color: #fd7e64;
+        }
+      }
+
+      .comment-label {
+        background: rgba(223, 89, 61, 0.8);
+        box-shadow: 0px 4px 14px rgba(253, 126, 100, 0.2);
+        &:before {
+          border-color: transparent transparent rgba(223, 89, 61, 0.8) transparent;
+        }
+      }
+
+      hr.line {
+        &:before,
+        &:after {
+          background-image: url('../images/match/ico-match-line4.png');
+        }
+      }
+
+      .comment {
+        color: #fd7e64;
+      }
+    }
+  }
+
+  &.share-wrap {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    a {
-      margin: 0 1.3rem;
+    flex: 1 1 auto;
+    > .section {
+      flex: 1 1 auto;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
     }
   }
 }
@@ -1856,13 +2078,13 @@
       width: 8rem;
       margin: 0 auto;
       &:before {
-        padding-top: -xyPercent(76, 67);
+        padding-top: -xyPercent(80, 68);
       }
 
       &.type2 {
-        width: 5.8rem;
+        width: 6.6rem;
         &:before {
-          padding-top: -xyPercent(58, 54);
+          padding-top: -xyPercent(66, 56);
         }
       }
     }
@@ -2013,13 +2235,13 @@
 
 .profile-tag-list {
   .list {
-    margin-top: 3.5rem;
+    margin-top: 2.6rem;
     position: relative;
     .img-badge {
       width: 14.2rem;
       margin: 0 auto;
       &:before {
-        padding-top: -xyPercent(142, 94);
+        padding-top: -xyPercent(110, 94);
       }
       ~ .checkbox {
         top: 4rem;
@@ -2057,6 +2279,13 @@
       position: absolute;
       top: 1rem;
       right: 1.4rem;
+    }
+  }
+
+  &.disabled {
+    .img-box {
+      opacity: 0.2;
+      filter: grayscale(100);
     }
   }
 }
