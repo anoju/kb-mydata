@@ -263,7 +263,8 @@
     background-image: none;
   }
 
-  &:disabled {
+  &:disabled,
+  &.disabled {
     color: $custom-select-disabled-color;
     background-color: $custom-select-disabled-bg;
   }
