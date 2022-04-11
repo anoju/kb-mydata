@@ -39,53 +39,8 @@
             </div>
           </div>
           <hr class="hr-line mt-32" aria-hidden="true" />
-          <!-- 검색결과 -->
-          <div id="result" class="pd-24y" style="display: none">
-            <p class="fz-14 fc-424242"><strong>여의도동</strong>에 대한 검색결과 <span class="fc-primary">(4)</span></p>
-            <!-- 검색결과 없음 -->
-            <div id="none" style="display: none">
-              <div class="list-empty">
-                <i class="i-ico-warning-40" aria-hidden="true"></i>
-                <p>검색 결과가 없어요</p>
-              </div>
-            </div>
-
-            <!-- 검색결과 있음 -->
-            <div id="list" style="display: none">
-              <!-- 2022-03-18: 클래스수정 -->
-              <ul class="line-list-2 mt-16">
-                <li>
-                  <a href="#" class="list-item-2 btn-click">
-                    <div class="item-tit fc-424242">서울특별시 영등포구 여의도동</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="list-item-2 btn-click">
-                    <div class="item-tit fc-424242">서울특별시 영등포구 여의도동</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="list-item-2 btn-click">
-                    <div class="item-tit fc-424242">서울특별시 영등포구 여의도동</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="list-item-2 btn-click">
-                    <div class="item-tit fc-424242">서울특별시 영등포구 여의도동</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="list-item-2 btn-click">
-                    <div class="item-tit fc-424242">서울특별시 영등포구 여의도동</div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- //검색결과 -->
         </div>
-        <!-- 검색전 -->
-        <div id="summary" class="section center-contents bg-fa pd-32y">
+        <div class="section center-contents bg-fa pd-32y">
           <ul class="txt-list fc-606060">
             <li class="dot">
               <strong class="fw-500">지역명(읍/면/동/리)</strong>
@@ -93,34 +48,11 @@
             </li>
           </ul>
         </div>
-        <!-- //검색전 -->
       </main>
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
-    <script>
-      // 임시: 검색어 입력시 화면 구성
-      $('#searchInp').on('focus keyup blur', function (e) {
-        const $this = $(this);
-        const $val = $this.val();
-        const $event = e.type;
-        if ($val === '') {
-          $('#summary').show();
-          $('#result').hide();
-        } else {
-          $('#summary').hide();
-          $('#result').show();
-          if ($val.length < 3) {
-            $('#none').show();
-            $('#list').hide();
-          } else if ($val.length >= 3) {
-            $('#none').hide();
-            $('#list').show();
-          }
-        }
-      });
-    </script>
   </body>
 </html>

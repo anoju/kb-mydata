@@ -474,6 +474,7 @@
 
   //show
   &.show {
+    display: block !important;
     @include dimm;
     transition-delay: 0s;
     > .pop-scl-wrap,
