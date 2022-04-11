@@ -31,9 +31,9 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <!-- 소유 확인중 -->
-        <div class="section center-contents justify-center">
+        <div class="section pt-100">
           <div class="t-center">
-            <div class="car-motion-wrap">
+            <div class="car-motion-wrap" role="img">
               <div class="car-motion">
                 <i></i>
                 <i></i>
@@ -49,8 +49,15 @@
         <!-- 소유 확인중 -->
 
         <!-- 본인 소유 아님 -->
-        <div class="section center-contents" style="display: none">
-          본인 소유 아님
+        <div class="section pt-100" style="display: none">
+          <div class="t-center">
+            <div class="car-motion-wrap" role="img">
+              <i class="ico-X"></i>
+              <div class="car-img off"></div>
+            </div>
+            <h2 class="tit-h1">본인 소유차량이 아니에요</h2>
+            <p class="mt-16">본인 소유 차량만 등록 가능합니다.</p>
+          </div>
           <div class="btn-wrap bottom-fixed">
             <div class="flex">
               <button type="button" class="button h60 primary">확인</button>
@@ -60,8 +67,15 @@
         <!-- //본인 소유 아님 -->
 
         <!-- 본인 소유 맞음 -->
-        <div class="section center-contents" style="display: none">
-          본인 소유 맞음
+        <div class="section pt-100" style="display: none">
+          <div class="t-center">
+            <div class="car-motion-wrap">
+              <div class="car-txt">23년형 펠리세이드 프리스티지</div>
+              <div class="car-img on"></div>
+            </div>
+            <h2 class="tit-h1">본인 소유 차량 확인 완료!</h2>
+            <p class="mt-16">차량을 등록하러 가볼까요?</p>
+          </div>
           <div class="btn-wrap bottom-fixed">
             <div class="flex">
               <button type="button" class="button h60 gray">다음에</button>
