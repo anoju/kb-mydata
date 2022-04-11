@@ -194,6 +194,14 @@
       margin-top: 0.4rem !important;
     }
   }
+  &.fc-606060 {
+    .dot,
+    .dash {
+      &:before {
+        background-color: #606060;
+      }
+    }
+  }
 }
 .txt-dl-list {
   font-size: 1.4rem;
