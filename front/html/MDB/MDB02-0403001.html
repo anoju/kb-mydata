@@ -73,13 +73,12 @@
     </article>
     <script>
       const btnChk = function () {
-        let isInsertVal = false;
+        let isInsertVal = true;
         $('.input input, .select select').each(function () {
           const $val = $(this).val();
-          if ($val === '') {
+          if (!$val) {
             isInsertVal = false;
-          } else {
-            isInsertVal = true;
+            return false;
           }
         });
         if (isInsertVal) {

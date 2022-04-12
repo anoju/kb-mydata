@@ -34,13 +34,9 @@
         <div class="section check-motion-page ready">
           <div class="t-center">
             <div class="check-motion-wrap" role="img">
-              <div class="car-motion">
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
+              <div class="digital-motion"></div>
             </div>
-            <h2 class="tit-h1">본인 소유의 차량인지<br />확인 중이에요</h2>
+            <h2 class="tit-h1">소유중인 디지털 자산을<br />찾고 있는 중이에요</h2>
             <p class="mt-16">
               잠시만 기다려주세요<i class="dot-animation"><span>.</span></i>
             </p>
@@ -50,10 +46,17 @@
 
         <!-- 본인 소유 아님 -->
         <div class="section check-motion-page">
-          <div class="t-center">
-            <div class="check-motion-wrap car-img off" role="img"></div>
-            <h2 class="tit-h1">본인 소유차량이 아니에요</h2>
-            <p class="mt-16">본인 소유 차량만 등록 가능합니다.</p>
+          <div class="t-center mb-16">
+            <div class="check-motion-wrap digital-img off" role="img"></div>
+            <h2 class="tit-h1">디지털 자산을 찾을 수 없어요</h2>
+            <p class="mt-16">소유한 디지털 자산이 조회되지 않는경우 <br />구매한 업체에 문의해주세요.</p>
+          </div>
+          <div class="txt-list">
+            <strong class="fw-500">조회가 안되는 사례</strong>
+            <ul class="mt-4">
+              <li class="dot">소유 디지털자산을 이미 모두 등록한 경우</li>
+              <li class="dot mt-2">소유한 디지털자산이 없는 경우</li>
+            </ul>
           </div>
           <div class="btn-wrap bottom-fixed">
             <div class="flex">
@@ -62,24 +65,6 @@
           </div>
         </div>
         <!-- //본인 소유 아님 -->
-
-        <!-- 본인 소유 맞음 -->
-        <div class="section check-motion-page">
-          <div class="t-center">
-            <div class="check-motion-wrap car-img on">
-              <div class="check-txt">23년형 펠리세이드 프리스티지</div>
-            </div>
-            <h2 class="tit-h1">본인 소유 차량 확인 완료!</h2>
-            <p class="mt-16">차량을 등록하러 가볼까요?</p>
-          </div>
-          <div class="btn-wrap bottom-fixed">
-            <div class="flex">
-              <button type="button" class="button h60 gray">다음에</button>
-              <button type="button" class="button h60 primary">등록하기</button>
-            </div>
-          </div>
-        </div>
-        <!-- //본인 소유 맞음 -->
       </main>
 
       <!-- 팝업 -->
@@ -88,19 +73,8 @@
     <script>
       // 임시 확인하는 시간 5초
       setTimeout(function () {
-        //랜덤값 추출
-        const $random = parseInt(randomNumber(1, 2, 0));
-
         $('.check-motion-page.ready').hide();
-        if ($random === 1) {
-          // 본인소유 아님
-          console.log('본인소유 아님');
-          $('.check-motion-page').eq(1).addClass('show');
-        } else if ($random === 2) {
-          // 본인소유
-          console.log('본인소유');
-          $('.check-motion-page').eq(2).addClass('show');
-        }
+        $('.check-motion-page').eq(1).addClass('show');
       }, 5000);
     </script>
   </body>

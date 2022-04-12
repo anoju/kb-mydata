@@ -66,14 +66,14 @@
 
           <div class="input form-box">
             <div class="form-lbl">휴대폰번호</div>
-            <input type="text" placeholder="휴대폰번호" title="휴대폰번호 입력" />
+            <input type="tel" placeholder="휴대폰번호" title="휴대폰번호 입력" />
           </div>
 
           <div class="chk-item in-btn mt-16">
             <div class="checkbox">
               <input type="checkbox" id="agreeChk" /><i aria-hidden="true"></i>
               <label for="agreeChk" class="lbl">[필수]개인정보 제3자 제공에 대한 별도 동의</label>
-              <a href="#" role="button" class="btn" aria-label="약관상세내용 확인"><i class="i-ico-arr-right-24" aria-hidden="true"></i></a>
+              <a href="#" role="button" class="btn" aria-label="약관상세내용 확인" onclick="Layer.open('#popTerms')"><i class="i-ico-arr-right-24" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -86,24 +86,59 @@
       </main>
 
       <!-- 팝업 -->
+      <!-- 약관 -->
+      <div id="popTerms" class="popup full" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="section">
+              <article class="terms-content">
+                <h1>[필수] 개인정보 제3자 제공에 대한 별도 동의</h1>
+
+                <div class="terms-text mt-24">
+                  <h4>개인정보를 제공받는 자</h4>
+                  <p class="terms-txt-point"><strong>아트투게더</strong></p>
+
+                  <h4>개인정보를 제공받는 자의 개인정보 이용 목적</h4>
+                  <p>아트투게더 상품 조회, 디지털 자산 추가</p>
+
+                  <h4>제공하는 개인정보의 항목</h4>
+                  <p>성명, 주민등록번호, 휴대폰번호</p>
+
+                  <h4>개인정보를 제공받는 자의 개인정보 보유 및 이용 기간</h4>
+                  <p>자산조회 또는 본 부수 서비스 탈회 또는 등의 철회시까지 (단, 다른 관련 법령에 해당하는 경우 해당 법령상의 보존기간을 따름)</p>
+
+                  <p>고객님게서는 개인정보 제공에 동의를 거부할 수 있으며, 동의 거부 시 본 서비스 이용이 제한 될 수 있습니다.</p>
+
+                  <p>교보증권은 상기 정보와 목적 외에는 이용자의 정보를 제공하지 않으며, 서비스 이용을 위한 목적 외에는 고객정보를 활요하지 않습니다.</p>
+                </div>
+
+                <h4>위 고유식별정보 수집 이용에 동의하십니까?</h4>
+              </article>
+            </div>
+          </div>
+        </article>
+      </div>
       <!-- //팝업 -->
     </article>
     <script>
       const btnChk = function () {
-        let isInsertVal = false;
+        let isInsertVal = true;
         $('.input input, .select select, .checkbox input').each(function () {
           const $val = $(this).val();
           if ($(this).attr('type') === 'checkbox') {
-            if ($(this).prop('checked')) {
-              isInsertVal = true;
-            } else {
+            if (!$(this).prop('checked')) {
               isInsertVal = false;
+              return false;
             }
           } else {
-            if ($val === '') {
+            if (!$val) {
               isInsertVal = false;
-            } else {
-              isInsertVal = true;
+              return false;
             }
           }
         });

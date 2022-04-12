@@ -4042,7 +4042,7 @@ ui.List = {
     $($wrapClass + ' ' + $allChkClass).change(function () {
       const $this = $(this);
       const $wrap = $this.closest($wrapClass);
-      const $items = $wrap.find($chkClass);
+      const $items = $wrap.find($chkClass).not(':disabled');
       if ($(this).prop('checked')) {
         $items.prop('checked', true).change();
       } else {
@@ -4053,9 +4053,9 @@ ui.List = {
       const $this = $(this);
       const $wrap = $this.closest($wrapClass);
       const $allchk = $wrap.find($allChkClass);
-      const $items = $wrap.find($chkClass);
+      const $items = $wrap.find($chkClass).not(':disabled');
       const $itemsLength = $items.length;
-      const $itemsChecked = $wrap.find($chkClass + ':checked').length;
+      const $itemsChecked = $wrap.find($chkClass + ':checked').not(':disabled').length;
       if ($itemsLength === $itemsChecked) {
         $allchk.prop('checked', true);
       } else {

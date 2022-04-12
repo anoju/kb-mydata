@@ -746,18 +746,27 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
     height: 6rem;
     padding: 1rem var(--base-padding);
     margin: 0;
+
+    > input,
+    > input + i {
+      left: auto !important;
+      right: var(--base-padding) !important;
+      top: 50%;
+      margin-top: -1.2rem;
+    }
     .lbl {
       padding: 0;
       font-size: inherit;
       line-height: inherit;
-      margin-right: 3rem;
-
-      ~ input,
-      ~ input + i {
-        left: auto;
-        right: var(--base-padding);
-        top: 50%;
-        margin-top: -1.2rem;
+      margin-left: 0;
+      margin-right: 4rem;
+    }
+    > input:disabled {
+      ~ .lbl {
+        .item-tit,
+        .item-sub {
+          color: #c2c2c2;
+        }
       }
     }
     .section & {
@@ -769,6 +778,18 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
     color: var(--strong-txt-color2);
     strong {
       font-weight: 500;
+    }
+    &.ty2 {
+      display: flex;
+      align-items: center;
+      strong {
+        width: 100%;
+      }
+      span {
+        margin-left: auto;
+        flex-shrink: 0;
+        font-size: 1.2rem;
+      }
     }
   }
   .item-sub {
