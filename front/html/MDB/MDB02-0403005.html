@@ -13,7 +13,7 @@
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
     <script>
-      ui.Common.title('자동차 조회정보 입력');
+      ui.Common.title('자동차 세부모델 등록');
     </script>
   </head>
   <body>
@@ -31,39 +31,47 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="section">
-          <h1 class="tit-h1">소유하고 있는 <br />차량 번호를 알려주세요</h1>
+          <h1 class="tit-h1">23년형 펠리세이드 프리스티지</h1>
+          <p class="fz-14 fc-818892">01가 1234</p>
 
-          <div class="input form-box mt-32">
-            <div class="form-lbl">차량번호</div>
-            <input id="carNum" type="text" placeholder="123가1234" title="차량번호입력" />
+          <div class="select form-box mt-32">
+            <div class="form-lbl">세부 모델</div>
+            <select title="세부 모델명 선택">
+              <option value="">세부 모델명 선택</option>
+              <option value="a">더 뉴그랜저 IG</option>
+              <option value="b">더 뉴그랜저 IG 하이브리드</option>
+              <option value="c">그랜저 IG</option>
+              <option value="d">그랜저 IG 하이브리드</option>
+              <option value="1">세부 모델명1</option>
+              <option value="2">세부 모델명2</option>
+              <option value="3">세부 모델명3</option>
+              <option value="4">세부 모델명4</option>
+              <option value="5">세부 모델명5</option>
+              <option value="6">세부 모델명6</option>
+            </select>
           </div>
 
           <div class="select form-box">
-            <div class="form-lbl">주행거리</div>
-            <select title="주행거리 선택">
-              <option value="">주행거리를 선택해주세요</option>
-              <option value="1">1만Km 미만</option>
-              <option value="2">1만Km 이상 ~ 2만Km 미만</option>
-              <option value="3">2만Km 이상 ~ 3만Km 미만</option>
-              <option value="4">3만Km 이상 ~ 4만Km 미만</option>
-              <option value="5">4만Km 이상 ~ 5만Km 미만</option>
-              <option value="6">5만Km 이상 ~ 6만Km 미만</option>
-              <option value="7">6만Km 이상 ~ 7만Km 미만</option>
-              <option value="8">7만Km 이상 ~ 8만Km 미만</option>
-              <option value="9">8만Km 이상 ~ 9만Km 미만</option>
-              <option value="10">9만Km 이상 ~ 10만Km 미만</option>
-              <option value="11">10만Km 이상 ~ 11만Km 미만</option>
-              <option value="12">11만Km 이상 ~ 12만Km 미만</option>
-              <option value="13">12만Km 이상 ~ 12만Km 미만</option>
-              <option value="14">13만Km 이상 ~ 13만Km 미만</option>
-              <option value="15">14만Km 이상</option>
+            <div class="form-lbl">등급</div>
+            <select title="등급 선택">
+              <option value="">등급 선택</option>
+              <option value="a">스텐다드 레인지</option>
+              <option value="b">롱 레인지</option>
+              <option value="c">퍼포먼스</option>
+              <option value="1">등급 선택1</option>
+              <option value="1">등급 선택1</option>
+              <option value="2">등급 선택2</option>
+              <option value="3">등급 선택3</option>
+              <option value="4">등급 선택4</option>
+              <option value="5">등급 선택5</option>
+              <option value="6">등급 선택6</option>
             </select>
           </div>
         </div>
 
         <div class="btn-wrap bottom-fixed">
           <div class="flex">
-            <button type="button" id="btnMain" class="button h60 primary" disabled>조회</button>
+            <button type="button" id="btnMain" class="button h60 primary" disabled>등록</button>
           </div>
         </div>
       </main>
@@ -74,7 +82,7 @@
     <script>
       const btnChk = function () {
         let isInsertVal = false;
-        $('.input input, .select select').each(function () {
+        $('.select select').each(function () {
           const $val = $(this).val();
           if ($val === '') {
             isInsertVal = false;
@@ -88,15 +96,6 @@
           $('#btnMain').prop('disabled', true);
         }
       };
-      $('#carNum').on('focus keyup', function () {
-        const $val = $(this).val();
-        if ($val.length < 7) {
-          ui.Form.error('#carNum', '차량번호를 확인하세요');
-        } else {
-          ui.Form.error('#carNum', false);
-          btnChk();
-        }
-      });
       $('.select select').on('change', function () {
         btnChk();
       });

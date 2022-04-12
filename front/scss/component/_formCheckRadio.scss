@@ -586,6 +586,23 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
     font-size: 1.4rem;
     line-height: 2rem;
   }
+  .btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding-right: 2rem;
+  }
+  &.in-btn {
+    > .checkbox,
+    > .radio {
+      .lbl {
+        padding-right: 5rem;
+      }
+    }
+  }
   &.ty2 {
     > .checkbox,
     > .radio {
