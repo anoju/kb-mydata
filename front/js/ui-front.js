@@ -326,8 +326,8 @@ ui.Common = {
     if ($title.indexOf($divide) >= 0) $title = $title.split($divide)[1];
     const $titString = string.replace(/<[^>]*>?/gm, '');
     document.title = $titString + $divide + $title;
-    // const $titleEl = '#header h1';
-    // if ($($titleEl).length) $($titleEl).html(string);
+    const $titleEl = '#header h1';
+    if ($($titleEl).length && !$($titleEl).hasClass('no-title')) $($titleEl).html(string);
   },
   getTopFixedHeight: function (element, className) {
     if (className == undefined) className = 'top-fixed';
@@ -403,10 +403,10 @@ ui.Common = {
     let $title = document.title;
     const $divide = ' | ';
     const $titleEl = $('#header h1');
-    // if ($title.indexOf($divide) >= 0) {
-    //   $title = $title.split($divide)[0];
-    //   if ($titleEl.length) $titleEl.html($title);
-    // }
+    if ($title.indexOf($divide) >= 0) {
+      $title = $title.split($divide)[0];
+      if ($titleEl.length && !$titleEl.hasClass('no-title') && $titleEl.text() === '') $titleEl.html($title);
+    }
     if ($('.' + ui.Common.scrollShowTitleClass).length) $titleEl.addClass('scl-title-hide');
 
     if (!$titleEl.length) return;
