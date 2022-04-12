@@ -162,7 +162,7 @@ const makeBoard = function () {
         trHtml += '<tr class="hr">';
 
         if (obj.lastVer_SB !== undefined && obj.lastVer_SB !== '') {
-          trHtml += '<th scope="col" class="sb" colspan="12">' + obj.depth1;
+          trHtml += '<th scope="col" class="sb_ver" colspan="12">' + obj.depth1;
           trHtml += '<span>' + obj.lastVer_SB + '</span>';
           trHtml += '</th>';
         } else {
