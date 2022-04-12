@@ -125,14 +125,13 @@
       });
 
       const btnChk = function () {
-        let isInsertVal = false;
+        let isInsertVal = true;
         $('.input input, .select select').each(function () {
           const $val = $(this).val();
           if ($(this).parent().is(':visible')) {
-            if ($val === '') {
+            if (!$val) {
               isInsertVal = false;
-            } else {
-              isInsertVal = true;
+              return false;
             }
           }
         });
