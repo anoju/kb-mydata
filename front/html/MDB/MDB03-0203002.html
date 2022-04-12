@@ -13,21 +13,31 @@
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
     <script>
-      ui.Common.title('디지털자산 소유목록');
+      ui.Common.title('디지털자산 삭제');
     </script>
   </head>
   <body>
     <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
-        <div class="section pt-64">
-          <h1 class="tit-h1">소유한 디지털 자산을 찾았어요</h1>
+        <div class="section">
+          <h1 class="tit-h1">삭제할 디지털 자산을 <br />선택해주세요</h1>
           <h2 class="tit-h3 mt-32">아트투게더</h2>
 
           <!-- 전체 선택기능용 클래스: .ui-chk-wrap로 감사고 (불필요시 해당 클래스만 삭제) -->
           <div class="ui-chk-wrap mt-22">
             <div class="title-bar">
-              <div class="left fz-14"><span id="checkedLength" class="fc-primary">0</span> / 4</div>
+              <div class="left fz-14"><span id="checkedLength" class="fc-primary">0</span> / 6</div>
               <div class="right">
                 <label class="checkbox ty2">
                   <!-- 전체 선택기능용 클래스: 전체선택에 .ui-all-chk 클래스 (불필요시 해당 클래스만 삭제) -->
@@ -40,24 +50,20 @@
               <div class="check-list-item">
                 <label class="checkbox">
                   <!-- 전체 선택기능용 클래스: 개별선택에 .ui-chk 클래스 (불필요시 해당 클래스만 삭제) -->
-                  <!-- 이미 추가된  항목 checked, disabled 속성 추가 -->
-                  <input type="checkbox" class="ui-chk" checked disabled /><i aria-hidden="true"></i>
+                  <input type="checkbox" class="ui-chk" /><i aria-hidden="true"></i>
                   <div class="lbl">
                     <div class="item-tit ty2">
                       <strong>소유한 작품명1 소유한 작품명1 소유한 작품명1 소유한 작품명1</strong>
-                      <!-- 이미 추가된 항목 노출 -->
-                      <span>추가됨</span>
                     </div>
                   </div>
                 </label>
               </div>
               <div class="check-list-item">
                 <label class="checkbox">
-                  <input type="checkbox" class="ui-chk" checked disabled /><i aria-hidden="true"></i>
+                  <input type="checkbox" class="ui-chk" /><i aria-hidden="true"></i>
                   <div class="lbl">
                     <div class="item-tit ty2">
                       <strong>소유한 작품명2</strong>
-                      <span>추가됨</span>
                     </div>
                   </div>
                 </label>
@@ -107,13 +113,14 @@
         </div>
         <div class="btn-wrap bottom-fixed">
           <div class="flex">
-            <button type="button" class="button h60 gray">다음에</button>
-            <button type="button" id="btnNext" class="button h60 primary" disabled>등록하기</button>
+            <button type="button" id="btnNext" class="button h60 primary" disabled>삭제</button>
           </div>
         </div>
       </main>
     </article>
     <script>
+      Layer.alert('소유한 자산이 없용.<br />자산 홈으로 이동 할게요.');
+
       $('.check-list-wrap .checkbox input').change(function () {
         setTimeout(function () {
           const $length = $('.check-list-wrap .checkbox input:checked').not(':disabled').length;
@@ -124,6 +131,13 @@
             $('#btnNext').prop('disabled', true);
           }
         }, 10);
+      });
+
+      $('#btnNext').click(function (e) {
+        e.preventDefault();
+        const $num = $('#checkedLength').text();
+        const $text = '선택한 ' + $num + '개의 자산을 삭제하려해요.<br />이대로 진행할까요?';
+        Layer.confirm($text);
       });
     </script>
   </body>

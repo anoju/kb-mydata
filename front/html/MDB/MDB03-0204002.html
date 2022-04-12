@@ -13,7 +13,7 @@
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
     <script>
-      ui.Common.title('등록자산 정보 입력');
+      ui.Common.title('등록자산 정보 수정');
     </script>
   </head>
   <body>
@@ -31,28 +31,34 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="section">
-          <h1 class="tit-h1">등록 자산을 입력해주세요</h1>
+          <h1 class="tit-h1">등록한 자산을 수정해주세요</h1>
 
           <div class="input form-box mt-32">
             <div class="form-lbl">자산의 이름은 무엇인가요?</div>
-            <input type="text" placeholder="한글, 숫자, 영문 사용하여 10자로 작성" title="이름 입력" />
+            <input type="text" placeholder="한글, 숫자, 영문 사용하여 10자로 작성" title="이름 입력" value="홍길동" />
           </div>
 
           <div class="input form-box">
             <div class="form-lbl">얼마에 구매했나요?</div>
-            <input class="t-right" type="tel" placeholder="0" title="구매가 입력" />
+            <input class="t-right" type="tel" placeholder="0" title="구매가 입력" value="17,000,000" />
             <div class="unit">원</div>
           </div>
 
           <div class="input form-box">
             <div class="form-lbl">언제 샀나요?</div>
-            <input type="date" placeholder="날짜를 선택해주세요" title="구매일 입력" />
+            <input type="date" placeholder="날짜를 선택해주세요" title="구매일 입력" value="2022-03-10" />
+          </div>
+
+          <div class="btn-wrap mt-32">
+            <div class="flex">
+              <button type="button" id="btnDelete" class="button line">내 자산 삭제</button>
+            </div>
           </div>
         </div>
 
         <div class="btn-wrap bottom-fixed">
           <div class="flex">
-            <button type="button" id="btnMain" class="button h60 primary" disabled>등록</button>
+            <button type="button" id="btnMain" class="button h60 primary">수정</button>
           </div>
         </div>
       </main>
@@ -61,23 +67,9 @@
       <!-- //팝업 -->
     </article>
     <script>
-      const btnChk = function () {
-        let isInsertVal = true;
-        $('.input input').each(function () {
-          const $val = $(this).val();
-          if (!$val) {
-            isInsertVal = false;
-            return false;
-          }
-        });
-        if (isInsertVal) {
-          $('#btnMain').prop('disabled', false);
-        } else {
-          $('#btnMain').prop('disabled', true);
-        }
-      };
-      $('.input input').on('focus keyup', function () {
-        btnChk();
+      Layer.alert('소유한 자산이 없어요.<br />자산홈으로 이동할게요.');
+      $('#btnDelete').click(function () {
+        Layer.confirm('선택한 자산을 삭제하려 해요.<br />이대로 진행할까요?');
       });
     </script>
   </body>

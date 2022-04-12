@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>교보증권 마이데이타</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('자동차 세부모델 수정');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <h1 class="tit-h1">23년형 펠리세이드 프리스티지</h1>
+          <p class="fz-14 fc-818892">01가 1234</p>
+
+          <div class="select form-box mt-32">
+            <div class="form-lbl">세부 모델</div>
+            <select title="세부 모델명 선택">
+              <option value="">세부 모델명 선택</option>
+              <option value="a">더 뉴그랜저 IG</option>
+              <option value="b">더 뉴그랜저 IG 하이브리드</option>
+              <option value="c">그랜저 IG</option>
+              <option value="d">그랜저 IG 하이브리드</option>
+              <option value="1">세부 모델명1</option>
+              <option value="2">세부 모델명2</option>
+              <option value="3">세부 모델명3</option>
+              <option value="4">세부 모델명4</option>
+              <option value="5">세부 모델명5</option>
+              <option value="6">세부 모델명6</option>
+            </select>
+          </div>
+
+          <div class="select form-box">
+            <div class="form-lbl">등급</div>
+            <select title="등급 선택">
+              <option value="">등급 선택</option>
+              <option value="a">스텐다드 레인지</option>
+              <option value="b">롱 레인지</option>
+              <option value="c">퍼포먼스</option>
+              <option value="1">등급 선택1</option>
+              <option value="1">등급 선택1</option>
+              <option value="2">등급 선택2</option>
+              <option value="3">등급 선택3</option>
+              <option value="4">등급 선택4</option>
+              <option value="5">등급 선택5</option>
+              <option value="6">등급 선택6</option>
+            </select>
+          </div>
+
+          <div class="btn-wrap mt-32">
+            <div class="flex">
+              <button type="button" id="btnDelete" class="button line">차 삭제</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-wrap bottom-fixed">
+          <div class="flex">
+            <button type="button" id="btnMain" class="button h60 primary">확인</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- 팝업 -->
+      <!-- //팝업 -->
+    </article>
+    <script>
+      Layer.alert('등록된 차량이 없습니다.<br />자산홈으로 이동할까요.');
+      $('#btnDelete').click(function () {
+        Layer.confirm('선택한 자산을 삭제하려 해요.<br />이대로 진행할까요?');
+      });
+    </script>
+  </body>
+</html>
