@@ -1264,6 +1264,8 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 .form-control.disabled,
 .custom-select.disabled {
   pointer-events: none;
+  color: $custom-select-disabled-color;
+  background-color: $custom-select-disabled-bg;
 }
 .custom-control-wrap {
   padding: 0.25rem 0;
