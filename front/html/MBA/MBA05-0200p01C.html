@@ -22,7 +22,7 @@
         </div>
 
         <!-- 선택 및 기본값 임시 저장-->
-        <input type="hidden" name="optAge" value="30" />
+        <input type="hidden" name="optAge" value="20,30" />
         <input type="hidden" name="optMnyS" value="2" />
         <input type="hidden" name="optMnyE" value="4" />
       </main>
@@ -46,20 +46,21 @@
             </div>
             <div class="tg-btn-wrap group mt-16">
               <div class="flex">
-                <div class="radio btn">
-                  <input type="radio" id="tglrdo1-1" name="age" value="20" /><i aria-hidden="true"></i>
+                <!-- 2022-04-12 체크박스로 변경 -->
+                <div class="checkbox btn">
+                  <input type="checkbox" id="tglrdo1-1" value="20" name="age" /><i aria-hidden="true"></i>
                   <label for="tglrdo1-1" class="lbl">20대</label>
                 </div>
-                <div class="radio btn">
-                  <input type="radio" id="tglrdo1-2" name="age" value="30" /><i aria-hidden="true"></i>
+                <div class="checkbox btn">
+                  <input type="checkbox" id="tglrdo1-2" value="30" name="age" /><i aria-hidden="true"></i>
                   <label for="tglrdo1-2" class="lbl">30대</label>
                 </div>
-                <div class="radio btn">
-                  <input type="radio" id="tglrdo1-3" name="age" value="40" /><i aria-hidden="true"></i>
+                <div class="checkbox btn">
+                  <input type="checkbox" id="tglrdo1-3" value="40" name="age" /><i aria-hidden="true"></i>
                   <label for="tglrdo1-3" class="lbl">40대</label>
                 </div>
-                <div class="radio btn">
-                  <input type="radio" id="tglrdo1-4" name="age" value="50" /><i aria-hidden="true"></i>
+                <div class="checkbox btn">
+                  <input type="checkbox" id="tglrdo1-4" value="50" name="age" /><i aria-hidden="true"></i>
                   <label for="tglrdo1-4" class="lbl">50대 이상</label>
                 </div>
               </div>
@@ -92,20 +93,23 @@
       </article>
     </div>
 
+    <!-- 2022-04-12 스크립트 변경 -->
     <script>
       const $optAge = $('input[name=optAge]');
       const $optMnyS = $('input[name=optMnyS]');
       const $optMnyE = $('input[name=optMnyE]');
 
       const $optValSet = function () {
-        const $optAgeVal = $optAge.val();
+        const $optAgeVal = $optAge.val().split(',');
         const $pop = $('#popMatchOpt');
         $pop.find('input[name=age]').prop('checked', false).siblings('.lbl').removeClass('fc-primary');
-        $pop
-          .find('input[name=age][value=' + $optAgeVal + ']')
-          .prop('checked', true)
-          .siblings('.lbl')
-          .addClass('fc-primary');
+        $.each($optAgeVal, function (i, j) {
+          $pop
+            .find('input[name=age][value=' + j + ']')
+            .prop('checked', true)
+            .siblings('.lbl')
+            .addClass('fc-primary');
+        });
         const $optMnySVal = $optMnyS.val();
         const $optMnyEVal = $optMnyE.val();
         $pop.find('input[name=moneyS]').val($optMnySVal);
@@ -117,9 +121,14 @@
 
       const setOpt = function () {
         const $pop = $('#popMatchOpt');
-        const $ageVal = $pop.find('input[name=age]:checked').val();
+        let $ageVal = '';
         const $moneySVal = $pop.find('input[name=moneyS]').val();
         const $moneyEVal = $pop.find('input[name=moneyE]').val();
+
+        $pop.find('input[name=age]:checked').each(function (i) {
+          if (i > 0) $ageVal += ',';
+          $ageVal += $(this).val();
+        });
         $optAge.val($ageVal);
         $optMnyS.val($moneySVal);
         $optMnyE.val($moneyEVal);
