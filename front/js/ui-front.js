@@ -403,10 +403,10 @@ ui.Common = {
     let $title = document.title;
     const $divide = ' | ';
     const $titleEl = $('#header h1');
-    if ($title.indexOf($divide) >= 0) {
-      $title = $title.split($divide)[0];
-      if ($titleEl.length) $titleEl.html($title);
-    }
+    // if ($title.indexOf($divide) >= 0) {
+    //   $title = $title.split($divide)[0];
+    //   if ($titleEl.length) $titleEl.html($title);
+    // }
     if ($('.' + ui.Common.scrollShowTitleClass).length) $titleEl.addClass('scl-title-hide');
 
     if (!$titleEl.length) return;
