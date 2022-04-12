@@ -13,7 +13,6 @@
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
     <script>
-      // 2022-03-30: 추가
       ui.Common.title('나의 자산 금액 설정');
     </script>
   </head>
@@ -34,6 +33,19 @@
         <div class="section">
           <h1 class="tit-h1">나의 자산 금액 설정</h1>
           <h2 class="tit-h3 mt-32">마이자산</h2>
+          <div class="flex not-full mt-23 align-center">
+            <p class="fz-16 fc-424242">나의 자산 금액 설정</p>
+            <div class="checkbox switch2 large in-txt only-active ml-auto"><input type="checkbox" id="switch5" /><i aria-hidden="true" data-on="총자산" data-off="순자산"></i></div>
+          </div>
+          <p class="mt-24 fz-14 fc-818892">마이 메인의 표시되는 나의 자산의 총합을 어떤 기준으로 볼 것인지 변경할 수 있습니다. 한번 설정하면 총합의 기준이 적용되어 보여집니다.</p>
+
+          <div class="bg-f8 bd-radius-10 pd-20 mt-24">
+            <p class="fz-14 fw-bold">총자산</p>
+            <p class="mt-4 fz-14">계좌 + 투자 + 포인트 + 자동차 + 부동산 + 디지털자산 + 직접 등록한 자산을 합산한 금액</p>
+
+            <p class="fz-14 fw-bold mt-20">순자산</p>
+            <p class="mt-4 fz-14">총자산에서 대출금을 제외한 금액</p>
+          </div>
         </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
