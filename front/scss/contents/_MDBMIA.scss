@@ -1141,12 +1141,20 @@
   padding-top: 10rem;
   display: none;
   flex: 1 0 auto;
+  flex-direction: column;
+  padding-bottom: 11rem !important;
+  > * {
+    width: 100%;
+  }
   &.ready {
-    display: block;
+    display: flex;
   }
   &.show {
-    display: block;
+    display: flex;
     animation: fadeInUpSmall 0.5s;
+  }
+  .txt-list {
+    margin-top: auto;
   }
 }
 .check-motion-wrap {
@@ -1167,7 +1175,9 @@
     background-image: url(../images/MY/car-motion-X.png);
   }
   .check-txt {
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1175,7 +1185,7 @@
     width: calc(100% - 2rem);
     min-height: 6rem;
     padding: 1rem;
-    margin: 0 1rem 3.3rem;
+    margin: 2.5rem 1rem 0;
     background: #474f59;
     font-size: 1.2rem;
     color: #fff;
@@ -1193,19 +1203,31 @@
       border-top-color: #474f59;
     }
   }
-  .car-img {
-    flex-shrink: 0;
-    position: relative;
-    width: 16.2rem;
-    height: 13rem;
-    margin-bottom: 3.2rem;
+  &.car-img {
     @include bg-etc;
     &.on {
-      background-image: url(../images/MY/car-motion-4.png);
+      background-image: url(../images/MY/car-motion-on.png);
     }
     &.off {
-      background-image: url(../images/MY/car-motion-5.png);
+      background-image: url(../images/MY/car-motion-off.png);
     }
+  }
+  &.digital-img {
+    @include bg-etc;
+    &.off {
+      background-image: url(../images/MY/digital-motion-off.png);
+    }
+  }
+}
+.digital-motion {
+  width: 28rem;
+  height: 28rem;
+  background: url(../images/MY/digital-motion.png) no-repeat center top / 100% auto;
+  animation: digital-motion-bg 1.5s steps(4) infinite;
+}
+@keyframes digital-motion-bg {
+  100% {
+    background-position: 0 -112rem;
   }
 }
 .car-motion {

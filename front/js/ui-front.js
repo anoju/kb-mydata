@@ -326,8 +326,8 @@ ui.Common = {
     if ($title.indexOf($divide) >= 0) $title = $title.split($divide)[1];
     const $titString = string.replace(/<[^>]*>?/gm, '');
     document.title = $titString + $divide + $title;
-    const $titleEl = '#header h1';
-    if ($($titleEl).length) $($titleEl).html(string);
+    // const $titleEl = '#header h1';
+    // if ($($titleEl).length) $($titleEl).html(string);
   },
   getTopFixedHeight: function (element, className) {
     if (className == undefined) className = 'top-fixed';
