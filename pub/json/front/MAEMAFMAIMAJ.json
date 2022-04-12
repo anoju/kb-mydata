@@ -238,8 +238,49 @@
   ,{
     "id": "MAJ01-0000001C",
     "url": "../../front/html/MAJ/",
+    "depth2": "더보기",
+    "depth3": "메인",
     "name": "더보기 메인",
     "worker": "안효주",
     "complete": "2022-03-28"
+  }
+  ,{
+    "id": "MAJ01-0000002C",
+    "url": "../../front/html/MAJ/",
+    "depth2": "더보기",
+    "depth3": "약관동의",
+    "name": "약관동의",
+    "worker": "장영석",
+    "complete": "2022-04-12"
+  }
+  ,{
+    "id": "MAJ01-0000p01C",
+    "url": "../../front/html/MAJ/",
+    "depth2": "더보기",
+    "depth3": "약관동의",
+    "depth4": "매치 서비스 이용 약관",
+    "name": "매치 서비스 이용 약관",
+    "worker": "장영석",
+    "complete": "2022-04-12"
+  }
+  ,{
+    "id": "MAJ01-0000p02C",
+    "url": "../../front/html/MAJ/",
+    "depth2": "더보기",
+    "depth3": "약관동의",
+    "depth4": "개인정보 수집, 이용동의",
+    "name": "개인정보 수집, 이용동의",
+    "worker": "장영석",
+    "complete": "2022-04-12"
+  }
+  ,{
+    "id": "MAJ01-0000p03C",
+    "url": "../../front/html/MAJ/",
+    "depth2": "더보기",
+    "depth3": "약관동의",
+    "depth4": "앱 전체 마케팅 정보 이용동의",
+    "name": "앱 전체 마케팅 정보 이용동의",
+    "worker": "장영석",
+    "complete": "2022-04-12"
   }
 ]
