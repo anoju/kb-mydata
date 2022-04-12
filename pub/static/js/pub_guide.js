@@ -160,7 +160,14 @@ const makeBoard = function () {
 
       if (obj.depth1 !== undefined && obj.depth1 !== '') {
         trHtml += '<tr class="hr">';
-        trHtml += '<th scope="col" colspan="12">' + obj.depth1 + '</th>';
+        //2022-04-11 스토리보드 버전 정보 추가
+        if (obj.lastVer_SB !== undefined && obj.lastVer_SB !== '') {
+          trHtml += '<th scope="col" class="sb_ver" colspan="12">' + obj.depth1;
+          trHtml += '<span>' + obj.lastVer_SB + '</span>';
+          trHtml += '</th>';
+        } else {
+          trHtml += '<th scope="col" colspan="12">' + obj.depth1 + '</th>';
+        }
       } else {
         if (obj.state) {
           trHtml += '<tr class="' + obj.state + '">';

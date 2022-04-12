@@ -1221,6 +1221,8 @@
       left: 3.2rem;
       bottom: 2.7rem;
       background-image: url(../images/MY/car-motion-2.png);
+      opacity: 0;
+      animation: carMotion 4s infinite both;
     }
     &:nth-child(3) {
       opacity: 0;
@@ -1228,7 +1230,9 @@
       height: 100%;
       left: 0;
       bottom: 0;
+      opacity: 0;
       background-image: url(../images/MY/car-motion-3.png);
+      animation: carMotion 4s infinite 0.7s both;
     }
   }
 }
@@ -1266,5 +1270,27 @@
   100% {
     opacity: 1;
     transform: translateY(0rem);
+  }
+}
+
+@keyframes carMotion {
+  0%,
+  10% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  15% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  70% {
+    opacity: 1;
+  }
+  85%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0;
   }
 }

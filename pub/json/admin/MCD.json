@@ -1,6 +1,7 @@
 [
   {
-    "depth1": "관리자"
+    "depth1": "관리자",
+    "lastVer_SB": "MCC_관리자_<span>v1.0_202220407</span>"
   },
   {
     "id": "MCD01-0100001C",
@@ -67,16 +68,16 @@
     "change": "2022-03-30",
     "etc": "그룹 메뉴 권한 설정 팝업 포함"
   },
-    {
-      "id": "MCD02-0300001C",
-      "url": "../../admin/html/MCD/",
-      "type": "page",
-      "depth2": "권한설정",
-      "depth3": "관리자권한설정",
-      "name": "권한설정 관리자권한설정",
-      "worker": "변상우",
-      "complete": "2022-03-14",
-      "change": "2022-03-29",
-      "etc": ""
-    }
+  {
+    "id": "MCD02-0300001C",
+    "url": "../../admin/html/MCD/",
+    "type": "page",
+    "depth2": "권한설정",
+    "depth3": "관리자권한설정",
+    "name": "권한설정 관리자권한설정",
+    "worker": "변상우",
+    "complete": "2022-03-14",
+    "change": "2022-03-29",
+    "etc": ""
+  }
 ]
