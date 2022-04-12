@@ -1008,6 +1008,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
       font-size: 1rem;
       line-height: 1.5;
       border-radius: 0.25rem;
+      min-width: auto !important;
       & + .btn {
         margin-left: 0.625rem;
       }
