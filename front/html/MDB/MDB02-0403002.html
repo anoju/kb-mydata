@@ -31,9 +31,9 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <!-- 소유 확인중 -->
-        <div class="section pt-100">
+        <div class="section check-motion-page ready">
           <div class="t-center">
-            <div class="car-motion-wrap" role="img">
+            <div class="check-motion-wrap" role="img">
               <div class="car-motion">
                 <i></i>
                 <i></i>
@@ -49,9 +49,9 @@
         <!-- 소유 확인중 -->
 
         <!-- 본인 소유 아님 -->
-        <div class="section pt-100" style="display: none">
+        <div class="section check-motion-page motion">
           <div class="t-center">
-            <div class="car-motion-wrap" role="img">
+            <div class="check-motion-wrap" role="img">
               <i class="ico-X"></i>
               <div class="car-img off"></div>
             </div>
@@ -67,10 +67,10 @@
         <!-- //본인 소유 아님 -->
 
         <!-- 본인 소유 맞음 -->
-        <div class="section pt-100" style="display: none">
+        <div class="section check-motion-page motion">
           <div class="t-center">
-            <div class="car-motion-wrap">
-              <div class="car-txt">23년형 펠리세이드 프리스티지</div>
+            <div class="check-motion-wrap">
+              <div class="check-txt">23년형 펠리세이드 프리스티지</div>
               <div class="car-img on"></div>
             </div>
             <h2 class="tit-h1">본인 소유 차량 확인 완료!</h2>
@@ -89,47 +89,23 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
-    <!-- <script>
-      const topVal = '-80';
-      let ani = anime.timeline({
-        duration: 2000,
-        loop: true
-      });
-      ani.add({
-        targets: $('.car-motion i')[1],
-        delay: 400,
-        easing: 'easeOutExpo',
-        opacity: [0, 1],
-        translateY: {
-          value: [topVal, 0],
-          delay: 500
+    <script>
+      // 임시 확인하는 시간 5초
+      setTimeout(function () {
+        //랜덤값 추출
+        const $random = parseInt(randomNumber(1, 2, 0));
+
+        $('.check-motion-page.ready').hide();
+        if ($random === 1) {
+          // 본인소유 아님
+          console.log('본인소유 아님');
+          $('.check-motion-page').eq(1).addClass('show');
+        } else if ($random === 2) {
+          // 본인소유
+          console.log('본인소유');
+          $('.check-motion-page').eq(2).addClass('show');
         }
-      });
-      ani.add(
-        {
-          targets: $('.car-motion i')[2],
-          delay: 400,
-          easing: 'easeOutExpo',
-          opacity: [0, 1],
-          translateY: {
-            value: [topVal, 0],
-            delay: 500
-          }
-        },
-        '-=1500'
-      );
-      ani.add({
-        targets: $('.car-motion i')[1],
-        easing: 'easeOutExpo',
-        duration: 400,
-        opacity: [1, 0]
-      });
-      ani.add({
-        targets: $('.car-motion i')[2],
-        easing: 'easeOutExpo',
-        duration: 400,
-        opacity: [1, 0]
-      });
-    </script> -->
+      }, 5000);
+    </script>
   </body>
 </html>

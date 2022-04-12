@@ -1137,7 +1137,19 @@
     }
   }
 }
-.car-motion-wrap {
+.check-motion-page {
+  padding-top: 10rem;
+  display: none;
+  flex: 1 0 auto;
+  &.ready {
+    display: block;
+  }
+  &.show {
+    display: block;
+    animation: fadeInUpSmall 0.5s;
+  }
+}
+.check-motion-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1154,7 +1166,7 @@
     @include bg-etc;
     background-image: url(../images/MY/car-motion-X.png);
   }
-  .car-txt {
+  .check-txt {
     position: relative;
     display: flex;
     align-items: center;

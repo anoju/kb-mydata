@@ -475,6 +475,9 @@
   //show
   &.show {
     display: block !important;
+    &.modal {
+      display: flex !important;
+    }
     @include dimm;
     transition-delay: 0s;
     > .pop-scl-wrap,

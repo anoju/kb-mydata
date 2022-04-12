@@ -164,7 +164,20 @@
     }
   }
   .unit {
+    flex-shrink: 0;
     color: var(--strong-txt-color2);
+  }
+  .dash {
+    padding: 0 0.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    color: #c2c2c2;
+  }
+  .masking {
+    text-align: center;
+    flex-shrink: 0;
+    color: #818892;
+    font-size: 1.6rem;
   }
 
   &.line-lbl-inp {
