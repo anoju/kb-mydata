@@ -127,7 +127,10 @@
           overflow: hidden;
           border-radius: 1.6rem 1.6rem 0 0;
           position: relative;
-          &::after {
+          &:before {
+            padding-top: -xyPercent(232, 176);
+          }
+          &:after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -169,7 +172,10 @@
             height: 16.8rem;
             background-color: #fff;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
-            &::after {
+            &:before {
+              padding-top: 100%;
+            }
+            &:after {
               content: none;
             }
             img {
@@ -251,6 +257,9 @@
           height: 11.4rem;
           border-radius: 1.2rem;
           overflow: hidden;
+          &:before {
+            padding-top: -xyPercent(152, 114);
+          }
         }
         .txt-box {
           padding: 1.6rem;

@@ -219,6 +219,7 @@ i.require {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.6rem 1.3rem;
     .img-box {
+      border-radius: 1rem;
       img {
         border-radius: 1rem;
       }

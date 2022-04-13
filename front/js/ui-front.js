@@ -5228,6 +5228,87 @@ ui.Confetti = {
     }
   }
 };
+
+ui.Chart = {
+  circle: function () {
+    $('[data-circle-box]').each(function () {
+      const _this = $(this);
+      let deg = 0;
+      let $firstSize = 0;
+      let $firstBgLineW = 0;
+      let $firstLineW = 0;
+      let strokeWidth = $(this).data('circle-width') ? parseInt($(this).data('circle-width')) : 5;
+      const typeCheck = _this.data('circle-box');
+      _this.addClass(typeCheck);
+      _this.find('[data-circle-val]').each(function (e) {
+        const idx = $(this).data('circle-val');
+        const color = $(this).data('circle-color');
+        const size = $(this).data('circle-size');
+        const dasharray = 2 * Math.PI * (18 - strokeWidth / 2);
+
+        let html = '';
+        html += '<svg viewBox="0 0 36 36" class="circular-chart"';
+        if (size) html += ' style="width:' + size + 'px;height:' + size + 'px;"';
+        html += ' aria-hidden="true">';
+        if (!e || typeCheck !== 'type2') {
+          // html += '<path';
+          // html += ' class="circle-bg"';
+          // html += ' d="M18 2.0845';
+          // html += ' a 15.9155 15.9155 0 0 1 0 31.831';
+          // html += ' a 15.9155 15.9155 0 0 1 0 -31.831"';
+          // html += ' />';
+          html += '<circle class="circle-bg" fill="none" stroke-width="' + strokeWidth + '" cx="18" cy="18" r="' + (18 - strokeWidth / 2) + '"></circle>';
+        }
+        html += '<circle';
+        html += ' class="circle"';
+        if (typeCheck === 'type1') {
+          html += ' style="';
+          html += '-webkit-animation-delay: ' + e * 0.3 + 's;';
+          html += 'animation-delay: ' + e * 0.3 + 's;';
+          html += '" ';
+        }
+        if (color) html += ' stroke="' + color + '"';
+        html += ' stroke-dasharray="' + dasharray * (idx / 100) + ', ' + dasharray + '"';
+        // html += ' d="M18 2.0845';
+        // html += ' a 15.9155 15.9155 0 0 1 0 31.831';
+        // html += ' a 15.9155 15.9155 0 0 1 0 -31.831"';
+        html += ' stroke-width="' + strokeWidth + '" cx="18" cy="18" r="' + (18 - strokeWidth / 2) + '"';
+        html += ' />';
+        html += '</svg>';
+        $(this).append(html);
+        if (typeCheck == 'type2') {
+          if (e) {
+            $(this)
+              .find('.circular-chart')
+              .css({ transform: 'rotate(' + 360 * (deg / 100) + 'deg)' });
+          }
+          deg += idx;
+        }
+        $(this).role('img');
+        // $(this).children().unwrap();
+        if (size) {
+          const $thisLineBg = $(this).find('.circle-bg');
+          const $thisLineBgW = parseInt($thisLineBg.css('stroke-width'));
+          const $thisLine = $(this).find('.circle');
+          const $thisLineW = parseInt($thisLine.css('stroke-width'));
+          if (!e) {
+            $firstSize = size;
+            $firstBgLineW = $thisLineBgW;
+            $firstLineW = $thisLineW;
+          } else {
+            const $ratio = $firstSize / size;
+            $thisLineBg.css('stroke-width', $firstBgLineW * $ratio);
+            $thisLine.css('stroke-width', $firstLineW * $ratio);
+          }
+        }
+      });
+    });
+  },
+  init: function () {
+    ui.Chart.circle();
+  }
+};
+
 /********************************
  * front 사용함수 *
  ********************************/
@@ -7626,83 +7707,8 @@ const nl2br = function (str) {
   return str.replace(/(?:\r\n|\r|\n)/g, '<br />');
 };
 
-/* 장영석 */
-ui.Chart = {
-  circle: function () {
-    $('[data-circle-box]').each(function () {
-      const _this = $(this);
-      let deg = 0;
-      let $firstSize = 0;
-      let $firstBgLineW = 0;
-      let $firstLineW = 0;
-      let strokeWidth = $(this).data('circle-width') ? parseInt($(this).data('circle-width')) : 5;
-      const typeCheck = _this.data('circle-box');
-      _this.addClass(typeCheck);
-      _this.find('[data-circle-val]').each(function (e) {
-        const idx = $(this).data('circle-val');
-        const color = $(this).data('circle-color');
-        const size = $(this).data('circle-size');
-        const dasharray = 2 * Math.PI * (18 - strokeWidth / 2);
-
-        let html = '';
-        html += '<svg viewBox="0 0 36 36" class="circular-chart"';
-        if (size) html += ' style="width:' + size + 'px;height:' + size + 'px;"';
-        html += ' aria-hidden="true">';
-        if (!e || typeCheck !== 'type2') {
-          // html += '<path';
-          // html += ' class="circle-bg"';
-          // html += ' d="M18 2.0845';
-          // html += ' a 15.9155 15.9155 0 0 1 0 31.831';
-          // html += ' a 15.9155 15.9155 0 0 1 0 -31.831"';
-          // html += ' />';
-          html += '<circle class="circle-bg" fill="none" stroke-width="' + strokeWidth + '" cx="18" cy="18" r="' + (18 - strokeWidth / 2) + '"></circle>';
-        }
-        html += '<circle';
-        html += ' class="circle"';
-        if (typeCheck === 'type1') {
-          html += ' style="';
-          html += '-webkit-animation-delay: ' + e * 0.3 + 's;';
-          html += 'animation-delay: ' + e * 0.3 + 's;';
-          html += '" ';
-        }
-        if (color) html += ' stroke="' + color + '"';
-        html += ' stroke-dasharray="' + dasharray * (idx / 100) + ', ' + dasharray + '"';
-        // html += ' d="M18 2.0845';
-        // html += ' a 15.9155 15.9155 0 0 1 0 31.831';
-        // html += ' a 15.9155 15.9155 0 0 1 0 -31.831"';
-        html += ' stroke-width="' + strokeWidth + '" cx="18" cy="18" r="' + (18 - strokeWidth / 2) + '"';
-        html += ' />';
-        html += '</svg>';
-        $(this).append(html);
-        if (typeCheck == 'type2') {
-          if (e) {
-            $(this)
-              .find('.circular-chart')
-              .css({ transform: 'rotate(' + 360 * (deg / 100) + 'deg)' });
-          }
-          deg += idx;
-        }
-        $(this).role('img');
-        // $(this).children().unwrap();
-        if (size) {
-          const $thisLineBg = $(this).find('.circle-bg');
-          const $thisLineBgW = parseInt($thisLineBg.css('stroke-width'));
-          const $thisLine = $(this).find('.circle');
-          const $thisLineW = parseInt($thisLine.css('stroke-width'));
-          if (!e) {
-            $firstSize = size;
-            $firstBgLineW = $thisLineBgW;
-            $firstLineW = $thisLineW;
-          } else {
-            const $ratio = $firstSize / size;
-            $thisLineBg.css('stroke-width', $firstBgLineW * $ratio);
-            $thisLine.css('stroke-width', $firstLineW * $ratio);
-          }
-        }
-      });
-    });
-  },
-  init: function () {
-    ui.Chart.circle();
-  }
+// img onerror 함수
+const imgError = function (img) {
+  $(img).parent().addClass('no-img-bg');
+  $(img).hide();
 };

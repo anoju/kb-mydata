@@ -313,8 +313,8 @@
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     color: #fff;
-    &::before,
-    &::after {
+    &:before,
+    &:after {
       content: '';
       position: absolute;
       top: -0.4rem;
@@ -324,10 +324,10 @@
       background-size: 100%;
       background-repeat: no-repeat;
     }
-    &::before {
+    &:before {
       left: 1.6rem;
     }
-    &::after {
+    &:after {
       right: 1.6rem;
     }
   }
@@ -379,7 +379,7 @@
     }
     .calendar-date {
       border-color: rgba($color: #fff, $alpha: 0.2);
-      &::before {
+      &:before {
         content: '';
         position: absolute;
         width: 4rem;
