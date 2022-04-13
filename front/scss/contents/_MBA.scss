@@ -2246,6 +2246,11 @@
       ~ .checkbox {
         top: 4rem;
       }
+
+      &.disabled {
+        opacity: 0.25;
+        filter: grayscale(100);
+      }
     }
     .tit {
       margin-bottom: 0.8rem;
@@ -2284,7 +2289,7 @@
 
   &.disabled {
     .img-box {
-      opacity: 0.2;
+      opacity: 0.25;
       filter: grayscale(100);
     }
   }
