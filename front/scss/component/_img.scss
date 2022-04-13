@@ -39,6 +39,10 @@
   &.end-img-complate {
     background-image: url(../images/end/end-img-complate.png);
   }
+  &.end-img-fail {
+    background-color: red;
+    background-image: url(../images/end/end-img-complate.png);
+  }
 
   &.avatar {
     background: #fafafa;
