@@ -224,6 +224,7 @@ $('#팝업ID').on('Layer.hide',function(){
                 </ul>
               </div>
             </div>
+            <!-- 
             <h3 class="gd__h2">url로 팝업열기</h3>
             <div>
               <a href="win-pop.html" class="button line h32" target="_blank">사용된 (윈도우)팝업페이지 확인</a>
@@ -251,6 +252,7 @@ $('#팝업ID').on('Layer.hide',function(){
                 </ul>
               </div>
             </div>
+            -->
             <h3 class="gd__h2">얼럿, 컨펌</h3>
             <h4 class="gd__h3">기본(약식)</h4>
             <div>
@@ -389,6 +391,7 @@ Layer.confirm('컨펌창입니다.','컨펌제목','완료','넘기기',function
                 });
               </script>
             </div>
+            <!--
             <h4 class="gd__h3">커스텀(옵션)</h4>
             <div>
               <a href="#" id="btnAlert10" class="button line h32">커스텀 얼럿창 팝업 열기</a>
@@ -468,6 +471,7 @@ Layer.confirm(
                 });
               </script>
             </div>
+             -->
             <h3 class="gd__h2">그외 팝업</h3>
 
             <h4 class="gd__h3">토스트팝업</h4>
@@ -491,7 +495,7 @@ Layer.toast('넣으려는 메세지', fn:클릭시 실행할 함수);</code></pr
                 </ul>
               </div>
             </div>
-
+            <!--
             <h4 class="gd__h3">알람팝업</h4>
             <div>
               <div><a href="#" class="button line h32" id="alarmOpen">알람팝업 열기</a></div>
@@ -513,6 +517,7 @@ Layer.alarm('넣으려는 메세지', fn:클릭시 실행할 함수);</code></pr
                 </ul>
               </div>
             </div>
+            -->
 
             <h4 class="gd__h3">로딩 팝업</h4>
             <div>
@@ -591,36 +596,39 @@ ui.Form.success('#inputText','이름이 입력되었습니다.');
               </script>
 
               <h4 class="gd__h3">다중 폼 error 표시하고 싶을때</h4>
-              <div class="form-lbl">
-                <label for="userAdr1">주소 찾기</label>
-              </div>
-              <div class="form-item validate-item">
-                <!-- validate-item 클래스 추가 -->
-                <div class="input">
-                  <input type="tel" id="userAdr1" maxlength="6" title="우편번호 입력" placeholder="우편번호" />
-                  <button type="button" id="btnAdrs" class="button h32 search" aria-label="검색"><i class="i-btn-search-24" aria-hidden="true"></i></button>
+              <div>
+                <div class="form-lbl">
+                  <label for="userAdr1">주소 찾기</label>
                 </div>
-                <div class="input"><input type="text" id="userAdr2" title="기본주소 입력" placeholder="기본주소" /></div>
-                <div class="input"><input type="text" id="userAdr3" title="상세주소 입력" placeholder="상세주소" /></div>
-              </div>
-              <script>
-                $('#btnAdrs').click(function () {
-                  if ($('#userAdr1').val() === '') ui.Form.error('#userAdr1', '우편번호를 입력하세요');
-                  else if ($('#userAdr2').val() === '') ui.Form.error('#userAdr2', '기본주소를 입력하세요');
-                  else if ($('#userAdr3').val() === '') ui.Form.error('#userAdr3', '상세주소를 입력하세요');
-                });
-                $('#userAdr1, #userAdr2, #userAdr3').on('keyup', function () {
-                  ui.Form.error(this, false);
-                });
-              </script>
+                <div class="form-item validate-item">
+                  <!-- validate-item 클래스 추가 -->
+                  <div class="input">
+                    <input type="tel" id="userAdr1" maxlength="6" title="우편번호 입력" placeholder="우편번호" />
+                    <button type="button" id="btnAdrs" class="button h32 search" aria-label="검색"><i class="i-btn-search-24" aria-hidden="true"></i></button>
+                  </div>
+                  <div class="input"><input type="text" id="userAdr2" title="기본주소 입력" placeholder="기본주소" /></div>
+                  <div class="input"><input type="text" id="userAdr3" title="상세주소 입력" placeholder="상세주소" /></div>
+                </div>
+                <script>
+                  $('#btnAdrs').click(function () {
+                    if ($('#userAdr1').val() === '') ui.Form.error('#userAdr1', '우편번호를 입력하세요');
+                    else if ($('#userAdr2').val() === '') ui.Form.error('#userAdr2', '기본주소를 입력하세요');
+                    else if ($('#userAdr3').val() === '') ui.Form.error('#userAdr3', '상세주소를 입력하세요');
+                  });
+                  $('#userAdr1, #userAdr2, #userAdr3').on('keyup', function () {
+                    ui.Form.error(this, false);
+                  });
+                </script>
 
-              <div class="txt-list mt-20">
-                <ul>
-                  <li class="dot">[검색] 클릭하면 표시형태 확인가능</li>
-                  <li class="dot">다중 폼요소에 에러 표시를 할때는 <strong class="fc-red">.validate-item</strong>로 감싸주가 클래스를 추가해준다</li>
-                </ul>
+                <div class="txt-list mt-20">
+                  <ul>
+                    <li class="dot">[검색] 클릭하면 표시형태 확인가능</li>
+                    <li class="dot">다중 폼요소에 에러 표시를 할때는 <strong class="fc-red">.validate-item</strong>로 감싸주가 클래스를 추가해준다</li>
+                  </ul>
+                </div>
               </div>
             </div>
+            <!--
             <h3 class="gd__h2">range-slider</h3>
             <div>
               <div class="mt-30">
@@ -751,6 +759,27 @@ ui.Form.success('#inputText','이름이 입력되었습니다.');
 
 &lt;!-- -2주 ~ +1년 사이 선택 --&gt;<br>
 &lt;input type="tel" class="datepicker" <strong class="fc-red">data-min="-2w" data-max="+1y"</strong> title="날짜 입력"&gt;</code></pre>
+            </div>
+            -->
+            <h2 class="gd__h1">이미지 로딩 에러처리</h2>
+            <div class="flex not-full">
+              <div class="t-center">
+                <div class="img-box w-200"><img src="../../images/temp/thumb-temp.jpg" alt="" onerror="imgError(this)" /></div>
+                <strong>이미지 로딩 성공</strong>
+              </div>
+              <div class="t-center ml-20">
+                <div class="img-box w-200"><img src="../../images/temp/thumb-temp000.jpg" alt="" onerror="imgError(this)" /></div>
+                <strong>이미지 로딩 실패</strong>
+              </div>
+            </div>
+            <div class="txt-list mt-20">
+              <pre><code class="language-xml">&lt;div class="img-box"&gt;&lt;img src="이미지경로" alt="" onerror="imgError(this)" /&gt;&lt;/div&gt;</code></pre>
+              <ul class="mt-10">
+                <li class="dot">img onerror 발생 시 이미지는 display:none;하고 parent()에 .no-img-bg를 addClass 시킨다</li>
+                <li class="dot"><strong class="fc-red">imgError(this)</strong> 함수를 사용하며, this를 넣어줘야 타겟 엘리먼트를 찾을수 있다. 없으면 에러 남</li>
+                <li class="dot">.no-img-bg에 bg로 기본 이미지를 노출하기때문에 부모엘리먼트 스타일이 적용하는데 문제가 없어야한다</li>
+                <li class="dot">.no-img-bg에 bg로 기본 이미지를 노출하기때문에 부모엘리먼트 스타일이 적용하는데 문제가 없어야한다</li>
+              </ul>
             </div>
           </div>
         </div>
