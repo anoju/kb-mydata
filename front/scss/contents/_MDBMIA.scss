@@ -1142,6 +1142,7 @@
   display: none;
   flex: 1 0 auto;
   flex-direction: column;
+  @include web-center;
   > * {
     width: 100%;
   }
