@@ -11,7 +11,9 @@
     margin: 0;
   }
 
-  > div:not(.right) {
+  > div:not(.right),
+  > .left,
+  > [class*='tit-h'] {
     width: 100%;
     flex: 1 1 auto;
   }
