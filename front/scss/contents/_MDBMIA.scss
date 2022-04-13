@@ -1138,11 +1138,10 @@
   }
 }
 .check-motion-page {
-  padding-top: 14rem;
+  padding: 14rem var(--base-padding) 11rem;
   display: none;
   flex: 1 0 auto;
   flex-direction: column;
-  padding-bottom: 11rem !important;
   > * {
     width: 100%;
   }
