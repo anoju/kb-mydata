@@ -443,11 +443,111 @@
     "worker": "안효주",
     "complete": "2022-04-12",
     "etc": ""
-  }
+  },
   
-  ,{
-    "depth1": "MY(비자산금융)"
+  {
+    "depth1": "MY(자산현황)"
+  },
+  {
+    "id": "MDB03-0201001",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "부동산",
+    "name": "부동산 목록",
+    "worker": "안효주",
+    "complete": "2022-04-13",
+    "etc": ""
+  },
+  {
+    "id": "MDB03-0201002",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "부동산",
+    "name": "부동산 상세",
+    "worker": "안효주",
+    "complete": "2022-04-13",
+    "etc": ""
+  },
+  {
+    "id": "MDB03-0202001",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "자동차",
+    "name": "자동차 목록",
+    "worker": "안효주",
+    "complete": "2022-04-13",
+    "etc": ""
+  },
+  {
+    "id": "MDB03-0202002",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "자동차",
+    "name": "자동차 상세",
+    "worker": "안효주",
+    "complete": "2022-04-13",
+    "etc": ""
+  },
+  {
+    "id": "MDB03-0202003",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "자동차",
+    "name": "자동차 수정",
+    "worker": "안효주",
+    "complete": "2022-04-13",
+    "etc": ""
+  },
+  {
+    "id": "MDB03-0203001",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "디지털자산",
+    "name": "디지털자산 목록",
+    "worker": "안효주",
+    "complete": "2022-04-13",
+    "etc": ""
+  },
+  {
+    "id": "MDB03-0203002",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "디지털자산",
+    "name": "디지털자산 삭제",
+    "worker": "안효주",
+    "complete": "2022-04-13",
+    "etc": ""
+  },
+  {
+    "id": "MDB03-0204001",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "등록자산",
+    "name": "등록자산 목록",
+    "worker": "안효주",
+    "complete": "2022-04-13",
+    "etc": ""
+  },
+  {
+    "id": "MDB03-0204002",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "디지털자산",
+    "name": "등록자산 수정",
+    "worker": "안효주",
+    "complete": "2022-04-13",
+    "etc": ""
   }
+
   
 
   ,{
