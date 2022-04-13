@@ -1042,14 +1042,6 @@
     background: #fff2f4;
   }
 }
-.txt-compare-box {
-  padding: 0.8rem;
-  border-radius: 0.8rem;
-  font-size: 1.2rem;
-  text-align: center;
-  color: #818892;
-  background: #fafafa;
-}
 
 .consume-process-bar {
   position: relative;
@@ -1334,5 +1326,26 @@
   100% {
     transform: translateY(0px);
     opacity: 0;
+  }
+}
+.ico-info-flex {
+  @include outer;
+  > ul {
+    display: flex;
+    > li {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 1.2rem;
+      strong {
+        color: var(--strong-txt-color2);
+      }
+      b {
+        font-weight: 500;
+        color: #979797;
+      }
+    }
   }
 }
