@@ -2316,10 +2316,15 @@
   }
   .swiper-slide {
     text-align: center;
-    img {
-      width: 14rem;
-      height: 9.4rem;
-      object-fit: contain;
+    > a {
+      display: block;
+    }
+    .img-box {
+      width: 11rem;
+      margin: 0 auto;
+      &:before {
+        padding-top: -xyPercent(110, 94);
+      }
     }
     .swiper-button {
       top: calc(50% + 2rem);
@@ -2334,6 +2339,7 @@
     }
     .tit {
       display: block;
+      margin-top: 0.3rem;
       font-size: 1.6rem;
     }
     span {
@@ -3190,7 +3196,4 @@
     right: 0;
     background: none;
   }
-}
-
-.pop__focused {
 }
