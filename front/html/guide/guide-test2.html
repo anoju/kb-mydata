@@ -116,6 +116,7 @@
             });
           } else if ($thisId === 'btnPrint') {
             // $(window).scrollTop(0);
+            const $sclTop = $(window).scrollTop();
             $('#wrap').hide();
             $('#wrap').siblings('div').hide();
             document.body.appendChild(canvas);
@@ -124,6 +125,7 @@
               $(canvas).remove();
               $('#wrap').removeAttr('style');
               $('#wrap').siblings('div').removeAttr('style');
+              $(window).scrollTop($sclTop);
             }, 10);
           }
         });
