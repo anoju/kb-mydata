@@ -116,14 +116,12 @@
           } else if ($thisId === 'btnPrint') {
             $('#wrap').hide();
             $('#wrap').siblings('div').hide();
-            $('body').addClass('overflow-hidden');
             document.body.appendChild(canvas);
             window.print();
             setTimeout(function () {
               $(canvas).remove();
               $('#wrap').removeAttr('style');
               $('#wrap').siblings('div').removeAttr('style');
-              $('body').removeClass('overflow-hidden');
             }, 10);
           }
         });
