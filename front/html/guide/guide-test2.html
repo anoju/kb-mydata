@@ -95,7 +95,7 @@
           const $link = location.href;
 
           if ($thisId === 'btnSave') {
-            $downLoad.setAttribute('download', 'share_' + $today.substr(0, 8) + '_' + $today.substr(8, 6) + '.png');
+            $downLoad.setAttribute('download', 'match_result_' + $today.substr(0, 8) + '_' + $today.substr(8, 6) + '.png');
             $downLoad.click();
           } else if ($thisId === 'btnShare') {
             // $data 로는 '공유하기'가 안됨 서버에 저장시키고 그 경로를 사용해야함
