@@ -1485,12 +1485,22 @@
 
   .user-detail-talk-box {
     margin-top: 1.4rem;
+    .checkbox {
+      label {
+        color: #d6dbe1;
+        .i-ico-check-off-14 {
+          margin-top: 0;
+          background-size: 1rem;
+        }
+      }
+    }
     .user-detail-talk {
       position: relative;
       border-top: 0.1rem solid #f2f4f6;
       border-bottom: 0.1rem solid #f2f4f6;
       padding: 1.7rem 2.4rem;
       margin: 0.4rem -2.4rem 0;
+
       .nick-name {
         display: flex;
         align-items: center;
