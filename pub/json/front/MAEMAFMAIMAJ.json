@@ -283,4 +283,22 @@
     "worker": "장영석",
     "complete": "2022-04-12"
   }
+  ,{
+    "id": "MAJ01-0101001C",
+    "url": "../../front/html/MAJ/",
+    "depth2": "더보기",
+    "depth3": "상품교환",
+    "name": "상품교환",
+    "worker": "장영석",
+    "complete": "2022-04-14"
+  }
+  ,{
+    "id": "MAJ01-0102001C",
+    "url": "../../front/html/MAJ/",
+    "depth2": "더보기",
+    "depth3": "포인트 사용 현황",
+    "name": "포인트 사용 현황",
+    "worker": "장영석",
+    "complete": "2022-04-14"
+  }
 ]
