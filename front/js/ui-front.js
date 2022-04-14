@@ -1103,7 +1103,7 @@ ui.Util = {
     let timer;
     return function () {
       clearTimeout(timer);
-      timer = setTimeout(() => {
+      timer = setTimeout(function () {
         fn.apply(this, arguments);
       }, delay);
     };
@@ -1112,7 +1112,7 @@ ui.Util = {
     let timer;
     return function () {
       if (!timer) {
-        timer = setTimeout(() => {
+        timer = setTimeout(function () {
           timer = null;
           fn.apply(this, arguments);
         }, delay);
