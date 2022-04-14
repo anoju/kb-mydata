@@ -114,6 +114,7 @@
               }
             });
           } else if ($thisId === 'btnPrint') {
+            $(window).scrollTop(0);
             $('#wrap').hide();
             $('#wrap').siblings('div').hide();
             document.body.appendChild(canvas);
