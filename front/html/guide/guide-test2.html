@@ -62,10 +62,10 @@
           <a href="#" id="btnSave" class="ml-26"><i class="i-img-save-60" aria-label="저장"></i></a>
         </div>
 
-        <div hidden>
+        <!-- <div hidden>
           <img id="imageShare" />
-        </div>
-        <a id="imageDown">이미지 다운로드</a>
+        </div> -->
+        <a id="imageDown" hidden>이미지 다운로드</a>
       </main>
       <!-- 컨테이너(컨텐츠) -->
     </article>
@@ -84,10 +84,10 @@
         html2canvas($wrap).then(function (canvas) {
           // document.body.appendChild(canvas);
 
-          const $share = document.querySelector('#imageShare');
+          // const $share = document.querySelector('#imageShare');
           const $downLoad = document.querySelector('#imageDown');
           const $data = canvas.toDataURL('image/png');
-          $share.setAttribute('src', $data);
+          // $share.setAttribute('src', $data);
           $downLoad.setAttribute('href', $data);
           const $today = todayTimeString();
           const $title = document.querySelector('.match-result-wrap .comment').innerText;
