@@ -14,8 +14,7 @@
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
     <script>
-      // 2022-04-12: 추가
-      ui.Common.title('1:1 매치');
+      ui.Common.title('테스트');
     </script>
   </head>
   <body>
@@ -59,32 +58,62 @@
           </div>
         </div>
         <div class="mt-26 flex not-full justify-center">
-          <a href="#"><i class="i-img-kakao-60" aria-label="카카오톡"></i></a>
-          <a href="#" class="ml-26"><i class="i-img-save-60" aria-label="저장"></i></a>
+          <a href="#" id="btnShare"><i class="i-img-kakao-60" aria-label="카카오톡"></i></a>
+          <a href="#" id="btnSave" class="ml-26"><i class="i-img-save-60" aria-label="저장"></i></a>
         </div>
-        <a id="imageDownLoad" hidden></a>
 
-        <div class="btn-wrap bottom-fixed">
-          <div class="flex">
-            <button type="button" id="btnSave" class="button h60 primary">저장</button>
-          </div>
+        <div hidden>
+          <img id="imageShare" />
         </div>
+        <a id="imageDown">이미지 다운로드</a>
       </main>
       <!-- 컨테이너(컨텐츠) -->
     </article>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script>
-      $('#btnSave').click(function () {
+      Kakao.init('5ea7c35c641087250a63564a3d2842d1'); //임시 키값
+
+      $('#btnSave, #btnShare').click(function (e) {
+        e.preventDefault();
         const $wrap = document.querySelector('.match-result-wrap');
+        const $wrapWidth = $wrap.offsetWidth;
+        const $wrapHeight = $wrap.offsetHeight;
+
+        const $thisId = this.id;
         html2canvas($wrap).then(function (canvas) {
           // document.body.appendChild(canvas);
 
-          const $downLoad = document.getElementById('imageDownLoad');
+          const $share = document.querySelector('#imageShare');
+          const $downLoad = document.querySelector('#imageDown');
           const $data = canvas.toDataURL('image/png');
+          $share.setAttribute('src', $data);
           $downLoad.setAttribute('href', $data);
           const $today = todayTimeString();
-          $downLoad.setAttribute('download', 'share_' + $today.substr(0, 8) + '_' + $today.substr(8, 6) + '.png');
-          $downLoad.click();
+          const $title = document.querySelector('.match-result-wrap .comment').innerText;
+          const $description = document.querySelector('.match-result-wrap .comment-label').innerText;
+          const $link = location.href;
+
+          if ($thisId === 'btnSave') {
+            $downLoad.setAttribute('download', 'share_' + $today.substr(0, 8) + '_' + $today.substr(8, 6) + '.png');
+            $downLoad.click();
+          } else if ($thisId === 'btnShare') {
+            // $data 로는 '공유하기'가 안됨 서버에 저장시키고 그 경로를 사용해야함
+            Kakao.Link.sendDefault({
+              objectType: 'feed',
+              content: {
+                title: $title,
+                imageUrl: $data,
+                imageWidth: $wrapWidth,
+                imageHeight: $wrapHeight,
+                description: $description,
+                link: {
+                  mobileWebUrl: $link,
+                  webUrl: $link
+                }
+              }
+            });
+          }
         });
       });
     </script>
