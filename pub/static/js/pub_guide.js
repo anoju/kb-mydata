@@ -523,7 +523,13 @@ const guide = {
     $('.g_board_panel').each(function () {
       const $this = $(this);
       const $no = $this.find('table .no');
-      const pageNum = $no.length;
+      const pageNum = function () {
+        let length = 0;
+        $no.each(function () {
+          if (!$(this).closest('.del').length) length += 1;
+        });
+        return length;
+      };
 
       let $noidx = 1;
       $this.find('tbody tr').each(function () {
@@ -534,21 +540,39 @@ const guide = {
           $noidx++;
         }
       });
-      const completeNum = $this.find('.complete').length;
-      const per = pageNum === 0 ? 0 : Math.round((100 / pageNum) * completeNum);
-      if (per === 100) Math.floor((100 / pageNum) * completeNum);
-      $this.find('.total .num').text(pageNum);
-      $this.find('.cp_num .num').text(completeNum);
+      const completeNum = function () {
+        let length = 0;
+        $this.find('.complete').each(function () {
+          if (!$(this).hasClass('del')) length += 1;
+        });
+        return length;
+      };
+      const per = pageNum() === 0 ? 0 : Math.round((100 / pageNum()) * completeNum());
+      if (per === 100) Math.floor((100 / pageNum()) * completeNum());
+      $this.find('.total .num').text(pageNum());
+      $this.find('.cp_num .num').text(completeNum());
       $this.find('.ing .num').text(per);
       $this.find('.bar').css('width', per + '%');
     });
 
-    const totalPageNum = $('table .no').length;
-    const completeTotalNum = $('table .complete').length;
-    const perTotal = totalPageNum === 0 ? 0 : Math.round((100 / totalPageNum) * completeTotalNum);
-    if (perTotal === 100) Math.floor((100 / totalPageNum) * completeTotalNum);
-    $('.g_project_status .total .num').text(totalPageNum);
-    $('.g_project_status .cp_num .num').text(completeTotalNum);
+    const totalPageNum = function () {
+      let length = 0;
+      $('table .no').each(function () {
+        if (!$(this).closest('.del').length) length += 1;
+      });
+      return length;
+    };
+    const completeTotalNum = function () {
+      let length = 0;
+      $('table .complete').each(function () {
+        if (!$(this).hasClass('del')) length += 1;
+      });
+      return length;
+    };
+    const perTotal = totalPageNum() === 0 ? 0 : Math.round((100 / totalPageNum()) * completeTotalNum());
+    if (perTotal === 100) Math.floor((100 / totalPageNum()) * completeTotalNum());
+    $('.g_project_status .total .num').text(totalPageNum());
+    $('.g_project_status .cp_num .num').text(completeTotalNum());
     $('.g_project_status .ing .num').text(perTotal);
     $('.g_project_status .bar').css('width', perTotal + '%');
   },

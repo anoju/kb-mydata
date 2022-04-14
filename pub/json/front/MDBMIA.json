@@ -3,6 +3,7 @@
     "depth1": "MY(통합자산조회)"
   },
   {
+    "state": "del",
     "id": "MDB02-0100001",
     "url": "../../front/html/MDB/",
     "depth2": "통합자산조회",
@@ -13,6 +14,7 @@
     "etc": "디자인 추후 추가 예정"
   },
   {
+    "state": "del",
     "id": "MDB02-0100002",
     "url": "../../front/html/MDB/MDB02-0100001.html",
     "depth2": "통합자산조회",
@@ -23,6 +25,7 @@
     "etc": "MDB02-0100001 안에 포함"
   },
   {
+    "state": "del",
     "id": "MDB02-0100003",
     "url": "../../front/html/MDB/MDB02-0100001.html",
     "depth2": "통합자산조회",
