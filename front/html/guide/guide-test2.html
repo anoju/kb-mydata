@@ -78,7 +78,8 @@
       $('#btnSave, #btnShare, #btnPrint').click(function (e) {
         e.preventDefault();
         const $thisId = this.id;
-        const $wrap = $thisId === 'btnPrint' ? document.body : document.querySelector('.match-result-wrap');
+        // const $wrap = $thisId === 'btnPrint' ? document.body : document.querySelector('.match-result-wrap');
+        const $wrap = document.querySelector('.match-result-wrap');
         const $wrapWidth = $wrap.offsetWidth;
         const $wrapHeight = $wrap.offsetHeight;
         html2canvas($wrap).then(function (canvas) {
@@ -114,7 +115,7 @@
               }
             });
           } else if ($thisId === 'btnPrint') {
-            $(window).scrollTop(0);
+            // $(window).scrollTop(0);
             $('#wrap').hide();
             $('#wrap').siblings('div').hide();
             document.body.appendChild(canvas);
