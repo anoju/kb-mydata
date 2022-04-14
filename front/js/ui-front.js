@@ -7709,6 +7709,7 @@ const nl2br = function (str) {
 
 // img onerror 함수
 const imgError = function (img) {
+  if (img.tagName !== 'IMG') return;
   $(img).parent().addClass('no-img-bg');
   $(img).hide();
 };

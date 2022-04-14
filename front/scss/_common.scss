@@ -963,6 +963,15 @@ $bdTypes: (solid, dashed, dotted);
 }
 
 // etc
+.scroll-x {
+  @include scroll-x;
+  .section & {
+    @include outer(true);
+  }
+}
+.scroll-y {
+  @include scroll-y;
+}
 .block {
   display: block !important;
 }
