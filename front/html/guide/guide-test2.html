@@ -58,7 +58,8 @@
           </div>
         </div>
         <div class="mt-26 flex not-full justify-center">
-          <a href="#" id="btnShare"><i class="i-img-kakao-60" aria-label="카카오톡"></i></a>
+          <a href="#" id="btnPrint" class="button line h60">프린트</a>
+          <a href="#" id="btnShare" class="ml-26"><i class="i-img-kakao-60" aria-label="카카오톡"></i></a>
           <a href="#" id="btnSave" class="ml-26"><i class="i-img-save-60" aria-label="저장"></i></a>
         </div>
 
@@ -74,15 +75,14 @@
     <script>
       Kakao.init('5ea7c35c641087250a63564a3d2842d1'); //임시 키값
 
-      $('#btnSave, #btnShare').click(function (e) {
+      $('#btnSave, #btnShare, #btnPrint').click(function (e) {
         e.preventDefault();
-        const $wrap = document.querySelector('.match-result-wrap');
+        const $thisId = this.id;
+        const $wrap = $thisId === 'btnPrint' ? document.body : document.querySelector('.match-result-wrap');
         const $wrapWidth = $wrap.offsetWidth;
         const $wrapHeight = $wrap.offsetHeight;
-
-        const $thisId = this.id;
         html2canvas($wrap).then(function (canvas) {
-          // document.body.appendChild(canvas);
+          //
 
           // const $share = document.querySelector('#imageShare');
           const $downLoad = document.querySelector('#imageDown');
@@ -113,6 +113,18 @@
                 }
               }
             });
+          } else if ($thisId === 'btnPrint') {
+            $('#wrap').hide();
+            $('#wrap').siblings('div').hide();
+            $('body').addClass('overflow-hidden');
+            document.body.appendChild(canvas);
+            window.print();
+            setTimeout(function () {
+              $(canvas).remove();
+              $('#wrap').removeAttr('style');
+              $('#wrap').siblings('div').removeAttr('style');
+              $('body').removeClass('overflow-hidden');
+            }, 10);
           }
         });
       });
