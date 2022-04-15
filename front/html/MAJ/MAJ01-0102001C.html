@@ -13,7 +13,7 @@
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
     <script>
-      ui.Common.title('나의 자산 금액 설정');
+      ui.Common.title('포인트 사용현황');
     </script>
   </head>
   <body>
@@ -34,44 +34,71 @@
           <h1 class="tit-h1">포인트 사용 현황</h1>
           <p class="mt-16">최근 12개월동안 <br />적립·사용·소멸된 내역 입니다.</p>
 
-          <div href="#" class="flex not-full mt-25">
-            <i class="i-img-point mr-16 mt-7"></i>
-            <div class="ml-0">
-              <p class="fz-12 fw-500">보유 포인트</p>
-              <p class="fz-24 fw-500 lh-16 mt-7"><strong class="lh-16 fz-25 fw-bold">9,999,999</strong> P</p>
-
-              <p class="mt-24 fz-12 fw-500">소멸 예정 포인트</p>
-              <p class="fz-24 fw-500 lh-16 mt-7"><strong class="lh-16 fz-25 fw-bold">9,999,999</strong> P</p>
+          <div class="flex not-full align-center mt-25">
+            <i class="i-img-point"></i>
+            <div class="ml-16">
+              <dl>
+                <dt class="fz-12 fw-500">보유 포인트</dt>
+                <dd class="fz-24 fw-500 fc-424242 lh-25 mt-4"><strong class="fz-25">9,999,999</strong> P</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="flex not-full align-center mt-21">
+            <div class="ml-44">
+              <dl>
+                <dt class="fz-12 fw-500">소멸 예정 포인트</dt>
+                <dd class="fz-24 fw-500 fc-424242 lh-25 mt-4"><strong class="fz-25">9,999,999</strong> P</dd>
+              </dl>
             </div>
           </div>
 
           <hr class="hr-line mt-32" aria-hidden="true" />
 
           <ul class="line-list-2 mt-4">
-            <li class="pd-24y">
-              <div class="flex not-full align-center">
-                <div class="mr-auto">
-                  <p class="fz-14 fc-979797">2022.12.30</p>
-                  <p class="mt-12 fz-16 fw-bold fc-212121">상품 교환</p>
+            <li>
+              <div class="flex not-full align-center pd-24y">
+                <div class="w-100p pr-16">
+                  <p class="fz-14 lh-16 fc-979797">2022.12.30</p>
+                  <p class="mt-12 lh-23 fc-212121"><strong>상품 교환</strong></p>
                 </div>
-                <!-- 
-                  적립 : fc-447eee
-                  사용 : fc-e45055
-                -->
-                <p class="fz-15 fw-bold fc-e45055"><strong class="fz-16">- 10,000</strong> P</p>
+                <p class="ml-auto nowrap">
+                  <!-- 
+                    적립 : fc-447eee
+                    사용 : fc-e45055
+                  -->
+                  <strong class="fz-15 fc-e45055"><b class="fz-16">- 10,000</b> P</strong>
+                </p>
               </div>
             </li>
-            <li class="pd-24y">
-              <div class="flex not-full align-center">
-                <div class="mr-auto">
-                  <p class="fz-14 fc-979797">2022.12.30</p>
-                  <p class="mt-12 fz-16 fw-bold fc-212121">포인트 적립</p>
+            <li>
+              <div class="flex not-full align-center pd-24y">
+                <div class="w-100p pr-16">
+                  <p class="fz-14 lh-16 fc-979797">2022.12.30</p>
+                  <p class="mt-12 lh-23 fc-212121"><strong>상품 교환상품 교환상품 교환상품 교환상품 교환상품 교환상품 교환</strong></p>
                 </div>
-                <!-- 
-                  적립 : fc-447eee
-                  사용 : fc-e45055
-                -->
-                <p class="fz-15 fw-bold fc-447eee"><strong class="fz-16">10,000</strong> P</p>
+                <p class="ml-auto nowrap">
+                  <!-- 
+                    적립 : fc-447eee
+                    사용 : fc-e45055
+                  -->
+                  <strong class="fz-15 fc-e45055"><b class="fz-16">- 10,000</b> P</strong>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="flex not-full align-center pd-24y">
+                <div class="w-100p pr-16">
+                  <p class="fz-14 lh-16 fc-979797">2022.12.30</p>
+                  <p class="mt-12 lh-23 fc-212121"><strong>포인트 적립</strong></p>
+                </div>
+
+                <p class="ml-auto nowrap">
+                  <!-- 
+                    적립 : fc-447eee
+                    사용 : fc-e45055
+                  -->
+                  <strong class="fz-15 fc-447eee"><b class="fz-16">10,000</b> P</strong>
+                </p>
               </div>
             </li>
           </ul>

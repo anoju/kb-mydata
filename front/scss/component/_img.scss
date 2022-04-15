@@ -58,8 +58,13 @@
     */
   }
 
-  &.border {
+  &.line {
     border: 0.1rem solid #f2f4f6;
+  }
+  &.contain {
+    img {
+      object-fit: contain;
+    }
   }
 }
 .img-area {
