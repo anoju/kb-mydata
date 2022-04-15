@@ -546,7 +546,8 @@
 
 /* 매치 결과 */
 .match-result-wrap {
-  font-family: 'Gmarket';
+  font-family: 'Gmarket Sans';
+  @include web-center;
   > .section {
     padding: 1.9rem 2rem 2.4rem;
     text-align: center;
@@ -918,7 +919,7 @@
             }
           }
           .text {
-            color: #979797;
+            color: var(--gray-txt-color);
           }
         }
       }
@@ -960,7 +961,7 @@
               }
             }
             .text {
-              color: #979797;
+              color: var(--gray-txt-color);
             }
           }
           &:nth-child(2) {
@@ -1057,7 +1058,7 @@
       .score {
         margin-top: 0.3rem;
         font-size: 1.2rem;
-        color: #979797;
+        color: var(--gray-txt-color);
       }
     }
     &:first-child:last-child {
@@ -1384,7 +1385,7 @@
           margin-top: -0.2rem;
         }
         font-size: 1.4rem;
-        color: #979797;
+        color: var(--gray-txt-color);
       }
     }
     .tooltip-wrap {
@@ -1426,7 +1427,7 @@
         .number {
           margin-top: 0.3rem;
           font-size: 1.2rem;
-          color: #979797;
+          color: var(--gray-txt-color);
         }
 
         &:nth-child(1) {
@@ -1458,7 +1459,7 @@
         }
         .percent {
           font-size: 1.2rem;
-          color: #979797;
+          color: var(--gray-txt-color);
         }
       }
       .rank {
@@ -1484,12 +1485,22 @@
 
   .user-detail-talk-box {
     margin-top: 1.4rem;
+    .checkbox {
+      label {
+        color: #d6dbe1;
+        .i-ico-check-off-14 {
+          margin-top: 0;
+          background-size: 1rem;
+        }
+      }
+    }
     .user-detail-talk {
       position: relative;
       border-top: 0.1rem solid #f2f4f6;
       border-bottom: 0.1rem solid #f2f4f6;
       padding: 1.7rem 2.4rem;
       margin: 0.4rem -2.4rem 0;
+
       .nick-name {
         display: flex;
         align-items: center;
@@ -1543,7 +1554,7 @@
             margin-top: 0.6rem;
             font-size: 1.2rem;
             line-height: 1;
-            color: #979797;
+            color: var(--gray-txt-color);
           }
         }
       }
@@ -1556,7 +1567,7 @@
       .text {
         margin-top: 0.8rem;
         font-size: 1.4rem;
-        color: #979797;
+        color: var(--gray-txt-color);
       }
 
       .info-box {
@@ -1564,7 +1575,7 @@
         align-items: center;
         margin-top: 1.6rem;
         font-size: 1.4rem;
-        color: #979797;
+        color: var(--gray-txt-color);
         > span,
         > .button {
           margin-right: 1.6rem;
@@ -1801,7 +1812,7 @@
   > button {
     padding: 0.8rem;
     font-size: 1.3rem;
-    color: #979797;
+    color: var(--gray-txt-color);
     border-radius: 3rem;
     background: #f2f4f6;
     i {
@@ -1814,7 +1825,7 @@
     margin-left: 1.2rem;
     padding: 0rem 1rem;
     font-size: 1.3rem;
-    color: #979797;
+    color: var(--gray-txt-color);
     border-radius: 3rem;
     align-items: center;
     background: #f2f4f6;
@@ -2001,7 +2012,7 @@
     height: 5.4rem;
     margin-left: 1rem;
     border-radius: 1.2rem;
-    border: 0.1rem solid #ebebeb;
+    border: 0.1rem solid var(--line-color);
     font-size: 1.4rem;
     color: #424242;
     font-weight: bold;
@@ -2094,7 +2105,7 @@
     .text {
       margin-top: 0.4rem;
       font-size: 1.2rem;
-      color: #979797;
+      color: var(--gray-txt-color);
       font-weight: 500;
       text-align: center;
     }
@@ -2111,7 +2122,7 @@
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    color: #979797;
+    color: var(--gray-txt-color);
     font-weight: 500;
     vertical-align: middle;
   }
@@ -2185,7 +2196,7 @@
       strong {
         margin-left: 0.5rem;
         font-size: 1.4rem;
-        color: #606060;
+        color: var(--base-txt-color);
         font-weight: bold;
       }
     }
@@ -2202,7 +2213,7 @@
         font-size: 1.4rem;
         font-weight: 500;
         padding-left: 0.8rem;
-        color: #979797;
+        color: var(--gray-txt-color);
         span {
           font-weight: 500;
           margin-left: 0.4rem;
@@ -2222,7 +2233,7 @@
       .text {
         margin-top: 1.6rem;
         padding-top: 1.2rem;
-        border-top: 0.1rem solid #ebebeb;
+        border-top: 0.1rem solid var(--line-color);
         font-size: 1.6rem;
         color: #424242;
         strong {
@@ -2379,7 +2390,7 @@
         opacity: 0;
 
         &:checked ~ i {
-          border-color: #fe7d65;
+          border-color: var(--primary-color);
           background: rgba(0, 0, 0, 0.5);
           &:before {
             transform: translate(-50%, -50%) scale(1);
@@ -2632,14 +2643,14 @@
 
 .gray-box {
   padding: 1.6rem;
-  border: 0.1rem solid #ebebeb;
+  border: 0.1rem solid var(--line-color);
   border-radius: 1.6rem;
   background: #f8f8f8;
   .tit {
     margin-top: 1.6rem;
     margin-bottom: 0.8rem;
     font-size: 1.2rem;
-    color: #979797;
+    color: var(--gray-txt-color);
 
     &:first-child {
       margin-top: 0;
@@ -2921,7 +2932,7 @@
         }
         .hashtag {
           .tag {
-            color: #979797;
+            color: var(--gray-txt-color);
           }
         }
       }
@@ -2937,7 +2948,7 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        background: #fe7d65;
+        background: var(--primary-color);
         border-radius: 1.6rem 1.6rem 0px 1.6rem;
       }
     }

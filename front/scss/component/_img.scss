@@ -40,8 +40,7 @@
     background-image: url(../images/end/end-img-complate.png);
   }
   &.end-img-fail {
-    background-color: red;
-    background-image: url(../images/end/end-img-complate.png);
+    background-image: url(../images/end/end-img-fail.png);
   }
 
   &.avatar {
@@ -57,6 +56,15 @@
       transform: translate(-50%, -50%);
     }
     */
+  }
+
+  &.line {
+    border: 0.1rem solid #f2f4f6;
+  }
+  &.contain {
+    img {
+      object-fit: contain;
+    }
   }
 }
 .img-area {

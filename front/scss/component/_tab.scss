@@ -348,10 +348,10 @@
       justify-content: center;
       height: 3.6rem;
       padding: 0 1.6rem;
-      border: 0.1rem solid #ebebeb;
+      border: 0.1rem solid var(--line-color);
       // background: #eee;
       border-radius: 1.8rem;
-      color: #979797;
+      color: var(--gray-txt-color);
       font-size: 1.4rem;
       font-weight: 500;
       overflow: hidden;

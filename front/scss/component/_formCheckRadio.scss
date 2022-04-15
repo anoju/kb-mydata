@@ -367,7 +367,7 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
       margin-left: var(--switch2-width);
       line-height: var(--switch2-height);
       font-size: 1.4rem;
-      color: #979797;
+      color: var(--gray-txt-color);
       &:first-child {
         padding-left: 0;
         padding-right: 0.6rem;
@@ -392,7 +392,7 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
           font-size: 1rem;
           padding-left: calc(var(--switch2-height) - var(--switch2-padding));
           box-sizing: border-box;
-          color: #979797;
+          color: var(--gray-txt-color);
           transition: 0.2s;
         }
       }
@@ -731,7 +731,7 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
 
   .line-bottom {
     padding-bottom: 1rem;
-    border-bottom: 0.1rem solid #ebebeb;
+    border-bottom: 0.1rem solid var(--line-color);
   }
 }
 
