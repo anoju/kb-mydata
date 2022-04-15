@@ -91,6 +91,11 @@
       color: var(--primary-disabled-color);
       background-color: var(--primary-disabled-bg-color);
     }
+
+    &.disabled2:not(.line) {
+      color: #b0b0b0;
+      background-color: #dedede;
+    }
   }
   // &.secondary {
   //   background: #f5045e;
