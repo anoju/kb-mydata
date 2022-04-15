@@ -5414,14 +5414,16 @@ const Layer = {
   innerClass: 'section',
   showClass: 'show',
   etcCont: '#header,#gnb,#container,#footer',
-  alertClass: 'ui-alert',
   focusedClass: 'pop__focused',
   focusInClass: 'ui-focus-in',
   removePopClass: 'ui-pop-remove',
   closeRemoveClass: 'ui-pop-close-remove',
+  alertClass: 'ui-pop-alert',
+  lastPopClass: 'ui-pop-last',
   agreePopClass: 'ui-pop-agree',
   agreePopSwiperClass: 'ui-pop-agree-swiper',
   scrollShowTitleClass: 'pop-fade-title',
+  bgNoCloseClass: 'bg-no-click',
   beforeCont: [],
   content: '',
   like: function () {
@@ -6371,21 +6373,37 @@ const Layer = {
     if ($popup.length && $popWrap.length) {
       Layer.opening++;
       const $idx = $popup.index('.' + Layer.popClass);
-      const $show = $('.' + Layer.popClass + '.' + Layer.showClass).length;
+      const $show = $('.' + Layer.popClass + '.' + Layer.showClass).not('.' + Layer.alertClass).length;
+      const $alertShow = $('.' + Layer.popClass + '.' + Layer.showClass + '.' + Layer.alertClass).length;
       let $id = $popup.attr('id');
       let $lastPop = '';
 
       if (Layer.openPop.length) $lastPop = Layer.openPop[Layer.openPop.length - 1];
-      if ($show > 0) $popup.css('z-index', '+=' + $show);
+      if ($popup.hasClass(Layer.alertClass && !$alertShow)) {
+        $popup.css('z-index', '+=' + $alertShow);
+      } else if ($show) {
+        $popup.css('z-index', '+=' + $show);
+      }
       if ($id == undefined) {
         $id = Layer.id + $idx;
         $popup.attr('id', $id);
+      }
+      if (!$popup.hasClass(Layer.alertClass)) {
+        if (Layer.openPop.length) {
+          let $last;
+          $.each(Layer.openPop, function () {
+            const $this = '' + this;
+            if (!$($this).hasClass(Layer.alertClass)) $last = $this;
+          });
+          $($last).removeClass(Layer.lastPopClass);
+        }
+        $popup.addClass(Layer.lastPopClass);
       }
       if (Layer.openPop.indexOf('#' + $id) < 0) Layer.openPop.push('#' + $id);
 
       // bg close
       //  && !$popup.hasClass('full')
-      if (!$popup.hasClass('alert') && !$popup.hasClass('bg-no-click')) {
+      if (!$popup.hasClass(Layer.alertClass) && !$popup.hasClass(Layer.bgNoCloseClass)) {
         const $bgClick = '<div class="pop-bg-close ui-pop-close" role="button" aria-label="팝업창 닫기"></div>';
         if (!$popup.find('.pop-bg-close').length) $popup.prepend($bgClick);
       }
@@ -6419,6 +6437,7 @@ const Layer = {
       if ($popup.find('.' + Layer.scrollShowTitleClass).length) $popup.find('.' + Layer.headClass + ' h1').addClass('scl-title-hide');
 
       $popup.attr('aria-hidden', false);
+
       if ($popup.hasClass('modal')) {
         $popup.css('display', 'flex');
       } else {
@@ -6489,7 +6508,7 @@ const Layer = {
         $(Layer.etcCont).attr('aria-hidden', true);
 
         //열려있는 팝업
-        if ($lastPop != '' && $lastPop != tar) $($lastPop).attr('aria-hidden', true);
+        if (Layer.openPop.length && $lastPop) $($lastPop).attr('aria-hidden', true);
 
         //웹접근성
         const $tit = $popup.find('.' + Layer.headClass + ' h1');
@@ -6566,6 +6585,17 @@ const Layer = {
 
     Layer.openPop.splice(Layer.openPop.indexOf('#' + $id), 1);
     if (Layer.openPop.length) $lastPop = Layer.openPop[Layer.openPop.length - 1];
+    if (!$popup.hasClass(Layer.alertClass)) {
+      if (Layer.openPop.length) {
+        let $last;
+        $.each(Layer.openPop, function () {
+          const $this = '' + this;
+          if (!$($this).hasClass(Layer.alertClass)) $last = $this;
+        });
+        $($last).addClass(Layer.lastPopClass);
+      }
+      $popup.removeClass(Layer.lastPopClass);
+    }
     if ($visible == 1) {
       Body.unlock();
       $(Layer.etcCont).removeAttr('aria-hidden');
