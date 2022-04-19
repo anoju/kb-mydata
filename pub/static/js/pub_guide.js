@@ -161,13 +161,10 @@ const makeBoard = function () {
       if (obj.depth1 !== undefined && obj.depth1 !== '') {
         trHtml += '<tr class="hr">';
         //2022-04-11 스토리보드 버전 정보 추가
-        if (obj.lastVer_SB !== undefined && obj.lastVer_SB !== '') {
-          trHtml += '<th scope="col" class="sb_ver" colspan="12">' + obj.depth1;
-          trHtml += '<span>' + obj.lastVer_SB + '</span>';
-          trHtml += '</th>';
-        } else {
-          trHtml += '<th scope="col" colspan="12">' + obj.depth1 + '</th>';
-        }
+
+        trHtml += '<th scope="col" colspan="12"><div>' + obj.depth1;
+        if (obj.version) trHtml += '<div class="ver">' + obj.version + '</div>';
+        trHtml += '</div></th>';
       } else {
         if (obj.state) {
           trHtml += '<tr class="' + obj.state + '">';
@@ -448,7 +445,7 @@ const guide = {
       const _scrollChkHtml = '<div class="g_board_scroll"><div></div></div>';
       if (!_this.next('.g_board_scroll').length) _this.after(_scrollChkHtml);
       _this.on('mousedown', function (e) {
-        const _scrollWidth = _this.get(0).scrollWidthl;
+        const _scrollWidth = _this.get(0).scrollWidth;
         const _thisWidth = _this.width();
         if (_scrollWidth - _thisWidth > 0) {
           _isMouseDown = true;
