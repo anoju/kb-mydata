@@ -41,15 +41,6 @@
     }
   }
 
-  &.date {
-    input {
-      @include bg-etc(2.4rem auto, right 1.6rem center);
-      background-image: url(../images/icon/ico-calendar@3x.png);
-      &::-webkit-calendar-picker-indicator {
-        opacity: 0;
-      }
-    }
-  }
   input:-internal-autofill-selected {
     background: none;
   }
@@ -93,6 +84,13 @@
     //     text-align: left;
     //   }
     // }
+    &.date {
+      @include bg-etc(2.4rem auto, right 1.6rem center);
+      background-image: url(../images/icon/ico-calendar@3x.png);
+      &::-webkit-calendar-picker-indicator {
+        opacity: 0;
+      }
+    }
   }
   &.h56 {
     border-radius: 1.2rem;

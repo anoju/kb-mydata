@@ -88,6 +88,11 @@ i.require {
     .btn-inp-del:last-child {
       margin-right: 2rem;
     }
+    input {
+      &.date {
+        background-position: right 2rem bottom 1.6rem;
+      }
+    }
   }
   &.input input,
   &.select select,
