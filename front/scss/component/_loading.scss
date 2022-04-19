@@ -1,25 +1,25 @@
 :root {
   --loading-svg-offset: 187;
-  --loading-svg-duration: 1.4s;
+  --loading-svg-duration: 2s;
 }
 
 .loading-bar,
 .loading-svg {
   text-align: center;
   pointer-events: none;
-  svg {
-    animation: loading-rotator var(--loading-svg-duration) linear infinite;
-    width: 2.4rem;
-    height: 2.4rem;
-    vertical-align: top;
-    .path {
-      stroke-dasharray: var(--loading-svg-offset);
-      stroke-dashoffset: 0;
-      transform-origin: center;
-      stroke: var(--primary-color);
-      animation: loading-dash var(--loading-svg-duration) ease-in-out infinite;
-    }
-  }
+  // svg {
+  //   animation: loading-rotator var(--loading-svg-duration) linear infinite;
+  //   width: 2.4rem;
+  //   height: 2.4rem;
+  //   vertical-align: top;
+  //   .path {
+  //     stroke-dasharray: var(--loading-svg-offset);
+  //     stroke-dashoffset: 0;
+  //     transform-origin: center;
+  //     stroke: var(--primary-color);
+  //     animation: loading-dash var(--loading-svg-duration) ease-in-out infinite;
+  //   }
+  // }
 }
 .loading-bar {
   display: flex;
@@ -45,14 +45,17 @@
 @keyframes loading-dash {
   0% {
     stroke-dashoffset: var(--loading-svg-offset);
+    stroke: #00dcdc;
   }
   50% {
     stroke-dashoffset: var(--loading-svg-offset) / 4;
     transform: rotate(135deg);
+    stroke: #2ad6a8;
   }
   100% {
     stroke-dashoffset: var(--loading-svg-offset);
     transform: rotate(450deg);
+    stroke: #fd7e64;
   }
 }
 
