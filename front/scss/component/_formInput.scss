@@ -86,8 +86,9 @@
     // }
     &.date {
       @include bg-etc(2.4rem auto, right 1.6rem center);
-      background-image: url(../images/icon/ico-calendar@3x.png);
+      @include ico-calendar;
       &::-webkit-calendar-picker-indicator {
+        width: 2.2rem;
         opacity: 0;
       }
     }
