@@ -368,7 +368,7 @@ caption,legend{overflow:hidden;width:1px;height:0.1px;font-size:0px;line-height:
 .g_board table tbody .complete.modify td{background-color:#fcf7f6;color:#ca4c07}
 .g_board table tbody tr:hover td,
 .g_board table tbody tr.selected td{background-color:#d7f1ff;color:#666}
-.g_board table tbody td a{display:block;margin:-20px -10px;padding:20px 10px;height:100%;font-weight:500;color:#000;text-decoration:underline}
+.g_board table tbody td a{display:block;margin:-12px -10px;padding:12px 10px;height:100%;font-weight:500;color:#000;text-decoration:underline}
 .g_board table tbody .hr th{padding:16px 30px;font-size:14px;position: relative; font-weight:500;text-align:left;background:repeating-linear-gradient(135deg,#fff,#fff 5px,#f1f1f1 5px,#f1f1f1 10px);color:#000;}
 .g_board table tbody .hr th.sb_ver{text-align: left;padding:16px 30px;}
 .g_board table tbody .hr th span{position: absolute;padding:16px 30px;right:0;top:0;color: #157841;}
