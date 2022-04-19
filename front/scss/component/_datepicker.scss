@@ -10,7 +10,8 @@ jq-Datepicker
   width: 2.4rem;
   height: 4.6rem;
   overflow: hidden;
-  background: url(../images/icon/ico-calendar@3x.png) no-repeat center center / contain;
+  @include bg-etc(2.4rem auto, center center);
+  @include ico-calendar;
 }
 .ui-widget {
   font-size: 1.1em;

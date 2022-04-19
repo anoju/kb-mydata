@@ -1,9 +1,7 @@
 :root {
   --vh: 1vh;
-  --primary-color: #fe7d65;
-  --primary-color-rgb: 254, 125, 101;
-  --primary-disabled-color: #fbe9e7;
-  --primary-disabled-bg-color: #ffcbc1;
+  --primary-color: #00caca;
+  --primary-color-rgb: 0, 202, 202;
 
   --base-txt-color: #606060;
   --strong-txt-color: #212121;
@@ -403,9 +401,6 @@ html.lock,
 }
 .fc-red {
   color: var(--alert-txt-color) !important;
-}
-.fc-red2 {
-  color: var(--primary-color) !important;
 }
 .fc-up {
   // color: #eb5757 !important;

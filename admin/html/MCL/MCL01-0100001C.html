@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>교보증권 마이데이타 관리자</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <!-- css -->
+    <link href="../../lib/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../css/custom.min.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../lib/bootstrap-table/bootstrap-table-ko-KR.js"></script>
+    <script src="../../lib/ckeditor/ckeditor.js"></script>
+    <script src="../../js/custom.lib.min.js"></script>
+    <script src="../../js/custom.js"></script>
+  </head>
+  <body>
+    <!-- wrap -->
+    <section class="kb-wrap">
+      <!-- 헤더 -->
+      <div data-include-html="../include/header.html"></div>
+      <!-- //헤더 -->
+
+      <!-- container -->
+      <div class="kb-container">
+        <!-- 사이드바 -->
+        <div data-include-html="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
+
+        <!-- 컨텐츠 -->
+        <main class="kb-content" role="main">
+          <!-- 컨텐츠헤더 -->
+          <div class="kb-page-title">
+            <div>
+              <div class="kb-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">홈</a></li>
+                    <li class="breadcrumb-item"><a href="#">마이데이터정보제공내역</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">마이데이터정보제공내역</li>
+                  </ol>
+                </nav>
+                <h1>마이데이터정보제공내역</h1>
+              </div>
+            </div>
+          </div>
+          <!-- //컨텐츠헤더 -->
+
+          <!-- 컨텐츠본문 -->
+          <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">마이데이터정보제공내역 검색</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">게시기간</div>
+                <div class="form-box-cont">
+                  <div class="form-row">
+                    <div class="col-md-5">
+                      <div class="form-row">
+                        <div class="col-md-5">
+                          <input type="date" class="form-control" placeholder="게시기간" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <button type="button" class="btn large btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
+          </div>
+
+          <div class="title-wrap mt-5">
+            <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개</div>
+          </div>
+
+          <table id="table" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+            <thead>
+              <tr>
+                <th scope="col" rowspan="2">업무코드</th>
+                <th scope="col" rowspan="2">업무명</th>
+                <th scope="col" rowspan="2">계좌상품구분</th>
+                <th scope="col" rowspan="2">총건수</th>
+                <th scope="colgroup" colspan="2">응답여부</th>
+                <th scope="colgroup" colspan="2">응답코드</th>
+                <th scope="colgroup" colspan="2">응답데이터</th>
+              </tr>
+              <tr>
+                <th scope="col">성공</th>
+                <th scope="col">실패</th>
+                <th scope="col">정상</th>
+                <th scope="col">오류</th>
+                <th scope="col">존재</th>
+                <th scope="col">미존재</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">고객가입여부확인</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">계좌목록조회</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">계좌기본정보조회</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">고객가입여부확인</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">계좌목록조회</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">계좌기본정보조회</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">고객가입여부확인</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">계좌목록조회</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">계좌기본정보조회</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">고객가입여부확인</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">계좌목록조회</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>IN01</td>
+                <td class="text-left"><a href="#">계좌기본정보조회</a></td>
+                <td></td>
+                <td>8,998</td>
+                <td>8,998</td>
+                <td>10</td>
+                <td>1,185</td>
+                <td>0</td>
+                <td>135</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //컨텐츠본문 -->
+        </main>
+        <!-- //컨텐츠 -->
+      </div>
+      <!-- //container -->
+
+      <!-- 푸터 -->
+      <div data-include-html="../include/footer.html"></div>
+      <!-- 푸터 -->
+    </section>
+    <!-- //wrap -->
+
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+    </script>
+  </body>
+</html>

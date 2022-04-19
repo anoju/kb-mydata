@@ -200,11 +200,11 @@
                   <div class="form-box-cont">
                     <div class="custom-control-wrap">
                       <label class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <input type="radio" name="linkType" class="custom-control-input" />
                         <span class="custom-control-label">외부</span>
                       </label>
                       <label class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <input type="radio" name="linkType" class="custom-control-input" />
                         <span class="custom-control-label">내부</span>
                       </label>
                     </div>
@@ -303,14 +303,27 @@
               </div>
             </div>
             <div class="form-box-row">
+              <!-- 2022-04-19: 금액타이틀 - 수정 -->
               <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i>금액타이틀</div>
+                <div class="form-box-label">금액타이틀</div>
                 <div class="form-box-cont">
-                  <input type="text" class="form-control" />
-                  <!-- 2022-03-25: 도움말 클래스 .help-txt로 통일(수정) -->
+                  <div class="d-flex">
+                    <div class="custom-control-wrap text-nowrap">
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="rdo2" class="custom-control-input" />
+                        <span class="custom-control-label">사용</span>
+                      </label>
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="rdo2" class="custom-control-input" />
+                        <span class="custom-control-label">사용안함</span>
+                      </label>
+                    </div>
+                    <input type="text" class="form-control" />
+                  </div>
                   <div class="mt-1 help-txt">※ 예)매각금액, 모집중 / 금액 왼쪽에 붙은 설명입니다.</div>
                 </div>
               </div>
+              <!-- //2022-04-19: 금액타이틀 - 수정 -->
             </div>
             <div class="form-box-row">
               <div class="form-box-item">
@@ -391,15 +404,15 @@
                 <div class="form-box-cont">
                   <div class="custom-control-wrap">
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <input type="radio" name="rdo3" class="custom-control-input" />
                       <span class="custom-control-label">모집예정</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <input type="radio" name="rdo3" class="custom-control-input" />
                       <span class="custom-control-label">모집 중</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <input type="radio" name="rdo3" class="custom-control-input" />
                       <span class="custom-control-label">모집 완료</span>
                     </label>
                   </div>
@@ -476,15 +489,15 @@
                 <div class="form-box-cont">
                   <div class="custom-control-wrap">
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <input type="radio" name="rdo4" class="custom-control-input" />
                       <span class="custom-control-label">모집예정</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <input type="radio" name="rdo4" class="custom-control-input" />
                       <span class="custom-control-label">모집 중</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <input type="radio" name="rdo4" class="custom-control-input" />
                       <span class="custom-control-label">모집 완료</span>
                     </label>
                   </div>
@@ -572,25 +585,36 @@
                 <div class="form-box-cont">
                   <div class="custom-control-wrap">
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <input type="radio" name="rdo5" class="custom-control-input" />
                       <span class="custom-control-label">공동구매</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <input type="radio" name="rdo5" class="custom-control-input" />
                       <span class="custom-control-label">작품매각</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <input type="radio" name="rdo5" class="custom-control-input" />
                       <span class="custom-control-label">모집 완료</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <input type="radio" name="rdo5" class="custom-control-input" />
                       <span class="custom-control-label">운영 완료</span>
                     </label>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- 2022-04-19: 추가 -->
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">금액타이틀</div>
+                <div class="form-box-cont">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <!-- //2022-04-19: 추가 -->
+
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>금액</div>
@@ -638,16 +662,16 @@
                   <div class="d-flex align-items-center">
                     <div class="custom-control-wrap">
                       <label class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <input type="radio" name="rdo6" class="custom-control-input" />
                         <span class="custom-control-label">사용</span>
                       </label>
                       <label class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <input type="radio" name="rdo6" class="custom-control-input" />
                         <span class="custom-control-label">사용안함</span>
                       </label>
                     </div>
                     <!-- 2022-03-25: * => ※, 도움말 클래스 .help-txt로 통일(수정) -->
-                    <div class="help-txt">※ 게시기간은 시작일의 0시 0분부터 종료일의 23:59을 기준으로 합니다.</div>
+                    <div class="help-txt">※ 게시기간은 시작일의 0시 0분부터 종료일의 23시 59분을 기준으로 합니다.</div>
                   </div>
                   <!-- // 2022.03.24 게시기간 수정 -->
                 </div>
@@ -681,10 +705,16 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 마감일</div>
                 <div class="form-box-cont">
-                  <div class="form-row">
-                    <div class="col-md-5">
+                  <div class="form-row align-items-center">
+                    <!-- 2022-04-19: 클래스 수정 -->
+                    <div class="col-md-4">
                       <input type="date" class="form-control" placeholder="마감일" />
                     </div>
+                    <!-- 2022-04-19: 추가 -->
+                    <div class="col-md-8 mt-1 mt-md-0">
+                      <div class="help-txt">※ 마감기간은 선택(마감)일의 23시 59분을 기준으로 합니다.</div>
+                    </div>
+                    <!-- //2022-04-19: 추가 -->
                   </div>
                 </div>
               </div>

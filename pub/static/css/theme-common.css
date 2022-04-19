@@ -350,7 +350,7 @@ caption,legend{overflow:hidden;width:1px;height:0.1px;font-size:0px;line-height:
 .g_board{margin-top:20px;overflow-x:auto;overflow-y:hidden;border-top:2px solid #4d4d4d;}
 .g_board.catch{cursor:grab;}
 .g_board.catching{cursor:grabbing;}
-.g_board table{white-space:nowrap;table-layout:auto;border-collapse:collapse;border-spacing:0;}
+.g_board table{table-layout:auto;border-collapse:collapse;border-spacing:0;}
 .g_board table th,
 .g_board table td{border:1px solid #e6e6e6;}
 .g_board table thead th{padding:10px;font-weight:500;background-color:#fff;font-size:12px;color:#666}
@@ -360,19 +360,25 @@ caption,legend{overflow:hidden;width:1px;height:0.1px;font-size:0px;line-height:
 .g_board table tbody td:not(.no){min-width:60px;}
 .g_board table thead th:first-child,
 .g_board table tbody td.no{width:25px;padding-left:0;padding-right:0;}
-/*.g_board table tbody td.id{padding:0}*/
+.g_board table thead th,
+.g_board table tbody td.id,
+.g_board table tbody td.worker,
+.g_board table tbody td.c_date,
+.g_board table tbody td.m_date{white-space: nowrap;}
 .g_board table tbody td.deps,
 .g_board table tbody td.name,
 .g_board table tbody td.etc{text-align:left}
+.g_board table tbody td.etc{word-break: break-all;}
 .g_board table tbody .complete td{background-color:#fff;color:#666}
 .g_board table tbody .complete.modify td{background-color:#fcf7f6;color:#ca4c07}
 .g_board table tbody tr:hover td,
 .g_board table tbody tr.selected td{background-color:#d7f1ff;color:#666}
-.g_board table tbody td a{display:block;margin:-20px -10px;padding:20px 10px;height:100%;font-weight:500;color:#000;text-decoration:underline}
+.g_board table tbody td a{display:block;margin:-12px -10px;padding:12px 10px;height:100%;font-weight:500;color:#000;text-decoration:underline}
 .g_board table tbody .hr th{padding:16px 30px;font-size:14px;position: relative; font-weight:500;text-align:left;background:repeating-linear-gradient(135deg,#fff,#fff 5px,#f1f1f1 5px,#f1f1f1 10px);color:#000;}
-.g_board table tbody .hr th.sb_ver{text-align: left;padding:16px 30px;}
-.g_board table tbody .hr th span{position: absolute;padding:16px 30px;right:0;top:0;color: #157841;}
-.g_board table tbody .hr th span span{position: relative;padding: 0;}
+.g_board table tbody .hr th{padding:0 !important;}
+.g_board table tbody .hr th > div{display:flex;padding:16px 30px;align-items: center;}
+.g_board table tbody .hr th .ver{margin-left:auto;color:#666;font-weight:normal;font-size:0.875em;}
+.g_board table tbody .hr th .ver span{color:#dd0000;font-weight:bold;}
 .g_grid table thead th{line-height:18px;padding:10px;background-color:rgba(0,0,0,0.6);color:rgba(255,255,255,0.8)}
 .g_grid table tbody th, .g_grid table tbody td{line-height:18px;margin-top:1px;padding:10px;background-color:rgba(0,0,0,0.4);color:rgba(255,255,255,0.8);vertical-align:middle;word-break:break-all}
 .g_board table tbody tr.del td,
@@ -388,10 +394,6 @@ caption,legend{overflow:hidden;width:1px;height:0.1px;font-size:0px;line-height:
 	.g_board table colgroup{display:none}
 	.g_board table th, .g_board table td{display:none}
 	.g_board table tbody .hr th{display:table-cell;text-align:center;padding:15px 0;background:repeating-linear-gradient(135deg,#fff,#fff 3px,#f1f1f1 3px,#f1f1f1 6px);font-size:14px;}
-	.g_board table tbody .hr th.sb_ver{text-align: left;padding:15px;}
-	.g_board table tbody .hr th span{right:0;padding:15px;}
-	.g_board table tbody .hr th span{font-size: 0;}
-	.g_board table tbody .hr th span span{font-size:12px;}
 	.g_board table td:nth-child(2), .g_board table td:nth-child(8){display:table-cell;width:auto!important}
 	.g_board_scroll{left:0;right:0;display:none;}
 }
