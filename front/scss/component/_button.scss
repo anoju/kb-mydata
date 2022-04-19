@@ -79,7 +79,7 @@
 
   &.disabled,
   &:disabled {
-    opacity: 0.3;
+    opacity: 0.4;
   }
 
   &.primary {
@@ -87,9 +87,7 @@
     color: #fff;
     &.disabled:not(.line),
     &:disabled:not(.line) {
-      opacity: 1;
-      color: var(--primary-disabled-color);
-      background-color: var(--primary-disabled-bg-color);
+      color: rgba(255, 255, 255, 0.4);
     }
 
     &.disabled2:not(.line) {
