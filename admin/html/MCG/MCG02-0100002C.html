@@ -546,12 +546,22 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>면적</div>
                 <div class="form-box-cont">
-                  <div class="form-row">
-                    <div class="col-8">
-                      <input type="text" class="form-control" />
+                  <!-- 2022-04-20: 수정 -->
+                  <div class="d-flex align-items-center">
+                    <div class="custom-control-wrap text-nowrap">
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="useArea" class="custom-control-input" />
+                        <span class="custom-control-label">사용안함</span>
+                      </label>
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="useArea" class="custom-control-input" />
+                        <span class="custom-control-label">사용</span>
+                      </label>
                     </div>
-                    <div class="col-4 d-flex align-items-center">m<sup>2</sup></div>
+                    <input type="text" class="form-control" />
+                    <div class="text-nowrap ml-1">m<sup>2</sup></div>
                   </div>
+                  <!-- //2022-04-20: 수정 -->
                 </div>
               </div>
             </div>
@@ -658,7 +668,7 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 게시기간</div>
                 <div class="form-box-cont">
-                  <!-- 2022.03.24 게시기간 수정 -->
+                  <!-- 2022-03-24 게시기간 수정 -->
                   <div class="d-flex align-items-center">
                     <div class="custom-control-wrap">
                       <label class="custom-control custom-radio custom-control-inline">
@@ -673,7 +683,7 @@
                     <!-- 2022-03-25: * => ※, 도움말 클래스 .help-txt로 통일(수정) -->
                     <div class="help-txt">※ 게시기간은 시작일의 0시 0분부터 종료일의 23시 59분을 기준으로 합니다.</div>
                   </div>
-                  <!-- // 2022.03.24 게시기간 수정 -->
+                  <!-- // 2022-03-24 게시기간 수정 -->
                 </div>
               </div>
             </div>
