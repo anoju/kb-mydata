@@ -3,23 +3,22 @@
   --loading-svg-duration: 2s;
 }
 
-.loading-bar,
 .loading-svg {
   text-align: center;
   pointer-events: none;
-  // svg {
-  //   animation: loading-rotator var(--loading-svg-duration) linear infinite;
-  //   width: 2.4rem;
-  //   height: 2.4rem;
-  //   vertical-align: top;
-  //   .path {
-  //     stroke-dasharray: var(--loading-svg-offset);
-  //     stroke-dashoffset: 0;
-  //     transform-origin: center;
-  //     stroke: var(--primary-color);
-  //     animation: loading-dash var(--loading-svg-duration) ease-in-out infinite;
-  //   }
-  // }
+  svg {
+    animation: loading-rotator var(--loading-svg-duration) linear infinite;
+    width: 2.4rem;
+    height: 2.4rem;
+    vertical-align: top;
+    .path {
+      stroke-dasharray: var(--loading-svg-offset);
+      stroke-dashoffset: 0;
+      transform-origin: center;
+      stroke: var(--primary-color);
+      animation: loading-dash var(--loading-svg-duration) ease-in-out infinite, loading-stroke calc(var(--loading-svg-duration) * 2) linear infinite alternate;
+    }
+  }
 }
 .loading-bar {
   display: flex;
@@ -27,6 +26,8 @@
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  pointer-events: none;
   &.off {
     height: 1rem;
     opacity: 0;
@@ -45,17 +46,39 @@
 @keyframes loading-dash {
   0% {
     stroke-dashoffset: var(--loading-svg-offset);
-    stroke: #00dcdc;
   }
   50% {
     stroke-dashoffset: var(--loading-svg-offset) / 4;
     transform: rotate(135deg);
-    stroke: #2ad6a8;
   }
   100% {
     stroke-dashoffset: var(--loading-svg-offset);
     transform: rotate(450deg);
+  }
+}
+@keyframes loading-stroke {
+  0% {
+    stroke: #00dcdc;
+  }
+  50% {
+    stroke: #2ad6a8;
+  }
+  100% {
     stroke: #fd7e64;
+  }
+}
+@keyframes loading-bg {
+  0%,
+  17% {
+    background-color: var(--primary-color);
+  }
+  33%,
+  67% {
+    background-color: #2ad6a8;
+  }
+  83%,
+  100% {
+    background-color: #fd7e64;
   }
 }
 
@@ -98,20 +121,20 @@
 }
 
 // refresh
-html {
-  // &.not-refresh,
-  // &.refreshing {
-  //   height: 100%;
-  //   overflow: hidden;
-  //   body {
-  //     height: 100%;
-  //     overflow: hidden;
-  //   }
-  // }
-  // &.refreshing {
-  //   pointer-events: none;
-  // }
-}
+// html {
+// &.not-refresh,
+// &.refreshing {
+//   height: 100%;
+//   overflow: hidden;
+//   body {
+//     height: 100%;
+//     overflow: hidden;
+//   }
+// }
+// &.refreshing {
+//   pointer-events: none;
+// }
+// }
 .page-refresh {
   position: fixed;
   top: 0;
@@ -129,8 +152,8 @@ html {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    // background: rgba(0, 0, 0, 0.9);
     background: var(--primary-color);
+    // background: #00dcdc;
     opacity: 0;
     transform: scale(0);
     &.ing {
@@ -163,6 +186,9 @@ html {
   }
 
   html.refreshing & {
+    .ico {
+      animation: loading-bg var(--loading-svg-duration) linear infinite alternate;
+    }
     .svg {
       animation: loading-rotator var(--loading-svg-duration) linear infinite;
     }
