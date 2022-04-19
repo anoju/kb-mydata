@@ -360,6 +360,7 @@ caption,legend{overflow:hidden;width:1px;height:0.1px;font-size:0px;line-height:
 .g_board table tbody td:not(.no){min-width:60px;}
 .g_board table thead th:first-child,
 .g_board table tbody td.no{width:25px;padding-left:0;padding-right:0;}
+.g_board table thead th,
 .g_board table tbody td.id,
 .g_board table tbody td.worker,
 .g_board table tbody td.c_date,

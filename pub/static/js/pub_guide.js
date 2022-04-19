@@ -129,7 +129,12 @@ const makeBoard = function () {
     html += '<th scope="col" class="deps d3">4Depth<button type="button" rel="d3">숨기기</button></th>';
     html += '<th scope="col" class="deps d4">5Depth<button type="button" rel="d4">숨기기</button></th>';
     html += '<th scope="col" class="name">화면명</th>';
-    html += '<th scope="col" class="worker">작업자</th>';
+    // html += '<th scope="col" class="worker">작업자</th>';
+    html += '<th scope="col" class="worker">';
+    html += '<select>';
+    html += '<option value="">작업자</option>';
+    html += '</select>';
+    html += '</th>';
     html += '<th scope="col" class="c_date">';
     html += '<select>';
     html += '<option value="">작업일</option>';
@@ -388,6 +393,7 @@ const guide = {
       const _this = $(this);
       const dayArry = [];
       const dayArry2 = [];
+      const workerArry = [];
       $(this)
         .find('tbody td.c_date')
         .each(function () {
@@ -427,7 +433,7 @@ const guide = {
         for (let i in dayArry) {
           const opt = dayArry[i];
           //const optTxt = opt.substr(0, 4) + '-' + opt.substr(4, 2) + '-' + opt.substr(6, 2);
-          $select.append('<option val="' + opt + '">' + opt + '</option>');
+          $select.append('<option value="' + opt + '">' + opt + '</option>');
         }
       }
       const $select2 = $(this).find('thead th.m_date select');
@@ -435,7 +441,32 @@ const guide = {
         for (let j in dayArry2) {
           const opt2 = dayArry2[j];
           //const optTxt = opt.substr(0, 4) + '-' + opt.substr(4, 2) + '-' + opt.substr(6, 2);
-          $select2.append('<option val="' + opt2 + '">' + opt2 + '</option>');
+          $select2.append('<option value="' + opt2 + '">' + opt2 + '</option>');
+        }
+      }
+
+      $(this)
+        .find('tbody td.worker')
+        .each(function () {
+          const _worker = $(this).text();
+          if (!!_worker) {
+            let $num;
+            if (workerArry.indexOf(_worker) == -1) {
+              workerArry.push(_worker);
+              $num = workerArry.length - 1;
+            } else {
+              $num = workerArry.indexOf(_worker);
+            }
+            const _workerClass = 'wk_' + $num;
+            $(this).closest('tr').addClass(_workerClass);
+          }
+        });
+      const $select3 = $(this).find('thead th.worker select');
+      if ($select3.length) {
+        for (let k in workerArry) {
+          const workerArryOpt = workerArry[k];
+          //const optTxt = opt.substr(0, 4) + '-' + opt.substr(4, 2) + '-' + opt.substr(6, 2);
+          $select3.append('<option value="' + k + '">' + workerArryOpt + '</option>');
         }
       }
 
@@ -493,22 +524,21 @@ const guide = {
       const $thead = $(this).closest('thead');
       const $cVal = $thead.find('.c_date select').val();
       const $mVal = $thead.find('.m_date select').val();
+      const $workerVal = $thead.find('.worker select').val();
       const $tbody = $(this).closest('.g_board').find('tbody');
-      if ($cVal == '' && $mVal == '') {
+      if (!$cVal && !$mVal && !$workerVal) {
         $tbody.find('tr').removeAttr('style');
-      } else if ($cVal != '' && $mVal != '') {
-        $tbody.find('tr').not('.hr').hide();
-        $tbody.find('.c_' + $cVal + '.m_' + $mVal).show();
       } else {
         $tbody.find('tr').not('.hr').hide();
-        if ($cVal != '') $tbody.find('.c_' + $cVal).show();
-        if ($mVal != '') $tbody.find('.m_' + $mVal).show();
+        if ($cVal) $tbody.find('.c_' + $cVal).show();
+        if ($mVal) $tbody.find('.m_' + $mVal).show();
+        if ($workerVal) $tbody.find('.wk_' + $workerVal).show();
       }
     });
   },
   state: function () {
     $('.g_content tbody .c_date').each(function () {
-      if (!$.trim($(this).html()) == '') {
+      if (!$.trim($(this).html()) == '' && !$(this).parent('tr').hasClass('del')) {
         $(this).parent('tr').addClass('complete');
       }
     });
