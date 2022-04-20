@@ -386,6 +386,7 @@ button.btn-click {
   &.btn-comment {
     z-index: 51;
     text-align: left;
+
     > div {
       box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.12);
       background: #fff;
@@ -396,19 +397,20 @@ button.btn-click {
         @include ios-bottom(padding-bottom, 1rem);
       }
     }
-    &.dim {
-      > div {
-        background: #fff;
-      }
-    }
     .user-info {
       margin-bottom: 0.8rem;
       color: #23adfa;
     }
+    &.pop-scroll-hide {
+      height: 6.8rem;
+    }
 
     &.pop-foot {
+      @include ios-bottom(height, 6.8rem);
       > div {
-        position: relative;
+        html.ios & {
+          @include ios-bottom(padding-bottom, 1rem);
+        }
       }
     }
   }

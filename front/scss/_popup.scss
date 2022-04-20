@@ -213,7 +213,7 @@
     &.pop-scroll-hide {
       transition: height 0.3s;
       &.hidden {
-        height: 0;
+        height: 0 !important;
       }
     }
   }
@@ -293,14 +293,6 @@
       > div {
         html.ios & {
           @include ios-bottom(padding-bottom, 2.4rem);
-        }
-      }
-
-      &.btn-comment {
-        > div {
-          html.ios & {
-            @include ios-bottom(padding-bottom, 1rem);
-          }
         }
       }
     }
