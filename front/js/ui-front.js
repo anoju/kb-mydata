@@ -497,7 +497,7 @@ ui.Common = {
 
     const $maxHeight = $spaceArryHeight.length ? Math.max.apply(null, $spaceArryHeight) : 0;
     $space.css('height', $maxHeight);
-    if ($('.floating-btn').length) $('.floating-btn').css('bottom', $maxHeight === 0 ? 24 : $maxHeight);
+    if ($('.floating-btn').length) $('.floating-btn').css('bottom', $maxHeight === 0 ? 24 : $maxHeight + 10);
   },
   step: function () {
     //<ol class="step_state" role="img" aria-label="총 4단계 중 현재단계 2단계">
@@ -609,7 +609,7 @@ ui.Common = {
       const $Height = window.innerHeight;
       const $scrollHeight = $('body').get(0).scrollHeight;
       if ($spaceH > 0 && $spaceH != $bottom - $margin) {
-        $('.floating-btn').css('bottom', $spaceH === 0 ? $margin : $spaceH);
+        $('.floating-btn').css('bottom', $spaceH === 0 ? $margin : $spaceH + 10);
       }
 
       if ($SclTop > btnTop.min) {
