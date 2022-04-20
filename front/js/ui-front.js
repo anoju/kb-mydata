@@ -305,8 +305,8 @@ ui.Device = {
 ui.Common = {
   getUrlPath: function () {
     let $path = '';
-    if (location.pathname.indexOf('/front/') > -1) $path = '/front';
-    if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $path = '/kyobo-mydata-pub';
+    if (location.pathname.indexOf('/front/') > -1) $path = '/front' + $path;
+    if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $path = '/kyobo-mydata-pub' + $path;
     if (location.pathname.indexOf('mykkl.com/') > -1) $path = '/mydata/resources/static';
     return $path;
   },
@@ -835,7 +835,11 @@ ui.Common = {
     if (typeof lottie === 'undefined') {
       let $url = '/js/lib/lottie.5.7.13.min.js';
       const $path = ui.Common.getUrlPath();
-      if ($path) $url = $path + $url;
+      if ($path) {
+        $url = $path + $url;
+      } else {
+        $url = '../..' + $url;
+      }
       ui.Util.loadScript($url, $lottieInit);
     } else {
       $lottieInit();
@@ -1149,7 +1153,11 @@ ui.Util = {
     if (!$('.smooth-corners').length) return;
     let $url = '/js/lib/paint.min.js';
     const $path = ui.Common.getUrlPath();
-    if ($path) $url = $path + $url;
+    if ($path) {
+      $url = $path + $url;
+    } else {
+      $url = '../..' + $url;
+    }
     if (CSS && 'paintWorklet' in CSS) CSS.paintWorklet.addModule($url);
   },
   canvasRotateImg: function (target, src, deg) {
@@ -5780,7 +5788,11 @@ const Layer = {
     const pdfPopId = 'uiPopPdf' + Layer.pdfIdx;
     let $src = '/pdfjs/web/viewer.html?file=' + url;
     const $path = ui.Common.getUrlPath();
-    if ($path) $src = $path + $src;
+    if ($path) {
+      $src = $path + $src;
+    } else {
+      $src = '../..' + $src;
+    }
 
     let $html = '<div id="' + pdfPopId + '" class="' + Layer.popClass + ' full pop-pdf ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
     $html += '<article class="' + Layer.wrapClass + '">';
