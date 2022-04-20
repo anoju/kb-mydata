@@ -754,7 +754,7 @@ ui.Common = {
         $html += '</div>';
         $('body').append($html);
 
-        const $baseThemeColor = '#00caca';
+        const $baseThemeColor = '#fe7d65';
         const $input = $('.gd__theme_color input');
         const $color = $('.gd__theme_color .color');
         const $openBtn = $('.gd__theme_btn');
@@ -2166,9 +2166,8 @@ ui.Tooltip = {
   position: function (tar) {
     const $tar = $(tar);
 
-    if (!$tar.children('.tooltip-inner').length) $tar.wrapInner('<div class="tooltip-inner"></div>');
     if (!$tar.children('.tooltip-arr').length) $tar.prepend('<i class="tooltip-arr" aria-hidden="true"></i>');
-    if (!$tar.children('.tooltip-close').length) $tar.find('.tooltip-inner').append('<a href="#" class="tooltip-close" role="button" aria-label="툴팁닫기"></a>');
+    if (!$tar.children('.tooltip-close').length) $tar.append('<a href="#" class="tooltip-close" role="button" aria-label="툴팁닫기"></a>');
     ui.Tooltip.resize();
   },
   aria: function (element) {
@@ -2586,7 +2585,7 @@ ui.Form = {
       if ($this.is('textarea') && $this.closest('.textarea').length) $this.closest('.textarea').addClass('focus');
 
       //bottom-fixed
-      const $bottom = $this.closest('.bottom-fixed');
+      const $bottom = $this.closest('.btn-comment');
       if ($bottom.length) {
         $('html').addClass('overflow-hidden');
         if ($bottom.hasClass('btn-comment')) {
@@ -2605,7 +2604,7 @@ ui.Form = {
       if ($this.is('textarea') && $this.closest('.textarea').length) $this.closest('.textarea').removeClass('focus');
 
       //bottom-fixed
-      const $bottom = $this.closest('.bottom-fixed');
+      const $bottom = $this.closest('.btn-comment');
       if ($bottom.length) {
         $('html').removeClass('overflow-hidden');
         if ($bottom.hasClass('btn-comment')) {

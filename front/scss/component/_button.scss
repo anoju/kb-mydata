@@ -47,9 +47,9 @@
     border-radius: 0.4rem;
   }
   &.h32 {
-    height: 3.2rem;
-    font-size: 1.2rem;
-    border-radius: 0.6rem;
+    height: 3.2rem !important;
+    font-size: 1.2rem !important;
+    border-radius: 0.6rem !important;
   }
   &.h38 {
     height: 3.8rem;
@@ -368,43 +368,48 @@ button.btn-click {
         }
       }
     }
-
-    /* */
-    &.btn-comment {
-      z-index: 51;
-      text-align: left;
+  }
+  /* */
+  &.btn-comment {
+    z-index: 51;
+    text-align: left;
+    &:before {
+      content: '';
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0);
+      visibility: hidden;
+      transition: background 0.2s 0s, visibility 0s 0.2s;
+    }
+    > div {
+      box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.12);
+      background: #fff;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      z-index: 1;
+    }
+    &.dim {
       &:before {
-        content: '';
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0);
-        visibility: hidden;
-        transition: background 0.2s 0s, visibility 0s 0.2s;
+        visibility: visible;
+        background: rgba(0, 0, 0, 0.5);
+        transition-delay: 0s;
       }
       > div {
-        box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.12);
         background: #fff;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        z-index: 1;
       }
-      &.dim {
-        &:before {
-          visibility: visible;
-          background: rgba(0, 0, 0, 0.5);
-          transition-delay: 0s;
-        }
-        > div {
-          background: #fff;
-        }
-      }
-      .user-info {
-        margin-bottom: 0.8rem;
-        color: #23adfa;
+    }
+    .user-info {
+      margin-bottom: 0.8rem;
+      color: #23adfa;
+    }
+
+    &.pop-foot {
+      > div {
+        position: relative;
       }
     }
   }
