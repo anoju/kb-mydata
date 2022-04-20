@@ -2,6 +2,24 @@
   --loading-svg-offset: 187;
   --loading-svg-duration: 2s;
 }
+.body-dim {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  transition: background 0.2s 0s, visibility 0s 0.2s;
+  z-index: 50;
+  &.show {
+    visibility: visible;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    transition-delay: 0s;
+  }
+}
 .loading-lottie {
   display: flex;
   align-items: center;

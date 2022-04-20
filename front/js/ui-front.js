@@ -2601,6 +2601,7 @@ ui.Form = {
   },
   focus: function () {
     const $inpEls = 'input:not(:checkbox):not(:radio):not(:hidden), select, textarea, .btn-select';
+    let $dimTimer;
     $(document).on('focusin', $inpEls, function (e) {
       const $this = $(this);
       if ($this.prop('readonly') || $this.prop('disabled')) return;
@@ -2614,14 +2615,21 @@ ui.Form = {
       //bottom-fixed
       const $bottom = $this.closest('.btn-comment');
       if ($bottom.length) {
+        const $isPop = $bottom.closest('.popup').length;
         $('html').addClass('overflow-hidden');
-        if ($bottom.hasClass('bottom-fixed')) {
-          $bottom.addClass('dim');
-          $bottom.siblings('.section').addClass('pointer-events-none');
+        $bottom.siblings().addClass('pointer-events-none');
+        clearTimeout($dimTimer);
+        if (!$('.body-dim').length) {
+          $('body').append('<div class="body-dim" aria-hidden="true"></div>');
         }
-        if ($bottom.hasClass('pop-foot')) {
-          $bottom.siblings().addClass('dim');
-        }
+        const $bottomH = $bottom.children().outerHeight();
+        const $zIndex = $isPop ? parseInt($bottom.closest('.popup').css('z-index')) : parseInt($bottom.css('z-index')) - 1;
+        $('.body-dim')
+          .css({
+            bottom: $bottomH,
+            'z-index': $zIndex
+          })
+          .addClass('show');
       }
     });
     $(document).on('focusout', $inpEls, function (e) {
@@ -2637,15 +2645,19 @@ ui.Form = {
       const $bottom = $this.closest('.btn-comment');
       if ($bottom.length) {
         $('html').removeClass('overflow-hidden');
-        if ($bottom.hasClass('bottom-fixed')) {
-          $bottom.removeClass('dim');
-          // body 클릭요소들 이벤트 막기
-        }
-        if ($bottom.hasClass('pop-foot')) {
-          $bottom.siblings().removeClass('dim');
-        }
+        $('.body-dim').removeClass('show');
+        $dimTimer = setTimeout(function () {
+          $('.body-dim').remove();
+        }, 210);
+
+        // if ($bottom.hasClass('bottom-fixed')) {
+        //   $bottom.removeClass('dim');
+        // }
+        // if ($bottom.hasClass('pop-foot')) {
+        //   $bottom.siblings().removeClass('dim');
+        // }
         setTimeout(function () {
-          $bottom.siblings('.section').removeClass('pointer-events-none');
+          $bottom.siblings().removeClass('pointer-events-none');
         }, 100);
       }
     });
