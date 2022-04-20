@@ -702,8 +702,18 @@ ui.Common = {
       }
     };
     $(window).on('scroll', $scrollEvt);
-    window.addEventListener('scroll', ui.Util.debounce($scrollEndEvt, 1500));
-    window.addEventListener('scroll', ui.Util.debounce(showHideOff, 500));
+    $(window).on(
+      'scroll',
+      _.debounce(function () {
+        $scrollEndEvt();
+      }, 1500)
+    );
+    $(window).on(
+      'scroll',
+      _.debounce(function () {
+        showHideOff();
+      }, 500)
+    );
   },
   scrollShowTitleClass: 'page-fade-title',
   scrollShowTitle: function (target, wrap, header, titleEl) {
@@ -6897,16 +6907,29 @@ const Layer = {
       }
     }
 
-    Layer.resize();
-    Layer.fixed($wrap);
+    const scrollElOn = function () {
+      $wrap.find('.pop-scroll-hide').addClass('hidden');
+    };
+    const showElOff = function () {
+      $wrap.find('.pop-scroll-hide').removeClass('hidden');
+    };
 
     let $lastSclTop = 0;
-    $wrap.off('scroll resize').on('scroll', function () {
+    let $timer;
+    $wrap.off('scroll resize').on('scroll resize', function () {
       const $this = $(this);
       const $agreeBtn = $this.find('.' + Layer.agreeBtnClassName);
       const $wrapSclTop = $this.scrollTop();
       const $wrapH = $this.outerHeight();
       const $wrapSclH = $this[0].scrollHeight;
+
+      // if ($wrapSclTop > 0) {
+      scrollElOn();
+      clearTimeout($timer);
+      $timer = setTimeout(function () {
+        showElOff();
+      }, 500);
+      // }
 
       //약관
       if ($isAgree && $agreeBtn.length) {
@@ -6942,6 +6965,9 @@ const Layer = {
       const $headerTit = $head.find('h1');
       if ($fadeTitle.length && $headerTit.length) ui.Common.scrollShowTitle($fadeTitle[0], $this[0], $head[0], $headerTit[0]);
     });
+
+    Layer.resize();
+    Layer.fixed($wrap);
 
     // const $sclEvt = $wrap.data('sclEvt');
     // if (!$sclEvt) {

@@ -330,6 +330,8 @@ button.btn-click {
   + .flex {
     margin-top: 0.8rem;
   }
+}
+.btn-wrap {
   &.bottom-fixed {
     margin-top: 0;
     > div {
@@ -368,6 +370,17 @@ button.btn-click {
         }
       }
     }
+    &.scroll-hide {
+      > div {
+        transform: translateY(0);
+        transition: all 0.3s;
+      }
+      &.hidden {
+        > div {
+          transform: translateY(100%);
+        }
+      }
+    }
   }
   /* */
   &.btn-comment {
@@ -391,6 +404,9 @@ button.btn-click {
       padding-top: 1rem;
       padding-bottom: 1rem;
       z-index: 1;
+      html.ios & {
+        @include ios-bottom(padding-bottom, 1rem);
+      }
     }
     &.dim {
       &:before {
@@ -468,17 +484,4 @@ button.btn-click {
 
   font-weight: 500;
   border-color: #eee;
-}
-
-.btn-wrap.bottom-fixed.scroll-hide {
-  > div {
-    transform: translateY(0);
-    transition: all 0.3s;
-  }
-  &.hidden {
-    > div {
-      transform: translateY(100%);
-      transition: all 0.3s;
-    }
-  }
 }
