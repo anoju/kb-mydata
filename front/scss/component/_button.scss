@@ -406,7 +406,9 @@ button.btn-click {
     }
 
     &.pop-foot {
-      @include ios-bottom(height, 6.8rem);
+      html.ios & {
+        @include ios-bottom(height, 6.8rem);
+      }
       > div {
         html.ios & {
           @include ios-bottom(padding-bottom, 1rem);
