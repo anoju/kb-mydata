@@ -2615,9 +2615,12 @@ ui.Form = {
       const $bottom = $this.closest('.btn-comment');
       if ($bottom.length) {
         $('html').addClass('overflow-hidden');
-        if ($bottom.hasClass('btn-comment')) {
+        if ($bottom.hasClass('bottom-fixed')) {
           $bottom.addClass('dim');
           $bottom.siblings('.section').addClass('pointer-events-none');
+        }
+        if ($bottom.hasClass('pop-foot')) {
+          $bottom.siblings().addClass('dim');
         }
       }
     });
@@ -2634,13 +2637,16 @@ ui.Form = {
       const $bottom = $this.closest('.btn-comment');
       if ($bottom.length) {
         $('html').removeClass('overflow-hidden');
-        if ($bottom.hasClass('btn-comment')) {
+        if ($bottom.hasClass('bottom-fixed')) {
           $bottom.removeClass('dim');
           // body 클릭요소들 이벤트 막기
-          setTimeout(function () {
-            $bottom.siblings('.section').removeClass('pointer-events-none');
-          }, 100);
         }
+        if ($bottom.hasClass('pop-foot')) {
+          $bottom.siblings().removeClass('dim');
+        }
+        setTimeout(function () {
+          $bottom.siblings('.section').removeClass('pointer-events-none');
+        }, 100);
       }
     });
   },
