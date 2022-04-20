@@ -2650,12 +2650,6 @@ ui.Form = {
           $('.body-dim').remove();
         }, 210);
 
-        // if ($bottom.hasClass('bottom-fixed')) {
-        //   $bottom.removeClass('dim');
-        // }
-        // if ($bottom.hasClass('pop-foot')) {
-        //   $bottom.siblings().removeClass('dim');
-        // }
         setTimeout(function () {
           $bottom.siblings().removeClass('pointer-events-none');
         }, 100);
