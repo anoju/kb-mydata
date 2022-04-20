@@ -93,6 +93,7 @@
 
 .iframe-full-box {
   flex: 1 1 auto;
+  @include web-center;
   iframe {
     height: -vh(100, 14.8rem, true);
   }
