@@ -689,9 +689,7 @@ ui.Common = {
         $lastSclTop = $SclTop;
       }, 50);
 
-      /*  */
-
-      if ($SclTop > 0) {
+      if ($SclTop > 0 && !$('html').hasClass('input-focus')) {
         showHideOn();
       }
     };
@@ -6935,13 +6933,11 @@ const Layer = {
       const $wrapH = $this.outerHeight();
       const $wrapSclH = $this[0].scrollHeight;
 
-      // if ($wrapSclTop > 0) {
-      scrollElOn();
+      if (!$('html').hasClass('input-focus')) scrollElOn();
       clearTimeout($timer);
       $timer = setTimeout(function () {
         showElOff();
       }, 500);
-      // }
 
       //약관
       if ($isAgree && $agreeBtn.length) {
