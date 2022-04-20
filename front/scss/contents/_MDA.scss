@@ -1,311 +1,297 @@
 // 투자
-.investment-wrap {
-  position: relative;
-  overflow: hidden;
-  .tit-box {
-    text-align: right;
-    color: var(--strong-txt-color);
-  }
-  .txt-box {
-    .tit {
-      padding: 0 1.6rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      line-height: 2.3rem;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      word-break: break-all;
-      color: var(--strong-txt-color);
-    }
-    .txt {
-      padding: 0 1.6rem;
-      font-size: 1.4rem;
-      margin-top: 0.2rem;
-      font-weight: 400;
-      line-height: 2rem;
-      color: #818892;
-    }
-    .price {
-      display: flex;
-      padding: 0 1.6rem;
-      margin-top: 1.8rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      line-height: 2.3rem;
-      align-items: center;
-      span {
-        font-size: 1.2rem;
-        line-height: 1.7rem;
-      }
-      strong.won {
-        margin-left: auto;
-        font-size: 1.8rem;
-        line-height: 2.1rem;
-        color: #424242;
-        display: flex;
-        align-items: center;
-        span {
-          font-size: 0;
-          display: inline-block;
-          width: 1.6rem;
-          height: 1rem;
-          margin-right: 0.6rem;
-          background-size: 100%;
-          background-image: url("data:image/svg+xml,%3Csvg width='18' height='12' viewBox='0 0 18 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 1L5.4625 11L9.0625 3.28125L12.5375 11L15 1M4 5H1M17 5H14' stroke='%23808892' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-        }
-      }
+//투자 메인배너
+.invest-banner-wrap {
+  @include outer;
+  .img-box {
+    background: #f1f1f1;
+    &:before {
+      padding-top: -xyPercent(360, 208);
     }
   }
-  .investment-state {
-    position: absolute;
-    z-index: 2;
-    font-size: 1.2rem;
-    padding: 0.4rem 0.7rem;
-    left: 1.2rem;
-    top: 1.2rem;
-    color: #fff;
-    border-radius: 0.8rem;
-    background: rgba(0, 0, 0, 0.5);
-    align-items: center;
-    font-weight: 400;
-  }
-  .investment-info {
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    z-index: 2;
-    span.info {
-      font-size: 1.1rem;
-      line-height: 1;
-      padding: 0.4rem 0.6rem;
-      border-radius: 1rem;
-      margin: 0 0.2rem;
-    }
-  }
+}
 
-  //메인 배너 박스
-  .min-banner-box {
-    margin: 0 -2.4rem;
-    display: flex;
-    img {
-      width: 100%;
+// 배너박스
+.invest-banner-box {
+  .inner {
+    position: relative;
+    height: 100%;
+    display: block;
+    padding: 1.6rem 10rem 1.7rem 2rem;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+    color: var(--strong-txt-color2);
+    @include bg-etc(9.1rem auto, right bottom);
+    background-image: url(../images/MDA/ico-invest_art.png);
+  }
+  .tit {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+  }
+  .txt {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-top: 0.4rem;
+  }
+}
+
+//태그 영역
+.invest-tag {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.4rem;
+  font-size: 1.4rem;
+  span {
+    display: inline-block;
+    margin: 0 0.4rem;
+    font-weight: 400;
+    color: #818892;
+  }
+}
+
+// 투자 메인 swiper
+.ui-swiper.invest-list-swiper {
+  .swiper {
+    // overflow: visible;
+    padding: 0 calc(var(--base-padding) - 0.8rem);
+  }
+  .swiper-slide {
+    width: auto;
+    // overflow: visible;
+    padding: 2rem 0;
+    a {
+      position: relative;
+      display: block;
+      height: 100%;
+      width: 23.2rem;
+      margin: 0 0.8rem;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 1.6rem;
+      background: #fff;
     }
   }
-  //태그 영역
-  .investment-tag {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -0.4rem;
+  .img-box {
+    // height: 17.6rem;
+    overflow: hidden;
+    border-radius: 1.6rem 1.6rem 0 0;
+    position: relative;
+    &:before {
+      padding-top: -xyPercent(232, 176);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 7.2rem;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    }
+    // img {
+    //   width: 100%;
+    // }
+  }
+  .invest-txt-box {
+    padding: 1.6rem 0 1.9rem;
+  }
+  .invest-info {
+    left: 1.2rem;
+    bottom: 1.2rem;
     span {
-      display: inline-block;
-      margin: 0 0.4rem;
-      font-weight: 400;
-      color: #818892;
+      color: #fff;
+      border: 0.1rem #fff solid;
     }
   }
-  //투자 메인 슬라이더
-  .invest-list-swiper {
+  &.type2 {
     .swiper {
-      overflow: visible;
-      padding: 0 1.6rem;
+      padding: 0 calc(var(--base-padding) - 1rem);
     }
     .swiper-slide {
-      padding: 0 0.8rem;
-      width: auto;
-      overflow: visible;
+      padding: 0;
       a {
-        position: relative;
-        display: block;
-        height: 100%;
-        width: 23.2rem;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
-        border-radius: 1.6rem;
-        background: #fff;
-        .img-box {
-          height: 17.6rem;
-          overflow: hidden;
-          border-radius: 1.6rem 1.6rem 0 0;
-          position: relative;
-          &:before {
-            padding-top: -xyPercent(232, 176);
-          }
-          &:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 7.2rem;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
-          }
-          img {
-            width: 100%;
-          }
-        }
-        .txt-box {
-          padding: 1.6rem 0 1.9rem;
-        }
+        width: 18.8rem;
+        padding: 1rem;
+        margin: 0;
+        background: none;
+        border-radius: 0;
+        box-shadow: none;
+        text-align: center;
       }
     }
-    .investment-info {
-      left: 1.2rem;
-      bottom: 1.2rem;
-      span {
-        color: #fff;
-        border: 0.1rem #fff solid;
-      }
-    }
-    &.type2 {
-      .swiper-slide {
-        padding: 0 1rem;
-        a {
-          width: 16.8rem;
-          background: none;
-          border-radius: 0;
-          box-shadow: none;
-          text-align: center;
-          .img-box {
-            border-radius: 1.6rem;
-            padding: 0.8rem;
-            width: 16.8rem;
-            height: 16.8rem;
-            background-color: #fff;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
-            &:before {
-              padding-top: 100%;
-            }
-            &:after {
-              content: none;
-            }
-            img {
-              padding: 0.8rem;
-              border-radius: 1.6rem;
-            }
-          }
-          .txt-box {
-            padding: 0.8rem 0 0;
-          }
-          .txt {
-            color: #808892;
-            margin-top: 0.4rem;
-          }
-        }
-      }
-      .investment-info {
-        left: 0;
-        bottom: 0;
-        position: relative;
-        margin-top: 0.8rem;
-        justify-content: center;
-        span {
-          color: #b0b0b0;
-          border: 0.1rem #c2c2c2 solid;
-        }
-      }
-    }
-  }
-
-  //artInvest
-  .artInvest {
-    .banner-box a {
-      position: relative;
-      height: 100%;
-      display: block;
-      padding: 1.6rem 10rem 1.6rem 2rem;
+    .img-box {
       border-radius: 1.6rem;
-      overflow: hidden;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
-      .tit {
-        font-weight: 700;
-        font-size: 1.6rem;
-        color: var(--strong-txt-color2);
-      }
-      .txt {
-        font-size: 1.4rem;
-        font-weight: 400;
-        color: var(--strong-txt-color2);
-      }
-      .img_box {
-        display: block;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 9.1rem;
-        height: 7.4rem;
-        img {
-          width: auto;
-          height: 100%;
-        }
-      }
-    }
-  }
-
-  //k-ContentsInvest
-  .k-ContentsInvest {
-    .item-list li {
+      border: 0.8rem solid #fff;
+      width: 16.8rem;
+      // height: 16.8rem;
+      background-color: #fff;
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
-      border-radius: 1.2rem;
-      & + li {
-        margin-top: 1.6rem;
+      &:before {
+        padding-top: 100%;
       }
-      a {
-        display: flex;
-        width: 100%;
-        .img-box {
-          width: 15.2rem;
-          height: 11.4rem;
-          border-radius: 1.2rem;
-          overflow: hidden;
-          &:before {
-            padding-top: -xyPercent(152, 114);
-          }
-        }
-        .txt-box {
-          padding: 1.6rem;
-          .tit {
-            padding-left: 0;
-          }
-          .txt {
-            padding-left: 0;
-          }
-        }
-        .txt {
-          margin-top: 0.2rem;
-        }
+      &:after {
+        content: none;
       }
+      // img {
+      //   padding: 0.8rem;
+      //   border-radius: 1.6rem;
+      // }
     }
-    .banner-list {
-      li a {
-        display: block;
-        height: 100%;
-        position: relative;
-      }
-      li + li {
-        margin-top: 0.4rem;
-      }
-      img {
-        width: 100%;
-        border-radius: 1.2rem;
-      }
+    .invest-txt-box {
+      padding: 0.8rem 0 0;
     }
-    .investment-info {
+    .txt {
+      color: #808892;
+      margin-top: 0.4rem;
+    }
+    .invest-info {
       left: 0;
       bottom: 0;
       position: relative;
-      margin-top: 1.5rem;
+      margin-top: 0.8rem;
+      justify-content: center;
       span {
         color: #b0b0b0;
         border: 0.1rem #c2c2c2 solid;
       }
     }
   }
+}
+.invest-txt-box {
+  .tit {
+    padding: 0 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.3rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    color: var(--strong-txt-color);
+  }
+  .txt {
+    padding: 0 1.6rem;
+    font-size: 1.4rem;
+    margin-top: 0.2rem;
+    font-weight: 400;
+    line-height: 2rem;
+    color: #818892;
+  }
+  .price {
+    display: flex;
+    padding: 0 1.6rem;
+    margin-top: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.3rem;
+    align-items: center;
+    span {
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+    }
+    strong.won {
+      margin-left: auto;
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+      color: #424242;
+      display: flex;
+      align-items: center;
+      span {
+        font-size: 0;
+        display: inline-block;
+        width: 1.6rem;
+        height: 1rem;
+        margin-right: 0.6rem;
+        background-size: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='18' height='12' viewBox='0 0 18 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 1L5.4625 11L9.0625 3.28125L12.5375 11L15 1M4 5H1M17 5H14' stroke='%23808892' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+}
 
-  //musicInvest
-  .musicInvest {
-    .investment-state {
-      left: 2rem;
-      top: 2rem;
+.invest-state {
+  position: absolute;
+  z-index: 2;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.7rem;
+  left: 1.2rem;
+  top: 1.2rem;
+  color: #fff;
+  border-radius: 0.8rem;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  font-weight: 400;
+}
+// 투자 뱃지
+.invest-info {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 2;
+  span.info {
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+    margin: 0 0.2rem;
+  }
+}
+
+// k-컨텐츠 리스트
+.invest-item-list li {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 1.2rem;
+  & + li {
+    margin-top: 1.6rem;
+  }
+  .item {
+    display: flex;
+    width: 100%;
+  }
+  .img-box {
+    width: 15.2rem;
+    // height: 11.4rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    &:before {
+      padding-top: -xyPercent(152, 114);
+    }
+  }
+  .invest-txt-box {
+    padding: 1.6rem;
+    .tit {
+      padding-left: 0;
+    }
+    .txt {
+      padding-left: 0;
+    }
+  }
+  .txt {
+    margin-top: 0.2rem;
+  }
+  .invest-info {
+    left: 0;
+    bottom: 0;
+    position: relative;
+    margin-top: 1.5rem;
+    span {
+      color: #b0b0b0;
+      border: 0.1rem #c2c2c2 solid;
+    }
+  }
+}
+
+// 배너 리스트
+.invest-banner-list {
+  li {
+    .img-box {
+      border-radius: 1.2rem;
+      &:before {
+        padding-top: -xyPercent(312, 80);
+      }
+    }
+    + li {
+      margin-top: 0.8rem;
     }
   }
 }

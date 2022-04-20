@@ -2,21 +2,30 @@
   --loading-svg-offset: 187;
   --loading-svg-duration: 2s;
 }
+.loading-lottie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .lottie {
+    width: 4rem;
+    height: 4rem;
+  }
+}
 
 .loading-svg {
   text-align: center;
   pointer-events: none;
   svg {
     animation: loading-rotator var(--loading-svg-duration) linear infinite;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 3.6rem;
+    height: 3.6rem;
     vertical-align: top;
     .path {
       stroke-dasharray: var(--loading-svg-offset);
       stroke-dashoffset: 0;
       transform-origin: center;
       stroke: var(--primary-color);
-      animation: loading-dash var(--loading-svg-duration) ease-in-out infinite, loading-stroke calc(var(--loading-svg-duration) * 2) linear infinite alternate;
+      animation: loading-dash var(--loading-svg-duration) ease-in-out infinite;
     }
   }
 }
@@ -28,6 +37,10 @@
   justify-content: center;
   text-align: center;
   pointer-events: none;
+  > .lottie {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
   &.off {
     height: 1rem;
     opacity: 0;
@@ -57,12 +70,15 @@
   }
 }
 @keyframes loading-stroke {
-  0% {
+  0%,
+  17% {
     stroke: #00dcdc;
   }
-  50% {
+  33%,
+  67% {
     stroke: #2ad6a8;
   }
+  83%,
   100% {
     stroke: #fd7e64;
   }
@@ -90,7 +106,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(2px);
   .tl {
     display: table;
@@ -104,12 +120,6 @@
   }
   .txt {
     margin-top: 3rem;
-  }
-  .loading-svg {
-    svg {
-      width: 3.6rem;
-      height: 3.6rem;
-    }
   }
 }
 .loading-icon {

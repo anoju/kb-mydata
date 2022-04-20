@@ -303,6 +303,13 @@ ui.Device = {
 
 //공통: 헤더, 레이아웃, 앱용플로팅버튼, 스킵네비, meta[og:image]
 ui.Common = {
+  getUrlPath: function () {
+    let $path = '';
+    if (location.pathname.indexOf('/front/') > -1) $path = '/front' + $path;
+    if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $path = '/kyobo-mydata-pub' + $path;
+    if (location.pathname.indexOf('mykkl.com/') > -1) $path = '/mydata/resources/static';
+    return $path;
+  },
   winLoad: function () {
     //hr태그 토크백 제외
     $('hr').each(function () {
@@ -827,9 +834,12 @@ ui.Common = {
     };
     if (typeof lottie === 'undefined') {
       let $url = '/js/lib/lottie.5.7.13.min.js';
-      if (location.pathname.indexOf('/front/') > -1) $url = '/front' + $url;
-      if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $url = '/kyobo-mydata-pub' + $url;
-      if (location.pathname.indexOf('mykkl.com/') > -1) $url = '/mydata/resources/static' + $url;
+      const $path = ui.Common.getUrlPath();
+      if ($path) {
+        $url = $path + $url;
+      } else {
+        $url = '../..' + $url;
+      }
       ui.Util.loadScript($url, $lottieInit);
     } else {
       $lottieInit();
@@ -1142,9 +1152,12 @@ ui.Util = {
   paint: function () {
     if (!$('.smooth-corners').length) return;
     let $url = '/js/lib/paint.min.js';
-    if (location.pathname.indexOf('/front/') > -1) $url = '/front' + $url;
-    if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $url = '/kyobo-mydata-pub' + $url;
-    if (location.pathname.indexOf('mykkl.com/') > -1) $url = '/mydata/resources/static' + $url;
+    const $path = ui.Common.getUrlPath();
+    if ($path) {
+      $url = $path + $url;
+    } else {
+      $url = '../..' + $url;
+    }
     if (CSS && 'paintWorklet' in CSS) CSS.paintWorklet.addModule($url);
   },
   canvasRotateImg: function (target, src, deg) {
@@ -1184,11 +1197,14 @@ ui.Util = {
     };
   },
   iframe: function () {
+    /*
     if ($('iframe').length) {
       $('iframe').each(function () {
         const $this = $(this);
         let $src = $this.attr('src');
+        console.log($src.indexOf('//') < 0, $src.indexOf('//') > 9, $src.indexOf('../') !== 0);
         if (($src.indexOf('//') < 0 || $src.indexOf('//') > 9) && $src.indexOf('../') !== 0) {
+          console.log('aaa');
           if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $src = '/kyobo-mydata-pub' + $src;
           if (location.pathname.indexOf('mykkl.com/') > -1 && location.pathname.indexOf('/front/') === 0) {
             $src = $src.replace('/front/', '/');
@@ -1198,6 +1214,7 @@ ui.Util = {
         }
       });
     }
+    */
 
     if ($('iframe.load-height').length) {
       const iframeHeight = function () {
@@ -5364,7 +5381,7 @@ const Loading = {
     let $html = '<div class="loading-wrap" class="hide">';
     $html += '<div class="tl">';
     $html += '<div>';
-    /*
+    /* // img 타입
     $html += '<div class="loading-icon" role="img"';
     if (!txt) {
       $html += ' aria-label="화면을 불러오는중입니다."';
@@ -5373,6 +5390,7 @@ const Loading = {
     $html += '</div>';
     */
 
+    /* // svg 타입
     $html += '<div class="loading-svg" role="img"';
     if (!txt) {
       $html += ' aria-label="화면을 불러오는중입니다."';
@@ -5382,6 +5400,24 @@ const Loading = {
     $html += '<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>';
     $html += '</svg>';
     $html += '</div>';
+    */
+
+    // lottie 타입
+    let $file = '/lottie/loading-bar.json';
+    const $path = ui.Common.getUrlPath();
+    if ($path) {
+      $file = $path + $file;
+    } else {
+      $file = '../..' + $file;
+    }
+    $html += '<div class="loading-lottie" role="img"';
+    if (!txt) {
+      $html += ' aria-label="화면을 불러오는중입니다."';
+    }
+    $html += '>';
+    $html += '<div class="lottie _loop" data-lottie="' + $file + '" aria-hidden="true"></div>';
+    $html += '</div>';
+
     if (!!txt) {
       $html += '<div class="txt">' + txt + '</div>';
     }
@@ -5391,6 +5427,9 @@ const Loading = {
 
     if (!$('.loading-wrap').length) $('body').prepend($html);
     $('.loading-wrap').stop(true, false).fadeIn(Loading.speed);
+    setTimeout(function () {
+      if ($('.loading-wrap .lottie').length) ui.Common.lottie();
+    }, 10);
   },
   close: function () {
     $('.loading-wrap')
@@ -5429,7 +5468,14 @@ const Layer = {
   like: function () {
     const $delayTime = 2000;
     const $wrap = $('#wrap').length ? $('#wrap') : $('body');
-    const $html = '<div class="layer-like" aria-hidden="true"><div class="lottie" data-lottie="../../temp/love.json"></div></div>';
+    let $fileUrl = '/temp/love.json';
+    const $path = ui.Common.getUrlPath();
+    if ($path) {
+      $fileUrl = $path + $fileUrl;
+    } else {
+      $fileUrl = '../..' + $fileUrl;
+    }
+    const $html = '<div class="layer-like" aria-hidden="true"><div class="lottie" data-lottie="' + $fileUrl + '"></div></div>';
     if ($('.layer-like').length) return;
     // 넣고
     $wrap.append($html);
@@ -5740,9 +5786,12 @@ const Layer = {
   pdf: function (url, title) {
     const pdfPopId = 'uiPopPdf' + Layer.pdfIdx;
     let $src = '/pdfjs/web/viewer.html?file=' + url;
-    if (location.pathname.indexOf('/front/') > -1) $src = '/front' + $src;
-    if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $src = '/kyobo-mydata-pub' + $src;
-    if (location.pathname.indexOf('mykkl.com/') > -1) $src = '/mydata/resources/static' + $src;
+    const $path = ui.Common.getUrlPath();
+    if ($path) {
+      $src = $path + $src;
+    } else {
+      $src = '../..' + $src;
+    }
 
     let $html = '<div id="' + pdfPopId + '" class="' + Layer.popClass + ' full pop-pdf ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
     $html += '<article class="' + Layer.wrapClass + '">';
@@ -6253,7 +6302,7 @@ const Layer = {
       $boxHtml += '<div class="txt">' + txt + '</div>';
     }
     if ($isAlarm) {
-      $boxHtml += '<button type="button" class="close">닫기</button>';
+      $boxHtml += '<button type="button" class="close" aria-label="닫기"></button>';
     }
     $boxHtml += '</div>';
     $boxHtml += '</div>';
