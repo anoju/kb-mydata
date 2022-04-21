@@ -339,13 +339,13 @@ button.btn-click {
       bottom: 0;
       left: 0;
       width: 100%;
-      padding: 2.4rem 2rem;
+      padding: var(--base-padding) 2rem;
       background-color: transparent;
       background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 1.6rem, #fff 100%);
       transition: box-shadow 0.3s;
       z-index: 50;
       html.ios & {
-        @include ios-bottom(padding-bottom, 2.4rem);
+        @include ios-bottom(padding-bottom, var(--base-padding));
       }
     }
     &.no-shadow {
@@ -427,7 +427,7 @@ button.btn-click {
   }
 
   &.full {
-    margin: 0 -2.4rem;
+    @include outer;
   }
   &.lineT {
     border-top: 0.1rem solid #f2f4f6;

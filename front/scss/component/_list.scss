@@ -129,7 +129,7 @@
       .section & {
         padding-right: 5.6rem;
         &:after {
-          right: 2.4rem;
+          right: var(--base-padding);
         }
       }
     }
@@ -359,12 +359,12 @@
   }
   .folding-panel {
     background: #f6f6f6;
-    padding: 2rem 2rem 2rem 4.4rem;
+    padding: 2rem 2rem 2rem calc(2rem + var(--base-padding));
     &:before {
       content: 'A';
       position: absolute;
       top: 2rem;
-      left: 2.4rem;
+      left: var(--base-padding);
       font-size: 1.6rem;
       color: var(--primary-color);
       font-weight: 500;
@@ -486,9 +486,9 @@
   }
 
   &.checkbox {
-    padding-left: 5.6rem;
+    padding-left: calc(3.2rem + var(--base-padding));
     i {
-      left: 2.4rem;
+      left: var(--base-padding);
       top: 1.7rem;
     }
   }

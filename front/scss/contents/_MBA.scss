@@ -1022,14 +1022,23 @@
 }
 
 .top-100-box {
-  margin: 0 -2.4rem;
+  @include outer;
   > a,
   > div {
+    position: relative;
     display: flex;
-    padding: 1.8rem 0 1.8rem 0;
-    margin: 0 2.4rem 0 1.4rem;
+    padding: 1.8rem var(--base-padding) 1.8rem calc(var(--base-padding) - 1rem);
     align-items: center;
-    border-bottom: 0.1rem solid #f2f4f6;
+    &:after {
+      content: '';
+      display: block;
+      height: 0.1rem;
+      background: #f2f4f6;
+      position: absolute;
+      bottom: 0;
+      left: var(--base-padding);
+      right: var(--base-padding);
+    }
     .number {
       display: block;
       flex: 0 0 auto;
@@ -1349,7 +1358,7 @@
   .ground-main-info {
     .banner-box {
       height: 160px;
-      margin: 0 -2.4rem;
+      @include outer;
       background: no-repeat center center / cover;
 
       /* 나중에 지울거 */
@@ -1498,8 +1507,10 @@
       position: relative;
       border-top: 0.1rem solid #f2f4f6;
       border-bottom: 0.1rem solid #f2f4f6;
-      padding: 1.7rem 2.4rem;
-      margin: 0.4rem -2.4rem 0;
+      @include outer(true);
+      margin-top: 0.4rem;
+      padding-top: 1.7rem;
+      padding-bottom: 1.7rem;
 
       .nick-name {
         display: flex;
@@ -2137,10 +2148,10 @@
 }
 
 .list-ranking-box {
-  margin: 0 -2.4rem;
+  @include outer;
   .list {
     display: flex;
-    padding: 1.9rem 2.4rem 1.9rem 1.9rem;
+    padding: 1.9rem var(--base-padding) 1.9rem calc(var(--base-padding) - 0.5rem);
     align-items: center;
     .number {
       flex: 0 0 auto;
@@ -2663,11 +2674,11 @@
 }
 
 .notice-list-box {
-  margin: 0 -2.4rem;
+  @include outer;
   background: #fafafa;
   > a {
     display: block;
-    padding: 2rem 2.4rem;
+    padding: 2rem var(--base-padding);
     border-top: 0.1rem solid #f2f4f6;
     border-bottom: 0.1rem solid #f2f4f6;
     background: #fff;

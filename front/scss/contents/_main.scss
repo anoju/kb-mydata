@@ -39,7 +39,7 @@
   .pop-foot {
     line-height: 1.1;
     > div {
-      padding: 2.2rem 2.4rem;
+      padding: 2.2rem var(--base-padding);
     }
   }
   .btn-today {

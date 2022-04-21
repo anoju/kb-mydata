@@ -505,7 +505,7 @@
   flex-direction: column;
   position: fixed;
   bottom: 2.4rem;
-  right: 2.4rem;
+  right: var(--base-padding);
   width: auto !important;
   z-index: 50;
   transition: padding 0.3s, bottom 0.3s;

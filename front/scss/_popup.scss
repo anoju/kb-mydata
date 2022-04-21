@@ -44,7 +44,7 @@
     display: flex;
     align-items: center;
     min-height: 4rem;
-    padding: 0.2rem 5rem 0.2rem 2.4rem;
+    padding: 0.2rem 5rem 0.2rem var(--base-padding);
     text-align: left;
     margin: 0;
     transition: border 0.5s;
@@ -109,7 +109,7 @@
   // background: #fff;
   z-index: 10;
   > div {
-    padding: 2.4rem 2rem;
+    padding: var(--base-padding) 2rem;
   }
   &.btn-wrap {
     margin-top: 0;
@@ -225,7 +225,7 @@
     .pop-head {
       flex-shrink: 0;
       + .pop-body {
-        padding-top: 2.4rem;
+        padding-top: var(--base-padding);
       }
     }
     .pop-body {
@@ -280,7 +280,7 @@
     .pop-foot {
       > div {
         html.ios & {
-          @include ios-bottom(padding-bottom, 2.4rem);
+          @include ios-bottom(padding-bottom, var(--base-padding));
         }
       }
     }
@@ -311,7 +311,7 @@
         margin-top: -0.1rem;
       }
       > div {
-        padding: 2.4rem 5rem 2.4rem var(--base-padding);
+        padding: var(--base-padding) 5rem var(--base-padding) var(--base-padding);
       }
       .pop-close {
         top: 2.1rem;
@@ -379,8 +379,8 @@
     }
     .pop-head {
       > div {
-        // padding: 2.4rem 5rem 1.2rem var(--base-padding);
-        padding: 2.4rem var(--base-padding) 1.2rem var(--base-padding);
+        // padding: var(--base-padding) 5rem 1.2rem var(--base-padding);
+        padding: var(--base-padding) var(--base-padding) 1.2rem var(--base-padding);
         min-height: auto;
         text-align: left;
       }
@@ -392,7 +392,7 @@
     }
     .pop-foot {
       > div {
-        padding: 2.4rem 1.6rem 1.6rem;
+        padding: var(--base-padding) 1.6rem 1.6rem;
       }
     }
 
