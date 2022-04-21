@@ -1229,8 +1229,8 @@
 .digital-motion {
   width: 28rem;
   height: 28rem;
-  background: url(../images/MY/digital-motion.png) no-repeat center top / 100% auto;
-  animation: digital-motion-bg 1.5s steps(4) infinite;
+  // background: url(../images/MY/digital-motion.png) no-repeat center top / 100% auto;
+  // animation: digital-motion-bg 1.5s steps(4) infinite;
 }
 @keyframes digital-motion-bg {
   100% {
