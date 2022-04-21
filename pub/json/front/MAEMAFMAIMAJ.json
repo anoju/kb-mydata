@@ -242,8 +242,7 @@
   ,{
     "id": "MAJ01-0000001C",
     "url": "../../front/html/MAJ/",
-    "depth2": "더보기",
-    "depth3": "메인",
+    "depth2": "메인",
     "name": "더보기 메인",
     "worker": "안효주",
     "complete": "2022-03-28",
@@ -252,8 +251,7 @@
   ,{
     "id": "MAJ01-0000003C",
     "url": "../../front/html/MAJ/",
-    "depth2": "더보기",
-    "depth3": "약관동의",
+    "depth2": "약관동의",
     "name": "약관동의",
     "worker": "장영석",
     "complete": "2022-04-12"
@@ -261,8 +259,7 @@
   ,{
     "id": "MAJ01-0000003C",
     "url": "../../front/html/MAJ/",
-    "depth2": "더보기",
-    "depth3": "나의 자산 금액 설정",
+    "depth2": "나의 자산 금액 설정",
     "name": "나의 자산 금액 설정",
     "worker": "장영석",
     "complete": "2022-04-12"
@@ -270,9 +267,8 @@
   ,{
     "id": "MAJ01-0000p01C",
     "url": "../../front/html/MAJ/",
-    "depth2": "더보기",
-    "depth3": "약관동의",
-    "depth4": "매치 서비스 이용 약관",
+    "depth2": "약관동의",
+    "depth3": "매치 서비스 이용 약관",
     "name": "매치 서비스 이용 약관",
     "worker": "장영석",
     "complete": "2022-04-12",
@@ -282,9 +278,8 @@
   ,{
     "id": "MAJ01-0000p02C",
     "url": "../../front/html/MAJ/",
-    "depth2": "더보기",
-    "depth3": "약관동의",
-    "depth4": "개인정보 수집, 이용동의",
+    "depth2": "약관동의",
+    "depth3": "개인정보 수집, 이용동의",
     "name": "개인정보 수집, 이용동의",
     "worker": "장영석",
     "complete": "2022-04-12",
@@ -294,9 +289,8 @@
   ,{
     "id": "MAJ01-0000p03C",
     "url": "../../front/html/MAJ/",
-    "depth2": "더보기",
-    "depth3": "약관동의",
-    "depth4": "앱 전체 마케팅 정보 이용동의",
+    "depth2": "약관동의",
+    "depth3": "앱 전체 마케팅 정보 이용동의",
     "name": "앱 전체 마케팅 정보 이용동의",
     "worker": "장영석",
     "complete": "2022-04-12",
@@ -306,8 +300,7 @@
   ,{
     "id": "MAJ01-0101001C",
     "url": "../../front/html/MAJ/",
-    "depth2": "더보기",
-    "depth3": "상품교환",
+    "depth2": "상품교환",
     "name": "상품교환",
     "worker": "장영석",
     "complete": "2022-04-14"
@@ -315,28 +308,29 @@
   ,{
     "id": "MAJ01-0102001C",
     "url": "../../front/html/MAJ/",
-    "depth2": "더보기",
-    "depth3": "포인트 사용 현황",
+    "depth2": "포인트 사용 현황",
     "name": "포인트 사용 현황",
     "worker": "장영석",
     "complete": "2022-04-14"
   },
   {
-    "depth1": "투자"
+    "depth1": "투자",
+    "version": "투자메인_<span>v1.0_20220406</span>"
   },
   {
     "id": "MDA01-0000001",
     "url": "../../front/html/MDA/",
     "depth2": "투자 메인",
     "depth3": "",
-    "name": "",
+    "name": "투자 메인",
     "worker": "변상우",
     "complete": "2022-04-08",
     "change": "2022-04-08"
   },
 
   {
-    "depth1": "설정"
+    "depth1": "설정",
+    "version": "설정_<span>v1.0_20220406</span>"
   }
   ,{
     "id": "MAG01-0000001C",
