@@ -7206,7 +7206,10 @@ const Layer = {
       e.preventDefault();
       //console.log('aaa');
       const $url = $(this).data('agree-pdf');
-      Layer.pdf($url, '약관상세');
+      let $title = '약관상세';
+      const $pdfTit = $(this).data('agree-pdf-title');
+      if ($pdfTit) $title = $pdfTit;
+      Layer.pdf($url, $title);
     });
   }
 };
