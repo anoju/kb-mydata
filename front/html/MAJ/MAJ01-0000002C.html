@@ -44,7 +44,7 @@
               동의함 : fc-primary
               철회함 : fc-b0b0b0
              -->
-            <button type="button" class="btn-txt fc-b0b0b0">철회함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
+            <button type="button" class="btn-txt fc-b0b0b0" onclick="Layer.open('#popAgreeView0')">철회함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
           </div>
 
           <div class="mt-38">
@@ -57,7 +57,7 @@
                 동의함 : fc-primary
                 철회함 : fc-b0b0b0
               -->
-              <button type="button" class="btn-txt fc-primary">동의함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
+              <button type="button" class="btn-txt fc-primary" onclick="Layer.open('#popAgreeView1')">동의함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
             </div>
 
             <!--
@@ -90,7 +90,7 @@
                 동의함 : fc-primary
                 철회함 : fc-b0b0b0
               -->
-              <button type="button" class="btn-txt fc-b0b0b0">철회함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
+              <button type="button" class="btn-txt fc-b0b0b0" onclick="Layer.open('#popAgreeView2')">철회함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
             </div>
 
             <!--
@@ -113,7 +113,82 @@
       </main>
       <!-- 컨테이너(컨텐츠) -->
 
-      <!-- 팝업 -->
+      <!-- 2022-04-21: 약관 팝업 -->
+      <div id="popAgreeView0" class="popup full pop-pdf" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>매치 서비스 이용 약관</h1>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body iframe-full-box">
+            <iframe src="../../pdfjs/web/viewer.html?file=../../temp/교보증권마이데이터 샘플.pdf" frameborder="0"></iframe>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <!-- 철회하기, 동의하기 문구 변경 -->
+              <div class="flex"><button type="button" class="button primary ui-pop-close">철회하기</button></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div id="popAgreeView1" class="popup full pop-pdf" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>개인정보 수집 ∙ 이용동의</h1>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body iframe-full-box tab-pdf">
+            <div class="tab-line-menu ui-tab tab-fixed">
+              <div class="tab-inner">
+                <i class="tab-line" aria-hidden="true"></i>
+                <ul class="tab-list">
+                  <li class="tab"><a href="#lineTabCont1">요약 동의서</a></li>
+                  <li class="tab"><a href="#lineTabCont2">상세 동의서</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="tab-panels">
+              <div id="lineTabCont1" class="tab-panel">
+                <iframe src="../../pdfjs/web/viewer.html?file=../../temp/교보증권마이데이터 샘플.pdf" frameborder="0"></iframe>
+              </div>
+              <div id="lineTabCont2" class="tab-panel">
+                <iframe src="../../pdfjs/web/viewer.html?file=../../temp/교보증권마이데이터 샘플.pdf" frameborder="0"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <!-- 철회하기, 동의하기 문구 변경 -->
+              <div class="flex"><button type="button" class="button primary ui-pop-close">철회하기</button></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div id="popAgreeView2" class="popup full pop-pdf" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>앱전체 마케팅 정보 이용동의</h1>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body iframe-full-box">
+            <iframe src="../../pdfjs/web/viewer.html?file=../../temp/교보증권마이데이터 샘플.pdf" frameborder="0"></iframe>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <!-- 철회하기, 동의하기 문구 변경 -->
+              <div class="flex"><button type="button" class="button primary ui-pop-close">철회하기</button></div>
+            </div>
+          </div>
+        </article>
+      </div>
       <!-- //팝업 -->
     </article>
   </body>

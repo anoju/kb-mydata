@@ -251,16 +251,16 @@
   ,{
     "id": "MAJ01-0000003C",
     "url": "../../front/html/MAJ/",
-    "depth2": "약관동의",
-    "name": "약관동의",
+    "depth2": "나의 자산 금액 설정",
+    "name": "나의 자산 금액 설정",
     "worker": "장영석",
     "complete": "2022-04-12"
   }
   ,{
-    "id": "MAJ01-0000003C",
+    "id": "MAJ01-0000002C",
     "url": "../../front/html/MAJ/",
-    "depth2": "나의 자산 금액 설정",
-    "name": "나의 자산 금액 설정",
+    "depth2": "약관동의",
+    "name": "약관동의",
     "worker": "장영석",
     "complete": "2022-04-12"
   }
