@@ -594,6 +594,9 @@
     "etc":"비활성화 상태 추가"
   }
   ,{
+    "depth1": "MY(소비 > 카테고리)"
+  }
+  ,{
     "id": "MDB04-0201001",
     "url": "../../front/html/MDB/",
     "depth2": "카테고리",
@@ -674,6 +677,10 @@
     "change":"2022-04-12"
   }
   ,{
+    "depth1": "MY(소비 > 지출내역)",
+    "version": "지출내역_<span>v1.0_20220421<span>"
+  }
+  ,{
     "id": "MDB04-0301001",
     "url": "../../front/html/MDB/",
     "depth2": "지출내역",
@@ -723,10 +730,19 @@
   }
   ,{
     "id": "MDB04-0302001",
+    "url": "../../front/html/MDB/MDB04-0302001.html?type=card3",
+    "depth2": "지출내역",
+    "depth3": "상세",
+    "name": "지출상세(선불카드 송금)",
+    "worker": "안효주",
+    "complete": "2022-04-21"
+  }
+  ,{
+    "id": "MDB04-0302001",
     "url": "../../front/html/MDB/MDB04-0302001.html?type=pay2",
     "depth2": "지출내역",
     "depth3": "상세",
-    "name": "지출상세(페이송금, 본인거래)",
+    "name": "지출상세(전자금융송금/적요회신가능)",
     "worker": "안효주",
     "complete": "2022-03-15"
   }
@@ -735,7 +751,7 @@
     "url": "../../front/html/MDB/MDB04-0302001.html?type=pay3",
     "depth2": "지출내역",
     "depth3": "상세",
-    "name": "지출상세(페이송금, 타인거래)",
+    "name": "지출상세(전자금융송금/적요회신불가)",
     "worker": "안효주",
     "complete": "2022-03-15"
   }
