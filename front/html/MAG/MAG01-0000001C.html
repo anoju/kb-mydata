@@ -40,7 +40,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="list-item-2 btn-click">
+              <a href="#popAppVersion" class="list-item-2 btn-click ui-pop-open">
                 <strong class="fw-500">앱 정보</strong>
               </a>
             </li>
@@ -49,8 +49,69 @@
       </main>
       <!-- 컨테이너(컨텐츠) -->
 
-      <!-- 팝업 -->
+      <!-- 2022-04-21: 앱버전 팝업으로 변경되어 추가 -->
+      <!-- 앱버전 팝업 -->
+      <div id="popAppVersion" class="popup full" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body flex align-center justify-center">
+            <div class="update-box t-center">
+              <div class="img-box w-120 mg-autox"><img src="../../images/common/ico-app-logo.png" alt="" /></div>
+
+              <p class="mt-32">
+                <!-- 최신버전 아닐때 -->
+                <strong class="fc-424242 not_latest_version" style="display: none">최신 버전이 아닙니다</strong>
+                <!-- 최신버전 일때 -->
+                <strong class="fc-primary is_latest_version" style="display: none">최신 버전 입니다</strong>
+              </p>
+
+              <p class="mt-16 fz-12 fc-818892">현재 버전 22.3.1</p>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="flex align-center h-60">
+                <!-- 최신버전 아닐때 -->
+                <button type="button" class="button primary not_latest_version" style="display: none">업데이트 하기</button>
+
+                <!-- 최신버전 일때 -->
+                <p class="fc-979797 fz-14 t-center is_latest_version" style="display: none">
+                  <strong class="fc-424242">끌</strong>은 항상 더 안정적이고 빠른 사용자 경험을 위하여 <br />발빠르게 업데이트를 진행하고 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
       <!-- //팝업 -->
     </article>
+
+    <script>
+      const showVersion = function () {
+        // 임시 최신버전 확인용 랜덤값 추출
+        $('.is_latest_version, .not_latest_version').hide();
+        const $random = parseInt(randomNumber(1, 2, 0));
+        if ($random === 1) {
+          // 최신버전 O
+          $('.is_latest_version').show();
+        } else if ($random === 2) {
+          // 최신버전 X
+          $('.not_latest_version').show();
+        }
+      };
+      $('.ui-pop-open').click(function () {
+        showVersion();
+      });
+
+      //임시: 확인용 팝업 띄우기
+      if (getUnlParams().pop) {
+        showVersion();
+        Layer.open('#popAppVersion');
+      }
+    </script>
   </body>
 </html>

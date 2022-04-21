@@ -236,7 +236,8 @@
     "complete": "2022-03-28"
   }
   ,{
-    "depth1": "더보기"
+    "depth1": "더보기",
+    "version": "더보기_<span>v1.0_20220406</span>"
   }
   ,{
     "id": "MAJ01-0000001C",
@@ -246,14 +247,23 @@
     "name": "더보기 메인",
     "worker": "안효주",
     "complete": "2022-03-28",
-    "change": "2022-04-20"
+    "change": "2022-04-21"
   }
   ,{
-    "id": "MAJ01-0000002C",
+    "id": "MAJ01-0000003C",
     "url": "../../front/html/MAJ/",
     "depth2": "더보기",
     "depth3": "약관동의",
     "name": "약관동의",
+    "worker": "장영석",
+    "complete": "2022-04-12"
+  }
+  ,{
+    "id": "MAJ01-0000003C",
+    "url": "../../front/html/MAJ/",
+    "depth2": "더보기",
+    "depth3": "나의 자산 금액 설정",
+    "name": "나의 자산 금액 설정",
     "worker": "장영석",
     "complete": "2022-04-12"
   }
@@ -336,7 +346,7 @@
     "name": "설정목록화면",
     "worker": "장영석",
     "complete": "2022-04-07",
-    "change":"2022-04-12"
+    "change":"2022-04-21"
   }
   ,{
     "id": "MAG01-0000002C",
@@ -346,24 +356,28 @@
     "name": "알림설정화면",
     "worker": "장영석",
     "complete": "2022-04-07",
-    "change":"2022-04-12"
+    "change":"2022-04-21"
   }
   ,{
     "id": "MAG01-0000p01C",
-    "url": "../../front/html/MAG/",
+    "url": "../../front/html/MAG/MAG01-0000002C.html?pop=true",
     "depth2": "마케팅 알림동의/철회하기",
     "depth3": "",
     "name": "마케팅 알림동의/철회하기",
     "worker": "장영석",
-    "complete": "2022-04-07"
+    "complete": "2022-04-07",
+    "change": "2022-04-21",
+    "etc": "MAG01-0000002C 안에 팝업으로 변경"
   }
   ,{
     "id": "MAG01-0000p02C",
-    "url": "../../front/html/MAG/",
+    "url": "../../front/html/MAG/MAG01-0000001C.html?pop=true",
     "depth2": "앱정보 업데이트",
     "depth3": "",
     "name": "앱정보 업데이트",
     "worker": "장영석",
-    "complete": "2022-04-07"
+    "complete": "2022-04-07",
+    "change": "2022-04-21",
+    "etc": "MAG01-0000001C 안에 팝업으로 변경"
   }
 ]
