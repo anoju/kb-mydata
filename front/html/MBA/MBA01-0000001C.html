@@ -190,76 +190,76 @@
 
       <!-- 2022-04-20: 추가 -->
       <div class="main-bottom-space" aria-hidden="true"></div>
-    </article>
 
-    <div id="popMatchOpt" class="popup bottom" role="dialog" aria-hidden="true">
-      <article class="pop-wrap">
-        <div class="pop-head">
-          <div>
-            <h1>매치 조건 변경</h1>
-            <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+      <!-- 2022-04-20 팝업 article 영역 안으로 -->
+      <div id="popMatchOpt" class="popup bottom" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>매치 조건 변경</h1>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
           </div>
-        </div>
-        <div class="pop-body">
-          <div class="section">
-            <div class="title-bar mt-0">
-              <div>
-                <strong class="fc-424242">연령대</strong>
+          <div class="pop-body">
+            <div class="section">
+              <div class="title-bar mt-0">
+                <div>
+                  <strong class="fc-424242">연령대</strong>
+                </div>
+              </div>
+              <div class="tg-btn-wrap group mt-16">
+                <div class="flex">
+                  <!-- 2022-04-12 체크박스로 변경 -->
+                  <div class="checkbox btn">
+                    <input type="checkbox" id="tglrdo1-1" value="20" name="age" /><i aria-hidden="true"></i>
+                    <label for="tglrdo1-1" class="lbl">20대</label>
+                  </div>
+                  <div class="checkbox btn">
+                    <input type="checkbox" id="tglrdo1-2" value="30" name="age" /><i aria-hidden="true"></i>
+                    <label for="tglrdo1-2" class="lbl">30대</label>
+                  </div>
+                  <div class="checkbox btn">
+                    <input type="checkbox" id="tglrdo1-3" value="40" name="age" /><i aria-hidden="true"></i>
+                    <label for="tglrdo1-3" class="lbl">40대</label>
+                  </div>
+                  <div class="checkbox btn">
+                    <input type="checkbox" id="tglrdo1-4" value="50" name="age" /><i aria-hidden="true"></i>
+                    <label for="tglrdo1-4" class="lbl">50대 이상</label>
+                  </div>
+                </div>
+              </div>
+              <div class="title-bar mt-24">
+                <div>
+                  <strong class="fc-424242">투자 규모</strong>
+                  <span class="ml-4 fz-12 fc-979797">(보유 중인 주식의 총 금액)</span>
+                </div>
+              </div>
+              <div class="range-slider no-handle-tip mt-16">
+                <div class="range-wrap">
+                  <div class="range"><i></i></div>
+                  <div class="thumb first"></div>
+                  <div class="thumb last"></div>
+                  <input type="range" min="0" max="4" step="1" class="first-inp" name="moneyS" />
+                  <input type="range" min="0" max="4" step="1" class="last-inp" name="moneyE" />
+                  <div class="list append-dot" title="기간을 선택해주세요" data-unit="이하,1백만원,3천만원,1억원,이상"></div>
+                </div>
               </div>
             </div>
-            <div class="tg-btn-wrap group mt-16">
+          </div>
+          <div class="pop-foot">
+            <div>
               <div class="flex">
-                <!-- 2022-04-12 체크박스로 변경 -->
-                <div class="checkbox btn">
-                  <input type="checkbox" id="tglrdo1-1" value="20" name="age" /><i aria-hidden="true"></i>
-                  <label for="tglrdo1-1" class="lbl">20대</label>
-                </div>
-                <div class="checkbox btn">
-                  <input type="checkbox" id="tglrdo1-2" value="30" name="age" /><i aria-hidden="true"></i>
-                  <label for="tglrdo1-2" class="lbl">30대</label>
-                </div>
-                <div class="checkbox btn">
-                  <input type="checkbox" id="tglrdo1-3" value="40" name="age" /><i aria-hidden="true"></i>
-                  <label for="tglrdo1-3" class="lbl">40대</label>
-                </div>
-                <div class="checkbox btn">
-                  <input type="checkbox" id="tglrdo1-4" value="50" name="age" /><i aria-hidden="true"></i>
-                  <label for="tglrdo1-4" class="lbl">50대 이상</label>
-                </div>
-              </div>
-            </div>
-            <div class="title-bar mt-24">
-              <div>
-                <strong class="fc-424242">투자 규모</strong>
-                <span class="ml-4 fz-12 fc-979797">(보유 중인 주식의 총 금액)</span>
-              </div>
-            </div>
-            <div class="range-slider no-handle-tip mt-16">
-              <div class="range-wrap">
-                <div class="range"><i></i></div>
-                <div class="thumb first"></div>
-                <div class="thumb last"></div>
-                <input type="range" min="0" max="4" step="1" class="first-inp" name="moneyS" />
-                <input type="range" min="0" max="4" step="1" class="last-inp" name="moneyE" />
-                <div class="list append-dot" title="기간을 선택해주세요" data-unit="이하,1백만원,3천만원,1억원,이상"></div>
+                <button type="button" class="button primary" onclick="setOpt()">변경하기</button>
               </div>
             </div>
           </div>
-        </div>
-        <div class="pop-foot">
-          <div>
-            <div class="flex">
-              <button type="button" class="button primary" onclick="setOpt()">변경하기</button>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <!-- 선택 및 기본값 임시 저장-->
-    <input type="hidden" name="optAge" value="30" />
-    <input type="hidden" name="optMnyS" value="2" />
-    <input type="hidden" name="optMnyE" value="4" />
+        </article>
+      </div>
+      <!-- 선택 및 기본값 임시 저장-->
+      <input type="hidden" name="optAge" value="30" />
+      <input type="hidden" name="optMnyS" value="2" />
+      <input type="hidden" name="optMnyE" value="4" />
+    </article>
 
     <!-- 2022-04-12 스크립트 변경 -->
     <script>
