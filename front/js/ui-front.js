@@ -769,7 +769,7 @@ ui.Common = {
         $html += '</div>';
         $('body').append($html);
 
-        const $baseThemeColor = '#fe7d65';
+        const $baseThemeColor = '#00caca';
         const $input = $('.gd__theme_color input');
         const $color = $('.gd__theme_color .color');
         const $openBtn = $('.gd__theme_btn');
