@@ -5423,7 +5423,7 @@ const Loading = {
     */
 
     // lottie 타입
-    let $file = '/lottie/loading-bar.json';
+    let $file = '/lottie/loading.json';
     const $path = ui.Common.getUrlPath();
     if ($path) {
       $file = $path + $file;
