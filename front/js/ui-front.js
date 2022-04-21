@@ -2908,8 +2908,8 @@ ui.Form = {
     const $el = $(element);
     const $closest = $el.closest('.validate-item').length ? $el.closest('.validate-item') : $el.parent();
     $closest.removeClass('is-error').addClass('is-success');
-    if ($closest.siblings('.validate-txt').length) {
-      $closest.siblings('.validate-txt').removeClass('is-error').addClass('is-success').html(messege);
+    if ($closest.next('.validate-txt').length) {
+      $closest.next('.validate-txt').removeClass('is-error').addClass('is-success').html(messege);
     } else {
       $closest.after('<div class="validate-txt is-success">' + messege + '</div>');
     }
@@ -2925,8 +2925,8 @@ ui.Form = {
       if ($closest.siblings('.validate-txt.is-error').length) $closest.siblings('.validate-txt.is-error').remove();
     } else {
       $closest.removeClass('is-success').addClass('is-error');
-      if ($closest.siblings('.validate-txt').length) {
-        $closest.siblings('.validate-txt').removeClass('is-success').addClass('is-error').html(messege);
+      if ($closest.next('.validate-txt').length) {
+        $closest.next('.validate-txt').removeClass('is-success').addClass('is-error').html(messege);
       } else {
         $closest.after('<div class="validate-txt is-error">' + messege + '</div>');
       }
