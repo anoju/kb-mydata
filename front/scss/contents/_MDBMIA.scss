@@ -99,12 +99,24 @@
   }
   &.pop-body {
     padding: 0 !important;
-    border: 0.1rem solid var(--line-color);
+    border-top: 0.1rem solid var(--line-color);
     &:before {
       content: none;
     }
     iframe {
       height: 100%;
+    }
+
+    &.tab-pdf {
+      display: flex;
+      flex-flow: column;
+      border-top: 0;
+      .tab-panels {
+        flex: 1 1 auto;
+        .tab-panel {
+          height: 100%;
+        }
+      }
     }
   }
 }

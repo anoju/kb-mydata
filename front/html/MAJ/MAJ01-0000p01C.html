@@ -14,71 +14,33 @@
     <script type="text/javascript" src="../../js/ui-front.js"></script>
   </head>
   <body>
-    <article id="wrap">
-      <!-- 헤더 -->
-      <header id="header">
-        <div>
-          <div class="head-right">
-            <button type="button" class="head-close button" role="button" aria-label="화면닫기"></button>
+    <button class="button line" onclick="Layer.open('#uiPopPdf0')">매치 서비스 이용 약관</button>
+
+    <div id="uiPopPdf0" class="popup full pop-pdf" role="dialog" aria-hidden="true">
+      <div class="pop-bg-close ui-pop-close" role="button" aria-label="팝업창 닫기"></div>
+      <article class="pop-wrap">
+        <div class="pop-head">
+          <div>
+            <h1 id="uiPopPdf0Label">매치 서비스 이용 약관</h1>
+            <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
           </div>
         </div>
-      </header>
-      <!-- //헤더 -->
-
-      <!-- 컨테이너(컨텐츠) -->
-      <main id="container">
-        <div class="section">
-          <article class="terms-content">
-            <h1>마케팅 정보 수신 동의</h1>
-            <div class="table mt-24">
-              <table>
-                <caption>
-                  마케팅 정보 수신 동의
-                </caption>
-                <colgroup>
-                  <col style="width: 87px" />
-                  <col />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th scope="row">처리목적</th>
-                    <td>교보증권 끌 제휴사의 상품서비스에 대한 광고∙홍보∙프로모션 제공</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">처리항목</th>
-                    <td>이름, 휴대전화번호, 이메일주소, 단말식별번호(단말기 아이디), PUSH토큰</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">이용 및 <br />보유기간</th>
-                    <td>동의 철회 시 또는 회원 탈퇴 시까지</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <h4>[제3자 제공에 대한 안내]</h4>
-            <p>
-              광고 ∙ 마케팅 수신 동의는 광고 ∙ 마케팅에 관련한 내용을 앱 푸쉬로 수신]할 것인지에 대한 동의입니다. <br />
-              따라서, 제휴사에 대한 개인(신용)정보를 제공하는 경우에는 별도의 동의를 받고 있습니다.
-            </p>
-            <h4>[동의 거부에 대한 안내]</h4>
-            <p>
-              광고 ∙ 마케팅 수신동의는 선택사항이며, 동의를 거부할 수 있습니다. 동의를 거부하여도 다른 끌 서비스 이용에 영향은 없습니다. 또한, 광고 ∙ 마케팅 수신 동의는 [설정 &gt; 알림 &gt; 혜택 ∙
-              마케팅] 메뉴에서 언제든지 취소할 수 있습니다.
-            </p>
-          </article>
-
-          <div class="btn-wrap bottom-fixed">
-            <div class="flex">
-              <button type="button" class="button h60 primary">철회하기</button>
-            </div>
+        <div class="pop-body iframe-full-box next-foot">
+          <iframe src="../../pdfjs/web/viewer.html?file=../../temp/교보증권마이데이터 샘플.pdf" frameborder="0"></iframe>
+        </div>
+        <div class="pop-foot">
+          <div>
+            <!-- 철회하기, 동의하기 문구 변경 -->
+            <div class="flex"><button type="button" class="button primary ui-pop-close">철회하기</button></div>
           </div>
         </div>
-      </main>
-      <!-- 컨테이너(컨텐츠) -->
+      </article>
+    </div>
 
-      <!-- 팝업 -->
-      <!-- //팝업 -->
-    </article>
+    <script>
+      $(function () {
+        Layer.open('#uiPopPdf0');
+      });
+    </script>
   </body>
 </html>
