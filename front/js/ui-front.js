@@ -2930,7 +2930,7 @@ ui.Form = {
       } else {
         $closest.after('<div class="validate-txt is-error">' + messege + '</div>');
       }
-      if (!$el.is(':focus')) $el.focus();
+      if (!$el.is(':focus') && !$(':focus').closest('.is-error').length) $el.focus();
     }
   },
   textCount: function (element, e) {
