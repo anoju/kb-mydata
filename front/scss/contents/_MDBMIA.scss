@@ -106,6 +106,17 @@
     iframe {
       height: 100%;
     }
+
+    &.tab-pdf {
+      display: flex;
+      flex-flow: column;
+      .tab-panels {
+        flex: 1 1 auto;
+        .tab-panel {
+          height: 100%;
+        }
+      }
+    }
   }
 }
 .t-price {
