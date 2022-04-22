@@ -395,10 +395,10 @@
 }
 /** BSW **/
 .list-item-price {
-  padding-top: 1.7rem;
-  padding-bottom: 1.7rem;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
   //결제 취소
-  &.disabled {
+  &.cancelled {
     opacity: 0.5;
     .item-tit {
       strong {
