@@ -345,7 +345,9 @@
     border-bottom-width: 0.1rem;
     border-style: solid;
     height: 9.2rem;
-    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     strong {
       align-self: center;

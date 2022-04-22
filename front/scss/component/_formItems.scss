@@ -239,3 +239,18 @@ i.require {
     }
   }
 }
+@include media-min-width(500) {
+  .img-form-box .img-viewer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@include media-min-width(600) {
+  .img-form-box .img-viewer {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@include media-min-width(700) {
+  .img-form-box .img-viewer {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}

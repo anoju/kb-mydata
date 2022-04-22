@@ -222,7 +222,7 @@ ui.Mobile = {
 
     // 앱인지 구분: isWebView()는 개발팀 공통함수
     if (typeof isWebView === 'function' && isWebView()) {
-      $('html').addClass('app');
+      $('html').addClass('is-app');
     }
   }
 };

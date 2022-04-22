@@ -2436,6 +2436,21 @@
     }
   }
 }
+@include media-min-width(500) {
+  .avatar-list-box {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@include media-min-width(600) {
+  .avatar-list-box {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@include media-min-width(700) {
+  .avatar-list-box {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
 
 .influencer-user-info {
   .pop-body {
