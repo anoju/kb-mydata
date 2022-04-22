@@ -219,6 +219,11 @@ ui.Mobile = {
     if (ui.Mobile.iOS()) $('html').addClass('ios');
     if (ui.Mobile.Android()) $('html').addClass('android');
     //if(ui.Mobile.iPhoneVersion() >= 12)$('html').addClass('ios12');
+
+    // 앱인지 구분: isWebView()는 개발팀 공통함수
+    if (typeof isWebView === 'function' && isWebView()) {
+      $('html').addClass('app');
+    }
   }
 };
 
@@ -305,10 +310,13 @@ ui.Device = {
 ui.Common = {
   getUrlPath: function () {
     let $path = '';
-    if (location.pathname.indexOf('mykkl.com/') > -1 || location.pathname.indexOf('//localhost') > -1) {
+    // isDev(), isLocal()는 개발팀 공통함수
+    if ((typeof isDev === 'function' && isDev()) || (typeof isLocal === 'function' && isLocal())) {
+      // 개발서버 및 운영서버, 개발 로컬서버
       $path = '/resources/static';
       if (Global._contextPath) $path = Global._contextPath + $path;
     } else if (location.pathname.indexOf('/front/') > -1) {
+      // 퍼블 로컬
       $path = '/front' + $path;
       if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $path = '/kyobo-mydata-pub' + $path;
     }
@@ -1318,7 +1326,7 @@ ui.Button = {
       }
 
       if ($(this).attr('title') === undefined) {
-        if ($(this).attr('target') === '_blank') $(this).attr('title', '새창열기');
+        if ($(this).attr('target') === '_blank') $(this).attr('title', '새창열림');
         if ($(this).hasClass('tel') || ($href != undefined && $href.startsWith('tel'))) $(this).attr('title', '전화걸기');
         // if ($onclick != undefined && $onclick.startsWith('callMakeCall')) $(this).attr('title', '전화걸기');
       }
@@ -1339,6 +1347,14 @@ ui.Button = {
         //기본속성 살리는 클래스(스킵네비 등)
         if ($href.startsWith('#')) {
           e.preventDefault();
+        }
+      }
+
+      // 앱에서 새창열기 : isWebView() -앱확인., goOutLink() -새창. 는 개발팀 공통함수
+      if (typeof isWebView === 'function' && isWebView()) {
+        if ($target === '_blank' && typeof goOutLink === 'function') {
+          e.preventDefault();
+          goOutLink($href);
         }
       }
     });
