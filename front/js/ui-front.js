@@ -305,9 +305,14 @@ ui.Device = {
 ui.Common = {
   getUrlPath: function () {
     let $path = '';
-    if (location.pathname.indexOf('/front/') > -1) $path = '/front' + $path;
-    if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $path = '/kyobo-mydata-pub' + $path;
-    if (location.pathname.indexOf('mykkl.com/') > -1) $path = '/mydata/resources/static';
+    if (location.pathname.indexOf('mykkl.com/') > -1 || location.pathname.indexOf('//localhost') > -1) {
+      $path = '/resources/static';
+      if (Global._contextPath) $path = Global._contextPath + $path;
+    } else if (location.pathname.indexOf('/front/') > -1) {
+      $path = '/front' + $path;
+      if (location.pathname.indexOf('/kyobo-mydata-pub/') > -1) $path = '/kyobo-mydata-pub' + $path;
+    }
+
     return $path;
   },
   winLoad: function () {
