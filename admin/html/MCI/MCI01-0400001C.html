@@ -112,11 +112,263 @@
                 </div>
               </div>
             </div>
+            <!-- 2022-04-22: 추가 -->
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">그라운드 선택</div>
+                <div class="form-box-cont">
+                  <div class="d-flex align-items-center">
+                    <button class="btn btn-sm btn-default text-nowrap mr-2" data-toggle="modal" data-target="#groundListModal">그라운드 검색</button>
+                    <input type="text" class="form-control" readonly />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //2022-04-22: 추가 -->
           </div>
           <div class="btn-wrap kb-page-btn text-center mt-5">
             <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 저장</button>
           </div>
           <!-- //컨텐츠본문 -->
+
+          <!-- 2022-04-22: 추가 - 그라운드 검색 팝업 -->
+          <article class="modal fade" id="groundListModal" tabindex="-1" aria-labelledby="groundListModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="groundListModalLabel">그라운드 선택</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="title-wrap">
+                    <div class="left">
+                      <h2 class="h3">그라운드 검색</h2>
+                    </div>
+                  </div>
+
+                  <div class="form-box">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">구분</div>
+                        <div class="form-box-cont">
+                          <div class="custom-control-wrap">
+                            <label class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" name="rdo1" class="custom-control-input" />
+                              <span class="custom-control-label">전체</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" name="rdo1" class="custom-control-input" />
+                              <span class="custom-control-label">기본 그라운드</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" name="rdo1" class="custom-control-input" />
+                              <span class="custom-control-label">이벤트 그라운드</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">그라운드 이름</div>
+                        <div class="form-box-cont">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btn-wrap">
+                    <button type="button" class="btn large btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
+                  </div>
+
+                  <div class="title-wrap mt-5">
+                    <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개</div>
+                  </div>
+
+                  <table id="table" class="table table-hover" data-pagination="true">
+                    <thead>
+                      <tr class="">
+                        <th scope="col">선택</th>
+                        <th scope="col">번호</th>
+                        <th scope="col">구분</th>
+                        <th scope="col">그라운드 이름</th>
+                        <th scope="col">운영기간</th>
+                        <th scope="col">공개상태</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 일치하는 검색결과가 없습니다. -->
+                      <tr class="no-records-found">
+                        <td colspan="6">일치하는 검색결과가 없습니다.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label class="custom-control custom-radio only">
+                            <input type="radio" name="rdo2" class="custom-control-input" />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </td>
+                        <td>10</td>
+                        <td>기본</td>
+                        <td class="text-left">그라운드 이름입니다.</td>
+                        <td>2022.12.25 ~ 2022.12.31</td>
+                        <td>공개</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-outline-dark" data-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-lg btn-primary" onclick="$('#groundListModal').modal('hide')">확인</button>
+                </div>
+              </div>
+            </div>
+          </article>
         </main>
         <!-- //컨텐츠 -->
       </div>
@@ -128,6 +380,15 @@
     </section>
     <!-- //wrap -->
 
-    <script></script>
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+    </script>
   </body>
 </html>

@@ -126,13 +126,16 @@
             </div>
           </div>
 
-          <table id="table" class="table table-hover" data-click-to-select="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]">
+          <!-- 2022-04-22: 테이블 항목 수정 -->
+          <table id="table" class="table table-hover" data-pagination="true">
             <thead>
               <tr>
                 <th scope="col">번호</th>
-                <th scope="col">이미지</th>
-                <th scope="col">뱃지 이름</th>
-                <th scope="col">뱃지 설명</th>
+                <th scope="col">구분</th>
+                <th scope="col">승패여부</th>
+                <th scope="col">승점획득여부</th>
+                <th scope="col">수행종료</th>
+                <th scope="col">뱃지 제목/이름</th>
                 <th scope="col">최초등록자</th>
                 <th scope="col">최종수정자</th>
                 <th scope="col">최종수정일</th>
@@ -141,125 +144,136 @@
             <tbody>
               <!-- 일치하는 검색결과가 없습니다. -->
               <tr class="no-records-found">
-                <td colspan="7">일치하는 검색결과가 없습니다.</td>
+                <td colspan="9">일치하는 검색결과가 없습니다.</td>
               </tr>
               <tr>
                 <td>1</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp2.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp3.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp3.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
-                <td>3</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp1.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp1.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
-                <td>4</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp2.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
-                <td>5</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp3.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp3.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
-                <td>6</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp1.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp1.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
-                <td>7</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp2.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
-                <td>8</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp3.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp3.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
-                <td>9</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp1.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp1.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
-                <td>10</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp2.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>
               </tr>
               <tr>
-                <td>11</td>
-                <td>
-                  <a href="../../images/temp/thumb-temp3.jpg" class="img-box w-60" data-toggle="lightbox"><img src="../../images/temp/thumb-temp3.jpg" alt="" /></a>
-                </td>
-                <td><a href="#">OOOOOOOOOOO</a></td>
-                <td>뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다. 뱃지 설명입니다.</td>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
+                <td>홍길동</td>
+                <td>홍길동</td>
+                <td>2022.12.01 00:00:00</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>승패</td>
+                <td>승</td>
+                <td>상관없음</td>
+                <td>누적수행횟수 / 1000</td>
+                <td><a href="#">1000회 승리</a></td>
                 <td>홍길동</td>
                 <td>홍길동</td>
                 <td>2022.12.01 00:00:00</td>

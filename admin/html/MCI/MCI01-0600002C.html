@@ -58,29 +58,165 @@
           <!-- //컨텐츠헤더 -->
 
           <!-- 컨텐츠본문 -->
+          <!-- 2022-04-22: 적용조건 위치 변경 및 수정 -->
           <div class="title-wrap">
+            <div class="left">
+              <h2 class="h3">적용조건</h2>
+            </div>
+          </div>
+
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 구분</div>
+                <div class="form-box-cont">
+                  <select class="custom-select" id="select1">
+                    <option value="1">승패</option>
+                    <option value="2">시즌</option>
+                  </select>
+                  <!-- <div class="text-box">시즌</div> -->
+                </div>
+              </div>
+              <div class="form-box-item _badge_type1">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 승패여부</div>
+                <div class="form-box-cont">
+                  <select class="custom-select">
+                    <option value="">승</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item _badge_type1">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 승점획득여부</div>
+                <div class="form-box-cont">
+                  <select class="custom-select">
+                    <option value="">획득</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label"><i class="fc-red mr-1">*</i> 수행종류</div>
+                <div class="form-box-cont form-row">
+                  <div class="col-6">
+                    <select class="custom-select">
+                      <option value="">누적수행횟수</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //2022-04-22: 적용조건 위치 변경 및 수정-->
+
+          <!-- 2022-04-22: 제약조건 추가-->
+          <div class="_badge_type1">
+            <div class="title-wrap mt-5">
+              <div class="left">
+                <h2 class="h3">제약조건</h2>
+              </div>
+            </div>
+            <div class="form-box">
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label"><i class="fc-red mr-1">*</i> 승점획득<br />제한적용</div>
+                  <div class="form-box-cont">
+                    <div class="custom-control-wrap">
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label">Y</span>
+                      </label>
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label">N</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //2022-04-22: 제약조건 추가-->
+
+          <!-- 2022-04-22: 시즌별정보 추가-->
+          <div class="_badge_type2">
+            <div class="title-wrap mt-5">
+              <div class="left">
+                <h2 class="h3">시즌별 정보</h2>
+              </div>
+              <div class="right">
+                <select class="custom-select custom-select-sm">
+                  <option value="1">매치시즌 ↓</option>
+                  <option value="2">매치시즌 ↑</option>
+                </select>
+                <button class="btn btn-dark btn-sm ml-1" data-toggle="modal" data-target="#addBadgeModal"><i class="bi bi-plus"></i> 시즌추가</button>
+              </div>
+            </div>
+            <table id="table" class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">매치 시즌</th>
+                  <th scope="col">뱃지 이름</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="no-records-found">
+                  <td colspan="3">시즌 별 뱃지 정보를 추가 하세요.</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2022년 3월 매치 시즌</td>
+                  <td><a href="#">2022년 3월 시즌 상위 10%</a></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>2022년 4월 매치 시즌</td>
+                  <td><a href="#">2022년 4월 시즌 상위 10%</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- //2022-04-22: 시즌별정보 추가-->
+
+          <!-- 2022-04-22: .mt-5 클래스 추가-->
+          <div class="title-wrap mt-5">
             <div class="left">
               <h2 class="h3">기본정보</h2>
             </div>
           </div>
           <div class="form-box">
-            <div class="form-box-row">
+            <div class="form-box-row _badge_type1">
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 뱃지 이름</div>
                 <div class="form-box-cont">
-                  <input type="text" class="form-control" placeholder="최대 12글자" />
+                  <!-- 2022-04-22: 수정 및 추가-->
+                  <div class="d-flex">
+                    <input type="text" class="form-control" placeholder="최대 12글자" />
+                    <div class="custom-control-wrap text-nowrap ml-2">
+                      <label class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" />
+                        <span class="custom-control-label">뱃지 제목과 동일한 내용 입력</span>
+                      </label>
+                    </div>
+                  </div>
+                  <!-- //2022-04-22: 수정 및 추가-->
                 </div>
               </div>
             </div>
-            <div class="form-box-row">
+            <div class="form-box-row _badge_type1">
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 뱃지 설명</div>
                 <div class="form-box-cont">
-                  <input type="text" class="form-control" placeholder="최대 12글자" />
+                  <!-- 2022-04-22 : textarea로 변경 -->
+                  <textarea class="form-control" rows="2" placeholder="최대 50글자"></textarea>
                 </div>
               </div>
             </div>
-            <div class="form-box-row">
+            <div class="form-box-row _badge_type1">
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 이미지</div>
                 <div class="form-box-cont">
@@ -106,67 +242,13 @@
                 <div class="form-box-cont">
                   <div class="custom-control-wrap">
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo4" class="custom-control-input" />
+                      <input type="radio" name="rdo2" class="custom-control-input" />
                       <span class="custom-control-label">미사용</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" name="rdo4" class="custom-control-input" />
+                      <input type="radio" name="rdo2" class="custom-control-input" />
                       <span class="custom-control-label">사용</span>
                     </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="title-wrap mt-5">
-            <div class="left">
-              <h2 class="h3">적용조건</h2>
-            </div>
-          </div>
-          <div class="form-box">
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i> 구분</div>
-                <div class="form-box-cont">
-                  <select class="custom-select col-md-6">
-                    <option value="">승패</option>
-                    <option value="">시즌</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i> 승패여부</div>
-                <div class="form-box-cont">
-                  <select class="custom-select col-md-6">
-                    <option value="">승</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i> 승점획득여부</div>
-                <div class="form-box-cont">
-                  <select class="custom-select col-md-6">
-                    <option value="">획득</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i> 수행종류</div>
-                <div class="form-box-cont row">
-                  <div class="col-6">
-                    <select class="custom-select">
-                      <option value="">누적수행횟수</option>
-                    </select>
-                  </div>
-                  <div class="col-6">
-                    <input type="text" class="form-control" />
                   </div>
                 </div>
               </div>
@@ -199,6 +281,89 @@
             <button type="button" class="btn btn-lg btn-default"><i class="bi bi-trash"></i> 삭제</button>
           </div>
           <!-- //컨텐츠본문 -->
+
+          <!-- 2022-04-22: 추가 - 시즌별 정보 등록 팝업 -->
+          <article class="modal fade" id="addBadgeModal" tabindex="-1" aria-labelledby="addBadgeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="addBadgeModalLabel">시즌별 정보 등록</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="title-wrap">
+                    <div class="left">
+                      <h2 class="h3">매치 시즌</h2>
+                    </div>
+                  </div>
+                  <div class="form-box">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label"><i class="fc-red mr-1">*</i> 시즌 선택</div>
+                        <div class="form-box-cont">
+                          <select class="custom-select">
+                            <option value="1">2022년 4월 매치 시즌</option>
+                          </select>
+                          <!-- <div class="text-box">2022년 4월 매치 시즌</div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="title-wrap mt-5">
+                    <div class="left">
+                      <h2 class="h3">뱃지 정보</h2>
+                    </div>
+                  </div>
+                  <div class="form-box">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label"><i class="fc-red mr-1">*</i> 뱃지 이름</div>
+                        <div class="form-box-cont">
+                          <input type="text" class="form-control" placeholder="최대 12글자" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label"><i class="fc-red mr-1">*</i> 뱃지 설명</div>
+                        <div class="form-box-cont">
+                          <textarea class="form-control" rows="2" placeholder="최대 50글자"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label"><i class="fc-red mr-1">*</i> 이미지</div>
+                        <div class="form-box-cont">
+                          <!-- 미리보기 아이콘 이미지 -->
+                          <!-- 이미지 없을때 -->
+                          <div class="img-box w-120 mb-2">
+                            <small>등록된 이미지가<br />없습니다.</small>
+                          </div>
+
+                          <!-- 이미지 있을때 -->
+                          <div class="img-box w-120 mb-2"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></div>
+
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile02" />
+                            <label class="custom-file-label" for="inputGroupFile02">이미지 등록종류 : PNG / 사이즈 00 * 00</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-outline-dark" data-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-lg btn-primary" onclick="$('#addBadgeModal').modal('hide')">추가</button>
+                  <button type="button" class="btn btn-lg btn-default">삭제</button>
+                </div>
+              </div>
+            </div>
+          </article>
         </main>
         <!-- //컨텐츠 -->
       </div>
@@ -210,6 +375,25 @@
     </section>
     <!-- //wrap -->
 
-    <script></script>
+    <script>
+      // 테이블
+      function initTable() {
+        $('#table').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+      }
+      initTable();
+
+      function typeChk() {
+        $('._badge_type1, ._badge_type2').hide();
+        const $val = $('#select1').val();
+        $('._badge_type' + $val).show();
+      }
+      typeChk();
+      $('#select1').change(function () {
+        typeChk();
+      });
+    </script>
   </body>
 </html>

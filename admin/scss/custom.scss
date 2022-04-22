@@ -1032,6 +1032,20 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     z-index: $zindex-modal * 2;
   }
 }
+.modal-header {
+  align-items: center;
+  .modal-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    width: 100%;
+    float: 1 1 auto;
+    padding-right: 1rem;
+  }
+  .close {
+    float: none;
+    margin-left: auto;
+  }
+}
 .modal-body {
   padding: 1rem;
 }
@@ -1046,6 +1060,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     flex-wrap: nowrap;
     > * {
       width: 100%;
+      min-width: auto !important;
       margin: 0;
       + * {
         margin-left: 0.75rem;
@@ -1173,6 +1188,9 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     margin-left: auto;
     white-space: nowrap;
   }
+  .custom-select {
+    width: auto;
+  }
 }
 
 // form
@@ -1230,6 +1248,9 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
       white-space: nowrap;
     }
   }
+}
+.text-box {
+  padding: 0.438rem 0;
 }
 .btn-wrap {
   text-align: right;
