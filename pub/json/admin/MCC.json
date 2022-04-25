@@ -9,12 +9,12 @@
     "name": "메인",
     "worker": "변상우",
     "complete": "2022-03-28",
-    "change": "2022-04-06",
-    "etc": "메인 사이드바 수정"
+    "change": "2022-04-25",
+    "etc": ""
   },
   {
     "depth1": "로그인",
-    "version": "MCC_로그인_<span>v1.0_202220407</span>"
+    "version": "MCC_로그인_<span>v1.0_202220419</span>"
   },
   {
     "id": "MCC01-0000001C",
