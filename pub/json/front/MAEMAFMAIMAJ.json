@@ -339,7 +339,7 @@
 
   {
     "depth1": "설정",
-    "version": "설정_<span>v1.0_20220406</span>"
+    "version": "설정_<span>v1.1_20220425</span>"
   }
   ,{
     "id": "MAG01-0000001C",
@@ -359,9 +359,10 @@
     "name": "알림설정화면",
     "worker": "장영석",
     "complete": "2022-04-07",
-    "change":"2022-04-21"
+    "change":"2022-04-25"
   }
   ,{
+    "state": "del",
     "id": "MAG01-0000p01C",
     "url": "../../front/html/MAG/MAG01-0000002C.html?pop=true",
     "depth2": "마케팅 알림동의/철회하기",

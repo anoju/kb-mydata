@@ -51,24 +51,15 @@
               <span class="checkbox switch ml-auto"><input type="checkbox" /><i aria-hidden="true"></i></span>
             </div>
           </div>
-          <hr class="hr-line" />
+          <!-- 2022-04-25: 삭제 -->
+          <!-- <hr class="hr-line" />
           <div class="mt-32">
             <p class="tit-h4 fw-bold">이벤트·소식 알림</p>
             <p class="fz-16 mt-8">다양한 이벤트 및 새소식, 혜택 정보 등을 알려드릴께요.</p>
             <div class="flex not-full mt-38">
               <p class="fz-16 fw-500 mr-auto">마케팅 정보 수신 동의</p>
-              <!--
-                상태에 따른 클래스 변화
-
-                동의함 : fc-primary
-                철회함 : fc-b0b0b0
-               -->
               <button type="button" class="btn-txt fc-b0b0b0" onclick="Layer.open('#popAgreeMarketing')">철회함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
             </div>
-
-            <!--
-              철회함 일경우 모든 체크박스 disabled 추가
-            -->
             <div class="checkbox mt-29">
               <input type="checkbox" id="chk1" disabled /><i aria-hidden="true"></i>
               <label for="chk1" class="lbl">PUSH 알림</label>
@@ -81,13 +72,15 @@
               <input type="checkbox" id="chk3" disabled /><i aria-hidden="true"></i>
               <label for="chk3" class="lbl">전화</label>
             </div>
-          </div>
+          </div> -->
         </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 2022-04-21: 약관상세 팝업으로 변경되어 추가 -->
+      <!-- 2022-04-25: 삭제 -->
       <!-- 약관상세 팝업 -->
+      <!-- 
       <div id="popAgreeMarketing" class="popup full pop-pdf" role="dialog" aria-hidden="true">
         <article class="pop-wrap">
           <div class="pop-head">
@@ -103,20 +96,21 @@
             <div>
               <div class="flex">
                 <button type="button" class="button primary ui-pop-close">철회하기</button>
-                <!-- <button type="button" class="button primary ui-pop-close">동의하고 알람받기</button> -->
+                <button type="button" class="button primary ui-pop-close">동의하고 알람받기</button>
               </div>
             </div>
           </div>
         </article>
       </div>
+       -->
       <!-- //팝업 -->
     </article>
 
     <script>
       //임시: 확인용 팝업 띄우기
-      if (getUnlParams().pop) {
-        Layer.open('#popAgreeMarketing');
-      }
+      // if (getUnlParams().pop) {
+      //   Layer.open('#popAgreeMarketing');
+      // }
     </script>
   </body>
 </html>
