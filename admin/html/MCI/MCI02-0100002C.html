@@ -102,13 +102,14 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 연락처</div>
                 <div class="form-box-cont">
-                  <!-- 2022-03-31: 연락처 검색 팝업 추가 -->
-                  <div class="d-flex align-items-center">
-                    <button type="button" class="btn btn-sm btn-default mr-2" data-toggle="modal" data-target="#memberModal"><i class="bi bi-person-bounding-box"></i> 회원 검색</button>
-                    <div class="flex-auto">
-                      <input type="text" class="form-control" readonly value="010-0000-0000" />
+                  <!-- 2022-04-25: 마크업 구조변경 -->
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-default" type="button" data-toggle="modal" data-target="#memberModal"><i class="bi bi-search mr-1"></i>회원 검색</button>
                     </div>
+                    <input type="text" class="form-control" readonly value="010-0000-0000" />
                   </div>
+                  <!-- 2022-04-25: 마크업 구조변경 -->
                 </div>
               </div>
             </div>

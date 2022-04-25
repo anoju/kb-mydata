@@ -146,20 +146,29 @@
                       <input type="radio" name="rdo4" class="custom-control-input" />
                       <span class="custom-control-label">태그</span>
                     </label>
-                    <button type="button" class="btn btn-sm btn-default mr-2" data-toggle="modal" data-target="#tagModal"><i class="bi bi-tag"></i> 태그선택</button>
-                    <div class="flex-auto">
+                    <!-- 2022-04-25: 마크업 구조 수정-->
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#tagModal"><i class="bi bi-tag"></i> 태그선택</button>
+                      </div>
                       <input type="text" class="form-control" placeholder="최대 12글자" />
                     </div>
+                    <!-- //2022-04-25: 마크업 구조 수정-->
                   </div>
-                  <div class="d-flex align-items-center mt-3 mt-lg-2">
+                  <!-- 2022-04-25: .mt-lg-2 클래스 제거-->
+                  <div class="d-flex align-items-center mt-2">
                     <label class="custom-control custom-radio custom-control-inline mb-0">
                       <input type="radio" name="rdo4" class="custom-control-input" />
                       <span class="custom-control-label">뱃지</span>
                     </label>
-                    <button type="button" class="btn btn-sm btn-default mr-2" data-toggle="modal" data-target="#badgeModal"><i class="bi bi-bookmark"></i> 뱃지선택</button>
-                    <div class="flex-auto">
+                    <!-- 2022-04-25: 마크업 구조 수정-->
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#badgeModal"><i class="bi bi-bookmark"></i> 뱃지선택</button>
+                      </div>
                       <input type="text" class="form-control" placeholder="최대 12글자" />
                     </div>
+                    <!-- //2022-04-25: 마크업 구조 수정-->
                   </div>
                 </div>
               </div>
