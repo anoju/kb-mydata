@@ -2212,8 +2212,9 @@ ui.Tooltip = {
   position: function (tar) {
     const $tar = $(tar);
 
+    if (!$tar.children('.tooltip-inner').length) $tar.wrapInner('<div class="tooltip-inner"></div>');
     if (!$tar.children('.tooltip-arr').length) $tar.prepend('<i class="tooltip-arr" aria-hidden="true"></i>');
-    if (!$tar.children('.tooltip-close').length) $tar.append('<a href="#" class="tooltip-close" role="button" aria-label="툴팁닫기"></a>');
+    if (!$tar.children('.tooltip-close').length) $tar.find('.tooltip-inner').append('<a href="#" class="tooltip-close" role="button" aria-label="툴팁닫기"></a>');
     ui.Tooltip.resize();
   },
   aria: function (element) {
