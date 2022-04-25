@@ -13,7 +13,15 @@
   },
   {
     "depth1": "알림",
-    "version": "알림_<span>v1.0_20220407</span>"
+    "version": "MAE_알림_<span>v1.0_20220407</span>"
+  },
+  {
+    "id": "MAE04-0000001C",
+    "url": "../../front/html/MAE/",
+    "depth2": "알림 목록",
+    "name": "알림 목록",
+    "worker": "안효주",
+    "complete": "2022-04-25"
   },
   {
     "id": "MAE01-0000001C",
@@ -62,7 +70,7 @@
   },
   {
     "depth1": "고객센터",
-    "version": "고객센터_<span>v1.0_20220407</span>"
+    "version": "MAF_고객센터_<span>v1.0_20220407</span>"
   },
   {
     "id": "MAF02-0000001C",
@@ -201,7 +209,7 @@
   }
   ,{
     "depth1": "내정보관리",
-    "version": "내정보관리_<span>v1.0_20220406</span>"
+    "version": "MAI_내정보관리_<span>v1.0_20220406</span>"
   }
   ,{
     "id":"MAI01-0100001C",
@@ -237,7 +245,7 @@
   }
   ,{
     "depth1": "더보기",
-    "version": "더보기_<span>v1.0_20220406</span>"
+    "version": "MAJ_더보기_<span>v1.0_20220406</span>"
   }
   ,{
     "id": "MAJ01-0000001C",
@@ -341,7 +349,7 @@
     "name": "설정목록화면",
     "worker": "장영석",
     "complete": "2022-04-07",
-    "change":"2022-04-21"
+    "change":"2022-04-25"
   }
   ,{
     "id": "MAG01-0000002C",
