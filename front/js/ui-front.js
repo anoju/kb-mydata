@@ -310,9 +310,9 @@ ui.Device = {
 ui.Common = {
   getUrlPath: function () {
     let $path = '';
-    // isDev(), isLocal()는 개발팀 공통함수
-    if ((typeof isDev === 'function' && isDev()) || (typeof isLocal === 'function' && isLocal())) {
-      // 개발서버 및 운영서버, 개발 로컬서버
+    // isReal(), isDev(), isLocal()는 개발팀 공통함수
+    if ((typeof isReal === 'function' && isReal()) || (typeof isDev === 'function' && isDev()) || (typeof isLocal === 'function' && isLocal())) {
+      // 개발서버 및 실서버, 개발 로컬서버
       $path = '/resources/static';
       if (Global._contextPath) $path = Global._contextPath + $path;
     } else if (location.pathname.indexOf('/front/') > -1) {
