@@ -129,8 +129,9 @@
                 <div class="form-box-label">신고 처리</div>
                 <div class="form-box-cont d-flex align-items-center">
                   <div>
-                    <button type="button" class="btn btn-dark m-1"><i class="bi bi-shield-slash-fill"></i> 게시물 차단</button>
-                    <button type="button" class="btn btn-dark m-1"><i class="bi bi-shield-slash-fill"></i> 게시물 차단 및 작성자 이용 제한</button>
+                    <!-- 2022-04-25: 버튼 클래스 수정 -->
+                    <button type="button" class="btn btn-sm btn-default m-1"><i class="bi bi-shield-slash-fill"></i> 게시물 차단</button>
+                    <button type="button" class="btn btn-sm btn-default m-1"><i class="bi bi-shield-slash-fill"></i> 게시물 차단 및 작성자 이용 제한</button>
                   </div>
                 </div>
               </div>
@@ -142,114 +143,118 @@
               <h2 class="h3">댓글/답글 내용</h2>
             </div>
           </div>
-          <div class="form-box">
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">작성자</div>
-                <div class="form-box-cont d-flex align-items-center">아이유</div>
+
+          <!-- 2022-04-25: .form-box-list 감싸는 영역 추가 -->
+          <div class="form-box-list">
+            <div class="form-box">
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label">작성자</div>
+                  <div class="form-box-cont d-flex align-items-center">아이유</div>
+                </div>
+                <div class="form-box-item">
+                  <div class="form-box-label">회원번호</div>
+                  <div class="form-box-cont d-flex align-items-center">000000</div>
+                </div>
+                <!-- 2022-04-25: 작성일 위치 수정 -->
+                <div class="form-box-item">
+                  <div class="form-box-label">작성일</div>
+                  <div class="form-box-cont d-flex align-items-center">2022.00.00 00:00:00</div>
+                </div>
               </div>
-              <div class="form-box-item">
-                <div class="form-box-label">회원번호</div>
-                <div class="form-box-cont d-flex align-items-center">000000</div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">작성일</div>
-                <div class="form-box-cont d-flex align-items-center">2022.00.00 00:00:00</div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">게시물 상세 내용</div>
-                <div class="form-box-cont d-flex align-items-center">
-                  <!-- prettier-ignore -->
-                  <div class="pre-line">마이데이터 자산등록이 안되요. 
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label">게시물 상세 내용</div>
+                  <div class="form-box-cont d-flex align-items-center">
+                    <!-- prettier-ignore -->
+                    <div class="pre-line">마이데이터 자산등록이 안되요. 
                     어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 
                     어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 마이데이터 자산등록이 안되요.
                     어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 
                     마이데이터 자산등록이 안되요. 어떻게 해야 하나요?
                   </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">신고 이력</div>
-                <div class="form-box-cont d-flex align-items-center">
-                  <ul class="mb-0">
-                    <li>상태 : 차단</li>
-                    <li>처리자 : 홍길동</li>
-                    <li>처리일 : 2022.00.00 00:00:00</li>
-                    <li>처리답변 : 답변입니다. 답변입니다. 답변입니다. 답변입니다.</li>
-                    <li>작성자 이용 제한 : ~2022.00.00 00:00:00</li>
-                  </ul>
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label">신고 이력</div>
+                  <div class="form-box-cont d-flex align-items-center">
+                    <ul class="mb-0">
+                      <li>상태 : 차단</li>
+                      <li>처리자 : 홍길동</li>
+                      <li>처리일 : 2022.00.00 00:00:00</li>
+                      <li>처리답변 : 답변입니다. 답변입니다. 답변입니다. 답변입니다.</li>
+                      <li>작성자 이용 제한 : ~2022.00.00 00:00:00</li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="form-box-item">
-                <div class="form-box-label">신고 처리</div>
-                <div class="form-box-cont d-flex align-items-center">
-                  <div>
-                    <button type="button" class="btn btn-default m-1"><i class="bi bi-shield-slash-fill"></i> 게시물 차단</button>
-                    <button type="button" class="btn btn-default m-1"><i class="bi bi-shield-slash-fill"></i> 게시물 차단 및 작성자 이용 제한</button>
+                <div class="form-box-item">
+                  <div class="form-box-label">신고 처리</div>
+                  <div class="form-box-cont d-flex align-items-center">
+                    <div>
+                      <!-- 2022-04-25: 버튼 클래스 수정 -->
+                      <button type="button" class="btn btn-sm btn-default m-1" disabled><i class="bi bi-shield-slash-fill"></i> 게시물 차단</button>
+                      <button type="button" class="btn btn-sm btn-default m-1" disabled><i class="bi bi-shield-slash-fill"></i> 게시물 차단 및 작성자 이용 제한</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <hr class="hr-line" aria-hidden="true" />
+            <!-- 2022-04-25: hr 태그 삭제 -->
 
-          <div class="form-box">
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">작성자</div>
-                <div class="form-box-cont d-flex align-items-center">아이유</div>
+            <div class="form-box">
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label">작성자</div>
+                  <div class="form-box-cont d-flex align-items-center">아이유</div>
+                </div>
+                <div class="form-box-item">
+                  <div class="form-box-label">회원번호</div>
+                  <div class="form-box-cont d-flex align-items-center">000000</div>
+                </div>
+                <!-- 2022-04-25: 작성일 위치 수정 -->
+                <div class="form-box-item">
+                  <div class="form-box-label">작성일</div>
+                  <div class="form-box-cont d-flex align-items-center">2022.00.00 00:00:00</div>
+                </div>
               </div>
-              <div class="form-box-item">
-                <div class="form-box-label">회원번호</div>
-                <div class="form-box-cont d-flex align-items-center">000000</div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">작성일</div>
-                <div class="form-box-cont d-flex align-items-center">2022.00.00 00:00:00</div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">게시물 상세 내용</div>
-                <div class="form-box-cont d-flex align-items-center">
-                  <!-- prettier-ignore -->
-                  <div class="pre-line">마이데이터 자산등록이 안되요. 
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label">게시물 상세 내용</div>
+                  <div class="form-box-cont d-flex align-items-center">
+                    <!-- prettier-ignore -->
+                    <div class="pre-line">마이데이터 자산등록이 안되요. 
                     어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 
                     어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 마이데이터 자산등록이 안되요.
                     어떻게 해야 하나요? 마이데이터 자산등록이 안되요. 어떻게 해야 하나요? 
                     마이데이터 자산등록이 안되요. 어떻게 해야 하나요?
                   </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">신고 이력</div>
-                <div class="form-box-cont d-flex align-items-center">
-                  <ul class="mb-0">
-                    <li>상태 : 차단</li>
-                    <li>처리자 : 홍길동</li>
-                    <li>처리일 : 2022.00.00 00:00:00</li>
-                    <li>처리답변 : 답변입니다. 답변입니다. 답변입니다. 답변입니다.</li>
-                    <li>작성자 이용 제한 : ~2022.00.00 00:00:00</li>
-                  </ul>
+              <div class="form-box-row">
+                <div class="form-box-item">
+                  <div class="form-box-label">신고 이력</div>
+                  <div class="form-box-cont d-flex align-items-center">
+                    <ul class="mb-0">
+                      <li>상태 : 차단</li>
+                      <li>처리자 : 홍길동</li>
+                      <li>처리일 : 2022.00.00 00:00:00</li>
+                      <li>처리답변 : 답변입니다. 답변입니다. 답변입니다. 답변입니다.</li>
+                      <li>작성자 이용 제한 : ~2022.00.00 00:00:00</li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="form-box-item">
-                <div class="form-box-label">신고 처리</div>
-                <div class="form-box-cont d-flex align-items-center">
-                  <div>
-                    <button type="button" class="btn btn-default m-1"><i class="bi bi-shield-slash-fill"></i> 게시물 차단</button>
-                    <button type="button" class="btn btn-default m-1"><i class="bi bi-shield-slash-fill"></i> 게시물 차단 및 작성자 이용 제한</button>
+                <div class="form-box-item">
+                  <div class="form-box-label">신고 처리</div>
+                  <div class="form-box-cont d-flex align-items-center">
+                    <div>
+                      <!-- 2022-04-25: 버튼 클래스 수정 -->
+                      <button type="button" class="btn btn-sm btn-default m-1"><i class="bi bi-shield-slash-fill"></i> 게시물 차단</button>
+                      <button type="button" class="btn btn-sm btn-default m-1"><i class="bi bi-shield-slash-fill"></i> 게시물 차단 및 작성자 이용 제한</button>
+                    </div>
                   </div>
                 </div>
               </div>

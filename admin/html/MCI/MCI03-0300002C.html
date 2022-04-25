@@ -153,7 +153,16 @@
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 운영기간</div>
-                <div class="form-box-cont"></div>
+                <div class="form-box-cont">
+                  <!-- 2022-04-25: 누락된 달력 추가 -->
+                  <div class="input-group">
+                    <input type="date" class="form-control" placeholder="시작일" />
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">~</div>
+                    </div>
+                    <input type="date" class="form-control" placeholder="종료일" />
+                  </div>
+                </div>
               </div>
             </div>
             <div class="form-box-row">
@@ -236,7 +245,8 @@
               <div class="form-box-item">
                 <div class="form-box-label">메모</div>
                 <div class="form-box-cont">
-                  <textarea class="form-control" rows="8" placeholder="최대 100글자"> </textarea>
+                  <!-- 2022-04-25: rows 수정 -->
+                  <textarea class="form-control" rows="2" placeholder="최대 100글자"></textarea>
                 </div>
               </div>
             </div>

@@ -124,8 +124,8 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 소개글</div>
                 <div class="form-box-cont">
-                  <!-- 2022-04-22 : rows 수정 -->
-                  <textarea class="form-control" rows="2" placeholder="최대 50글자"> </textarea>
+                  <!-- 2022-04-25 : rows 수정 , placeholder 수정 -->
+                  <textarea class="form-control" rows="2" placeholder="최대 100글자"></textarea>
                 </div>
               </div>
             </div>
@@ -133,13 +133,15 @@
 
           <div class="title-wrap mt-5">
             <div class="left">
-              <h2 class="h3">입장조건</h2>
+              <!-- 2022-04-25 : 텍스트 수정 -->
+              <h2 class="h3">참여조건</h2>
             </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label">입장조건</div>
+                <!-- 2022-04-25 : 텍스트 수정 -->
+                <div class="form-box-label">참여조건</div>
                 <div class="form-box-cont">
                   <div class="d-flex align-items-center">
                     <label class="custom-control custom-radio custom-control-inline mb-0">
@@ -198,32 +200,38 @@
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 랭킹갱신</div>
-                <div class="form-box-cont">
+                <!-- 2022-04-25:클래스 수정 -->
+                <div class="form-box-cont d-flex align-items-center">
                   매월
-                  <select class="custom-select col-2">
+                  <select class="custom-select w-80 ml-2 mr-1 text-right">
                     <option value="1">1</option>
                   </select>
                   일 마다
                 </div>
+                <!-- // 2022-04-25:클래스 수정 -->
               </div>
             </div>
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 공개여부</div>
-                <div class="form-box-cont d-flex align-items-center">
-                  <label class="custom-control custom-radio custom-control-inline mb-0">
-                    <input type="radio" name="rdo2" class="custom-control-input" />
-                    <span class="custom-control-label">공개</span>
-                  </label>
-                  <label class="custom-control custom-radio custom-control-inline mb-0">
-                    <input type="radio" name="rdo2" class="custom-control-input" />
-                    <span class="custom-control-label">즉시 비공개</span>
-                  </label>
-                  <label class="custom-control custom-radio custom-control-inline mb-0">
-                    <input type="radio" name="rdo2" class="custom-control-input" />
-                    <span class="custom-control-label">예약 비공개</span>
-                  </label>
+                <!-- 2022-04-25: 마크업 수정-->
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" />
+                      <span class="custom-control-label">공개</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" />
+                      <span class="custom-control-label">즉시 비공개</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" />
+                      <span class="custom-control-label">예약 비공개</span>
+                    </label>
+                  </div>
                 </div>
+                <!-- //2022-04-25: 마크업 수정-->
               </div>
               <div class="form-box-item">
                 <div class="form-box-label">비공개 예정일</div>
@@ -237,20 +245,24 @@
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label">Talk 활성여부</div>
-                <div class="form-box-cont d-flex align-items-center">
-                  <label class="custom-control custom-radio custom-control-inline mb-0">
-                    <input type="radio" name="rdo2" class="custom-control-input" />
-                    <span class="custom-control-label">활성</span>
-                  </label>
-                  <label class="custom-control custom-radio custom-control-inline mb-0">
-                    <input type="radio" name="rdo2" class="custom-control-input" />
-                    <span class="custom-control-label">비활성</span>
-                  </label>
-                  <label class="custom-control custom-radio custom-control-inline mb-0">
-                    <input type="radio" name="rdo2" class="custom-control-input" />
-                    <span class="custom-control-label">예약 비활성</span>
-                  </label>
+                <!-- 2022-04-25: 마크업 수정-->
+                <div class="form-box-cont">
+                  <div class="custom-control-wrap">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" />
+                      <span class="custom-control-label">활성</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" />
+                      <span class="custom-control-label">비활성</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo2" class="custom-control-input" />
+                      <span class="custom-control-label">예약 비활성</span>
+                    </label>
+                  </div>
                 </div>
+                <!-- // 2022-04-25: 마크업 수정-->
               </div>
               <div class="form-box-item">
                 <div class="form-box-label">Talk 비활성 예정일</div>
@@ -274,9 +286,10 @@
                 <div class="form-box-label">그라운드 랭킹</div>
                 <div class="form-box-cont d-flex align-items-center">
                   <ol class="mb-0">
-                    <li>- OOOOO / 100.00%</li>
-                    <li>- OOOOO / 98.00%</li>
-                    <li>- OOOOO / 86.00%</li>
+                    <!-- 2022-04-25: 텍스트 '- ' 제거-->
+                    <li>OOOOO / 100.00%</li>
+                    <li>OOOOO / 98.00%</li>
+                    <li>OOOOO / 86.00%</li>
                   </ol>
                   <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#rankingModal"><i class="bi bi-eye"></i> 더보기</button>
                 </div>
