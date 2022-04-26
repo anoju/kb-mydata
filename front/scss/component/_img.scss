@@ -33,8 +33,11 @@
     height: 2rem;
     background: url(../images/icon/ico-round-close@3x.png) no-repeat center center / contain;
   }
-  &.TBD {
-    background: rgba(255, 0, 0, 0.2);
+  &[class*='end-img-'] {
+    width: 14.4rem;
+    & ~ .tit-h1 {
+      font-weight: 500;
+    }
   }
   &.end-img-check {
     background-image: url(../images/end/end-img-check.png);
@@ -44,6 +47,9 @@
   }
   &.end-img-fail {
     background-image: url(../images/end/end-img-fail.png);
+  }
+  &.end-img-error {
+    background-image: url(../images/end/end-img-error.png);
   }
 
   &.avatar {
