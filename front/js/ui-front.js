@@ -6731,9 +6731,11 @@ const Layer = {
 
     //닫기
     $popup.removeClass(Layer.showClass + '-end');
-    const $popWrap = $popup.find('.' + Layer.wrapClass);
-    const $popSclWrap = $popWrap.hasClass('pop-body-scroll') ? $popup.find('.' + Layer.bodyClass) : $popWrap;
-    $popSclWrap.scrollTop(0);
+    if ($popup.find('.next-foot-fixed').length) {
+      const $popWrap = $popup.find('.' + Layer.wrapClass);
+      const $popSclWrap = $popWrap.hasClass('pop-body-scroll') ? $popup.find('.' + Layer.bodyClass) : $popWrap;
+      $popSclWrap.scrollTop(0);
+    }
     $popup.removeClass(Layer.showClass).data('focusMove', false).data('popPosition', false);
     $popup.attr('aria-hidden', 'true').removeAttr('tabindex aria-labelledby');
     if ($popup.hasClass('no_motion')) $closeDelay = 10;
