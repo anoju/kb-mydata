@@ -427,6 +427,15 @@
     }
   }
 }
+.round-line-box {
+  background: #fff;
+  padding: 2rem;
+  border: 0.1rem solid var(--line-color);
+  border-radius: 1.2rem;
+  &.no-line {
+    border-width: 0;
+  }
+}
 
 //준법 사전심사
 .rule-info-txt {

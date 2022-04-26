@@ -32,187 +32,6 @@
     }
   }
 }
-.sns-menu-btn {
-  margin-top: 3.2rem;
-  display: flex;
-  flex-wrap: flex;
-  justify-content: center;
-  li {
-    padding: 0 1.2rem;
-  }
-  .button {
-    display: block;
-    height: auto;
-    padding: 0;
-    font-size: 1.2rem;
-    line-height: 1.33;
-
-    font-weight: normal;
-    [class*='i-ico-'] {
-      margin: 0;
-      vertical-align: top;
-    }
-    span {
-      display: block;
-      margin-top: 0.4rem;
-    }
-  }
-  &.ty2 {
-    display: flex;
-    padding: 1.6rem 0;
-    margin-top: 0;
-    justify-content: space-evenly;
-    li {
-      padding: 0;
-      .button {
-        margin: 0 auto;
-      }
-    }
-  }
-}
-
-// 통합검색
-.search-input {
-  display: flex;
-  padding: 1.2rem 0;
-  .pop-head & {
-    padding: 0;
-  }
-  > .input {
-    flex: 1 1 auto;
-    border-radius: 2.2rem;
-    background-color: #f4f4f4;
-    border-color: #f4f4f4;
-    input {
-      height: 4.2rem;
-      padding-left: 2rem;
-    }
-    .button {
-      margin-right: 1.2rem;
-    }
-  }
-  > .button {
-    padding: 0;
-    height: 4.4rem;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-left: 1.8rem;
-    flex-shrink: 0;
-  }
-}
-.search-contents {
-  padding: 1.2rem 0;
-}
-.keyword-list {
-  li {
-    position: relative;
-  }
-  .button.keyword {
-    display: block;
-    width: 100%;
-    padding: 0.8rem 0 0.8rem 2.4rem;
-    height: auto;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-    text-align: left;
-    font-weight: 500;
-
-    strong {
-      color: #000;
-    }
-  }
-  &.recent-keyword {
-    .button.keyword {
-      &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 1.2rem;
-        width: 1.6rem;
-        height: 1.6rem;
-        background: url(../images/icon/ico-clock-16@3x.png) no-repeat center center / contain;
-      }
-    }
-    .button.delete {
-      padding: 0;
-      position: absolute;
-      right: 0;
-      top: 0.8rem;
-      width: 2.4rem;
-      height: 2.4rem;
-      background: url(../images/icon/ico-close-24@3x.png) no-repeat center center / contain;
-    }
-  }
-  &.relate-keyword {
-    .button.keyword {
-      &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 1.2rem;
-        width: 1.6rem;
-        height: 1.6rem;
-        background: url(../images/icon/ico-search-16@3x.png) no-repeat center center / contain;
-      }
-    }
-  }
-}
-.search-opt-wrap {
-  position: relative;
-  z-index: 0;
-  transition: 0.3s 0.3s;
-  @include web-center;
-  .bg {
-    visibility: hidden;
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(2px);
-    transition: background 0.3s 0s, visibility 0s 0.3s, height 0s 0.3s;
-  }
-  .search-opt {
-    display: flex;
-    position: relative;
-    padding: 0 2rem 0.7rem;
-    background: #fff;
-    .btn-select {
-      height: 4.4rem;
-    }
-    > .button {
-      margin-left: auto;
-      height: 4.4rem;
-      padding: 0;
-      font-size: 1.4rem;
-      font-weight: normal;
-    }
-  }
-  .search-opt-panel {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    padding: 0.8rem 2rem 1.2rem;
-    background: #fff;
-  }
-  &.expend {
-    z-index: 2;
-    transition-delay: 0s;
-    .bg {
-      visibility: visible;
-      height: 100%;
-      @include dimm;
-      transition-delay: 0s, 0s, 0s;
-    }
-    .search-opt-panel {
-      display: block;
-    }
-  }
-}
 
 //test
 .match-profile {
@@ -226,6 +45,7 @@
   padding-bottom: 4rem;
   color: #fff;
   background: linear-gradient(135deg, rgba(255, 169, 118, 0.5) 0%, rgba(255, 121, 112, 0.5) 100%);
+  @include web-center;
   .img-box {
     width: 10rem;
     border-radius: 50%;
@@ -242,6 +62,7 @@
   margin-top: -4rem;
   padding-top: 4rem;
   border-radius: 4rem 4rem 0 0;
+  @include web-center;
   .title-bar {
     position: sticky;
     top: 6rem;

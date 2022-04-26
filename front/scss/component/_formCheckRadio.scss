@@ -687,6 +687,13 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
     padding-left: 0.3rem;
     padding-right: 0.3rem;
   }
+  .checkbox,
+  .radio {
+    &.btn {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 .checkbox-wrap {
   .radio,
