@@ -6529,11 +6529,7 @@ const Layer = {
 
       $popup.attr('aria-hidden', false);
 
-      if ($popup.hasClass('modal') || $popup.hasClass('bottom')) {
-        $popup.css('display', 'flex');
-      } else {
-        $popup.show();
-      }
+      $popup.css('display', 'flex');
 
       const $FocusEvt = function () {
         //리턴 포커스

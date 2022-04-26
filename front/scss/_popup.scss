@@ -364,7 +364,8 @@
 
   //modal
   &.modal {
-    padding: 6rem 3.2rem;
+    // padding: calc(var(--base-padding) + 0.8rem);
+    padding: var(--base-padding);
     align-items: center;
     justify-content: center;
 
@@ -472,20 +473,16 @@
     }
   }
   &.side-right {
+    justify-content: flex-end;
     > .pop-scl-wrap,
     > .pop-wrap {
-      float: right;
       transform: translate3d(120%, 0, 0);
     }
   }
 
   //show
   &.show {
-    display: block !important;
-    &.modal,
-    &.bottom {
-      display: flex !important;
-    }
+    display: flex !important;
     @include dimm;
     transition-delay: 0s;
     > .pop-scl-wrap,
