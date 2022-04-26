@@ -6402,7 +6402,14 @@ const Layer = {
     const $wrap = $elment.hasClass(Layer.wrapClass) ? $elment : $elment.find('.' + Layer.wrapClass);
     const $body = $wrap.find('.' + Layer.bodyClass);
     const $foot = $wrap.find('.' + Layer.footClass);
-    if ($body.length && $foot.length) $body.addClass('next-foot');
+    if ($body.length && $foot.length) {
+      if ($foot.css('position') === 'fixed') {
+        //$body.css('padding-bottom', $foot.outerHeight());
+        $body.addClass('next-foot-fixed');
+      } else {
+        $body.addClass('next-foot');
+      }
+    }
 
     Layer.fixed($wrap);
     $(window).scroll(function () {
@@ -6517,6 +6524,7 @@ const Layer = {
 
       const $openDelay = 20 * Layer.opening;
       const $callbackDelay = 450;
+      const $showDelay = 510;
 
       // pop-scl-wrap
       if (ui.PC.any() && ($popup.hasClass('modal') || $popup.hasClass('bottom')) && !$popup.find('.' + Layer.sclWrapClass).length) {
@@ -6621,7 +6629,11 @@ const Layer = {
         //열기
         if (!$('html').hasClass('lock')) Body.lock();
         $popup.addClass(Layer.showClass);
-        $popWrap.scrollTop(0);
+        setTimeout(function () {
+          $popup.addClass(Layer.showClass + '-end');
+        }, $showDelay);
+        const $popSclWrap = $popWrap.hasClass('pop-body-scroll') ? $popup.find('.' + Layer.bodyClass) : $popWrap;
+        $popSclWrap.scrollTop(0);
 
         //swipe 기능
         if ($popup.hasClass('is-swipe') && !$popup.hasClass('is-swipe__init')) {
@@ -6718,6 +6730,10 @@ const Layer = {
     }, 100);
 
     //닫기
+    $popup.removeClass(Layer.showClass + '-end');
+    const $popWrap = $popup.find('.' + Layer.wrapClass);
+    const $popSclWrap = $popWrap.hasClass('pop-body-scroll') ? $popup.find('.' + Layer.bodyClass) : $popWrap;
+    $popSclWrap.scrollTop(0);
     $popup.removeClass(Layer.showClass).data('focusMove', false).data('popPosition', false);
     $popup.attr('aria-hidden', 'true').removeAttr('tabindex aria-labelledby');
     if ($popup.hasClass('no_motion')) $closeDelay = 10;
@@ -6798,12 +6814,12 @@ const Layer = {
       const $this = $(this);
       const $wrap = $this.find('.' + Layer.wrapClass);
       const $head = $wrap.find('.' + Layer.headClass);
-      const $tit = $head.find('h1');
-      const $foot = $wrap.find('.' + Layer.footClass);
-      const $body = $wrap.find('.' + Layer.bodyClass);
+      // const $tit = $head.find('h1');
+      // const $foot = $wrap.find('.' + Layer.footClass);
+      // const $body = $wrap.find('.' + Layer.bodyClass);
 
-      $head.removeAttr('style').removeClass('shadow');
-      $body.removeAttr('tabindex style');
+      // $head.removeAttr('style').removeClass('shadow');
+      // $body.removeAttr('tabindex style');
 
       // if ($head.length) headHeight($head, $body);
       // if ($foot.length) footHeight($foot, $body);
@@ -6838,9 +6854,10 @@ const Layer = {
   },
   fixed: function (el) {
     //  pop fixed
-    const $wrap = $(el).hasClass(Layer.wrapClass) ? $(el) : $(el).closest('.' + Layer.wrapClass);
+    let $wrap = $(el).hasClass(Layer.wrapClass) ? $(el) : $(el).closest('.' + Layer.wrapClass);
     const $head = $wrap.find('.' + Layer.headClass);
     const $foot = $wrap.find('.' + Layer.footClass);
+    if ($wrap.hasClass('pop-body-scroll')) $wrap = $wrap.find('.' + Layer.bodyClass);
     const $scrollTop = $wrap.hasClass(Layer.pageClass) ? $(window).scrollTop() : $wrap.scrollTop();
     const $scrollHeight = $wrap.hasClass(Layer.pageClass) ? $('body').get(0).scrollHeight : $wrap[0].scrollHeight;
     const $wrapHeight = $wrap.hasClass(Layer.pageClass) ? $(window).height() : $wrap.outerHeight();
@@ -6908,7 +6925,14 @@ const Layer = {
     let $agreeBodyChk = $body.find('.' + Layer.agreeCheckboxClassName);
 
     if ($foot.length) {
-      $body.addClass('next-foot');
+      if ($foot.css('position') === 'fixed') {
+        $body.addClass('next-foot-fixed');
+        const $pdBottom = parseInt($body.css('padding-bottom'));
+        const $footH = $foot.outerHeight();
+        if ($pdBottom !== $footH) $body.css('padding-bottom', $footH);
+      } else {
+        $body.addClass('next-foot');
+      }
       if ($isAgree) {
         $footBtn.each(function (i) {
           const $this = $(this);
