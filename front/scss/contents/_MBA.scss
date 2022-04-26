@@ -2738,6 +2738,7 @@
   position: relative;
   height: 24.7rem;
   background: radial-gradient(83.19% 350.89% at 50% 35.05%, #ff8a60 0%, #fe7668 100%);
+  @include web-center;
   .img {
     width: 20.6rem;
     height: 20.6rem;
