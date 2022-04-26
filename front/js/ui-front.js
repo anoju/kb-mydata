@@ -6814,15 +6814,19 @@ const Layer = {
       const $this = $(this);
       const $wrap = $this.find('.' + Layer.wrapClass);
       const $head = $wrap.find('.' + Layer.headClass);
+      const $body = $wrap.find('.' + Layer.bodyClass);
+      const $foot = $wrap.find('.' + Layer.footClass);
       // const $tit = $head.find('h1');
-      // const $foot = $wrap.find('.' + Layer.footClass);
-      // const $body = $wrap.find('.' + Layer.bodyClass);
 
-      // $head.removeAttr('style').removeClass('shadow');
-      // $body.removeAttr('tabindex style');
+      $head.removeAttr('style').removeClass('shadow');
+      $body.removeAttr('tabindex style');
+
+      const $footH = $foot.outerHeight() ? $foot.outerHeight() : $foot.children().outerHeight();
+      const $bodyPdB = parseInt($body.css('padding-bottom'));
 
       // if ($head.length) headHeight($head, $body);
       // if ($foot.length) footHeight($foot, $body);
+      if ($foot.length && ($foot.css('position') === 'fixed' || $foot.children().css('position') === 'fixed') && $footH !== $bodyPdB) $body.css('padding-bottom', $footH);
 
       //레이어팝업
       //컨텐츠 스크롤이 필요할때
@@ -6927,9 +6931,9 @@ const Layer = {
     if ($foot.length) {
       if ($foot.css('position') === 'fixed') {
         $body.addClass('next-foot-fixed');
-        const $pdBottom = parseInt($body.css('padding-bottom'));
-        const $footH = $foot.outerHeight();
-        if ($pdBottom !== $footH) $body.css('padding-bottom', $footH);
+        // const $pdBottom = parseInt($body.css('padding-bottom'));
+        // const $footH = $foot.outerHeight();
+        // if ($pdBottom !== $footH) $body.css('padding-bottom', $footH);
       } else {
         $body.addClass('next-foot');
       }
