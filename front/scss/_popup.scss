@@ -289,13 +289,11 @@
   // bottom
   &.bottom {
     padding-top: 6rem;
-    html.ios & {
-      @include ios-top(padding-top, 6rem);
-    }
+    align-items: flex-end;
     > .pop-scl-wrap,
     > .pop-wrap {
-      position: fixed;
-      bottom: 0;
+      // position: fixed;
+      // bottom: 0;
       border-radius: 2rem 2rem 0 0;
       transform: translate3d(0, 110%, 0);
       opacity: 1;
@@ -484,7 +482,8 @@
   //show
   &.show {
     display: block !important;
-    &.modal {
+    &.modal,
+    &.bottom {
       display: flex !important;
     }
     @include dimm;
