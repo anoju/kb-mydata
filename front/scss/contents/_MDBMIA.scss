@@ -494,10 +494,9 @@
 .consumption-link {
   display: flex;
   margin-top: 3.2rem;
-  margin-left: -0.8rem;
   > a {
-    width: calc(50% - 0.8rem);
-    margin-left: 0.8rem;
+    display: block;
+    width: 100%;
     border-radius: 0.8rem;
     padding: 2rem;
     .tit {
@@ -512,6 +511,9 @@
     }
     i {
       margin-top: 2rem;
+    }
+    + a {
+      margin-left: 0.8rem;
     }
 
     &.type1 {
