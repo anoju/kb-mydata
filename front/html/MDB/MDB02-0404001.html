@@ -69,6 +69,15 @@
             <input type="tel" placeholder="휴대폰번호" title="휴대폰번호 입력" />
           </div>
 
+          <!-- 2022-04-22: 추가, 기본 숨김처리~ [본인인증하기] 클릭 시 노출-->
+          <div class="input form-box">
+            <div class="form-lbl">인증번호 입력</div>
+            <input type="tel" placeholder="인증번호 6자리 입력" title="인증번호 입력" />
+            <div class="timer">03:00</div>
+            <button type="button" class="button line h24">재요청</button>
+          </div>
+          <!-- //2022-04-22: 추가 -->
+
           <div class="chk-item in-btn mt-16">
             <div class="checkbox">
               <input type="checkbox" id="agreeChk" /><i aria-hidden="true"></i>
@@ -80,6 +89,7 @@
 
         <div class="btn-wrap bottom-fixed">
           <div class="flex">
+            <!-- [본인인증하기] 클릭 후, '자산 조회하기'로 텍스트 변경-->
             <button type="button" id="btnMain" class="button h60 primary" disabled>본인인증하기</button>
           </div>
         </div>

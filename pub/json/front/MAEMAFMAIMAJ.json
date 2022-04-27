@@ -232,12 +232,24 @@
     "complete": "2022-03-24"
   }
   ,{
-    "id":"MAI01-0200001C",
+    "id":"MAI01-0100002C",
     "url":"../../front/html/MAI/",
-    "depth2": "내정보수정",
+    "depth2": "내정보확인",
     "name": "내정보수정",
     "worker": "안효주",
-    "complete": "2022-03-29"
+    "complete": "2022-03-29",
+    "change": "2022-04-27",
+    "etc": "화면 ID 변경"
+  }
+  ,{
+    "id":"MAI01-0100p01C",
+    "url":"../../front/html/MAI/MAI01-0100002C.html?pop=popUserCheck",
+    "depth2": "내정보확인",
+    "name": "인증팝업",
+    "worker": "안효주",
+    "complete": "2022-04-27",
+    "change": "",
+    "etc": "MAI01-0100002C 안에 포함"
   }
   ,{
     "id":"MAI01-0300001C",

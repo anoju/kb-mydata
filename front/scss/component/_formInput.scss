@@ -129,10 +129,12 @@
     margin-right: 1.6rem;
   }
   .timer {
-    color: var(--gray-txt-color);
-    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-size: 1.4rem;
     white-space: nowrap;
     margin-right: 1.2rem;
+    display: flex;
+    align-items: center;
   }
   .btn-inp-del {
     margin-right: 0.8rem;
