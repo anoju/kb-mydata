@@ -278,7 +278,7 @@
   .switch-ani-box {
     display: flex;
     height: 5.5rem;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     margin-top: 1.5rem;
     background: #fff;
@@ -743,7 +743,7 @@
       right: 1.6rem;
       width: 0;
       height: 0;
-      border: 1px solid #41a4ff;
+      border: 0.1rem solid #41a4ff;
       border-width: 0.8rem 0.5rem;
       border-color: #41a4ff transparent transparent transparent;
     }
@@ -1089,7 +1089,7 @@
       left: 50%;
       width: 0;
       height: 0;
-      border: 1px solid var(--primary-color);
+      border: 0.1rem solid var(--primary-color);
       border-width: 0.8rem 0.5rem;
       transform: translateX(-50%);
       border-color: var(--primary-color) transparent transparent transparent;
