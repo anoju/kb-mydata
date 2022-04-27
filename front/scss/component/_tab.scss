@@ -19,7 +19,6 @@
   position: relative;
   @include scroll-x;
   @include scroll-hide;
-  @include web-center;
 }
 .tab-list {
   position: relative;
@@ -37,7 +36,6 @@
   background: #fff;
   border-bottom: 0.1rem solid #ddd;
   transition: box-shadow 0.3s, transform 0.3s;
-  @include web-center;
   &.tab-fixed,
   &.pop-fixed {
     position: sticky;

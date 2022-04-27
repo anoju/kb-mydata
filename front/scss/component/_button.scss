@@ -420,8 +420,7 @@ button.btn-click {
     &.bottom-fixed:not(.fixed-none) {
       > div {
         @include web-center;
-        left: 50%;
-        margin-left: -51.2rem;
+        @include web-center-fixed;
       }
     }
   }

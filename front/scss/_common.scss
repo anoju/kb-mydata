@@ -320,21 +320,6 @@ html.pc {
 }
 //e:reset
 
-// lock
-html.lock,
-.lock body {
-  height: 100%;
-  overflow: hidden;
-  -webkit-overflow-scrolling: none;
-}
-.lock #wrap {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  -webkit-overflow-scrolling: none;
-}
-
 // font-family
 .ff-nt,
 .ff-noto {

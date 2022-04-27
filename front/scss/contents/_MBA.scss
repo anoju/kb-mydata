@@ -547,7 +547,6 @@
 /* 매치 결과 */
 .match-result-wrap {
   font-family: 'Gmarket Sans';
-  @include web-center;
   > .section {
     padding: 1.9rem 2rem 2.4rem;
     text-align: center;
@@ -2738,7 +2737,6 @@
   position: relative;
   height: 24.7rem;
   background: radial-gradient(83.19% 350.89% at 50% 35.05%, #ff8a60 0%, #fe7668 100%);
-  @include web-center;
   .img {
     width: 20.6rem;
     height: 20.6rem;

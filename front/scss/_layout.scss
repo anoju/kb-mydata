@@ -5,7 +5,27 @@
   min-height: -vh(100);
   flex-direction: column;
   min-width: 28rem;
+  @include web-center;
 }
+
+// lock
+html.lock,
+.lock body {
+  height: 100%;
+  overflow: hidden;
+  -webkit-overflow-scrolling: none;
+}
+.lock #wrap {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  -webkit-overflow-scrolling: none;
+  @include media-min-width(1024) {
+    @include web-center-fixed;
+  }
+}
+
 .header-space {
   position: sticky;
   top: 0;
@@ -34,7 +54,6 @@
     padding: 0.2rem 1.2rem;
     transition: 0.3s;
     overflow: hidden;
-    @include web-center;
   }
   //&.top-fixed {
   // background: rgba(255, 255, 255, 0.9);
@@ -488,7 +507,6 @@
 }
 .section {
   padding: 0 var(--base-padding);
-  @include web-center;
   &.first {
     padding-top: var(--base-padding);
   }

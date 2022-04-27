@@ -45,7 +45,6 @@
   padding-bottom: 4rem;
   color: #fff;
   background: linear-gradient(135deg, rgba(255, 169, 118, 0.5) 0%, rgba(255, 121, 112, 0.5) 100%);
-  @include web-center;
   .img-box {
     width: 10rem;
     border-radius: 50%;
@@ -62,7 +61,6 @@
   margin-top: -4rem;
   padding-top: 4rem;
   border-radius: 4rem 4rem 0 0;
-  @include web-center;
   .title-bar {
     position: sticky;
     top: 6rem;
