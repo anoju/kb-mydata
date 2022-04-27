@@ -1261,6 +1261,7 @@
   margin-top: 1.2rem;
   margin-left: -0.8rem;
   > p.tag,
+  > p.bdg,
   a {
     overflow: hidden;
     display: flex;
@@ -1292,13 +1293,18 @@
       }
     }
   }
-  p:not(.tag) {
+  > p.bdg span:before {
+    content: 'B';
+    color: var(--primary-color);
+  }
+  p:not(.tag, .bdg) {
     width: 100%;
   }
   &.type2 {
     margin-top: 0.9rem;
     flex-flow: wrap;
     > p.tag,
+    > p.bdg,
     a {
       margin-top: 0.4rem;
       margin-bottom: 0.4rem;
@@ -1309,13 +1315,19 @@
   &.text-type {
     margin-top: 1.1rem;
     flex-flow: wrap;
+    color: #979797;
     > p.tag,
+    > p.bdg,
     a {
       height: auto;
       padding: 0;
       max-width: 100%;
       padding: 0.1rem 0;
       background: none;
+      font-size: 1.4rem;
+      &:after {
+        font-size: 1.4rem;
+      }
     }
   }
 }
@@ -3195,8 +3207,11 @@
             }
             .hashtag-box {
               color: #818892;
-              .tag span:before {
-                color: #818892;
+              .tag,
+              .bdg {
+                span:before {
+                  color: #818892;
+                }
               }
             }
           }
