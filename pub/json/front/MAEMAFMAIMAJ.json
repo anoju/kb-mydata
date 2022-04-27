@@ -1,5 +1,17 @@
 [
   {
+    "depth1": "공통"
+  },
+  {
+    "id": "error",
+    "url": "../../front/html/",
+    "depth2": "에러 안내",
+    "name": "에러 안내 화면",
+    "worker": "안효주",
+    "complete": "2022-04-26",
+    "etc": ""
+  },
+  {
     "depth1": "홈"
   },
   {
@@ -10,7 +22,7 @@
     "worker": "안효주",
     "complete": "2022-03-02",
     "etc": "홈메인은 네이티브로~"
-  },
+  },  
   {
     "depth1": "알림",
     "version": "MAE_알림_<span>v1.0_20220407</span>"
@@ -335,6 +347,15 @@
     "worker": "변상우",
     "complete": "2022-04-08",
     "change": "2022-04-08"
+  },
+  {
+    "id": "MDA01-0000002",
+    "url": "../../front/html/MDA/",
+    "depth2": "투자 메인",
+    "depth3": "",
+    "name": "투자 메인 배너 상세",
+    "worker": "안효주",
+    "complete": "2022-04-26"
   },
 
   {
