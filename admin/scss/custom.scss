@@ -1725,8 +1725,15 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   background-size: 1.5rem auto;
   padding-right: 1.875rem !important;
 }
-.custom-file-label::after {
-  content: '찾아보기';
+.custom-file-label {
+  margin-bottom: 0;
+  padding-right: 5.625rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  &:after {
+    content: '찾아보기';
+  }
 }
 @supports (-ms-ime-align: auto) {
   .form-signin {
@@ -1991,7 +1998,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
       flex-basis: 0;
     }
     .col + .col {
-      &::before {
+      &:before {
         content: '';
         display: block;
         position: absolute;
@@ -2018,7 +2025,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     }
     .col + .col {
       margin-top: 2rem;
-      &::before {
+      &:before {
         content: none;
       }
     }
