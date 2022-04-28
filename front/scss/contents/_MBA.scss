@@ -1273,29 +1273,32 @@
     border-radius: 1.3rem;
     max-width: 33.333%;
     span {
-      overflow: hidden;
+      display: flex;
+      align-items: center;
       width: 100%;
       text-align: center;
       font-size: 1.2rem;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      vertical-align: middle;
-
+      @include ellipsis(1);
       &:before {
         content: '#';
-        display: inline-block;
-        vertical-align: middle;
         margin-right: 0.2rem;
         font-size: 1.3rem;
         color: #f134c8;
-        line-height: 1;
-        margin-top: -0.4rem;
       }
     }
   }
   > p.bdg span:before {
     content: 'B';
-    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 0.125rem solid #f134c8;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    box-sizing: border-box;
   }
   p:not(.tag, .bdg) {
     width: 100%;
@@ -1316,17 +1319,25 @@
     margin-top: 1.1rem;
     flex-flow: wrap;
     color: #979797;
+    line-height: 1.9rem;
+    overflow: visible;
     > p.tag,
     > p.bdg,
     a {
       height: auto;
       padding: 0;
       max-width: 100%;
-      padding: 0.1rem 0;
       background: none;
       font-size: 1.4rem;
+      border-radius: 0;
+      overflow: visible;
       &:after {
         font-size: 1.4rem;
+      }
+      span {
+        display: flex;
+        align-items: center;
+        overflow: visible;
       }
     }
   }
