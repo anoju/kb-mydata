@@ -963,9 +963,9 @@ $bdTypes: (solid, dashed, dotted);
   display: inline-block !important;
 }
 .hide {
-  display: none;
+  display: none !important;
   &.show {
-    display: block;
+    display: block !important;
   }
 }
 .blind {
