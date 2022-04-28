@@ -723,7 +723,7 @@ ui.Common = {
         btnTopOff();
       }
     };
-    $(window).on('scroll', $scrollEvt);
+    $(window).on('scroll resize', $scrollEvt);
     $(window).on(
       'scroll',
       _.debounce(function () {
@@ -6860,7 +6860,7 @@ const Layer = {
       if ($this.hasClass('bottom') || $this.hasClass('modal')) $wrap.css('max-height', $height);
 
       //팝업 헤더 shadow
-      // Layer.fixed($wrap);
+      Layer.fixed($wrap);
 
       //바텀시트 선택요소로 스크롤
       if ($this.hasClass(Layer.selectClass) && $this.find('.selected').length && !$wrap.hasClass('scrolling')) {
@@ -6997,7 +6997,7 @@ const Layer = {
 
     let $lastSclTop = 0;
     let $timer;
-    $wrap.off('scroll resize').on('scroll resize', function () {
+    $wrap.off('scroll').on('scroll', function () {
       const $this = $(this);
       const $agreeBtn = $this.find('.' + Layer.agreeBtnClassName);
       const $wrapSclTop = $this.scrollTop();
@@ -7046,7 +7046,7 @@ const Layer = {
     });
 
     Layer.resize();
-    Layer.fixed($wrap);
+    // Layer.fixed($wrap);
 
     // const $sclEvt = $wrap.data('sclEvt');
     // if (!$sclEvt) {
