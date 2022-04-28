@@ -2401,7 +2401,7 @@ ui.Touch = {
   },
   isRefreshing: false,
   refresh: function () {
-    if (!$('#container.refresh').length) return;
+    if (!$('#container.refresh').length || !$('html').hasClass('is-app')) return;
     const _speed = 200;
     const _min = 20;
     let _startX = 0;

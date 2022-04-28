@@ -38,7 +38,9 @@ body {
   letter-spacing: -0.02em;
   word-break: keep-all;
   -webkit-font-smoothing: antialiased;
-  overscroll-behavior-y: contain; // 당겨서 새로고침 막기
+  html.is-app & {
+    overscroll-behavior-y: contain; // 당겨서 새로고침 막기
+  }
 }
 
 //s:reset
