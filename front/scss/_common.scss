@@ -934,7 +934,7 @@ $bdTypes: (solid, dashed, dotted);
 // opacity
 @for $i from 1 through 20 {
   .op-#{$i*5} {
-    opacity: $i * 20 !important;
+    opacity: $i * 0.05 !important;
   }
 }
 
