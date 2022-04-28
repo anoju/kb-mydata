@@ -59,7 +59,7 @@
             </div> -->
 
             <!-- 2022-04-27: 수정 -->
-            <div class="input form-box">
+            <div class="input form-box readonly">
               <div class="form-lbl">휴대폰 번호(필수)</div>
               <input type="text" title="휴대폰 번호" value="010-1234-1234" readonly />
               <div>
@@ -127,8 +127,8 @@
                 <input type="tel" placeholder="휴대폰번호" title="휴대폰번호 입력" />
               </div>
 
-              <!-- 2022-04-22: 추가, 기본 숨김처리~ [본인인증하기] 클릭 시 노출-->
-              <div class="input form-box">
+              <!-- 2022-04-22: 추가, 기본 숨김처리~ [인증요청] 클릭 시 노출-->
+              <div class="input form-box" style="display: none">
                 <div class="form-lbl">인증번호 입력</div>
                 <input type="tel" placeholder="인증번호 6자리 입력" title="인증번호 입력" />
                 <div class="timer">03:00</div>
@@ -147,8 +147,8 @@
           </div>
           <div class="pop-foot">
             <div>
-              <!-- 위항목 입력하면(인증번호 입력 제외) disabled 해제, [인증요청] 클릭 후 '인증하기'으로 텍스트 변경-->
-              <div class="flex"><button type="button" class="button primary" disabled>인증요청</button></div>
+              <!-- 위항목 입력하면(인증번호 입력 제외) disabled 해제, [인증요청] 클릭 후 '본인인증하기'으로 텍스트 변경-->
+              <div class="flex"><button type="button" id="popMain" class="button primary" disabled>인증요청</button></div>
             </div>
           </div>
         </article>
@@ -182,6 +182,56 @@
           }
         });
       };
+
+      let userChk = false;
+      const btnChk = function () {
+        let isInsertVal = true;
+        if (userChk) return false;
+        $('#popUserCheck')
+          .find('.input input, .select select, .checkbox input')
+          .each(function () {
+            const $val = $(this).val();
+            const $closest = $(this).closest('.form-box');
+            if ($closest.length === 0 || $closest.is(':visible')) {
+              if ($(this).attr('type') === 'checkbox') {
+                if (!$(this).prop('checked')) {
+                  isInsertVal = false;
+                  return false;
+                }
+              } else {
+                if (!$val) {
+                  isInsertVal = false;
+                  return false;
+                }
+              }
+            }
+          });
+        if (isInsertVal) {
+          $('#popMain').prop('disabled', false);
+        } else {
+          $('#popMain').prop('disabled', true);
+        }
+      };
+      $('#popUserCheck')
+        .find('.input input')
+        .on('focus keyup', function () {
+          btnChk();
+        });
+      $('#popUserCheck')
+        .find('.select select, .checkbox input')
+        .on('change', function () {
+          btnChk();
+        });
+
+      $('#popMain').click(function () {
+        if (userChk) {
+          Layer.close('#popUserCheck');
+        } else {
+          userChk = true;
+          $('#popUserCheck').find('.form-box:hidden').show().find('input').focus();
+          $(this).text('본인인증하기');
+        }
+      });
     </script>
   </body>
 </html>

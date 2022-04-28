@@ -78,6 +78,9 @@ i.require {
       margin-top: 3.8rem;
     }
   }
+  // &.readonly {
+  //   border-color: #f1f1f1;
+  // }
   &.input {
     align-items: flex-start;
     > *:not(input, .form-lbl, .form-box-inner) {
@@ -143,6 +146,8 @@ i.require {
 
   &.registration-number {
     .form-box-inner {
+      width: 45%;
+      flex-shrink: 0;
       input {
         text-align: center;
         padding-left: 0.8rem;

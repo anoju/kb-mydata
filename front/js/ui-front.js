@@ -725,6 +725,10 @@ ui.Common = {
         showHideOff();
       }, 500)
     );
+
+    $(document).on('click', '#container', function (e) {
+      if (!$('html').hasClass('lock')) $(window).scroll();
+    });
   },
   scrollShowTitleClass: 'page-fade-title',
   scrollShowTitle: function (target, wrap, header, titleEl) {
@@ -7137,6 +7141,12 @@ const Layer = {
       let $pop = $(this).attr('href');
       if ($pop == '#' || $pop == '#none' || $pop == undefined) $pop = $(this).closest('.' + Layer.popClass);
       if ($pop.length) Layer.close($pop);
+    });
+
+    $(document).on('click', '.popup .pop-wrap', function (e) {
+      const $this = $(this);
+      const $wrap = $this.hasClass('pop-body-scroll') ? $this.find('.' + Layer.bodyClass) : $this;
+      $wrap.scroll();
     });
 
     Layer.keyEvt();
