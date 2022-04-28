@@ -41,27 +41,38 @@ const ui = {
     ui.Device.check();
     ui.Device.hide();
     ui.Common.init();
+    ui.Util.init();
     ui.Button.init();
     ui.Tooltip.init();
-    ui.Scroll.init();
     ui.Form.init();
     ui.List.init();
+    ui.Scroll.init();
     ui.Animation.init();
     Layer.init();
     Splitting();
-    ui.Util.init();
+    ui.Chart.init();
+  },
+  reInit: function () {
+    ui.Common.lottie();
+    ui.Util.reInit();
+    ui.Button.reInit();
+    ui.Tab.reInit();
+    ui.Tooltip.reInit();
+    ui.Form.reInit();
+    ui.List.reInit();
+    ui.Swiper.reInit();
     ui.Chart.init();
   },
   LoadInit: function () {
     //console.log('window load complete');
+    ui.Common.vhChk();
     ui.Common.winLoad();
     ui.Common.lottie();
+    ui.Button.winLoad();
     ui.Form.winLoad();
     ui.List.winLoad();
-    ui.Button.winLoad();
 
     ui.Confetti.init();
-    ui.Common.vhChk();
     ui.Swiper.init();
 
     $(window).scroll();
@@ -1304,6 +1315,10 @@ ui.Util = {
       window.addEventListener('orientationChange', lazyload);
     }
   },
+  reInit: function () {
+    ui.Util.iframe();
+    ui.Util.lazyImg();
+  },
   init: function () {
     ui.Util.paint();
     ui.Util.iframe();
@@ -1598,6 +1613,10 @@ ui.Button = {
         }
       });
     }
+  },
+  reInit: function () {
+    ui.Button.winLoad();
+    ui.Button.disabled();
   },
   init: function () {
     ui.Button.default();
@@ -2173,6 +2192,11 @@ ui.Tab = {
       ui.Scroll.top($top);
     });
   },
+  reInit: function () {
+    ui.Tab.tabInfo();
+    ui.Tab.ariaSet();
+    ui.Tab.ready();
+  },
   init: function () {
     ui.Tab.tabInfo();
     ui.Tab.ariaSet();
@@ -2238,6 +2262,9 @@ ui.Tooltip = {
       });
       $closeBtn.attr('role', 'button');
     });
+  },
+  reInit: function () {
+    ui.Tooltip.aria('.tooltip-wrap');
   },
   init: function () {
     ui.Tooltip.aria('.tooltip-wrap');
@@ -2604,14 +2631,6 @@ ui.Form = {
         $(this).addClass('off');
       }
     });
-    $(document).on('change', 'select', function () {
-      const $val = $(this).val();
-      if ($val == '') {
-        $(this).addClass('off');
-      } else {
-        $(this).removeClass('off');
-      }
-    });
 
     //페이지 로딩 후 검색박스에 입력값이 있으면 X 버튼 추가
     // $('.search_box .input input').each(function () {
@@ -2760,6 +2779,15 @@ ui.Form = {
     }
   },
   selectUI: function () {
+    $(document).on('change', 'select', function () {
+      const $val = $(this).val();
+      if ($val == '') {
+        $(this).addClass('off');
+      } else {
+        $(this).removeClass('off');
+      }
+    });
+
     /*
     $(document).on('click', '.select.inline .btn-select', function (e) {
       e.preventDefault();
@@ -2791,7 +2819,7 @@ ui.Form = {
       }
     });
   },
-  input: function () {
+  inputUI: function () {
     //input[type=number][maxlength] 되게 처리..(하지만 디바이스 탐): number type을 안쓰는게 좋음
     $(document).on('change keyup input', 'input[type=number][maxlength]', function (e) {
       const $this = $(this);
@@ -2911,23 +2939,23 @@ ui.Form = {
       if (!$(this).find('.textarea-space').length) $(this).append($space);
     });
   },
+  textareaHeight: function (elem) {
+    const $val = $(elem).val();
+    const $lines = $val.split(/\r|\r\n|\n/);
+    const $count = $lines.length;
+    const $lineH = parseInt($(elem).css('line-height'));
+    const $pd = parseInt($(elem).css('padding-top')) + parseInt($(elem).css('padding-bottom'));
+    $(elem).css('height', $count * $lineH + $pd);
+  },
   textarea: function () {
     // ui.Form.textareaSpace();
-    const textareaHeight = function (elem) {
-      const $val = $(elem).val();
-      const $lines = $val.split(/\r|\r\n|\n/);
-      const $count = $lines.length;
-      const $lineH = parseInt($(elem).css('line-height'));
-      const $pd = parseInt($(elem).css('padding-top')) + parseInt($(elem).css('padding-bottom'));
-      $(elem).css('height', $count * $lineH + $pd);
-    };
-
-    $(document).on('keyup keydown keypress change', '.textarea.auto-height textarea', function () {
-      textareaHeight(this);
-    });
-
     $('.textarea.auto-height textarea').each(function () {
-      textareaHeight(this);
+      ui.Form.textareaHeight(this);
+    });
+  },
+  textareaUI: function () {
+    $(document).on('keyup keydown keypress change', '.textarea.auto-height textarea', function () {
+      ui.Form.textareaHeight(this);
     });
   },
   success: function (element, messege) {
@@ -2986,47 +3014,51 @@ ui.Form = {
     const $agreeChkClass = '.ui-agree-chk';
 
     // 전체동의
-    $($wrapClass + ' ' + $allAgreeChkClass).change(function () {
-      const $this = $(this);
-      const $wrap = $this.closest($wrapClass);
-      const $items = $wrap.find($agreeChkClass);
-      const $isFolding = $wrap.hasClass('folding');
-      const $foldingBtn = $wrap.find('.ui-folding-btn');
-      const $foldingPanel = $wrap.find('.folding-panel');
-      if ($(this).prop('checked')) {
-        $items.prop('checked', true).change();
-        if ($isFolding && $foldingBtn.hasClass('open')) {
-          $foldingBtn.removeClass('open');
-          $foldingPanel.stop(true, false).slideUp(200);
+    $($wrapClass + ' ' + $allAgreeChkClass)
+      .off('change')
+      .on('change', function () {
+        const $this = $(this);
+        const $wrap = $this.closest($wrapClass);
+        const $items = $wrap.find($agreeChkClass);
+        const $isFolding = $wrap.hasClass('folding');
+        const $foldingBtn = $wrap.find('.ui-folding-btn');
+        const $foldingPanel = $wrap.find('.folding-panel');
+        if ($(this).prop('checked')) {
+          $items.prop('checked', true).change();
+          if ($isFolding && $foldingBtn.hasClass('open')) {
+            $foldingBtn.removeClass('open');
+            $foldingPanel.stop(true, false).slideUp(200);
+          }
+        } else {
+          $items.prop('checked', false).change();
+          if ($isFolding && !$foldingBtn.hasClass('open')) {
+            $foldingBtn.addClass('open');
+            $foldingPanel.stop(true, false).slideDown(200);
+          }
         }
-      } else {
-        $items.prop('checked', false).change();
-        if ($isFolding && !$foldingBtn.hasClass('open')) {
-          $foldingBtn.addClass('open');
-          $foldingPanel.stop(true, false).slideDown(200);
+      });
+    $($wrapClass + ' ' + $agreeChkClass)
+      .off('change')
+      .on('change', function () {
+        const $this = $(this);
+        const $wrap = $this.closest($wrapClass);
+        const $allchk = $wrap.find($allAgreeChkClass);
+        const $items = $wrap.find($agreeChkClass);
+        const $isFolding = $wrap.hasClass('folding');
+        const $foldingBtn = $wrap.find('.ui-folding-btn');
+        const $foldingPanel = $wrap.find('.folding-panel');
+        const $itemsLength = $items.length;
+        const $itemsChecked = $wrap.find($agreeChkClass + ':checked').length;
+        if ($itemsLength === $itemsChecked) {
+          $allchk.prop('checked', true);
+          if ($isFolding && $foldingBtn.hasClass('open')) {
+            $foldingBtn.removeClass('open');
+            $foldingPanel.stop(true, false).slideUp(200);
+          }
+        } else {
+          $allchk.prop('checked', false);
         }
-      }
-    });
-    $($wrapClass + ' ' + $agreeChkClass).change(function () {
-      const $this = $(this);
-      const $wrap = $this.closest($wrapClass);
-      const $allchk = $wrap.find($allAgreeChkClass);
-      const $items = $wrap.find($agreeChkClass);
-      const $isFolding = $wrap.hasClass('folding');
-      const $foldingBtn = $wrap.find('.ui-folding-btn');
-      const $foldingPanel = $wrap.find('.folding-panel');
-      const $itemsLength = $items.length;
-      const $itemsChecked = $wrap.find($agreeChkClass + ':checked').length;
-      if ($itemsLength === $itemsChecked) {
-        $allchk.prop('checked', true);
-        if ($isFolding && $foldingBtn.hasClass('open')) {
-          $foldingBtn.removeClass('open');
-          $foldingPanel.stop(true, false).slideUp(200);
-        }
-      } else {
-        $allchk.prop('checked', false);
-      }
-    });
+      });
 
     // 선택약관(문자, 메일수신)
     $('[data-agree-target]').each(function () {
@@ -3037,7 +3069,7 @@ ui.Form = {
         if ($(this.trim()).length) $targets.push(this.trim());
       });
 
-      $this.change(function () {
+      $this.off('change').on('change', function () {
         let $checked = 0;
         if ($(this).prop('checked')) {
           $.each($targets, function () {
@@ -3086,9 +3118,11 @@ ui.Form = {
         $inp.prop('readonly', true).val($val);
       }
     };
-    $(document).on('change', '.inp-mail select', function () {
-      mailCheck(this, true);
-    });
+    $('.inp-mail select')
+      .off('change')
+      .on('change', function () {
+        mailCheck(this, true);
+      });
     $('.inp-mail select').each(function () {
       mailCheck(this, false);
     });
@@ -3125,7 +3159,7 @@ ui.Form = {
         $lbl.find('.blind').text($lblTxt);
       }*/
     });
-    $swichBtn.on('change', function () {
+    $swichBtn.off('change').on('change', function () {
       const $lbl = $(this).siblings('.lbl');
       let $lblTxt = $lbl.text();
       if ($(this).prop('checked')) {
@@ -3922,14 +3956,29 @@ ui.Form = {
       $inp.addEventListener('focusout', _reset, false);
     }
   },
+  reInit: function () {
+    ui.Form.winLoad();
+    ui.Form.select();
+    // ui.Form.select2();
+    ui.Form.textarea();
+    ui.Form.agree();
+    ui.Form.mail();
+    ui.Form.etc();
+
+    ui.Form.spinner();
+    ui.Form.range();
+    ui.Form.jqRange();
+    ui.Form.jqCalendar('.datepicker');
+  },
   init: function () {
     ui.Form.focus();
     ui.Form.select();
     // ui.Form.select2();
     ui.Form.selectUI();
-    ui.Form.input();
+    ui.Form.inputUI();
     ui.Form.inpBtn();
     ui.Form.textarea();
+    ui.Form.textareaUI();
     ui.Form.agree();
     ui.Form.mail();
     ui.Form.etc();
@@ -4048,53 +4097,6 @@ ui.List = {
     //테이블 스크롤 가이드 실행
     ui.Table.guideScroll();
     ui.Table.guideResize();
-    ui.List.detail();
-  },
-  type: function () {
-    if ($('.product-list').length && $('.list-type-btn').length) {
-      const $listType = uiCookie.get('product-list-type') === 'bar' ? uiCookie.get('product-list-type') : 'grid';
-      if ($listType === 'bar') {
-        $('.product-list').addClass('bar-type');
-        $('.list-type-btn .list-bar').addClass('active');
-      } else {
-        $('.list-type-btn .list-grid').addClass('active');
-      }
-
-      $(document).on('click', '.list-type-btn .button', function (e) {
-        e.preventDefault();
-        $(this).addClass('active').siblings().removeClass('active');
-        if ($(this).hasClass('list-bar')) {
-          $('.product-list').addClass('bar-type');
-          uiCookie.set('product-list-type', 'bar');
-        } else {
-          $('.product-list').removeClass('bar-type');
-          uiCookie.set('product-list-type', '');
-        }
-      });
-    }
-  },
-  detail: function () {
-    const $detail = $('.detail-procuct-image');
-    const $btnHtml = '<div class="btn-wrap"><button type="button" class="button line fz-14 btn-detail-expand">상품정보 더보기</button></div>';
-    if ($detail.length) {
-      if ($detail.outerHeight() < $detail.get(0).scrollHeight) {
-        $detail.append($btnHtml);
-      }
-
-      $(document).on('click', '.btn-detail-expand', function (e) {
-        e.preventDefault();
-        const $this = $(this);
-        const $closest = $this.closest('.detail-procuct-image');
-        if ($closest.hasClass('expanded')) {
-          $closest.removeClass('expanded');
-        } else {
-          $closest.addClass('expanded');
-        }
-
-        const $swiper = $this.closest('.swiper').data('swiper');
-        $swiper.update();
-      });
-    }
   },
   check: function () {
     const $wrapClass = '.ui-chk-wrap';
@@ -4102,33 +4104,40 @@ ui.List = {
     const $chkClass = '.ui-chk';
 
     // 전체동의
-    $($wrapClass + ' ' + $allChkClass).change(function () {
-      const $this = $(this);
-      const $wrap = $this.closest($wrapClass);
-      const $items = $wrap.find($chkClass).not(':disabled');
-      if ($(this).prop('checked')) {
-        $items.prop('checked', true).change();
-      } else {
-        $items.prop('checked', false).change();
-      }
-    });
-    $($wrapClass + ' ' + $chkClass).change(function () {
-      const $this = $(this);
-      const $wrap = $this.closest($wrapClass);
-      const $allchk = $wrap.find($allChkClass);
-      const $items = $wrap.find($chkClass).not(':disabled');
-      const $itemsLength = $items.length;
-      const $itemsChecked = $wrap.find($chkClass + ':checked').not(':disabled').length;
-      if ($itemsLength === $itemsChecked) {
-        $allchk.prop('checked', true);
-      } else {
-        $allchk.prop('checked', false);
-      }
-    });
+    $($wrapClass + ' ' + $allChkClass)
+      .off('change')
+      .on('change', function () {
+        const $this = $(this);
+        const $wrap = $this.closest($wrapClass);
+        const $items = $wrap.find($chkClass).not(':disabled');
+        if ($(this).prop('checked')) {
+          $items.prop('checked', true).change();
+        } else {
+          $items.prop('checked', false).change();
+        }
+      });
+    $($wrapClass + ' ' + $chkClass)
+      .off('change')
+      .on('change', function () {
+        const $this = $(this);
+        const $wrap = $this.closest($wrapClass);
+        const $allchk = $wrap.find($allChkClass);
+        const $items = $wrap.find($chkClass).not(':disabled');
+        const $itemsLength = $items.length;
+        const $itemsChecked = $wrap.find($chkClass + ':checked').not(':disabled').length;
+        if ($itemsLength === $itemsChecked) {
+          $allchk.prop('checked', true);
+        } else {
+          $allchk.prop('checked', false);
+        }
+      });
+  },
+  reInit: function () {
+    ui.List.winLoad();
+    ui.List.check();
   },
   init: function () {
     ui.List.check();
-    ui.List.type();
   }
 };
 
@@ -4186,58 +4195,60 @@ ui.Folding = {
   list: function (list, btn, panel, addClass, speed) {
     if (!addClass) addClass = 'open';
     if (!speed) speed = 200;
-    $(document).on('click', list + ' ' + btn, function (e) {
-      e.preventDefault();
-      const $this = $(this);
-      const $list = $this.closest(list);
-      const $li = $this.closest('li');
-      let $openDelay = 0;
-      if ($this.closest('.disabled').length || $this.hasClass('disabled')) return false;
+    $(list + ' ' + btn)
+      .off('click')
+      .on('click', function (e) {
+        e.preventDefault();
+        const $this = $(this);
+        const $list = $this.closest(list);
+        const $li = $this.closest('li');
+        let $openDelay = 0;
+        if ($this.closest('.disabled').length || $this.hasClass('disabled')) return false;
 
-      const slideCallback = function () {
-        if ($li.find(panel).find('.ui-swiper').length) {
-          ui.Swiper.update($li.find(panel).find('.ui-swiper'));
-        }
-      };
+        const slideCallback = function () {
+          if ($li.find(panel).find('.ui-swiper').length) {
+            ui.Swiper.update($li.find(panel).find('.ui-swiper'));
+          }
+        };
 
-      if ($li.hasClass(addClass)) {
-        $li.find(btn).attr('aria-expanded', false);
-        $li.removeClass(addClass);
-        $li
-          .find(panel)
-          .attr('aria-hidden', true)
-          .stop(true, false)
-          .slideUp(speed, function () {
-            slideCallback();
-          });
-        if ($this.children('span').length && $this.children('span').text() == '닫기') {
-          $this.children('span').text('더보기');
-        }
-      } else {
-        $li.addClass(addClass).find(btn).attr('aria-expanded', true);
-        if (!$list.hasClass('not-toggle')) {
-          const $siblings = $li.siblings();
-          $siblings.removeClass(addClass).find(btn).attr('aria-expanded', false);
-          $siblings.find(panel).attr('aria-hidden', true).stop(true, false).slideUp(speed);
-          if ($siblings.find(btn).children('span').length && $siblings.find(btn).children('span').text() == '닫기') {
-            $siblings.find(btn).children('span').text('더보기');
+        if ($li.hasClass(addClass)) {
+          $li.find(btn).attr('aria-expanded', false);
+          $li.removeClass(addClass);
+          $li
+            .find(panel)
+            .attr('aria-hidden', true)
+            .stop(true, false)
+            .slideUp(speed, function () {
+              slideCallback();
+            });
+          if ($this.children('span').length && $this.children('span').text() == '닫기') {
+            $this.children('span').text('더보기');
+          }
+        } else {
+          $li.addClass(addClass).find(btn).attr('aria-expanded', true);
+          if (!$list.hasClass('not-toggle')) {
+            const $siblings = $li.siblings();
+            $siblings.removeClass(addClass).find(btn).attr('aria-expanded', false);
+            $siblings.find(panel).attr('aria-hidden', true).stop(true, false).slideUp(speed);
+            if ($siblings.find(btn).children('span').length && $siblings.find(btn).children('span').text() == '닫기') {
+              $siblings.find(btn).children('span').text('더보기');
+            }
+          }
+          if ($li.find(panel).html() == '') $openDelay = 100;
+          $li
+            .find(panel)
+            .removeAttr('aria-hidden')
+            .stop(true, false)
+            .delay($openDelay)
+            .slideDown(speed, function () {
+              ui.Scroll.inScreen($this, this);
+              slideCallback();
+            });
+          if ($this.children('span').length && $this.children('span').text() == '더보기') {
+            $this.children('span').text('닫기');
           }
         }
-        if ($li.find(panel).html() == '') $openDelay = 100;
-        $li
-          .find(panel)
-          .removeAttr('aria-hidden')
-          .stop(true, false)
-          .delay($openDelay)
-          .slideDown(speed, function () {
-            ui.Scroll.inScreen($this, this);
-            slideCallback();
-          });
-        if ($this.children('span').length && $this.children('span').text() == '더보기') {
-          $this.children('span').text('닫기');
-        }
-      }
-    });
+      });
 
     ui.Folding.listAria(list, btn, panel, addClass);
   },
@@ -4286,56 +4297,60 @@ ui.Folding = {
   btn: function (btn, className, speed) {
     if (!className) className = 'open';
     if (!speed) speed = 200;
-    $(document).on('click', btn, function (e) {
-      e.preventDefault();
-      const $this = $(this);
-      let $panel = $this.attr('href');
-      if ($this.closest('.disabled').length || $this.hasClass('disabled')) return false;
+    $(btn)
+      .off('click')
+      .on('click', function (e) {
+        e.preventDefault();
+        const $this = $(this);
+        let $panel = $this.attr('href');
+        if ($this.closest('.disabled').length || $this.hasClass('disabled')) return false;
 
-      const slideCallback = function () {
-        if ($($panel).find('.ui-swiper').length) {
-          ui.Swiper.update($($panel).find('.ui-swiper'));
+        const slideCallback = function () {
+          if ($($panel).find('.ui-swiper').length) {
+            ui.Swiper.update($($panel).find('.ui-swiper'));
+          }
+        };
+
+        if (($panel == '#' || $panel == '#none') && $this.closest('.folding-list').length) $panel = $this.closest('.folding-list').find('.folding-panel');
+        if ($this.hasClass(className)) {
+          $this.removeClass(className).attr('aria-expanded', false);
+          $($panel)
+            .attr('aria-hidden', true)
+            .stop(true, false)
+            .slideUp(speed, function () {
+              slideCallback();
+            });
+        } else {
+          $this.addClass(className).attr('aria-expanded', true);
+          $($panel)
+            .removeAttr('aria-hidden')
+            .stop(true, false)
+            .slideDown(speed, function () {
+              ui.Scroll.inScreen($this, $($panel));
+              slideCallback();
+            });
         }
-      };
-
-      if (($panel == '#' || $panel == '#none') && $this.closest('.folding-list').length) $panel = $this.closest('.folding-list').find('.folding-panel');
-      if ($this.hasClass(className)) {
-        $this.removeClass(className).attr('aria-expanded', false);
-        $($panel)
-          .attr('aria-hidden', true)
-          .stop(true, false)
-          .slideUp(speed, function () {
-            slideCallback();
-          });
-      } else {
-        $this.addClass(className).attr('aria-expanded', true);
-        $($panel)
-          .removeAttr('aria-hidden')
-          .stop(true, false)
-          .slideDown(speed, function () {
-            ui.Scroll.inScreen($this, $($panel));
-            slideCallback();
-          });
-      }
-    });
+      });
 
     ui.Folding.btnAria(btn, className);
   },
   close: function (btn, className, speed) {
     if (!className) className = 'open';
     if (!speed) speed = 200;
-    $(document).on('click', btn, function (e) {
-      e.preventDefault();
-      const $closest = $(this).closest('[aria-labelledby]');
-      const $btn = $closest.attr('aria-labelledby');
-      if ($closest.length) {
-        $closest.attr('aria-hidden', true).stop(true, false).slideUp(speed);
-        if ($('#' + $btn).length)
-          $('#' + $btn)
-            .removeClass(className)
-            .attr('aria-expanded', false);
-      }
-    });
+    $(btn)
+      .off('click')
+      .on('click', function (e) {
+        e.preventDefault();
+        const $closest = $(this).closest('[aria-labelledby]');
+        const $btn = $closest.attr('aria-labelledby');
+        if ($closest.length) {
+          $closest.attr('aria-hidden', true).stop(true, false).slideUp(speed);
+          if ($('#' + $btn).length)
+            $('#' + $btn)
+              .removeClass(className)
+              .attr('aria-expanded', false);
+        }
+      });
   }
 };
 
@@ -4505,6 +4520,10 @@ ui.Swiper = {
       const $swiper = $this.data('swiper');
       if ($swiper !== undefined) $swiper.update();
     });
+  },
+  reInit: function () {
+    ui.Swiper.ready('.ui-swiper');
+    ui.Swiper.base('.ui-swiper');
   },
   init: function () {
     if ($('.ui-swiper').length) {
