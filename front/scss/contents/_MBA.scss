@@ -300,6 +300,10 @@
   height: 100%;
   padding-bottom: 10rem;
   background: #42ccab;
+  @include media-min-width(1024) {
+    @include web-center;
+    @include web-center-fixed;
+  }
 
   .top-text-motion {
     padding-top: 6.8rem;
@@ -308,13 +312,13 @@
     display: flex;
     .slide {
       display: flex;
-      animation: topTextMotion 10s linear infinite both;
+      animation: topTextMotion 12s linear infinite both;
     }
     span {
       display: inline-block;
       flex: 0 0 auto;
       &:after {
-        content: '우와우와우와우와우와우와우와우와';
+        content: '우와우와우와우와우와우와우와우와우와우와우와';
         font-size: 1.4rem;
         color: #ffee4e;
         letter-spacing: 1.4rem;
@@ -438,10 +442,16 @@
   }
 
   .btn-wrap {
+    margin-top: 0;
     position: fixed;
-    bottom: 2rem;
-    left: 2rem;
-    right: 2rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 2rem 2rem;
+    @include media-min-width(1024) {
+      @include web-center;
+      @include web-center-fixed;
+    }
   }
 
   &.loss {
@@ -511,7 +521,7 @@
     .top-text-motion {
       span {
         &:after {
-          content: '헐헐헐헐헐헐헐헐헐헐헐헐헐헐';
+          content: '헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐';
           color: #818892;
         }
       }
