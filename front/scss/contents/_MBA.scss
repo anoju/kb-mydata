@@ -21,16 +21,40 @@
   .text-box {
     position: relative;
     text-align: center;
-    padding-top: 5.6rem;
+    padding: 5.6rem var(--base-padding) 0;
     .name {
       font-size: 1.6rem;
       color: #fff;
       opacity: 0;
+      @include ellipsis(1);
     }
     .number-random {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      line-height: 1;
       opacity: 0;
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        height: 2.4rem;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        pointer-events: none;
+      }
+      &:before {
+        top: 0;
+      }
+      &:after {
+        bottom: 0;
+      }
       .number {
+        display: block;
         font-size: 4.6rem;
+        padding: 0.8rem 0;
       }
       .number:after,
       .number:before,
@@ -42,6 +66,7 @@
         font-size: 3.8rem;
         color: #fff;
         opacity: 0.6;
+        align-self: center;
       }
     }
   }
@@ -65,9 +90,44 @@
 
   .top {
     transform: translateY(-100%);
+    .bg {
+      background: #61bdf3;
+    }
+    .number-random {
+      &:before {
+        background: linear-gradient(180deg, rgba(97, 189, 243, 1) 0%, rgba(97, 189, 243, 0) 100%);
+      }
+      &:after {
+        background: linear-gradient(0deg, rgba(97, 189, 243, 1) 0%, rgba(97, 189, 243, 0) 100%);
+      }
+    }
   }
   .down {
     transform: translateY(100%);
+    .bg {
+      background: #ff6291;
+    }
+    .number-random {
+      &:before {
+        background: linear-gradient(180deg, rgba(255, 98, 145, 1) 0%, rgba(255, 98, 145, 0) 100%);
+      }
+      &:after {
+        background: linear-gradient(0deg, rgba(255, 98, 145, 1) 0%, rgba(255, 98, 145, 0) 100%);
+      }
+    }
+    &.influencer {
+      .bg {
+        background: #fe7d65;
+      }
+      .number-random {
+        &:before {
+          background: linear-gradient(180deg, rgba(254, 125, 101, 1) 0%, rgba(254, 125, 101, 0) 100%);
+        }
+        &:after {
+          background: linear-gradient(0deg, rgba(254, 125, 101, 1) 0%, rgba(254, 125, 101, 0) 100%);
+        }
+      }
+    }
 
     &.influencer {
       .name {
@@ -332,6 +392,7 @@
     padding: 4.5rem 0rem 2rem;
     border-top: 0.1rem dashed rgba(255, 255, 255, 0.5);
     .img {
+      flex-shrink: 0;
       width: 6rem;
       // height: 6rem;
       img {
@@ -367,6 +428,7 @@
       .name {
         color: rgba(0, 0, 0, 0.5);
         font-size: 2.2rem;
+        @include ellipsis(1);
       }
       .number {
         color: rgba(0, 0, 0, 0.5);

@@ -24,7 +24,8 @@
         <div class="match-animation">
           <span class="progressbar"></span>
           <div class="top">
-            <div class="bg" style="background: #61bdf3"></div>
+            <!-- 2022-04-29: style 속성 제거 -->
+            <div class="bg"></div>
             <div class="text-box">
               <p class="name">입질만삼년째</p>
               <div class="number-random" data-random="type2">
@@ -42,25 +43,28 @@
 
           <div class="vs"><span>vs</span></div>
 
-          <!-- <div class="down">
-            <div class="bg" style="background: #ff6291"></div>
+          <!-- 인플루언서는 클래스 influencer 추가 -->
+          <div class="down">
+            <!-- 2022-04-29: style 속성 제거 -->
+            <div class="bg"></div>
             <div class="text-box">
-              <p class="name">입질만삼년째</p>
+              <p class="name">닉네임이겁나게길었을때 닉네임이겁나게길었을때 닉네임이겁나게길었을때 닉네임이겁나게길었을때</p>
               <div class="number-random" data-random="type2">
                 <p class="number">0</p>
                 <p class="number">0</p>
                 <span>.</span>
                 <p class="number">0</p>
-                <span>%</span>
+                <!-- 2022-04-29: percent 클래스 추가 -->
+                <span class="percent">%</span>
               </div>
             </div>
             <p class="img">
               <span><img src="../../images/match/sample_ico2.png" alt="" /></span>
             </p>
-          </div> -->
+          </div>
 
-          <div class="down influencer">
-            <div class="bg" style="background: #fe7d65"></div>
+          <!-- <div class="down influencer">
+            <div class="bg"></div>
             <div class="text-box">
               <p class="name">유병재</p>
               <div class="number-random" data-random="type2">
@@ -68,13 +72,13 @@
                 <p class="number">0</p>
                 <span>.</span>
                 <p class="number">0</p>
-                <span>%</span>
+                <span class="percent">%</span>
               </div>
             </div>
             <p class="img">
               <span><img src="../../images/match/sample_ico3.png" alt="" /></span>
             </p>
-          </div>
+          </div> -->
         </div>
 
         <!--
@@ -82,7 +86,7 @@
           loss : 패배
           draw : 무승부
         -->
-        <div class="match-animation-result draw">
+        <div class="match-animation-result">
           <div class="top-text-motion">
             <div class="slide"><span></span><span></span><span></span></div>
           </div>
@@ -96,11 +100,11 @@
           </div>
           <div class="loss-info">
             <!-- 2022-03-24 인플루언서는 클래스 influencer 추가 -->
-            <div class="img img-box avatar influencer">
-              <img src="../../images/match/sample_ico3.png" alt="" />
+            <div class="img img-box avatar">
+              <img src="../../images/match/sample_ico2.png" alt="" />
             </div>
             <div class="text-box">
-              <p class="name">지금이야지금지금이라도</p>
+              <p class="name">닉네임이겁나게길었을때 닉네임이겁나게길었을때</p>
               <div class="number">18.09<span>%</span></div>
             </div>
           </div>
@@ -116,6 +120,30 @@
 
     <script>
       $(function () {
+        // 랜덤으로 인플루언서
+        const $random1 = parseInt(randomNumber(0, 1, 0));
+        if ($random1) {
+          console.log('인풀루언서 매치');
+          const $down = $('.match-animation .down');
+          $down.addClass('influencer');
+          $down.find('.name').text('유병재');
+          $down.find('.img img').attr('src', '../../images/match/sample_ico3.png');
+          const $result = $('.match-animation-result');
+          $result.find('.loss-info .text-box .name').text('유병재');
+          $result.find('.loss-info .img').addClass('influencer');
+          $result.find('.loss-info .img img').attr('src', '../../images/match/sample_ico3.png');
+        } else {
+          console.log('일반 매치');
+        }
+
+        // 랜덤으로 결과보기
+        const $random2 = parseInt(randomNumber(0, 2, 0));
+        const $result = ['loss', 'draw'];
+        if ($random2) {
+          console.log('매치 결과: ' + $result[$random2 - 1]);
+          $('.match-animation-result').addClass($result[$random2 - 1]);
+        }
+
         $(window).load(function () {
           setTimeout(function () {
             $('.match-animation').addClass('action');
@@ -126,8 +154,7 @@
           }, 1000);
 
           // 최초 실행만 보고 싶을때
-          //$('.match-animation').addClass('action');
-
+          // $('.match-animation').addClass('action');
           // 결과만 보고 싶을때
           // $('.match-animation').addClass('action end');
           // $('.match-animation-result').addClass('show');
