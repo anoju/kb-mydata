@@ -313,13 +313,14 @@
     .slide {
       display: flex;
       animation: topTextMotion 60s linear infinite both;
+      white-space: nowrap;
     }
     span {
       display: inline-block;
       flex: 0 0 auto;
       &:before,
       &:after {
-        content: '우와우와우와우와우와우와우와우와우와우와우와';
+        content: '우와우와우와우와우와우와우와우와우와';
         font-size: 1.4rem;
         color: #ffee4e;
         letter-spacing: 1.4rem;
@@ -459,7 +460,8 @@
     background: var(--base-txt-color);
     .top-text-motion {
       span {
-        &:before &:after {
+        &:before,
+        &:after {
           content: '~!@#$%^&*()~!@#$%^&*()';
           color: #e8d52a;
         }
@@ -523,7 +525,7 @@
       span {
         &:before,
         &:after {
-          content: '헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐';
+          content: '헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐';
           color: #818892;
         }
       }
