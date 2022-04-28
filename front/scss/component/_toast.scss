@@ -59,8 +59,7 @@
 .alarm-box {
   > div {
     border-radius: 0.8rem;
-    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2px);
+    @include dimm-white;
   }
 }

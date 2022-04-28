@@ -147,7 +147,11 @@
 
 @mixin dimm {
   background-color: rgba(0, 0, 0, 0.5);
-  // backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+}
+@mixin dimm-white {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(2px);
 }
 
 @mixin ios-top($key, $value: 0, $miuns: false) {
