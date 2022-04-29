@@ -116,7 +116,7 @@ body{font-size:12px}
   Header
 *****************************************************************/
 /*.g_util{position:relative;}*/
-.g_util h1{position:absolute;top:10px;left:20px;text-align:center;display:flex;}
+.g_util h1{position:absolute;top:10px;left:30px;text-align:center;display:flex;}
 .g_util h1 span{display:block;}
 .g_util h1 span + span{position:relative;;margin-left:15px;padding-left:15px;}
 .g_util h1 span + span:before{content:'';display:block;position:absolute;left:0;top:30%;width:1px;height:40%;background:#fff;opacity:0.5;}
