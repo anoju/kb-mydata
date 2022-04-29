@@ -995,6 +995,9 @@ $bdTypes: (solid, dashed, dotted);
 .underline {
   text-decoration: underline;
 }
+.pre-line {
+  white-space: pre-line;
+}
 .pre-line-wrap {
   display: block;
   white-space: pre-line;
