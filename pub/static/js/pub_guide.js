@@ -1,7 +1,7 @@
 const $headerHtml =
   '' +
   '<div class="g_util">' +
-  '<h1><a href="#"><img src="../static/images/logo.png" alt="교보증권 마이데이타" /></a></h1>' +
+  '<h1><span><img src="../static/images/logo.png" alt="끌" /></span><span><img src="../static/images/kyobo-logo.png" alt="끌" /></span></h1>' +
   '<div class="g_project">' +
   '<button type="button" class="current" title="코딩리스트 바로가기">선택</button>' +
   '<ul class="g_list">' +

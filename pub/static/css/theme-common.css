@@ -116,7 +116,10 @@ body{font-size:12px}
   Header
 *****************************************************************/
 /*.g_util{position:relative;}*/
-.g_util h1{position:absolute;top:10px;left:0;width:200px;text-align:center}
+.g_util h1{position:absolute;top:10px;left:20px;text-align:center;display:flex;}
+.g_util h1 span{display:block;}
+.g_util h1 span + span{position:relative;;margin-left:15px;padding-left:15px;}
+.g_util h1 span + span:before{content:'';display:block;position:absolute;left:0;top:30%;width:1px;height:40%;background:#fff;opacity:0.5;}
 .g_util h1 a{display:block;}
 .g_util h1 img{vertical-align:top;height:40px;}
 .g_util .btn_nav{display:none;position:absolute;top:5px;right:10px;width:40px;height:40px;background:none;z-index:999}
@@ -139,6 +142,7 @@ body{font-size:12px}
 @media screen and (max-width: 1024px) {
 /*.g_util{height:100px;height:50px;transition:all 0.3s ease-in-out}*/
 .g_util h1{top:12px;left:15px;width:auto}
+.g_util h1 span + span{display:none;}
 .g_util h1 img{height:26px}
 .g_util .btn_nav{display:block}
 /*.g_project{top:55px;left:10px;right:10px;width:auto;transition:all 0.3s ease-in-out}*/

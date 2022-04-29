@@ -339,7 +339,8 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -0.063rem 0 rgba(0, 0, 0, 0.1);
   z-index: 1009;
   .navbar-top {
-    background-color: #444;
+    // background-color: #444;
+    background-color: $gray-700;
     display: flex;
     align-items: center;
     height: 2.5rem;
@@ -369,12 +370,16 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     }
   }
   .navbar-brand {
-    width: 5.313rem;
-    height: 1.75rem;
+    width: 1.75rem;
     padding: 0;
     margin: 0;
     background: url(../images/common/logo.png) no-repeat center center;
     background-size: contain;
+    &:after {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
   }
 }
 .navbar-nav {
@@ -1614,7 +1619,8 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     align-items: center;
     justify-content: center;
     // height: 3.75rem;
-    background: #444;
+    // background: #444;
+    background: $gray-dark;
     padding: 1rem 0.5rem;
     line-height: 1;
     color: #fff;
@@ -1623,19 +1629,19 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     img {
       height: 2.813rem;
     }
-    span {
+    span + span {
       position: relative;
-      margin-left: 1rem;
-      padding-left: 1rem;
+      margin-left: 1.25rem;
+      padding-left: 1.25rem;
       &:before {
         content: '';
         display: block;
         width: 0.063rem;
-        height: 60%;
+        height: 50%;
         position: absolute;
         left: 0;
-        top: 20%;
-        background: #ccc;
+        top: 25%;
+        background: $gray-600;
       }
     }
   }
