@@ -1333,8 +1333,8 @@ ui.Button = {
     $('a').each(function (e) {
       const $href = $(this).attr('href');
       const $role = $(this).attr('role');
-      const $onclick = $(this).attr('onclick');
-      if (!$(this).hasClass('no_button')) {
+      // const $onclick = $(this).attr('onclick');
+      if (!$(this).hasClass('no-button')) {
         if ($href == undefined || $href == '#' || $href == '#none') {
           if ($href == undefined || $href == '#') $(this).attr({ href: '#none' });
           $(this).removeAttr('target');
@@ -1739,11 +1739,13 @@ ui.Tab = {
         });
       }
     } else {
-      if (isAni) $wrap.addClass('tab-line-moving');
-      $line.css({
-        width: $tabWidth,
-        left: $tabLeft
-      });
+      if ($LastLeft != $tabLeft) {
+        if (isAni) $wrap.addClass('tab-line-moving');
+        $line.css({
+          width: $tabWidth,
+          left: $tabLeft
+        });
+      }
     }
     if (isAni) {
       const transitionEndEvt = function () {
@@ -2193,7 +2195,6 @@ ui.Tab = {
     });
   },
   reInit: function () {
-    ui.Tab.tabInfo();
     ui.Tab.ariaSet();
     ui.Tab.ready();
   },
@@ -2707,15 +2708,15 @@ ui.Form = {
         const $selEl = $this.find('select');
         $selEl.each(function () {
           const $sel = $(this);
-          let $selId = $sel.attr('id');
-          let $title = $sel.attr('title');
-
-          if ($selId == undefined) $selId = 'none';
-          if ($title == undefined) $title = '선택';
-          const $btnTitle = '팝업으로 ' + $title;
-          const $btnHtml = '<a href="#' + $selId + '" class="btn-select ui-select-open" title="' + $btnTitle + '" role="button"><span class="btn-select-val"></span></a>';
-
           if (!$sel.siblings('.btn-select').length) {
+            let $selId = $sel.attr('id');
+            let $title = $sel.attr('title');
+
+            if ($selId == undefined) $selId = 'none';
+            if ($title == undefined) $title = '선택';
+            const $btnTitle = '팝업으로 ' + $title;
+            const $btnHtml = '<a href="#' + $selId + '" class="btn-select ui-select-open" title="' + $btnTitle + '" role="button"><span class="btn-select-val"></span></a>';
+
             $sel.hide().after($btnHtml);
             const $forLbl = $('label[for="' + $selId + '"]');
             if ($forLbl.length) {
@@ -2762,7 +2763,7 @@ ui.Form = {
           $optionHtml += '</div>';
           $select.hide().after($btnHtml);
           $this.append($optionHtml);
-          $select.change(function () {
+          $select.off('change').on('change', function () {
             const $val = $(this).val();
             let $selectTxt = $(this).find(':selected').text();
             if ($selectTxt == '') $selectTxt = '선택';
@@ -3409,15 +3410,17 @@ ui.Form = {
   jqRange: function () {
     if ($('.jq-range-slider').length) {
       $('.jq-range-slider').each(function () {
-        const isMutilple = $(this).hasClass('multiple') ? true : false;
-        const $slider = $(this).find('.slider');
-        const $list = $(this).find('.list');
+        const $this = $(this);
+        if ($this.hasClass('_inited')) return;
+        const isMutilple = $this.hasClass('multiple') ? true : false;
+        const $slider = $this.find('.slider');
+        const $list = $this.find('.list');
         let $dot;
-        const $inp = $(this).find('input[type=hidden]');
+        const $inp = $this.find('input[type=hidden]');
         const $unit = $list.data('unit') !== undefined ? $list.data('unit').split(',') : '';
         //const $unit = $list.data('unit') !== undefined ? $list.data('unit') : '';
         const $title = $list.attr('title');
-        const noHandle = $(this).hasClass('no-handle-tip') ? false : true;
+        const noHandle = $this.hasClass('no-handle-tip') ? false : true;
         let $min = parseInt($slider.data('min'));
         let $max = parseInt($slider.data('max'));
         let $val = isMutilple ? $slider.data('value') : parseInt($slider.data('value'));
@@ -3463,6 +3466,7 @@ ui.Form = {
           values: isMutilple ? $val : null,
           step: $step,
           create: function (e) {
+            $this.addClass('_inited');
             if (isMutilple) {
               if (noHandle) {
                 $slider
@@ -3597,6 +3601,7 @@ ui.Form = {
   },
   jqCalendar: function (element, callback, defaultDate) {
     //jquery UI datepicker
+    const $dimmedClass = 'datepicker-dimmed';
     const swipeArr = $('<div class="swipe-arr" aria-hidden="true"><i class="arr top"></i><i class="arr bottom"></i><i class="arr left"></i><i class="arr right"></i></div>');
     const swipeGuide = $('<div class="datepicker-guide">달력 부분을 상,하,좌,우 드래그하면<br>편리하게 이동할 수 있어요.</div>');
     let isSwipeGuide = true;
@@ -3614,7 +3619,6 @@ ui.Form = {
         const $max = $.datepicker._getMinMaxDate(target.data('datepicker'), 'max');
         const $maxY = $max.getFullYear();
         const $selectedYear = ob.selectedYear;
-        const $dimmedClass = 'datepicker-dimmed';
         const $inlineInpClass = 'ui-datepicker-inline-inp';
         if ($isInline) {
           //인라인달력
@@ -3633,7 +3637,7 @@ ui.Form = {
           } else {
             $($calendar).removeClass('add-guide');
           }
-          if (!$('.' + $dimmedClass).length) $($calendar).before('<div class="datepicker-dimmed" aria-hidden="true"></div>');
+          if (!$('.' + $dimmedClass).length) $($calendar).before('<div class="' + $dimmedClass + '" aria-hidden="true"></div>');
         }
 
         $header.find('.ui-datepicker-year').attr('title', '년 선택');
@@ -3766,7 +3770,7 @@ ui.Form = {
         $(ob.input).change();
         if ($('#wrap').length) $('#wrap').removeAttr('aria-hidden');
         $cal.find('.title').removeAttr('tabindex');
-        $('.datepicker-dimmed').remove();
+        $('.' + $dimmedClass).remove();
         $(target).next('.ui-datepicker-trigger').focus();
         if ($(target).data('isReadonly') != true) $(target).prop('readonly', false);
       }
@@ -3775,6 +3779,7 @@ ui.Form = {
     if ($(element).length) {
       $(element).each(function () {
         const $this = $(this);
+        if ($this.hasClass('_inited')) return;
         let $minDate = $(this).data('min');
         let $maxDate = $(this).data('max');
         let $defaultDate = $(this).data('default');
@@ -3854,6 +3859,7 @@ ui.Form = {
             calendarClose($this, ob, d);
           }
         });
+        $this.addClass('_inited');
         if ($isInline) {
           const $ob = $.datepicker._getInst($this[0]);
           calendarOpen($this, $ob);
@@ -3866,9 +3872,11 @@ ui.Form = {
           //'tabindex':-1
         });
 
-        $(document).on('touchend', '.datepicker-dimmed', function () {
-          $('.hasDatepicker').datepicker('hide');
-        });
+        $('.' + $dimmedClass)
+          .off('touchstart')
+          .on('touchstart', function () {
+            $('.hasDatepicker').datepicker('hide');
+          });
       });
 
       $(element).focusin(function () {
@@ -5323,6 +5331,7 @@ ui.Chart = {
       const typeCheck = _this.data('circle-box');
       _this.addClass(typeCheck);
       _this.find('[data-circle-val]').each(function (e) {
+        $(this).empty();
         const idx = $(this).data('circle-val');
         const color = $(this).data('circle-color');
         const size = $(this).data('circle-size');
