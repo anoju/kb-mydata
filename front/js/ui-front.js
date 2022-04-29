@@ -34,23 +34,28 @@ $(window).on('scroll', function () {
  * front UI 함수 *
  ********************************/
 const ui = {
+  isInit: false,
   Init: function () {
-    ui.Common.vhChk();
-    ui.Common.dark();
-
-    ui.Device.check();
-    ui.Device.hide();
-    ui.Common.init();
-    ui.Util.init();
-    ui.Button.init();
-    ui.Tooltip.init();
-    ui.Form.init();
-    ui.List.init();
-    ui.Scroll.init();
-    ui.Animation.init();
-    Layer.init();
-    Splitting();
-    ui.Chart.init();
+    if (ui.isInit) {
+      ui.reInit();
+    } else {
+      ui.isInit = true;
+      ui.Common.vhChk();
+      ui.Common.dark();
+      ui.Device.check();
+      ui.Device.hide();
+      ui.Common.init();
+      ui.Util.init();
+      ui.Button.init();
+      ui.Tooltip.init();
+      ui.Form.init();
+      ui.List.init();
+      ui.Scroll.init();
+      ui.Animation.init();
+      Layer.init();
+      Splitting();
+      ui.Chart.init();
+    }
   },
   reInit: function () {
     ui.Common.lottie();
