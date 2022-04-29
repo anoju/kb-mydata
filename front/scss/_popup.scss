@@ -293,6 +293,19 @@
         height: 100%;
       }
     }
+
+    &.morphing {
+      .pop-wrap {
+        transform: none;
+        //opacity: 0;
+        // transition: opacity 0.3s;
+      }
+      // &.show {
+      //   .pop-wrap {
+      //     opacity: 1;
+      //   }
+      // }
+    }
   }
 
   //full, bottom ios
@@ -577,4 +590,15 @@
       animation: bounceIn 1.6s;
     }
   }
+}
+.morphing-bg {
+  opacity: 0;
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+  z-index: 200;
+  pointer-events: none;
+}
+.morphing-btn-hidden {
+  visibility: hidden;
 }
