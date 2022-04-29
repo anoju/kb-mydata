@@ -116,7 +116,13 @@
   }
   &.pop-bottom-fixed {
     background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 1.6rem, #fff 100%);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) var(--base-padding), #fff 100%);
+    // > div {
+    //   pointer-events: none;
+    //   > * {
+    //     pointer-events: auto;
+    //   }
+    // }
   }
   &.bg-none {
     background: none;
