@@ -99,7 +99,8 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 설명</div>
                 <div class="form-box-cont">
-                  <textarea id="editor" name="editordata1">카테고리 입니다...</textarea>
+                  <!-- 2022-05-02: 에디터 제외처리 -->
+                  <textarea class="form-control" rows="4" placeholder="설명입력"></textarea>
                 </div>
               </div>
             </div>
@@ -143,6 +144,14 @@
                 <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
               </div>
             </div>
+            <!-- 2022-05-02: 추가 -->
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">최근수정</div>
+                <div class="form-box-cont d-flex align-items-center">2022.07.31 홍길동</div>
+              </div>
+            </div>
+            <!-- //2022-05-02: 추가 -->
           </div>
           <div class="btn-wrap kb-page-btn text-center mt-5">
             <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
@@ -163,7 +172,7 @@
 
     <script>
       //에디터
-      CKEDITOR.replace('editor');
+      // CKEDITOR.replace('editor');
 
       //팝업
       //유효성 오류팝업(제목미입력)
