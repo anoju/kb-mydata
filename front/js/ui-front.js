@@ -7375,14 +7375,9 @@ Layer.morphing = {
     const $scale = $getScaleValue($left, $top, $radius);
     const $moveLeft = $left + ($width - $toMin) / 2;
     const $moveTop = $top + ($height - $toMin) / 2;
-    console.log($moveLeft, $radius);
+    const $popWrap = $pop.find('.' + Layer.wrapClass);
     // prettier-ignore
-    $pop
-      .find('.' + Layer.wrapClass)
-      .attr(
-        'style',
-        '-webkit-clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);'
-      );
+    $popWrap.attr('style', '-webkit-clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);');
     const tl = anime.timeline({
       // easing: 'easeOutExpo',
       // easing: 'linear',
