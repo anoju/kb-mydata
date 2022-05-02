@@ -295,16 +295,18 @@
     }
 
     &.morphing {
+      background: none;
       .pop-wrap {
-        transform: none;
-        //opacity: 0;
-        // transition: opacity 0.3s;
+        transform: none !important;
+        transition: opacity 0.3s 0.7s, clip-path 0.5s 0s, visibility 0s 1s;
       }
-      // &.show {
-      //   .pop-wrap {
-      //     opacity: 1;
-      //   }
-      // }
+      &.show {
+        .pop-wrap {
+          transition-delay: 0s, 0.5s, 0s;
+          clip-path: circle(100% at 50% 50%) !important;
+          //     opacity: 1;
+        }
+      }
     }
   }
 

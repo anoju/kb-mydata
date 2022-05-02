@@ -7324,6 +7324,7 @@ Layer.morphing = {
     const $pop = $(target);
     const $currentTarget = $(btn);
     if (!$pop.length) return;
+    if ($btn.hasClass('morphing-btn-hidden')) return;
     if (!$('html').hasClass('lock')) Body.lock();
     const $popId = $pop.attr('id');
     const $width = $btn.outerWidth();
@@ -7372,6 +7373,16 @@ Layer.morphing = {
       return Math.ceil(Math.sqrt(Math.pow(maxDistHor, 2) + Math.pow(maxDistVert, 2)) / radiusValue);
     };
     const $scale = $getScaleValue($left, $top, $radius);
+    const $moveLeft = $left + ($width - $toMin) / 2;
+    const $moveTop = $top + ($height - $toMin) / 2;
+    console.log($moveLeft, $radius);
+    // prettier-ignore
+    $pop
+      .find('.' + Layer.wrapClass)
+      .attr(
+        'style',
+        '-webkit-clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);'
+      );
     const tl = anime.timeline({
       // easing: 'easeOutExpo',
       // easing: 'linear',
@@ -7381,30 +7392,24 @@ Layer.morphing = {
     tl.add({
       targets: $bgEl,
       opacity: 1
-    })
-      .add({
-        targets: $bgEl,
-        left: $left + ($width - $toMin) / 2 + 'px',
-        top: $top + ($height - $toMin) / 2 + 'px',
-        width: $toMin + 'px',
-        height: $toMin + 'px',
-        borderRadius: $radius + 'px'
-      })
-      .add({
-        targets: $bgEl,
-        duration: 500,
-        scale: $scale,
-        complete: function () {
-          // setTimeout(function () {
-          //   $btn.removeClass('morphing-btn-hidden');
-          //   $($bgEl).remove();
-          // }, 300);
-          Layer.open($pop, function () {
-            $($pop).data('returnFocus', $currentTarget);
-            if (!!callback) callback();
-          });
-        }
-      });
+    }).add({
+      targets: $bgEl,
+      left: $moveLeft + 'px',
+      top: $moveTop + 'px',
+      width: $toMin + 'px',
+      height: $toMin + 'px',
+      borderRadius: $radius + 'px',
+      complete: function () {
+        // setTimeout(function () {
+        //   $btn.removeClass('morphing-btn-hidden');
+        //   $($bgEl).remove();
+        // }, 300);
+        Layer.open($pop, function () {
+          $($pop).data('returnFocus', $currentTarget);
+          if (!!callback) callback();
+        });
+      }
+    });
   },
   close: function (target, callback) {
     const $pop = $(target);
@@ -7424,27 +7429,21 @@ Layer.morphing = {
       });
       tl.add({
         targets: $bgEl,
-        duration: 500,
-        scale: 1
-      })
-        .add({
-          targets: $bgEl,
-          left: $left,
-          top: $top,
-          width: $width,
-          height: $height,
-          borderRadius: $radius,
-          complete: function () {
-            $btn.removeClass('morphing-btn-hidden');
-          }
-        })
-        .add({
-          targets: $bgEl,
-          opacity: 0,
-          complete: function () {
-            $($bgEl).remove();
-          }
-        });
+        left: $left,
+        top: $top,
+        width: $width,
+        height: $height,
+        borderRadius: $radius,
+        complete: function () {
+          $btn.removeClass('morphing-btn-hidden');
+        }
+      }).add({
+        targets: $bgEl,
+        opacity: 0,
+        complete: function () {
+          $($bgEl).remove();
+        }
+      });
     };
     Layer.close(target, function () {
       $pop.removeClass('morphing-close');
