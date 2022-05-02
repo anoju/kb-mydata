@@ -211,7 +211,9 @@
               <div class="form-box-item">
                 <div class="form-box-label">현재 참여 중</div>
                 <div class="form-box-cont d-flex align-items-center">
-                  랭킹매치(랭킹 : 00위)
+                  <!-- 2022-05-02: 내용수정 -->
+                  <!-- 랭킹매치(랭킹 : 00위) -->
+                  00 개
                   <button type="button" class="btn btn-secondary ml-auto" data-toggle="modal" data-target="#groundJoinHistoryModal">참여내역</button>
                 </div>
               </div>
@@ -238,7 +240,8 @@
 
           <div class="title-wrap mt-5">
             <div class="left">
-              <h2 class="h3">신고현황(타회원 → 회원)</h2>
+              <!-- 2022-05-02: 텍스트 수정 -->
+              <h2 class="h3">신고현황(회원 → 타회원)</h2>
             </div>
           </div>
           <div class="form-box">
@@ -287,7 +290,8 @@
               </div>
               <div class="form-box-item">
                 <div class="form-box-label">해외주식</div>
-                <div class="form-box-cont d-flex align-items-center">1,000,000원 <span class="fc-cyan ml-1">(10% ↓)</span></div>
+                <!-- 2022-05-02: 하락 클래스 변경 fc-cyan => fc-blue -->
+                <div class="form-box-cont d-flex align-items-center">1,000,000원 <span class="fc-blue ml-1">(10% ↓)</span></div>
               </div>
             </div>
             <div class="form-box-row">
@@ -426,7 +430,8 @@
             </div>
           </div>
           <div class="btn-wrap kb-page-btn text-center mt-5">
-            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 확인</button>
+            <!-- 2022-05-02: 클래스변경 bi-plus => bi-check -->
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 확인</button>
           </div>
           <!-- //컨텐츠본문 -->
 
@@ -440,17 +445,21 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body text-center">
-                  <h4 class="h2 mb-4">홍길동 회원 포인트 히스토리</h4>
+                <!-- 2022-05-02: 클래스수정 -->
+                <div class="modal-body">
+                  <!-- 2022-05-02: 클래스수정 -->
+                  <h2 class="h2 text-center mb-3">홍길동 회원 포인트 히스토리</h2>
 
-                  <div class="d-flex">
-                    <div class="mr-auto mb-2">
-                      <select class="custom-select">
+                  <!-- 2022-05-02: 구조수정 -->
+                  <div class="title-wrap">
+                    <div class="left">
+                      <select class="custom-select custom-select-sm">
                         <option value="1">적립일 ↓</option>
                         <option value="2">적립일 ↑</option>
                       </select>
                     </div>
                   </div>
+                  <!-- //2022-05-02: 구조수정 -->
 
                   <table id="table1" class="table table-hover" data-pagination="true">
                     <thead>
@@ -541,17 +550,21 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body text-center">
-                  <h4 class="h2 mb-4">홍길동 회원 리워드 히스토리</h4>
+                <!-- 2022-05-02: 클래스수정 -->
+                <div class="modal-body">
+                  <!-- 2022-05-02: 클래스수정 -->
+                  <h2 class="h2 text-center mb-3">홍길동 회원 리워드 히스토리</h2>
 
-                  <div class="d-flex">
-                    <div class="mr-auto mb-2">
-                      <select class="custom-select">
+                  <!-- 2022-05-02: 구조수정 -->
+                  <div class="title-wrap">
+                    <div class="left">
+                      <select class="custom-select custom-select-sm">
                         <option value="1">상품 교환일 ↓</option>
                         <option value="2">상품 교환일 ↑</option>
                       </select>
                     </div>
                   </div>
+                  <!-- //2022-05-02: 구조수정 -->
 
                   <table id="table2" class="table table-hover" data-pagination="true">
                     <thead>
@@ -625,12 +638,15 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body text-center">
-                  <h4 class="h2 mb-4">홍길동 회원 랭킹 히스토리</h4>
+                <!-- 2022-05-02: 클래스수정 -->
+                <div class="modal-body">
+                  <!-- 2022-05-02: 클래스수정 -->
+                  <h2 class="h2 text-center mb-3">홍길동 회원 랭킹 히스토리</h2>
 
-                  <div class="d-flex">
-                    <div class="mr-auto mb-2">
-                      <select class="custom-select">
+                  <!-- 2022-05-02: 구조수정 -->
+                  <div class="title-wrap">
+                    <div class="left">
+                      <select class="custom-select custom-select-sm">
                         <option value="1">전체</option>
                         <option value="2">시즌5</option>
                         <option value="3">시즌4</option>
@@ -640,6 +656,7 @@
                       </select>
                     </div>
                   </div>
+                  <!-- //2022-05-02: 구조수정 -->
 
                   <table id="table3" class="table table-hover" data-pagination="true">
                     <thead>
@@ -730,12 +747,14 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body text-center">
-                  <h4 class="h2 mb-4">홍길동 회원 승률 히스토리</h4>
+                <!-- 2022-05-02: 클래스수정 -->
+                <div class="modal-body">
+                  <h2 class="h2 text-center mb-3">홍길동 회원 승률 히스토리</h2>
 
-                  <div class="d-flex">
-                    <div class="mr-auto mb-2">
-                      <select class="custom-select">
+                  <!-- 2022-05-02: 구조수정 -->
+                  <div class="title-wrap">
+                    <div class="left">
+                      <select class="custom-select custom-select-sm">
                         <option value="1">전체</option>
                         <option value="2">시즌5</option>
                         <option value="3">시즌4</option>
@@ -745,73 +764,87 @@
                       </select>
                     </div>
                   </div>
+                  <!-- //2022-05-02: 구조수정 -->
 
                   <table id="table4" class="table table-hover" data-pagination="true">
                     <thead>
                       <tr>
-                        <th scope="col">시즌명</th>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <th scope="col">시즌명</th> -->
                         <th scope="col">참여일시</th>
                         <th scope="col">승률</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>시즌 20</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 20</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 19</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 19</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 18</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 18</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 17</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 17</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 16</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 16</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 15</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 15</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 14</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 14</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 13</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 13</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 12</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 12</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 11</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 11</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 10</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 10</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
                       <tr>
-                        <td>시즌 9</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌 9</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>00%</td>
                       </tr>
@@ -835,18 +868,18 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body text-center">
-                  <h4 class="h2 mb-5">홍길동 회원 태그 히스토리</h4>
+                <!-- 2022-05-02: 클래스수정 -->
+                <div class="modal-body">
+                  <!-- 2022-05-02: 클래스수정 -->
+                  <h2 class="h2 text-center mb-3">홍길동 회원 태그 히스토리</h2>
 
-                  <div class="text-left row h5 mb-4">
-                    <div class="col-lg-2 mb-3 mb-lg-0 pr-0">현재 보유태그 :</div>
-                    <div class="col-lg-10 fa-w">
-                      #레전드1, #레전드2, #레전드3, #레전드4, #레전드5, #레전드6, #레전드7, #레전드8, #레전드1, #레전드2, #레전드3, #레전드4, #레전드5, #레전드6, #레전드7, #레전드8,
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <div class="mr-auto mb-2">
-                      <select class="custom-select">
+                  <!-- 2022-05-02: 구조수정 -->
+                  <h3 class="h3 mb-2">현재 보유태그</h3>
+                  <div class="text-line-box2">#레전드1, #레전드2, #레전드3</div>
+
+                  <div class="title-wrap mt-5">
+                    <div class="left">
+                      <select class="custom-select custom-select-sm">
                         <option value="1">전체</option>
                         <option value="2">시즌5</option>
                         <option value="3">시즌4</option>
@@ -856,68 +889,81 @@
                       </select>
                     </div>
                   </div>
+                  <!-- //2022-05-02: 구조수정 -->
 
                   <table id="table5" class="table table-hover" data-pagination="true">
                     <thead>
                       <tr>
-                        <th scope="col">시즌명</th>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <th scope="col">시즌명</th> -->
                         <th scope="col">참여일시</th>
                         <th scope="col">획득태그</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
                       <tr>
-                        <td>시즌5</td>
+                        <!-- 2022-05-02: 삭제 -->
+                        <!-- <td>시즌5</td> -->
                         <td>2022.00.00 00:00:00</td>
                         <td>#1억 자산가 태그 획득</td>
                       </tr>
@@ -941,19 +987,21 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body text-center">
-                  <h4 class="h2 mb-4">홍길동 회원 뱃지 히스토리</h4>
+                <!-- 2022-05-02: 클래스 수정 -->
+                <div class="modal-body">
+                  <h2 class="h2 text-center mb-3">홍길동 회원 뱃지 히스토리</h2>
+                  <h3 class="h3">현재 보유뱃지 현황</h3>
+                  <!-- // 2022-05-02: 구조수정 -->
 
-                  <div class="text-left h5 mb-2">현재 보유뱃지 현황</div>
+                  <!-- 2020-05-02: div태그 및 클래스 변경 -->
                   <!-- prettier-ignore -->
-                  <textarea class="form-control mb-4" readonly rows="4">000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지, 
-000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지,
-000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지, 
-000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지,</textarea>
+                  <div class="text-line-box2 box-scroll-y height-100 mt-2">000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지,000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지, 000 뱃지000 뱃지,</div>
+                  <!-- //2020-05-02: div태그 및 클래스 변경 -->
 
-                  <div class="d-flex">
-                    <div class="mr-auto mb-2">
-                      <select class="custom-select">
+                  <!-- 2022-05-02: 구조수정 -->
+                  <div class="title-wrap mt-5">
+                    <div class="left">
+                      <select class="custom-select custom-select-sm">
                         <option value="1">전체</option>
                         <option value="2">시즌5</option>
                         <option value="3">시즌4</option>
@@ -963,6 +1011,7 @@
                       </select>
                     </div>
                   </div>
+                  <!-- //2022-05-02: 구조수정 -->
 
                   <table id="table6" class="table table-hover" data-pagination="true">
                     <thead>
@@ -1048,10 +1097,17 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body text-center">
-                  <h4 class="h2 mb-4">홍길동 회원 매치 참여현황</h4>
+                <!-- 2022-05-02: 클래스 변경 -->
+                <div class="modal-body">
+                  <!-- 2022-05-02: 클래스 변경 -->
+                  <h2 class="h2 text-center mb-3">홍길동 회원 매치 참여현황</h2>
 
-                  <div class="text-left h6 mb-2">최근 업데이트 : 2022.00.00</div>
+                  <!-- 2022-05-02: 구조수정 -->
+                  <div class="title-wrap">
+                    <div class="left">최근 업데이트 : 2022.00.00</div>
+                  </div>
+                  <!-- //2022-05-02: 구조수정 -->
+
                   <table id="table7" class="table table-hover">
                     <thead>
                       <tr>
@@ -1071,9 +1127,10 @@
                     </tbody>
                   </table>
 
-                  <div class="d-flex">
-                    <div class="mr-auto mb-2 mt-4">
-                      <select class="custom-select">
+                  <!-- 2022-05-02: 구조수정 -->
+                  <div class="title-wrap mt-5">
+                    <div class="left">
+                      <select class="custom-select custom-select-sm">
                         <option value="1">전체</option>
                         <option value="2">시즌5</option>
                         <option value="3">시즌4</option>
@@ -1083,6 +1140,8 @@
                       </select>
                     </div>
                   </div>
+                  <!-- // 2022-05-02: 구조수정 -->
+
                   <table id="table8" class="table table-hover" data-pagination="true">
                     <thead>
                       <tr>
@@ -1219,8 +1278,10 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body text-center">
-                  <h4 class="h2 mb-4">홍길동 회원 그라운드 참여현황</h4>
+                <!-- 2022-05-02: 클래스 변경 -->
+                <div class="modal-body">
+                  <!-- 2022-05-02: 클래스 변경 -->
+                  <h2 class="h2 text-center mb-3">홍길동 회원 그라운드 참여현황</h2>
 
                   <table id="table9" class="table table-hover" data-pagination="true">
                     <thead>
@@ -1366,12 +1427,17 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body text-center">
-                  <h4 class="h2 mb-4">홍길동 회원 마이데이터 연동정보</h4>
+                <!-- 2022-05-02: 클래스 변경 -->
+                <div class="modal-body">
+                  <!-- 2022-05-02: 클래스 변경 -->
+                  <h2 class="h2 text-center mb-3">홍길동 회원 마이데이터 연동정보</h2>
 
-                  <div class="d-flex align-items-center mb-2">
-                    <h5 class="h6 mr-2">연동정보</h5>
+                  <!-- 2022-05-02: 구조 수정-->
+                  <div class="title-wrap">
+                    <h3 class="h3">연동정보</h3>
                   </div>
+                  <!-- //2022-05-02: 구조 수정-->
+
                   <table id="table10" class="table">
                     <thead>
                       <tr>
@@ -1387,9 +1453,12 @@
                     </tbody>
                   </table>
 
-                  <div class="d-flex align-items-center mb-2 mt-4">
-                    <h5 class="h6 mr-2">연결기관</h5>
+                  <!-- 2022-05-02: 구조 수정-->
+                  <div class="title-wrap mt-5">
+                    <h3 class="h3">연결기관</h3>
                   </div>
+                  <!-- //2022-05-02: 구조 수정-->
+
                   <table id="table11" class="table">
                     <thead>
                       <tr>
@@ -1421,15 +1490,17 @@
                     </tbody>
                   </table>
 
-                  <div class="d-flex align-items-center mb-2 mt-4">
-                    <h5 class="h6 mr-2">연동내역</h5>
-                    <div class="mr-auto">
-                      <select class="custom-select">
+                  <!-- 2022-05-02: 구조 수정-->
+                  <div class="title-wrap mt-5">
+                    <h3 class="h3">연동내역</h3>
+                    <div class="ml-auto">
+                      <select class="custom-select custom-select-sm">
                         <option value="1">상품 교환일 ↓</option>
                         <option value="2">상품 교환일 ↑</option>
                       </select>
                     </div>
                   </div>
+                  <!-- //2022-05-02: 구조 수정-->
 
                   <table id="table12" class="table table-hover" data-pagination="true">
                     <thead>
