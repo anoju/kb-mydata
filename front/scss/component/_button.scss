@@ -47,16 +47,16 @@
     border-radius: 0.4rem;
   }
   &.h32 {
-    height: 3.2rem !important;
-    font-size: 1.2rem !important;
-    border-radius: 0.6rem !important;
+    height: 3.2rem;
+    font-size: 1.2rem;
+    border-radius: 0.6rem;
   }
   &.h38 {
     height: 3.8rem;
     font-size: 1.4rem;
     border-radius: 0.6rem;
   }
-  .popup:not(.modal) .pop-foot &:not(.h48),
+  .popup:not(.modal) .pop-foot &:not(.h48, .h38, .h32, .h24),
   &.h60 {
     height: 6rem;
     font-size: 1.8rem;
@@ -66,12 +66,6 @@
     }
   }
 
-  &.round {
-    border-radius: 3rem;
-  }
-  &.round2 {
-    border-radius: 0.4rem;
-  }
   &.full {
     display: flex;
     width: 100%;
@@ -133,6 +127,13 @@
     border-color: var(--line-color);
     color: #818892;
     background: #fff;
+  }
+
+  &.round {
+    border-radius: 3rem;
+  }
+  &.round2 {
+    border-radius: 0.4rem;
   }
 
   [class*='i-ico-check-'] {

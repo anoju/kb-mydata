@@ -3,55 +3,55 @@
   .number {
     display: inline-block;
     &:after {
-      content: counter(count);
-      counter-reset: count 0;
+      content: '0';
+      //counter-reset: count 0;
       font-size: 20px;
     }
   }
   @for $i from 1 to 10 {
     .number:nth-of-type(#{$i}):after {
       @if ($i%2 == 0) {
-        animation: counter var(--animation-random-duration) linear infinite alternate-reverse;
+        animation: counterAni var(--animation-random-duration) linear infinite alternate-reverse;
       } @else {
-        animation: counter var(--animation-random-duration) linear infinite alternate;
+        animation: counterAni var(--animation-random-duration) linear infinite alternate;
       }
     }
   }
 }
 
-@keyframes counter {
+@keyframes counterAni {
   0% {
-    counter-increment: count 0;
+    content: '0';
   }
   10% {
-    counter-increment: count 1;
+    content: '1';
   }
   20% {
-    counter-increment: count 2;
+    content: '2';
   }
   30% {
-    counter-increment: count 3;
+    content: '3';
   }
   40% {
-    counter-increment: count 4;
+    content: '4';
   }
   50% {
-    counter-increment: count 5;
+    content: '5';
   }
   60% {
-    counter-increment: count 6;
+    content: '6';
   }
   70% {
-    counter-increment: count 7;
+    content: '7';
   }
   80% {
-    counter-increment: count 8;
+    content: '8';
   }
   90% {
-    counter-increment: count 9;
+    content: '9';
   }
   100% {
-    counter-increment: count 0;
+    content: '0';
   }
 }
 
@@ -68,8 +68,9 @@
     line-height: 1;
     color: transparent;
     &:before {
-      content: counter(count);
-      counter-reset: count 0;
+      // content: counter(count);
+      // counter-reset: count 0;
+      content: '0';
       font-size: 20px;
       color: #111;
       position: absolute;
@@ -78,8 +79,9 @@
       left: 0;
     }
     &:after {
-      content: counter(count2);
-      counter-reset: count2 0;
+      // content: counter(count2);
+      // counter-reset: count2 0;
+      content: '0';
       font-size: 20px;
       color: #111;
       position: absolute;
@@ -136,23 +138,23 @@
   0%,
   50%,
   100% {
-    counter-increment: count 0;
+    content: '0';
   }
   10%,
   60% {
-    counter-increment: count 2;
+    content: '2';
   }
   20%,
   70% {
-    counter-increment: count 4;
+    content: '4';
   }
   30%,
   80% {
-    counter-increment: count 6;
+    content: '6';
   }
   40%,
   90% {
-    counter-increment: count 8;
+    content: '8';
   }
 }
 
@@ -182,23 +184,23 @@
   0%,
   50%,
   100% {
-    counter-increment: count2 1;
+    content: '1';
   }
   10%,
   60% {
-    counter-increment: count2 3;
+    content: '3';
   }
   20%,
   70% {
-    counter-increment: count2 5;
+    content: '5';
   }
   30%,
   80% {
-    counter-increment: count2 7;
+    content: '7';
   }
   40%,
   90% {
-    counter-increment: count2 9;
+    content: '8';
   }
 }
 

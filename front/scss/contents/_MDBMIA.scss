@@ -483,10 +483,10 @@
 
   &.hidden {
     .show {
-      display: none;
+      display: none !important;
     }
     .hide {
-      display: block;
+      display: block !important;
     }
   }
 }
@@ -742,8 +742,10 @@
     position: relative;
     display: flex;
     flex: 0 0 auto;
+    width: 28rem;
     padding: 2.4rem 2.2rem 2.4rem 2rem;
     border-radius: 0.8rem;
+    align-items: center;
     + a {
       margin-left: 1.2rem;
     }
@@ -890,7 +892,19 @@
       }
     }
     &.win {
-      background: #fff2f4;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 1.2rem;
+        box-sizing: border-box;
+        pointer-events: none;
+        border: 0.2rem solid var(--primary-color);
+      }
       .badge {
         color: #fff;
         background: var(--primary-color);

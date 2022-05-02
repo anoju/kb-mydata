@@ -41,11 +41,17 @@ $mobile-size: 768;
   .width-#{$i} {
     width: $i * 1px !important;
   }
+  .height-#{$i} {
+    height: $i * 1px !important;
+  }
 }
 //width-100, width-150, width-200 ... width-500
 @for $i from 2 through 10 {
   .width-#{$i*50} {
     width: $i * 50px !important;
+  }
+  .height-#{$i*50} {
+    height: $i * 50px !important;
   }
 }
 //min-w50, min-w100, min-w150 ... min-w500
@@ -1040,7 +1046,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 .modal-header {
   align-items: center;
   .modal-title {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
     font-weight: 500;
     width: 100%;
     float: 1 1 auto;
@@ -1180,8 +1186,23 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   display: flex;
   align-items: center;
   margin-bottom: 0.625rem;
-  > .left {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0;
+  }
+  > .left,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     flex: 1 1 auto;
+    text-align: left;
     // display: flex;
     // align-items: center;
     // min-height: 2.188rem;
@@ -1810,6 +1831,12 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 }
 .box-scroll-x {
   overflow: auto hidden;
+}
+.text-line-box2 {
+  background: $gray-100;
+  padding: 1rem;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius-lg;
 }
 .text-line-box {
   background: #fff;

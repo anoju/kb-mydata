@@ -189,7 +189,9 @@
                 <div class="form-box-item">
                   <div class="form-box-label"><i class="fc-red mr-1">*</i>버튼명</div>
                   <div class="form-box-cont">
-                    <input type="text" class="form-control" />
+                    <!-- 2022-05-02: 수정 -->
+                    <input type="text" class="form-control" value="확인" />
+                    <div class="help-txt mt-1">※ 8자 이내로 번튼명을 변경 할 수 있습니다.</div>
                   </div>
                 </div>
               </div>
@@ -329,12 +331,12 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>금액</div>
                 <div class="form-box-cont">
-                  <div class="form-row">
-                    <div class="col-6">
-                      <input type="text" class="form-control" />
-                    </div>
-                    <div class="col-6 d-flex align-items-center">원</div>
+                  <!-- 2022-05-02: 수정 -->
+                  <div class="d-flex align-items-center">
+                    <input type="text" class="form-control text-right" />
+                    <div class="ml-1">원</div>
                   </div>
+                  <!-- //2022-05-02: 수정 -->
                 </div>
               </div>
             </div>
@@ -629,12 +631,12 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>금액</div>
                 <div class="form-box-cont">
-                  <div class="form-row">
-                    <div class="col-6">
-                      <input type="text" class="form-control" />
-                    </div>
-                    <div class="col-6 d-flex align-items-center">원</div>
+                  <!-- 2022-05-02: 수정 -->
+                  <div class="d-flex align-items-center">
+                    <input type="text" class="form-control text-right" />
+                    <div class="ml-1">원</div>
                   </div>
+                  <!-- //2022-05-02: 수정 -->
                 </div>
               </div>
             </div>
@@ -652,7 +654,8 @@
                 <div class="form-box-cont">
                   <input type="text" class="form-control" />
                   <!-- 2022-03-25: 도움말 클래스 .help-txt로 통일(수정) -->
-                  <div class="mt-1 help-txt">※ 예시) #옥션진행중/입력 시 태그값만 노출됩니다. 6자 이내로 입력해 주세요.</div>
+                  <!-- 2022-05-02: 텍스트 수정 -->
+                  <div class="mt-1 help-txt">※ 예시) 청담동 / 태그값만 동일하게 라벨이 적용됩니다. 6자 이내로 입력해 주세요.</div>
                 </div>
               </div>
             </div>
@@ -701,10 +704,11 @@
                     </div>
 
                     <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                      <!-- 2022-05-02: 버튼 날짜 수정 -->
+                      <button type="button" class="btn btn-outline-secondary">7일</button>
+                      <button type="button" class="btn btn-outline-secondary">15일</button>
                       <button type="button" class="btn btn-outline-secondary">1개월</button>
                       <button type="button" class="btn btn-outline-secondary">3개월</button>
-                      <button type="button" class="btn btn-outline-secondary">6개월</button>
-                      <button type="button" class="btn btn-outline-secondary active">전체</button>
                       <!-- active 클래스로  활성화 -->
                     </div>
                   </div>

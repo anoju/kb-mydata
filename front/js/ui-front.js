@@ -1702,6 +1702,7 @@ ui.Tab = {
     const $tabLeft = $listLeft + $active.position().left + $tabBtn.position().left;
     const $tabRight = $innerSclWidth - $tabLeft - $tabWidth - $innerSclGap;
 
+    if ($LastLeft === $tabLeft && $LastWidth === $tabWidth) return;
     if ($isTy2) {
       if (isAni) {
         const $delay = $innerSclGap < 10 ? 0 : 200;
@@ -1745,13 +1746,11 @@ ui.Tab = {
         });
       }
     } else {
-      if ($LastLeft != $tabLeft || $LastWidth != $tabWidth) {
-        if (isAni) $wrap.addClass('tab-line-moving');
-        $line.css({
-          width: $tabWidth,
-          left: $tabLeft
-        });
-      }
+      if (isAni) $wrap.addClass('tab-line-moving');
+      $line.css({
+        width: $tabWidth,
+        left: $tabLeft
+      });
     }
     if (isAni) {
       const transitionEndEvt = function () {
@@ -5434,24 +5433,22 @@ const Focus = {
 const Body = {
   scrollTop: '',
   lock: function () {
-    if (!$('html').hasClass('lock')) {
-      Body.scrollTop = window.pageYOffset;
-      const $wrap = $('#wrap');
-      const $wrapTop = $('#wrap').length ? $wrap.offset().top : 0;
-      const $setTop = Body.scrollTop * -1 + $wrapTop;
-      $wrap.css('top', $setTop);
-      $('html').addClass('lock');
-    }
+    if ($('html').hasClass('lock')) return;
+    Body.scrollTop = window.pageYOffset;
+    const $wrap = $('#wrap');
+    const $wrapTop = $('#wrap').length ? $wrap.offset().top : 0;
+    const $setTop = Body.scrollTop * -1 + $wrapTop;
+    $wrap.css('top', $setTop);
+    $('html').addClass('lock');
   },
   unlock: function () {
-    if ($('html').hasClass('lock')) {
-      $('html').removeClass('lock');
-      $('#wrap').removeAttr('style');
-      window.scrollTo(0, Body.scrollTop);
-      window.setTimeout(function () {
-        Body.scrollTop = '';
-      }, 0);
-    }
+    if (!$('html').hasClass('lock')) return;
+    $('html').removeClass('lock');
+    $('#wrap').removeAttr('style');
+    window.scrollTo(0, Body.scrollTop);
+    window.setTimeout(function () {
+      Body.scrollTop = '';
+    }, 0);
   }
 };
 
@@ -6666,7 +6663,7 @@ const Layer = {
         if ($popup.find('.ui-swiper').length) ui.Swiper.update($popup.find('.ui-swiper'));
 
         //열기
-        if (!$('html').hasClass('lock')) Body.lock();
+        Body.lock();
         $popup.addClass(Layer.showClass);
         setTimeout(function () {
           $popup.addClass(Layer.showClass + '-end');
@@ -7324,8 +7321,7 @@ Layer.morphing = {
     const $pop = $(target);
     const $currentTarget = $(btn);
     if (!$pop.length) return;
-    if ($btn.hasClass('morphing-btn-hidden')) return;
-    if (!$('html').hasClass('lock')) Body.lock();
+    Body.lock();
     const $popId = $pop.attr('id');
     const $width = $btn.outerWidth();
     const $height = $btn.outerHeight();
