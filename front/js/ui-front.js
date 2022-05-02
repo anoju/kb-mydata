@@ -1686,6 +1686,7 @@ ui.Tab = {
     const $line = $wrap.find('.tab-line');
     if (!$line.length) return;
     const $LastLeft = $line.data('left') === undefined ? 0 : $line.data('left');
+    const $LastWidth = $line.data('width') === undefined ? 0 : $line.data('width');
     const $inner = $wrap.find('.tab-inner');
     const $innerSclWidth = $inner.get(0).scrollWidth;
     const $innerSclGap = $innerSclWidth - $inner.outerWidth();
@@ -1744,7 +1745,7 @@ ui.Tab = {
         });
       }
     } else {
-      if ($LastLeft != $tabLeft || $LastLeft == 0) {
+      if ($LastLeft != $tabLeft || $LastWidth != $tabWidth) {
         if (isAni) $wrap.addClass('tab-line-moving');
         $line.css({
           width: $tabWidth,
@@ -1760,6 +1761,7 @@ ui.Tab = {
       $line.on('transitionend', transitionEndEvt);
     }
     $line.data('left', $tabLeft);
+    $line.data('width', $tabWidth);
   },
   getInnerTxt: function (wrap) {
     let $wrap = $(wrap);
