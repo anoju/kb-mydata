@@ -1702,6 +1702,7 @@ ui.Tab = {
     const $tabLeft = $listLeft + $active.position().left + $tabBtn.position().left;
     const $tabRight = $innerSclWidth - $tabLeft - $tabWidth - $innerSclGap;
 
+    if ($LastLeft === $tabLeft && $LastWidth === $tabWidth) return;
     if ($isTy2) {
       if (isAni) {
         const $delay = $innerSclGap < 10 ? 0 : 200;
@@ -1745,13 +1746,11 @@ ui.Tab = {
         });
       }
     } else {
-      if ($LastLeft != $tabLeft || $LastWidth != $tabWidth) {
-        if (isAni) $wrap.addClass('tab-line-moving');
-        $line.css({
-          width: $tabWidth,
-          left: $tabLeft
-        });
-      }
+      if (isAni) $wrap.addClass('tab-line-moving');
+      $line.css({
+        width: $tabWidth,
+        left: $tabLeft
+      });
     }
     if (isAni) {
       const transitionEndEvt = function () {
