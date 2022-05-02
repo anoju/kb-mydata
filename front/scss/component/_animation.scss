@@ -11,15 +11,15 @@
   @for $i from 1 to 10 {
     .number:nth-of-type(#{$i}):after {
       @if ($i%2 == 0) {
-        animation: counter var(--animation-random-duration) linear infinite alternate-reverse;
+        animation: counterAni var(--animation-random-duration) linear infinite alternate-reverse;
       } @else {
-        animation: counter var(--animation-random-duration) linear infinite alternate;
+        animation: counterAni var(--animation-random-duration) linear infinite alternate;
       }
     }
   }
 }
 
-@keyframes counter {
+@keyframes counterAni {
   0% {
     counter-increment: count 0;
   }
