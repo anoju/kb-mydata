@@ -7177,8 +7177,8 @@ const Layer = {
         const $width = $this.outerWidth();
         const $height = $this.outerHeight();
         const $offset = $this.offset();
-        const $top = $offset.top;
-        const $left = $offset.left;
+        const $top = $offset.top - $(window).scrollTop();
+        const $left = $offset.left - $(window).scrollLeft();
         const $bg = $this.css('background-color');
         const $border = $this.css('border');
         const $borderWidth = parseInt($this.css('border-width'));
@@ -7206,38 +7206,52 @@ const Layer = {
         const $bgEl = '.morphing-bg[data-pop="' + $pop + '"]';
 
         const $toMin = $width < $height ? $width : $height;
-        const $winH = $(window).width() > $(window).height() ? $(window).width() : $(window).height();
-        const $scale = ($winH / $toMin) * 1.8;
-        console.log($bgEl);
+        const $radius = $toMin / 2;
+        // const $winH = $(window).width() > $(window).height() ? $(window).width() : $(window).height();
+        const $getScaleValue = function (topValue, leftValue, radiusValue) {
+          const windowW = $(window).width();
+          const windowH = $(window).height();
+          const maxDistHor = leftValue > windowW / 2 ? leftValue : windowW - leftValue;
+          const maxDistVert = topValue > windowH / 2 ? topValue : windowH - topValue;
+          console.log(maxDistHor, maxDistVert);
+          return Math.ceil(Math.sqrt(Math.pow(maxDistHor, 2) + Math.pow(maxDistVert, 2)) / radiusValue);
+        };
+        const $scale = $getScaleValue($left, $top, $radius);
         const tl = anime.timeline({
           // easing: 'easeOutExpo',
           // easing: 'linear',
           easing: 'easeOutQuad',
-          duration: 700
+          duration: 300
         });
         tl.add({
           targets: $bgEl,
-          duration: 300,
           opacity: 1
         })
           .add(
             {
               targets: $bgEl,
-              duration: 300,
               left: $left + ($width - $toMin) / 2 + 'px',
               top: $top + ($height - $toMin) / 2 + 'px',
               width: $toMin + 'px',
               height: $toMin + 'px',
-              borderRadius: $toMin / 2 + 'px'
+              borderRadius: $radius + 'px'
             },
             '+=100'
           )
           .add(
             {
               targets: $bgEl,
-              // delay: 100,
+              duration: 500,
+
+              // left: 0,
+              // top: 0,
+              // width: $(window).width() + 'px',
+              // height: $(window).height() + 'px',
+              // borderRadius: 0 + 'px'
+
               scale: $scale,
-              background: '#fff',
+
+              // background: '#fff',
               complete: function () {
                 console.log('complete');
                 setTimeout(function () {
