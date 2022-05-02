@@ -7321,7 +7321,8 @@ Layer.morphing = {
     const $btn = $(btn);
     const $pop = $(target);
     const $currentTarget = $(btn);
-    if (!$pop.length);
+    if (!$pop.length) return;
+    if (!$('html').hasClass('lock')) Body.lock();
     const $popId = $pop.attr('id');
     const $width = $btn.outerWidth();
     const $height = $btn.outerHeight();
