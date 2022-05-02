@@ -6713,6 +6713,10 @@ const Layer = {
   close: function (tar, callback) {
     const $popup = $(tar);
     if (!$popup.hasClass(Layer.showClass)) return console.log(tar, '해당팝업 안열려있음');
+    if ($popup.hasClass('morphing') && !$popup.hasClass('morphing-close')) {
+      Layer.morphing.close(tar, callback);
+      return;
+    }
     const $id = $popup.attr('id');
     let $closeDelay = 510;
     let $callbackDelay = 510;
@@ -7168,89 +7172,6 @@ const Layer = {
       }
     });
 
-    $(document).on('click', '.ui-pop-morphing-open', function (e) {
-      e.preventDefault();
-      const $this = $(this);
-      const $pop = $(this).attr('href');
-      const $currentTarget = $(e.currentTarget);
-      if ($pop.length) {
-        const $width = $this.outerWidth();
-        const $height = $this.outerHeight();
-        const $offset = $this.offset();
-        const $top = $offset.top - $(window).scrollTop();
-        const $left = $offset.left - $(window).scrollLeft();
-        const $bg = $this.css('background-color');
-        const $border = $this.css('border');
-        const $borderWidth = parseInt($this.css('border-width'));
-        const $borderRadius = parseInt($this.css('border-radius'));
-        const $shadow = $this.css('box-shadow');
-        console.log($width, $height, $bg, $border, $borderRadius, $shadow);
-        let $style = '';
-        $style += 'left:' + $left + 'px;';
-        $style += 'top:' + $top + 'px;';
-        $style += 'width:' + $width + 'px;';
-        $style += 'height:' + $height + 'px;';
-        if ($bg !== 'rgba(0, 0, 0, 0)') $style += 'background:' + $bg + ';';
-        if ($borderWidth) $style += 'border:' + $border + ';';
-        if ($borderRadius) $style += 'border-radius:' + $borderRadius + 'px;';
-        if ($shadow !== 'none') $style += 'box-shadow:' + $shadow + ';';
-        const $html = '<div class="morphing-bg" data-pop="' + $pop + '" style="' + $style + '"></div>';
-        if (!$($pop).prev('.morphing-bg').length) {
-          $($pop).before($html);
-        } else {
-          $($pop).prev('.morphing-bg').removeAttr('style').attr('style', $style);
-        }
-        setTimeout(function () {
-          $this.addClass('morphing-btn-hidden');
-        }, 300);
-        const $bgEl = '.morphing-bg[data-pop="' + $pop + '"]';
-
-        const $toMin = $width < $height ? $width : $height;
-        const $radius = $toMin / 2;
-        // const $winH = $(window).width() > $(window).height() ? $(window).width() : $(window).height();
-        const $getScaleValue = function (topValue, leftValue, radiusValue) {
-          const windowW = $(window).width();
-          const windowH = $(window).height();
-          const maxDistHor = leftValue > windowW / 2 ? leftValue : windowW - leftValue;
-          const maxDistVert = topValue > windowH / 2 ? topValue : windowH - topValue;
-          return Math.ceil(Math.sqrt(Math.pow(maxDistHor, 2) + Math.pow(maxDistVert, 2)) / radiusValue);
-        };
-        const $scale = $getScaleValue($left, $top, $radius);
-        const tl = anime.timeline({
-          // easing: 'easeOutExpo',
-          // easing: 'linear',
-          easing: 'easeOutQuad',
-          duration: 300
-        });
-        tl.add({
-          targets: $bgEl,
-          opacity: 1
-        })
-          .add({
-            targets: $bgEl,
-            left: $left + ($width - $toMin) / 2 + 'px',
-            top: $top + ($height - $toMin) / 2 + 'px',
-            width: $toMin + 'px',
-            height: $toMin + 'px',
-            borderRadius: $radius + 'px'
-          })
-          .add({
-            targets: $bgEl,
-            duration: 500,
-            scale: $scale,
-            complete: function () {
-              setTimeout(function () {
-                $this.removeClass('morphing-btn-hidden');
-                $($bgEl).remove();
-              }, 300);
-              Layer.open($pop, function () {
-                $($pop).data('returnFocus', $currentTarget);
-              });
-            }
-          });
-      }
-    });
-
     //닫기
     $(document).on('click', '.ui-pop-close', function (e) {
       e.preventDefault();
@@ -7384,6 +7305,148 @@ const Layer = {
       const $pdfTit = $(this).data('agree-pdf-title');
       if ($pdfTit) $title = $pdfTit;
       Layer.pdf($url, $title);
+    });
+
+    // 모핑
+    $(document).on('click', '.ui-pop-morphing-open', function (e) {
+      e.preventDefault();
+      const $pop = $(this).attr('href');
+      Layer.morphing.open(this, $pop);
+    });
+  }
+};
+
+Layer.morphing = {
+  open: function (btn, target, callback) {
+    const $btn = $(btn);
+    const $pop = $(target);
+    const $currentTarget = $(btn);
+    if (!$pop.length);
+    const $popId = $pop.attr('id');
+    const $width = $btn.outerWidth();
+    const $height = $btn.outerHeight();
+    const $offset = $btn.offset();
+    const $top = $offset.top - $(window).scrollTop();
+    const $left = $offset.left - $(window).scrollLeft();
+    const $bg = $btn.css('background-color');
+    const $border = $btn.css('border');
+    const $borderWidth = parseInt($btn.css('border-width'));
+    const $borderRadius = parseInt($btn.css('border-radius'));
+    const $shadow = $btn.css('box-shadow');
+    let $style = '';
+    $style += 'left:' + $left + 'px;';
+    $style += 'top:' + $top + 'px;';
+    $style += 'width:' + $width + 'px;';
+    $style += 'height:' + $height + 'px;';
+    $style += 'border-radius:' + $borderRadius + 'px;';
+    if ($bg !== 'rgba(0, 0, 0, 0)') $style += 'background:' + $bg + ';';
+    if ($borderWidth) $style += 'border:' + $border + ';';
+    if ($shadow !== 'none') $style += 'box-shadow:' + $shadow + ';';
+    const $html = '<div class="morphing-bg" data-pop="#' + $popId + '" style="' + $style + '"></div>';
+    if (!$($pop).prev('.morphing-bg').length) {
+      $($pop).before($html);
+    } else {
+      $($pop).prev('.morphing-bg').removeAttr('style').attr('style', $style);
+    }
+    setTimeout(function () {
+      $btn.addClass('morphing-btn-hidden');
+    }, 300);
+    const $bgEl = '.morphing-bg[data-pop="#' + $popId + '"]';
+    $($bgEl).data('left', $left);
+    $($bgEl).data('top', $top);
+    $($bgEl).data('width', $width);
+    $($bgEl).data('height', $height);
+    $($bgEl).data('border-radius', $borderRadius);
+
+    const $toMin = $width < $height ? $width : $height;
+    const $radius = $toMin / 2;
+    // const $winH = $(window).width() > $(window).height() ? $(window).width() : $(window).height();
+    const $getScaleValue = function (topValue, leftValue, radiusValue) {
+      const windowW = $(window).width();
+      const windowH = $(window).height();
+      const maxDistHor = leftValue > windowW / 2 ? leftValue : windowW - leftValue;
+      const maxDistVert = topValue > windowH / 2 ? topValue : windowH - topValue;
+      return Math.ceil(Math.sqrt(Math.pow(maxDistHor, 2) + Math.pow(maxDistVert, 2)) / radiusValue);
+    };
+    const $scale = $getScaleValue($left, $top, $radius);
+    const tl = anime.timeline({
+      // easing: 'easeOutExpo',
+      // easing: 'linear',
+      easing: 'easeOutQuad',
+      duration: 300
+    });
+    tl.add({
+      targets: $bgEl,
+      opacity: 1
+    })
+      .add({
+        targets: $bgEl,
+        left: $left + ($width - $toMin) / 2 + 'px',
+        top: $top + ($height - $toMin) / 2 + 'px',
+        width: $toMin + 'px',
+        height: $toMin + 'px',
+        borderRadius: $radius + 'px'
+      })
+      .add({
+        targets: $bgEl,
+        duration: 500,
+        scale: $scale,
+        complete: function () {
+          // setTimeout(function () {
+          //   $btn.removeClass('morphing-btn-hidden');
+          //   $($bgEl).remove();
+          // }, 300);
+          Layer.open($pop, function () {
+            $($pop).data('returnFocus', $currentTarget);
+            if (!!callback) callback();
+          });
+        }
+      });
+  },
+  close: function (target, callback) {
+    const $pop = $(target);
+    const $btn = $pop.data('returnFocus');
+    $pop.addClass('morphing-close');
+    const $popClose = function () {
+      const $popId = $pop.attr('id');
+      const $bgEl = '.morphing-bg[data-pop="#' + $popId + '"]';
+      const $left = $($bgEl).data('left');
+      const $top = $($bgEl).data('top');
+      const $width = $($bgEl).data('width');
+      const $height = $($bgEl).data('height');
+      const $radius = $($bgEl).data('border-radius');
+      const tl = anime.timeline({
+        easing: 'easeOutQuad',
+        duration: 300
+      });
+      tl.add({
+        targets: $bgEl,
+        duration: 500,
+        scale: 1
+      })
+        .add({
+          targets: $bgEl,
+          left: $left,
+          top: $top,
+          width: $width,
+          height: $height,
+          borderRadius: $radius,
+          complete: function () {
+            $btn.removeClass('morphing-btn-hidden');
+          }
+        })
+        .add({
+          targets: $bgEl,
+          opacity: 0,
+          complete: function () {
+            $($bgEl).remove();
+          }
+        });
+    };
+    Layer.close(target, function () {
+      $pop.removeClass('morphing-close');
+      $popClose();
+      if (!!callback) callback();
     });
   }
 };
