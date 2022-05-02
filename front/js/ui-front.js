@@ -7213,7 +7213,6 @@ const Layer = {
           const windowH = $(window).height();
           const maxDistHor = leftValue > windowW / 2 ? leftValue : windowW - leftValue;
           const maxDistVert = topValue > windowH / 2 ? topValue : windowH - topValue;
-          console.log(maxDistHor, maxDistVert);
           return Math.ceil(Math.sqrt(Math.pow(maxDistHor, 2) + Math.pow(maxDistVert, 2)) / radiusValue);
         };
         const $scale = $getScaleValue($left, $top, $radius);
@@ -7227,44 +7226,28 @@ const Layer = {
           targets: $bgEl,
           opacity: 1
         })
-          .add(
-            {
-              targets: $bgEl,
-              left: $left + ($width - $toMin) / 2 + 'px',
-              top: $top + ($height - $toMin) / 2 + 'px',
-              width: $toMin + 'px',
-              height: $toMin + 'px',
-              borderRadius: $radius + 'px'
-            },
-            '+=100'
-          )
-          .add(
-            {
-              targets: $bgEl,
-              duration: 500,
-
-              // left: 0,
-              // top: 0,
-              // width: $(window).width() + 'px',
-              // height: $(window).height() + 'px',
-              // borderRadius: 0 + 'px'
-
-              scale: $scale,
-
-              // background: '#fff',
-              complete: function () {
-                console.log('complete');
-                setTimeout(function () {
-                  $this.removeClass('morphing-btn-hidden');
-                  $($bgEl).remove();
-                }, 300);
-                Layer.open($pop, function () {
-                  $($pop).data('returnFocus', $currentTarget);
-                });
-              }
-            },
-            '+=100'
-          );
+          .add({
+            targets: $bgEl,
+            left: $left + ($width - $toMin) / 2 + 'px',
+            top: $top + ($height - $toMin) / 2 + 'px',
+            width: $toMin + 'px',
+            height: $toMin + 'px',
+            borderRadius: $radius + 'px'
+          })
+          .add({
+            targets: $bgEl,
+            duration: 500,
+            scale: $scale,
+            complete: function () {
+              setTimeout(function () {
+                $this.removeClass('morphing-btn-hidden');
+                $($bgEl).remove();
+              }, 300);
+              Layer.open($pop, function () {
+                $($pop).data('returnFocus', $currentTarget);
+              });
+            }
+          });
       }
     });
 
