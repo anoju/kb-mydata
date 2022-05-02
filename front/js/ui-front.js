@@ -1744,7 +1744,7 @@ ui.Tab = {
         });
       }
     } else {
-      if ($LastLeft != $tabLeft) {
+      if ($LastLeft != $tabLeft || $LastLeft == 0) {
         if (isAni) $wrap.addClass('tab-line-moving');
         $line.css({
           width: $tabWidth,
