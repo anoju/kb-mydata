@@ -67,13 +67,9 @@
               <div class="form-box-item">
                 <div class="form-box-label">분야</div>
                 <div class="form-box-cont">
-                  <div class="form-row">
-                    <div class="col-md-5">
-                      <select class="custom-select">
-                        <option value="1">전체</option>
-                      </select>
-                    </div>
-                  </div>
+                  <select class="custom-select">
+                    <option value="1">전체</option>
+                  </select>
                 </div>
               </div>
               <div class="form-box-item">
@@ -126,12 +122,15 @@
                       <input type="date" class="form-control" placeholder="종료일" />
                     </div>
 
+                    <!-- 2022-05-02: 항목 수정 -->
                     <div class="btn-group" role="group" aria-label="기간 선택 버튼">
-                      <button type="button" class="btn btn-outline-secondary active">15일</button>
+                      <button type="button" class="btn btn-outline-secondary">1개월</button>
                       <button type="button" class="btn btn-outline-secondary">3개월</button>
                       <button type="button" class="btn btn-outline-secondary">6개월</button>
+                      <button type="button" class="btn btn-outline-secondary active">전체</button>
                       <!-- active 클래스로  활성화 -->
                     </div>
+                    <!-- // 2022-05-02: 항목 수정 -->
                   </div>
                 </div>
               </div>
@@ -160,8 +159,10 @@
                 <th scope="col">상담등록일</th>
                 <th scope="col">제목</th>
                 <th scope="col">답변등록</th>
-                <th scope="col">등록자</th>
-                <th scope="col">답변등록일</th>
+                <!-- 2022-05-02: 명칭변경(등록자  > 최초등록) -->
+                <th scope="col">최초등록</th>
+                <!-- 2022-05-02: 명칭변경(등록일  > 최초등록일) -->
+                <th scope="col">최초등록일</th>
                 <th scope="col">최근수정일</th>
               </tr>
             </thead>
