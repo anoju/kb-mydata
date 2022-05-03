@@ -7382,9 +7382,11 @@ Layer.morphing = {
       $moveLeft = $left + ($width - $toMin) / 2;
       $moveTop = $top + ($height - $toMin) / 2;
 
+      const $wrapTop = parseInt($wrap.css('top'));
+      const $sclTop = $wrapTop !== 0 ? $wrapTop : $(window).scrollTop() * -1;
       const $popWrap = $pop.find('.' + Layer.wrapClass);
       // prettier-ignore
-      $popWrap.attr('style', '-webkit-clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);');
+      $popWrap.attr('style', '-webkit-clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius+$sclTop) + 'px);clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius+$sclTop) + 'px);');
     };
     $position();
     setTimeout(function () {
