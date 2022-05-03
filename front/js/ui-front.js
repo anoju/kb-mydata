@@ -6779,6 +6779,10 @@ const Layer = {
     $popup.removeClass(Layer.showClass).data('focusMove', false).data('popPosition', false);
     $popup.attr('aria-hidden', 'true').removeAttr('tabindex aria-labelledby');
     if ($popup.hasClass('no_motion')) $closeDelay = 10;
+    if ($popup.hasClass('morphing')) {
+      $closeDelay = 1010;
+      $callbackDelay = 1010;
+    }
 
     const $closeAfter = function () {
       $popup.removeAttr('style');
@@ -7322,45 +7326,12 @@ Layer.morphing = {
     const $currentTarget = $(btn);
     if (!$pop.length) return;
     Body.lock();
-    const $popId = $pop.attr('id');
-    const $width = $btn.outerWidth();
-    const $height = $btn.outerHeight();
-    const $offset = $btn.offset();
-    const $top = $offset.top - $(window).scrollTop();
-    const $left = $offset.left - $(window).scrollLeft();
-    const $bg = $btn.css('background-color');
-    const $border = $btn.css('border');
-    const $borderWidth = parseInt($btn.css('border-width'));
-    const $borderRadius = parseInt($btn.css('border-radius'));
-    const $shadow = $btn.css('box-shadow');
-    let $style = '';
-    $style += 'left:' + $left + 'px;';
-    $style += 'top:' + $top + 'px;';
-    $style += 'width:' + $width + 'px;';
-    $style += 'height:' + $height + 'px;';
-    $style += 'border-radius:' + $borderRadius + 'px;';
-    if ($bg !== 'rgba(0, 0, 0, 0)') $style += 'background:' + $bg + ';';
-    if ($borderWidth) $style += 'border:' + $border + ';';
-    if ($shadow !== 'none') $style += 'box-shadow:' + $shadow + ';';
-    const $html = '<div class="morphing-bg" data-pop="#' + $popId + '" style="' + $style + '"></div>';
-    if (!$($pop).prev('.morphing-bg').length) {
-      $($pop).before($html);
-    } else {
-      $($pop).prev('.morphing-bg').removeAttr('style').attr('style', $style);
-    }
-    setTimeout(function () {
-      $btn.addClass('morphing-btn-hidden');
-    }, 300);
-    const $bgEl = '.morphing-bg[data-pop="#' + $popId + '"]';
-    $($bgEl).data('left', $left);
-    $($bgEl).data('top', $top);
-    $($bgEl).data('width', $width);
-    $($bgEl).data('height', $height);
-    $($bgEl).data('border-radius', $borderRadius);
-
-    const $toMin = $width < $height ? $width : $height;
-    const $radius = $toMin / 2;
-    // const $winH = $(window).width() > $(window).height() ? $(window).width() : $(window).height();
+    let $bgEl;
+    let $toMin;
+    let $moveLeft;
+    let $moveTop;
+    let $radius;
+    let $scale;
     const $getScaleValue = function (topValue, leftValue, radiusValue) {
       const windowW = $(window).width();
       const windowH = $(window).height();
@@ -7368,12 +7339,58 @@ Layer.morphing = {
       const maxDistVert = topValue > windowH / 2 ? topValue : windowH - topValue;
       return Math.ceil(Math.sqrt(Math.pow(maxDistHor, 2) + Math.pow(maxDistVert, 2)) / radiusValue);
     };
-    const $scale = $getScaleValue($left, $top, $radius);
-    const $moveLeft = $left + ($width - $toMin) / 2;
-    const $moveTop = $top + ($height - $toMin) / 2;
-    const $popWrap = $pop.find('.' + Layer.wrapClass);
-    // prettier-ignore
-    $popWrap.attr('style', '-webkit-clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);');
+    const $position = function () {
+      const $wrap = $('#wrap').length ? $('#wrap') : $('body');
+      const $popId = $pop.attr('id');
+      const $width = $btn.outerWidth();
+      const $height = $btn.outerHeight();
+      const $offset = $btn.offset();
+      // const $top = $offset.top - $(window).scrollTop();
+      // const $left = $offset.left - $(window).scrollLeft();
+      const $top = $offset.top - $wrap.offset().top;
+      const $left = $offset.left - $wrap.offset().left;
+      const $bg = $btn.css('background-color');
+      const $border = $btn.css('border');
+      const $borderWidth = parseInt($btn.css('border-width'));
+      const $borderRadius = parseInt($btn.css('border-radius'));
+      const $shadow = $btn.css('box-shadow');
+      let $style = '';
+      $style += 'left:' + $left + 'px;';
+      $style += 'top:' + $top + 'px;';
+      $style += 'width:' + $width + 'px;';
+      $style += 'height:' + $height + 'px;';
+      $style += 'border-radius:' + $borderRadius + 'px;';
+      if ($bg !== 'rgba(0, 0, 0, 0)') $style += 'background:' + $bg + ';';
+      if ($borderWidth) $style += 'border:' + $border + ';';
+      if ($shadow !== 'none') $style += 'box-shadow:' + $shadow + ';';
+      const $html = '<div class="morphing-bg" data-pop="#' + $popId + '" style="' + $style + '"></div>';
+      if (!$($pop).prev('.morphing-bg').length) {
+        $($pop).before($html);
+      } else {
+        $($pop).prev('.morphing-bg').removeAttr('style').attr('style', $style);
+      }
+      $bgEl = '.morphing-bg[data-pop="#' + $popId + '"]';
+      $($bgEl).data('left', $left);
+      $($bgEl).data('top', $top);
+      $($bgEl).data('width', $width);
+      $($bgEl).data('height', $height);
+      $($bgEl).data('border-radius', $borderRadius);
+
+      $toMin = $width < $height ? $width : $height;
+      $radius = $toMin / 2;
+      $scale = $getScaleValue($left, $top, $radius);
+      $moveLeft = $left + ($width - $toMin) / 2;
+      $moveTop = $top + ($height - $toMin) / 2;
+
+      const $popWrap = $pop.find('.' + Layer.wrapClass);
+      // prettier-ignore
+      $popWrap.attr('style', '-webkit-clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);clip-path: circle(' + $radius + 'px at ' + ($moveLeft+$radius) + 'px ' + ($moveTop+$radius) + 'px);');
+    };
+    $position();
+    setTimeout(function () {
+      $btn.addClass('morphing-btn-hidden');
+    }, 300);
+
     const tl = anime.timeline({
       // easing: 'easeOutExpo',
       // easing: 'linear',
@@ -7385,16 +7402,12 @@ Layer.morphing = {
       opacity: 1
     }).add({
       targets: $bgEl,
-      left: $moveLeft + 'px',
-      top: $moveTop + 'px',
-      width: $toMin + 'px',
-      height: $toMin + 'px',
-      borderRadius: $radius + 'px',
+      left: $moveLeft,
+      top: $moveTop,
+      width: $toMin,
+      height: $toMin,
+      borderRadius: $radius,
       complete: function () {
-        // setTimeout(function () {
-        //   $btn.removeClass('morphing-btn-hidden');
-        //   $($bgEl).remove();
-        // }, 300);
         Layer.open($pop, function () {
           $($pop).data('returnFocus', $currentTarget);
           if (!!callback) callback();

@@ -298,11 +298,11 @@
       background: none;
       .pop-wrap {
         transform: none !important;
-        transition: opacity 0.3s 0.7s, clip-path 0.5s 0s, visibility 0s 1s;
+        transition: opacity 0.3s 0.7s, -webkit-clip-path 0.5s 0s, clip-path 0.5s 0s, visibility 0s 1s;
       }
       &.show {
         .pop-wrap {
-          transition-delay: 0s, 0.5s, 0s;
+          transition-delay: 0s, 0.5s, 0.5s, 0s;
           clip-path: circle(100% at 50% 50%) !important;
           //     opacity: 1;
         }
@@ -595,7 +595,7 @@
 }
 .morphing-bg {
   opacity: 0;
-  position: fixed;
+  position: absolute;
   background: #fff;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
   z-index: 200;
