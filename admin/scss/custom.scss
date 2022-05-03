@@ -1227,6 +1227,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 }
 .form-box {
   border-bottom: 0.063rem solid $border-color;
+  color: $body-color;
   a:not(.btn) {
     text-decoration: underline;
   }
@@ -1242,11 +1243,12 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     width: 100%;
   }
   .form-box-label {
-    background-color: $gray-200;
+    background-color: $gray-100;
     width: 130px;
     flex-shrink: 0;
     font-size: 0.875rem;
     line-height: 1.2;
+    font-weight: 500;
     padding: 0.3rem 1rem;
     display: flex;
     align-items: center;
@@ -1506,7 +1508,8 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   thead {
     th {
       text-align: center !important;
-      background-color: $gray-200;
+      background-color: $gray-100;
+      font-weight: 500;
     }
   }
   tbody {
