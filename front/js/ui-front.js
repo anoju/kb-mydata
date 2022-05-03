@@ -1201,6 +1201,17 @@ ui.Util = {
     }
     if (CSS && 'paintWorklet' in CSS) CSS.paintWorklet.addModule($url);
   },
+  ripple: function () {
+    let $url = '/js/lib/paint.ripple.js';
+    const $path = ui.Common.getUrlPath();
+    if ($path) {
+      $url = $path + $url;
+    } else {
+      $url = '../..' + $url;
+    }
+    console.log('paint.ripple');
+    if (CSS && 'paintWorklet' in CSS) CSS.paintWorklet.addModule($url);
+  },
   canvasRotateImg: function (target, src, deg) {
     const image = document.createElement('img');
     image.onload = function () {
@@ -1326,6 +1337,7 @@ ui.Util = {
   },
   init: function () {
     ui.Util.paint();
+    ui.Util.ripple();
     ui.Util.iframe();
     ui.Util.lazyImg();
   }
@@ -1402,6 +1414,30 @@ ui.Button = {
     });
     $(document).on('change', 'input', function () {
       checking();
+    });
+  },
+  ripple: function () {
+    console.log('ripple ripple');
+    const btnInEfList = 'a.button, button.button, a.btn-click, button.btn-click, .radio.btn input, .checkbox.btn input, .ui-folding-btn, .ui-folding .folding-head .folding-btn';
+    const $buttonEls = document.querySelectorAll(btnInEfList);
+    $buttonEls.forEach(function (button) {
+      let start = performance.now();
+      let x, y;
+      button.addEventListener('click', function (evt) {
+        button.classList.add('rippling');
+        [x, y] = [evt.clientX, evt.clientY];
+        start = performance.now();
+        requestAnimationFrame(function raf(now) {
+          const count = Math.floor(now - start);
+          button.style.cssText = `--ripple-x: ${x}; --ripple-y: ${y}; --animation-tick: ${count};`;
+          if (count > 1000) {
+            button.classList.remove('rippling');
+            button.style.cssText = `--animation-tick: 0`;
+            return;
+          }
+          requestAnimationFrame(raf);
+        });
+      });
     });
   },
   effect: function () {
@@ -1626,7 +1662,8 @@ ui.Button = {
   init: function () {
     ui.Button.default();
     ui.Button.disabledChk();
-    ui.Button.effect();
+    ui.Button.ripple();
+    // ui.Button.effect();
     ui.Button.star();
     ui.Button.imgBox();
     ui.Button.tap();
