@@ -240,7 +240,34 @@
 
           <div class="title-wrap mt-5">
             <div class="left">
-              <!-- 2022-05-02: 텍스트 수정 -->
+              <h2 class="h3">신고현황(타회원 → 회원)</h2>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">게시물 신고</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#none">14회</a>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">댓글/답글신고</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#none">3회</a>
+                </div>
+              </div>
+              <div class="form-box-item">
+                <div class="form-box-label">계정신고</div>
+                <div class="form-box-cont d-flex align-items-center">
+                  <a href="#none">4회</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 2022-05-02: 추가 -->
+          <div class="title-wrap mt-5">
+            <div class="left">
               <h2 class="h3">신고현황(회원 → 타회원)</h2>
             </div>
           </div>
@@ -266,6 +293,7 @@
               </div>
             </div>
           </div>
+          <!-- //2022-05-02: 추가 -->
 
           <div class="title-wrap mt-5">
             <div class="left">
@@ -339,48 +367,88 @@
               <h2 class="h3">마케팅 동의 여부</h2>
             </div>
           </div>
-          <div class="form-box">
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">전화</div>
-                <div class="form-box-cont d-flex align-items-center">거부(2022.00.00)</div>
-              </div>
-              <div class="form-box-item">
-                <div class="form-box-label">PUSH(거부일)</div>
-                <div class="form-box-cont d-flex align-items-center">거부(2022.00.00)</div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">SMS(거부일)</div>
-                <div class="form-box-cont d-flex align-items-center">거부(2022.00.00)</div>
-              </div>
-            </div>
-          </div>
+          <!-- 2020-05-03: 변경 -->
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">채널명</th>
+                <th scope="col">동의여부</th>
+                <th scope="col">동의(거부)일자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>전화</td>
+                <td>Y</td>
+                <td>YYYY.MM.DD</td>
+              </tr>
+              <tr>
+                <td>SMS</td>
+                <td>N</td>
+                <td>YYYY.MM.DD</td>
+              </tr>
+              <tr>
+                <td>PUSH</td>
+                <td>Y</td>
+                <td>YYYY.MM.DD</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- // 2020-05-03: 변경 -->
 
           <div class="title-wrap mt-5">
             <div class="left">
               <h2 class="h3">서비스 필수 동의</h2>
             </div>
           </div>
-          <div class="form-box">
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">개인정보 수집·이용</div>
-                <div class="form-box-cont d-flex align-items-center">동의</div>
-              </div>
-              <div class="form-box-item">
-                <div class="form-box-label">개인정보 취급위탁</div>
-                <div class="form-box-cont d-flex align-items-center">동의</div>
-              </div>
-            </div>
-            <div class="form-box-row">
-              <div class="form-box-item">
-                <div class="form-box-label">개인정보 제 3자 제공</div>
-                <div class="form-box-cont d-flex align-items-center">동의</div>
-              </div>
-            </div>
-          </div>
+          <!-- 2020-05-03: 변경 -->
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">약관명</th>
+                <th scope="col">동의여부</th>
+                <th scope="col">동의(거부)일자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>서비스 이용약관 동의</td>
+                <td>Y</td>
+                <td>YYYY.MM.DD</td>
+              </tr>
+              <tr>
+                <td>개인정보 제 3자 제공 동의</td>
+                <td>N</td>
+                <td>YYYY.MM.DD</td>
+              </tr>
+              <tr>
+                <td>개인정보 수집 및 이용 동의</td>
+                <td>Y</td>
+                <td>YYYY.MM.DD</td>
+              </tr>
+              <tr>
+                <td>통신사 이용약관</td>
+                <td>Y</td>
+                <td>YYYY.MM.DD</td>
+              </tr>
+              <tr>
+                <td>고유식별정보처리 동의</td>
+                <td>Y</td>
+                <td>YYYY.MM.DD</td>
+              </tr>
+              <tr>
+                <td>개인정보 취급동의</td>
+                <td>Y</td>
+                <td>YYYY.MM.DD</td>
+              </tr>
+              <tr>
+                <td>본인확인서비스 이용약관</td>
+                <td>Y</td>
+                <td>YYYY.MM.DD</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- // 2020-05-03: 변경 -->
 
           <div class="title-wrap mt-5">
             <div class="left">

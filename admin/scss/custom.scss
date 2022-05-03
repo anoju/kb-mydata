@@ -105,7 +105,7 @@ html:not(.mobile) {
   ::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 0.625rem;
-    box-shadow: 0 0 0 0.063em rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 0.063rem rgba(255, 255, 255, 0.3);
   }
   *:hover::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.4);
@@ -626,10 +626,10 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     }
   }
   .kb-lnb-dep2 {
-    // border-top: 0.063em solid #ddd;
+    // border-top: 0.063rem solid $border-color;
     > li {
       + li {
-        border-top: 0.063em solid #ddd;
+        border-top: 0.063rem solid $border-color;
       }
       > .kb-lnb-link {
         position: relative;
@@ -672,7 +672,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     height: 100%;
     z-index: 1010;
     transform: translateX(-110%);
-    box-shadow: 0.063em 0 0.313em rgba(0, 0, 0, 0.3);
+    box-shadow: 0.063rem 0 0.313em rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
     .kb-wrap.sidebar-off & {
       transform: translateX(-110%);
@@ -718,7 +718,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
       > li {
         display: block;
         + li {
-          border-top: 0.063em solid #ddd;
+          border-top: 0.063rem solid $border-color;
         }
         & > .kb-lnb-link {
           cursor: pointer;
@@ -756,7 +756,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
       height: 100%;
       overflow-x: hidden;
       overflow-y: auto;
-      border-left: 0.063em solid #ddd;
+      border-left: 0.063rem solid $border-color;
       border-top-width: 0;
       > li {
         > .kb-lnb-link {
@@ -782,7 +782,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   text-align: center;
   background-color: #fff;
   color: #888;
-  border-top: 0.063em solid #c8c8c8;
+  border-top: 0.063rem solid #c8c8c8;
   transition: margin 0.3s;
   &:not(.full) {
     margin-left: 12.5rem;
@@ -898,7 +898,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   & > div {
     display: flex;
     height: 4.375rem;
-    border-bottom: 0.063em solid #ddd;
+    border-bottom: 0.063rem solid $border-color;
     background: #fff;
     align-items: center;
     justify-content: space-between;
@@ -1118,7 +1118,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   position: relative;
   padding: 1rem;
   margin: 1rem 0;
-  border: 0.063em solid #f8f9fa;
+  border: 0.063rem solid #f8f9fa;
   &:after {
     display: block;
     clear: both;
@@ -1127,14 +1127,14 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 }
 .bd-highlight {
   background-color: rgba(86, 61, 124, 0.15);
-  border: 0.063em solid rgba(86, 61, 124, 0.15);
+  border: 0.063rem solid rgba(86, 61, 124, 0.15);
 }
 .bd-example-row .row > .col,
 .bd-example-row .row > [class^='col-'] {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   background-color: rgba(86, 61, 124, 0.15);
-  border: 0.063em solid rgba(86, 61, 124, 0.2);
+  border: 0.063rem solid rgba(86, 61, 124, 0.2);
 }
 .bd-example-row .row + .row {
   margin-top: 1rem;
@@ -1170,7 +1170,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 .note-editor {
   .panel-heading {
     background-color: #f5f5f5;
-    border-bottom: 0.063em solid #ddd;
+    border-bottom: 0.063rem solid $border-color;
     //.dropdown-toggle:after{content:none;}
     .note-icon-caret:before {
       content: none;
@@ -1226,7 +1226,8 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   }
 }
 .form-box {
-  border-bottom: 0.063em solid #ddd;
+  border-bottom: 0.063rem solid $border-color;
+  color: $body-color;
   a:not(.btn) {
     text-decoration: underline;
   }
@@ -1235,18 +1236,19 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   }
   .form-box-row {
     display: flex;
-    border-top: 0.063em solid #ddd;
+    border-top: 0.063rem solid $border-color;
   }
   .form-box-item {
     display: flex;
     width: 100%;
   }
   .form-box-label {
-    background-color: #f5f5f5;
+    background-color: $gray-100;
     width: 130px;
     flex-shrink: 0;
     font-size: 0.875rem;
     line-height: 1.2;
+    font-weight: 500;
     padding: 0.3rem 1rem;
     display: flex;
     align-items: center;
@@ -1336,7 +1338,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     }
     .form-box-item {
       display: block;
-      border-top: 0.063em solid #ddd;
+      border-top: 0.063rem solid $border-color;
       + .form-box-item {
         margin-top: 1rem;
       }
@@ -1380,7 +1382,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 // img
 .img-preview-box {
   position: relative;
-  border: 0.063em solid #ddd;
+  border: 0.063rem solid $border-color;
   width: 6.25rem;
   height: 6.25rem;
   background: #f5f5f5;
@@ -1445,7 +1447,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
       > td {
         padding: 0.75rem;
         vertical-align: top;
-        border: 0.063em solid #dee2e6;
+        border: 0.063rem solid $border-color;
         p:last-child {
           margin-bottom: 0;
         }
@@ -1506,6 +1508,8 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   thead {
     th {
       text-align: center !important;
+      background-color: $gray-100;
+      font-weight: 500;
     }
   }
   tbody {
@@ -1521,13 +1525,12 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     td {
       text-align: center;
       padding: 2rem 0 !important;
-      color: #bbb;
-      background: #f5f6f5;
+      color: $gray-500;
     }
   }
   &.form-table {
     th {
-      background: #f5f5f5;
+      background: $gray-200;
     }
   }
   th,
@@ -1560,8 +1563,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 .table-nodata {
   text-align: center !important;
   padding: 2rem 0 !important;
-  color: #bbb !important;
-  background: #f5f6f5 !important;
+  color: $gray-500 !important;
 }
 .datepicker td,
 .datepicker th {
@@ -1685,7 +1687,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
       color: #495057;
       pointer-events: none;
       cursor: text;
-      border: 0.063em solid transparent;
+      border: 0.063rem solid transparent;
       border-radius: 0.25rem;
       transition: all 0.1s ease-in-out;
     }
@@ -2039,13 +2041,13 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
         width: 0.01rem;
         height: 100%;
         left: 0;
-        border-left: 0.063em solid #dee2e6;
+        border-left: 0.063rem solid #dee2e6;
       }
     }
     ul {
       padding-top: 1rem;
       margin-top: 1rem;
-      border-top: 0.063em solid #ddd;
+      border-top: 0.063rem solid $border-color;
       padding-left: 1rem;
     }
   }
