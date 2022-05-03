@@ -1209,7 +1209,6 @@ ui.Util = {
     } else {
       $url = '../..' + $url;
     }
-    console.log('paint.ripple');
     if (CSS && 'paintWorklet' in CSS) CSS.paintWorklet.addModule($url);
   },
   canvasRotateImg: function (target, src, deg) {
@@ -1417,19 +1416,23 @@ ui.Button = {
     });
   },
   ripple: function () {
-    console.log('ripple ripple');
     const btnInEfList = 'a.button, button.button, a.btn-click, button.btn-click, .radio.btn input, .checkbox.btn input, .ui-folding-btn, .ui-folding .folding-head .folding-btn';
     const $buttonEls = document.querySelectorAll(btnInEfList);
+    if (!$buttonEls.length) return;
     $buttonEls.forEach(function (button) {
       let start = performance.now();
       let x, y;
       button.addEventListener('click', function (evt) {
         button.classList.add('rippling');
-        [x, y] = [evt.clientX, evt.clientY];
+        x = evt.pageX - getOffset(button).left;
+        y = evt.pageY - getOffset(button).top;
+        // x = evt.clientX - window.pageXOffset;
+        // y = evt.clientY - window.pageYOffset;
         start = performance.now();
         requestAnimationFrame(function raf(now) {
           const count = Math.floor(now - start);
           button.style.cssText = `--ripple-x: ${x}; --ripple-y: ${y}; --animation-tick: ${count};`;
+          if (count < 0) console.log(count);
           if (count > 1000) {
             button.classList.remove('rippling');
             button.style.cssText = `--animation-tick: 0`;

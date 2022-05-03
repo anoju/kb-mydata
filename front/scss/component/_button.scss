@@ -192,7 +192,8 @@
   vertical-align: middle;
 }
 
-.button,
+a.button,
+button.button,
 .ui-folding-btn,
 .ui-folding .folding-head .folding-btn,
 a.btn-click,
@@ -201,7 +202,7 @@ button.btn-click {
 
   --ripple-x: 0;
   --ripple-y: 0;
-  --ripple-color: rgba(255, 255, 255, 0.9);
+  --ripple-color: rgba(255, 255, 255, 0.54);
   --animation-tick: 0;
   &.rippling {
     background-image: paint(ripple);
