@@ -7363,13 +7363,15 @@ Layer.morphing = {
       if ($bg !== 'rgba(0, 0, 0, 0)') $style += 'background:' + $bg + ';';
       if ($borderWidth) $style += 'border:' + $border + ';';
       if ($shadow !== 'none') $style += 'box-shadow:' + $shadow + ';';
-      const $html = '<div class="morphing-bg" data-pop="#' + $popId + '" style="' + $style + '"></div>';
-      if (!$($pop).prev('.morphing-bg').length) {
+
+      $bgEl = '.morphing-bg[data-pop="#' + $popId + '"]';
+      if (!$($bgEl).length) {
+        const $html = '<div class="morphing-bg" data-pop="#' + $popId + '" style="' + $style + '"></div>';
         $($pop).before($html);
       } else {
-        $($pop).prev('.morphing-bg').removeAttr('style').attr('style', $style);
+        $($bgEl).removeAttr('style').attr('style', $style);
       }
-      $bgEl = '.morphing-bg[data-pop="#' + $popId + '"]';
+
       $($bgEl).data('left', $left);
       $($bgEl).data('top', $top);
       $($bgEl).data('width', $width);
