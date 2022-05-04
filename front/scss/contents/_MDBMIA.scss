@@ -821,6 +821,10 @@
     pointer-events: none;
     @include img-fit;
   }
+  &.ty2 {
+    background: #f2f4f6;
+    border: 0.1rem solid #ebebeb;
+  }
 }
 
 .month-no-data-box {
