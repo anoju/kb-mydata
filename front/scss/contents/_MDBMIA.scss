@@ -817,6 +817,10 @@
   justify-content: center;
   border-radius: 50%;
   background: #fafafa;
+  > img {
+    pointer-events: none;
+    @include img-fit;
+  }
 }
 
 .month-no-data-box {
