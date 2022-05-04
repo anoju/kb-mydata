@@ -1421,21 +1421,19 @@ ui.Button = {
     if (!$buttonEls.length) return;
     $buttonEls.forEach(function (button) {
       let start = performance.now();
-      let x, y;
       button.addEventListener('click', function (evt) {
+        evt.preventDefault();
         button.classList.add('rippling');
-        x = evt.pageX - getOffset(button).left;
-        y = evt.pageY - getOffset(button).top;
-        // x = evt.clientX - window.pageXOffset;
-        // y = evt.clientY - window.pageYOffset;
+        const x = evt.offsetX;
+        const y = evt.offsetY;
         start = performance.now();
         requestAnimationFrame(function raf(now) {
           const count = Math.floor(now - start);
-          button.style.cssText = `--ripple-x: ${x}; --ripple-y: ${y}; --animation-tick: ${count};`;
+          button.style.cssText = `--ripple-x: ${x}; --ripple-y: ${y}; --ripple-tick: ${count};`;
           if (count < 0) console.log(count);
           if (count > 1000) {
             button.classList.remove('rippling');
-            button.style.cssText = `--animation-tick: 0`;
+            button.style.cssText = `--ripple-tick: 0`;
             return;
           }
           requestAnimationFrame(raf);

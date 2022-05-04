@@ -202,11 +202,12 @@ button.btn-click {
 
   --ripple-x: 0;
   --ripple-y: 0;
-  --ripple-color: rgba(255, 255, 255, 0.54);
-  --animation-tick: 0;
-  &.rippling {
-    background-image: paint(ripple);
-  }
+  --ripple-speed: 1;
+  --ripple-tick: 0;
+  --ripple-color: rgba(0, 0, 0, 0.2);
+}
+.rippling {
+  background-image: paint(ripple);
 }
 
 .btn-click,
