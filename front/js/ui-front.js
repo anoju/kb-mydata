@@ -1427,37 +1427,11 @@ ui.Button = {
         const $btnIn = $btnEl.find('.btn-click-in').last();
         if (isBalck) $btnIn.addClass('white');
         const $btnMax = Math.max($btnEl.outerWidth(), $btnEl.outerHeight());
-        /*
-        const $btnX = e.pageX - $btnEl.offset().left;
-        const $btnY = e.pageY - $btnEl.offset().top;
-        
-        $btnIn
-          .stop(true, false)
-          .css({
-            left: $btnX,
-            top: $btnY,
-            width: 0,
-            height: 0,
-            opacity: 1
-          })
-          .animate(
-            {
-              left: -$btnMax + $btnX,
-              top: -$btnMax + $btnY,
-              width: $btnMax * 2,
-              height: $btnMax * 2,
-              opacity: 0
-            },
-            $delay,
-            function () {
-              // $btnEl.removeClass('btn-clicking-active');
-              $btnIn.remove();
-            }
-          );
-        */
 
-        const $btnX = e.pageX - $btnEl.offset().left - $btnMax / 2;
-        const $btnY = e.pageY - $btnEl.offset().top - $btnMax / 2;
+        // const $btnX = e.pageX - $btnEl.offset().left - $btnMax / 2;
+        // const $btnY = e.pageY - $btnEl.offset().top - $btnMax / 2;
+        const $btnX = e.offsetX - $btnMax / 2;
+        const $btnY = e.offsetY - $btnMax / 2;
         $btnIn
           .css({
             left: $btnX,
