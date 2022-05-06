@@ -1428,10 +1428,10 @@ ui.Button = {
         if (isBalck) $btnIn.addClass('white');
         const $btnMax = Math.max($btnEl.outerWidth(), $btnEl.outerHeight());
 
-        // const $btnX = e.pageX - $btnEl.offset().left - $btnMax / 2;
-        // const $btnY = e.pageY - $btnEl.offset().top - $btnMax / 2;
-        const $btnX = e.offsetX - $btnMax / 2;
-        const $btnY = e.offsetY - $btnMax / 2;
+        const $btnX = e.pageX - $btnEl.offset().left - $btnMax / 2;
+        const $btnY = e.pageY - $btnEl.offset().top - $btnMax / 2;
+        // const $btnX = e.offsetX - $btnMax / 2;
+        // const $btnY = e.offsetY - $btnMax / 2;
         $btnIn
           .css({
             left: $btnX,
