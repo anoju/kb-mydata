@@ -790,7 +790,7 @@
       }
     }
 
-    &.disabled {
+    &.not {
       .money {
         color: var(--gray-txt-color);
         font-weight: 400;
@@ -801,8 +801,8 @@
       display: block;
       position: absolute;
       bottom: 0;
-      left: 2.4rem;
-      right: 2.4rem;
+      left: var(--base-padding);
+      right: var(--base-padding);
       height: 0.1rem;
       background: rgba(228, 228, 228, 0.3);
     }
