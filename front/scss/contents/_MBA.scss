@@ -362,14 +362,17 @@
       position: relative;
       margin-top: 4.8rem;
       .img {
+        border-radius: 0;
+        background: none;
         position: relative;
         width: 12rem;
         // height: 12rem;
         margin: 0 auto 0.8rem;
-        // img {
-        //   width: 100%;
-        //   height: 100%;
-        // }
+        img {
+          border-radius: 0;
+          //   width: 100%;
+          //   height: 100%;
+        }
       }
       .text {
         font-size: 1.8rem;
@@ -399,12 +402,15 @@
     border-top: 0.1rem dashed rgba(255, 255, 255, 0.5);
     .img {
       flex-shrink: 0;
+      border-radius: 0;
+      background: none;
       width: 6rem;
       // height: 6rem;
       img {
         // width: 100%;
         // height: 100%;
         filter: grayscale(100);
+        border-radius: 0;
       }
 
       &.influencer {
@@ -3151,8 +3157,10 @@
       display: block;
       width: 8.8rem;
       .img-box {
+        overflow: hidden;
         width: 6.4rem;
         margin: 0 auto;
+        border-radius: 50%;
       }
       .text {
         margin-top: 0.8rem;
@@ -3334,12 +3342,11 @@
 .match-tutorial-wrap {
   .box1 {
     position: relative;
-    background: #fff5e7;
     .section {
       padding: 2.9rem 1.6rem;
       .tit {
         font-size: 1.6rem;
-        color: #473db9;
+        color: #00caca;
         font-weight: 900;
       }
       .text {
@@ -3358,17 +3365,18 @@
       content: '';
       display: block;
       position: absolute;
-      bottom: -1.9rem;
+      bottom: -2.3rem;
       right: 1.4rem;
-      width: 14.3rem;
-      height: 20.5rem;
+      z-index: 1;
+      width: 16rem;
+      height: 22.3rem;
       background: url('../images/match/img-match-tutorilal1.png') no-repeat center center / 100%;
     }
   }
   .box2 {
     position: relative;
     padding-top: 5.9rem;
-    background: #473db9;
+    background: #5846ff;
     .match-box {
       display: flex;
       align-items: center;
@@ -3377,7 +3385,7 @@
         text-align: center;
         .tit {
           font-size: 1.8rem;
-          color: #8b89ff;
+          color: #bcb5ff;
           font-weight: bold;
         }
         .number {
@@ -3388,7 +3396,6 @@
             margin-left: 0.2rem;
             font-size: 2.4rem;
             font-weight: bold;
-            color: rgba(255, 255, 255, 0.35);
           }
         }
         .img {
