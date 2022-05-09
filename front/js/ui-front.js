@@ -1427,37 +1427,11 @@ ui.Button = {
         const $btnIn = $btnEl.find('.btn-click-in').last();
         if (isBalck) $btnIn.addClass('white');
         const $btnMax = Math.max($btnEl.outerWidth(), $btnEl.outerHeight());
-        /*
-        const $btnX = e.pageX - $btnEl.offset().left;
-        const $btnY = e.pageY - $btnEl.offset().top;
-        
-        $btnIn
-          .stop(true, false)
-          .css({
-            left: $btnX,
-            top: $btnY,
-            width: 0,
-            height: 0,
-            opacity: 1
-          })
-          .animate(
-            {
-              left: -$btnMax + $btnX,
-              top: -$btnMax + $btnY,
-              width: $btnMax * 2,
-              height: $btnMax * 2,
-              opacity: 0
-            },
-            $delay,
-            function () {
-              // $btnEl.removeClass('btn-clicking-active');
-              $btnIn.remove();
-            }
-          );
-        */
 
         const $btnX = e.pageX - $btnEl.offset().left - $btnMax / 2;
         const $btnY = e.pageY - $btnEl.offset().top - $btnMax / 2;
+        // const $btnX = e.offsetX - $btnMax / 2;
+        // const $btnY = e.offsetY - $btnMax / 2;
         $btnIn
           .css({
             left: $btnX,
@@ -5838,21 +5812,25 @@ const Layer = {
     }, 10);
 
     let imgSwiper;
-    Layer.open($popup, function () {
-      // const $popSwiper = $popup.find('.img-box-swiper');
-      // ui.Swiper.base($popSwiper);
-      const $popSwiper = $popup.find('.img-box-swiper .swiper');
-      const $popSwiperPagination = $popup.find('.img-box-swiper .swiper-pagination');
-      imgSwiper = new Swiper($popSwiper[0], {
-        pagination: {
-          el: $popSwiperPagination[0],
-          clickable: true
-        },
-        initialSlide: $idx,
-        zoom: true
-      });
-      $popup.find('.img-box-swiper').data('swiper', imgSwiper);
-    });
+    Layer.open(
+      $popup,
+      function () {
+        // const $popSwiper = $popup.find('.img-box-swiper');
+        // ui.Swiper.base($popSwiper);
+        const $popSwiper = $popup.find('.img-box-swiper .swiper');
+        const $popSwiperPagination = $popup.find('.img-box-swiper .swiper-pagination');
+        imgSwiper = new Swiper($popSwiper[0], {
+          pagination: {
+            el: $popSwiperPagination[0],
+            clickable: true
+          },
+          initialSlide: $idx,
+          zoom: true
+        });
+        $popup.find('.img-box-swiper').data('swiper', imgSwiper);
+      },
+      100
+    );
     $popup.find('.pop-close').click(function (e) {
       e.preventDefault();
       Layer.close('#' + imgPopId, function () {
@@ -6501,7 +6479,7 @@ const Layer = {
   openEl: '',
   openPop: [],
   opening: 0,
-  open: function (tar, callback) {
+  open: function (tar, callback, callbackTime) {
     const $popup = $(tar);
     const $popWrap = $popup.find('.' + Layer.wrapClass);
     if ($popup.length && $popWrap.length) {
@@ -6559,7 +6537,7 @@ const Layer = {
       */
 
       const $openDelay = 20 * Layer.opening;
-      const $callbackDelay = 450;
+      const $callbackDelay = !!callbackTime ? callbackTime : 450;
       const $showDelay = 510;
 
       // pop-scl-wrap
@@ -6709,7 +6687,7 @@ const Layer = {
       }
     }
   },
-  close: function (tar, callback) {
+  close: function (tar, callback, callbackTime) {
     const $popup = $(tar);
     if (!$popup.hasClass(Layer.showClass)) return console.log(tar, '해당팝업 안열려있음');
     if ($popup.hasClass('morphing') && !$popup.hasClass('morphing-close')) {
@@ -6718,7 +6696,7 @@ const Layer = {
     }
     const $id = $popup.attr('id');
     let $closeDelay = 510;
-    let $callbackDelay = 510;
+    let $callbackDelay = !!callbackTime ? callbackTime : 510;
     let $lastPop = '';
     const $visible = $('.' + Layer.popClass + '.' + Layer.showClass).length;
 
@@ -7316,11 +7294,13 @@ const Layer = {
 };
 
 Layer.morphing = {
+  is: false,
   open: function (btn, target, callback) {
     const $btn = $(btn);
     const $pop = $(target);
     const $currentTarget = $(btn);
-    if (!$pop.length) return;
+    if (!$pop.length || Layer.morphing.is) return;
+    Layer.morphing.is = true;
     Body.lock();
     let $bgEl;
     let $toMin;
@@ -7456,6 +7436,7 @@ Layer.morphing = {
           opacity: 0,
           complete: function () {
             $($bgEl).remove();
+            Layer.morphing.is = false;
           }
         });
     };

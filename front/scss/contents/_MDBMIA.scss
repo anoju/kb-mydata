@@ -772,6 +772,9 @@
     display: flex;
     align-items: center;
     padding: 2.2rem var(--base-padding);
+    &:where(button) {
+      width: 100%;
+    }
     .tit {
       margin-left: 1.2rem;
       font-size: 1.4rem;
@@ -790,7 +793,8 @@
       }
     }
 
-    &.disabled {
+    &.disabled,
+    &:disabled {
       .money {
         color: var(--gray-txt-color);
         font-weight: 400;
@@ -801,8 +805,8 @@
       display: block;
       position: absolute;
       bottom: 0;
-      left: 2.4rem;
-      right: 2.4rem;
+      left: var(--base-padding);
+      right: var(--base-padding);
       height: 0.1rem;
       background: rgba(228, 228, 228, 0.3);
     }
@@ -817,6 +821,14 @@
   justify-content: center;
   border-radius: 50%;
   background: #fafafa;
+  > img {
+    pointer-events: none;
+    @include img-fit;
+  }
+  &.ty2 {
+    background: #f2f4f6;
+    border: 0.1rem solid #ebebeb;
+  }
 }
 
 .month-no-data-box {
