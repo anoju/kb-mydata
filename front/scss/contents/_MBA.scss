@@ -462,7 +462,7 @@
       span {
         &:before,
         &:after {
-          content: '~!@#$%^&*()~!@#$%^&*()';
+          content: '이럴수가이럴수가이럴수가이럴수가이럴수가이럴수가';
           color: #e8d52a;
         }
       }
@@ -525,7 +525,7 @@
       span {
         &:before,
         &:after {
-          content: '헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐헐';
+          content: '운명의데스티니운명의데스티니운명의데스티니';
           color: #818892;
         }
       }
@@ -743,10 +743,11 @@
   }
 
   .comment {
-    font-size: 2.7rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #25cb9f;
     line-height: 1.22;
+    letter-spacing: -0.04rem;
   }
 
   .sub-text {
