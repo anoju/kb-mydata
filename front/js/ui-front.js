@@ -5812,21 +5812,25 @@ const Layer = {
     }, 10);
 
     let imgSwiper;
-    Layer.open($popup, function () {
-      // const $popSwiper = $popup.find('.img-box-swiper');
-      // ui.Swiper.base($popSwiper);
-      const $popSwiper = $popup.find('.img-box-swiper .swiper');
-      const $popSwiperPagination = $popup.find('.img-box-swiper .swiper-pagination');
-      imgSwiper = new Swiper($popSwiper[0], {
-        pagination: {
-          el: $popSwiperPagination[0],
-          clickable: true
-        },
-        initialSlide: $idx,
-        zoom: true
-      });
-      $popup.find('.img-box-swiper').data('swiper', imgSwiper);
-    });
+    Layer.open(
+      $popup,
+      function () {
+        // const $popSwiper = $popup.find('.img-box-swiper');
+        // ui.Swiper.base($popSwiper);
+        const $popSwiper = $popup.find('.img-box-swiper .swiper');
+        const $popSwiperPagination = $popup.find('.img-box-swiper .swiper-pagination');
+        imgSwiper = new Swiper($popSwiper[0], {
+          pagination: {
+            el: $popSwiperPagination[0],
+            clickable: true
+          },
+          initialSlide: $idx,
+          zoom: true
+        });
+        $popup.find('.img-box-swiper').data('swiper', imgSwiper);
+      },
+      100
+    );
     $popup.find('.pop-close').click(function (e) {
       e.preventDefault();
       Layer.close('#' + imgPopId, function () {
@@ -6475,7 +6479,7 @@ const Layer = {
   openEl: '',
   openPop: [],
   opening: 0,
-  open: function (tar, callback) {
+  open: function (tar, callback, callbackTime) {
     const $popup = $(tar);
     const $popWrap = $popup.find('.' + Layer.wrapClass);
     if ($popup.length && $popWrap.length) {
@@ -6533,7 +6537,7 @@ const Layer = {
       */
 
       const $openDelay = 20 * Layer.opening;
-      const $callbackDelay = 450;
+      const $callbackDelay = !!callbackTime ? callbackTime : 450;
       const $showDelay = 510;
 
       // pop-scl-wrap
@@ -6683,7 +6687,7 @@ const Layer = {
       }
     }
   },
-  close: function (tar, callback) {
+  close: function (tar, callback, callbackTime) {
     const $popup = $(tar);
     if (!$popup.hasClass(Layer.showClass)) return console.log(tar, '해당팝업 안열려있음');
     if ($popup.hasClass('morphing') && !$popup.hasClass('morphing-close')) {
@@ -6692,7 +6696,7 @@ const Layer = {
     }
     const $id = $popup.attr('id');
     let $closeDelay = 510;
-    let $callbackDelay = 510;
+    let $callbackDelay = !!callbackTime ? callbackTime : 510;
     let $lastPop = '';
     const $visible = $('.' + Layer.popClass + '.' + Layer.showClass).length;
 
