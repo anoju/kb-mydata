@@ -2721,6 +2721,7 @@ ui.Form = {
       });
     }
   },
+  /*
   select2: function () {
     const $select = $('.select.inline');
     if ($select.length) {
@@ -2759,6 +2760,7 @@ ui.Form = {
       });
     }
   },
+  */
   selectUI: function () {
     $(document).on('change', 'select', function () {
       const $val = $(this).val();
@@ -3880,7 +3882,7 @@ ui.Form = {
     const $characterHidden = document.querySelector('.character-hidden');
     const _rotate3d = function (x, y, z, rad) {
       const face = $character.querySelectorAll('.ears, .eyes, .mouse');
-      const value = `rotate3d(${x}, ${y}, ${z}, ${rad}rad)`;
+      const value = 'rotate3d(' + x + ', ' + y + ', ' + z + ', ' + rad + 'rad)';
       face.forEach(function (el) {
         el.style.transform = value;
       });
@@ -6482,199 +6484,8 @@ const Layer = {
   open: function (tar, callback, callbackTime) {
     const $popup = $(tar);
     const $popWrap = $popup.find('.' + Layer.wrapClass);
-    if ($popup.length && $popWrap.length) {
-      Layer.opening++;
-      const $idx = $popup.index('.' + Layer.popClass);
-      const $show = $('.' + Layer.popClass + '.' + Layer.showClass).not('.' + Layer.alertClass).length;
-      const $alertShow = $('.' + Layer.popClass + '.' + Layer.showClass + '.' + Layer.alertClass).length;
-      let $id = $popup.attr('id');
-      let $lastPop = '';
-
-      if (Layer.openPop.length) $lastPop = Layer.openPop[Layer.openPop.length - 1];
-      if ($popup.hasClass(Layer.alertClass && !$alertShow)) {
-        $popup.css('z-index', '+=' + $alertShow);
-      } else if ($show) {
-        $popup.css('z-index', '+=' + $show);
-      }
-      if ($id == undefined) {
-        $id = Layer.id + $idx;
-        $popup.attr('id', $id);
-      }
-      if (!$popup.hasClass(Layer.alertClass)) {
-        if (Layer.openPop.length) {
-          let $last;
-          $.each(Layer.openPop, function () {
-            const $this = '' + this;
-            if (!$($this).hasClass(Layer.alertClass)) $last = $this;
-          });
-          $($last).removeClass(Layer.lastPopClass);
-        }
-        $popup.addClass(Layer.lastPopClass);
-      }
-      if (Layer.openPop.indexOf('#' + $id) < 0) Layer.openPop.push('#' + $id);
-
-      // bg close
-      //  && !$popup.hasClass('full')
-      if (!$popup.hasClass(Layer.alertClass) && !$popup.hasClass(Layer.bgNoCloseClass)) {
-        const $bgClick = '<div class="pop-bg-close ui-pop-close" role="button" aria-label="팝업창 닫기"></div>';
-        if (!$popup.find('.pop-bg-close').length) $popup.prepend($bgClick);
-      }
-
-      // bottom foot close
-      /*
-      if ($popup.hasClass('bottom') && $popup.find('.' + Layer.headClass + ' .pop-close').length) {
-        let $footCloseBtnHtml = '';
-        if (!$popup.find('.' + Layer.footClass).length) {
-          $footCloseBtnHtml += '<div class="pop-foot ' + Layer.closeRemoveClass + '"><div>';
-          $footCloseBtnHtml += '<div class="pop-foot-close"><button type="button" class="button ui-pop-close">닫기</button></div>';
-          $footCloseBtnHtml += '</div></div>';
-          $popWrap.append($footCloseBtnHtml);
-        } else {
-          $footCloseBtnHtml += '<div class="pop-foot-close ' + Layer.closeRemoveClass + '"><button type="button" class="button ui-pop-close">닫기</button></div>';
-          $popup.find('.' + Layer.footClass + ' > div').append($footCloseBtnHtml);
-        }
-      }
-      */
-
-      const $openDelay = 20 * Layer.opening;
-      const $callbackDelay = !!callbackTime ? callbackTime : 450;
-      const $showDelay = 510;
-
-      // pop-scl-wrap
-      if (ui.PC.any() && ($popup.hasClass('modal') || $popup.hasClass('bottom')) && !$popup.find('.' + Layer.sclWrapClass).length) {
-        $popWrap.wrap('<div class="' + Layer.sclWrapClass + '"></div>');
-        if ($popWrap.hasClass('pop-body-scroll')) $popWrap.parent().addClass('pop-body-scroll');
-      }
-
-      //scl-title-hide
-      if ($popup.find('.' + Layer.scrollShowTitleClass).length) $popup.find('.' + Layer.headClass + ' h1').addClass('scl-title-hide');
-
-      $popup.attr('aria-hidden', false);
-
-      $popup.css('display', 'flex');
-
-      const $FocusEvt = function () {
-        //리턴 포커스
-        let $focusEl = '';
-        try {
-          if (event.currentTarget != document) {
-            $focusEl = $(event.currentTarget);
-          } else {
-            $focusEl = $(document.activeElement);
-          }
-        } catch (error) {
-          $focusEl = $(document.activeElement);
-        }
-
-        if (Layer.openEl != '' && !$focusEl.is($focusableEl)) $focusEl = $(Layer.openEl);
-        if ($($lastPop).data('returnFocus') == $focusEl) $focusEl = $(Layer.openEl);
-        if ($($focusEl).is($focusableEl)) {
-          $popup.data('returnFocus', $focusEl);
-          $focusEl.addClass(Layer.focusedClass);
-          if ($focusEl.hasClass('btn-select')) $focusEl.closest('.select').addClass('focused');
-        }
-        //팝업 in 포커스
-        if (!ui.Mobile.any()) {
-          //PC
-          if ($popup.hasClass(Layer.alertClass)) {
-            $popup.find('.pop-foot .button').last().focus();
-          } else {
-            $popup.attr({ tabindex: 0 }).focus();
-          }
-        } else {
-          let $first = '';
-          let $focusInEl = $popup.find('.' + Layer.focusInClass);
-          let $thisTxt = '';
-          let $childrenTxt = '';
-          //모바일
-          if ($popup.find('.' + Layer.headClass + ' h1').length) {
-            $popup.attr({ tabindex: 0 }).focus();
-          } else if ($popup.find('.' + Layer.headClass + ' .pop-close').length) {
-            $popup.find('.' + Layer.headClass + ' .pop-close').focus();
-          } else {
-            if (!$focusInEl.length) {
-              $focusInEl = $popup.find('.' + Layer.bodyClass);
-              $first = $focusInEl.children().not('br').first();
-              if ($first.text() == '' || $first.attr('aria-hidden') == 'true') $first = $first.next();
-              $thisTxt = $.trim($focusInEl.text());
-              $childrenTxt = $.trim($first.text());
-              while ($focusInEl.children().not('br').length && $thisTxt.indexOf($childrenTxt) == 0) {
-                $focusInEl = $first;
-                $first = $first.children().not('br').first();
-                if ($first.text() == '' || $first.attr('aria-hidden') == 'true') $first = $first.next();
-                $thisTxt = $.trim($focusInEl.text());
-                $childrenTxt = $.trim($first.text());
-              }
-              $focusInEl.addClass(Layer.focusInClass);
-            }
-            if (!$focusInEl.is($focusableEl)) $focusInEl.attr('tabindex', -1);
-            $focusInEl.focus();
-          }
-        }
-      };
-
-      setTimeout(function () {
-        $(Layer.etcCont).attr('aria-hidden', true);
-
-        //열려있는 팝업
-        if (Layer.openPop.length && $lastPop) $($lastPop).attr('aria-hidden', true);
-
-        //웹접근성
-        const $tit = $popup.find('.' + Layer.headClass + ' h1');
-        if ($tit.length) {
-          if ($tit.attr('id') == undefined) {
-            $tit.attr('id', $id + 'Label');
-            $popup.attr('aria-labelledby', $id + 'Label');
-          } else {
-            $popup.attr('aria-labelledby', $tit.attr('id'));
-          }
-        }
-
-        //popup(bottom:select)의 여러개의 tab-panel 높이 동일하게(안그럼 탭클릭시 왔다리 갔다리함)
-        if ($popup.hasClass('bottom') && $popup.find('.tab-panel').length > 1) {
-          // $popup.sameHeight('.tab-panel');
-        }
-
-        //팝업안 고정탭
-
-        //팝업안 swiper
-        if ($popup.find('.ui-swiper').length) ui.Swiper.update($popup.find('.ui-swiper'));
-
-        //열기
-        Body.lock();
-        $popup.addClass(Layer.showClass);
-        setTimeout(function () {
-          $popup.addClass(Layer.showClass + '-end');
-        }, $showDelay);
-        const $popSclWrap = $popWrap.hasClass('pop-body-scroll') ? $popup.find('.' + Layer.bodyClass) : $popWrap;
-        $popSclWrap.scrollTop(0);
-
-        //swipe 기능
-        if ($popup.hasClass('is-swipe') && !$popup.hasClass('is-swipe__init')) {
-          $popup.addClass('is-swipe__init');
-          Layer.bottomTouch(tar);
-        }
-
-        //iframe
-        if ($('iframe.load-height').length) ui.Util.iframe();
-
-        if (!ui.Mobile.any()) Layer.focusMove(tar);
-        Layer.position(tar);
-
-        setTimeout(function () {
-          Layer.resize();
-          ui.Tab.resize();
-        }, 10);
-
-        setTimeout(function () {
-          $FocusEvt();
-          if (!!callback) callback();
-          $popup.trigger('Layer.show');
-        }, $callbackDelay);
-        Layer.opening--;
-      }, $openDelay);
-    } else {
-      //팝업 없을때
+    //만약 팝업 없을때
+    if (!$popup.length || !$popWrap.length) {
       if (!Layer.reOpen) {
         Layer.reOpen = true;
         console.log(tar, '팝업없음, 0.5초 후 open 재시도');
@@ -6685,7 +6496,189 @@ const Layer = {
         Layer.reOpen = false;
         console.log(tar, '재시도해도 팝업없음');
       }
+      return;
     }
+
+    Layer.opening++;
+    const $idx = $popup.index('.' + Layer.popClass);
+    const $show = $('.' + Layer.popClass + '.' + Layer.showClass).not('.' + Layer.alertClass).length;
+    const $alertShow = $('.' + Layer.popClass + '.' + Layer.showClass + '.' + Layer.alertClass).length;
+    let $id = $popup.attr('id');
+    let $lastPop = '';
+
+    //z-index
+    if ($popup.hasClass(Layer.alertClass && !$alertShow)) {
+      $popup.css('z-index', '+=' + $alertShow);
+    } else if ($show) {
+      $popup.css('z-index', '+=' + $show);
+    }
+
+    //id없을때
+    if ($id == undefined) {
+      $id = Layer.id + $idx;
+      $popup.attr('id', $id);
+    }
+
+    //last 체크
+    if (Layer.openPop.length) $lastPop = Layer.openPop[Layer.openPop.length - 1];
+    if (!$popup.hasClass(Layer.alertClass)) {
+      if (Layer.openPop.length) {
+        let $last;
+        $.each(Layer.openPop, function () {
+          const $this = '' + this;
+          if (!$($this).hasClass(Layer.alertClass)) $last = $this;
+        });
+        $($last).removeClass(Layer.lastPopClass);
+      }
+      $popup.addClass(Layer.lastPopClass);
+    }
+    if (Layer.openPop.indexOf('#' + $id) < 0) Layer.openPop.push('#' + $id);
+
+    // bg close
+    //  && !$popup.hasClass('full')
+    if (!$popup.hasClass(Layer.alertClass) && !$popup.hasClass(Layer.bgNoCloseClass)) {
+      const $bgClick = '<div class="pop-bg-close ui-pop-close" role="button" aria-label="팝업창 닫기"></div>';
+      if (!$popup.find('.pop-bg-close').length) $popup.prepend($bgClick);
+    }
+
+    // delay time
+    const $openDelay = 20 * Layer.opening;
+    const $showDelay = 510;
+    const $callbackDelay = !!callbackTime ? callbackTime : $showDelay - 60;
+
+    //pop-scl-wrap: PC용
+    if (ui.PC.any() && ($popup.hasClass('modal') || $popup.hasClass('bottom')) && !$popup.find('.' + Layer.sclWrapClass).length) {
+      $popWrap.wrap('<div class="' + Layer.sclWrapClass + '"></div>');
+      if ($popWrap.hasClass('pop-body-scroll')) $popWrap.parent().addClass('pop-body-scroll');
+    }
+
+    //scl-title-hide
+    if ($popup.find('.' + Layer.scrollShowTitleClass).length) $popup.find('.' + Layer.headClass + ' h1').addClass('scl-title-hide');
+
+    //show
+    $popup.attr('aria-hidden', false);
+    $popup.css('display', 'flex');
+
+    const $FocusEvt = function () {
+      //리턴 포커스
+      let $focusEl = '';
+      try {
+        if (event.currentTarget != document) {
+          $focusEl = $(event.currentTarget);
+        } else {
+          $focusEl = $(document.activeElement);
+        }
+      } catch (error) {
+        $focusEl = $(document.activeElement);
+      }
+
+      if (Layer.openEl != '' && !$focusEl.is($focusableEl)) $focusEl = $(Layer.openEl);
+      if ($($lastPop).data('returnFocus') == $focusEl) $focusEl = $(Layer.openEl);
+      if ($($focusEl).is($focusableEl)) {
+        $popup.data('returnFocus', $focusEl);
+        $focusEl.addClass(Layer.focusedClass);
+        if ($focusEl.hasClass('btn-select')) $focusEl.closest('.select').addClass('focused');
+      }
+      //팝업 in 포커스
+      if (!ui.Mobile.any()) {
+        //PC
+        if ($popup.hasClass(Layer.alertClass)) {
+          $popup.find('.pop-foot .button').last().focus();
+        } else {
+          $popup.attr({ tabindex: 0 }).focus();
+        }
+      } else {
+        let $first = '';
+        let $focusInEl = $popup.find('.' + Layer.focusInClass);
+        let $thisTxt = '';
+        let $childrenTxt = '';
+        //모바일
+        if ($popup.find('.' + Layer.headClass + ' h1').length) {
+          $popup.attr({ tabindex: 0 }).focus();
+        } else if ($popup.find('.' + Layer.headClass + ' .pop-close').length) {
+          $popup.find('.' + Layer.headClass + ' .pop-close').focus();
+        } else {
+          if (!$focusInEl.length) {
+            $focusInEl = $popup.find('.' + Layer.bodyClass);
+            $first = $focusInEl.children().not('br').first();
+            if ($first.text() == '' || $first.attr('aria-hidden') == 'true') $first = $first.next();
+            $thisTxt = $.trim($focusInEl.text());
+            $childrenTxt = $.trim($first.text());
+            while ($focusInEl.children().not('br').length && $thisTxt.indexOf($childrenTxt) == 0) {
+              $focusInEl = $first;
+              $first = $first.children().not('br').first();
+              if ($first.text() == '' || $first.attr('aria-hidden') == 'true') $first = $first.next();
+              $thisTxt = $.trim($focusInEl.text());
+              $childrenTxt = $.trim($first.text());
+            }
+            $focusInEl.addClass(Layer.focusInClass);
+          }
+          if (!$focusInEl.is($focusableEl)) $focusInEl.attr('tabindex', -1);
+          $focusInEl.focus();
+        }
+      }
+    };
+
+    setTimeout(function () {
+      //웹접근성
+      $(Layer.etcCont).attr('aria-hidden', true);
+      if (Layer.openPop.length && $lastPop) $($lastPop).attr('aria-hidden', true);
+      const $tit = $popup.find('.' + Layer.headClass + ' h1');
+      if ($tit.length) {
+        if ($tit.attr('id') == undefined) {
+          $tit.attr('id', $id + 'Label');
+          $popup.attr('aria-labelledby', $id + 'Label');
+        } else {
+          $popup.attr('aria-labelledby', $tit.attr('id'));
+        }
+      }
+
+      //popup(bottom:select)의 여러개의 tab-panel 높이 동일하게(안그럼 탭클릭 시 왔다리 갔다리함)
+      // if ($popup.hasClass('bottom') && $popup.find('.tab-panel').length > 1) {
+      //   $popup.sameHeight('.tab-panel');
+      // }
+
+      //팝업안 swiper
+      if ($popup.find('.ui-swiper').length) ui.Swiper.update($popup.find('.ui-swiper'));
+
+      //열기
+      Body.lock();
+      $popup.addClass(Layer.showClass);
+      setTimeout(function () {
+        $popup.addClass(Layer.showClass + '-end');
+      }, $showDelay);
+      const $popSclWrap = $popWrap.hasClass('pop-body-scroll') ? $popup.find('.' + Layer.bodyClass) : $popWrap;
+      $popSclWrap.scrollTop(0);
+
+      //height swipe 기능
+      if ($popup.hasClass('is-swipe') && !$popup.hasClass('is-swipe__init')) {
+        $popup.addClass('is-swipe__init');
+        Layer.bottomTouch(tar);
+      }
+
+      //iframe
+      if ($('iframe.load-height').length) ui.Util.iframe();
+
+      //focus
+      if (!ui.Mobile.any()) Layer.focusMove(tar);
+
+      //position
+      Layer.position(tar);
+
+      //resize
+      setTimeout(function () {
+        Layer.resize();
+        ui.Tab.resize();
+      }, 10);
+
+      //callback
+      setTimeout(function () {
+        $FocusEvt();
+        if (!!callback) callback();
+        $popup.trigger('Layer.show');
+      }, $callbackDelay);
+      Layer.opening--;
+    }, $openDelay);
   },
   close: function (tar, callback, callbackTime) {
     const $popup = $(tar);
@@ -7142,7 +7135,12 @@ const Layer = {
       e.preventDefault();
       const $pop = $(this).attr('href');
       const $currentTarget = $(e.currentTarget);
-      if ($pop.length) {
+      if (!$pop.length) return;
+      if ($($pop).hasClass('morphing')) {
+        Layer.morphing.open(this, $pop, function () {
+          $($pop).data('returnFocus', $currentTarget);
+        });
+      } else {
         Layer.open($pop, function () {
           $($pop).data('returnFocus', $currentTarget);
         });
@@ -7282,13 +7280,6 @@ const Layer = {
       const $pdfTit = $(this).data('agree-pdf-title');
       if ($pdfTit) $title = $pdfTit;
       Layer.pdf($url, $title);
-    });
-
-    // 모핑
-    $(document).on('click', '.ui-pop-morphing-open', function (e) {
-      e.preventDefault();
-      const $pop = $(this).attr('href');
-      Layer.morphing.open(this, $pop);
     });
   }
 };
