@@ -7290,11 +7290,13 @@ const Layer = {
 };
 
 Layer.morphing = {
+  is: false,
   open: function (btn, target, callback) {
     const $btn = $(btn);
     const $pop = $(target);
     const $currentTarget = $(btn);
-    if (!$pop.length) return;
+    if (!$pop.length || Layer.morphing.is) return;
+    Layer.morphing.is = true;
     Body.lock();
     let $bgEl;
     let $toMin;
@@ -7430,6 +7432,7 @@ Layer.morphing = {
           opacity: 0,
           complete: function () {
             $($bgEl).remove();
+            Layer.morphing.is = false;
           }
         });
     };
