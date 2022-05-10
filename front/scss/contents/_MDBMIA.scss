@@ -796,8 +796,11 @@
     &.disabled,
     &:disabled {
       .money {
-        color: var(--gray-txt-color);
+        color: #c2c2c2;
         font-weight: 400;
+      }
+      .i-ico-arr-right-24 {
+        opacity: 0.4;
       }
     }
     &:after {
