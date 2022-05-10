@@ -903,7 +903,7 @@ ui.Common = {
     ui.Common.fixed('.tab-fixed');
   }
 };
-
+/*
 ui.Gnb = {
   outCont: '#header,#container,,#footer',
   open: function () {
@@ -1104,7 +1104,7 @@ ui.Gnb = {
     }
   }
 };
-
+*/
 ui.Util = {
   console: function (txt, delay) {
     if (delay == undefined) delay = 3000;
@@ -1406,6 +1406,7 @@ ui.Button = {
   },
   effect: function () {
     //버튼 클릭 효과
+    //prettier-ignore
     const btnInEfList = 'a.button, button.button, a.btn-click, button.btn-click, .radio.btn input, .checkbox.btn input, .ui-folding-btn, .ui-folding .folding-head .folding-btn';
     $(document).on('click', btnInEfList, function (e) {
       const $this = $(this);
@@ -2698,14 +2699,12 @@ ui.Form = {
             const $btnHtml = '<a href="#' + $selId + '" class="btn-select ui-select-open" title="' + $btnTitle + '" role="button"><span class="btn-select-val"></span></a>';
 
             $sel.hide().after($btnHtml);
+
             const $forLbl = $('label[for="' + $selId + '"]');
-            if ($forLbl.length) {
-              $forLbl.addClass('ui-select-lbl').attr('title', $btnTitle);
-            }
+            if ($forLbl.length) $forLbl.addClass('ui-select-lbl').attr('title', $btnTitle);
 
             $sel.change(function () {
               const $val = $(this).val();
-              ('');
               let $selectTxt = $(this).find(':selected').text();
               if ($selectTxt == '') $selectTxt = '선택';
               $(this).siblings('.btn-select').find('.btn-select-val').html($selectTxt);
@@ -2715,8 +2714,8 @@ ui.Form = {
                 $(this).siblings('.btn-select').removeClass('off');
               }
             });
-            $sel.change();
           }
+          $sel.change();
         });
       });
     }
@@ -5897,8 +5896,8 @@ const Layer = {
     }
 
     const agreePopId = 'uiPopAgreeAll' + Layer.agreeAllIdx;
-    let $html =
-      '<div id="' + agreePopId + '" class="' + Layer.popClass + ' full ' + Layer.agreePopClass + ' ' + Layer.agreePopSwiperClass + ' ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
+    //prettier-ignore
+    let $html = '<div id="' + agreePopId + '" class="' + Layer.popClass + ' full ' + Layer.agreePopClass + ' ' + Layer.agreePopSwiperClass + ' ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
     $html += '<article class="' + Layer.wrapClass + '">';
     $html += '<div class="' + Layer.headClass + '">';
     $html += '  <div class="' + Layer.agreeTitClassName + '">';
@@ -6053,19 +6052,8 @@ const Layer = {
       }
       return $txt;
     };
-
-    $popHtml +=
-      '<div id="' +
-      $popId +
-      '" class="' +
-      Layer.popClass +
-      ' ' +
-      ($isFullPop ? 'full' : 'bottom') +
-      ($isTouch || $isTouchMove ? ' is-swipe' : '') +
-      ($isTouchMove ? ' touch-move' : '') +
-      ' ' +
-      Layer.selectClass +
-      '" role="dialog" aria-hidden="true">';
+    //prettier-ignore
+    $popHtml += '<div id="' + $popId + '" class="' + Layer.popClass + ' ' + ($isFullPop ? 'full' : 'bottom') + ($isTouch || $isTouchMove ? ' is-swipe' : '') + ($isTouchMove ? ' touch-move' : '') + ' ' + Layer.selectClass + '" role="dialog" aria-hidden="true">';
     $popHtml += '<article class="' + Layer.wrapClass + '">';
     $popHtml += '<div class="' + Layer.headClass + '">';
     $popHtml += '<div>';
@@ -7468,49 +7456,9 @@ $.fn.highlightTxt = function (keyword) {
 //$(element).aria('hidden',true});
 //$(element).aria({'hidden':true,'selected':true});
 $.fn.aria = function (attr, val) {
+  //prettier-ignore
   const $ariaType = [
-    'hidden',
-    'label',
-    'live',
-    'expanded',
-    'controls',
-    'selected',
-    'checked',
-    'pressed',
-    'disabled',
-    'readonly',
-    'required',
-    'labelledby',
-    'describedby',
-    'invalid',
-    'secret',
-    'valuemax',
-    'valuemin',
-    'valuenow',
-    'level',
-    'multiline',
-    'multiselectable',
-    'datatype',
-    'autocomplete',
-    'owns',
-    'haspopup',
-    'relevant',
-    'atomic',
-    'busy',
-    'dropeffect',
-    'grabbed',
-    'activedescendant',
-    'colcount',
-    'colindex',
-    'colspan',
-    'details',
-    'errormessage',
-    'flowto',
-    'posinset',
-    'rowcount',
-    'rowindex',
-    'rowspan',
-    'setsize'
+    'hidden', 'label', 'live', 'expanded', 'controls', 'selected', 'checked', 'pressed', 'disabled', 'readonly', 'required', 'labelledby', 'describedby', 'invalid', 'secret', 'valuemax', 'valuemin', 'valuenow', 'level', 'multiline', 'multiselectable', 'datatype', 'autocomplete', 'owns', 'haspopup', 'relevant', 'atomic', 'busy', 'dropeffect', 'grabbed', 'activedescendant', 'colcount', 'colindex', 'colspan', 'details', 'errormessage', 'flowto', 'posinset', 'rowcount', 'rowindex', 'rowspan', 'setsize'
   ];
   return this.each(function () {
     const $this = $(this);
