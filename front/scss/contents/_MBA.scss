@@ -23,6 +23,7 @@
     text-align: center;
     padding: 5.6rem var(--base-padding) 0;
     .name {
+      line-height: 2.4rem;
       font-size: 1.6rem;
       color: #fff;
       opacity: 0;
@@ -136,10 +137,12 @@
           display: inline-block;
           width: 2.4rem;
           height: 2.4rem;
+          border: 0.2rem solid #fff;
+          border-radius: 50%;
           margin-right: 0.5rem;
-          margin-top: -0.5rem;
-          vertical-align: middle;
-          background: url('../images/match/ico_star.png') no-repeat center center / 100%;
+          vertical-align: -0.5rem;
+          background: url('../images/match/ico_star.png') no-repeat center center / 1.6rem auto;
+          box-sizing: border-box;
         }
       }
       .img {

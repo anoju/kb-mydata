@@ -835,7 +835,19 @@
 }
 
 .month-no-data-box {
+  .pop-scl-wrap,
+  .pop-wrap,
+  .pop-head {
+    background-color: #fafafa;
+  }
+  .pop-foot {
+    > div {
+      background-color: #fafafa;
+      padding-top: 0;
+    }
+  }
   .pop-body {
+    background-color: #fafafa;
     // margin-bottom: -10.8rem;
     .ui-swiper {
       height: 100%;
