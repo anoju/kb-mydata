@@ -14,36 +14,45 @@
     <script type="text/javascript" src="../../js/ui-front.js"></script>
   </head>
   <body>
-    <div id="popMatchAgree" class="popup bottom" role="dialog" aria-hidden="true">
+    <div id="popMatchAgree" class="popup full" role="dialog" aria-hidden="true">
       <article class="pop-wrap">
         <div class="pop-head">
           <div>
-            <h1>매치 서비스 이용동의</h1>
-            <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            <button type="button" class="pop-close" aria-label="팝업창 닫기"></button>
           </div>
         </div>
         <div class="pop-body">
           <div class="section">
-            <!-- 2022-03-25 약관 동의 변경-->
-            <p class="fz-16 mb-39">서비스 이용약관 동의 후 이용 하세요.</p>
-            <div class="agree-dl ui-agree mb-15">
-              <div class="agree-dd">
-                <div class="checkbox ty2">
-                  <input type="checkbox" id="agree1-1" class="ui-agree-chk" /><i aria-hidden="true"></i>
-                  <div class="lbl">
-                    <label for="agree1-1">매치 서비스 이용약관(필수)</label>
-                    <a href="#" class="agree-btn" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
-                  </div>
-                </div>
+            <article class="terms-content">
+              <h1>매치 서비스 이용약관</h1>
+              <div style="height: 2000px; background: #eee; margin-top: 20px">중간 약관 상세 들어갈 자리</div>
+              <h4>서비스 동의 후 이용하세요</h4>
+              <div class="chk-item">
+                <label class="checkbox">
+                  <input type="checkbox" /><i aria-hidden="true"></i>
+                  <div class="lbl">[필수] 위 내용을 확인 했습니다.</div>
+                </label>
               </div>
-            </div>
-            <!-- //2022-03-25 약관 동의 변경-->
+              <div class="chk-item">
+                <label class="checkbox">
+                  <input type="checkbox" /><i aria-hidden="true"></i>
+                  <div class="lbl">[필수] 첫번째 동의항목 TEXT 첫번째 동의항목 TEXT</div>
+                </label>
+              </div>
+              <div class="chk-item">
+                <label class="checkbox">
+                  <input type="checkbox" /><i aria-hidden="true"></i>
+                  <div class="lbl">[필수] 두번째 동의항목 TEXT 두번째 동의항목 TEXT</div>
+                </label>
+              </div>
+            </article>
           </div>
         </div>
         <div class="pop-foot">
           <div>
             <div class="flex">
-              <button type="button" class="button primary">동의하고 진행</button>
+              <button type="button" class="button primary ui-scroll-btn">계속 읽기</button>
+              <button type="button" id="matchAgreeBtn" class="button primary" disabled style="display: none">동의하고 진행</button>
             </div>
           </div>
         </div>
@@ -51,9 +60,34 @@
     </div>
 
     <script>
-      $(function () {
-        Layer.open('#popMatchAgree');
+      Layer.open('#popMatchAgree');
+
+      // 닫기 버튼 클릭시 confirm 호출
+      $('#popMatchAgree .pop-head .pop-close').click(function () {
+        const $txt = '서비스 이용동의를 취소할까요? <br />모든 필수동의 사항에 동의 후 서비스를 이용하세요';
+        Layer.confirm($txt, function (e) {
+          if (e) Layer.close('#popMatchAgree');
+        });
       });
+
+      // [동의하고 진행]버튼 활성화, 비활성화 체크
+      const matchAgreeBtn = function () {
+        const $pop = $('#popMatchAgree');
+        const $popBtn = $('#matchAgreeBtn');
+        const $checkbox = $pop.find('.checkbox > input');
+        const agreeCheck = function () {
+          const $checked = $pop.find('.checkbox > input:checked');
+          if ($checkbox.length === $checked.length) {
+            $popBtn.prop('disabled', false);
+          } else {
+            $popBtn.prop('disabled', true);
+          }
+        };
+        $checkbox.click(function () {
+          agreeCheck();
+        });
+      };
+      matchAgreeBtn();
     </script>
   </body>
 </html>

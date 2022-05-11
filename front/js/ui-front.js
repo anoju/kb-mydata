@@ -4783,29 +4783,45 @@ ui.Scroll = {
       });
     }
   },
-  agree: function () {
+  agree: function (isPop) {
+    if (isPop === undefined) isPop = false;
     if (!$('.ui-scroll-btn').length) return;
     $('.ui-scroll-btn').click(function () {
-      const $innerHeight = $(window).height();
-      const $scrollHeight = $('body')[0].scrollHeight;
+      const $this = $(this);
+      let $isPop = false;
+      if ($this.closest('.popup').length) $isPop = true;
+      let $innerHeight;
+      let $scrollHeight;
+      let $wrap;
+      if ($isPop) {
+        $wrap = $this.closest('.' + Layer.sclWrapClass).length ? $this.closest('.' + Layer.sclWrapClass) : $this.closest('.' + Layer.wrapClass);
+        $innerHeight = $wrap.height();
+        $scrollHeight = $wrap[0].scrollHeight;
+      } else {
+        $innerHeight = $(window).height();
+        $scrollHeight = $('body')[0].scrollHeight;
+      }
       const $scrollMove = $scrollHeight - $innerHeight;
       const $speed = Math.min(1000, Math.max(200, $scrollMove / 4));
-      ui.Scroll.top($scrollMove, $speed);
+      if ($isPop) {
+        $wrap.animate({ scrollTop: $scrollMove }, $speed);
+      } else {
+        ui.Scroll.top($scrollMove, $speed);
+      }
     });
-
     const $scrollEvt = function () {
+      const $scrollBtn = $('.ui-scroll-btn');
+      if (!$scrollBtn.length || $scrollBtn.closest('.popup').length) return;
       const $innerHeight = $(window).height();
       const $scrollTop = $(window).scrollTop();
       const $scrollHeight = $('body')[0].scrollHeight;
-      const $scrollBtn = $('.ui-scroll-btn');
       const $mainBtn = $scrollBtn.next('.button');
-      if ($scrollBtn.length && $innerHeight + $scrollTop + 10 > $scrollHeight) {
+      if ($innerHeight + $scrollTop + 10 > $scrollHeight) {
         $scrollBtn.remove();
         $mainBtn.show();
       }
     };
     $scrollEvt();
-
     $(window).scroll($scrollEvt);
   },
   init: function () {
@@ -6971,6 +6987,20 @@ const Layer = {
       $wrap.find('.pop-scroll-hide').removeClass('hidden');
     };
 
+    const $scrollBtnEvt = function (tar) {
+      const $scrollBtn = tar;
+      if (!$scrollBtn.length) return;
+      const $sclWrap = $popup.find('.' + Layer.sclWrapClass).length ? $popup.find('.' + Layer.sclWrapClass) : $popup.find('.' + Layer.wrapClass);
+      const $innerHeight = $sclWrap.height();
+      const $scrollTop = $sclWrap.scrollTop();
+      const $scrollHeight = $sclWrap[0].scrollHeight;
+      const $mainBtn = $scrollBtn.next('.button');
+      if ($innerHeight + $scrollTop + 10 > $scrollHeight) {
+        $scrollBtn.remove();
+        $mainBtn.show();
+      }
+    };
+
     let $lastSclTop = 0;
     let $timer;
     $wrap.off('scroll').on('scroll', function () {
@@ -6985,6 +7015,10 @@ const Layer = {
       $timer = setTimeout(function () {
         showElOff();
       }, 500);
+
+      //ui-scroll-btn
+      const $scrollBtn = $popup.find('.ui-scroll-btn');
+      if ($scrollBtn.length) $scrollBtnEvt($scrollBtn);
 
       //약관
       if ($isAgree && $agreeBtn.length) {
