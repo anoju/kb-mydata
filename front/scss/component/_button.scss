@@ -74,6 +74,7 @@
   &.disabled,
   &:disabled {
     opacity: 0.4;
+    backdrop-filter: blur(3px);
   }
 
   &.primary {
