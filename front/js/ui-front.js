@@ -4816,7 +4816,7 @@ ui.Scroll = {
       const $scrollTop = $(window).scrollTop();
       const $scrollHeight = $('body')[0].scrollHeight;
       const $mainBtn = $scrollBtn.next('.button');
-      if ($innerHeight + $scrollTop + 10 > $scrollHeight) {
+      if ($innerHeight + $scrollTop + 30 > $scrollHeight) {
         $scrollBtn.remove();
         $mainBtn.show();
       }
@@ -6995,7 +6995,7 @@ const Layer = {
       const $scrollTop = $sclWrap.scrollTop();
       const $scrollHeight = $sclWrap[0].scrollHeight;
       const $mainBtn = $scrollBtn.next('.button');
-      if ($innerHeight + $scrollTop + 10 > $scrollHeight) {
+      if ($innerHeight + $scrollTop + 30 > $scrollHeight) {
         $scrollBtn.remove();
         $mainBtn.show();
       }
