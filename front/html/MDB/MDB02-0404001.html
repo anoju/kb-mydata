@@ -134,11 +134,22 @@
               </article>
             </div>
           </div>
+          <!-- 2022-05-12: 추가 -->
+          <div class="pop-foot">
+            <div>
+              <div class="flex">
+                <button type="button" class="button primary ui-pop-close" onclick="$('#agreeChk').prop('checked', true).change()">동의</button>
+              </div>
+            </div>
+          </div>
+          <!-- //2022-05-12: 추가 -->
         </article>
       </div>
       <!-- //팝업 -->
     </article>
     <script>
+      if (getUnlParams().pop) Layer.open('#popTerms');
+
       let userChk = false;
       const btnChk = function () {
         let isInsertVal = true;

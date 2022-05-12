@@ -410,12 +410,12 @@
     "name": "디지털자산정보입력",
     "worker": "안효주",
     "complete": "2022-04-12",
-    "change": "2022-04-27",
+    "change": "2022-05-12",
     "etc": ""
   },
   {
     "id": "MDB02-0404p01",
-    "url": "../../front/html/MDB/MDB02-0404001.html",
+    "url": "../../front/html/MDB/MDB02-0404001.html?pop=true",
     "depth2": "통합자산조회",
     "depth3": "비금융자산",
     "depth4": "디지털자산",
