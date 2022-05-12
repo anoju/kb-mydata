@@ -249,6 +249,7 @@
     width: 100%;
   }
   .img-box {
+    flex: 0 0 auto;
     width: 15.2rem;
     // height: 11.4rem;
     border-radius: 1.2rem;
@@ -258,6 +259,8 @@
     }
   }
   .invest-txt-box {
+    overflow: hidden;
+    flex: 1 1 auto;
     padding: 1.6rem;
     .tit {
       padding-left: 0;
