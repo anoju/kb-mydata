@@ -6929,7 +6929,7 @@ const Layer = {
     if (!$popup.hasClass(Layer.showClass)) return false;
     if ($popup.data('popPosition') == true) return false;
     $popup.data('popPosition', true);
-    let $wrap = $popup.find('.' + Layer.wrapClass);
+    let $wrap = $popup.find('.' + Layer.sclWrapClass).length ? $popup.find('.' + Layer.sclWrapClass) : $popup.find('.' + Layer.wrapClass);
     let $wrapH = $wrap.outerHeight();
     let $wrapSclH = $wrap[0].scrollHeight;
     const $head = $popup.find('.' + Layer.headClass);
@@ -7053,6 +7053,11 @@ const Layer = {
       const $fadeTitle = $this.find('.' + Layer.scrollShowTitleClass);
       const $headerTit = $head.find('h1');
       if ($fadeTitle.length && $headerTit.length) ui.Common.scrollShowTitle($fadeTitle[0], $this[0], $head[0], $headerTit[0]);
+    });
+    $wrap.off('click').on('click', function () {
+      setTimeout(function () {
+        $wrap.scroll();
+      }, 50);
     });
 
     Layer.resize();

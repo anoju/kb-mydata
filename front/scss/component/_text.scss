@@ -262,7 +262,15 @@
 .terms-content {
   font-size: 1.4rem;
   color: var(--base-txt-color);
-
+  padding-left: var(--base-padding);
+  padding-right: var(--base-padding);
+  .section & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .tab-panel > & {
+    padding-top: var(--base-padding);
+  }
   ul,
   ol {
     margin-top: 0.8rem;
