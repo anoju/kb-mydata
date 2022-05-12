@@ -4811,7 +4811,7 @@ ui.Scroll = {
     });
     const $scrollEvt = function () {
       const $scrollBtn = $('.ui-scroll-btn');
-      if (!$scrollBtn.length || $scrollBtn.closest('.popup').length) return;
+      if (!$scrollBtn.length || $scrollBtn.closest('.popup').length || !$scrollBtn.is(':visible')) return;
       const $innerHeight = $(window).height();
       const $scrollTop = $(window).scrollTop();
       const $scrollHeight = $('body')[0].scrollHeight;
@@ -7020,7 +7020,7 @@ const Layer = {
 
       //ui-scroll-btn
       const $scrollBtn = $popup.find('.ui-scroll-btn');
-      if ($scrollBtn.length) $scrollBtnEvt($scrollBtn);
+      if ($scrollBtn.length && $scrollBtn.is(':visible')) $scrollBtnEvt($scrollBtn);
 
       //약관
       if ($isAgree && $agreeBtn.length) {

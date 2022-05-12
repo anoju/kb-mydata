@@ -44,7 +44,7 @@
               동의함 : fc-primary
               철회함 : fc-b0b0b0
              -->
-            <button type="button" class="btn-txt fc-b0b0b0" onclick="Layer.open('#popAgreeView0')">철회함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
+            <button type="button" class="btn-txt fc-b0b0b0" onclick="Layer.open('#popAgreeView0')"><span id="agreeTxt1">철회함</span><i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
           </div>
 
           <div class="mt-38">
@@ -127,13 +127,34 @@
               <article class="terms-content">
                 <h1>매치 서비스 이용약관</h1>
                 <div style="height: 2000px; background: #eee; margin-top: 20px">중간 약관 상세 들어갈 자리</div>
+                <h4>서비스 동의 후 이용하세요</h4>
+                <div class="chk-item">
+                  <label class="checkbox">
+                    <input type="checkbox" /><i aria-hidden="true"></i>
+                    <div class="lbl">[필수] 위 내용을 확인 했습니다.</div>
+                  </label>
+                </div>
+                <div class="chk-item">
+                  <label class="checkbox">
+                    <input type="checkbox" /><i aria-hidden="true"></i>
+                    <div class="lbl">[필수] 첫번째 동의항목 TEXT 첫번째 동의항목 TEXT</div>
+                  </label>
+                </div>
+                <div class="chk-item">
+                  <label class="checkbox">
+                    <input type="checkbox" /><i aria-hidden="true"></i>
+                    <div class="lbl">[필수] 두번째 동의항목 TEXT 두번째 동의항목 TEXT</div>
+                  </label>
+                </div>
               </article>
             </div>
           </div>
           <div class="pop-foot">
             <div>
-              <!-- 철회하기, 동의하기 문구 변경 -->
-              <div class="flex"><button type="button" class="button primary">철회하기</button></div>
+              <div class="flex">
+                <button type="button" class="button primary ui-scroll-btn">계속 읽기</button>
+                <button type="button" id="matchAgreeBtn" class="button primary" disabled style="display: none">동의하기</button>
+              </div>
             </div>
           </div>
         </article>
@@ -204,5 +225,48 @@
       </div>
       <!-- //팝업 -->
     </article>
+
+    <script>
+      // [동의하고 진행]버튼 활성화, 비활성화 체크
+      const matchAgreeBtn = function () {
+        const $pop = $('#popAgreeView0');
+        const $popBtn = $('#matchAgreeBtn');
+        const $agreeTxt = $('#agreeTxt1');
+        const $checkbox = $pop.find('.checkbox > input');
+        const agreeCheck = function () {
+          const $checked = $pop.find('.checkbox > input:checked');
+          if ($checkbox.length === $checked.length) {
+            $popBtn.prop('disabled', false);
+          } else {
+            $popBtn.prop('disabled', true);
+          }
+        };
+        $checkbox.click(function () {
+          agreeCheck();
+        });
+        $popBtn.click(function () {
+          Layer.close(
+            '#popAgreeView0',
+            function () {
+              const $text = $popBtn.text();
+              if ($text === '철회하기') {
+                // 철회
+                $checkbox.prop({ disabled: false, checked: false });
+                $popBtn.text('동의하기').hide();
+                $popBtn.prev().show();
+                $agreeTxt.text('철회함').parent().removeClass('fc-primary').addClass('fc-b0b0b0');
+              } else {
+                // 동의
+                $checkbox.prop('disabled', true);
+                $popBtn.text('철회하기');
+                $agreeTxt.text('동의함').parent().removeClass('fc-b0b0b0').addClass('fc-primary');
+              }
+            },
+            200
+          );
+        });
+      };
+      matchAgreeBtn();
+    </script>
   </body>
 </html>
