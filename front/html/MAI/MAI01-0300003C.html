@@ -31,14 +31,14 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <!-- 성공 -->
-        <div id="dropComplate" class="section center-contents justify-center hide">
-          <div class="img-box w-144 mg-autox end-img-complate" aria-hidden="true"></div>
+        <div id="dropComplete" class="section center-contents justify-center hide">
+          <div class="img-box w-144 mg-autox end-img-complete" aria-hidden="true"></div>
           <h1 class="tit-h1 t-center mt-24">회원 탈퇴가 완료되었습니다.</h1>
           <p class="t-center mt-24">그동안 KKL을 이용해 주셔서 감사합니다.<br />보다 나은 서비스를 제공하기 위해<br />노력하겠습니다.</p>
 
           <div class="btn-wrap bottom-fixed">
             <div class="flex">
-              <button type="button" class="button h60 primary">확인</button>
+              <button type="button" id="btnDropComplete" class="button h60 primary">확인</button>
             </div>
           </div>
         </div>
@@ -67,11 +67,20 @@
       const $random = parseInt(randomNumber(0, 1, 0));
       if ($random) {
         //실패
+        console.log('탈퇴 실패');
         $('#dropFail').removeClass('hide');
       } else {
         //성공
-        $('#dropComplate').removeClass('hide');
+        console.log('탈퇴 성공');
+        $('#dropComplete').removeClass('hide');
       }
+
+      $('#btnDropComplete').click(function () {
+        const $txt = '회원탈퇴가 완료되었습니다.<br /><br />좀더 나은 서비스로 다시 뵙길<br />기대하겠습니다.';
+        Layer.alert($txt, null, '앱 종료', function () {
+          console.log('앱 종료 클릭');
+        });
+      });
     </script>
   </body>
 </html>
