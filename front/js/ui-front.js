@@ -4096,37 +4096,32 @@ ui.List = {
     const $chkClass = '.ui-chk';
 
     // 전체동의
-    $($wrapClass + ' ' + $allChkClass)
-      .off('change')
-      .on('change', function () {
-        const $this = $(this);
-        const $wrap = $this.closest($wrapClass);
-        const $items = $wrap.find($chkClass).not(':disabled');
-        if ($(this).prop('checked')) {
-          $items.prop('checked', true).change();
-        } else {
-          $items.prop('checked', false).change();
-        }
-      });
-    $($wrapClass + ' ' + $chkClass)
-      .off('change')
-      .on('change', function () {
-        const $this = $(this);
-        const $wrap = $this.closest($wrapClass);
-        const $allchk = $wrap.find($allChkClass);
-        const $items = $wrap.find($chkClass).not(':disabled');
-        const $itemsLength = $items.length;
-        const $itemsChecked = $wrap.find($chkClass + ':checked').not(':disabled').length;
-        if ($itemsLength === $itemsChecked) {
-          $allchk.prop('checked', true);
-        } else {
-          $allchk.prop('checked', false);
-        }
-      });
+    $(document).on('change', $wrapClass + ' ' + $allChkClass, function () {
+      const $this = $(this);
+      const $wrap = $this.closest($wrapClass);
+      const $items = $wrap.find($chkClass).not(':disabled');
+      if ($(this).prop('checked')) {
+        $items.prop('checked', true).change();
+      } else {
+        $items.prop('checked', false).change();
+      }
+    });
+    $(document).on('change', $wrapClass + ' ' + $chkClass, function () {
+      const $this = $(this);
+      const $wrap = $this.closest($wrapClass);
+      const $allchk = $wrap.find($allChkClass);
+      const $items = $wrap.find($chkClass).not(':disabled');
+      const $itemsLength = $items.length;
+      const $itemsChecked = $wrap.find($chkClass + ':checked').not(':disabled').length;
+      if ($itemsLength === $itemsChecked) {
+        $allchk.prop('checked', true);
+      } else {
+        $allchk.prop('checked', false);
+      }
+    });
   },
   reInit: function () {
     ui.List.winLoad();
-    ui.List.check();
   },
   init: function () {
     ui.List.check();
