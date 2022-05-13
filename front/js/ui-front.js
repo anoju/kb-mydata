@@ -547,7 +547,7 @@ ui.Common = {
     if (ui.Mobile.any()) {
       const _landscapeDiv = '.landscape_lock';
       if (!$(_landscapeDiv).length) {
-        const $landscapeHtml = '<div class="' + _landscapeDiv.substring(1) + '"><div class="tbl"><div class="td">이 사이트는 세로 전용입니다.<br>단말기를 세로모드로 변경해주세요.</div></div></div>';
+        const $landscapeHtml = '<div class="' + _landscapeDiv.substring(1) + '"><div class="tbl"><div class="td">이 사이트는 세로 전용입니다.<br />단말기를 세로모드로 변경해주세요.</div></div></div>';
         $('body').append($landscapeHtml);
       }
       $(_landscapeDiv)
@@ -3584,7 +3584,7 @@ ui.Form = {
     //jquery UI datepicker
     const $dimmedClass = 'datepicker-dimmed';
     const swipeArr = $('<div class="swipe-arr" aria-hidden="true"><i class="arr top"></i><i class="arr bottom"></i><i class="arr left"></i><i class="arr right"></i></div>');
-    const swipeGuide = $('<div class="datepicker-guide">달력 부분을 상,하,좌,우 드래그하면<br>편리하게 이동할 수 있어요.</div>');
+    const swipeGuide = $('<div class="datepicker-guide">달력 부분을 상,하,좌,우 드래그하면<br />편리하게 이동할 수 있어요.</div>');
     let isSwipeGuide = true;
     const prevYrBtn = $('<a href="#" role="button" class="ui-datepicker-prev-y" aria-label="이전년도 보기"><span>이전년도 보기</span></a>');
     const nextYrBtn = $('<a href="#" role="button" class="ui-datepicker-next-y" aria-label="다음년도 보기"><span>다음년도 보기</span></a>');
@@ -7756,7 +7756,7 @@ const brTxtInsert = function (el, mark, maxWordLength) {
       for (let i = 0; i < $txtAry.length; i++) {
         if (i != 0) {
           if ($wordLength + $txtAry[i].length + mark.length > maxWordLength * $row) {
-            $insertTxt += '<br>';
+            $insertTxt += '<br />';
             $row++;
             $wordLength = 0;
           }

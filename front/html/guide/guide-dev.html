@@ -437,7 +437,7 @@ Layer.confirm(
                   e.preventDefault();
                   Layer.alert({
                     title: '얼럿창',
-                    content: '얼럿메세지<br>얼럿메세지',
+                    content: '얼럿메세지<br />얼럿메세지',
                     actionTxt: '닫기',
                     action: function () {
                       console.log('커스텀 얼럿 action');
@@ -451,7 +451,7 @@ Layer.confirm(
                   e.preventDefault();
                   Layer.confirm({
                     title: '<strong class="fc_green">컨펌창</strong>',
-                    content: '컨펌메세지 <br>컨펌메세지',
+                    content: '컨펌메세지 <br />컨펌메세지',
                     actionTxt: '다음',
                     action: function () {
                       console.log('커스텀 컨펌 action');
@@ -480,7 +480,7 @@ Layer.confirm(
               <script>
                 $('#toastOpen').click(function (e) {
                   e.preventDefault();
-                  const msg = '설명 글을 넣으면됩니다.<br>줄바꿈은 br태그로 처리, <strong>html 태그 사용 가능</strong>';
+                  const msg = '설명 글을 넣으면됩니다.<br />줄바꿈은 br태그로 처리, <strong>html 태그 사용 가능</strong>';
                   Layer.toast(msg, function () {
                     console.log('토스트 클릭');
                   });
@@ -502,7 +502,7 @@ Layer.toast('넣으려는 메세지', fn:클릭시 실행할 함수);</code></pr
               <script>
                 $('#alarmOpen').click(function (e) {
                   e.preventDefault();
-                  const msg = '설명 글을 넣으면됩니다.<br>줄바꿈은 br태그로 처리, <strong>html 태그 사용 가능</strong>';
+                  const msg = '설명 글을 넣으면됩니다.<br />줄바꿈은 br태그로 처리, <strong>html 태그 사용 가능</strong>';
                   Layer.alarm(msg, function () {
                     console.log('알람 클릭');
                   });
@@ -745,19 +745,19 @@ ui.Form.success('#inputText','이름이 입력되었습니다.');
                 </div>
               </div>
               <br />
-              <pre><code class="language-xml">&lt;!-- 오늘 이전 선택 --&gt;<br>
+              <pre><code class="language-xml">&lt;!-- 오늘 이전 선택 --&gt;<br />
 &lt;input type="tel" class="datepicker" <strong class="fc-red">data-max="today"</strong> title="날짜 입력"&gt;
 
-&lt;!-- 오늘 이후 선택 --&gt;<br>
+&lt;!-- 오늘 이후 선택 --&gt;<br />
 &lt;input type="tel" class="datepicker" <strong class="fc-red">data-min="today"</strong> title="날짜 입력"&gt;
 
-&lt;!-- -5일 이전 선택 --&gt;<br>
+&lt;!-- -5일 이전 선택 --&gt;<br />
 &lt;input type="tel" class="datepicker" <strong class="fc-red">data-max="-5d"</strong> title="날짜 입력"&gt;
 
-&lt;!-- +3달 이후 선택 --&gt;<br>
+&lt;!-- +3달 이후 선택 --&gt;<br />
 &lt;input type="tel" class="datepicker" <strong class="fc-red">data-min="+3m"</strong> title="날짜 입력"&gt;
 
-&lt;!-- -2주 ~ +1년 사이 선택 --&gt;<br>
+&lt;!-- -2주 ~ +1년 사이 선택 --&gt;<br />
 &lt;input type="tel" class="datepicker" <strong class="fc-red">data-min="-2w" data-max="+1y"</strong> title="날짜 입력"&gt;</code></pre>
             </div>
             -->
