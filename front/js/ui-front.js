@@ -2561,9 +2561,11 @@ ui.Touch = {
       if ($isFocus) $reset();
     });
 
+    // bottom fixed focus
     let $startY = null;
     $(document).on('touchstart', function (e) {
-      if ($isFocus) {
+      const $bottomInp = $('.pop-foot, .bottom-fixed').find('input, textarea');
+      if ($isFocus && $bottomInp.is(':focus')) {
         const $target = e.target;
         const $clientY = e.touches[0].clientY;
         if ($target !== $isFocusEl) {
@@ -2574,6 +2576,7 @@ ui.Touch = {
         }
       }
     });
+
     /*
     $(document).on('touchmove', function (e) {
       if ($isFocus) {
