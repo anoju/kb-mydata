@@ -675,14 +675,25 @@
       pointer-events: none;
     }
   }
-
+  &:not(.influencer) {
+    .img-box.avatar {
+      border-radius: 0;
+      img {
+        border-radius: 0;
+      }
+    }
+  }
   .img-box.avatar {
     width: 16.6rem;
     margin: 1.2rem auto 0;
     background: none;
-    border-radius: 0;
     img {
       z-index: 1;
+    }
+    &.no-img-bg {
+      &:after {
+        display: none;
+      }
     }
 
     &:after {
