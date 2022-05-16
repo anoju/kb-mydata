@@ -2639,7 +2639,7 @@ ui.Form = {
     const $inpEls = 'input:not(:checkbox):not(:radio):not(:hidden), select, textarea, .btn-select';
     const $appFocusElScroll = function (tar) {
       const $this = $(tar);
-      // if (!ui.Device.app() || !ui.Mobile.Android()) return;
+      if (!ui.Device.app() || !ui.Mobile.Android()) return;
       if ($this.is('a') || $this.prop('readonly') || $this.prop('disabled')) return;
       setTimeout(function () {
         const $el = $this.offsetParent();
@@ -8086,5 +8086,5 @@ const nl2br = function (str) {
 const imgError = function (img) {
   if (img.tagName !== 'IMG') return;
   $(img).parent().addClass('no-img-bg');
-  $(img).hide();
+  // $(img).hide();
 };
