@@ -2805,20 +2805,16 @@ ui.Form = {
     });
   },
   inputUI: function () {
-    //input[type=number][maxlength] 되게 처리..(하지만 디바이스 탐): number type을 안쓰는게 좋음
-    $(document).on('change keyup input', 'input[type=number][maxlength]', function (e) {
-      const $this = $(this);
-      const $val = $this.val();
-      const $max = $this.attr('maxlength');
-      const $length = $val.length;
-      let $dataVal = $this.data('val');
-      if ($dataVal == undefined) $dataVal = '';
-      if ($length > $max) {
-        $this.val($dataVal);
-      } else {
-        $this.data('val', $val);
-      }
-    });
+    //input[type=number][maxlength] => input[maxlength]
+    if (ui.Mobile.any()) {
+      $(document).on('input', 'input[maxlength], textarea[maxlength]', function (e) {
+        const $this = $(this);
+        const $val = $this.val();
+        const $max = $this.attr('maxlength');
+        const $length = $val.length;
+        if ($val && $length > $max)this.value = this.value.slice(0,$max);
+      });
+    }
 
     //form 안에 input이 1개일때 엔터시 새로고침 현상방지
     $(document).on('keydown', 'form input', function (e) {
