@@ -2856,8 +2856,10 @@ ui.Form = {
     });
   },
   inputUI: function () {
-    //input[type=number][maxlength] => input[maxlength]
-    if (ui.Mobile.any()) {
+    // input[maxlength]
+
+    if (ui.Mobile.Android()) {
+      // 안드로이드 중 일부 maxlength 방식이 상이함(무한입력 후 포커스 아웃때 적용됨)
       $(document).on('input', 'input[maxlength], textarea[maxlength]', function (e) {
         const $this = $(this);
         const $val = $this.val();
@@ -2868,16 +2870,18 @@ ui.Form = {
     }
 
     //form 안에 input이 1개일때 엔터시 새로고침 현상방지
+    /*
     $(document).on('keydown', 'form input', function (e) {
       const $keyCode = e.keyCode ? e.keyCode : e.which;
       const $form = $(this).closest('form');
       const $length = $form.find('input').not('[type=checkbox],[type=radio]').length;
 
-      if ($length == 1 && !$(this).closest('.search_box').length) {
-        //.search_box 검색창은 예외
+      //.search-box 검색창은 예외
+      if ($length == 1 && !$(this).closest('.search-box').length) {
         if ($keyCode == 13) return false;
       }
     });
+    */
 
     //list input[type=checkbox]
     $(document).on('change', '.chk-item input', function () {
