@@ -402,6 +402,14 @@
         padding-top: 0;
       }
     }
+    &.morphing {
+      &.show {
+        background: transparent;
+      }
+      .pop-wrap {
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+      }
+    }
   }
 
   //modal
