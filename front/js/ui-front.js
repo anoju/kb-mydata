@@ -1384,9 +1384,9 @@ ui.Button = {
 
       // 앱에서 새창열기
       if (ui.Device.app()) {
-        if ($target === '_blank' && typeof goOutLink === 'function') {
+        if ($target === '_blank' && typeof webviewInterface.goOutLink === 'function') {
           e.preventDefault();
-          goOutLink($href);
+          webviewInterface.goOutLink($href);
         }
       }
     });
