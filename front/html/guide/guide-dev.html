@@ -472,6 +472,44 @@ Layer.confirm(
               </script>
             </div>
              -->
+            <h3 class="gd__h2">select 팝업</h3>
+            <div>
+              <div class="select">
+                <select id="select1">
+                  <option value="">옵션을 선택하세요</option>
+                  <option value="0">옵션1</option>
+                  <option value="1">옵션2</option>
+                  <option value="2">옵션3</option>
+                  <option value="3">옵션4</option>
+                  <option value="4">옵션5</option>
+                </select>
+              </div>
+
+              <div class="btn-wrap">
+                <div class="flex" id="selectBtn">
+                  <button class="button line">옵션1</button>
+                  <button class="button line">옵션2</button>
+                  <button class="button line">옵션3</button>
+                  <button class="button line">옵션4</button>
+                  <button class="button line">옵션5</button>
+                </div>
+              </div>
+              <div class="txt-list mt-20">
+                <pre><code class="language-javascript">//select 에 value를 넣어주고 .change() 
+$('select').val(value).change();
+</code></pre>
+                <ul class="mt-10">
+                  <li class="dot">select에 바뀔 value 값을 스크립트로 넣어주고 맨 뒤에 <strong class="fc-red">.change()</strong>를 실행하면 바뀜</li>
+                </ul>
+              </div>
+              <script>
+                $('#selectBtn .button').click(function () {
+                  const $idx = $(this).index();
+                  $('#select1').val($idx).change();
+                });
+              </script>
+            </div>
+
             <h3 class="gd__h2">그외 팝업</h3>
 
             <h4 class="gd__h3">토스트팝업</h4>
