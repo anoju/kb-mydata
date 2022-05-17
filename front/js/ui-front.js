@@ -6925,7 +6925,9 @@ const Layer = {
   },
   fixed: function (el) {
     //  pop fixed
-    let $wrap = $(el).hasClass(Layer.wrapClass) ? $(el) : $(el).closest('.' + Layer.wrapClass);
+    let $wrap = $(el);
+    if ($wrap.closest('.' + Layer.wrapClass).length) $wrap = $wrap.closest('.' + Layer.wrapClass);
+    if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
     const $head = $wrap.find('.' + Layer.headClass);
     const $foot = $wrap.find('.' + Layer.footClass);
     if ($wrap.hasClass('pop-body-scroll')) $wrap = $wrap.find('.' + Layer.bodyClass);
