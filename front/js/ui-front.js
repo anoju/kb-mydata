@@ -236,8 +236,8 @@ ui.Mobile = {
     if (ui.Mobile.Android()) $('html').addClass('android');
     //if(ui.Mobile.iPhoneVersion() >= 12)$('html').addClass('ios12');
 
-    // 앱인지 구분: isWebView()는 개발팀 공통함수
-    if (typeof isWebView === 'function' && isWebView()) {
+    // 앱인지 구분
+    if (ui.Device.app()) {
       $('html').addClass('is-app');
     }
   }
@@ -318,6 +318,14 @@ ui.Device = {
           }
         }
       });
+    }
+  },
+  app: function () {
+    // isWebView() -앱확인., goOutLink() -새창. 는 개발팀 공통함수
+    if (typeof isWebView === 'function' && isWebView()) {
+      return true;
+    } else {
+      return false;
     }
   }
 };
@@ -1374,8 +1382,8 @@ ui.Button = {
         }
       }
 
-      // 앱에서 새창열기 : isWebView() -앱확인., goOutLink() -새창. 는 개발팀 공통함수
-      if (typeof isWebView === 'function' && isWebView()) {
+      // 앱에서 새창열기
+      if (ui.Device.app()) {
         if ($target === '_blank' && typeof goOutLink === 'function') {
           e.preventDefault();
           goOutLink($href);
@@ -2629,6 +2637,46 @@ ui.Form = {
   },
   focus: function () {
     const $inpEls = 'input:not(:checkbox):not(:radio):not(:hidden), select, textarea, .btn-select';
+    const $appFocusElScroll = function (tar) {
+      const $this = $(tar);
+      if (!ui.Device.app() || !ui.Mobile.Android()) return;
+      if ($this.is('a') || $this.prop('readonly') || $this.prop('disabled')) return;
+      setTimeout(function () {
+        const $el = $this.offsetParent();
+        let $elTop = $el.offset().top;
+        let isPop = false;
+        let $wrap = $(window);
+        let $wrapClass;
+        if ($this.closest('.' + Layer.popClass).length) {
+          isPop = true;
+          $wrapClass = $this.closest('.' + Layer.sclWrapClass).length ? Layer.sclWrapClass : Layer.wrapClass;
+          $wrap = $this.closest('.' + $wrapClass);
+        }
+        const $wrapH = $wrap.height();
+        const $scrollTop = $wrap.scrollTop();
+        $elTop = isPop ? $elTop - $wrap.offset().top : $elTop - $scrollTop;
+        const $elHeight = $el.outerHeight();
+        const $elEnd = $elTop + $elHeight;
+        const $topGap = isPop ? ui.Common.getTopFixedHeight($this, 'pop-top-fixed') : ui.Common.getTopFixedHeight($this);
+        const $bottomGap = isPop ? $wrap.find('.' + Layer.footClass).outerHeight() : $('.bottom-fixed-space').outerHeight();
+        let $move;
+        const $start = ($topGap ? $topGap : 0) + 10;
+        const $end = $wrapH - ($bottomGap ? $bottomGap : 0) - 10;
+        if ($start > $elTop) {
+          $move = $scrollTop - ($start - $elTop);
+        } else if ($end < $elEnd) {
+          $move = $scrollTop + ($elEnd - $end);
+        }
+        console.log($topGap, $move);
+        if ($move) {
+          if (isPop) {
+            $wrap.stop(true, false).animate({ scrollTop: $move }, 200);
+          } else {
+            ui.Scroll.top($move, 200);
+          }
+        }
+      }, 300);
+    };
     let $dimTimer;
     $(document).on('focusin', $inpEls, function (e) {
       const $this = $(this);
@@ -2659,6 +2707,9 @@ ui.Form = {
           })
           .addClass('show');
       }
+
+      //app focus scroll: 안드로이드
+      $appFocusElScroll(this);
     });
     $(document).on('focusout', $inpEls, function (e) {
       const $this = $(this);
@@ -2805,28 +2856,32 @@ ui.Form = {
     });
   },
   inputUI: function () {
-    //input[type=number][maxlength] => input[maxlength]
-    if (ui.Mobile.any()) {
+    // input[maxlength]
+
+    if (ui.Mobile.Android()) {
+      // 안드로이드 중 일부 maxlength 방식이 상이함(무한입력 후 포커스 아웃때 적용됨)
       $(document).on('input', 'input[maxlength], textarea[maxlength]', function (e) {
         const $this = $(this);
         const $val = $this.val();
         const $max = $this.attr('maxlength');
         const $length = $val.length;
-        if ($val && $length > $max)this.value = this.value.slice(0,$max);
+        if ($val && $length > $max) this.value = this.value.slice(0, $max);
       });
     }
 
     //form 안에 input이 1개일때 엔터시 새로고침 현상방지
+    /*
     $(document).on('keydown', 'form input', function (e) {
       const $keyCode = e.keyCode ? e.keyCode : e.which;
       const $form = $(this).closest('form');
       const $length = $form.find('input').not('[type=checkbox],[type=radio]').length;
 
-      if ($length == 1 && !$(this).closest('.search_box').length) {
-        //.search_box 검색창은 예외
+      //.search-box 검색창은 예외
+      if ($length == 1 && !$(this).closest('.search-box').length) {
         if ($keyCode == 13) return false;
       }
     });
+    */
 
     //list input[type=checkbox]
     $(document).on('change', '.chk-item input', function () {
@@ -8035,5 +8090,5 @@ const nl2br = function (str) {
 const imgError = function (img) {
   if (img.tagName !== 'IMG') return;
   $(img).parent().addClass('no-img-bg');
-  $(img).hide();
+  // $(img).hide();
 };
