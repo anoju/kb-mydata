@@ -92,40 +92,40 @@
   .top {
     transform: translateY(-100%);
     .bg {
-      background: #61bdf3;
+      background: #00caca;
     }
     .number-random {
       &:before {
-        background: linear-gradient(180deg, rgba(97, 189, 243, 1) 0%, rgba(97, 189, 243, 0) 100%);
+        background: linear-gradient(180deg, rgba(0, 202, 202, 1) 0%, rgba(97, 189, 243, 0) 100%);
       }
       &:after {
-        background: linear-gradient(0deg, rgba(97, 189, 243, 1) 0%, rgba(97, 189, 243, 0) 100%);
+        background: linear-gradient(0deg, rgba(0, 202, 202, 1) 0%, rgba(97, 189, 243, 0) 100%);
       }
     }
   }
   .down {
     transform: translateY(100%);
     .bg {
-      background: #ff6291;
+      background: #fd7e64;
     }
     .number-random {
       &:before {
-        background: linear-gradient(180deg, rgba(255, 98, 145, 1) 0%, rgba(255, 98, 145, 0) 100%);
+        background: linear-gradient(180deg, rgba(253, 126, 100, 1) 0%, rgba(255, 98, 145, 0) 100%);
       }
       &:after {
-        background: linear-gradient(0deg, rgba(255, 98, 145, 1) 0%, rgba(255, 98, 145, 0) 100%);
+        background: linear-gradient(0deg, rgba(253, 126, 100, 1) 0%, rgba(255, 98, 145, 0) 100%);
       }
     }
     &.influencer {
       .bg {
-        background: #fe7d65;
+        background: #fd7e64;
       }
       .number-random {
         &:before {
-          background: linear-gradient(180deg, rgba(254, 125, 101, 1) 0%, rgba(254, 125, 101, 0) 100%);
+          background: linear-gradient(180deg, rgba(253, 126, 100, 1) 0%, rgba(254, 125, 101, 0) 100%);
         }
         &:after {
-          background: linear-gradient(0deg, rgba(254, 125, 101, 1) 0%, rgba(254, 125, 101, 0) 100%);
+          background: linear-gradient(0deg, rgba(253, 126, 100, 1) 0%, rgba(254, 125, 101, 0) 100%);
         }
       }
     }
@@ -302,7 +302,7 @@
   width: 100%;
   height: 100%;
   padding-bottom: 10rem;
-  background: #42ccab;
+  background: #fd7e64;
   @include media-min-width(1024) {
     @include web-center;
     @include web-center-fixed;
@@ -441,12 +441,12 @@
     .text-box {
       margin-left: 2.4rem;
       .name {
-        color: rgba(0, 0, 0, 0.5);
+        color: #fff;
         font-size: 2.2rem;
         @include ellipsis(1);
       }
       .number {
-        color: rgba(0, 0, 0, 0.5);
+        color: #fff;
         font-size: 2.3rem;
       }
     }
@@ -490,7 +490,7 @@
         }
 
         &:before {
-          content: '딥빡';
+          content: '웁스';
           font-size: 8.4rem;
           color: rgba(255, 255, 255, 0.05);
           transform: translate(0%, -50%) rotate(-90deg);
@@ -498,7 +498,7 @@
           left: -2.4rem;
         }
         &:after {
-          content: '아오';
+          content: 'ㅠㅠ';
           display: block;
           position: absolute;
           top: 50%;
@@ -635,7 +635,7 @@
   > .section {
     padding: 1.9rem 2rem 2.4rem;
     text-align: center;
-    background: #25cb9f;
+    background: #00caca;
   }
   .result {
     font-size: 2.2rem;
@@ -658,7 +658,7 @@
       color: #505050;
       font-weight: bold;
       strong {
-        color: #25cb9f;
+        color: #00caca;
       }
     }
 
@@ -671,7 +671,7 @@
       right: 0.4rem;
       bottom: 0.4rem;
       border-radius: 2rem;
-      border: 0.1rem solid #25cb9f;
+      border: 0.1rem solid #00caca;
       pointer-events: none;
     }
   }
@@ -718,7 +718,7 @@
     font-weight: bold;
     color: #fff;
     text-align: center;
-    background: rgba(25, 174, 134, 0.8);
+    background: rgba(26, 182, 182, 0.8);
     box-shadow: 0 0.4rem 1.4rem rgba(19, 167, 140, 0.2);
 
     &:before {
@@ -730,7 +730,7 @@
       height: 0;
       border: 0.1rem solid transparent;
       border-width: 0 0.8rem 1rem 0.8rem;
-      border-color: transparent transparent rgba(25, 174, 134, 0.8) transparent;
+      border-color: transparent transparent rgba(26, 182, 182, 0.8) transparent;
       transform: translateX(-50%);
     }
   }
@@ -753,11 +753,11 @@
     }
     &:before {
       left: -4.4rem;
-      background: url('../images/match/ico-match-line1.png') no-repeat center center / 100%;
+      background: url('../images/match/ico-match-line3.png') no-repeat center center / 100%;
     }
     &:after {
       right: -4.4rem;
-      background: url('../images/match/ico-match-line1.png') no-repeat center center / 100%;
+      background: url('../images/match/ico-match-line3.png') no-repeat center center / 100%;
       transform: translateY(-50%) rotate(180deg);
     }
   }
@@ -765,7 +765,7 @@
   .comment {
     font-size: 2rem;
     font-weight: bold;
-    color: #25cb9f;
+    color: #00caca;
     line-height: 1.22;
     letter-spacing: -0.04rem;
   }
@@ -821,27 +821,27 @@
   // 무승부 했을때
   &.draw {
     > .section {
-      background: #15cccc;
+      background: #2ad6a8;
     }
     .box {
       .text {
         strong {
-          color: #15cccc;
+          color: #2ad6a8;
         }
       }
 
       &:before {
-        border-color: #15cccc;
+        border-color: #2ad6a8;
       }
     }
 
     .img-box.avatar {
       &:after {
-        background: rgba(0, 220, 220, 0.15);
+        background: rgba(42, 214, 168, 0.2);
       }
     }
     .comment-label {
-      background: rgba(26, 182, 182, 0.8);
+      background: rgba(25, 174, 134, 0.8);
       box-shadow: 0 0.4rem 1.4rem rgba(0, 220, 220, 0.2);
       &:before {
         border-color: transparent transparent rgba(26, 182, 182, 0.8) transparent;
@@ -851,12 +851,12 @@
     hr.line {
       &:before,
       &:after {
-        background-image: url('../images/match/ico-match-line3.png');
+        background-image: url('../images/match/ico-match-line1.png');
       }
     }
 
     .comment {
-      color: #15cccc;
+      color: #2ad6a8;
     }
   }
 
@@ -1380,7 +1380,7 @@
         content: '#';
         margin-right: 0.2rem;
         font-size: 1.3rem;
-        color: #f134c8;
+        color: #5846ff;
       }
     }
   }
@@ -1393,7 +1393,7 @@
     font-size: 0.9rem;
     width: 1.6rem;
     height: 1.6rem;
-    border: 0.125rem solid #f134c8;
+    border: 0.125rem solid #5846ff;
     border-radius: 50%;
     margin-right: 0.4rem;
     box-sizing: border-box;
@@ -2407,7 +2407,7 @@
       &:before {
         content: '#';
         font-size: 1.8rem;
-        color: #f134c8;
+        color: #5846ff;
         font-weight: bold;
       }
     }
@@ -2485,7 +2485,7 @@
       color: var(--strong-txt-color2);
       &:before {
         content: '#';
-        color: #f134c8;
+        color: #5846ff;
       }
     }
     .tit {
@@ -2650,7 +2650,7 @@
                 vertical-align: middle;
                 margin-right: 0.2rem;
                 font-size: 1.2rem;
-                color: #f134c8;
+                color: #5846ff;
                 line-height: 1;
                 margin-top: -0.5rem;
               }
