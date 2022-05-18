@@ -219,7 +219,8 @@
   &.open,
   &.pop__focused {
     &:after {
-      transform: rotate3d(1, 0, 0, 180deg);
+      //transform: rotate3d(1, 0, 0, 180deg);
+      transform: rotate(180deg);
     }
   }
   .btn-select-val {

@@ -178,7 +178,6 @@
     color: #818892;
   }
   .price {
-    display: flex;
     padding: 0 1.6rem;
     margin-top: 1.8rem;
     font-size: 1.6rem;
@@ -196,6 +195,7 @@
       color: #424242;
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       span {
         font-size: 0;
         display: inline-block;
