@@ -1480,13 +1480,13 @@
     .banner-box {
       height: 160px;
       @include outer;
-      background: no-repeat center center / cover;
-
-      /* 나중에 지울거 */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      background: #f2f3f4 no-repeat center center / cover;
+      &.img-box {
+        height: auto;
+        &:before {
+          padding-top: -xyPercent(360, 160);
+        }
+      }
     }
     .text-box {
       position: relative;

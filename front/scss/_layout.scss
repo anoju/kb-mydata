@@ -11,7 +11,7 @@
 // lock
 html.lock,
 .lock body {
-  height: 100%;
+  height: -vh(100);
   overflow: hidden;
   -webkit-overflow-scrolling: none;
 }
