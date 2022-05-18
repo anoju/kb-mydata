@@ -5862,7 +5862,12 @@ const Layer = {
     contents.each(function () {
       const $this = $(this);
       const $img = $this.find('img');
-      $contentsHtml += '<div class="swiper-slide"><div class="swiper-zoom-container"><img src="' + $img.attr('src') + '" alt="' + $img.attr('alt') + '" /></div></div>';
+      const isNoImg = $this.hasClass('no-img-bg');
+      $contentsHtml += '<div class="swiper-slide">';
+      $contentsHtml += isNoImg ? '<div class="swiper-zoom-container no-img-bg">' : '<div class="swiper-zoom-container">';
+      $contentsHtml += '<img src="' + $img.attr('src') + '" alt="' + $img.attr('alt') + '" />';
+      $contentsHtml += '</div>';
+      $contentsHtml += '</div>';
     });
     $popup.find('.swiper-wrapper').append($contentsHtml);
     // $popup.find('.swiper-wrapper').children().addClass('swiper-zoom-container').removeClass('img-box').wrap('<div class="swiper-slide"></div>');

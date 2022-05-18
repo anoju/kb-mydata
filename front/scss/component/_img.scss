@@ -8,6 +8,9 @@
     visibility: hidden !important;
     opacity: 0 !important;
   }
+  &.swiper-zoom-container {
+    background-color: transparent !important;
+  }
 }
 .lottie__init {
   pointer-events: none;
