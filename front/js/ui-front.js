@@ -4842,20 +4842,29 @@ ui.Scroll = {
       let $innerHeight;
       let $scrollHeight;
       let $wrap;
+      let $headHeight = 0;
+      let $footHeight = 0;
       if ($isPop) {
         $wrap = $this.closest('.' + Layer.sclWrapClass).length ? $this.closest('.' + Layer.sclWrapClass) : $this.closest('.' + Layer.wrapClass);
         $innerHeight = $wrap.height();
         $scrollHeight = $wrap[0].scrollHeight;
+        if ($wrap.find('.' + Layer.headClass).length) $headHeight = $wrap.find('.' + Layer.headClass).outerHeight();
+        if ($wrap.find('.' + Layer.footClass).length) $footHeight = $wrap.find('.' + Layer.footClass).outerHeight();
       } else {
         $innerHeight = $(window).height();
         $scrollHeight = $('body')[0].scrollHeight;
+        if ($('#header').length) $headHeight = $('#header').outerHeight();
+        if ($('.bottom-fixed').length) $footHeight = $('.bottom-fixed > div').outerHeight();
       }
-      const $scrollMove = $scrollHeight - $innerHeight;
+      // const $scrollMove = $scrollHeight - $innerHeight;
+      const $scrollMove = $innerHeight - $headHeight - $footHeight;
       const $speed = Math.min(1000, Math.max(200, $scrollMove / 4));
       if ($isPop) {
-        $wrap.animate({ scrollTop: $scrollMove }, $speed);
+        // $wrap.animate({ scrollTop: $scrollMove }, $speed);
+        $wrap.animate({ scrollTop: '+=' + $scrollMove }, $speed);
       } else {
-        ui.Scroll.top($scrollMove, $speed);
+        $('html, body').animate({ scrollTop: '+=' + $scrollMove }, $speed);
+        // ui.Scroll.top($scrollMove, $speed);
       }
     });
     const $scrollEvt = function () {
