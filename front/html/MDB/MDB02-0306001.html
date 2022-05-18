@@ -35,7 +35,7 @@
           <h1 class="tit-h1">선택한 기관을 <br />하나씩 연결해 주세요</h1>
           <div class="mt-24">
             <!-- 로딩 전 -->
-            <!-- <div class="skeleton-wrap">
+            <div class="skeleton-wrap">
               <div class="round-box-item skeleton-bg">
                 <div class="logo-info-txt">
                   <i class="ico-logo"></i>
@@ -51,7 +51,7 @@
                   <i class="ico-logo"></i>
                 </div>
               </div>
-            </div> -->
+            </div>
             <!-- //로딩 전 -->
             <!-- 로딩 후 -->
             <div class="round-box-item">
@@ -109,6 +109,17 @@
       <!-- //팝업 -->
     </article>
     <script>
+      // 스켈레톤 UI 확인용
+      const skeletonHide = function () {
+        const $items = $('.round-box-item').not('.skeleton-bg');
+        $items.hide();
+        setTimeout(function () {
+          $('.skeleton-wrap').remove();
+          $items.show();
+        }, 2000);
+      };
+      skeletonHide();
+
       let $closeType = true;
       $('.head-close').click(function () {
         if ($closeType) {
