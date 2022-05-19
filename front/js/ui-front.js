@@ -82,6 +82,10 @@ const ui = {
 
     $(window).scroll();
     $(window).resize();
+
+    setTimeout(function () {
+      ui.Common.floating();
+    }, 100);
   }
 };
 
@@ -519,7 +523,7 @@ ui.Common = {
     const $space = $('.bottom-fixed-space');
     if (!$('.bottom-fixed-space').length) return;
     const $spaceArryHeight = [];
-    const $naviBar = $('.floating-bar');
+    const $naviBar = $('.floating-menu-bar');
     if ($naviBar.length && $naviBar.height() != 0) {
       $spaceArryHeight.push($naviBar.outerHeight());
     }
@@ -565,14 +569,42 @@ ui.Common = {
         });
     }
   },
-  isFloating: false,
+  // isFloating: false,
   floating: function () {
-    let isBtn = false;
-    if ($('.floating-btn').length) isBtn = true;
-    if ($('.floating-bar').length) {
-      ui.Common.isFloating = true;
-      if (isBtn && !$('.floating-bar .floating-btn').length) $('.floating-bar').prepend($('.floating-btn'));
+    // let isBtn = false;
+    // if ($('.floating-btn').length) isBtn = true;
+    // if ($('.floating-bar').length) {
+    //   ui.Common.isFloating = true;
+    //   if (isBtn && !$('.floating-bar .floating-btn').length) $('.floating-bar').prepend($('.floating-btn'));
+    // }
+
+    const $on = $('.floating-menu-bar .on');
+    if ($on.length) {
+      const $lottieEl = $on.find('.lottie');
+      if ($lottieEl.length) {
+        const $lottie = $lottieEl.data('lottie-opt');
+        $lottie.playSegments([0, 35], true);
+      }
     }
+
+    $('.floating-menu-bar a').click(function () {
+      const $oldOn = $('.floating-menu-bar .on');
+      const $oldLottieEl = $oldOn.find('.lottie');
+      if ($oldLottieEl.length) {
+        const $oldLottie = $oldLottieEl.data('lottie-opt');
+        // $oldLottie.goToAndPlay(35, true);
+        // $oldLottie.goToAndStop(0, true);
+        $oldLottie.playSegments([35, 70], true);
+      }
+
+      $(this).addClass('on').siblings().removeClass('on');
+      const $newOn = $(this);
+      const $newLottieEl = $newOn.find('.lottie');
+      if ($newLottieEl.length) {
+        const $newLottie = $newLottieEl.data('lottie-opt');
+        $newLottie.playSegments([0, 35], true);
+      }
+    });
   },
   scroll: function () {
     //top 버튼
@@ -594,8 +626,8 @@ ui.Common = {
     if (!$(btnTop.button).length) {
       if ($('.floating-btn').length) {
         $('.floating-btn').append(btnHtml);
-      } else if ($('.floating-bar').length && $('.floating-bar').is(':visible')) {
-        $('.floating-bar').prepend(btnHtml);
+        // } else if ($('.floating-bar').length && $('.floating-bar').is(':visible')) {
+        // $('.floating-bar').prepend(btnHtml);
       } else if ($('#wrap').length) {
         $('#wrap').append(btnHtml);
       } else {
@@ -865,9 +897,10 @@ ui.Common = {
           const $data = $this.data('lottie');
           $this.addClass('lottie__init').removeAttr('data-lottie').aria('hidden', true);
           const $loopOpt = $this.hasClass('_loop');
+          const $stopOpt = $this.hasClass('_stop');
           const $sclAnimation = $this.data('animation');
           let $autoplayOpt = true;
-          if ($sclAnimation) {
+          if ($sclAnimation || $stopOpt) {
             $autoplayOpt = false;
           }
           const $lottieOpt = lottie.loadAnimation({
@@ -901,7 +934,6 @@ ui.Common = {
     ui.Common.spaceAppend();
     ui.Common.space();
     ui.Common.step();
-    ui.Common.floating();
     ui.Common.scroll();
     // ui.Common.landscape();
 
