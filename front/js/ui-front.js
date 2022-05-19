@@ -2610,37 +2610,42 @@ ui.Touch = {
 
     // bottom fixed focus
     let $startY = null;
+    let isParent = false;
+    const $bottomInp = $('.pop-foot, .bottom-fixed').find('input, textarea');
     $(document).on('touchstart', function (e) {
       const $target = $(e.target);
-      if ($target.closest('.pop-foot').length || $target.closest('.bottom-fixed').length) return;
-      const $bottomInp = $('.pop-foot, .bottom-fixed').find('input, textarea');
-      if ($isFocus && $bottomInp.is(':focus')) {
-        const $target = e.target;
-        const $clientY = e.touches[0].clientY;
-        if ($target !== $isFocusEl) {
-          $($isFocusEl).blur();
-          $reset();
-        } else if ($target === $isFocusEl) {
-          $startY = $clientY;
+      if ($target.closest('.pop-foot').length || $target.closest('.bottom-fixed').length) {
+        isParent = true;
+      } else {
+        if ($isFocus && $bottomInp.is(':focus')) {
+          const $target = e.target;
+          const $clientY = e.touches[0].clientY;
+          if ($target !== $isFocusEl) {
+            $($isFocusEl).blur();
+            $reset();
+          } else {
+            $startY = $clientY;
+          }
         }
       }
     });
 
-    /*
     $(document).on('touchmove', function (e) {
-      if ($isFocus) {
-        const $target = e.target;
+      if ($isFocus && $bottomInp.is(':focus') && isParent) {
+        const $target = $(e.target);
         const $clientY = e.touches[0].clientY;
-        const $el = $($target);
-        const $elH = $el.outerHeight();
-        const $move = Math.abs($startY - $clientY);
-        if ($target === $isFocusEl && $elH <= $move) {
+        let $closest;
+        if ($target.closest('.pop-foot').length) $closest = $target.closest('.pop-foot');
+        if ($target.closest('.bottom-fixed').length) $closest = $target.closest('.bottom-fixed').children();
+        if (!$closest) return;
+        const $closestTop = $closest.offset().top;
+        console.log($closestTop, $clientY);
+        if ($closestTop > $clientY) {
           $($isFocusEl).blur();
           $reset();
         }
       }
     });
-    */
   },
   init: function () {
     if ($('.ui-touch-rotate').length) {
