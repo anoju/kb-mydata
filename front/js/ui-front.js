@@ -3023,6 +3023,13 @@ ui.Form = {
     const $lineH = parseInt($(elem).css('line-height'));
     const $pd = parseInt($(elem).css('padding-top')) + parseInt($(elem).css('padding-bottom'));
     $(elem).css('height', $count * $lineH + $pd);
+
+    if ($('.body-dim').length) {
+      let $closest = $(elem).closest('.pop-foot');
+      if ($(elem).closest('.bottom-fixed').length) $closest = $(elem).closest('.bottom-fixed').children();
+      const $closestH = $closest.outerHeight();
+      $('.body-dim').css('bottom', $closestH);
+    }
   },
   textarea: function () {
     // ui.Form.textareaSpace();

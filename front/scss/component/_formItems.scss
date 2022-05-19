@@ -84,7 +84,10 @@ i.require {
   &.input {
     align-items: flex-start;
     > *:not(input, .form-lbl, .form-box-inner) {
+      // display: flex;
+      // align-items: center;
       height: 2.4rem;
+      line-height: 2.4rem;
       margin-top: 3.8rem;
     }
     > .button:last-child,
