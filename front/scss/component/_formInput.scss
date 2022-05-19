@@ -58,6 +58,7 @@
     color: inherit;
     background: none;
     border-radius: 1rem;
+    margin: 0;
     outline: none;
     font-size: 1.6rem;
     font-weight: 500;
@@ -95,6 +96,9 @@
       //   content: attr(placeholder);
       //   color: var(--placeholder-txt-color);
       // }
+      &::-webkit-date-and-time-value {
+        text-align: left;
+      }
     }
   }
   &.h56 {
