@@ -259,9 +259,8 @@
     }
   }
 }
-.terms-iframe {
-}
 .terms-content {
+  word-break: break-all;
   font-size: 1.4rem;
   color: var(--base-txt-color);
   padding-left: var(--base-padding);
@@ -378,6 +377,15 @@
     border-radius: 1.2rem;
     padding: 2rem;
   }
+  .cont-box {
+    white-space: pre-line;
+    overflow-y: auto;
+    max-height: 20rem;
+    border: 0.1rem solid var(--line-color);
+    margin: 1rem 0;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
   .terms-text {
     margin-top: 1.6rem;
   }
@@ -435,6 +443,9 @@
         }
       }
     }
+  }
+  .tab-list {
+    margin-top: 0;
   }
 }
 .round-line-box {
