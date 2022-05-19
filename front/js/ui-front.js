@@ -2638,7 +2638,7 @@ ui.Touch = {
         if ($target.closest('.pop-foot').length) $closest = $target.closest('.pop-foot');
         if ($target.closest('.bottom-fixed').length) $closest = $target.closest('.bottom-fixed').children();
         if (!$closest) return;
-        const $closestTop = $closest.offset().top;
+        const $closestTop = $target.closest('.popup').length ? $closest.offset().top : $closest.offset().top - $(window).scrollTop();
         console.log($closestTop, $clientY, $(window).height());
         if ($closestTop > $clientY || $(window).height() < $clientY) {
           $($isFocusEl).blur();
