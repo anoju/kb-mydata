@@ -3105,6 +3105,9 @@
         flex: 0 0 auto;
         width: 7.5rem;
         border-radius: 50%;
+        img {
+          border-radius: 50%;
+        }
         i {
           position: absolute;
           top: 0;
