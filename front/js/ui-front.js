@@ -83,9 +83,7 @@ const ui = {
     $(window).scroll();
     $(window).resize();
 
-    setTimeout(function () {
-      ui.Common.floating();
-    }, 100);
+    ui.Common.floating();
   }
 };
 
@@ -582,8 +580,17 @@ ui.Common = {
     if ($on.length) {
       const $lottieEl = $on.find('.lottie');
       if ($lottieEl.length) {
-        const $lottie = $lottieEl.data('lottie-opt');
-        $lottie.playSegments([0, 35], true);
+        const $lottieFirst = function () {
+          const $lottie = $lottieEl.data('lottie-opt');
+          if ($lottie) {
+            $lottie.playSegments([0, 35], true);
+          } else {
+            setTimeout(function () {
+              $lottieFirst();
+            }, 100);
+          }
+        };
+        $lottieFirst();
       }
     }
 
