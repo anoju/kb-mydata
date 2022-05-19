@@ -2611,6 +2611,8 @@ ui.Touch = {
     // bottom fixed focus
     let $startY = null;
     $(document).on('touchstart', function (e) {
+      const $target = $(e.target);
+      if ($target.closest('.pop-foot').length || $target.closest('.bottom-fixed').length) return;
       const $bottomInp = $('.pop-foot, .bottom-fixed').find('input, textarea');
       if ($isFocus && $bottomInp.is(':focus')) {
         const $target = e.target;
