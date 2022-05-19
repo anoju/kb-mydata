@@ -371,13 +371,13 @@ html.lock,
               top: 1.2rem;
               right: 2.4rem;
               background: url(../images/common/gnb-toggle@3x.png) no-repeat center center / contain;
-              transform: rotate3d(1, 0, 0, 0deg);
               transition: 0.3s;
+              @include rotateZ(0);
             }
           }
         }
         &.open > a:after {
-          transform: rotate3d(1, 0, 0, 180deg);
+          @include rotateZ(180);
         }
         &.active > a {
           font-weight: bold;

@@ -204,7 +204,7 @@
     right: 1.2rem;
     top: 50%;
     margin-top: -1.2rem;
-    transform: rotate3d(1, 0, 0, 0deg);
+    @include rotateZ(0);
     transition: 0.3s;
     @include ico-after-apend;
     // background-image: url(../images/icon/ico-select.png);
@@ -219,8 +219,7 @@
   &.open,
   &.pop__focused {
     &:after {
-      //transform: rotate3d(1, 0, 0, 180deg);
-      transform: rotate(180deg);
+      @include rotateZ(180);
     }
   }
   .btn-select-val {

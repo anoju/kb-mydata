@@ -468,7 +468,7 @@ button.btn-click {
   }
   &.open {
     [class*='i-ico-'] {
-      transform: rotate3d(1, 0, 0, 180deg);
+      @include rotateZ(180);
     }
   }
 }

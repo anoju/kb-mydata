@@ -116,13 +116,13 @@
         height: 2.4rem;
         margin-top: -0.5rem;
         background: url(../images/icon/tab-navi-arr@3x.png) no-repeat center center / contain;
-        transform: rotate3d(1, 0, 0, 0deg);
+        @include rotateZ(0);
         transition: 0.3s;
       }
       &.on {
         opacity: 1;
         &:before {
-          transform: rotate3d(1, 0, 0, 180deg);
+          @include rotateZ(180);
         }
       }
     }

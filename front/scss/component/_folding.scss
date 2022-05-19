@@ -37,12 +37,12 @@
       @include bg-etc;
       // background-image: url(../images/icon/ico-folding.png);
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7 10L12 15L17 10' stroke='%23B0B0B0' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-      transform: rotate3d(1, 0, 0, 0deg);
+      @include rotateZ(0);
       transition: 0.3s;
     }
     &.reverse-arr {
       &:after {
-        transform: rotate3d(1, 0, 0, 180deg);
+        @include rotateZ(180);
       }
     }
     &.disabled {
@@ -76,11 +76,11 @@
   }
   li.open .folding-btn:after,
   .folding-btn.open:after {
-    transform: rotate3d(1, 0, 0, 180deg);
+    @include rotateZ(180);
   }
   li.open .folding-btn.reverse-arr:after,
   .folding-btn.reverse-arr.open:after {
-    transform: rotate3d(1, 0, 0, 0deg);
+    @include rotateZ(0);
   }
   .folding-panel {
     display: none;
@@ -118,12 +118,12 @@
 .ui-folding-btn {
   [class*='i-ico-arr'] {
     display: block;
-    transform: rotate3d(1, 0, 0, 0);
+    @include rotateZ(0);
     transition: 0.3s;
   }
   &.open {
     [class*='i-ico-arr'] {
-      transform: rotate3d(1, 0, 0, 180deg);
+      @include rotateZ(180);
     }
   }
 }

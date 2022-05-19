@@ -364,9 +364,9 @@
         }
       }
     }
-    // &.ui-pop-select {
-    //   padding-top: -vh(50);
-    // }
+    &.ui-pop-select {
+      padding-top: -vh(40);
+    }
 
     &.is-swipe {
       .pop-head {

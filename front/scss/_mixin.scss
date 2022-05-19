@@ -174,3 +174,10 @@
     #{$key}: -iosEnv($value, false, false);
   }
 }
+
+@mixin rotateZ($value) {
+  transform: rotate3d(1, 0, 0, #{$value}deg);
+  html.ios & {
+    transform: rotate(-#{$value}deg);
+  }
+}
