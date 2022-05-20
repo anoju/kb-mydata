@@ -112,11 +112,12 @@
                   <div class="custom-file">
                     <!-- 2022-03-24: aria-describedby 속성 제거 및 텍스트 수정 -->
                     <input type="file" class="custom-file-input" id="inputGroupFile01" />
-                    <label class="custom-file-label" for="inputGroupFile01">첨부파일은 PNG 이며 5MB 이하만 등록</label>
+                    <!-- 2022-05-20: 수정 -->
+                    <label class="custom-file-label" for="inputGroupFile01">이미지 등록종류 : PNG / 사이즈 1170 x 723</label>
                   </div>
                   <!-- 2022-03-25: * => ※, 도움말 클래스 .help-txt로 통일(수정) -->
                   <!-- 2022-05-03: 텍스트 수정 -->
-                  <div class="mt-1 help-txt">※ 팝업사이즈: 1170 x 723, 첨부파일: PNG</div>
+                  <!-- <div class="mt-1 help-txt">※ 팝업사이즈: 1170 x 723, 첨부파일: PNG</div> -->
                 </div>
               </div>
             </div>
@@ -145,9 +146,10 @@
                 <div class="form-box-cont"><input type="text" class="form-control" /></div>
               </div>
             </div>
-            <div class="form-box-row">
+            <!-- 2022-05-20: 삭제 -->
+            <!-- <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i>팝업닫기설정</div>
+                <div class="form-box-label"><i class="fc-red mr-1">*</i>표시기간형태</div>
                 <div class="form-box-cont">
                   <div class="custom-control-wrap">
                     <label class="custom-control custom-radio custom-control-inline">
@@ -161,7 +163,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="title-wrap mt-5">
@@ -212,13 +214,17 @@
               <div class="form-box-item">
                 <div class="form-box-label">게시일</div>
                 <div class="form-box-cont">
-                  <div class="input-daterange-btn">
+                  <div class="input-daterange-btn time-type">
                     <div class="input-group">
                       <input type="date" class="form-control" placeholder="시작일" />
+                      <input type="text" class="form-control time" placeholder="시간" />
+                      <input type="text" class="form-control time" placeholder="분" />
                       <div class="input-group-prepend">
                         <div class="input-group-text">~</div>
                       </div>
                       <input type="date" class="form-control" placeholder="종료일" />
+                      <input type="text" class="form-control time" placeholder="시간" />
+                      <input type="text" class="form-control time" placeholder="분" />
                     </div>
 
                     <div class="btn-group" role="group" aria-label="기간 선택 버튼">
@@ -251,13 +257,15 @@
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label">최초등록</div>
-                <div class="form-box-cont d-flex align-items-center">YYYY.MM.DD 홍길동</div>
+                <!-- 2022-05-20: 수정 -->
+                <div class="form-box-cont d-flex align-items-center">YYYY.MM.DD hh:mm:ss 홍길동</div>
               </div>
             </div>
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label">최근수정</div>
-                <div class="form-box-cont d-flex align-items-center">YYYY.MM.DD 홍길동</div>
+                <!-- 2022-05-20: 수정 -->
+                <div class="form-box-cont d-flex align-items-center">YYYY.MM.DD hh:mm:ss 홍길동</div>
               </div>
             </div>
           </div>

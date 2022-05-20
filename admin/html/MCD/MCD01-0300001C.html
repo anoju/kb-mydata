@@ -80,9 +80,10 @@
                 </div>
               </div>
             </div>
+            <!-- 2022-05-20: 수정 -->
             <div class="form-box-row">
               <div class="form-box-item">
-                <div class="form-box-label">분류</div>
+                <div class="form-box-label">메뉴</div>
                 <div class="form-box-cont">
                   <div class="custom-control-wrap">
                     <label class="custom-control custom-radio custom-control-inline">
@@ -91,16 +92,25 @@
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
                       <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">승인자</span>
+                      <span class="custom-control-label">이벤트관리</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
                       <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">요청자</span>
+                      <span class="custom-control-label">리워드관리</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">이벤트 그라운드 퀴즈관리</span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="rdo1" class="custom-control-input" />
+                      <span class="custom-control-label">SMS발송관리</span>
                     </label>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- //2022-05-20: 수정 -->
           </div>
           <div class="btn-wrap">
             <button type="button" class="btn large btn-dark"><i class="bi bi-search mr-1"></i> 검색</button>
@@ -110,150 +120,106 @@
             <div class="left">검색 <strong class="fc-red">5</strong>개 / 전체 <strong class="fc-red">15</strong>개</div>
           </div>
 
+          <!-- 2022-05-20: 수정 -->
           <table id="table" class="table table-hover" data-pagination="true">
             <thead>
               <tr>
                 <th scope="col">번호</th>
-                <th scope="col">상태</th>
-                <th scope="col">요청일</th>
-                <th scope="col">요청자</th>
-                <th scope="col">승인자</th>
-                <th scope="col">사유</th>
                 <th scope="col">메뉴</th>
-                <th scope="col">승인일시</th>
+                <th scope="col">요청자</th>
+                <th scope="col">확인자</th>
+                <th scope="col">사유</th>
+                <th scope="col">요청일시</th>
               </tr>
             </thead>
             <tbody>
               <!-- 일치하는 검색결과가 없습니다. -->
               <tr class="no-records-found">
-                <td colspan="9">일치하는 검색결과가 없습니다.</td>
-              </tr>
-              <tr class="tr-fixed">
-                <td>-</td>
-                <td>승인요청중</td>
-                <td>2022.12.01</td>
-                <td>홍길동</td>
-                <td>임꺽정</td>
-                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
-                <td>
-                  <button type="button" class="btn btn-sm btn-secondary">승인</button>
-                </td>
-              </tr>
-              <tr class="tr-fixed">
-                <td>-</td>
-                <td>승인요청중</td>
-                <td>2022.12.01</td>
-                <td>홍길동</td>
-                <td>임꺽정</td>
-                <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
-                <td>
-                  <button type="button" class="btn btn-sm btn-secondary">승인</button>
-                </td>
+                <td colspan="6">일치하는 검색결과가 없습니다.</td>
               </tr>
               <tr>
                 <td>1</td>
-                <td>승인완료</td>
-                <td>2022.12.01</td>
+                <td>이벤트관리</td>
                 <td>홍길동</td>
-                <td>임꺽정</td>
+                <td>김교보</td>
                 <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
                 <td>2022.12.01 12:12:12</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>승인완료</td>
-                <td>2022.12.01</td>
+                <td>이벤트관리</td>
                 <td>홍길동</td>
-                <td>임꺽정</td>
+                <td>김교보</td>
                 <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
                 <td>2022.12.01 12:12:12</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>승인완료</td>
-                <td>2022.12.01</td>
+                <td>이벤트관리</td>
                 <td>홍길동</td>
-                <td>임꺽정</td>
+                <td>김교보</td>
                 <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
                 <td>2022.12.01 12:12:12</td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>승인완료</td>
-                <td>2022.12.01</td>
+                <td>이벤트관리</td>
                 <td>홍길동</td>
-                <td>임꺽정</td>
+                <td>김교보</td>
                 <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
                 <td>2022.12.01 12:12:12</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>승인완료</td>
-                <td>2022.12.01</td>
+                <td>이벤트관리</td>
                 <td>홍길동</td>
-                <td>임꺽정</td>
+                <td>김교보</td>
                 <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
                 <td>2022.12.01 12:12:12</td>
               </tr>
               <tr>
                 <td>1</td>
-                <td>승인완료</td>
-                <td>2022.12.01</td>
+                <td>이벤트관리</td>
                 <td>홍길동</td>
-                <td>임꺽정</td>
+                <td>김교보</td>
                 <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
                 <td>2022.12.01 12:12:12</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>승인완료</td>
-                <td>2022.12.01</td>
+                <td>이벤트관리</td>
                 <td>홍길동</td>
-                <td>임꺽정</td>
+                <td>김교보</td>
                 <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
                 <td>2022.12.01 12:12:12</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>승인완료</td>
-                <td>2022.12.01</td>
+                <td>이벤트관리</td>
                 <td>홍길동</td>
-                <td>임꺽정</td>
+                <td>김교보</td>
                 <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
                 <td>2022.12.01 12:12:12</td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>승인완료</td>
-                <td>2022.12.01</td>
+                <td>이벤트관리</td>
                 <td>홍길동</td>
-                <td>임꺽정</td>
+                <td>김교보</td>
                 <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
                 <td>2022.12.01 12:12:12</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>승인완료</td>
-                <td>2022.12.01</td>
+                <td>이벤트관리</td>
                 <td>홍길동</td>
-                <td>임꺽정</td>
+                <td>김교보</td>
                 <td class="text-left">사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.사유입니다.</td>
-                <td>이벤트</td>
                 <td>2022.12.01 12:12:12</td>
               </tr>
             </tbody>
           </table>
+          <!-- //2022-05-20: 수정 -->
           <!-- //컨텐츠본문 -->
         </main>
         <!-- //컨텐츠 -->

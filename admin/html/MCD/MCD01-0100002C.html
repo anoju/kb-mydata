@@ -126,7 +126,19 @@
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label">권한설정</div>
-                <div class="form-box-cont"><button type="button" class="btn btn-md btn-secondary" data-toggle="modal" data-target="#menuModal">메뉴권한 설정</button></div>
+                <div class="form-box-cont">
+                  <!-- 2022-05-20: 승인권자지정 추가 -->
+                  <div class="d-flex align-items-center">
+                    <button type="button" class="btn btn-md btn-secondary" data-toggle="modal" data-target="#menuModal">메뉴권한 설정</button>
+
+                    <label class="custom-control custom-checkbox ml-2 mb-0">
+                      <input type="checkbox" class="custom-control-input" />
+                      <span class="custom-control-label">승인권자지정</span>
+                    </label>
+                  </div>
+                  <div class="mt-1 help-txt">※ 승인권자는 1명만 지저오디며, 중복으로 등록 시 기 등록되어 있는 승인권자의 권한은 사라지게 됩니다.</div>
+                  <!-- // 2022-05-20: 승인권자지정 추가 -->
+                </div>
               </div>
             </div>
           </div>
@@ -141,7 +153,7 @@
               <div class="form-box-item">
                 <div class="form-box-label">신상메모</div>
                 <div class="form-box-cont">
-                  <textarea id="editor" name="editordata1">신상변경(퇴직, 인사이동 등) 계정사용 중지 등을 입력해주세요.</textarea>
+                  <textarea class="form-control" rows="2" placeholder="신상변경(퇴직, 인사이동 등) 계정사용 중지 등을 입력해주세요."></textarea>
                 </div>
               </div>
             </div>
@@ -163,6 +175,7 @@
           <div class="btn-wrap kb-page-btn text-center mt-5">
             <button type="button" class="btn btn-lg btn-outline-dark"><i class="bi bi-x"></i> 취소</button>
             <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-plus"></i> 등록</button>
+            <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 저장</button>
             <button type="button" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#confirmAccount"><i class="bi bi-play"></i> 계정사용</button>
             <button type="button" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#confirmAccount"><i class="bi bi-stop"></i> 계정사용중지</button>
           </div>
@@ -323,9 +336,6 @@
     <!-- //wrap -->
 
     <script>
-      //에디터
-      CKEDITOR.replace('editor');
-
       //팝업
       //유효성 오류팝업(제목미입력)
       /*
