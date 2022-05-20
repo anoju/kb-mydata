@@ -2791,7 +2791,9 @@ ui.Form = {
     }
     let $selectTxt = $target.find(':selected').text();
     if ($selectTxt == '') $selectTxt = '선택';
-    $target.siblings('.btn-select').find('.btn-select-val').html($selectTxt);
+    const $btnVal = $target.siblings('.btn-select').find('.btn-select-val');
+    if ($selectTxt === $btnVal.text()) return;
+    $btnVal.html($selectTxt);
     if ($val == '') {
       $target.siblings('.btn-select').addClass('off');
     } else {
