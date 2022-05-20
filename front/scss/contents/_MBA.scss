@@ -2861,7 +2861,7 @@
 
 /* 매치 메인*/
 .match-main-visual {
-  position: relative;
+  position: sticky;
   height: 24.7rem;
   background: radial-gradient(83.19% 350.89% at 50% 35.05%, #ff8a60 0%, #fe7668 100%);
   .img {
