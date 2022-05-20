@@ -126,6 +126,7 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 처리결과</div>
                 <div class="form-box-cont">
+                  <!-- ui 필요 시 -->
                   <div class="custom-control-wrap">
                     <label class="custom-control custom-radio custom-control-inline">
                       <input type="radio" name="rdo1" class="custom-control-input" />
@@ -136,11 +137,14 @@
                       <span class="custom-control-label">반려</span>
                     </label>
                   </div>
+                  <!-- 2022-05-20: 텍스트만 노출 시 케이스 추가 -->
+                  <div class="text-box">반려</div>
                 </div>
               </div>
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 작성자 이용 제한</div>
                 <div class="form-box-cont">
+                  <!-- ui 필요 시 -->
                   <div class="custom-control-wrap">
                     <label class="custom-control custom-radio custom-control-inline">
                       <input type="radio" name="rdo2" class="custom-control-input" />
@@ -148,9 +152,12 @@
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
                       <input type="radio" name="rdo2" class="custom-control-input" />
-                      <span class="custom-control-label">제한하기</span>
+                      <!-- 2022-05-20: 수정 -->
+                      <span class="custom-control-label">그라운드 이용제한(7일)</span>
                     </label>
                   </div>
+                  <!-- 2022-05-20: 텍스트만 노출 시 케이스 추가 -->
+                  <div class="text-box">그라운드 이용제한(7일)</div>
                 </div>
               </div>
             </div>
@@ -158,24 +165,35 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i> 처리답변</div>
                 <div class="form-box-cont">
-                  <!-- 2022-04-26: 클래스 수정 -->
-                  <div class="d-flex align-items-center">
-                    <label class="custom-control custom-radio custom-control-inline mb-0">
-                      <input type="radio" name="rdo1" class="custom-control-input" checked />
-                      <span class="custom-control-label">기본 답변</span>
-                    </label>
-                    <div class="flex-auto">
-                      <input type="text" class="form-control" value="마지막 입력값 출력" readonly />
+                  <!-- ui 필요 시 -->
+                  <div>
+                    <!-- 2022-04-26: 클래스 수정 -->
+                    <div class="d-flex align-items-center">
+                      <label class="custom-control custom-radio custom-control-inline mb-0">
+                        <input type="radio" name="rdo1" class="custom-control-input" checked />
+                        <span class="custom-control-label">기본 답변</span>
+                      </label>
+                      <div class="flex-auto">
+                        <input type="text" class="form-control" value="마지막 입력값 출력" readonly />
+                      </div>
+                    </div>
+                    <!-- 2022-04-26: 클래스 수정 -->
+                    <div class="d-flex align-items-center mt-2">
+                      <label class="custom-control custom-radio custom-control-inline mb-0">
+                        <input type="radio" name="rdo1" class="custom-control-input" />
+                        <span class="custom-control-label">직접 입력</span>
+                      </label>
+                      <div class="flex-auto">
+                        <input type="text" class="form-control" placeholder="최대 50글자" />
+                      </div>
                     </div>
                   </div>
-                  <!-- 2022-04-26: 클래스 수정 -->
-                  <div class="d-flex align-items-center mt-2">
-                    <label class="custom-control custom-radio custom-control-inline mb-0">
-                      <input type="radio" name="rdo1" class="custom-control-input" />
-                      <span class="custom-control-label">직접 입력</span>
-                    </label>
+
+                  <!-- 2022-05-20: 텍스트만 노출 시 케이스 추가 -->
+                  <div class="d-flex align-items-center">
+                    <div class="text-box mr-3">기본 답변</div>
                     <div class="flex-auto">
-                      <input type="text" class="form-control" placeholder="최대 50글자" />
+                      <input type="text" class="form-control" value="답변입니다. 답변입니다. 답변입니다." readonly />
                     </div>
                   </div>
                 </div>
@@ -214,9 +232,114 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body text-center">
-                  <img src="../../images/temp/thumb-temp3.jpg" class="img-fluid" alt="" />
+                <!-- 2022-05-22: 수정 -->
+                <div class="modal-body">
+                  <div class="title-wrap">
+                    <h2 class="h3">활동 그라운드</h2>
+                  </div>
+                  <div class="form-box">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">그라운드 이름</div>
+                        <div class="form-box-cont">
+                          <div class="text-box">그라운드 이름입니다.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 게시물 신고 케이스 -->
+                  <div>
+                    <div class="title-wrap mt-5">
+                      <h2 class="h3">신고된 댓글/답글 내용</h2>
+                    </div>
+                    <div class="form-box">
+                      <div class="form-box-row">
+                        <div class="form-box-item">
+                          <div class="form-box-label">작성자</div>
+                          <div class="form-box-cont">
+                            <div class="text-box">홍길동(닉네임닉네임)</div>
+                          </div>
+                        </div>
+                        <div class="form-box-item">
+                          <div class="form-box-label">작성일시</div>
+                          <div class="form-box-cont">
+                            <div class="text-box">YYYY.MM.DD hh:mm:ss</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-box-row">
+                        <div class="form-box-item">
+                          <div class="form-box-label">상세 내용</div>
+                          <div class="form-box-cont">
+                            <!-- prettier-ignore -->
+                            <div class="text-box pre-line">상세 내용입니다.상세 내용입니다.상세 내용입니다.상세 내용입니다.상세 내용입니다.상세 내용입니다.
+                              상세 내용입니다.
+                              상세 내용입니다.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //게시물 신고 케이스 -->
+
+                  <div class="title-wrap mt-5">
+                    <div>
+                      <!-- 게시물 신고 케이스 -->
+                      <h2 class="h3">신고된 게시물 내용</h2>
+                      <!-- 댓글 신고 케이스 -->
+                      <h2 class="h3">연관 게시물 내용</h2>
+                    </div>
+                  </div>
+                  <div class="form-box">
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">제목</div>
+                        <div class="form-box-cont">
+                          <div class="text-box">제목 내용입니다.제목 내용입니다.제목 내용입니다.제목 내용입니다.제목 내용입니다.제목 내용입니다.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">작성자</div>
+                        <div class="form-box-cont">
+                          <div class="text-box">홍길동(닉네임닉네임)</div>
+                        </div>
+                      </div>
+                      <div class="form-box-item">
+                        <div class="form-box-label">작성일시</div>
+                        <div class="form-box-cont">
+                          <div class="text-box">YYYY.MM.DD hh:mm:ss</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">게시물 이미지</div>
+                        <div class="form-box-cont">
+                          <div class="img-box-wrap">
+                            <a href="../../images/temp/thumb-temp1.jpg" class="img-box" data-toggle="lightbox"><img src="../../images/temp/thumb-temp1.jpg" alt="" /></a>
+                            <a href="../../images/temp/thumb-temp2.jpg" class="img-box" data-toggle="lightbox"><img src="../../images/temp/thumb-temp2.jpg" alt="" /></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-box-row">
+                      <div class="form-box-item">
+                        <div class="form-box-label">상세 내용</div>
+                        <div class="form-box-cont">
+                          <!-- prettier-ignore -->
+                          <div class="text-box pre-line">상세 내용입니다.상세 내용입니다.상세 내용입니다.상세 내용입니다.상세 내용입니다.상세 내용입니다.
+                            상세 내용입니다.
+                            상세 내용입니다.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <!-- // 2022-05-22: 수정 -->
                 <div class="modal-footer">
                   <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal"><i class="bi bi-check"></i> 확인</button>
                 </div>

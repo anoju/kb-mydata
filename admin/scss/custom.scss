@@ -221,6 +221,14 @@ $grays: (
 .pointer {
   cursor: pointer;
 }
+.img-box-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -3px;
+  .img-box {
+    margin: 3px;
+  }
+}
 .img-box {
   position: relative;
   display: inline-block;
