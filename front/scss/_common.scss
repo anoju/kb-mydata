@@ -27,9 +27,6 @@
 html {
   height: 100%;
   font-size: 62.5%;
-  // user-select: none;
-  // -webkit-touch-callout:none;
-  // -webkit-tap-highlight-color: transparent;
   text-size-adjust: none;
 }
 body {
@@ -1132,3 +1129,13 @@ html.safari {
     display: none;
   }
 }
+
+//app
+// html.is-app {
+//   user-select: none;
+//   -webkit-touch-callout:none;
+//   -webkit-tap-highlight-color: transparent;
+//   a {
+//     -webkit-tap-highlight-color: transparent;
+//   }
+// }
