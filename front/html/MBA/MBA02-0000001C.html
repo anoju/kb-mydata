@@ -555,7 +555,7 @@
           } else {
             $visualTop = $visual.offset().top - $sclTop;
           }
-          const $section = $visual.siblings('.section');
+          const $section = $visual.siblings('.section:visible');
           const $sectionTop = $section.offset().top;
           let $sectionRound = $section.data('radius');
           if (!$sectionRound) {
