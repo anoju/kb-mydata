@@ -324,7 +324,6 @@
         let $visualTop = 0;
         if ($visual.length) {
           $visualTop = $('#header').length ? $('#header').outerHeight() : 0;
-          console.log($visualTop);
           $visual.css('top', $visualTop);
         }
         $(window).scroll(function () {
@@ -343,7 +342,7 @@
             $section.data('radius', $sectionRound);
           }
 
-          if ($sclTop < $sectionTop + 10) {
+          if ($sclTop < $sectionTop + 20) {
             const $ratio = 1 - Math.max(0, Math.min(1, $sclTop / ($sectionTop - $visualTop)));
             $section.css({
               'border-top-left-radius': $sectionRound * $ratio,
