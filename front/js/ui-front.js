@@ -2780,6 +2780,24 @@ ui.Form = {
       }
     });
   },
+  selectSetVal: function (target, val) {
+    const $target = $(target);
+    let $val = $target.val();
+    if (val && $val === val) {
+      return;
+    } else if (val && $val !== val) {
+      $target.val(val);
+      $val = val;
+    }
+    let $selectTxt = $target.find(':selected').text();
+    if ($selectTxt == '') $selectTxt = '선택';
+    $target.siblings('.btn-select').find('.btn-select-val').html($selectTxt);
+    if ($val == '') {
+      $target.siblings('.btn-select').addClass('off');
+    } else {
+      $target.siblings('.btn-select').removeClass('off');
+    }
+  },
   select: function () {
     const $select = $('.select').not('.btn, .not');
     if ($select.length) {
@@ -2803,15 +2821,7 @@ ui.Form = {
             if ($forLbl.length) $forLbl.addClass('ui-select-lbl').attr('title', $btnTitle);
 
             $sel.change(function () {
-              const $val = $(this).val();
-              let $selectTxt = $(this).find(':selected').text();
-              if ($selectTxt == '') $selectTxt = '선택';
-              $(this).siblings('.btn-select').find('.btn-select-val').html($selectTxt);
-              if ($val == '') {
-                $(this).siblings('.btn-select').addClass('off');
-              } else {
-                $(this).siblings('.btn-select').removeClass('off');
-              }
+              ui.Form.selectSetVal(this);
             });
           }
           $sel.change();
@@ -6245,10 +6255,12 @@ const Layer = {
       e.preventDefault();
       if (!$(this).hasClass('disabled')) {
         const $btnVal = $(this).data('value');
-        const $btnTxt = $(this).text();
+        // const $btnTxt = $(this).text();
         $(this).parent().addClass('selected').closest('li').siblings().find('.selected').removeClass('selected');
-        $target.val($btnVal).change();
-        Layer.close('#' + $popId);
+        ui.Form.selectSetVal($target, $btnVal);
+        Layer.close('#' + $popId, function () {
+          $target.change();
+        });
       }
     });
   },
