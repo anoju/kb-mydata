@@ -98,7 +98,8 @@
 }
 .img-box-wrap {
   display: flex;
-  .section & {
+  .section &,
+  &.outer {
     @include outer(true);
   }
   @include scroll-x;
@@ -107,9 +108,9 @@
     margin-left: 0.8rem;
   }
   .img-box {
-    width: 8rem;
+    width: 6.4rem;
     flex-shrink: 0;
-    border-radius: 0.4rem;
+    // border-radius: 0.4rem;
     &:before {
       border: 0.1rem solid #eee;
       border-radius: 0.4rem;
