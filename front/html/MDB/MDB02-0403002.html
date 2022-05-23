@@ -65,7 +65,7 @@
           <div class="btn-wrap bottom-fixed">
             <div class="flex">
               <button type="button" class="button h60 gray">다음에</button>
-              <button type="button" class="button h60 primary">등록하기</button>
+              <button type="button" id="btnMain" class="button h60 primary">등록하기</button>
             </div>
           </div>
         </div>
@@ -92,6 +92,10 @@
           $('.check-motion-page').eq(2).addClass('show');
         }
       }, 5000);
+
+      $('#btnMain').click(function () {
+        Layer.alert('등록하려는 차량의 시세 정보가<br />조회되지 않아 등록 할 수가 없어요.<br />자산 홈으로 이동 할게요.');
+      });
     </script>
   </body>
 </html>

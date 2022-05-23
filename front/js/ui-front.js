@@ -2712,7 +2712,6 @@ ui.Form = {
         } else if ($end < $elEnd) {
           $move = $scrollTop + ($elEnd - $end);
         }
-        console.log($topGap, $move);
         if ($move) {
           if (isPop) {
             $wrap.stop(true, false).animate({ scrollTop: $move }, 200);
