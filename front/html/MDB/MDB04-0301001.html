@@ -64,304 +64,305 @@
             </div>
           </div>
           <hr class="hr-line ui-header-bg-origin" aria-hidden="true" />
-          <div>
-            <div class="list-empty">
-              <i class="i-ico-warning-40" aria-hidden="true"></i>
-              <p>이번 달은 지출한 내역이 없어요.</p>
+
+          <div class="tab-round-menu mt-20 ui-tab">
+            <div class="tab-inner">
+              <ul class="tab-list">
+                <li class="tab"><a href="#">전체</a></li>
+                <li class="tab"><a href="#">카드</a></li>
+                <li class="tab"><a href="#">페이</a></li>
+                <li class="tab"><a href="#">계좌</a></li>
+              </ul>
             </div>
           </div>
-          <div>
-            <div class="tab-round-menu mt-20 ui-tab">
-              <div class="tab-inner">
-                <ul class="tab-list">
-                  <li class="tab"><a href="#">전체</a></li>
-                  <li class="tab"><a href="#">카드</a></li>
-                  <li class="tab"><a href="#">페이</a></li>
-                  <li class="tab"><a href="#">계좌</a></li>
-                </ul>
+          <div class="mt-26">
+            <div class="select inline">
+              <select title="지출수단을 선택해주세요" data-class="ty2">
+                <option value="1">전체</option>
+                <option value="2" data-sub="IBK기업은행">보통예금(신IBK급여통장)</option>
+                <option value="3" data-sub="IBK기업은행">IBK부자통커카드</option>
+                <option value="4" data-sub="시티카드">씨티 뉴클리어카드</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 2022-05-23: 위치 변경 -->
+          <div class="list-empty">
+            <i class="i-ico-warning-40" aria-hidden="true"></i>
+            <p>이번 달은 지출한 내역이 없어요.</p>
+          </div>
+          <!-- // 위치 변경 -->
+
+          <ul class="date-line-list mt-22">
+            <li>
+              <div class="dt-date"><span>2022.12.18(토)</span></div>
+              <div class="items">
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <a href="#" class="list-item-price btn-click">
+                  <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">스타벅스여의도점스타벅스여의도점스타벅스여의도점</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>주문·배달</span>
+                    </div>
+                    <!-- 2022-03-24: . item-bottom .right 구조 변경(span 추가) -->
+                    <div class="right"><span>출금</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <!-- 2022-04-22: 취소된 아이템 .disabled => .cancelled 클래스로 변경 -->
+                <a href="#" class="list-item-price btn-click cancelled">
+                  <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">스타벅스여의도점</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>주문·배달</span>
+                    </div>
+                    <div class="right"><span>입급취소(출금)</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <a href="#" class="list-item-price btn-click">
+                  <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">스타벅스여의도점</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>주문·배달</span>
+                    </div>
+                    <div class="right"><span>정정(출금)</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <a href="#" class="list-item-price btn-click">
+                  <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">스타벅스여의도점</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>주문·배달</span>
+                    </div>
+                    <div class="right"><span>기타(출금)</span></div>
+                  </div>
+                </a>
               </div>
-            </div>
-            <div class="mt-26">
-              <div class="select inline">
-                <select title="지출수단을 선택해주세요" data-class="ty2">
-                  <option value="1">전체</option>
-                  <option value="2" data-sub="IBK기업은행">보통예금(신IBK급여통장)</option>
-                  <option value="3" data-sub="IBK기업은행">IBK부자통커카드</option>
-                  <option value="4" data-sub="시티카드">씨티 뉴클리어카드</option>
-                </select>
+            </li>
+
+            <li>
+              <div class="dt-date"><span>2022.12.17(금)</span></div>
+              <div class="items">
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <a href="#" class="list-item-price btn-click cancelled">
+                  <div class="item-info"><i class="badge green">카드</i>씨티뉴클리어카드</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">스타벅스여의도점</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>주문·배달</span>
+                    </div>
+                    <div class="right"><span>출금</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <!-- 취소된 아이템 : cancelled -->
+                <a href="#" class="list-item-price btn-click cancelled">
+                  <div class="item-info"><i class="badge green">카드</i>씨티뉴클리어카드</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">스타벅스여의도점</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>주문·배달</span>
+                    </div>
+                    <div class="right"><span>일시불</span><span>승인</span></div>
+                  </div>
+                </a>
+
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <a href="#" class="list-item-price btn-click">
+                  <div class="item-info"><i class="badge green">카드</i>씨티뉴클리어카드</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">스타벅스여의도점</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>주문·배달</span>
+                    </div>
+                    <div class="right"><span>할부</span><span>승인</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <!-- 취소된 아이템 : cancelled -->
+                <a href="#" class="list-item-price btn-click cancelled">
+                  <div class="item-info"><i class="badge green">카드</i> 씨티뉴클리어카드</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">스타벅스여의도점</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>주문·배달</span>
+                    </div>
+                    <div class="right"><span>일시불</span><span>승인취소</span></div>
+                  </div>
+                </a>
+
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <a href="#" class="list-item-price btn-click">
+                  <div class="item-info"><i class="badge green">카드</i> 씨티뉴클리어카드</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">스타벅스여의도점</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>주문·배달</span>
+                    </div>
+                    <div class="right"><span>할부</span><span>정정</span></div>
+                  </div>
+                </a>
               </div>
-            </div>
-            <ul class="date-line-list mt-22">
-              <li>
-                <div class="dt-date"><span>2022.12.18(토)</span></div>
-                <div class="items">
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <a href="#" class="list-item-price btn-click">
-                    <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">스타벅스여의도점스타벅스여의도점스타벅스여의도점</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>주문·배달</span>
-                      </div>
-                      <!-- 2022-03-24: . item-bottom .right 구조 변경(span 추가) -->
-                      <div class="right"><span>출금</span></div>
-                    </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <!-- 2022-04-22: 취소된 아이템 .disabled => .cancelled 클래스로 변경 -->
-                  <a href="#" class="list-item-price btn-click cancelled">
-                    <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">스타벅스여의도점</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>주문·배달</span>
-                      </div>
-                      <div class="right"><span>입급취소(출금)</span></div>
-                    </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <a href="#" class="list-item-price btn-click">
-                    <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">스타벅스여의도점</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>주문·배달</span>
-                      </div>
-                      <div class="right"><span>정정(출금)</span></div>
-                    </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <a href="#" class="list-item-price btn-click">
-                    <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">스타벅스여의도점</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>주문·배달</span>
-                      </div>
-                      <div class="right"><span>기타(출금)</span></div>
-                    </div>
-                  </a>
-                </div>
-              </li>
+            </li>
 
-              <li>
-                <div class="dt-date"><span>2022.12.17(금)</span></div>
-                <div class="items">
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <a href="#" class="list-item-price btn-click cancelled">
-                    <div class="item-info"><i class="badge green">카드</i>씨티뉴클리어카드</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">스타벅스여의도점</div>
-                      <div class="right"><strong>31,081</strong>원</div>
+            <li>
+              <div class="dt-date"><span>2022.12.17(금)</span></div>
+              <div class="items">
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <a href="#" class="list-item-price btn-click">
+                  <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">국립박물관 뮤지엄샵</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>문화생활</span>
                     </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>주문·배달</span>
-                      </div>
-                      <div class="right"><span>출금</span></div>
+                    <div class="right"><span>승인</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <!-- 취소된 아이템 : cancelled -->
+                <a href="#" class="list-item-price btn-click cancelled">
+                  <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">국립박물관 뮤지엄샵</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>문화생활</span>
                     </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <!-- 취소된 아이템 : cancelled -->
-                  <a href="#" class="list-item-price btn-click cancelled">
-                    <div class="item-info"><i class="badge green">카드</i>씨티뉴클리어카드</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">스타벅스여의도점</div>
-                      <div class="right"><strong>31,081</strong>원</div>
+                    <div class="right"><span>승인취소</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <a href="#" class="list-item-price btn-click">
+                  <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">국립박물관 뮤지엄샵</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>문화생활</span>
                     </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>주문·배달</span>
-                      </div>
-                      <div class="right"><span>일시불</span><span>승인</span></div>
+                    <div class="right"><span>정정</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <a href="#" class="list-item-price btn-click">
+                  <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">국립박물관 뮤지엄샵</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>문화생활 </span>
                     </div>
-                  </a>
-
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <a href="#" class="list-item-price btn-click">
-                    <div class="item-info"><i class="badge green">카드</i>씨티뉴클리어카드</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">스타벅스여의도점</div>
-                      <div class="right"><strong>31,081</strong>원</div>
+                    <div class="right"><span>결제</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <!-- 취소된 아이템 : cancelled -->
+                <a href="#" class="list-item-price btn-click cancelled">
+                  <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">국립박물관 뮤지엄샵</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>문화생활 </span>
                     </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>주문·배달</span>
-                      </div>
-                      <div class="right"><span>할부</span><span>승인</span></div>
+                    <div class="right"><span>결제취소</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <a href="#" class="list-item-price btn-click">
+                  <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">국립박물관 뮤지엄샵</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>문화생활 </span>
                     </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <!-- 취소된 아이템 : cancelled -->
-                  <a href="#" class="list-item-price btn-click cancelled">
-                    <div class="item-info"><i class="badge green">카드</i> 씨티뉴클리어카드</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">스타벅스여의도점</div>
-                      <div class="right"><strong>31,081</strong>원</div>
+                    <div class="right"><span>송금</span></div>
+                  </div>
+                </a>
+                <!-- 2022-03-30 div 태그 > a 태그 -->
+                <!-- 취소된 아이템 : cancelled -->
+                <a href="#" class="list-item-price btn-click cancelled">
+                  <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
+                  <div class="item-tit">
+                    <div class="left ellipsis">국립박물관 뮤지엄샵</div>
+                    <div class="right"><strong>31,081</strong>원</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="left">
+                      <span>09:13:24</span>
+                      <span>문화생활 </span>
                     </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>주문·배달</span>
-                      </div>
-                      <div class="right"><span>일시불</span><span>승인취소</span></div>
-                    </div>
-                  </a>
-
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <a href="#" class="list-item-price btn-click">
-                    <div class="item-info"><i class="badge green">카드</i> 씨티뉴클리어카드</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">스타벅스여의도점</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>주문·배달</span>
-                      </div>
-                      <div class="right"><span>할부</span><span>정정</span></div>
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li>
-                <div class="dt-date"><span>2022.12.17(금)</span></div>
-                <div class="items">
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <a href="#" class="list-item-price btn-click">
-                    <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">국립박물관 뮤지엄샵</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>문화생활</span>
-                      </div>
-                      <div class="right"><span>승인</span></div>
-                    </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <!-- 취소된 아이템 : cancelled -->
-                  <a href="#" class="list-item-price btn-click cancelled">
-                    <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">국립박물관 뮤지엄샵</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>문화생활</span>
-                      </div>
-                      <div class="right"><span>승인취소</span></div>
-                    </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <a href="#" class="list-item-price btn-click">
-                    <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">국립박물관 뮤지엄샵</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>문화생활</span>
-                      </div>
-                      <div class="right"><span>정정</span></div>
-                    </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <a href="#" class="list-item-price btn-click">
-                    <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">국립박물관 뮤지엄샵</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>문화생활 </span>
-                      </div>
-                      <div class="right"><span>결제</span></div>
-                    </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <!-- 취소된 아이템 : cancelled -->
-                  <a href="#" class="list-item-price btn-click cancelled">
-                    <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">국립박물관 뮤지엄샵</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>문화생활 </span>
-                      </div>
-                      <div class="right"><span>결제취소</span></div>
-                    </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <a href="#" class="list-item-price btn-click">
-                    <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">국립박물관 뮤지엄샵</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>문화생활 </span>
-                      </div>
-                      <div class="right"><span>송금</span></div>
-                    </div>
-                  </a>
-                  <!-- 2022-03-30 div 태그 > a 태그 -->
-                  <!-- 취소된 아이템 : cancelled -->
-                  <a href="#" class="list-item-price btn-click cancelled">
-                    <div class="item-info"><i class="badge blue">페이</i>카카오페이</div>
-                    <div class="item-tit">
-                      <div class="left ellipsis">국립박물관 뮤지엄샵</div>
-                      <div class="right"><strong>31,081</strong>원</div>
-                    </div>
-                    <div class="item-bottom">
-                      <div class="left">
-                        <span>09:13:24</span>
-                        <span>문화생활 </span>
-                      </div>
-                      <div class="right"><span>송금반환(취소)</span></div>
-                    </div>
-                  </a>
-                </div>
-              </li>
-            </ul>
-            <div class="btn-wrap mt-24">
-              <button class="button line">더보기</button>
-            </div>
+                    <div class="right"><span>송금반환(취소)</span></div>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+          <div class="btn-wrap mt-24">
+            <button class="button line">더보기</button>
           </div>
         </div>
       </main>
