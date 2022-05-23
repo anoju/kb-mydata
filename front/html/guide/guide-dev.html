@@ -582,6 +582,7 @@ Loading.close();
               <pre><code class="language-javascript">//에러 표시
 ui.Form.error(element,massege);
 ui.Form.error('#inputText','이름을 입력하세요');
+ui.Form.error('#inputText','이름을 입력하세요', true); // focus까지 줄때
 
 //에러 지우기
 ui.Form.error(element, false);
@@ -609,7 +610,7 @@ ui.Form.success('#inputText','이름이 입력되었습니다.');
                 $('#chkName').click(function () {
                   const $val = $('#inputText').val();
                   if ($val === '') {
-                    ui.Form.error('#inputText', '이름을 입력하세요');
+                    ui.Form.error('#inputText', '이름을 입력하세요', true);
                   } else {
                     ui.Form.success('#inputText', '이름이 입력되었습니다.');
                   }
@@ -623,7 +624,7 @@ ui.Form.success('#inputText','이름이 입력되었습니다.');
                 </div>
               </div>
               <script>
-                $('#inputText2').on('focus keyup', function () {
+                $('#inputText2').on('keyup focusout', function () {
                   const $val = $(this).val();
                   if ($val.length < 3) {
                     ui.Form.error(this, '이름을 입력하세요');
