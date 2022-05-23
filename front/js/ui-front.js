@@ -5021,8 +5021,12 @@ ui.Animation = {
     const $wHeight = $wrap.height();
     const $scrollTop = $wrap.scrollTop();
     const $topFixedH = $isWin ? ui.Common.getTopFixedHeight($target) : ui.Common.getTopFixedHeight($target, 'pop-top-fixed');
-    const $bottomFixedH = $isWin ? $('.bottom-fixed-space').height() : $wrap.find('.pop-foot').height();
-    // console.log($topFixedH);
+    let $bottomFixedH = 0;
+    if ($isWin && $('.bottom-fixed-space').length) {
+      $bottomFixedH = $('.bottom-fixed-space').height();
+    } else if ($wrap.find('.pop-foot').length) {
+      $bottomFixedH = $wrap.find('.pop-foot').height();
+    }
     const $wrapTop = $scrollTop + $topFixedH;
     const $wrapCenter = $scrollTop + ($wHeight - $topFixedH - $bottomFixedH) / 2;
     const $wrapBottom = $scrollTop + ($wHeight - $bottomFixedH);
@@ -5042,7 +5046,6 @@ ui.Animation = {
       const $elBottom = $elTop + $elHeight;
 
       const $animationClass = ui.Animation.sclTypeChk($el);
-
       if ($el.data('init')) return;
       if (($wrapTop <= $elTop && $elTop <= $wrapBottom) || ($wrapTop <= $elBottom && $elBottom <= $wrapBottom)) {
         ui.Animation.sclAction($el, $elTop);
