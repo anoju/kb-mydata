@@ -948,10 +948,10 @@
         content: '';
         display: block;
         position: absolute;
-        top: -0.4rem;
+        top: 0rem;
         right: 1.2rem;
-        width: 3.1rem;
-        height: 3.1rem;
+        width: 3.6rem;
+        height: 4.5rem;
         background: url('../images/consume/ico-badge-KKL.png') no-repeat center center / 100%;
       }
     }
@@ -1097,7 +1097,7 @@
     left: 0;
     height: 100%;
     border-radius: 0.6rem;
-    background: var(--primary-color);
+    background: #2ad6a8;
   }
   .tip-box {
     display: block;
@@ -1110,7 +1110,7 @@
     font-size: 1.2rem;
     text-align: center;
     color: #ffffff;
-    background: var(--primary-color);
+    background: #2ad6a8;
     transform: translateY(calc(-100% - 1.6rem)) translateX(50%);
     &:after {
       content: '';
@@ -1123,7 +1123,7 @@
       border: 0.1rem solid var(--primary-color);
       border-width: 0.8rem 0.5rem;
       transform: translateX(-50%);
-      border-color: var(--primary-color) transparent transparent transparent;
+      border-color: #2ad6a8 transparent transparent transparent;
     }
     &.left {
       transform: translateY(calc(-100% - 1.6rem)) translateX(calc(100% - 1rem));
