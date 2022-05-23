@@ -454,6 +454,9 @@ html.pc {
 .fc-447eee {
   color: #447eee !important;
 }
+.fc-fd7e64 {
+  color: #fd7e64 !important;
+}
 
 /* 폰트 사이즈 */
 @for $i from 6 through 40 {
@@ -801,7 +804,7 @@ html.pc {
     margin-right: $i * 0.5rem + 10rem !important;
   }
 }
-@for $i from 1 through 10 {
+@for $i from 1 through 30 {
   .mt-m#{$i} {
     margin-top: -$i * 0.1rem !important;
   }
