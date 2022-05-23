@@ -3067,7 +3067,8 @@ ui.Form = {
       $closest.after('<div class="validate-txt is-success">' + messege + '</div>');
     }
   },
-  error: function (element, messege) {
+  error: function (element, messege, isFocus) {
+    if (isFocus === undefined) isFocus = false;
     const $el = $(element);
     let $closest = $el;
     if ($closest.is('input') || $closest.is('select') || $closest.is('textarea')) $closest = $closest.parent();
@@ -3083,7 +3084,7 @@ ui.Form = {
       } else {
         $closest.after('<div class="validate-txt is-error">' + messege + '</div>');
       }
-      if (!$el.is(':focus') && !$(':focus').closest('.is-error').length) $el.focus();
+      if (isFocus && !$el.is(':focus') && !$(':focus').closest('.is-error').length) $el.focus();
     }
   },
   textCount: function (element, e) {
