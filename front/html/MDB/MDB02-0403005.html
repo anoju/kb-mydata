@@ -40,19 +40,9 @@
             <!-- 2022-04-19: 텍스트 수정 -->
             <div class="form-lbl">모델</div>
             <!-- 2022-04-19: title 수정 -->
-            <select title="모델명 선택">
+            <select title="모델명 선택" id="selectSample1">
               <!-- 2022-04-19: 텍스트 수정 -->
-              <option value="">모델명을 선택해 주세요</option>
-              <option value="a">더 뉴그랜저 IG</option>
-              <option value="b">더 뉴그랜저 IG 하이브리드</option>
-              <option value="c">그랜저 IG</option>
-              <option value="d">그랜저 IG 하이브리드</option>
-              <option value="1">세부 모델명1</option>
-              <option value="2">세부 모델명2</option>
-              <option value="3">세부 모델명3</option>
-              <option value="4">세부 모델명4</option>
-              <option value="5">세부 모델명5</option>
-              <option value="6">세부 모델명6</option>
+              <option value="">텍스트</option>
             </select>
           </div>
 
@@ -104,6 +94,17 @@
       $('.select select').on('change', function () {
         btnChk();
       });
+
+      function init() {
+        let html = '<option value="">모델명을 선택해 주세요</option>';
+
+        for (let i = 0; i < 4; i++) {
+          html += "<option value='" + i + "'>" + '세부항목' + i + '</option>';
+        }
+
+        $('#selectSample1').html(html);
+      }
+      init();
     </script>
   </body>
 </html>
