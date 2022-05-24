@@ -576,8 +576,14 @@
       };
       matchVisualEvt();
 
-      /* test */
-      const userRefresh = function () {};
+      /* 2022-05-24 새로고침 클릭시 처음으로 돌아가는 소스 */
+      const userRefresh = function () {
+        $(document).on('click', '.user.refresh', function () {
+          const $swiper = $(this).closest('.ui-swiper').data('swiper');
+          $swiper.slideTo(0);
+        });
+      };
+      userRefresh();
     </script>
   </body>
 </html>
