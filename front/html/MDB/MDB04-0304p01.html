@@ -41,7 +41,7 @@
             </div>
 
             <!-- 2022-05-18 클래스 수정 -->
-            <div id="chart1" class="mt-32 chart-area ui-pop-header-bg-origin"></div>
+            <div id="chart1" class="mt-32 chart-area chart-scroll ui-pop-header-bg-origin"></div>
 
             <hr class="hr-line mt-32" aria-hiddem="true" />
             <div class="round-line-box no-line bg-fa pd-16 mt-32 fw-500 fc-424242 lh-23">
@@ -115,7 +115,7 @@
                 <li>
                   <div class="item-chart-wrap">
                     <i class="ico-rank">1</i>
-                    <div class="bar-chart"><i style="width: 70%"></i></div>
+                    <div class="bar-chart"><i style="width: 100%"></i></div>
                   </div>
                   <div class="item-info">
                     <div class="item-date">12/28</div>
@@ -126,7 +126,7 @@
                 <li>
                   <div class="item-chart-wrap">
                     <i class="ico-rank">2</i>
-                    <div class="bar-chart"><i style="width: 40%"></i></div>
+                    <div class="bar-chart"><i style="width: 50%"></i></div>
                   </div>
                   <div class="item-info">
                     <div class="item-date">12/15</div>
@@ -169,7 +169,6 @@
             type: 'line',
             scrollablePlotArea: {
               minWidth: 360,
-              opacity: 1,
               scrollPositionX: 0,
               scrollPositionY: 0
             }
@@ -227,7 +226,9 @@
               fontSize: '12px'
             },
             shared: true,
-            useHTML: true
+            useHTML: true,
+            /* 2022-05-24 추가 */
+            outside: false
           },
           plotOptions: {
             line: {

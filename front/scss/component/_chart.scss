@@ -208,7 +208,7 @@
   height: 20rem;
   &.chart-scroll {
     .highcharts-container {
-      padding: 0 var(--base-padding);
+      // padding: 0 var(--base-padding);
       box-sizing: content-box;
     }
     .section & {
