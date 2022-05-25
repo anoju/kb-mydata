@@ -145,13 +145,13 @@
   margin-left: -51.2rem;
 }
 
-@mixin dimm {
-  background-color: rgba(0, 0, 0, 0.5);
+@mixin dimm($value: 0.5) {
+  background-color: rgba(0, 0, 0, $value);
   backdrop-filter: blur(1px);
 }
-@mixin dimm-white {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(2px);
+@mixin dimm-white($value: 0.95) {
+  background: rgba(255, 255, 255, $value);
+  backdrop-filter: blur(1px);
 }
 
 @mixin ios-top($key, $value: 0, $miuns: false) {
