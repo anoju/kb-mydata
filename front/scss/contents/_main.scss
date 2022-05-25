@@ -62,6 +62,7 @@
   border-radius: 2.4rem 2.4rem 0 0;
   border: 0.1rem solid #ebebeb;
   background: #fff;
+  padding: 0 calc(calc(calc(100% / 6) - 24px) / 2);
   a {
     display: flex;
     width: 100%;
