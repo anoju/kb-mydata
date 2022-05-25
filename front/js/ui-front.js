@@ -915,7 +915,6 @@ ui.Common = {
           if ($sclAnimation || $stopOpt) {
             $autoplayOpt = false;
           }
-          console.log($autoplayOpt);
           const $lottieOpt = lottie.loadAnimation({
             container: this,
             renderer: 'svg',
