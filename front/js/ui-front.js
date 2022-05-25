@@ -583,7 +583,11 @@ ui.Common = {
         const $lottieFirst = function () {
           const $lottie = $lottieEl.data('lottie-opt');
           if ($lottie) {
-            $lottie.playSegments([0, 35], true);
+            // $lottie.goToAndStop(70, true);
+            $lottie.stop();
+            setTimeout(function () {
+              $lottie.playSegments([0, 35], true);
+            }, 100);
           } else {
             setTimeout(function () {
               $lottieFirst();
@@ -911,6 +915,7 @@ ui.Common = {
           if ($sclAnimation || $stopOpt) {
             $autoplayOpt = false;
           }
+          console.log($autoplayOpt);
           const $lottieOpt = lottie.loadAnimation({
             container: this,
             renderer: 'svg',
@@ -1424,7 +1429,7 @@ ui.Button = {
 
       // 앱에서 새창열기
       if (ui.Device.app()) {
-        if ($target === '_blank' && typeof webviewInterface.goOutLink === 'function') {
+        if ($target === '_blank' && typeof webviewInterface === 'object' && typeof webviewInterface.goOutLink === 'function') {
           e.preventDefault();
           webviewInterface.goOutLink($href);
         }
@@ -5561,7 +5566,9 @@ const Body = {
     $('html').addClass('lock');
 
     // 웹뷰 스크롤 허용 WebView JavaScript Interface
-    if (typeof webviewInterface.setWebLayerPopupStatus === 'function') webviewInterface.setWebLayerPopupStatus('open');
+    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
+      webviewInterface.setWebLayerPopupStatus('open');
+    }
   },
   unlock: function () {
     if (!$('html').hasClass('lock')) return;
@@ -5573,7 +5580,9 @@ const Body = {
     }, 0);
 
     // 웹뷰 스크롤 허용 WebView JavaScript Interface
-    if (typeof webviewInterface.setWebLayerPopupStatus === 'function') webviewInterface.setWebLayerPopupStatus('close');
+    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
+      webviewInterface.setWebLayerPopupStatus('close');
+    }
   }
 };
 
