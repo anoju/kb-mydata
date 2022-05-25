@@ -1578,6 +1578,8 @@
       padding: 1.6rem;
       background: #fafafa;
       .img-box {
+        flex: 0 0 auto;
+        align-self: center;
         width: 4.4rem;
       }
       .tit-box {
