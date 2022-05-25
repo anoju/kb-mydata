@@ -1135,10 +1135,9 @@ html.safari {
 
 //app
 // html.is-app {
-//   user-select: none;
 //   -webkit-touch-callout:none;
-//   -webkit-tap-highlight-color: transparent;
+//   @include is-native;
 //   a {
-//     -webkit-tap-highlight-color: transparent;
+//     @include is-native;
 //   }
 // }

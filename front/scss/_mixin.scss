@@ -181,3 +181,8 @@
     transform: rotate(-#{$value}deg);
   }
 }
+
+@mixin is-native {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}

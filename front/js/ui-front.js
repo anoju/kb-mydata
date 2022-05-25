@@ -593,7 +593,7 @@ ui.Common = {
         $lottieFirst();
       }
     }
-
+    /*
     $('.floating-menu-bar a').click(function () {
       const $oldOn = $('.floating-menu-bar .on');
       const $oldLottieEl = $oldOn.find('.lottie');
@@ -612,6 +612,7 @@ ui.Common = {
         $newLottie.playSegments([0, 35], true);
       }
     });
+    */
   },
   scroll: function () {
     //top 버튼
@@ -2779,7 +2780,8 @@ ui.Form = {
       }
     });
   },
-  selectSetVal: function (target, val) {
+  selectSetVal: function (target, value) {
+    const val = value === 0 ? '0' : value;
     const $target = $(target);
     let $val = $target.val();
     if (val && $val === val) {
@@ -5557,6 +5559,9 @@ const Body = {
     const $setTop = Body.scrollTop * -1 + $wrapTop;
     $wrap.css('top', $setTop);
     $('html').addClass('lock');
+
+    // 웹뷰 스크롤 허용 WebView JavaScript Interface
+    if (typeof webviewInterface.setWebLayerPopupStatus === 'function') webviewInterface.setWebLayerPopupStatus('open');
   },
   unlock: function () {
     if (!$('html').hasClass('lock')) return;
@@ -5566,6 +5571,9 @@ const Body = {
     window.setTimeout(function () {
       Body.scrollTop = '';
     }, 0);
+
+    // 웹뷰 스크롤 허용 WebView JavaScript Interface
+    if (typeof webviewInterface.setWebLayerPopupStatus === 'function') webviewInterface.setWebLayerPopupStatus('close');
   }
 };
 
