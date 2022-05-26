@@ -5296,9 +5296,9 @@ ui.Animation = {
         ui.Animation.sclCheckIn($boayEl(), window);
         $(window).on(
           'scroll resize',
-          _.debounce(function () {
+          _.throttle(function () {
             ui.Animation.sclCheckIn($boayEl(), window);
-          }, 100)
+          }, 300)
         );
       }
 
