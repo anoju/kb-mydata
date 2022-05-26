@@ -7,6 +7,11 @@
     vertical-align: top;
     margin-bottom: 1.6rem;
   }
+  .i-ico-warning-40 {
+    &.on {
+      animation: swing 1s;
+    }
+  }
   p {
     color: var(--gray-txt-color);
   }
