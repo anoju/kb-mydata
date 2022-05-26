@@ -15,14 +15,19 @@
   display: inline-flex;
   overflow: hidden;
   .rolling__in {
+    display: block;
     position: relative;
     height: 100%;
     // line-height: 100%;
     text-align: center;
     // display: flex;
     // flex-direction: column;
-    > div {
+    > div,
+    > span {
       height: 100%;
+    }
+    > span {
+      display: block;
     }
   }
   &:not(.is-active) {

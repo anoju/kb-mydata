@@ -1134,10 +1134,10 @@ html.safari {
 }
 
 //app
-// html.is-app {
-//   -webkit-touch-callout:none;
-//   @include is-native;
-//   a {
-//     @include is-native;
-//   }
-// }
+html.is-app {
+  // -webkit-touch-callout: none;
+  @include is-native;
+  // a {
+  //   @include is-native;
+  // }
+}

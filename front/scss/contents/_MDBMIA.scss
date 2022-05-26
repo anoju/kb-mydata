@@ -913,6 +913,7 @@
     border-radius: 1.2rem;
     text-align: center;
     background: #fafafa;
+    overflow: hidden;
     .tit {
       font-size: 1.2rem;
       font-weight: 500;
@@ -936,6 +937,7 @@
       height: 2.1rem;
       color: #818892;
       background: #f2f4f6;
+      transition: color 0.5s 0.3s, background 0.5s 0.3s;
     }
     .amount {
       margin-top: 1.2rem;
@@ -943,31 +945,24 @@
       border-top: 0.1rem solid rgba(23, 23, 23, 0.05);
       font-size: 1.4rem;
       font-weight: 500;
+      transition: color 0.5s 0.3s;
       strong {
         font-size: 1.6rem;
       }
     }
-    &.win {
-      &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 1.2rem;
-        box-sizing: border-box;
-        pointer-events: none;
-        border: 0.2rem solid var(--primary-color);
-      }
-      .badge {
-        color: #fff;
-        background: var(--primary-color);
-      }
-      .amount {
-        color: var(--primary-color);
-      }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 1.2rem;
+      box-sizing: border-box;
+      pointer-events: none;
+      border: 0.2rem solid transparent;
+      transition: border 0.5s 0.3s;
     }
     &.kkl {
       &:after {
@@ -979,6 +974,8 @@
         width: 3.6rem;
         height: 4.5rem;
         background: url('../images/consume/ico-badge-KKL.png') no-repeat center center / 100%;
+        transform: translateY(-100%);
+        transition: transform 0.5s 0.3s;
       }
     }
   }
@@ -1004,10 +1001,13 @@
       left: 50%;
       width: 4.4rem;
       height: 4.4rem;
-      transform: translate(-50%, -50%);
+      margin: -2.2rem 0 0 -2.2rem;
       border-radius: 50%;
       box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.04);
       background: #ffffff;
+      transform: scale(0.5);
+      opacity: 0;
+      transition: 0.3s;
       &:after {
         content: '';
         display: block;
@@ -1067,6 +1067,30 @@
           background-image: url('../images/consume/ico-same.png');
         }
       }
+    }
+  }
+  &.on {
+    > .left,
+    > .right {
+      &.win {
+        &:before {
+          border-color: var(--primary-color);
+        }
+        .badge {
+          color: #fff;
+          background: var(--primary-color);
+        }
+        .amount {
+          color: var(--primary-color);
+        }
+      }
+      &.kkl:after {
+        transform: translateY(0);
+      }
+    }
+    .state i {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 

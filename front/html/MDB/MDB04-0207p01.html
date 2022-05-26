@@ -47,7 +47,7 @@
                   분류를 <strong class="fw-500 fc-e45055">많이</strong> 했어요
                 </p>
 
-                <div class="consume-compare-box">
+                <div class="consume-compare-box" data-animation="on">
                   <!-- 승리시 win 클래스 적용-->
                   <!-- 패배시 loss 클래스 적용 -->
                   <div class="left loss">
@@ -95,7 +95,7 @@
                   지출을 가장 <strong class="fw-500 fc-e45055">많이</strong> 했어요
                 </p>
 
-                <div class="consume-compare-box type2">
+                <div class="consume-compare-box type2" data-animation="on">
                   <!-- 승리시 win 클래스 적용-->
                   <div class="left win">
                     <!-- 2022-05-02 -->
@@ -188,7 +188,7 @@
                   분류를 가장 <strong class="fw-500 fc-447eee">적게</strong> 했어요
                 </p>
 
-                <div class="consume-compare-box">
+                <div class="consume-compare-box" data-animation="on">
                   <!-- 승리시 win 클래스 적용-->
                   <div class="left">
                     <!-- 2022-05-02 -->
@@ -234,7 +234,7 @@
                   분류를 가장 <strong class="fw-500 fc-447eee">적게</strong> 했어요
                 </p>
 
-                <div class="consume-compare-box type2">
+                <div class="consume-compare-box type2" data-animation="on">
                   <!-- 승리시 win 클래스 적용-->
                   <div class="left">
                     <!-- 2022-05-02 -->
@@ -292,7 +292,6 @@
       if (bar.outerWidth() < tip.outerWidth() / 2) {
         tip.addClass('left');
       }
-      console.log(target.outerWidth() - bar.outerWidth());
       if (target.outerWidth() - bar.outerWidth() < tip.outerWidth() / 2) {
         tip.addClass('right');
       }

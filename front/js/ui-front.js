@@ -336,8 +336,8 @@ ui.Device = {
 ui.Common = {
   getUrlPath: function () {
     let $path = '';
-    // isReal(), isDev(), isLocal()는 개발팀 공통함수
-    if ((typeof isReal === 'function' && isReal()) || (typeof isDev === 'function' && isDev()) || (typeof isLocal === 'function' && isLocal())) {
+    // isReal(), isStage(), isDev(), isLocal()는 개발팀 공통함수
+    if ((typeof isReal === 'function' && isReal()) || (typeof isStage === 'function' && isStage()) || (typeof isDev === 'function' && isDev()) || (typeof isLocal === 'function' && isLocal())) {
       // 개발서버 및 실서버, 개발 로컬서버
       $path = '/resources/static';
       if (Global._contextPath) $path = Global._contextPath + $path;
@@ -5152,26 +5152,26 @@ ui.Animation = {
     $this.attr('title', $thisText);
     const $textAry = $thisText.split('');
     let $html = '';
-    const $space = '<div>&nbsp;</div>';
+    const $space = '<span>&nbsp;</span>';
     const $rotateNum = 4;
     for (let i = 0; i < $textAry.length; i++) {
       const $text = $textAry[i];
       const $number = parseInt($text);
       // console.log($text, $number)
       if ($.isNumeric($number)) {
-        $html += '<div class="rolling__in data-number="' + $number + '" style="top:-' + ($rotateNum * 10 + $number + 1) + '00%;animation-delay:' + i * 5 + '0ms;">';
+        $html += '<span class="rolling__in data-number="' + $number + '" style="top:-' + ($rotateNum * 10 + $number + 1) + '00%;animation-delay:' + i * 5 + '0ms;">';
         $html += $space;
         for (let j = 0; j < $rotateNum; j++) {
           for (let k = 0; k < 10; k++) {
-            $html += '<div>' + k + '</div>';
+            $html += '<span>' + k + '</span>';
           }
         }
         for (let l = 0; l <= $number; l++) {
-          $html += '<div>' + l + '</div>';
+          $html += '<span>' + l + '</span>';
         }
-        $html += '</div>';
+        $html += '</span>';
       } else {
-        $html += '<div class="rolling__in" style="top:-100%;animation-delay:' + i * 5 + '0ms;">' + $space + '<div>' + $text + '</div></div>';
+        $html += '<span class="rolling__in" style="top:-100%;animation-delay:' + i * 5 + '0ms;">' + $space + '<span>' + $text + '</span></span>';
       }
     }
     $this.html($html);
