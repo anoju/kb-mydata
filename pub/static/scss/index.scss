@@ -4,13 +4,13 @@ body {
 }
 .index-logo {
   position: absolute;
-  width: 385px;
-  height: 124px;
+  width: 100%;
+  height: 120px;
   bottom: 0;
   right: 0;
-  background: url(../images/logo.png) no-repeat;
-  transform: scale(1.5);
-  transform-origin: right bottom;
+  background: url(../images/logo.png) no-repeat right bottom / auto 100%;
+  // transform: scale(1.5);
+  // transform-origin: right bottom;
 }
 .index {
   position: relative;
