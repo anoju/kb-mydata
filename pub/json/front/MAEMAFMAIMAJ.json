@@ -15,6 +15,7 @@
     "depth1": "홈"
   },
   {
+    "state": "del",
     "id": "MAB01-0000p01C",
     "url": "../../front/html/MAB/",
     "depth2": "이벤트 팝업",

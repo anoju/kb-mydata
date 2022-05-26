@@ -2,6 +2,7 @@
 //투자 메인배너
 .invest-banner-wrap {
   @include outer;
+  overflow: hidden;
   .img-box {
     background: #f1f1f1;
     &:before {
@@ -21,8 +22,21 @@
     overflow: hidden;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.08);
     color: var(--strong-txt-color2);
-    @include bg-etc(9.1rem auto, right bottom);
-    background-image: url(../images/MDA/ico-invest_art.png);
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 9.1rem;
+      @include bg-etc(9.1rem auto, right bottom);
+      background-image: url(../images/MDA/ico-invest_art.png);
+      transform: translateX(100%);
+      transition: transform 0.5s;
+    }
+  }
+  &.on .inner:before {
+    transform: translateX(0);
   }
   .tit {
     font-weight: 700;
