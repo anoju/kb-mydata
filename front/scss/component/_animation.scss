@@ -252,7 +252,7 @@
   }
 }
 
-[data-splitting][data-animation] {
+[data-splitting][data-animation='active'] {
   opacity: 0;
   &.active {
     opacity: 1;
@@ -265,6 +265,22 @@
 @keyframes splitting-char-in {
   from {
     transform: scale(0.5);
+    opacity: 0;
+  }
+}
+[data-splitting][data-animation='on'] {
+  opacity: 0;
+  &.on {
+    opacity: 1;
+    .char {
+      animation: splitting-slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) both;
+      animation-delay: calc(60ms * var(--char-index));
+    }
+  }
+}
+@keyframes splitting-slide-in {
+  from {
+    transform: translateY(-1em) rotate(-0.5turn) scale(0.5);
     opacity: 0;
   }
 }
