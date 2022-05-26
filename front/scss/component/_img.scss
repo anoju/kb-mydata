@@ -23,6 +23,7 @@
     content: '';
     display: block;
     padding-top: 100%;
+    pointer-events: none;
   }
   img {
     pointer-events: none;
