@@ -1476,9 +1476,10 @@
 }
 
 .ground-wrap {
+  overflow: hidden;
   .ground-main-info {
     .banner-box {
-      height: 160px;
+      height: 16rem;
       @include outer;
       background: #f2f3f4 no-repeat center center / cover;
       &.img-box {
