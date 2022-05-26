@@ -326,9 +326,9 @@
           $visualTop = $('#header').length ? $('#header').outerHeight() : 0;
           $visual.css('top', $visualTop);
         }
-        $(window).scroll(function () {
+        const scrollEvt = function () {
           $visual = $('.match-main-visual:visible');
-          const $sclTop = $(this).scrollTop();
+          const $sclTop = $(window).scrollTop();
           if (!$visual.length) {
             return;
           } else {
@@ -351,6 +351,10 @@
           } else if ($sclTop === 0) {
             $section.removeAttr('style');
           }
+        };
+        scrollEvt();
+        $(window).scroll(function () {
+          scrollEvt();
         });
       };
       matchVisualEvt();
