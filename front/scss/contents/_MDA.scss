@@ -49,6 +49,12 @@
     margin-top: 0.4rem;
   }
 }
+.invest-content {
+  margin-top: 4.8rem;
+  > div + div {
+    margin-top: 4.8rem;
+  }
+}
 
 //태그 영역
 .invest-tag {

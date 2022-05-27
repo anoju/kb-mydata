@@ -5567,7 +5567,7 @@ const Body = {
   scrollTop: '',
   lock: function () {
     if ($('html').hasClass('lock')) return;
-    // 웹뷰 스크롤 허용 WebView JavaScript Interface
+    // 웹뷰 스크롤 해제 WebView JavaScript Interface
     if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
       webviewInterface.setWebLayerPopupStatus('open');
     }
