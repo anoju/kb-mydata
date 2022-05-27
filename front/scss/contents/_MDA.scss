@@ -51,6 +51,7 @@
 }
 .invest-content {
   margin-top: 4.8rem;
+  padding-bottom: 4rem;
   > div + div {
     margin-top: 4.8rem;
   }
@@ -75,6 +76,7 @@
   .swiper {
     // overflow: visible;
     padding: 0 calc(var(--base-padding) - 0.8rem);
+    margin-bottom: -2rem;
   }
   .swiper-slide {
     width: auto;
@@ -126,12 +128,13 @@
   &.type2 {
     .swiper {
       padding: 0 calc(var(--base-padding) - 1rem);
+      margin-bottom: 0;
     }
     .swiper-slide {
       padding: 0;
       a {
         width: 18.8rem;
-        padding: 1rem;
+        padding: 1rem 1rem 0;
         margin: 0;
         background: none;
         border-radius: 0;
