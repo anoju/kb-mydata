@@ -412,6 +412,9 @@
       }
     }
   }
+  &.except {
+    opacity: 0.5;
+  }
   .item-info {
     display: flex;
     line-height: 2.4rem;
