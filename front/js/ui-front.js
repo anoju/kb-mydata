@@ -1890,6 +1890,11 @@ ui.Tab = {
       });
     }
   },
+  active: function (target) {
+    ui.tabActive(target);
+    const $href = $(target).attr('href');
+    ui.Tab.panelActive($href);
+  },
   tabActive: function (target) {
     const $target = $(target);
     const $closest = $target.closest('.tab-inner').length ? $target.closest('.tab-inner') : $target.closest('.tab-list');
