@@ -527,5 +527,25 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script>
+      $('.floating-menu-bar a').click(function () {
+        const $oldOn = $('.floating-menu-bar .on');
+        const $oldLottieEl = $oldOn.find('.lottie');
+        if ($oldLottieEl.length) {
+          const $oldLottie = $oldLottieEl.data('lottie-opt');
+          // $oldLottie.goToAndPlay(35, true);
+          // $oldLottie.goToAndStop(0, true);
+          $oldLottie.playSegments([35, 70], true);
+        }
+
+        $(this).addClass('on').siblings().removeClass('on');
+        const $newOn = $(this);
+        const $newLottieEl = $newOn.find('.lottie');
+        if ($newLottieEl.length) {
+          const $newLottie = $newLottieEl.data('lottie-opt');
+          $newLottie.playSegments([0, 35], true);
+        }
+      });
+    </script>
   </body>
 </html>
