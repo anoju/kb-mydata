@@ -5557,31 +5557,31 @@ const Body = {
   scrollTop: '',
   lock: function () {
     if ($('html').hasClass('lock')) return;
+    // 웹뷰 스크롤 허용 WebView JavaScript Interface
+    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
+      webviewInterface.setWebLayerPopupStatus('open');
+    }
+
     Body.scrollTop = window.pageYOffset;
     const $wrap = $('#wrap');
     const $wrapTop = $('#wrap').length ? $wrap.offset().top : 0;
     const $setTop = Body.scrollTop * -1 + $wrapTop;
     $wrap.css('top', $setTop);
     $('html').addClass('lock');
-
-    // 웹뷰 스크롤 허용 WebView JavaScript Interface
-    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
-      webviewInterface.setWebLayerPopupStatus('open');
-    }
   },
   unlock: function () {
     if (!$('html').hasClass('lock')) return;
+    // 웹뷰 스크롤 허용 WebView JavaScript Interface
+    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
+      webviewInterface.setWebLayerPopupStatus('close');
+    }
+
     $('html').removeClass('lock');
     $('#wrap').removeAttr('style');
     window.scrollTo(0, Body.scrollTop);
     window.setTimeout(function () {
       Body.scrollTop = '';
     }, 0);
-
-    // 웹뷰 스크롤 허용 WebView JavaScript Interface
-    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
-      webviewInterface.setWebLayerPopupStatus('close');
-    }
   }
 };
 
