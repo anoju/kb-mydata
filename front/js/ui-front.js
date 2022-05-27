@@ -1856,7 +1856,7 @@ ui.Tab = {
         if (i === $('.tab-inner').length - 1) {
           setTimeout(function () {
             ui.Tab.isTabInit = true;
-          }, 50);
+          }, 5);
         }
         if ($this.closest('.ui-tab').length) return;
 
@@ -1889,6 +1889,11 @@ ui.Tab = {
         }, $delay);
       });
     }
+  },
+  active: function (target) {
+    ui.Tab.tabActive(target);
+    const $href = $(target).attr('href');
+    ui.Tab.panelActive($href);
   },
   tabActive: function (target) {
     const $target = $(target);
@@ -5131,6 +5136,11 @@ ui.Animation = {
         } else {
           if ($el.hasClass('count-number')) ui.Animation.countInit($el);
           $el.addClass($animationClass);
+          if ($el.hasClass('ui-tap-item')) {
+            $el.one('animationend', function (e) {
+              $el.remove();
+            });
+          }
         }
       }
       $el.removeData('time');
@@ -5557,31 +5567,31 @@ const Body = {
   scrollTop: '',
   lock: function () {
     if ($('html').hasClass('lock')) return;
+    // 웹뷰 스크롤 해제 WebView JavaScript Interface
+    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
+      webviewInterface.setWebLayerPopupStatus('open');
+    }
+
     Body.scrollTop = window.pageYOffset;
     const $wrap = $('#wrap');
     const $wrapTop = $('#wrap').length ? $wrap.offset().top : 0;
     const $setTop = Body.scrollTop * -1 + $wrapTop;
     $wrap.css('top', $setTop);
     $('html').addClass('lock');
-
-    // 웹뷰 스크롤 허용 WebView JavaScript Interface
-    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
-      webviewInterface.setWebLayerPopupStatus('open');
-    }
   },
   unlock: function () {
     if (!$('html').hasClass('lock')) return;
+    // 웹뷰 스크롤 허용 WebView JavaScript Interface
+    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
+      webviewInterface.setWebLayerPopupStatus('close');
+    }
+
     $('html').removeClass('lock');
     $('#wrap').removeAttr('style');
     window.scrollTo(0, Body.scrollTop);
     window.setTimeout(function () {
       Body.scrollTop = '';
     }, 0);
-
-    // 웹뷰 스크롤 허용 WebView JavaScript Interface
-    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
-      webviewInterface.setWebLayerPopupStatus('close');
-    }
   }
 };
 

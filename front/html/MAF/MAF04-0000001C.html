@@ -4653,8 +4653,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
 
       // 디바이스 체크
-      if (ui.Mobile.iOS()) $('.is-aos').remove();
       if (ui.Mobile.Android()) $('.is-ios').remove();
+      if (ui.Mobile.iOS()) {
+        $('.is-aos').remove();
+        ui.Tab.active('.tab.is-ios');
+      }
     </script>
   </body>
 </html>
