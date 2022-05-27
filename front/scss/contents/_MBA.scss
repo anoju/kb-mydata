@@ -1865,6 +1865,21 @@
           }
         }
       }
+
+      &.comment-list {
+        margin-top: -0.1rem;
+        border-top: 0;
+        background: #fff;
+        &:before {
+          display: block;
+          top: 0;
+          left: 2.4rem;
+          right: 2.4rem;
+          width: auto;
+          height: 0.1rem;
+          background: #f2f4f6;
+        }
+      }
     }
   }
 }
