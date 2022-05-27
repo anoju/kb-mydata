@@ -5131,6 +5131,11 @@ ui.Animation = {
         } else {
           if ($el.hasClass('count-number')) ui.Animation.countInit($el);
           $el.addClass($animationClass);
+          if ($el.hasClass('ui-tap-item')) {
+            $el.one('animationend', function (e) {
+              $el.remove();
+            });
+          }
         }
       }
       $el.removeData('time');
