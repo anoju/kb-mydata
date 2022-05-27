@@ -3475,3 +3475,21 @@
     background: none;
   }
 }
+
+.tooltip-info {
+  display: flex;
+  position: absolute;
+  top: 0.8rem;
+  left: 2.4rem;
+  right: 2.4rem;
+  z-index: 10;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.8rem;
+  color: #fff;
+  font-size: 1.2rem;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  i {
+    margin-right: 0.9rem;
+  }
+}
