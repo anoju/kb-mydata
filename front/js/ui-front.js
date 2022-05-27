@@ -1891,7 +1891,7 @@ ui.Tab = {
     }
   },
   active: function (target) {
-    ui.tabActive(target);
+    ui.Tab.tabActive(target);
     const $href = $(target).attr('href');
     ui.Tab.panelActive($href);
   },
