@@ -1856,7 +1856,7 @@ ui.Tab = {
         if (i === $('.tab-inner').length - 1) {
           setTimeout(function () {
             ui.Tab.isTabInit = true;
-          }, 50);
+          }, 5);
         }
         if ($this.closest('.ui-tab').length) return;
 
