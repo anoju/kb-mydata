@@ -573,6 +573,32 @@ html.lock,
     }
   }
 }
+.btn-pop-top {
+  position: fixed;
+  right: -15rem;
+  bottom: 2.4rem;
+  display: flex;
+  width: 5.6rem;
+  height: 5.6rem;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+  font-size: 1.2rem;
+  line-height: 1.33;
+  color: var(--strong-txt-color2);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 11;
+  transition: opacity 0.3s, right 0s 0.3s;
+  &.on {
+    opacity: 1;
+    right: 2.4rem;
+    transition-delay: 0s, 0s;
+  }
+}
 
 //gnb
 .folding-list.gnb-list {

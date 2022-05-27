@@ -6639,6 +6639,14 @@ const Layer = {
     });
   },
   reOpen: false,
+  btnTop: {
+    button: '.btn-pop-top',
+    label: '컨텐츠 상단으로 이동',
+    text: 'TOP',
+    min: 100,
+    onClass: 'on',
+    scrollSpeed: 300
+  },
   openEl: '',
   openPop: [],
   opening: 0,
@@ -6700,6 +6708,13 @@ const Layer = {
     if (!$popup.hasClass(Layer.alertClass) && !$popup.hasClass(Layer.bgNoCloseClass)) {
       const $bgClick = '<div class="pop-bg-close ui-pop-close" role="button" aria-label="팝업창 닫기"></div>';
       if (!$popup.find('.pop-bg-close').length) $popup.prepend($bgClick);
+    }
+
+    // btn-pop-btn append
+    const $btnTopHtml =
+      '<button type="button" class="' + Layer.btnTop.button.substring(1) + '" title="' + Layer.btnTop.label + '" aria-label="' + Layer.btnTop.label + '">' + Layer.btnTop.text + '</button>';
+    if ($popup.hasClass('add-top-btn') && !$popup.find(Layer.btnTop.button).length) {
+      $popWrap.append($btnTopHtml);
     }
 
     // delay time
@@ -7088,12 +7103,21 @@ const Layer = {
     if (!$popup.hasClass(Layer.showClass)) return false;
     if ($popup.data('popPosition') == true) return false;
     $popup.data('popPosition', true);
-    let $wrap = $popup.find('.' + Layer.sclWrapClass).length ? $popup.find('.' + Layer.sclWrapClass) : $popup.find('.' + Layer.wrapClass);
+    let $wrap = $popup.find('.' + Layer.wrapClass);
+    if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
+    if ($wrap.hasClass('pop-body-scroll')) $wrap = $wrap.find('.' + Layer.bodyClass);
     let $wrapH = $wrap.outerHeight();
     let $wrapSclH = $wrap[0].scrollHeight;
     const $head = $popup.find('.' + Layer.headClass);
     const $body = $popup.find('.' + Layer.bodyClass);
     const $foot = $popup.find('.' + Layer.footClass);
+    const $btnTop = $popup.find(Layer.btnTop.button);
+    const btnTopOn = function () {
+      $btnTop.attr('aria-hidden', 'false').addClass(Layer.btnTop.onClass);
+    };
+    const btnTopOff = function () {
+      $btnTop.attr('aria-hidden', 'true').removeClass(Layer.btnTop.onClass);
+    };
 
     const $isAgree = $popup.hasClass(Layer.agreePopClass);
     const $isAgreeSwiper = $popup.hasClass(Layer.agreePopSwiperClass);
@@ -7113,6 +7137,10 @@ const Layer = {
       } else {
         $body.addClass('next-foot');
       }
+
+      // btn-pop-top bottom
+      if ($btnTop.length) $btnTop.css('bottom', $foot.outerHeight());
+
       if ($isAgree) {
         $footBtn.each(function (i) {
           const $this = $(this);
@@ -7161,6 +7189,13 @@ const Layer = {
       }
     };
 
+    const $scrollEndEvt = function (scrllTopVal) {
+      const $SclTop = $wrap.scrollTop();
+      if ($SclTop > Layer.btnTop.min) {
+        btnTopOff();
+      }
+    };
+
     let $lastSclTop = 0;
     let $timer;
     $wrap.off('scroll').on('scroll', function () {
@@ -7175,6 +7210,16 @@ const Layer = {
       $timer = setTimeout(function () {
         showElOff();
       }, 500);
+
+      // btn-pop-top show
+
+      if ($btnTop.length) {
+        if ($wrapSclTop > Layer.btnTop.min) {
+          btnTopOn();
+        } else {
+          btnTopOff();
+        }
+      }
 
       //ui-scroll-btn
       const $scrollBtn = $popup.find('.ui-scroll-btn');
@@ -7214,6 +7259,12 @@ const Layer = {
       const $headerTit = $head.find('h1');
       if ($fadeTitle.length && $headerTit.length) ui.Common.scrollShowTitle($fadeTitle[0], $this[0], $head[0], $headerTit[0]);
     });
+    $wrap.on(
+      'scroll',
+      _.debounce(function () {
+        $scrollEndEvt();
+      }, 1500)
+    );
     $wrap.off('click').on('click', function () {
       setTimeout(function () {
         $wrap.scroll();
@@ -7342,10 +7393,24 @@ const Layer = {
       if ($pop.length) Layer.close($pop);
     });
 
+    /*
     $(document).on('click', '.popup .pop-wrap', function (e) {
       const $this = $(this);
-      const $wrap = $this.hasClass('pop-body-scroll') ? $this.find('.' + Layer.bodyClass) : $this;
+      let $wrap = $this;
+      if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
+      if ($wrap.hasClass('pop-body-scroll')) $wrap = $wrap.find('.' + Layer.bodyClass);
       $wrap.scroll();
+    });
+    */
+
+    // btn-pop-top
+    $(document).on('click', '.btn-pop-top', function (e) {
+      e.preventDefault();
+      const $this = $(this);
+      let $wrap = $this.closest('.' + Layer.wrapClass);
+      if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
+      if ($wrap.hasClass('pop-body-scroll')) $wrap = $wrap.find('.' + Layer.bodyClass);
+      $wrap.animate({ scrollTop: 0 }, Layer.btnTop.scrollSpeed);
     });
 
     Layer.keyEvt();
