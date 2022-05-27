@@ -671,11 +671,9 @@ ui.Common = {
     };
 
     const showHideOn = function () {
-      $('.floating-btn').addClass('fixedHide');
       $('.scroll-hide').addClass('hidden');
     };
     const showHideOff = function () {
-      $('.floating-btn').removeClass('fixedHide');
       $('.scroll-hide').removeClass('hidden');
     };
 
