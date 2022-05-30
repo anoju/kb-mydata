@@ -311,7 +311,11 @@
 .invest-banner-list {
   li {
     .img-box {
-      border-radius: 1.2rem;
+      // border-radius: 1.2rem;
+      border-radius: #{(12 / 360 * 100)}vw;
+      @include media-min-width(1024) {
+        border-radius: 3.4rem;
+      }
       &:before {
         padding-top: -xyPercent(312, 80);
       }
