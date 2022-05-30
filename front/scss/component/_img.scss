@@ -26,7 +26,7 @@
     pointer-events: none;
   }
   img {
-    pointer-events: none;
+    // pointer-events: none;
     @include img-fit(true);
   }
   .img-box-del {

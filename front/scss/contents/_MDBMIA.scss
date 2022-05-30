@@ -853,7 +853,7 @@
     }
   }
   > img {
-    pointer-events: none;
+    // pointer-events: none;
     @include img-fit;
   }
   &.ty2 {

@@ -15,7 +15,7 @@
   }
   img {
     @include img-fit(true);
-    pointer-events: none;
+    // pointer-events: none;
   }
 }
 
