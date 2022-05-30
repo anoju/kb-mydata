@@ -5161,7 +5161,7 @@ ui.Animation = {
     const $textAry = $thisText.split('');
     let $html = '';
     const $space = '<span>&nbsp;</span>';
-    const $rotateNum = 4;
+    const $rotateNum = 3;
     for (let i = 0; i < $textAry.length; i++) {
       const $text = $textAry[i];
       const $number = parseInt($text);
@@ -5191,15 +5191,17 @@ ui.Animation = {
     $el.attr('title', $text);
     $el.text('0');
   },
-  countInit: function (target) {
+  countInit: function (target, duration) {
+    const $duration = duration === undefined ? 1500 : duration;
     const $el = $(target);
     const $title = $el.attr('title');
     const $number = onlyNumber($title);
+    // const $start = $el.text();
     $({ now: 0 }).animate(
       { now: $number },
       {
-        duration: 1500,
-        // easing: 'easeOutCubic',
+        duration: $duration,
+        easing: 'easeOutExpo',
         step: function (now, e) {
           $el.text(addComma(Math.floor(now)));
           // if(isComma){
@@ -7862,6 +7864,15 @@ $.fn.addRemoveClass = function (className, addTime, removeTime, callback) {
   return this;
 };
 
+$.fn.countNumber = function (num) {
+  return this.each(function () {
+    if (typeof num !== 'number') return;
+    const $num = num;
+    const element = $(this);
+    element.attr('title', addComma($num));
+    ui.Animation.countInit(element);
+  });
+};
 /********************************
  * front 유틸함수 *
  ********************************/
