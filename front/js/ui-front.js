@@ -4950,7 +4950,7 @@ ui.Scroll = {
       if ($innerHeight + $scrollTop + 30 > $scrollHeight) {
         // $scrollBtn.remove();
         $scrollBtn.hide();
-        $mainBtn.addClass('ml-0').show();
+        $mainBtn.show();
       }
     };
     $scrollEvt();
@@ -7185,7 +7185,7 @@ const Layer = {
       if ($innerHeight + $scrollTop + 30 > $scrollHeight) {
         // $scrollBtn.remove();
         $scrollBtn.hide();
-        $mainBtn.addClass('ml-0').show();
+        $mainBtn.show();
       }
     };
 
@@ -7232,7 +7232,7 @@ const Layer = {
           $agreeBtn.each(function () {
             const $parent = $(this).parent();
             if ($parent.is(':visible')) {
-              $(this).next().addClass('ml-0').show();
+              $(this).next().show();
               $(this).remove();
             }
           });
