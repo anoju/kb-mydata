@@ -952,7 +952,8 @@ $bdTypes: (solid, dashed, dotted);
 .scroll-x {
   @include scroll-x;
   .section & {
-    @include outer(true);
+    @include outer;
+    @include scroll-padding;
   }
 }
 .scroll-y {

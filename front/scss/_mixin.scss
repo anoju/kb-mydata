@@ -124,7 +124,19 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-
+@mixin scroll-padding($padding: null) {
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    @if $padding {
+      width: #{$padding}rem;
+    } @else {
+      width: var(--base-padding);
+    }
+  }
+}
 @mixin scroll-hide {
   &::-webkit-scrollbar {
     display: none;

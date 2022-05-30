@@ -99,10 +99,6 @@
 }
 .img-box-wrap {
   display: flex;
-  .section &,
-  &.outer {
-    @include outer(true);
-  }
   @include scroll-x;
   @include scroll-hide;
   .img-box + .img-box {
@@ -117,6 +113,11 @@
       border-radius: 0.4rem;
       padding-top: calc(100% - 0.2rem);
     }
+  }
+  .section &,
+  &.outer {
+    @include outer;
+    @include scroll-padding;
   }
   &.ty2 {
     padding-top: 0.4rem;

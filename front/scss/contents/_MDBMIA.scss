@@ -749,9 +749,9 @@
   display: flex;
   @include scroll-x;
   @include scroll-hide;
-  @include outer(true);
+  @include scroll-padding;
+  @include outer;
   margin-top: 3.2rem;
-  -webkit-overflow-scrolling: touch;
   a {
     position: relative;
     display: flex;
