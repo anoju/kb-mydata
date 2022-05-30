@@ -863,33 +863,32 @@
 
   &.influencer {
     .img-box.avatar {
-      overflow: visible;
       width: 15rem;
-      margin: 2.2rem auto 0;
-      padding: 1.5rem;
+      margin: 1.2rem auto 0;
+      padding: 1.4rem;
       box-sizing: content-box;
       border-radius: 50%;
       overflow: hidden;
       &:after {
-        top: -0.3rem;
-        left: -0.3rem;
-        width: calc(100% + 0.6rem);
-        height: calc(100% + 0.6rem);
+        top: -0.4rem;
+        left: -0.4rem;
+        width: calc(100% + 0.8rem);
+        height: calc(100% + 0.8rem);
         z-index: 1;
         background: url('../images/match/ico_influencer.png') no-repeat center center / 100%;
         transform: none;
       }
       img {
         top: 50%;
-        left: 1.5rem;
-        width: calc(100% - 3rem);
+        left: 1.4rem;
+        width: calc(100% - 2.8rem);
         height: auto;
         object-fit: inherit;
         transform: translateY(-50%);
         border-radius: 0;
       }
       + .comment-label {
-        margin-top: -1.5rem;
+        margin-top: -1.6rem;
       }
     }
 
