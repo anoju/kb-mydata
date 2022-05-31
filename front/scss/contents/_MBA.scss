@@ -2921,11 +2921,13 @@
   // }
 
   0% {
+    opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1);
   }
 
   1.4% {
+    opacity: 1;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
@@ -2942,6 +2944,7 @@
 
   7%,
   100% {
+    opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
   }
@@ -2957,7 +2960,8 @@
     height: 17rem;
     margin: -1.7rem auto 0;
     // margin: -1.2rem auto 0;
-    animation: match-img 10s infinite;
+    opacity: 0;
+    animation: match-img 10s infinite 1s both;
     &.no-img-bg {
       background-color: transparent !important;
     }
