@@ -471,6 +471,7 @@
         const $visual = $('.banner-box');
         if (!$visual.length) return;
         const $img = $visual.find('img');
+        if (!$img.length) return;
         const $headerH = $('#header').length ? $('#header').outerHeight() : 0;
 
         const scrollEvt = function () {
