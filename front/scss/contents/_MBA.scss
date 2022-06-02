@@ -2242,12 +2242,10 @@
 
 .badge-list-box {
   display: flex;
-  flex-wrap: wrap;
   margin: 1.7rem 0.4rem 0;
-  justify-content: space-between;
   > a {
     display: block;
-    max-width: 33.333%;
+    width: 100%;
     text-align: center;
     .img-box {
       width: 8rem;
