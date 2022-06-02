@@ -7051,7 +7051,7 @@ const Layer = {
     //  pop fixed
     let $wrap = $(el);
     if ($wrap.closest('.' + Layer.wrapClass).length) $wrap = $wrap.closest('.' + Layer.wrapClass);
-    if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
+    // if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
     const $head = $wrap.find('.' + Layer.headClass);
     const $foot = $wrap.find('.' + Layer.footClass);
     if ($wrap.hasClass('pop-body-scroll')) $wrap = $wrap.find('.' + Layer.bodyClass);
@@ -7106,7 +7106,7 @@ const Layer = {
     if ($popup.data('popPosition') == true) return false;
     $popup.data('popPosition', true);
     let $wrap = $popup.find('.' + Layer.wrapClass);
-    if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
+    // if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
     if ($wrap.hasClass('pop-body-scroll')) $wrap = $wrap.find('.' + Layer.bodyClass);
     let $wrapH = $wrap.outerHeight();
     let $wrapSclH = $wrap[0].scrollHeight;
@@ -7410,7 +7410,7 @@ const Layer = {
       e.preventDefault();
       const $this = $(this);
       let $wrap = $this.closest('.' + Layer.wrapClass);
-      if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
+      // if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
       if ($wrap.hasClass('pop-body-scroll')) $wrap = $wrap.find('.' + Layer.bodyClass);
       $wrap.animate({ scrollTop: 0 }, Layer.btnTop.scrollSpeed);
     });
