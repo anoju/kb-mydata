@@ -6643,7 +6643,7 @@ const Layer = {
   reOpen: false,
   btnTop: {
     button: '.btn-pop-top',
-    label: '컨텐츠 상단으로 이동',
+    label: '팝업 상단으로 이동',
     text: 'TOP',
     min: 100,
     onClass: 'on',
