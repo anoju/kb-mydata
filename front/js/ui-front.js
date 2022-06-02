@@ -4479,9 +4479,9 @@ ui.Swiper = {
       let $navigation = false;
       if ($this.hasClass('_navi')) {
         let $btnHtml = '';
-        $btnHtml += '<button type="button" aria-label="이전 슬라이드" class="swiper-button-prev swiper-button">이전 슬라이드</button>';
-        $btnHtml += '<button type="button" aria-label="다음 슬라이드" class="swiper-button-next swiper-button">다음 슬라이드</button>';
-        $swiper.append($btnHtml);
+        if (!$swiper.find('.swiper-button-prev').length) $btnHtml += '<button type="button" aria-label="이전 슬라이드" class="swiper-button-prev swiper-button">이전 슬라이드</button>';
+        if (!$swiper.find('.swiper-button-next').length) $btnHtml += '<button type="button" aria-label="다음 슬라이드" class="swiper-button-next swiper-button">다음 슬라이드</button>';
+        if ($btnHtml !== '') $swiper.append($btnHtml);
         $navigation = {
           prevEl: $this.find('.swiper-button-prev')[0],
           nextEl: $this.find('.swiper-button-next')[0]
