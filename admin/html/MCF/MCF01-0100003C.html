@@ -76,7 +76,7 @@
                         <option value="1">회원가입</option>
                       </select>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5 mt-1 mt-md-0">
                       <div class="help-txt">※ 동일한 약관이 있는지 확인후 등록해 주세요.</div>
                     </div>
                   </div>
@@ -100,11 +100,35 @@
                 </div>
               </div>
               <div class="form-box-item">
-                <div class="form-box-label"><i class="fc-red mr-1">*</i>약관구분</div>
+                <div class="form-box-label">구분</div>
                 <div class="form-box-cont">
                   <select class="custom-select">
-                    <option value="1">하위약관</option>
+                    <option value="">선택</option>
                   </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">구분추가</div>
+                <div class="form-box-cont">
+                  <div class="form-row align-items-center">
+                    <div class="col-md-5">
+                      <div class="custom-control-wrap">
+                        <label class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" name="rdo4" class="custom-control-input" />
+                          <span class="custom-control-label">예</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" name="rdo4" class="custom-control-input" />
+                          <span class="custom-control-label">아니오</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-5 mt-1 mt-md-0">
+                      <div class="help-txt">※ 분류 아래 구분이 추가로 필요할 경우 사용해 주세요.</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -250,7 +274,7 @@
               <div class="form-box-item">
                 <div class="form-box-label"><i class="fc-red mr-1">*</i>개정사유</div>
                 <div class="form-box-cont">
-                  <textarea class="form-control" rows="2"></textarea>
+                  <textarea class="form-control" rows="2" placeholder="최초등록 혹은 개정사유를 입력해 주세요"></textarea>
                 </div>
               </div>
             </div>
@@ -262,6 +286,12 @@
             </div>
           </div>
           <div class="form-box">
+            <div class="form-box-row">
+              <div class="form-box-item">
+                <div class="form-box-label">등록자</div>
+                <div class="form-box-cont d-flex align-items-center">홍길동</div>
+              </div>
+            </div>
             <div class="form-box-row">
               <div class="form-box-item">
                 <div class="form-box-label">최초등록</div>
