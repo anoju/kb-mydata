@@ -469,12 +469,17 @@
 
       const bannerImgBox = function () {
         const $visual = $('.banner-box');
-        if (!$visual.length) return;
+        if (!$visual.length || $visual.hasClass('no-img-bg')) return;
         const $img = $visual.find('img');
         if (!$img.length) return;
         const $headerH = $('#header').length ? $('#header').outerHeight() : 0;
 
         const scrollEvt = function () {
+          if ($visual.hasClass('no-img-bg')) {
+            const $style = $img.attr('style');
+            if ($style) $img.removeAttr('style');
+            return;
+          }
           const $sclTop = $(window).scrollTop() + $headerH;
           const $visualTop = $visual.offset().top;
           const $visualH = $visual.outerHeight();
