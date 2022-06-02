@@ -4479,8 +4479,8 @@ ui.Swiper = {
       let $navigation = false;
       if ($this.hasClass('_navi')) {
         let $btnHtml = '';
-        if (!$swiper.find('.swiper-button-prev').length) $btnHtml += '<button type="button" aria-label="이전 슬라이드" class="swiper-button-prev swiper-button">이전 슬라이드</button>';
-        if (!$swiper.find('.swiper-button-next').length) $btnHtml += '<button type="button" aria-label="다음 슬라이드" class="swiper-button-next swiper-button">다음 슬라이드</button>';
+        if (!$swiper.find('.swiper-button-prev').length) $btnHtml += '<button type="button" class="swiper-button-prev swiper-button"></button>';
+        if (!$swiper.find('.swiper-button-next').length) $btnHtml += '<button type="button" class="swiper-button-next swiper-button"></button>';
         if ($btnHtml !== '') $swiper.append($btnHtml);
         $navigation = {
           prevEl: $this.find('.swiper-button-prev')[0],
@@ -4548,7 +4548,7 @@ ui.Swiper = {
             type: $paginationType,
             clickable: true,
             renderBullet: function (index, className) {
-              return '<button type="button" class="' + className + '">' + (index + 1) + '번째 슬라이드</button>';
+              return '<button type="button" class="' + className + '" aria-label="' + (index + 1) + '번째 슬라이드로 이동"></button>';
             }
           },
           navigation: $navigation,
@@ -4560,6 +4560,14 @@ ui.Swiper = {
           parallax: $parallax,
           zoom: $zoom,
           on: {
+            init: function (e) {
+              if ($navigation) {
+                setTimeout(function () {
+                  e.navigation.prevEl.ariaLabel = '이전 슬라이드로 이동';
+                  e.navigation.nextEl.ariaLabel = '다음 슬라이드로 이동';
+                }, 1);
+              }
+            },
             slideChangeTransitionEnd: function (e) {
               if (!!changeEvt) changeEvt(e);
             }
