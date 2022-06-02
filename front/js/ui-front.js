@@ -5167,7 +5167,7 @@ ui.Animation = {
       const $number = parseInt($text);
       // console.log($text, $number)
       if ($.isNumeric($number)) {
-        $html += '<span class="rolling__in data-number="' + $number + '" style="top:-' + ($rotateNum * 10 + $number + 1) + '00%;animation-delay:' + i * 5 + '0ms;">';
+        $html += '<span class="rolling__in" data-number="' + $number + '" style="top:-' + ($rotateNum * 10 + $number + 1) + '00%;animation-delay:' + i * 5 + '0ms;">';
         $html += $space;
         for (let j = 0; j < $rotateNum; j++) {
           for (let k = 0; k < 10; k++) {
