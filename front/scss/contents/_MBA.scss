@@ -2981,10 +2981,18 @@
   .point,
   .ranking {
     position: absolute;
-    top: 3rem;
-    width: 6rem;
+    top: 0;
+    // width: 6rem;
+    // width: calc(50% - 8.5rem);
+    min-width: 6.6rem;
+    height: 15.3rem;
     color: #fff;
     text-align: center;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     .tit {
       margin-top: 0.4rem;
       font-size: 1rem;
@@ -3000,16 +3008,20 @@
       }
     }
     .text {
-      margin-top: 0.6rem;
+      // margin-top: 0.6rem;
       font-weight: 500;
       font-size: 1.2rem;
     }
   }
   .ranking {
-    left: 3.2rem;
+    // left: 3.2rem;
+    right: 50%;
+    margin-right: 8.5rem;
   }
   .point {
-    right: 3.2rem;
+    // right: 3.2rem;
+    left: 50%;
+    margin-left: 8.5rem;
   }
 
   ~ .section {
@@ -3023,19 +3035,24 @@
   &.type2 {
     .point,
     .ranking {
-      display: flex;
-      width: 7rem;
-      flex-wrap: wrap;
-      align-items: center;
+      min-width: 7rem;
       i {
         width: 100%;
       }
-      .tit {
+      > div {
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
         opacity: 0.3;
+        line-height: 2.6rem;
+      }
+      .tit {
+        margin-top: 0;
       }
       .number {
-        margin-left: auto;
-        opacity: 0.3;
+        margin-left: 0.2rem;
+        display: flex;
+        align-items: center;
         span {
           font-size: 2rem;
         }
