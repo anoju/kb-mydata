@@ -1500,6 +1500,7 @@
       background: #f2f3f4 no-repeat center center / cover;
       &.img-box {
         height: auto;
+        overflow: hidden;
         &:before {
           padding-top: -xyPercent(360, 160);
         }
@@ -3565,10 +3566,13 @@
   border-radius: 0.8rem;
   color: #fff;
   font-size: 1.2rem;
-  align-items: center;
+  line-height: 1.6rem;
   background: rgba(0, 0, 0, 0.5);
   i {
+    margin-left: 0.2rem;
     margin-right: 0.9rem;
+    margin-top: 0.1rem;
+    align-self: flex-start;
   }
   + .tit-h1 {
     margin-top: 2.4rem;

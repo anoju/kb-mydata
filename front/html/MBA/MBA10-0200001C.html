@@ -46,7 +46,7 @@
 
           <div class="ground-main-info">
             <div class="banner-box img-box">
-              <img src="../../images/temp/thumb-temp.jpg" alt="" data-animation="fadeIn" />
+              <img src="../../images/temp/thumb-temp.jpg" alt="" />
             </div>
             <div class="text-box">
               <p class="tit">줄서서 먹는 애플 식당! <br />여기에 모여라</p>
@@ -468,9 +468,9 @@
       };
 
       const bannerImgBox = function () {
-        const $visual = $('.ground-main-info');
+        const $visual = $('.banner-box');
         if (!$visual.length) return;
-        const $img = $visual.find('.img-box');
+        const $img = $visual.find('img');
         const $headerH = $('#header').length ? $('#header').outerHeight() : 0;
 
         const scrollEvt = function () {
@@ -481,7 +481,9 @@
           if ($visualTop - 10 <= $sclTop && $sclTop <= $visualBottom + 10) {
             const $ratio = Math.max(0, Math.min(1, ($sclTop - $visualTop) / $visualH));
             const $opacity = (1 - $ratio) * 0.8 + 0.2;
+
             $img.css({
+              top: ($sclTop - $visualTop) / 2,
               opacity: $opacity,
               transform: 'scale(' + (1 + $ratio / 3) + ')'
             });
