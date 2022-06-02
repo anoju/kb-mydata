@@ -2891,6 +2891,15 @@
 #header ~ #container .match-main-visual {
   top: 5rem;
 }
+@keyframes match-img-opacity {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes match-img {
   // 0% {
   //   transform: scale3d(1, 1, 1);
@@ -2920,13 +2929,11 @@
   // }
 
   0% {
-    opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1);
   }
 
   1.4% {
-    opacity: 1;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
@@ -2960,7 +2967,7 @@
     margin: -1.7rem auto 0;
     // margin: -1.2rem auto 0;
     opacity: 0;
-    animation: match-img 10s infinite 1s both;
+    animation: match-img 10s infinite 1s both, match-img-opacity 1s forwards;
     &.no-img-bg {
       background-color: transparent !important;
     }
@@ -2986,9 +2993,11 @@
       opacity: 0.66;
     }
     .number {
-      display: block;
       font-size: 2.6rem;
       font-weight: 500;
+      &:not(.rolling-number) {
+        display: block;
+      }
     }
     .text {
       margin-top: 0.6rem;
