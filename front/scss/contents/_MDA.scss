@@ -9,6 +9,21 @@
       padding-top: -xyPercent(360, 208);
     }
   }
+
+  .swiper-pagination:not(.swiper-pagination-fraction) {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    .swiper-pagination-bullet {
+      background: #c2c2c2;
+      opacity: 1;
+      &.swiper-pagination-bullet-active {
+        background: var(--primary-color);
+      }
+    }
+  }
 }
 
 // 배너박스
