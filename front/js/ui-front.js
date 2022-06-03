@@ -1511,10 +1511,18 @@ ui.Button = {
     });
   },
   imgBox: function () {
-    $(document).on('click', '.img-box-wrap.ui-expend a.img-box', function (e) {
+    $(document).on('click', '.ui-expend .ui-img', function (e) {
       e.preventDefault();
-      const $idx = $(this).index();
-      const $children = $(this).parent().children();
+      const $this = $(this);
+      let $el = $this;
+      let $idx = $el.index();
+      let $parent = $el.parent();
+      while (!$parent.hasClass('ui-expend')) {
+        $el = $parent;
+        $idx = $el.index();
+        $parent = $el.parent();
+      }
+      const $children = $parent.children();
       Layer.imgBox($children, $idx);
     });
   },
@@ -5966,7 +5974,7 @@ const Layer = {
       const isNoImg = $this.hasClass('no-img-bg');
       $contentsHtml += '<div class="swiper-slide">';
       $contentsHtml += isNoImg ? '<div class="swiper-zoom-container no-img-bg">' : '<div class="swiper-zoom-container">';
-      $contentsHtml += '<img src="' + $img.attr('src') + '" alt="' + $img.attr('alt') + '" />';
+      $contentsHtml += '<img src="' + $img.attr('src') + '" alt="' + ($img.attr('alt') === undefined ? '' : $img.attr('alt')) + '" />';
       $contentsHtml += '</div>';
       $contentsHtml += '</div>';
     });
