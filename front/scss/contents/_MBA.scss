@@ -1416,7 +1416,7 @@
     box-sizing: border-box;
     font-weight: bold;
   }
-  p:not(.tag, .bdg) {
+  p:not(.tag):not(.bdg) {
     width: 100%;
   }
   &.type2 {

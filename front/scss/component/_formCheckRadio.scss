@@ -29,10 +29,10 @@ div.checkbox {
     margin-top: 1.8rem;
   }
 }
-.checkbox.ty2.block:not(.btn, .switch, .switch2),
-div.checkbox.ty2:not(.btn, .switch, .switch2) {
-  + .checkbox.ty2.block:not(.btn, .switch, .switch2),
-  + div.checkbox.ty2:not(.btn, .switch, .switch2) {
+.checkbox.ty2.block:not(.btn):not(.switch):not(.switch2),
+div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
+  + .checkbox.ty2.block:not(.btn):not(.switch):not(.switch2),
+  + div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
     margin-top: 1.6rem;
   }
 }
@@ -117,7 +117,7 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
       margin-top: 0.4rem;
     }
   }
-  &.small:not(.btn, .switch, .switch2) {
+  &.small:not(.btn):not(.switch):not(.switch2) {
     --chk-size: 2rem;
     > i {
       + .lbl {
@@ -475,7 +475,7 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
     }
   }
 
-  &.small:not(.btn, .switch, .switch2) {
+  &.small:not(.btn):not(.switch):not(.switch2) {
     > i {
       &:after {
         background-size: 1rem auto;
@@ -548,7 +548,7 @@ div.checkbox.ty2:not(.btn, .switch, .switch2) {
       }
     }
   }
-  &.small:not(.btn, .switch, .switch2) {
+  &.small:not(.btn):not(.switch):not(.switch2) {
     --rdo-size: 1rem;
   }
 }

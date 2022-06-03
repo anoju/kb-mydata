@@ -299,7 +299,7 @@
       opacity: 1;
     }
   }
-  &:not(.disabled, .selected) {
+  &:not(.disabled):not(.selected) {
     .select-item-sub {
       color: #818892;
     }
@@ -322,7 +322,7 @@
       > a {
         min-height: 7.7rem;
       }
-      &:not(.disabled, .selected) {
+      &:not(.disabled):not(.selected) {
         .select-item-txt {
           color: var(--strong-txt-color2);
         }

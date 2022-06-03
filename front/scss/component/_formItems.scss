@@ -73,7 +73,7 @@ i.require {
   .form-box-inner {
     margin-top: 0;
     display: flex;
-    > *:not(input, .form-lbl) {
+    > *:not(input):not(.form-lbl) {
       height: 2.4rem;
       margin-top: 3.8rem;
     }
@@ -83,7 +83,7 @@ i.require {
   // }
   &.input {
     align-items: flex-start;
-    > *:not(input, .form-lbl, .form-box-inner) {
+    > *:not(input):not(.form-lbl):not(.form-box-inner) {
       // display: flex;
       // align-items: center;
       height: 2.4rem;

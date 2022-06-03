@@ -593,9 +593,34 @@ html.pc {
   & + .flex {
     margin-top: 0.8rem;
   }
-  &:not(.not-full, .justify-start, .justify-center, .justify-end, .space-between, .space-around, .space-evenly, .flex-11, .flex-10, .flex-01, .flex-00, .flex-wrap, .flex-column) {
+  // &:not(.not-full, .justify-start, .justify-center, .justify-end, .space-between, .space-around, .space-evenly, .flex-11, .flex-10, .flex-01, .flex-00, .flex-wrap, .flex-column) {
+  //   > *:not(.unit) {
+  //     width: 100%;
+  //   }
+  // }
+  &:not(.not-full):not(.justify-start):not(.justify-center):not(.justify-end):not(.space-between):not(.space-around):not(.space-evenly):not(.flex-11):not(.flex-10):not(.flex-01):not(.flex-00):not(.flex-wrap):not(.flex-column) {
     > *:not(.unit) {
       width: 100%;
+    }
+  }
+  > * {
+    width: 100%;
+  }
+  &.not-full,
+  &.justify-start,
+  &.justify-center,
+  &.justify-end,
+  &.space-between,
+  &.space-around,
+  &.space-evenly,
+  &.flex-11,
+  &.flex-10,
+  &.flex-01,
+  &.flex-00,
+  &.flex-wrap,
+  &.flex-column {
+    > * {
+      width: auto;
     }
   }
   > [class*='w-'] {
@@ -604,6 +629,7 @@ html.pc {
   }
   > .unit {
     display: flex;
+    width: auto;
     align-items: center;
     font-size: 1.5rem;
     padding: 0 0.2rem;
@@ -1116,7 +1142,7 @@ $bdTypes: (solid, dashed, dotted);
 //     .btn-toggle{transform:translateZ(0);}
 // }
 
-html:not(.ios, .safari) {
+html:not(.ios):not(.safari) {
   .ios-img {
     display: none;
   }

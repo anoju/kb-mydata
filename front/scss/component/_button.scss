@@ -56,7 +56,7 @@
     font-size: 1.4rem;
     border-radius: 0.6rem;
   }
-  .popup:not(.modal) .pop-foot &:not(.h48, .h38, .h32, .h24),
+  .popup:not(.modal) .pop-foot &:not(.h48):not(.h38):not(.h32):not(.h24),
   &.h60 {
     height: 6rem;
     font-size: 1.8rem;
@@ -247,7 +247,7 @@ button.btn-click {
     margin-top: 0.8rem;
   }
   > .button,
-  div:not(.input, .textarea) > .button {
+  div:not(.input):not(.textarea) > .button {
     width: 100%;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
