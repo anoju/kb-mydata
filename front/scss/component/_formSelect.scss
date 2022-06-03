@@ -131,6 +131,9 @@
       padding: 0 2.4rem 0 0;
       font-weight: inherit;
     }
+    select {
+      background-position: right center;
+    }
     .btn-select {
       &:after {
         width: 2.4rem;

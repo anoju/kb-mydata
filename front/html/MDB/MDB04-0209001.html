@@ -36,7 +36,6 @@
           <!-- 2022-05-23: 텍스트 -->
           <p class="mt-16">선택한 지출 항목을 담을 카테고리 선택해주세요.</p>
 
-          <!-- 분류가 필요한 내역이 없어요 -->
           <div class="date-line-list-wrap ui-chk-wrap">
             <div class="flex not-full mt-30">
               <div class="select inline fz-16 fc-606060">
@@ -47,24 +46,7 @@
                   <option value="202111">2021.11</option>
                 </select>
               </div>
-            </div>
-            <div class="list-empty">
-              <i class="i-ico-warning-40" aria-hidden="true" data-animation="on"></i>
-              <p>분류가 필요한 내역이 없어요</p>
-            </div>
-          </div>
-          <!-- //분류가 필요한 내역이 없어요 -->
-
-          <div class="date-line-list-wrap ui-chk-wrap">
-            <div class="flex not-full mt-30">
-              <div class="select inline fz-16 fc-606060">
-                <select title="월을 선택해주세요" data-type="date">
-                  <option value="202202">2022.02</option>
-                  <option value="202201">2022.01</option>
-                  <option value="202112">2021.12</option>
-                  <option value="202111">2021.11</option>
-                </select>
-              </div>
+              <!-- 리스트 없을때: '전체선택' 숨김 -->
               <div class="ml-auto">
                 <label class="checkbox ty2">
                   <!-- 전체 선택기능용 클래스: 전체선택에 .ui-all-chk 클래스 (불필요시 해당 클래스만 삭제) -->
@@ -74,6 +56,13 @@
               </div>
             </div>
 
+            <!-- 리스트 없을때 -->
+            <div class="list-empty">
+              <i class="i-ico-warning-40" aria-hidden="true" data-animation="on"></i>
+              <p>분류가 필요한 내역이 없어요</p>
+            </div>
+
+            <!-- 리스트 있을때 -->
             <ul class="date-line-list mt-20">
               <li>
                 <label class="checkbox w-100p">
