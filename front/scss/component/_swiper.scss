@@ -234,6 +234,9 @@
         object-fit: contain;
       }
     }
+    .swiper-slide {
+      backface-visibility: hidden;
+    }
   }
   .swiper-pagination {
     display: inline-flex;
