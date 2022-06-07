@@ -1722,11 +1722,14 @@
         font-size: 1.4rem;
         color: var(--gray-txt-color);
       }
+      .img-thumb-group {
+        margin-bottom: 1.2rem;
+      }
 
       .info-box {
         display: flex;
         align-items: center;
-        margin-top: 1.6rem;
+        margin-top: 0.4rem;
         font-size: 1.4rem;
         color: var(--gray-txt-color);
         > span,
