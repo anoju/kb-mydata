@@ -2662,6 +2662,70 @@ ui.Touch = {
       }
     });
   },
+  scroll: function () {
+    // 안드로이드 (네이티브)앱에서 최상단에 있을때
+    // 가로스크롤이 '당기면 새로고침'기능 때문에 잘 안됨 처리
+    let $isScroll = false;
+    let $isLock = false;
+    let $startX = 0;
+    let $startY = 0;
+    let $moveX = 0;
+    let $moveY = 0;
+    const _start = function (e) {
+      if (fullRefresh.is) return;
+      const $sclTop = $(window).scrollTop();
+      if ($sclTop > 0) return;
+      $isScroll = true;
+      $startX = e.touches[0].clientX;
+      $startY = e.touches[0].clientY;
+      const $target = e.target;
+      let $parent = $target;
+      while ($parent.tagName !== 'BODY') {
+        const $width = $parent.offsetWidth;
+        const $sclWidth = $parent.scrollWidth;
+        const $css = window.getComputedStyle($parent);
+        const $overflowX = $css.getPropertyValue('overflow-x');
+        if ($width < $sclWidth && ($overflowX === 'auto' || $overflowX === 'scroll')) {
+          // console.log('새로고침 막힘', 'width:'+$width, 'sclWidth:'+$sclWidth, 'overflowX:'+$overflowX);
+          $isLock = true;
+          fullRefresh.lock();
+        }
+        $parent = $parent.parentNode;
+      }
+    };
+    const _move = function (e) {
+      if (!$isScroll || !$isLock) return;
+      $moveX = e.touches[0].clientX;
+      $moveY = e.touches[0].clientY;
+      const $distX = $moveX - $startX;
+      const $distY = $moveY - $startY;
+      const $getAngle = function (x, y) {
+        return (Math.atan2(y, x) * 180) / Math.PI;
+      };
+      const $getDeg = Math.round($getAngle($distX, $distY));
+      const $gapDeg = 45;
+      // 45 ~ 135도 새로고침 다시 되게
+      if ($getDeg < 0 || (90 - $gapDeg <= $getDeg && $getDeg <= 90 + $gapDeg)) {
+        //console.log('새로고침', 'deg:' + $getDeg);
+        $isLock = false;
+        fullRefresh.unlock();
+      }
+    };
+    const _end = function (e) {
+      if ($isScroll) $isScroll = false;
+      if ($isLock) {
+        //console.log('새로고침', 'end');
+        $isLock = false;
+        fullRefresh.unlock();
+      }
+    };
+
+    if (ui.Device.app() && ui.Mobile.Android()) {
+      document.addEventListener('touchstart', _start, false);
+      document.addEventListener('touchmove', _move, false);
+      document.addEventListener('touchend', _end, false);
+    }
+  },
   init: function () {
     if ($('.ui-touch-rotate').length) {
       ui.Touch.rotateItem();
@@ -2670,6 +2734,8 @@ ui.Touch = {
 
     ui.Touch.refresh();
     ui.Touch.focus();
+
+    ui.Touch.scroll();
   }
 };
 ui.Refresh = null;
@@ -5578,15 +5644,31 @@ const Focus = {
   }
 };
 
+// 네이티브 full refresh
+const fullRefresh = {
+  is: false,
+  lock: function () {
+    // 웹뷰 스크롤 해제 WebView JavaScript Interface
+    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
+      fullRefresh.is = true;
+      webviewInterface.setWebLayerPopupStatus('open');
+    }
+  },
+  unlock: function () {
+    // 웹뷰 스크롤 허용 WebView JavaScript Interface
+    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
+      fullRefresh.is = false;
+      webviewInterface.setWebLayerPopupStatus('close');
+    }
+  }
+};
+
 //body scroll lock
 const Body = {
   scrollTop: '',
   lock: function () {
     if ($('html').hasClass('lock')) return;
-    // 웹뷰 스크롤 해제 WebView JavaScript Interface
-    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
-      webviewInterface.setWebLayerPopupStatus('open');
-    }
+    fullRefresh.lock();
 
     Body.scrollTop = window.pageYOffset;
     const $wrap = $('#wrap');
@@ -5597,10 +5679,7 @@ const Body = {
   },
   unlock: function () {
     if (!$('html').hasClass('lock')) return;
-    // 웹뷰 스크롤 허용 WebView JavaScript Interface
-    if (typeof webviewInterface === 'object' && typeof webviewInterface.setWebLayerPopupStatus === 'function') {
-      webviewInterface.setWebLayerPopupStatus('close');
-    }
+    fullRefresh.unlock();
 
     $('html').removeClass('lock');
     $('#wrap').removeAttr('style');
