@@ -7968,6 +7968,25 @@ $.fn.countNumber = function (num) {
     ui.Animation.countInit(element);
   });
 };
+
+$.fn.dbltap = function (event, delay) {
+  const $delay = !delay ? 500 : delay;
+  let touchtime = 0;
+  const $this = $(this);
+  $this.on('click', function () {
+    if (touchtime === 0) {
+      touchtime = new Date().getTime();
+    } else {
+      if (new Date().getTime() - touchtime < $delay) {
+        if (!!event && typeof event === 'function') event();
+        touchtime = 0;
+      } else {
+        touchtime = new Date().getTime();
+      }
+    }
+  });
+};
+
 /********************************
  * front 유틸함수 *
  ********************************/
