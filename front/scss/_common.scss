@@ -834,6 +834,9 @@ html.pc {
   .mt-m#{$i} {
     margin-top: -$i * 0.1rem !important;
   }
+  .mr-m#{$i} {
+    margin-right: -$i * 0.1rem !important;
+  }
 }
 
 // padding
