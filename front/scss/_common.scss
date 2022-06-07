@@ -603,26 +603,26 @@ html.pc {
       width: 100%;
     }
   }
-  > * {
-    width: 100%;
-  }
-  &.not-full,
-  &.justify-start,
-  &.justify-center,
-  &.justify-end,
-  &.space-between,
-  &.space-around,
-  &.space-evenly,
-  &.flex-11,
-  &.flex-10,
-  &.flex-01,
-  &.flex-00,
-  &.flex-wrap,
-  &.flex-column {
-    > * {
-      width: auto;
-    }
-  }
+  // > * {
+  //   width: 100%;
+  // }
+  // &.not-full,
+  // &.justify-start,
+  // &.justify-center,
+  // &.justify-end,
+  // &.space-between,
+  // &.space-around,
+  // &.space-evenly,
+  // &.flex-11,
+  // &.flex-10,
+  // &.flex-01,
+  // &.flex-00,
+  // &.flex-wrap,
+  // &.flex-column {
+  //   > * {
+  //     width: auto;
+  //   }
+  // }
   > [class*='w-'] {
     flex-grow: 0;
     flex-shrink: 0;
