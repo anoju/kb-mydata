@@ -96,10 +96,10 @@
     }
     .number-random {
       &:before {
-        background: linear-gradient(180deg, rgba(0, 202, 202, 1) 0%, rgba(97, 189, 243, 0) 100%);
+        background: linear-gradient(180deg, rgba(0, 202, 202, 1) 0%, rgba(0, 202, 202, 0) 100%);
       }
       &:after {
-        background: linear-gradient(0deg, rgba(0, 202, 202, 1) 0%, rgba(97, 189, 243, 0) 100%);
+        background: linear-gradient(0deg, rgba(0, 202, 202, 1) 0%, rgba(0, 202, 202, 0) 100%);
       }
     }
   }
@@ -110,10 +110,10 @@
     }
     .number-random {
       &:before {
-        background: linear-gradient(180deg, rgba(253, 126, 100, 1) 0%, rgba(255, 98, 145, 0) 100%);
+        background: linear-gradient(180deg, rgba(253, 126, 100, 1) 0%, rgba(253, 126, 100, 0) 100%);
       }
       &:after {
-        background: linear-gradient(0deg, rgba(253, 126, 100, 1) 0%, rgba(255, 98, 145, 0) 100%);
+        background: linear-gradient(0deg, rgba(253, 126, 100, 1) 0%, rgba(253, 126, 100, 0) 100%);
       }
     }
     &.influencer {
@@ -122,10 +122,10 @@
       }
       .number-random {
         &:before {
-          background: linear-gradient(180deg, rgba(253, 126, 100, 1) 0%, rgba(254, 125, 101, 0) 100%);
+          background: linear-gradient(180deg, rgba(253, 126, 100, 1) 0%, rgba(253, 126, 100, 0) 100%);
         }
         &:after {
-          background: linear-gradient(0deg, rgba(253, 126, 100, 1) 0%, rgba(254, 125, 101, 0) 100%);
+          background: linear-gradient(0deg, rgba(253, 126, 100, 1) 0%, rgba(253, 126, 100, 0) 100%);
         }
       }
     }
@@ -652,7 +652,7 @@
   .box {
     position: relative;
     margin: 1.9rem 0;
-    padding: 2.5rem 2rem 1.6rem;
+    padding: 2.5rem 2rem 1.9rem;
     border-radius: 2rem;
     background: #fff;
     .text {
@@ -740,7 +740,7 @@
   hr.line {
     overflow: visible;
     position: relative;
-    margin: 3.2rem 0.8rem 1.1rem;
+    margin: 3.2rem 0.8rem 1.8rem;
     border: 0;
     border-top: 0.1rem dashed #7b7b7b;
     &:before,
@@ -768,7 +768,7 @@
     font-size: 2rem;
     font-weight: bold;
     color: #00caca;
-    line-height: 1.22;
+    line-height: 1.4;
     letter-spacing: -0.04rem;
   }
 
