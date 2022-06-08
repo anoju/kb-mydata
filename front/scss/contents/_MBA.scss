@@ -3099,12 +3099,12 @@
 
   .point {
     left: -1rem;
-    background: url('../images/match/bg-main-label1.svg') no-repeat center center / 100%;
+    background: url('../images/match/bg-main-label1.png') no-repeat center center / 100%;
   }
   .score {
     text-align: right;
     right: -1rem;
-    background: url('../images/match/bg-main-label2.svg') no-repeat center center / 100%;
+    background: url('../images/match/bg-main-label2.png') no-repeat center center / 100%;
   }
 
   @include media-max-width(340) {
@@ -3264,8 +3264,12 @@
         }
       }
       .text-box {
+        overflow: hidden;
         margin-left: 1.6rem;
         .tit {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           font-size: 1.8rem;
           font-weight: bold;
         }
