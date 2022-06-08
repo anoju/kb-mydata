@@ -6051,10 +6051,13 @@ const Layer = {
     contents.each(function () {
       const $this = $(this);
       const $img = $this.find('img');
-      const isNoImg = $this.hasClass('no-img-bg');
+      const $src = $img.data('image') ? $img.data('image') : $img.attr('src');
+      // let isNoImg = $this.hasClass('no-img-bg');
+      // if ($this.find('.no-img-bg').length) isNoImg = true;
       $contentsHtml += '<div class="swiper-slide">';
-      $contentsHtml += isNoImg ? '<div class="swiper-zoom-container no-img-bg">' : '<div class="swiper-zoom-container">';
-      $contentsHtml += '<img src="' + $img.attr('src') + '" alt="' + ($img.attr('alt') === undefined ? '' : $img.attr('alt')) + '" />';
+      // $contentsHtml += isNoImg ? '<div class="swiper-zoom-container no-img-bg">' : '<div class="swiper-zoom-container">';
+      $contentsHtml += '<div class="swiper-zoom-container">';
+      $contentsHtml += '<img src="' + $src + '" alt="' + ($img.attr('alt') === undefined ? '' : $img.attr('alt')) + '" onerror="imgError(this)" />';
       $contentsHtml += '</div>';
       $contentsHtml += '</div>';
     });
@@ -8389,6 +8392,7 @@ const nl2br = function (str) {
 // img onerror 함수
 const imgError = function (img) {
   if (img.tagName !== 'IMG') return;
-  $(img).parent().addClass('no-img-bg');
+  const $parent = $(img).closest('.img-box').length ? $(img).closest('.img-box') : $(img).parent();
+  $parent.addClass('no-img-bg');
   // $(img).hide();
 };
