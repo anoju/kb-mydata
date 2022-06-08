@@ -2662,7 +2662,7 @@ ui.Touch = {
       }
     });
   },
-  scroll: function () {
+  horizonScroll: function () {
     // 안드로이드 (네이티브)앱에서 최상단에 있을때
     // 가로스크롤이 '당기면 새로고침'기능 때문에 잘 안됨 처리
     let $isScroll = false;
@@ -2702,10 +2702,11 @@ ui.Touch = {
       const $getAngle = function (x, y) {
         return (Math.atan2(y, x) * 180) / Math.PI;
       };
-      const $getDeg = Math.round($getAngle($distX, $distY));
-      const $gapDeg = 45;
-      // 45 ~ 135도 새로고침 다시 되게
-      if ($getDeg < 0 || (90 - $gapDeg <= $getDeg && $getDeg <= 90 + $gapDeg)) {
+      const $dist = Math.floor(Math.sqrt(Math.pow($distX, 2) + Math.pow($distY, 2))); //start에서 move까지 거리
+      const $getDeg = Math.round($getAngle($distX, $distY)); //start에서 move까지 각도
+      const $gapDeg = 30;
+      // 이동거리 10 이상 ,아래로 60 ~ 120도 새로고침 다시 되게
+      if ($dist > 10 && ($getDeg < 0 || (90 - $gapDeg <= $getDeg && $getDeg <= 90 + $gapDeg))) {
         //console.log('새로고침', 'deg:' + $getDeg);
         $isLock = false;
         fullRefresh.unlock();
@@ -2735,7 +2736,7 @@ ui.Touch = {
     ui.Touch.refresh();
     ui.Touch.focus();
 
-    ui.Touch.scroll();
+    ui.Touch.horizonScroll();
   }
 };
 ui.Refresh = null;
