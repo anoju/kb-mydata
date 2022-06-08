@@ -4551,6 +4551,8 @@ ui.Swiper = {
       const $this = $(this);
       const $swiper = $this.find('.swiper');
       const $pagination = $this.find('.swiper-pagination');
+      const $slide = $this.find('.swiper-slide');
+      if (!$slide.length) return;
 
       let $paginationType = 'bullets';
       if ($this.hasClass('_fraction')) $paginationType = 'fraction';

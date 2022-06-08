@@ -1,5 +1,6 @@
 .swiper-slide {
   overflow: hidden;
+  backface-visibility: hidden;
 }
 
 .ui-swiper {
@@ -233,9 +234,6 @@
         border-radius: 0;
         object-fit: contain;
       }
-    }
-    .swiper-slide {
-      backface-visibility: hidden;
     }
   }
   .swiper-pagination {
