@@ -353,9 +353,24 @@
               showInLegend: true,
               states: {
                 hover: {
+                  brightness: 0,
                   halo: {
                     size: 0
                   }
+                }
+              },
+              point: {
+                events: {
+                  legendItemClick: function () {
+                    return false;
+                  }
+                }
+              }
+            },
+            series: {
+              events: {
+                legendItemClick: function () {
+                  return false;
                 }
               }
             }
