@@ -374,6 +374,7 @@
     background-color: #818892;
   }
   .calendar-date {
+    overflow: hidden;
     border-color: rgba($color: #212121, $alpha: 0.2);
   }
   .last-month {
@@ -386,8 +387,11 @@
       transition: background 0.5s;
     }
     .calendar-date {
-      overflow: hidden;
       border-color: rgba($color: #fff, $alpha: 0.2);
+    }
+  }
+  > .kkl {
+    .calendar-date {
       &:before {
         content: '';
         position: absolute;
@@ -410,6 +414,13 @@
       .calendar-tit {
         background: to-dark(#00caca, 10%);
       }
+      .calendar-date {
+        &:before {
+          transform: translateY(0);
+        }
+      }
+    }
+    > .kkl {
       .calendar-date {
         &:before {
           transform: translateY(0);
