@@ -96,10 +96,10 @@
     }
     .number-random {
       &:before {
-        background: linear-gradient(180deg, rgba(0, 202, 202, 1) 0%, rgba(97, 189, 243, 0) 100%);
+        background: linear-gradient(180deg, rgba(0, 202, 202, 1) 0%, rgba(0, 202, 202, 0) 100%);
       }
       &:after {
-        background: linear-gradient(0deg, rgba(0, 202, 202, 1) 0%, rgba(97, 189, 243, 0) 100%);
+        background: linear-gradient(0deg, rgba(0, 202, 202, 1) 0%, rgba(0, 202, 202, 0) 100%);
       }
     }
   }
@@ -110,10 +110,10 @@
     }
     .number-random {
       &:before {
-        background: linear-gradient(180deg, rgba(253, 126, 100, 1) 0%, rgba(255, 98, 145, 0) 100%);
+        background: linear-gradient(180deg, rgba(253, 126, 100, 1) 0%, rgba(253, 126, 100, 0) 100%);
       }
       &:after {
-        background: linear-gradient(0deg, rgba(253, 126, 100, 1) 0%, rgba(255, 98, 145, 0) 100%);
+        background: linear-gradient(0deg, rgba(253, 126, 100, 1) 0%, rgba(253, 126, 100, 0) 100%);
       }
     }
     &.influencer {
@@ -122,10 +122,10 @@
       }
       .number-random {
         &:before {
-          background: linear-gradient(180deg, rgba(253, 126, 100, 1) 0%, rgba(254, 125, 101, 0) 100%);
+          background: linear-gradient(180deg, rgba(253, 126, 100, 1) 0%, rgba(253, 126, 100, 0) 100%);
         }
         &:after {
-          background: linear-gradient(0deg, rgba(253, 126, 100, 1) 0%, rgba(254, 125, 101, 0) 100%);
+          background: linear-gradient(0deg, rgba(253, 126, 100, 1) 0%, rgba(253, 126, 100, 0) 100%);
         }
       }
     }
