@@ -78,14 +78,16 @@
     &.on {
       color: #000;
       font-weight: bold;
-
-      .lottie {
-        display: block;
-      }
     }
   }
   [class*='i-ico-'] {
-    display: none;
+    display: block;
+  }
+  .lottie {
+    display: block;
+    + [class*='i-ico-'] {
+      display: none;
+    }
   }
   i {
     width: 2.4rem;
