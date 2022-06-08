@@ -3099,12 +3099,12 @@
 
   .point {
     left: -1rem;
-    background: url('../images/match/bg-main-label1.svg') no-repeat center center / 100%;
+    background: url('../images/match/bg-main-label1.png') no-repeat center center / 100%;
   }
   .score {
     text-align: right;
     right: -1rem;
-    background: url('../images/match/bg-main-label2.svg') no-repeat center center / 100%;
+    background: url('../images/match/bg-main-label2.png') no-repeat center center / 100%;
   }
 
   @include media-max-width(340) {
