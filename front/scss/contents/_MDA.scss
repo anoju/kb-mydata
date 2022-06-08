@@ -130,7 +130,7 @@
     // }
   }
   .invest-txt-box {
-    padding: 1.6rem 0 1.9rem;
+    padding: 1.6rem 0 1.8rem;
   }
   .invest-info {
     left: 1.2rem;
@@ -221,23 +221,26 @@
   }
   .price {
     padding: 0 1.6rem;
-    margin-top: 1.8rem;
+    margin-top: 0.8rem;
     font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 2.3rem;
-    align-items: center;
+    overflow: hidden;
     span {
       font-size: 1.2rem;
       line-height: 1.7rem;
+      display: block;
+      color: var(--strong-txt-color2);
     }
     strong.won {
-      margin-left: auto;
-      font-size: 1.8rem;
-      line-height: 2.1rem;
-      color: #424242;
       display: flex;
-      align-items: center;
       justify-content: flex-end;
+      align-items: center;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      color: var(--strong-txt-color);
+      text-align: right;
+      &:first-child {
+        margin-top: 1.7rem;
+      }
       span {
         font-size: 0;
         display: inline-block;
@@ -255,14 +258,14 @@
   position: absolute;
   z-index: 2;
   font-size: 1.2rem;
+  line-height: 1.5;
   padding: 0.4rem 0.7rem;
   left: 1.2rem;
   top: 1.2rem;
   color: #fff;
   border-radius: 0.8rem;
-  background: rgba(0, 0, 0, 0.5);
-  align-items: center;
   font-weight: 400;
+  @include dimm;
 }
 // 투자 뱃지
 .invest-info {
@@ -273,9 +276,9 @@
   span.info {
     font-size: 1.1rem;
     line-height: 1;
-    padding: 0.2rem 0.5rem;
+    padding: 0.3rem 0.5rem;
     border-radius: 1rem;
-    margin: 0 0.2rem;
+    // margin-right: 0 0.2rem 0 0;
   }
 }
 
@@ -306,6 +309,7 @@
     padding: 1.6rem;
     .tit {
       padding-left: 0;
+      color: var(--strong-txt-color2);
     }
     .txt {
       padding-left: 0;
