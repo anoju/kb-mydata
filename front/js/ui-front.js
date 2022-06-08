@@ -544,10 +544,14 @@ ui.Common = {
       $('.ico-step').each(function () {
         const $this = $(this);
         const $length = $this.find('li').length;
-        const $onIdx = $this.find('li.on').index() + 1;
+        const $liOn = $this.find('li.on');
+        const $onIdx = $liOn.index() + 1;
+        const $onTxt = $liOn.text();
+        let $label = '총 ' + $length + '단계 중 현재단계 ' + $onIdx + '단계';
+        if ('' + $onIdx !== $onTxt) $label += '(' + $onTxt + ')';
         $this.attr({
           role: 'img',
-          'aria-label': '총 ' + $length + '단계 중 현재단계 ' + $onIdx + '단계'
+          'aria-label': $label
         });
       });
     }
