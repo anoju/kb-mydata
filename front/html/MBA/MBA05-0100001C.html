@@ -121,40 +121,40 @@
     <script>
       $(function () {
         // 랜덤으로 인플루언서
-        // const $random1 = parseInt(randomNumber(0, 1, 0));
-        // if ($random1) {
-        //   console.log('인풀루언서 매치');
-        //   const $down = $('.match-animation .down');
-        //   $down.addClass('influencer');
-        //   $down.find('.name').text('아이유');
-        //   $down.find('.img img').attr('src', '../../images/temp/thumb-temp5.jpg');
-        //   const $result = $('.match-animation-result');
-        //   $result.find('.loss-info .text-box .name').text('아이유');
-        //   $result.find('.loss-info .img').addClass('influencer');
-        //   $result.find('.loss-info .img img').attr('src', '../../images/temp/thumb-temp5.jpg');
-        // } else {
-        //   console.log('일반 매치');
-        // }
+        const $random1 = parseInt(randomNumber(0, 1, 0));
+        if ($random1) {
+          console.log('인풀루언서 매치');
+          const $down = $('.match-animation .down');
+          $down.addClass('influencer');
+          $down.find('.name').text('아이유');
+          $down.find('.img img').attr('src', '../../images/temp/thumb-temp5.jpg');
+          const $result = $('.match-animation-result');
+          $result.find('.loss-info .text-box .name').text('아이유');
+          $result.find('.loss-info .img').addClass('influencer');
+          $result.find('.loss-info .img img').attr('src', '../../images/temp/thumb-temp5.jpg');
+        } else {
+          console.log('일반 매치');
+        }
 
-        // // 랜덤으로 결과보기
-        // const $random2 = parseInt(randomNumber(0, 2, 0));
-        // const $result = ['loss', 'draw'];
-        // if ($random2) {
-        //   console.log('매치 결과: ' + $result[$random2 - 1]);
-        //   $('.match-animation-result').addClass($result[$random2 - 1]);
-        // }
+        // 랜덤으로 결과보기
+        const $random2 = parseInt(randomNumber(0, 2, 0));
+        const $result = ['loss', 'draw'];
+        if ($random2) {
+          console.log('매치 결과: ' + $result[$random2 - 1]);
+          $('.match-animation-result').addClass($result[$random2 - 1]);
+        }
 
         $(window).load(function () {
-          // setTimeout(function () {
-          //   $('.match-animation').addClass('action');
-          //   setTimeout(function () {
-          //     $('.match-animation').addClass('end');
-          //     $('.match-animation-result').addClass('show');
-          //   }, 5000);
-          // }, 1000);
+          setTimeout(function () {
+            $('.match-animation').addClass('action');
+            setTimeout(function () {
+              $('.match-animation').addClass('end');
+              $('.match-animation-result').addClass('show');
+            }, 5000);
+          }, 1000);
 
           // 최초 실행만 보고 싶을때
-          $('.match-animation').addClass('action');
+          // $('.match-animation').addClass('action');
           // 결과만 보고 싶을때
           // $('.match-animation').addClass('action end');
           // $('.match-animation-result').addClass('show');
