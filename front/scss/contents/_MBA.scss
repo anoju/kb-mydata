@@ -3589,17 +3589,25 @@
 
 .tooltip-info {
   display: flex;
-  position: absolute;
-  top: 0.8rem;
-  left: 2.4rem;
-  right: 2.4rem;
-  z-index: 10;
+  position: relative;
   padding: 0.8rem 1.6rem;
   border-radius: 0.8rem;
   color: #fff;
   font-size: 1.2rem;
   line-height: 1.6rem;
   background: rgba(0, 0, 0, 0.5);
+  .section:first-child & {
+    &:not(.type2):first-child {
+      margin-top: -1.6rem;
+    }
+  }
+  &.type2 {
+    position: absolute;
+    top: 0.8rem;
+    left: 2.4rem;
+    right: 2.4rem;
+    z-index: 10;
+  }
   i {
     margin-left: 0.2rem;
     margin-right: 0.9rem;
@@ -3607,6 +3615,6 @@
     align-self: flex-start;
   }
   + .tit-h1 {
-    margin-top: 2.4rem;
+    margin-top: 0.8rem;
   }
 }
