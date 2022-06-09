@@ -926,8 +926,13 @@
     color: #818892;
   }
 
-  .last-img {
+  .img {
     position: relative;
+    margin-top: auto;
+  }
+
+  .last-img {
+    margin-bottom: auto;
     i {
       display: block;
       position: absolute;
