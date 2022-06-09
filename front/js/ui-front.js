@@ -53,7 +53,7 @@ const ui = {
       ui.Scroll.init();
       ui.Animation.init();
       Layer.init();
-      Splitting();
+      ui.Animation.splitting();
       ui.Chart.init();
     }
   },
@@ -5387,6 +5387,17 @@ ui.Animation = {
     });
   },
   sclAray: [],
+  splitting: function () {
+    $('[data-splitting]').each(function () {
+      const $el = $(this);
+      const $role = $el.attr('role');
+      if ($role === undefined) $el.role('img');
+      const $text = $el.text();
+      const $label = $el.attr('aria-label');
+      if ($label === undefined || $text !== $label) $el.aria('label', $text);
+    });
+    Splitting();
+  },
   init: function () {
     const $animations = $('[data-animation]');
     if ($animations.length > 0) {
