@@ -223,7 +223,6 @@
     padding: 0 1.6rem;
     margin-top: 0.8rem;
     font-size: 1.6rem;
-    overflow: hidden;
     span {
       font-size: 1.2rem;
       line-height: 1.7rem;
@@ -239,7 +238,7 @@
       color: var(--strong-txt-color);
       text-align: right;
       &:first-child {
-        margin-top: 1.7rem;
+        padding-top: 1.7rem;
       }
       span {
         font-size: 0;
