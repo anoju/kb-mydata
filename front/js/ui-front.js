@@ -2684,15 +2684,23 @@ ui.Touch = {
       $startY = e.touches[0].clientY;
       const $target = e.target;
       let $parent = $target;
-      while ($parent.tagName !== 'BODY') {
+      let $isSclChk = false;
+      while ($parent.tagName !== 'BODY' && !$isSclChk) {
         const $width = $parent.offsetWidth;
         const $sclWidth = $parent.scrollWidth;
         const $css = window.getComputedStyle($parent);
         const $overflowX = $css.getPropertyValue('overflow-x');
-        if ($width < $sclWidth && ($overflowX === 'auto' || $overflowX === 'scroll')) {
-          // console.log('새로고침 막힘', 'width:'+$width, 'sclWidth:'+$sclWidth, 'overflowX:'+$overflowX);
+        const $locking = function () {
+          //console.log('새로고침 막힘', 'width:' + $width, 'sclWidth:' + $sclWidth, 'overflowX:' + $overflowX);
           $isLock = true;
+          $isSclChk = true;
           fullRefresh.lock();
+        };
+        if ($width < $sclWidth && ($overflowX === 'auto' || $overflowX === 'scroll')) {
+          $locking();
+        }
+        if ($parent.classList.contains('swiper-wrapper')) {
+          $locking();
         }
         $parent = $parent.parentNode;
       }
