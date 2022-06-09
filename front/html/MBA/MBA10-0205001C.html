@@ -71,7 +71,7 @@
     </article>
     <script>
       function alertClose() {
-        Layer.confirm('신고를 그만 할까요?<br />작성 중인 내용을 저장하지 않습니다.', '안내', '확인', '취소', function (e) {
+        Layer.confirm('신고를 그만 할까요?<br />작성 중인 내용을 저장하지 않습니다.', function (e) {
           if (e) {
             console.log('확인');
           } else {
@@ -80,7 +80,7 @@
         });
       }
       function alertSubmit() {
-        Layer.confirm('입력된 내용으로 신고할까요?<br />접수가 완료된 신고 내용은 수정할 수 없습니다.', '안내', '확인', '취소', function (e) {
+        Layer.confirm('입력된 내용으로 신고할까요?<br />접수가 완료된 신고 내용은 수정할 수 없습니다.', function (e) {
           if (e) {
             console.log('확인');
           } else {

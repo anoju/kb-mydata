@@ -198,7 +198,7 @@
         }
       });
       const choice = function () {
-        Layer.confirm('[선택된 보기 값]으로 선택 할까요? <br />선택 완료 후 변경할 수 없습니다.', '확인', '선택 완료', '다시 선택', function (e) {
+        Layer.confirm('[선택된 보기 값]으로 선택 할까요? <br />선택 완료 후 변경할 수 없습니다.', null, '선택 완료', '다시 선택', function (e) {
           if (e) {
             Layer.toast('정답 선택이 완료 되었어요.');
             choiceSelect = true;
@@ -212,7 +212,7 @@
       // 프로필 못 봄
       const noProfile = function () {
         const text = '<p>선택하신 사용자의 프로필을 확인 할 수 없어요.</p><p class="mt-8">앱 탈퇴 또는 그라운드에서 퇴장하거나 이용정지 된 사용자의 정보는 접근이 제한됩니다.</p>';
-        Layer.alert(text, '알림');
+        Layer.alert(text);
       };
     </script>
   </body>
