@@ -881,30 +881,98 @@
   .pop-head {
     background-color: #fafafa;
   }
+  .pop-body {
+    padding-top: 0;
+    background-color: #fafafa;
+  }
   .pop-foot {
     > div {
       background-color: #fafafa;
       padding-top: 0;
     }
   }
-  .pop-body {
-    background-color: #fafafa;
-    // margin-bottom: -10.8rem;
-    .ui-swiper {
+  .ui-swiper {
+    height: 100%;
+    .swiper {
       height: 100%;
-      .swiper {
-        height: calc(100% - 0.6rem);
+    }
+  }
+
+  .swiper-pagination {
+    margin-top: 0;
+    position: absolute;
+    top: 3.2rem;
+    left: 0;
+    width: 100%;
+    .swiper-pagination-bullet {
+      width: 0.6rem;
+      height: 0.6rem;
+    }
+    .swiper-pagination-bullet-active {
+      width: 2.4rem;
+      background: #474f59;
+    }
+  }
+  .inner {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  .tit-h2 {
+    margin-top: 8.6rem;
+  }
+  .sub-txt {
+    margin-top: 1.6rem;
+    font-size: 1.4rem;
+    color: #818892;
+  }
+
+  .img {
+    position: relative;
+    margin-top: auto;
+  }
+
+  .last-img {
+    margin-bottom: auto;
+    i {
+      display: block;
+      position: absolute;
+      background: no-repeat center center / contain;
+      width: -xyPercent(1080, 126);
+      opacity: 0;
+      top: -xyPercent(885, 471);
+      transition: opacity 0.5s, transform 1s cubic-bezier(0, 0.25, 0, 1);
+      &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+      &.coin-1 {
+        left: -xyPercent(1080, 669);
+        top: -xyPercent(885, 27);
+        background-image: url(../images/consume/img-content5-coin1.png);
+        transform: translateY(150%);
+      }
+      &.coin-2 {
+        left: -xyPercent(1080, 606);
+        top: -xyPercent(885, 231);
+        background-image: url(../images/consume/img-content5-coin2.png);
+        transform: translateY(100%);
+      }
+      &.coin-3 {
+        left: -xyPercent(1080, 715);
+        top: -xyPercent(885, 345);
+        background-image: url(../images/consume/img-content5-coin3.png);
+        transform: translateY(50%);
       }
     }
-
-    .swiper-pagination {
-      .swiper-pagination-bullet {
-        width: 0.6rem;
-        height: 0.6rem;
-      }
-      .swiper-pagination-bullet-active {
-        width: 2.4rem;
-        background: #474f59;
+  }
+  .swiper-slide-active {
+    .last-img {
+      i {
+        opacity: 1;
+        transform: translateY(0) !important;
       }
     }
   }
