@@ -3088,7 +3088,7 @@
     color: rgba(255, 255, 255, 0.7);
   }
   .text {
-    margin-top: 0.8rem;
+    margin-top: 1rem;
     font-size: 1.6rem;
     color: #fff;
     line-height: 1;
@@ -3097,21 +3097,30 @@
       margin-right: 0.6rem;
     }
     strong {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
   }
 
   .point {
     left: -1rem;
     background: url('../images/match/bg-main-label1.png') no-repeat center center / 100%;
+    width: 17.4rem;
+    .text {
+      margin-top: 0.8rem;
+      strong {
+        font-size: 2.6rem;
+      }
+    }
   }
   .score {
     text-align: right;
     right: -1rem;
     background: url('../images/match/bg-main-label2.png') no-repeat center center / 100%;
+    width: 19.4rem;
+    padding: 1.8rem 2.3rem 1.8rem 2rem;
   }
 
-  @include media-max-width(360) {
+  @include media-max-width(355) {
     height: auto;
     > div,
     > a {
@@ -3124,10 +3133,12 @@
       padding: 1.4rem 1.7rem;
     }
     .point {
+      width: 100%;
       background: linear-gradient(279.73deg, #ad8aff 22.77%, #936ff6 81.58%);
       box-shadow: 0 0.6rem 1rem rgba(150, 114, 247, 0.25);
     }
     .score {
+      width: 100%;
       text-align: center;
       margin-top: 0.8rem;
       background: linear-gradient(271.7deg, #fe99ab 25.97%, #ff7c8d 91.04%);
