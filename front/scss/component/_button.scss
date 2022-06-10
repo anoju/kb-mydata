@@ -56,6 +56,10 @@
     font-size: 1.4rem;
     border-radius: 0.6rem;
   }
+  &.h52 {
+    height: 5.2rem;
+    border-radius: 1.2rem;
+  }
   .popup:not(.modal) .pop-foot &:not(.h48):not(.h38):not(.h32):not(.h24),
   &.h60 {
     height: 6rem;
@@ -438,10 +442,10 @@ button.btn-click {
     }
   }
 
-  &.full {
+  &.outer {
     @include outer;
   }
-  &.lineT {
+  &.line-top {
     border-top: 0.1rem solid #f2f4f6;
   }
 }
