@@ -3069,7 +3069,7 @@
 }
 .match-main-label {
   position: relative;
-  max-width: 31.2rem;
+  max-width: 32.8rem;
   height: 9.4rem;
   margin: 2.4rem auto;
   > div,
@@ -3077,7 +3077,7 @@
     display: block;
     position: absolute;
     top: 0;
-    width: 17.6rem;
+    width: 18.4rem;
     height: 100%;
     padding: 1.8rem 2.5rem;
     margin-top: -0.4rem;
@@ -3093,10 +3093,11 @@
     color: #fff;
     line-height: 1;
     i {
+      margin-bottom: -0.2rem;
       margin-right: 0.6rem;
     }
     strong {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
   }
 
@@ -3110,7 +3111,7 @@
     background: url('../images/match/bg-main-label2.png') no-repeat center center / 100%;
   }
 
-  @include media-max-width(340) {
+  @include media-max-width(360) {
     height: auto;
     > div,
     > a {
