@@ -33,6 +33,12 @@
         $('.fz-sel, .fw-sel, .ff-rdo').change(function () {
           targetAddClass();
         });
+
+        // 글자 크기
+        for (let i = 1; i <= 40; i++) {
+          const $html = '<div class="fz-' + i + '"> ' + (i < 10 ? '0' + i : i) + ': 가너두로므비 깁늠돌룯던박 ABCDE abcde 012345 !@#$%</div>';
+          $('#fontSizeTxt').append($html);
+        }
       });
     </script>
   </head>
@@ -52,6 +58,23 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="section">
+          <h2 class="gd__h1">폰트 출처</h2>
+          <div>
+            <h3 class="gd__h2">Noto Sans KR</h3>
+            <div class="btn-wrap">
+              <div class="flex">
+                <a href="https://google-webfonts-helper.herokuapp.com/fonts/noto-sans-kr" target="_blank" class="button line">웹폰트</a>
+                <a href="https://fonts.google.com/noto/specimen/Noto+Sans+KR" target="_blank" class="button line">폰트</a>
+              </div>
+            </div>
+            <h3 class="gd__h2">Roboto</h3>
+            <div class="btn-wrap">
+              <div class="flex">
+                <a href="https://google-webfonts-helper.herokuapp.com/fonts/roboto" target="_blank" class="button line">웹폰트</a>
+                <a href="https://fonts.google.com/specimen/Roboto" target="_blank" class="button line">폰트</a>
+              </div>
+            </div>
+          </div>
           <div class="btn-wrap bottom-fixed">
             <div>
               <div class="flex">
@@ -94,23 +117,6 @@
               </div>
             </div>
           </div>
-          <h2 class="gd__h1">폰트 출처</h2>
-          <div>
-            <h3 class="gd__h2">Noto Sans KR</h3>
-            <div class="btn-wrap">
-              <div class="flex">
-                <a href="https://google-webfonts-helper.herokuapp.com/fonts/noto-sans-kr" target="_blank" class="button line">웹폰트</a>
-                <a href="https://fonts.google.com/noto/specimen/Noto+Sans+KR" target="_blank" class="button line">폰트</a>
-              </div>
-            </div>
-            <h3 class="gd__h2">Roboto</h3>
-            <div class="btn-wrap">
-              <div class="flex">
-                <a href="https://google-webfonts-helper.herokuapp.com/fonts/roboto" target="_blank" class="button line">웹폰트</a>
-                <a href="https://fonts.google.com/specimen/Roboto" target="_blank" class="button line">폰트</a>
-              </div>
-            </div>
-          </div>
 
           <h2 class="gd__h1">영어, 숫자, 기호</h2>
           <div class="gd__txt-box">
@@ -121,6 +127,11 @@
               <div>`~!@#$%^&*()_-+=[]\{}|;':",./&lt;&gt;?</div>
             </div>
           </div>
+          <h2 class="gd__h1">글자크기</h2>
+          <div class="gd__txt-box">
+            <div id="fontSizeTxt"></div>
+          </div>
+
           <h2 class="gd__h1">한글</h2>
           <p class="flex not-full align-center">
             노랑: 국가 표준 완성형 대조표의 4308자

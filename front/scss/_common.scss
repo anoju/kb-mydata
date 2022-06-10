@@ -426,7 +426,7 @@ html.pc {
 .fc-b0b0b0 {
   color: #b0b0b0 !important;
 }
-.fc-15B071 {
+.fc-15b071 {
   color: #15b071 !important;
 }
 .fc-168b68 {
@@ -461,7 +461,7 @@ html.pc {
 }
 
 /* 폰트 사이즈 */
-@for $i from 6 through 40 {
+@for $i from 0 through 40 {
   .fz-#{$i} {
     font-size: $i * 0.1rem !important;
   }
