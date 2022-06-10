@@ -695,7 +695,8 @@ ui.Common = {
         $('.floating-btn').css('bottom', $spaceH === 0 ? $margin : $spaceH + 10);
       }
 
-      if ($SclTop > btnTop.min) {
+      console.log($lastSclTop, $SclTop);
+      if ($SclTop > btnTop.min && $lastSclTop !== $SclTop) {
         btnTopOn();
       } else {
         btnTopOff();
