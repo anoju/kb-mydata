@@ -440,6 +440,7 @@
 
         Layer.open('#popTagActivityInfo', function () {
           $swiper.slideTo(idx);
+          $swiper.on('slideChange', function () {});
         });
       });
 
