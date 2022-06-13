@@ -2989,9 +2989,8 @@
   .ranking {
     position: absolute;
     top: 0;
-    // width: 6rem;
-    // width: calc(50% - 8.5rem);
-    min-width: 6.6rem;
+    // width: 34.4444%;
+    width: calc(50% - 5.6rem);
     height: 15.3rem;
     color: #fff;
     text-align: center;
@@ -3021,14 +3020,10 @@
     }
   }
   .ranking {
-    // left: 3.2rem;
-    right: 50%;
-    margin-right: 8.5rem;
+    left: 0;
   }
   .point {
-    // right: 3.2rem;
-    left: 50%;
-    margin-left: 8.5rem;
+    right: 0;
   }
 
   ~ .section {
