@@ -1647,6 +1647,12 @@
     background-color: #fff;
     transform: rotate(45deg) translateZ(0.2rem);
     animation: shiny-ef1 5s ease-in-out infinite;
+    .swiper-slide:not(.swiper-slide-active) & {
+      animation: none;
+    }
+    .swiper-slide-active & {
+      animation-delay: -3s;
+    }
   }
 }
 
