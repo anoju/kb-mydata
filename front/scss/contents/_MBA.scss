@@ -2902,9 +2902,15 @@
   0%,
   50% {
     opacity: 0;
+    transform: translateY(30%);
   }
+  // 66% {
+  //   opacity: 1;
+  //   transform: translateY(30%);
+  // }
   100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes match-img {
@@ -2974,8 +2980,7 @@
     height: 17rem;
     margin: -1.7rem auto 0;
     // margin: -1.2rem auto 0;
-    opacity: 0;
-    animation: match-img 10s infinite 1s both, match-img-opacity 1s forwards;
+    animation: match-img 10s infinite 2s both;
     &.no-img-bg {
       background-color: transparent !important;
     }
@@ -2983,6 +2988,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      opacity: 0;
+      animation: match-img-opacity 1s forwards;
     }
   }
 
