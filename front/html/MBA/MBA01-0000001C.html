@@ -338,6 +338,7 @@
           } else {
             $visualTop = $visual.offset().top - $sclTop;
           }
+          const $visualImg = $visual.find('.img');
           const $section = $visual.siblings('.section:visible');
           const $sectionTop = $section.offset().top;
           let $sectionRound = $section.data('radius');
@@ -345,15 +346,21 @@
             $sectionRound = parseInt($section.css('border-top-left-radius'));
             $section.data('radius', $sectionRound);
           }
-
-          if ($sclTop < $sectionTop + 20) {
-            const $ratio = 1 - Math.max(0, Math.min(1, $sclTop / ($sectionTop - $visualTop)));
-            $section.css({
-              'border-top-left-radius': $sectionRound * $ratio,
-              'border-top-right-radius': $sectionRound * $ratio
-            });
-          } else if ($sclTop === 0) {
+          if ($sclTop === 0) {
             $section.removeAttr('style');
+            $visualImg.removeAttr('style');
+            $visual.children('div').removeAttr('style');
+          } else if ($sclTop < $sectionTop + 20) {
+            const $ratio = Math.max(0, Math.min(1, $sclTop / ($sectionTop - $visualTop)));
+            $section.css({
+              'border-top-left-radius': $sectionRound * (1 - $ratio),
+              'border-top-right-radius': $sectionRound * (1 - $ratio)
+            });
+            // $visualImg.css('transform', 'scale(' + (1 + $ratio / 2) + ')');
+            $visualImg.css('top', ($sclTop / 3) * -1);
+            // const $opacity = (1 - $ratio) * 0.8 + 0.2;
+            const $opacity = 1 - $ratio;
+            $visual.children('div').css('opacity', $opacity);
           }
         };
         scrollEvt();

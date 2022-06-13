@@ -2969,6 +2969,7 @@
   padding-bottom: 3.2rem;
   background: radial-gradient(83.19% 350.89% at 50% 35.05%, #ff8a60 0%, #fe7668 100%);
   .img {
+    position: relative;
     width: 17rem;
     height: 17rem;
     margin: -1.7rem auto 0;
@@ -2999,6 +3000,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
     .tit {
       margin-top: 0.4rem;
       font-size: 1rem;
