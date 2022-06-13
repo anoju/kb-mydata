@@ -1634,6 +1634,7 @@
   right: 0;
   pointer-events: none;
   overflow: hidden;
+  z-index: 5;
   &:before {
     position: absolute;
     content: '';

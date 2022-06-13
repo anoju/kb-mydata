@@ -26,6 +26,24 @@
   }
 }
 
+.invest-info-guide {
+  margin-top: 1.6rem;
+  margin-bottom: -0.8rem;
+  position: relative;
+  padding: 1.2rem 3.2rem 1.2rem 2rem;
+  border-radius: 1.4rem;
+  font-size: 1.4rem;
+  background-color: #fafafa;
+  > span {
+    font-size: 1.2rem;
+  }
+  .button {
+    position: absolute;
+    top: 50%;
+    right: 0.8rem;
+    margin-top: -1.2rem;
+  }
+}
 // 배너박스
 .invest-banner-box {
   .inner {
