@@ -85,8 +85,13 @@
     </div>
 
     <script>
-      $(function () {
-        Layer.open('#popBadgeActivityInfo');
+      Layer.open('#popBadgeActivityInfo');
+
+      $(window).load(function () {
+        const swiper = $('#popBadgeActivityInfo .ui-swiper').data('swiper');
+        swiper.on('slideChange', function (e) {
+          console.log('slide' + e.activeIndex);
+        });
       });
     </script>
   </body>

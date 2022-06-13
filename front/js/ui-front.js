@@ -5289,7 +5289,7 @@ ui.Animation = {
     $el.text('0');
   },
   countInit: function (target, duration) {
-    const $duration = duration === undefined ? 1500 : duration;
+    const $duration = duration === undefined ? 1000 : duration;
     const $el = $(target);
     const $title = $el.attr('title');
     const $number = onlyNumber($title);

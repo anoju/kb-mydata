@@ -79,8 +79,12 @@
     </div>
 
     <script>
-      $(function () {
-        Layer.open('#popTagActivityInfo');
+      Layer.open('#popTagActivityInfo');
+      $(window).load(function () {
+        const swiper = $('#popTagActivityInfo .ui-swiper').data('swiper');
+        swiper.on('slideChange', function (e) {
+          console.log('slide' + e.activeIndex);
+        });
       });
     </script>
   </body>
