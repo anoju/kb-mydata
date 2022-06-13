@@ -437,10 +437,12 @@
         const $pop = $('#popTagActivityInfo');
 
         const $swiper = $pop.find('.ui-swiper').data('swiper');
+        $swiper.on('slideChange', function (e) {
+          console.log('tag swiper', e.realIndex);
+        });
 
         Layer.open('#popTagActivityInfo', function () {
           $swiper.slideTo(idx);
-          $swiper.on('slideChange', function () {});
         });
       });
 
