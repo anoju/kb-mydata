@@ -3064,9 +3064,9 @@
 }
 .match-main-label {
   position: relative;
-  max-width: 32.8rem;
+  max-width: 31.2rem;
   height: 9.4rem;
-  margin: 2.4rem auto;
+  margin: 2.4rem auto 0;
   > div,
   > a {
     display: block;
@@ -3074,7 +3074,7 @@
     top: 0;
     width: 18.4rem;
     height: 100%;
-    padding: 1.8rem 2.5rem;
+    padding: 1.8rem 2.5rem 1.6rem;
     margin-top: -0.4rem;
   }
   .tit {
@@ -3083,16 +3083,19 @@
     color: rgba(255, 255, 255, 0.7);
   }
   .text {
-    margin-top: 1rem;
-    font-size: 1.6rem;
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    height: 2.6rem;
     color: #fff;
+    font-size: 1.6rem;
     line-height: 1;
     i {
-      margin-bottom: -0.2rem;
       margin-right: 0.6rem;
+      margin-top: 0.4rem;
     }
     strong {
-      font-size: 2rem;
+      font-size: 2.6rem;
     }
   }
 
@@ -3100,19 +3103,26 @@
     left: -1.7rem;
     background: url('../images/match/bg-main-label1.png') no-repeat center center / 100%;
     width: 17.4rem;
-    .text {
-      margin-top: 0.8rem;
-      strong {
-        font-size: 2.6rem;
-      }
-    }
   }
   .score {
     text-align: right;
     right: -1.7rem;
     background: url('../images/match/bg-main-label2.png') no-repeat center center / 100%;
     width: 19.4rem;
-    padding: 1.8rem 2.3rem 1.8rem 2rem;
+    .text {
+      justify-content: flex-end;
+      strong {
+        font-size: 2rem;
+        margin-left: 0.3rem;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  .shiny-wrap {
+    left: -1.7rem;
+    right: -1.7rem;
   }
 
   @include media-max-width(355) {

@@ -1625,3 +1625,63 @@
   animation-name: bounce2;
   transform-origin: center bottom;
 }
+
+.shiny-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  overflow: hidden;
+  &:before {
+    position: absolute;
+    content: '';
+    opacity: 0;
+    display: block;
+    top: -10rem;
+    left: 0;
+    width: 3rem;
+    height: 100%;
+    background-color: #fff;
+    transform: rotate(45deg) translateZ(0.2rem);
+    animation: shiny-ef1 5s ease-in-out infinite;
+  }
+}
+
+@keyframes shiny-ef1 {
+  0% {
+    transform: scale(0) rotate(45deg) translateZ(0.2rem);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(0) rotate(45deg) translateZ(0.2rem);
+    opacity: 0.3;
+  }
+  82% {
+    transform: scale(4) rotate(45deg) translateZ(0.2rem);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(50) rotate(45deg) translateZ(0.2rem);
+    opacity: 0;
+  }
+}
+@keyframes shiny-ef2 {
+  0% {
+    transform: scale(0) rotate(45deg) translateZ(10rem);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(0) rotate(45deg) translateZ(10rem);
+    opacity: 0.1;
+  }
+  81% {
+    transform: scale(4) rotate(45deg) translateZ(10rem);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg) translateZ(100px);
+    opacity: 0;
+  }
+}
