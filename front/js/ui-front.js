@@ -1589,9 +1589,9 @@ ui.Button = {
       $idx += 1;
       const $item = '<div class="ui-tap-item active ' + $typeClass + ' ' + $itemClass + '" style="top:' + $tapTop + 'px;left:' + $tapLeft + 'px;">' + $append + '</div>';
       $(this).append($item);
-      // $('.' + $itemClass).one('animationend', function (e) {
-      //   $('.' + $itemClass).remove();
-      // });
+      $('.' + $itemClass).one('animationend', function (e) {
+        $('.' + $itemClass).remove();
+      });
     });
     $('.ui-tap-item').each(function () {
       const $this = $(this);
