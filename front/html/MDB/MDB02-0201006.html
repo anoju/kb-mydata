@@ -30,14 +30,9 @@
 
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
-        <div class="section center-contents justify-center ui-tap-area confetti">
-          <div class="img-box w-144 mg-autox end-img-complete" aria-hidden="true" data-animation="fadeInIcon"></div>
-          <h1 class="tit-h1 t-center mt-24">
-            <div class="ui-tap-item confetti pos-1" data-animation="active"></div>
-            <div class="ui-tap-item confetti pos-2" data-animation="active"></div>
-            <div class="ui-tap-item confetti pos-3" data-animation="active"></div>
-            마이데이터 서비스 이용신청을 <br />완료하셨습니다.
-          </h1>
+        <div class="section center-contents justify-center" data-animation="fadeInIcon" data-delay="200">
+          <div class="img-box w-144 mg-autox end-img-complete" aria-hidden="true"></div>
+          <h1 class="tit-h1 t-center mt-24">마이데이터 서비스 이용신청을 <br />완료하셨습니다.</h1>
           <p class="t-center mt-16">이제 자산을 연결해보세요!</p>
         </div>
         <div class="btn-wrap bottom-fixed">
@@ -51,5 +46,67 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script src="../../js/lib/confetti.browser.5.10.0.min.js"></script>
+    <script>
+      const colors = ['#00dcdc', '#78ff44', '#fd7e64', '#2ad6a8', '#fdff6a', '#a864fd'];
+      const confettiFirst = function () {
+        // const end = Date.now() + 1 * 1000;
+        let idx = 0;
+        (function frame() {
+          confetti({
+            particleCount: 6,
+            angle: 60,
+            spread: 60,
+            origin: {
+              x: 0,
+              y: 0.7
+            },
+            colors: colors,
+            scalar: 1.1,
+            zIndex: -1
+          });
+          confetti({
+            particleCount: 6,
+            angle: 120,
+            spread: 60,
+            origin: {
+              x: 1,
+              y: 0.7
+            },
+            colors: colors,
+            scalar: 1.1,
+            zIndex: -1
+          });
+
+          // if (Date.now() < end) {
+          //   requestAnimationFrame(frame);
+          // }
+          if (idx < 10) {
+            idx += 1;
+            setTimeout(function () {
+              frame();
+            }, 100);
+          }
+        })();
+      };
+      confettiFirst();
+
+      const randomInRange = function (min, max) {
+        return Math.random() * (max - min) + min;
+      };
+      document.addEventListener('click', () => {
+        confetti({
+          particleCount: randomInRange(30, 50),
+          angle: randomInRange(65, 115),
+          spread: randomInRange(50, 70),
+          startVelocity: 55,
+          origin: {
+            y: 0.9
+          },
+          colors: colors,
+          zIndex: -1
+        });
+      });
+    </script>
   </body>
 </html>
