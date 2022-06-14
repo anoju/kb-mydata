@@ -95,7 +95,7 @@
       };
 
       confettiFirst();
-      document.addEventListener('click', () => {
+      document.querySelector('.center-contents').addEventListener('click', () => {
         confetti({
           particleCount: randomInRange(30, 50),
           angle: randomInRange(65, 115),
