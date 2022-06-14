@@ -1696,3 +1696,7 @@
     opacity: 0;
   }
 }
+.confetti-contents {
+  position: relative;
+  backdrop-filter: blur(0.2rem);
+}

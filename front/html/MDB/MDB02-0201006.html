@@ -30,7 +30,7 @@
 
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
-        <div class="section center-contents justify-center" data-animation="fadeInIcon" data-delay="200">
+        <div class="section center-contents justify-center confetti-contents" data-animation="fadeInIcon" data-delay="300">
           <div class="img-box w-144 mg-autox end-img-complete" aria-hidden="true"></div>
           <h1 class="tit-h1 t-center mt-24">마이데이터 서비스 이용신청을 <br />완료하셨습니다.</h1>
           <p class="t-center mt-16">이제 자산을 연결해보세요!</p>
@@ -89,11 +89,12 @@
           }
         })();
       };
-      confettiFirst();
 
       const randomInRange = function (min, max) {
         return Math.random() * (max - min) + min;
       };
+
+      confettiFirst();
       document.addEventListener('click', () => {
         confetti({
           particleCount: randomInRange(30, 50),
