@@ -61,28 +61,52 @@
             </div>
           </div>
 
-          <div id="price1" class="input form-box mt-16" style="display: none">
-            <div class="form-lbl">구입가</div>
-            <input class="t-right" type="tel" placeholder="0" title="구입가입력" />
-            <div class="unit">원</div>
+          <div id="price1">
+            <div id="" class="input form-box mt-16">
+              <div class="form-lbl">구입가</div>
+              <input class="t-right" type="tel" placeholder="0" title="구입가입력" />
+              <div class="unit">원</div>
+            </div>
+
+            <div class="input form-box">
+              <div class="form-lbl">계약일</div>
+              <!-- 2022-04-19: 타입 변경 및 클래스 추가 -->
+              <input type="date" class="date" placeholder="날짜를 선택해주세요" title="계약일입력" />
+            </div>
           </div>
 
-          <div id="price2" class="input form-box" style="display: none">
-            <div class="form-lbl">보증금</div>
-            <input class="t-right" type="tel" placeholder="0" title="보증금입력" />
-            <div class="unit">원</div>
+          <div id="price2">
+            <div class="input form-box mt-16">
+              <div class="form-lbl">보증금</div>
+              <input class="t-right" type="tel" placeholder="0" title="보증금입력" />
+              <div class="unit">원</div>
+            </div>
+
+            <div class="input form-box">
+              <div class="form-lbl">계약일</div>
+              <!-- 2022-04-19: 타입 변경 및 클래스 추가 -->
+              <input type="date" class="date" placeholder="날짜를 선택해주세요" title="계약일입력" />
+            </div>
           </div>
 
-          <div id="price3" class="input form-box" style="display: none">
-            <div class="form-lbl">월세</div>
-            <input class="t-right" type="tel" placeholder="0" title="월세입력" />
-            <div class="unit">원</div>
-          </div>
+          <div id="price3">
+            <div class="input form-box mt-16">
+              <div class="form-lbl">보증금</div>
+              <input class="t-right" type="tel" placeholder="0" title="보증금입력" />
+              <div class="unit">원</div>
+            </div>
 
-          <div class="input form-box">
-            <div class="form-lbl">계약일</div>
-            <!-- 2022-04-19: 타입 변경 및 클래스 추가 -->
-            <input type="date" class="date" placeholder="날짜를 선택해주세요" title="계약일입력" />
+            <div class="input form-box">
+              <div class="form-lbl">월세</div>
+              <input class="t-right" type="tel" placeholder="0" title="월세입력" />
+              <div class="unit">원</div>
+            </div>
+
+            <div class="input form-box">
+              <div class="form-lbl">계약일</div>
+              <!-- 2022-04-19: 타입 변경 및 클래스 추가 -->
+              <input type="date" class="date" placeholder="날짜를 선택해주세요" title="계약일입력" />
+            </div>
           </div>
         </div>
 
@@ -112,7 +136,7 @@
             break;
           case '3':
             $('#price1').hide();
-            $('#price2').show();
+            $('#price2').hide();
             $('#price3').show();
             break;
           default:
