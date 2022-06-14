@@ -1415,6 +1415,12 @@ ui.Button = {
       const $type = $(this).attr('type');
       if ($type == undefined) $(this).attr('type', 'button');
     });
+
+    const $last = $('#container > .btn-wrap.bottom-fixed:last-child');
+    const $section = $last.prev('.section');
+    if ($last.length && $section.length) {
+      $section.addClass('last');
+    }
   },
   default: function () {
     //href가 #시작할때 a태그 클릭 시 기본속성 죽이기

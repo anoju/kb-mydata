@@ -474,6 +474,7 @@ html.lock,
     &:first-child {
       padding-top: var(--base-padding);
     }
+    &.last,
     &:last-child {
       padding-bottom: var(--base-padding);
     }
