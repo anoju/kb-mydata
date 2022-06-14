@@ -234,6 +234,18 @@
       }
     }
   }
+  .mark1 {
+    position: relative;
+    padding-left: 2rem;
+    &:before {
+      content: '※';
+      display: block;
+      line-height: 0;
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+    }
+  }
 }
 .txt-dl-list {
   font-size: 1.4rem;
@@ -378,6 +390,11 @@
     li:not(:first-child) {
       margin-top: 0.8rem;
     }
+    .dot.fc-00caca {
+      &:before {
+        background: #00caca;
+      }
+    }
   }
   .terms-ol {
     margin-top: 2.4rem;
@@ -480,6 +497,30 @@
   }
   .tab-list {
     margin-top: 0;
+  }
+
+  .round-box {
+    margin-top: 0.8rem;
+    border: 0.1rem solid #ebebeb;
+    padding: 2rem;
+    > p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .radio-img {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      border: 0.1rem solid #d6dbe1;
+      margin-right: 0.4rem;
+    }
   }
 }
 .round-line-box {
