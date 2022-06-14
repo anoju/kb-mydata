@@ -1550,7 +1550,17 @@ ui.Button = {
             rdTop = length <= 15 ? randomNumber(0, 15, 0) * 10 : randomNumber(0, length, 0) * (150 / length);
           }
         }
-        $append += '<i style="left:' + rdLeft + 'px;top:' + rdTop * -1 + 'px;" class="item-' + ((i % 3) + 1) + '"></i>';
+        $append += '<i style="left:' + rdLeft + 'px;top:' + rdTop * -1 + 'px;" class="item-' + ((i % 3) + 1) + '">';
+        if (type === 'confetti') {
+          $append += '<s style="';
+          if (i % 2 === 0) $append += 'border-radius:50%;';
+          const $skewMax = 8;
+          const $skewDeg = 10;
+          const $skew = randomNumber(0, $skewMax, 0) * $skewDeg - ($skewMax * $skewDeg) / 2;
+          $append += 'transform:skewX(' + $skew + 'deg);';
+          $append += '"></s>';
+        }
+        $append += '</i>';
         // $append += '<i></i>';
       }
       return $append;
@@ -1579,9 +1589,9 @@ ui.Button = {
       $idx += 1;
       const $item = '<div class="ui-tap-item active ' + $typeClass + ' ' + $itemClass + '" style="top:' + $tapTop + 'px;left:' + $tapLeft + 'px;">' + $append + '</div>';
       $(this).append($item);
-      $('.' + $itemClass).one('animationend', function (e) {
-        $('.' + $itemClass).remove();
-      });
+      // $('.' + $itemClass).one('animationend', function (e) {
+      //   $('.' + $itemClass).remove();
+      // });
     });
     $('.ui-tap-item').each(function () {
       const $this = $(this);
