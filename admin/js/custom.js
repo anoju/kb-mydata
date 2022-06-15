@@ -288,6 +288,8 @@
       });
     },
     sidebar: function () {
+      if (!$('.kb-sidebar').length) $('.kb-footer').addClass('full');
+
       $(document).on('click', '.kb-lnb-dep2 .kb-lnb-link.in-sub', function (e) {
         e.preventDefault();
         var $this = $(this);
