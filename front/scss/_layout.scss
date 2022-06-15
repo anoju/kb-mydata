@@ -70,7 +70,7 @@ html.lock,
   // box-shadow: 0 0.3rem 0.6rem 0 rgba(0, 0, 0, 0.08);
   // }
   //}
-  &.no-shadow {
+  &.not-fixed-style {
     > div {
       box-shadow: none !important;
     }
@@ -471,6 +471,7 @@ html.lock,
     width: 100%;
   }
   > .section {
+    &.first,
     &:first-child {
       padding-top: var(--base-padding);
     }
@@ -504,12 +505,6 @@ html.lock,
 }
 .section {
   padding: 0 var(--base-padding);
-  &.first {
-    padding-top: var(--base-padding);
-  }
-  &.last {
-    padding-bottom: 6rem;
-  }
 }
 .bottom-fixed-space {
   flex-shrink: 0;

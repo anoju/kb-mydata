@@ -353,8 +353,6 @@ button.btn-click {
       left: 0;
       width: 100%;
       padding: var(--base-padding) 2rem;
-      background-color: transparent;
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) var(--base-padding), #fff 100%);
       transition: box-shadow 0.3s;
       z-index: 50;
       // pointer-events: none;
@@ -365,7 +363,13 @@ button.btn-click {
         @include ios-bottom(padding-bottom, var(--base-padding));
       }
     }
-    &.no-shadow {
+    &:not(.not-fixed-style) {
+      > div {
+        background-color: transparent !important;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) var(--base-padding), #fff 100%) !important;
+      }
+    }
+    &.not-fixed-style {
       > div {
         background-color: #fff;
         // background: none;
