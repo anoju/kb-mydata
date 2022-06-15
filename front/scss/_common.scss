@@ -219,6 +219,10 @@ img,
 iframe {
   vertical-align: middle;
 }
+img:not([src]),
+img[src=''] {
+  opacity: 0;
+}
 select,
 input,
 textarea,
