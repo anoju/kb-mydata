@@ -2416,10 +2416,12 @@
 
 .profile-tag-list {
   .list {
-    margin-top: 2.6rem;
     position: relative;
+    + .list {
+      margin-top: 3.5rem;
+    }
     .img-badge {
-      width: 14.2rem;
+      width: 11rem;
       margin: 0 auto;
       &:before {
         padding-top: -xyPercent(110, 94);
@@ -2446,7 +2448,7 @@
         font-weight: bold;
       }
     }
-    .subTit {
+    .sub-tit {
       padding: 0 1.4rem;
       font-size: 1.2rem;
       color: #818892;
@@ -2457,6 +2459,7 @@
     .text {
       margin-top: 1.2rem;
       padding: 1.6rem 2rem;
+      font-size: 1.3rem;
       border-radius: 1.2rem;
       background: #fafafa;
       word-break: break-all;
@@ -2465,6 +2468,13 @@
       position: absolute;
       top: 1rem;
       right: 1.4rem;
+    }
+  }
+  &.ty2 {
+    .list {
+      + .list {
+        margin-top: 5.2rem;
+      }
     }
   }
 
