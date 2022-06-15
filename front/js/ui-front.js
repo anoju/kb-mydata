@@ -1427,7 +1427,7 @@ ui.Button = {
     $(document).on('click', 'a', function (e) {
       const $href = $(this).attr('href');
       const $target = $(this).attr('target');
-      if (!$(this).hasClass('no_button') && $href != undefined) {
+      if (!$(this).hasClass('no-button') && $href != undefined) {
         //기본속성 살리는 클래스(스킵네비 등)
         if ($href.startsWith('#')) {
           e.preventDefault();
