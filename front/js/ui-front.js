@@ -5093,7 +5093,7 @@ ui.Animation = {
       if ($dataAnimation === 'count-number') ui.Animation.countReady(this);
 
       let $animationClass = 'animate__' + $dataAnimation;
-      if ($addClassAry.indexOf($dataAnimation) >= 0) {
+      if ($addClassAry.indexOf($dataAnimation) >= 0 || $dataAnimation.indexOf('spl-') >= 0) {
         $el.data('animation-type', 2);
         $animationClass = $dataAnimation;
       } else if ($animateClassAry.indexOf($dataAnimation) >= 0) {
