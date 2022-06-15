@@ -86,12 +86,11 @@ $(function () {
   makeBoard();
   $(window).resize();
 });
-const $devHost = 'dev-mydata.mykkl.com';
-const $devAdminHost = 'dev-admin.mykkl.com';
+const $devHost = 'mydata.mykkl.com';
 const $protocol = location.protocol;
 const makeBoard = function () {
   let $host;
-  if (location.host === $devHost || location.host === $devAdminHost) $host = location.host;
+  if (location.host.indexOf($devHost) >= 0) $host = location.host;
   const $slide = $('.g_board_tab .swiper-slide');
   const $lenth = $slide.length;
   const htmlBoard = function (boardid, data) {
@@ -180,10 +179,14 @@ const makeBoard = function () {
         idx += 1;
         if (obj.id) {
           let $url = obj.url;
+          console.log($host);
           if ($host) {
             $url = $url.replace('../..', $protocol + '//' + $host);
             if ($url.indexOf('/front/') >= 0) $url = $url.replace('/front/', '/mydata/resources/static/');
-            if ($url.indexOf('/admin/') >= 0) $url = $url.replace('/admin/', '/admin/resources/');
+            if ($url.indexOf('/admin/') >= 0) {
+              $url = $url.replace('/admin/', '/admin/resources/');
+              $url = $url.replace('mydata.', 'admin.');
+            }
           }
           if ($url === undefined || $url === '') {
             trHtml += '<td class="id">' + obj.id + '</td>';
