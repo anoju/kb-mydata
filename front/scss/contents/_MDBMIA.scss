@@ -860,14 +860,33 @@
   justify-content: center;
   border-radius: 50%;
   background: #fafafa;
+  > img {
+    width: 2.2rem;
+    height: 2.2rem;
+    object-fit: contain;
+    pointer-events: none;
+  }
   .img-box {
+    width: 2.2rem;
     &.no-img-bg {
       background-color: transparent !important;
     }
   }
-  > img {
-    // pointer-events: none;
-    @include img-fit;
+  &.large {
+    width: 5.6rem;
+    height: 5.6rem;
+    > img {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+  &.x-large {
+    width: 9.2rem;
+    height: 9.2rem;
+    > img {
+      width: 6rem;
+      height: 6rem;
+    }
   }
   &.ty2 {
     background: #f2f4f6;
