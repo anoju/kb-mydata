@@ -271,38 +271,74 @@ $splits:
   'spl-size-up' 'splitting-size-up' 1 150,
   'spl-size-down' 'splitting-size-down' 1 150,
   'spl-rotate-up' 'splitting-rotate-up' 1 60,
-  'spl-rotate-down' 'splitting-rotate-down' 1 60,
+  'spl-rotate-down' 'splitting-rotate-down' 1 60
 ;
-
 @each $class, $ani, $duration, $delay in $splits {
-  [data-splitting][data-animation='#{$class}'] {
-    @if ($class == 'on') {
-      opacity: 1;
-    }
-    @if ($class == 'spl-hidden-up' or $class == 'spl-hidden-down') {
-      .word {
-        overflow: hidden;
+  [data-splitting] {
+    &[data-animation='#{$class}'] {
+      @if ($class == 'on') {
+        opacity: 1;
       }
-    }
-    // or $class == 'spl-hidden-left' or $class == 'spl-hidden-right'
-
-    &.#{$class} {
-      opacity: 1;
-      .char {
-        @if ($class == 'spl-hidden-left' or $class == 'spl-hidden-right') {
+      @if ($class == 'spl-hidden-up' or $class == 'spl-hidden-down') {
+        .word {
           overflow: hidden;
-          visibility: hidden;
-          &:after {
-            visibility: visible;
+        }
+      }
+
+      &.#{$class} {
+        opacity: 1;
+        .char {
+          @if ($class == 'spl-hidden-left' or $class == 'spl-hidden-right') {
+            overflow: hidden;
+            visibility: hidden;
+            &:after {
+              visibility: visible;
+              animation: #{$ani} #{$duration}s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+              animation-delay: calc(#{$delay}ms * var(--char-index));
+            }
+          } @else {
+            // @if ($class == 'spl-size-up' or $class == 'spl-size-down') {
+            //   filter: blur(0);
+            // }
             animation: #{$ani} #{$duration}s cubic-bezier(0.5, 0, 0.5, 1) backwards;
             animation-delay: calc(#{$delay}ms * var(--char-index));
           }
-        } @else {
-          // @if ($class == 'spl-size-up' or $class == 'spl-size-down') {
-          //   filter: blur(0);
-          // }
-          animation: #{$ani} #{$duration}s cubic-bezier(0.5, 0, 0.5, 1) backwards;
-          animation-delay: calc(#{$delay}ms * var(--char-index));
+        }
+      }
+    }
+
+    // swiper
+    .swiper-slide & {
+      &.#{$class} {
+        @if ($class == 'on') {
+          opacity: 1;
+        }
+        @if ($class == 'spl-hidden-up' or $class == 'spl-hidden-down') {
+          .word {
+            overflow: hidden;
+          }
+        }
+      }
+    }
+    .swiper-slide-active & {
+      &.#{$class} {
+        opacity: 1;
+        .char {
+          @if ($class == 'spl-hidden-left' or $class == 'spl-hidden-right') {
+            overflow: hidden;
+            visibility: hidden;
+            &:after {
+              visibility: visible;
+              animation: #{$ani} #{$duration}s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+              animation-delay: calc(#{$delay}ms * var(--char-index));
+            }
+          } @else {
+            // @if ($class == 'spl-size-up' or $class == 'spl-size-down') {
+            //   filter: blur(0);
+            // }
+            animation: #{$ani} #{$duration}s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+            animation-delay: calc(#{$delay}ms * var(--char-index));
+          }
         }
       }
     }
@@ -341,20 +377,6 @@ $splits:
   from {
     transform: translateX(-100%);
     opacity: 0;
-  }
-}
-
-.swiper-slide [data-splitting] {
-  opacity: 0;
-  .word {
-    overflow: hidden;
-  }
-}
-.swiper-slide-active [data-splitting] {
-  opacity: 1;
-  .char {
-    animation: splitting-hidden-up 0.75s cubic-bezier(0.5, 0, 0.5, 1) backwards;
-    animation-delay: calc(100ms * var(--char-index));
   }
 }
 @keyframes splitting-hidden-up {
