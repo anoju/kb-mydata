@@ -8036,8 +8036,8 @@ $.fn.rollingNumber = function (num) {
     const $num = num;
     const element = $(this);
     element.text(addComma($num));
-    element.addClass('rolling-number');
     ui.Animation.rollingReady(element);
+    element.addClass('rolling-number');
     setTimeout(function () {
       element.addClass('is-active');
     }, 100);
