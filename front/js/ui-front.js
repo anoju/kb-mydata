@@ -5308,7 +5308,20 @@ ui.Animation = {
     const $duration = duration === undefined ? 1000 : duration;
     const $el = $(target);
     const $title = $el.attr('title');
+    if ($title === '0') {
+      $el.text($title);
+      return;
+    }
     const $number = onlyNumber($title);
+    $el.text(addComma($number));
+    const $width = $el.outerWidth();
+    $el
+      .css({
+        'text-align': 'right',
+        'min-width': $width,
+        'min-inline-size': $width
+      })
+      .text(0);
     // const $start = $el.text();
     $({ now: 0 }).animate(
       { now: $number },
@@ -5322,6 +5335,9 @@ ui.Animation = {
           // }else{
           //   $el.text(Math.floor(now));
           // }
+          if (now === parseInt($number)) {
+            $el.removeCss(['text-align', 'min-width', 'min-inline-size']);
+          }
         }
       }
     );

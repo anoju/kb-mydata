@@ -190,6 +190,7 @@
     .item-txt-price {
       margin-top: 1.8rem;
       font-size: 1.4rem;
+      font-weight: normal;
       sub {
         margin-right: 0.3rem;
       }
@@ -210,10 +211,12 @@
   justify-content: flex-end;
   font-size: 2rem;
   color: var(--strong-txt-color2);
+  font-weight: 500;
   sub {
     font-size: 1.2rem;
     color: var(--gray-txt-color);
     margin-right: 1.6rem;
+    font-weight: normal;
   }
   strong {
     font-weight: 500;

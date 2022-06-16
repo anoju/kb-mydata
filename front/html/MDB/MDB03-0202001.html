@@ -34,7 +34,7 @@
           <h1 class="tit-h1">자동차</h1>
           <dl class="mt-24">
             <dt class="fw-500 fc-818892">총 합계</dt>
-            <dd class="fw-500 fc-212121 fz-22 mt-5"><span class="fz-30">1,085,000,000</span> 원</dd>
+            <dd class="flex not-full align-center fw-500 fc-212121 fz-22 mt-5"><span id="price" class="fz-30 mr-4">0</span> 원</dd>
           </dl>
         </div>
 
@@ -65,5 +65,10 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script>
+      $(window).load(function () {
+        $('#price').countNumber(1085000);
+      });
+    </script>
   </body>
 </html>

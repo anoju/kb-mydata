@@ -43,7 +43,7 @@
           </div>
 
           <p class="fz-16 fw-500 fc-818892 mt-24">총평가금액</p>
-          <p class="fz-22 fc-212121 fw-500"><strong class="mr-4 fz-30">1,085,000,000</strong>원</p>
+          <dd class="flex not-full align-center fw-500 fc-212121 fz-22 mt-5"><span id="price" class="fz-30 mr-4">0</span> 원</dd>
 
           <!-- 2022-04-20: 디자인 변경에 따른 구조 변경 -->
           <div class="flex not-full align-center mt-9">
@@ -108,6 +108,7 @@
     <script>
       $(window).load(function () {
         dounutChart();
+        $('#price').countNumber(2085000000);
       });
       function dounutChart() {
         Highcharts.setOptions({

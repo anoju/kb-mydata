@@ -40,7 +40,7 @@
           </dl>
           <div class="item-txt-price mt-27">
             <sub>현 시세</sub>
-            <strong>105,000,000,000</strong>
+            <strong>0</strong>
             원
           </div>
           <div class="txt-compare-box ty2 mt-4">
@@ -88,6 +88,9 @@
     </article>
     <script>
       Layer.alert('소유한 부동산이 없어요.<br />자산 홈으로 이동 할게요.');
+      $(window).load(function () {
+        $('.item-txt-price strong').countNumber(105000000);
+      });
     </script>
   </body>
 </html>
