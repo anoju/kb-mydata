@@ -8030,6 +8030,20 @@ $.fn.countNumber = function (num) {
   });
 };
 
+$.fn.rollingNumber = function (num) {
+  return this.each(function () {
+    if (typeof num !== 'number') return;
+    const $num = num;
+    const element = $(this);
+    element.text(addComma($num));
+    element.addClass('rolling-number');
+    ui.Animation.rollingReady(element);
+    setTimeout(function () {
+      element.addClass('is-active');
+    }, 100);
+  });
+};
+
 $.fn.dbltap = function (event, delay) {
   const $delay = !delay ? 500 : delay;
   let touchtime = 0;
