@@ -1939,13 +1939,13 @@
     &:before {
       content: '▲';
     }
-    color: #3887fd;
+    color: #eb5757;
   }
   &.down {
     &:before {
       content: '▼';
     }
-    color: #eb5757;
+    color: #3887fd;
   }
 
   &.type2 {
