@@ -259,12 +259,12 @@
   &.active {
     opacity: 1;
     .char {
-      animation: splitting-char-fade 1s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+      animation: splitting-fade 1s cubic-bezier(0.5, 0, 0.5, 1) backwards;
       animation-delay: calc(150ms * var(--char-index));
     }
   }
 }
-@keyframes splitting-char-fade {
+@keyframes splitting-fade {
   from {
     opacity: 0;
   }
@@ -273,14 +273,14 @@
   opacity: 1;
   &.on {
     .char {
-      animation: splitting-char-color 1s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+      animation: splitting-highlight 1s cubic-bezier(0.5, 0, 0.5, 1) backwards;
       animation-delay: calc(150ms * var(--char-index));
     }
   }
 }
-@keyframes splitting-char-color {
+@keyframes splitting-highlight {
   50% {
-    color: var(--primary-color);
+    color: var(--spl-highlight-color);
   }
 }
 
