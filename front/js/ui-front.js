@@ -7916,6 +7916,82 @@ const Conffeti = {
       $init();
     }
   },
+  dropInit: function (repeat, target) {
+    const $repeat = !repeat ? 15 : repeat;
+    const $isTarget = target === undefined ? false : true;
+    let canvas;
+    const duration = $repeat * 1000;
+    const animationEnd = Date.now() + duration;
+    let skew = 1;
+    const $init = function () {
+      let idx = 0;
+      if ($isTarget) {
+        canvas = target;
+        canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: true });
+      }
+      const $shapes = ['circle', 'square'];
+      (function frame() {
+        const timeLeft = animationEnd - Date.now();
+        const ticks = Math.max(200, 500 * (timeLeft / duration));
+        skew = Math.max(0.8, skew - 0.001);
+        const $color = Conffeti.colors[randomNumber(0, 6, 0)];
+        const $colorAry = [];
+        $colorAry.push($color);
+        const $shape = $shapes[randomNumber(0, 1, 0)];
+        const $shapeAry = [];
+        $shapeAry.push($shape);
+        console.log($shape, $color);
+        const $opt = {
+          particleCount: 1,
+          startVelocity: 0,
+          ticks: ticks,
+          origin: {
+            x: Math.random(),
+            // since particles fall down, skew start toward the top
+            y: Math.random() * skew - 0.2
+          },
+          colors: $colorAry,
+          shapes: $shapeAry,
+          gravity: randomNumber(0.4, 0.6),
+          scalar: randomNumber(0.4, 1),
+          drift: randomNumber(-0.4, 0.4)
+        };
+        if (!$isTarget) {
+          $leftOpt.zIndex = -1;
+          $rightOpt.zIndex = -1;
+        }
+
+        if ($isTarget) {
+          canvas.confetti($opt);
+        } else {
+          confetti($opt);
+        }
+
+        if (timeLeft > 0) {
+          requestAnimationFrame(frame);
+        }
+        // if (idx < $repeat) {
+        //   idx += 1;
+        //   setTimeout(function () {
+        //     frame();
+        //   }, 100);
+        // }
+      })();
+    };
+
+    if (typeof confetti === 'undefined') {
+      let $url = '/js/lib/confetti.browser.5.10.0.min.js';
+      const $path = ui.Common.getUrlPath();
+      if ($path) {
+        $url = $path + $url;
+      } else {
+        $url = '../..' + $url;
+      }
+      ui.Util.loadScript($url, $init);
+    } else {
+      $init();
+    }
+  },
   randomClick: function (clickTarget, container) {
     const $init = function () {
       const $opt = {
@@ -7932,7 +8008,7 @@ const Conffeti = {
       if (container) {
         const canvas = container;
         canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: true });
-        confetti($opt);
+        canvas.confetti($opt);
       } else {
         confetti($opt);
       }

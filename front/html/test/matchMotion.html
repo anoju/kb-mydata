@@ -138,8 +138,8 @@
         }
 
         // 랜덤으로 결과보기
-        // const $random2 = randomNumber(0, 2, 0);
-        const $random2 = 0;
+        const $random2 = randomNumber(0, 2, 0);
+        // const $random2 = 0;
         const $result = ['loss', 'draw'];
         // console.log($random1, $random2);
         if ($random2) {
@@ -157,9 +157,7 @@
               $('.match-animation-result').addClass('show');
               if (!$random2) {
                 const $cavas = document.getElementById('confetti-canvas');
-                const $clickTarget = document.querySelector('.match-animation-result');
-                Conffeti.sideInit(10, $cavas);
-                Conffeti.randomClick($clickTarget, $cavas);
+                Conffeti.dropInit(10, $cavas);
               }
             }, 5000);
           }, 1000);
