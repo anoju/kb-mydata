@@ -12,22 +12,20 @@
     <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      // 2022-04-12: 추가
+      ui.Common.title('1:1 매치');
+    </script>
   </head>
   <body>
     <article id="wrap" class="match-animation-wrap">
-      <header id="header">
-        <div>
-          <div class="head-left">
-            <button type="button" class="head-back button" aria-label="이전화면"></button>
-          </div>
-        </div>
-      </header>
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="match-animation">
           <span class="progressbar"></span>
           <div class="top">
-            <div class="bg" style="background: #61bdf3"></div>
+            <!-- 2022-04-29: style 속성 제거 -->
+            <div class="bg"></div>
             <div class="text-box">
               <p class="name">입질만삼년째</p>
               <div class="number-random" data-random="type2">
@@ -39,22 +37,25 @@
               </div>
             </div>
             <p class="img">
-              <span><img src="../../images/match/sample_ico1.png" alt="" /></span>
+              <span><img src="../../images/temp/sample_match_main.png" alt="" /></span>
             </p>
           </div>
 
           <div class="vs"><span>vs</span></div>
 
+          <!-- 인플루언서는 클래스 influencer 추가 -->
           <div class="down">
-            <div class="bg" style="background: #ff6291"></div>
+            <!-- 2022-04-29: style 속성 제거 -->
+            <div class="bg"></div>
             <div class="text-box">
-              <p class="name">입질만삼년째</p>
+              <p class="name">닉네임이겁나게길었을때 닉네임이겁나게길었을때 닉네임이겁나게길었을때 닉네임이겁나게길었을때</p>
               <div class="number-random" data-random="type2">
                 <p class="number">0</p>
                 <p class="number">0</p>
                 <span>.</span>
                 <p class="number">0</p>
-                <span>%</span>
+                <!-- 2022-04-29: percent 클래스 추가 -->
+                <span class="percent">%</span>
               </div>
             </div>
             <p class="img">
@@ -63,7 +64,7 @@
           </div>
 
           <!-- <div class="down influencer">
-            <div class="bg" style="background: #fe7d65"></div>
+            <div class="bg"></div>
             <div class="text-box">
               <p class="name">아이유</p>
               <div class="number-random" data-random="type2">
@@ -71,7 +72,7 @@
                 <p class="number">0</p>
                 <span>.</span>
                 <p class="number">0</p>
-                <span>%</span>
+                <span class="percent">%</span>
               </div>
             </div>
             <p class="img">
@@ -86,6 +87,7 @@
           draw : 무승부
         -->
         <div class="match-animation-result">
+          <canvas id="confetti-canvas"></canvas>
           <div class="top-text-motion">
             <div class="slide"><span></span><span></span><span></span></div>
           </div>
@@ -93,16 +95,17 @@
             <p class="tit"></p>
             <p class="number">18.09<span>%</span></p>
             <div class="img-result-box">
-              <p class="img img-box avatar"><img src="../../images/match/sample_result.png" alt="" /></p>
+              <p class="img img-box avatar"><img src="../../images/temp/sample_match_main.png" alt="" /></p>
               <p class="text">입질만삼년째</p>
             </div>
           </div>
           <div class="loss-info">
+            <!-- 2022-03-24 인플루언서는 클래스 influencer 추가 -->
             <div class="img img-box avatar">
-              <img src="../../images/match/sample_result.png" alt="" />
+              <img src="../../images/temp/sample_match_main2.png" alt="" />
             </div>
             <div class="text-box">
-              <p class="name">지금이야지금지금이라도</p>
+              <p class="name">닉네임이겁나게길었을때 닉네임이겁나게길었을때</p>
               <div class="number">18.09<span>%</span></div>
             </div>
           </div>
@@ -112,37 +115,60 @@
             </div>
           </div>
         </div>
-
-        <div class="match-result-wrap">
-          <div class="bg"></div>
-          <div class="section"></div>
-          <div class="btn-wrap">
-            <div class="flex">
-              <button type="button" class="button h60 primary">확인</button>
-            </div>
-          </div>
-        </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
     </article>
-
+    <script src="../../js/lib/confetti.browser.5.10.0.min.js"></script>
     <script>
       $(function () {
+        // 랜덤으로 인플루언서
+        const $random1 = randomNumber(0, 1, 0);
+        if ($random1) {
+          console.log('인풀루언서 매치');
+          const $down = $('.match-animation .down');
+          $down.addClass('influencer');
+          $down.find('.name').text('아이유');
+          $down.find('.img img').attr('src', '../../images/temp/thumb-temp5.jpg');
+          const $result = $('.match-animation-result');
+          $result.find('.loss-info .text-box .name').text('아이유');
+          $result.find('.loss-info .img').addClass('influencer');
+          $result.find('.loss-info .img img').attr('src', '../../images/temp/thumb-temp5.jpg');
+        } else {
+          console.log('일반 매치');
+        }
+
+        // 랜덤으로 결과보기
+        // const $random2 = randomNumber(0, 2, 0);
+        const $random2 = 0;
+        const $result = ['loss', 'draw'];
+        // console.log($random1, $random2);
+        if ($random2) {
+          console.log('매치 결과: ' + $result[$random2 - 1]);
+          $('.match-animation-result').addClass($result[$random2 - 1]);
+        } else {
+          console.log('매치 결과: win');
+        }
+
         $(window).load(function () {
           setTimeout(function () {
             $('.match-animation').addClass('action');
             setTimeout(function () {
               $('.match-animation').addClass('end');
               $('.match-animation-result').addClass('show');
+              if (!$random2) {
+                const $cavas = document.getElementById('confetti-canvas');
+                const $clickTarget = document.querySelector('.match-animation-result');
+                Conffeti.sideInit(10, $cavas);
+                Conffeti.randomClick($clickTarget, $cavas);
+              }
             }, 5000);
           }, 1000);
 
+          // 최초 실행만 보고 싶을때
+          // $('.match-animation').addClass('action');
+          // 결과만 보고 싶을때
           // $('.match-animation').addClass('action end');
           // $('.match-animation-result').addClass('show');
-        });
-        $(document).on('click', '.match-animation-result .button', function () {
-          $('.match-animation-wrap').addClass('action');
-          return false;
         });
       });
     </script>
