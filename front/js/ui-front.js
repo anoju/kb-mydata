@@ -7934,13 +7934,13 @@ const Conffeti = {
         const timeLeft = animationEnd - Date.now();
         const ticks = Math.max(200, 500 * (timeLeft / duration));
         skew = Math.max(0.8, skew - 0.001);
-        const $color = Conffeti.colors[randomNumber(0, 6, 0)];
+        const $color = Conffeti.colors[idx % 6];
         const $colorAry = [];
         $colorAry.push($color);
         const $shape = $shapes[randomNumber(0, 1, 0)];
         const $shapeAry = [];
         $shapeAry.push($shape);
-        console.log($shape, $color);
+
         const $opt = {
           particleCount: 1,
           startVelocity: 0,
@@ -7966,16 +7966,11 @@ const Conffeti = {
         } else {
           confetti($opt);
         }
+        idx += 1;
 
         if (timeLeft > 0) {
           requestAnimationFrame(frame);
         }
-        // if (idx < $repeat) {
-        //   idx += 1;
-        //   setTimeout(function () {
-        //     frame();
-        //   }, 100);
-        // }
       })();
     };
 

@@ -87,6 +87,7 @@
           draw : 무승부
         -->
         <div class="match-animation-result">
+          <canvas id="confetti-canvas"></canvas>
           <div class="top-text-motion">
             <div class="slide"><span></span><span></span><span></span></div>
           </div>
@@ -117,7 +118,7 @@
       </main>
       <!-- 컨테이너(컨텐츠) -->
     </article>
-
+    <script src="../../js/lib/confetti.browser.5.10.0.min.js"></script>
     <script>
       $(function () {
         // 랜덤으로 인플루언서
@@ -142,6 +143,8 @@
         if ($random2) {
           console.log('매치 결과: ' + $result[$random2 - 1]);
           $('.match-animation-result').addClass($result[$random2 - 1]);
+        } else {
+          console.log('매치 결과: win');
         }
 
         $(window).load(function () {
@@ -150,6 +153,10 @@
             setTimeout(function () {
               $('.match-animation').addClass('end');
               $('.match-animation-result').addClass('show');
+              if (!$random2) {
+                const $cavas = document.getElementById('confetti-canvas');
+                Conffeti.dropInit(10, $cavas);
+              }
             }, 5000);
           }, 1000);
 
