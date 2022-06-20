@@ -508,6 +508,9 @@
         word-break: break-all;
         text-align: left;
         color: var(--strong-txt-color2);
+        strong {
+          font-weight: 500;
+        }
         .txt-list {
           margin-top: 1rem;
           li + li {

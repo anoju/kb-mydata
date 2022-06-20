@@ -99,11 +99,17 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script src="../../js/lib/confetti.browser.5.10.0.min.js"></script>
     <script>
       let isPopChage = false;
       const winnerPop = function () {
         if (isPopChage) {
-          Layer.alert('홍길동 회원님은 <strong class="fc-primary">당첨되셨습니다.</strong>', '축하드립니다.');
+          Layer.alert('홍길동 회원님은 <strong class="fc-primary">당첨되셨습니다.</strong>', '축하드립니다.', null, null, function (e) {
+            const $pop = $(e);
+            $pop.prepend('<div class="pop-bg"><canvas id="confetti-canvas"></canvas></div>');
+            const canvas = document.getElementById('confetti-canvas');
+            Conffeti.sideInit(5, canvas);
+          });
         } else {
           Layer.alert('홍길동 회원님은 <strong class="fc-primary">당첨자 명단에 없습니다.</strong><br />다음이벤트에 도전해주세요.', '다음기회에');
         }
