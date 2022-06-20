@@ -39,7 +39,7 @@
       &:after {
         content: '';
         display: block;
-        height: 1rem;
+        height: 1.2rem;
         position: absolute;
         left: 0;
         width: 100%;
@@ -47,10 +47,10 @@
         pointer-events: none;
       }
       &:before {
-        top: 0;
+        top: -0.2rem;
       }
       &:after {
-        bottom: 0;
+        bottom: -0.2rem;
       }
       .number {
         display: block;
@@ -323,6 +323,7 @@
   }
   .top-text-motion {
     padding-top: 6.8rem;
+    padding-bottom: 4rem;
     text-align: center;
     font-size: 0;
     display: flex;
@@ -330,16 +331,16 @@
       display: flex;
       animation: topTextMotion 60s linear infinite both;
       white-space: nowrap;
-    }
-    span {
-      display: inline-block;
-      flex: 0 0 auto;
-      &:before,
-      &:after {
-        content: '우와우와우와우와우와우와우와우와우와';
-        font-size: 1.4rem;
-        color: #ffee4e;
-        letter-spacing: 1.4rem;
+      span {
+        display: inline-block;
+        flex: 0 0 auto;
+        &:before,
+        &:after {
+          content: '우와우와우와우와우와우와우와우와우와';
+          font-size: 1.4rem;
+          color: #ffee4e;
+          letter-spacing: 1.4rem;
+        }
       }
     }
   }
@@ -348,7 +349,7 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
-    padding: 4rem 0;
+    padding-bottom: 4rem;
     text-align: center;
     .tit {
       position: relative;
@@ -482,23 +483,29 @@
   &.loss {
     background-color: #606060;
     // overflow: hidden;
-    // &:before {
-    //   content: '';
-    //   display: block;
-    //   position: absolute;
-    //   left: 0;
-    //   top: -400%;
-    //   width: 100%;
-    //   height: 500%;
-    //   background-image: linear-gradient(180deg, #606060 0%, #606060 33.5%, #d6dbe1 66.5%, #d6dbe1 100%);
-    //   transition: top 2s ease 0s;
-    // }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0%;
+      width: 100%;
+      height: 20%;
+      background-image: linear-gradient(0deg, rgba(96, 96, 96, 1) 0%, rgba(96, 96, 96, 0) 50%);
+      z-index: 1;
+    }
+
+    > canvas {
+      height: 20%;
+    }
     .top-text-motion {
-      span {
-        &:before,
-        &:after {
-          content: '이럴수가이럴수가이럴수가이럴수가이럴수가이럴수가';
-          color: #e8d52a;
+      .slide {
+        span {
+          &:before,
+          &:after {
+            content: '이럴수가이럴수가이럴수가이럴수가이럴수가이럴수가';
+            color: #e8d52a;
+          }
         }
       }
     }
@@ -572,11 +579,13 @@
   &.draw {
     background: #d6dbe1;
     .top-text-motion {
-      span {
-        &:before,
-        &:after {
-          content: '운명의데스티니운명의데스티니운명의데스티니';
-          color: #818892;
+      .slide {
+        span {
+          &:before,
+          &:after {
+            content: '운명의데스티니운명의데스티니운명의데스티니';
+            color: #818892;
+          }
         }
       }
     }
