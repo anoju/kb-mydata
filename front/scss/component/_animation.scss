@@ -1817,6 +1817,8 @@ $splits:
 }
 .confetti-contents {
   position: relative;
-  backdrop-filter: blur(0.2rem);
-  text-shadow: 0 0 2rem #fff;
+  > div {
+    backdrop-filter: blur(0.2rem);
+    background-color: rgba(255, 255, 255, 0.7);
+  }
 }
