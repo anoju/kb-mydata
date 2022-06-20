@@ -55,13 +55,25 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script src="../../js/lib/confetti.browser.5.10.0.min.js"></script>
     <script>
       const eventOK = function () {
         Layer.confirm('이벤트에 참여하시겠습니까?', '이벤트 응모', function (e) {
           if (e) {
-            Layer.alert('이벤트 참여가 완료되었습니다.', '이벤트 응모 확인', function () {
-              $('#eventBtn').prop('disabled', true);
-            });
+            Layer.alert(
+              '이벤트 참여가 완료되었습니다.',
+              '이벤트 응모 확인',
+              function () {
+                $('#eventBtn').prop('disabled', true);
+              },
+              null,
+              function (e) {
+                const $pop = $(e);
+                $pop.prepend('<div class="pop-bg"><canvas id="confetti-canvas"></canvas></div>');
+                const canvas = document.getElementById('confetti-canvas');
+                Conffeti.sideInit(5, canvas);
+              }
+            );
           }
         });
       };

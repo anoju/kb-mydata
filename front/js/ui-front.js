@@ -5920,7 +5920,7 @@ const Layer = {
       $('body').append($html);
     }
   },
-  alertEvt: function (type, option, callback, callback2, callback3, callback4) {
+  alertEvt: function (type, option, callback, callback2, callback3, callback4, init) {
     const $length = $('.' + Layer.alertClass).length;
     const $popId = Layer.id + 'Alert' + $length;
     const $actionId = $popId + 'ActionBtn';
@@ -5944,11 +5944,10 @@ const Layer = {
 
     //팝업그리기
     Layer.alertHtml(type, $popId, $actionId, $cancelId);
+    const $pop = $('#' + $popId);
     if (!!option.title || (typeof callback === 'string' && callback !== '')) {
       const $insertTit = typeof callback === 'string' && callback !== '' ? callback : option.title;
-      $('#' + $popId)
-        .find('.' + Layer.wrapClass + ' h1')
-        .html($insertTit);
+      $pop.find('.' + Layer.wrapClass + ' h1').html($insertTit);
     }
     let $actionTxt;
     if (!!option.actionTxt) $actionTxt = option.actionTxt;
@@ -5963,9 +5962,7 @@ const Layer = {
 
     const $htmlContent = Layer.content;
     if (type === 'prompt') {
-      $('#' + $popId)
-        .find('.form-lbl label')
-        .html($htmlContent);
+      $pop.find('.form-lbl label').html($htmlContent);
     } else {
       const $textAry = $htmlContent.split(' '),
         $textLengthAry = [];
@@ -5973,14 +5970,11 @@ const Layer = {
         $textLengthAry.push($textAry[i].length);
       }
       const $maxTxtLength = Math.max.apply(null, $textLengthAry);
-      if ($maxTxtLength > 20)
-        $('#' + $popId)
-          .find('.message>div')
-          .addClass('breakall');
-      $('#' + $popId)
-        .find('.message>div')
-        .html($htmlContent);
+      if ($maxTxtLength > 20) $pop.find('.message>div').addClass('breakall');
+      $pop.find('.message>div').html($htmlContent);
     }
+    if (!!option.init) option.init($pop[0]);
+    if (typeof init === 'function') init($pop[0]);
     Layer.open('#' + $popId);
 
     //click
@@ -5990,9 +5984,7 @@ const Layer = {
     let $inpVal = '';
     $actionBtn.on('click', function () {
       $result = true;
-      $inpVal = $('#' + $popId)
-        .find('.input input')
-        .val();
+      $inpVal = $pop.find('.input input').val();
 
       const $actionEvt = function () {
         if (type === 'prompt') {
@@ -6030,14 +6022,14 @@ const Layer = {
       // setTimeout($cancelEvt, 100);
     });
   },
-  alert: function (option, callback, callback2, callback3) {
-    Layer.alertEvt('alert', option, callback, callback2, callback3);
+  alert: function (option, callback, callback2, callback3, init) {
+    Layer.alertEvt('alert', option, callback, callback2, callback3, null, init);
   },
-  confirm: function (option, callback, callback2, callback3, callback4) {
-    Layer.alertEvt('confirm', option, callback, callback2, callback3, callback4);
+  confirm: function (option, callback, callback2, callback3, callback4, init) {
+    Layer.alertEvt('confirm', option, callback, callback2, callback3, callback4, init);
   },
-  prompt: function (option, callback, callback2, callback3, callback4) {
-    Layer.alertEvt('prompt', option, callback, callback2, callback3, callback4);
+  prompt: function (option, callback, callback2, callback3, callback4, init) {
+    Layer.alertEvt('prompt', option, callback, callback2, callback3, callback4, init);
   },
   keyEvt: function () {
     //컨펌팝업 버튼 좌우 방할기로 포거스 이동
@@ -6438,7 +6430,7 @@ const Layer = {
 
     $target.data('popup', '#' + $popId);
 
-    $('#' + $popId).on('click', '.ui-pop-select-btn', function (e) {
+    $pop.on('click', '.ui-pop-select-btn', function (e) {
       e.preventDefault();
       if (!$(this).hasClass('disabled')) {
         const $btnVal = $(this).data('value');
@@ -7849,6 +7841,119 @@ Layer.morphing = {
   }
 };
 
+const Conffeti = {
+  colors: ['#00dcdc', '#78ff44', '#fd7e64', '#2ad6a8', '#fdff6a', '#a864fd'],
+  sideInit: function (repeat, target) {
+    const $repeat = !repeat ? 10 : repeat;
+    const $isTarget = target === undefined ? false : true;
+    let canvas;
+    const $particleCount = 6;
+    const $angle = 60;
+    const $spread = 60;
+    const $scalar = 1.1;
+    const $x = 0;
+    const $y = $isTarget ? 0.5 : 0.7;
+
+    const $init = function () {
+      let idx = 0;
+      const $leftOpt = {
+        particleCount: $particleCount,
+        angle: $angle,
+        spread: $spread,
+        origin: {
+          x: $x,
+          y: $y
+        },
+        colors: Conffeti.colors,
+        scalar: $scalar
+      };
+      const $rightOpt = {
+        particleCount: $particleCount,
+        angle: 180 - $angle,
+        spread: $spread,
+        origin: {
+          x: 1 - $x,
+          y: $y
+        },
+        colors: Conffeti.colors,
+        scalar: $scalar
+      };
+      if ($isTarget) {
+        canvas = target;
+        canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: true });
+      } else {
+        $leftOpt.zIndex = -1;
+        $rightOpt.zIndex = -1;
+      }
+
+      (function frame() {
+        if ($isTarget) {
+          canvas.confetti($leftOpt);
+          canvas.confetti($rightOpt);
+        } else {
+          confetti($leftOpt);
+          confetti($rightOpt);
+        }
+
+        if (idx < $repeat) {
+          idx += 1;
+          setTimeout(function () {
+            frame();
+          }, 100);
+        }
+      })();
+    };
+    if (typeof confetti === 'undefined') {
+      let $url = '/js/lib/confetti.browser.5.10.0.min.js';
+      const $path = ui.Common.getUrlPath();
+      if ($path) {
+        $url = $path + $url;
+      } else {
+        $url = '../..' + $url;
+      }
+      ui.Util.loadScript($url, $init);
+    } else {
+      $init();
+    }
+  },
+  randomClick: function (clickTarget, container) {
+    const $init = function () {
+      const $opt = {
+        particleCount: randomNumber(30, 50),
+        angle: randomNumber(65, 115),
+        spread: randomNumber(50, 70),
+        startVelocity: 55,
+        origin: {
+          y: 0.9
+        },
+        colors: Conffeti.colors
+      };
+      if (!container) $opt.zIndex = -1;
+      if (container) {
+        const canvas = container;
+        canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: true });
+        confetti($opt);
+      } else {
+        confetti($opt);
+      }
+    };
+    clickTarget.addEventListener('click', function () {
+      if (typeof confetti === 'undefined') {
+        let $url = '/js/lib/confetti.browser.5.10.0.min.js';
+        const $path = ui.Common.getUrlPath();
+        if ($path) {
+          $url = $path + $url;
+        } else {
+          $url = '../..' + $url;
+        }
+        ui.Util.loadScript($url, $init);
+      } else {
+        $init();
+      }
+    });
+  }
+};
+
 /********************************
  * front 제작 플러그인 *
  ********************************/
@@ -8208,7 +8313,7 @@ const wordInsertCount = function (el) {
 
 //랜덤값 추출
 const randomNumber = function (min, max, point) {
-  return (Math.random() * (max - min) + min).toFixed(point);
+  return point ? (Math.random() * (max - min) + min).toFixed(point) : Math.random() * (max - min) + min;
 };
 
 //전화번호 포맷

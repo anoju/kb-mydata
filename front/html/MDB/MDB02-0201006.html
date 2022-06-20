@@ -48,70 +48,10 @@
     </article>
     <script src="../../js/lib/confetti.browser.5.10.0.min.js"></script>
     <script>
-      const confettiColors = ['#00dcdc', '#78ff44', '#fd7e64', '#2ad6a8', '#fdff6a', '#a864fd'];
-      const confettiFirst = function () {
-        // const end = Date.now() + 1 * 1000;
-        let idx = 0;
-        (function frame() {
-          confetti({
-            particleCount: 6,
-            angle: 60,
-            spread: 60,
-            origin: {
-              x: 0,
-              y: 0.7
-            },
-            colors: confettiColors,
-            scalar: 1.1,
-            zIndex: -1
-          });
-          confetti({
-            particleCount: 6,
-            angle: 120,
-            spread: 60,
-            origin: {
-              x: 1,
-              y: 0.7
-            },
-            colors: confettiColors,
-            scalar: 1.1,
-            zIndex: -1
-          });
+      const $clickTarget = document.querySelector('.center-contents');
 
-          // if (Date.now() < end) {
-          //   requestAnimationFrame(frame);
-          // }
-          if (idx < 10) {
-            idx += 1;
-            setTimeout(function () {
-              frame();
-            }, 100);
-          }
-        })();
-      };
-
-      const randomInRange = function (min, max) {
-        return Math.random() * (max - min) + min;
-      };
-
-      const confettiClick = function () {
-        document.querySelector('.center-contents').addEventListener('click', () => {
-          confetti({
-            particleCount: randomInRange(30, 50),
-            angle: randomInRange(65, 115),
-            spread: randomInRange(50, 70),
-            startVelocity: 55,
-            origin: {
-              y: 0.9
-            },
-            colors: confettiColors,
-            zIndex: -1
-          });
-        });
-      };
-
-      confettiFirst();
-      confettiClick();
+      Conffeti.sideInit();
+      Conffeti.randomClick($clickTarget);
     </script>
   </body>
 </html>
