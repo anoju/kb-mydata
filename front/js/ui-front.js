@@ -7917,7 +7917,7 @@ const Conffeti = {
     }
   },
   dropInit: function (repeat, target) {
-    const $repeat = !repeat ? 15 : repeat;
+    const $repeat = !repeat ? 10 : repeat;
     const $isTarget = target === undefined ? false : true;
     let canvas;
     const duration = $repeat * 1000;
@@ -7952,8 +7952,8 @@ const Conffeti = {
           },
           colors: $colorAry,
           shapes: $shapeAry,
-          gravity: randomNumber(0.4, 0.6),
-          scalar: randomNumber(0.4, 1),
+          gravity: randomNumber(0.4, 0.8),
+          scalar: randomNumber(0.6, 1.2),
           drift: randomNumber(-0.4, 0.4)
         };
         if (!$isTarget) {
@@ -7966,10 +7966,20 @@ const Conffeti = {
         } else {
           confetti($opt);
         }
-        idx += 1;
-
+        /*
         if (timeLeft > 0) {
+          idx += 1;
           requestAnimationFrame(frame);
+          console.log(idx);
+        }
+        */
+        const $time = 30;
+        if (idx < $repeat * $time) {
+          idx += 1;
+          setTimeout(function () {
+            frame();
+            // console.log(idx);
+          }, duration / ($repeat * $time));
         }
       })();
     };
@@ -8392,6 +8402,7 @@ const randomNumber = function (min, max, point) {
   } else {
     $rtnVal = Math.random() * (max - min) + min;
   }
+  if ($rtnVal > max) $rtnVal = max;
   return $rtnVal;
 };
 
