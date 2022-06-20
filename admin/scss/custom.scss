@@ -1344,6 +1344,19 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     margin-bottom: 0.188rem;
   }
 }
+.input-group {
+  &.input-group-ty2 {
+    border: $input-border-width solid $input-border-color;
+    @include border-radius($input-border-radius, 0);
+    .form-control {
+      border-width: 0;
+    }
+    .input-group-text {
+      border-width: 0;
+      background-color: transparent;
+    }
+  }
+}
 @include media($mobile-size) {
   .form-box {
     border-bottom: 0;
