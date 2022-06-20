@@ -8313,7 +8313,15 @@ const wordInsertCount = function (el) {
 
 //랜덤값 추출
 const randomNumber = function (min, max, point) {
-  return point ? (Math.random() * (max - min) + min).toFixed(point) : Math.random() * (max - min) + min;
+  let $rtnVal;
+  if (point) {
+    $rtnVal = (Math.random() * (max - min) + min).toFixed(point);
+  } else if (point === 0) {
+    $rtnVal = Math.round(Math.random() * (max - min) + min);
+  } else {
+    $rtnVal = Math.random() * (max - min) + min;
+  }
+  return $rtnVal;
 };
 
 //전화번호 포맷
