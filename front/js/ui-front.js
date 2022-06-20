@@ -8317,7 +8317,7 @@ const randomNumber = function (min, max, point) {
   if (point) {
     $rtnVal = (Math.random() * (max - min) + min).toFixed(point);
   } else if (point === 0) {
-    $rtnVal = Math.round(Math.random() * (max - min) + min);
+    $rtnVal = Math.floor(Math.random() * (max - min + 1) + min);
   } else {
     $rtnVal = Math.random() * (max - min) + min;
   }
