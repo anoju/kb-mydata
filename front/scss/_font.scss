@@ -8,6 +8,8 @@
   font-weight: 100;
   font-display: fallback;
   src: local('Noto Sans KR Thin'), local('NotoSansKR-Thin'),
+    // url('NotoSansKR-Thin.otf') format('opentype'),
+    // url('file:///android_asset/fonts/notosanskr_thin.otf') format('opentype'),
     url('../fonts/noto-sans-kr-v21-korean-100.woff2') format('woff2'),
     url('../fonts/noto-sans-kr-v21-korean-100.woff') format('woff'),
     url('../fonts/noto-sans-kr-v21-korean-100.ttf') format('truetype'),
@@ -20,6 +22,8 @@
   font-weight: 300;
   font-display: fallback;
   src: local('Noto Sans KR Light'), local('NotoSansKR-Light'),
+    // url('NotoSansKR-Light.otf') format('opentype'),
+    // url('file:///android_asset/fonts/notosanskr_light.otf') format('opentype'),
     url('../fonts/noto-sans-kr-v21-korean-300.woff2') format('woff2'),
     url('../fonts/noto-sans-kr-v21-korean-300.woff') format('woff'),
     url('../fonts/noto-sans-kr-v21-korean-300.ttf') format('truetype'),
@@ -32,6 +36,8 @@
   font-weight: 400;
   font-display: fallback;
   src: local('Noto Sans KR Regular'), local('NotoSansKR-Regular'),
+    // url('NotoSansKR-Regular.otf') format('opentype'),
+    // url('file:///android_asset/fonts/notosanskr_regular.otf') format('opentype'),
     url('../fonts/noto-sans-kr-v21-korean-regular.woff2') format('woff2'),
     url('../fonts/noto-sans-kr-v21-korean-regular.woff') format('woff'),
     url('../fonts/noto-sans-kr-v21-korean-regular.ttf') format('truetype'),
@@ -44,6 +50,8 @@
   font-weight: 500;
   font-display: fallback;
   src: local('Noto Sans KR Medium'), local('NotoSansKR-Medium'),
+    // url('NotoSansKR-Medium.otf') format('opentype'),
+    // url('file:///android_asset/fonts/notosanskr_medium.otf') format('opentype'),
     url('../fonts/noto-sans-kr-v21-korean-500.woff2') format('woff2'),
     url('../fonts/noto-sans-kr-v21-korean-500.woff') format('woff'),
     url('../fonts/noto-sans-kr-v21-korean-500.ttf') format('truetype'),
@@ -56,6 +64,8 @@
   font-weight: 700;
   font-display: fallback;
   src: local('Noto Sans KR Bold'), local('NotoSansKR-Bold'),
+    // url('NotoSansKR-Bold.otf') format('opentype'),
+    // url('file:///android_asset/fonts/notosanskr_bold.otf') format('opentype'),
     url('../fonts/noto-sans-kr-v21-korean-700.woff2') format('woff2'),
     url('../fonts/noto-sans-kr-v21-korean-700.woff') format('woff'),
     url('../fonts/noto-sans-kr-v21-korean-700.ttf') format('truetype'),
@@ -68,6 +78,8 @@
   font-weight: 900;
   font-display: fallback;
   src: local('Noto Sans KR Black'), local('NotoSansKR-Black'),
+    // url('NotoSansKR-Black.otf') format('opentype'),
+    // url('file:///android_asset/fonts/notosanskr_black.otf') format('opentype'), // 안드로이드 앱에 없음
     url('../fonts/noto-sans-kr-v21-korean-900.woff2') format('woff2'),
     url('../fonts/noto-sans-kr-v21-korean-900.woff') format('woff'),
     url('../fonts/noto-sans-kr-v21-korean-900.ttf') format('truetype'),
@@ -82,7 +94,9 @@
   font-display: fallback;
   //src: url('../fonts/roboto-v29-latin-100.eot');
   src: local('Roboto Thin'), local('Roboto-Thin'),
-    //url('../fonts/roboto-v29-latin-100.eot?#iefix') format('embedded-opentype'),
+    // url('Roboto-Thin.ttf') format('truetype'),
+    // url('file:///android_asset/fonts/roboto_thin.ttf') format('truetype'), // 안드로이드 앱에 없음
+    // url('../fonts/roboto-v29-latin-100.eot?#iefix') format('embedded-opentype'),
     url('../fonts/roboto-v29-latin-100.woff2') format('woff2'),
     url('../fonts/roboto-v29-latin-100.woff') format('woff'),
     url('../fonts/roboto-v29-latin-100.ttf') format('truetype'),
@@ -97,7 +111,9 @@
   font-display: fallback;
   //src: url('../fonts/roboto-v29-latin-300.eot');
   src: local('Roboto Light'), local('Roboto-Light'),
-    //url('../fonts/roboto-v29-latin-300.eot?#iefix') format('embedded-opentype'),
+    // url('Roboto-Light.ttf') format('truetype'),
+    // url('file:///android_asset/fonts/roboto_light.ttf') format('truetype'),
+    // url('../fonts/roboto-v29-latin-300.eot?#iefix') format('embedded-opentype'),
     url('../fonts/roboto-v29-latin-300.woff2') format('woff2'),
     url('../fonts/roboto-v29-latin-300.woff') format('woff'),
     url('../fonts/roboto-v29-latin-300.ttf') format('truetype'),
@@ -111,8 +127,10 @@
   font-weight: 400;
   font-display: fallback;
   //src: url('../fonts/roboto-v29-latin-regular.eot');
-  src: local('Roboto'), local('Roboto-Regular'),
-    //url('../fonts/roboto-v29-latin-regular.eot?#iefix') format('embedded-opentype'),
+  src: local('Roboto'), local('Roboto Regular'), local('Roboto-Regular'),
+    // url('Roboto-Regular.ttf') format('truetype'),
+    // url('file:///android_asset/fonts/roboto_regular.ttf') format('truetype'),
+    // url('../fonts/roboto-v29-latin-regular.eot?#iefix') format('embedded-opentype'),
     url('../fonts/roboto-v29-latin-regular.woff2') format('woff2'),
     url('../fonts/roboto-v29-latin-regular.woff') format('woff'),
     url('../fonts/roboto-v29-latin-regular.ttf') format('truetype'),
@@ -127,7 +145,9 @@
   font-display: fallback;
   //src: url('../fonts/roboto-v29-latin-500.eot');
   src: local('Roboto Medium'), local('Roboto-Medium'),
-    //url('../fonts/roboto-v29-latin-500.eot?#iefix') format('embedded-opentype'),
+    // url('Roboto-Medium.ttf') format('truetype'),
+    // url('file:///android_asset/fonts/roboto_medium.ttf') format('truetype'),
+    // url('../fonts/roboto-v29-latin-500.eot?#iefix') format('embedded-opentype'),
     url('../fonts/roboto-v29-latin-500.woff2') format('woff2'),
     url('../fonts/roboto-v29-latin-500.woff') format('woff'),
     url('../fonts/roboto-v29-latin-500.ttf') format('truetype'),
@@ -142,7 +162,9 @@
   font-display: fallback;
   //src: url('../fonts/roboto-v29-latin-700.eot');
   src: local('Roboto Bold'), local('Roboto-Bold'),
-    //url('../fonts/roboto-v29-latin-700.eot?#iefix') format('embedded-opentype'),
+    // url('Roboto-Bold.ttf') format('truetype'),
+    // url('file:///android_asset/fonts/roboto_bold.ttf') format('truetype'),
+    // url('../fonts/roboto-v29-latin-700.eot?#iefix') format('embedded-opentype'),
     url('../fonts/roboto-v29-latin-700.woff2') format('woff2'),
     url('../fonts/roboto-v29-latin-700.woff') format('woff'),
     url('../fonts/roboto-v29-latin-700.ttf') format('truetype'),
@@ -157,7 +179,9 @@
   font-display: fallback;
   //src: url('../fonts/roboto-v29-latin-900.eot');
   src: local('Roboto Black'), local('Roboto-Black'),
-    //url('../fonts/roboto-v29-latin-900.eot?#iefix') format('embedded-opentype'),
+    // url('Roboto-Black.ttf') format('truetype'),
+    // url('file:///android_asset/fonts/roboto_black.ttf') format('truetype'), //안드로이드 앱에 없음
+    // url('../fonts/roboto-v29-latin-900.eot?#iefix') format('embedded-opentype'),
     url('../fonts/roboto-v29-latin-900.woff2') format('woff2'),
     url('../fonts/roboto-v29-latin-900.woff') format('woff'),
     url('../fonts/roboto-v29-latin-900.ttf') format('truetype'),
