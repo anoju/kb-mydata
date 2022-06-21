@@ -5138,23 +5138,26 @@ ui.Animation = {
   sclCheckIn: function (target, wrap) {
     // const $target = $.find('*[data-animation]');
     const $target = target;
-    const $isWin = wrap === window ? true : false;
-    const $wrap = $(wrap);
-    const $wHeight = $wrap.height();
-    const $scrollTop = $wrap.scrollTop();
-    const $topFixedH = $isWin ? ui.Common.getTopFixedHeight($target) : ui.Common.getTopFixedHeight($target, 'pop-top-fixed');
-    let $bottomFixedH = 0;
-    if ($isWin && $('.bottom-fixed-space').length) {
-      $bottomFixedH = $('.bottom-fixed-space').height();
-    } else if ($wrap.find('.pop-foot').length) {
-      $bottomFixedH = $wrap.find('.pop-foot').height();
-    }
-    const $wrapTop = $scrollTop + $topFixedH;
-    const $wrapCenter = $scrollTop + ($wHeight - $topFixedH - $bottomFixedH) / 2;
-    const $wrapBottom = $scrollTop + ($wHeight - $bottomFixedH);
-
+    console.log($target, $target.length);
+    if (!$target.length) return;
     $.each($target, function () {
       const $el = $(this);
+      if (!$el.length) return;
+      const $isWin = wrap === window ? true : false;
+      const $wrap = $(wrap);
+      const $wHeight = $wrap.height();
+      const $scrollTop = $wrap.scrollTop();
+      const $topFixedH = $isWin ? ui.Common.getTopFixedHeight($el) : ui.Common.getTopFixedHeight($el, 'pop-top-fixed');
+      let $bottomFixedH = 0;
+      if ($isWin && $('.bottom-fixed-space').length) {
+        $bottomFixedH = $('.bottom-fixed-space').height();
+      } else if ($wrap.find('.pop-foot').length) {
+        $bottomFixedH = $wrap.find('.pop-foot').height();
+      }
+      const $wrapTop = $scrollTop + $topFixedH;
+      const $wrapCenter = $scrollTop + ($wHeight - $topFixedH - $bottomFixedH) / 2;
+      const $wrapBottom = $scrollTop + ($wHeight - $bottomFixedH);
+
       const $elHeight = $el.outerHeight();
       const $matrix = $el.css('transform');
       const $matrixAry = $matrix.replace(/[^0-9\-.,]/g, '').split(',');
@@ -5249,7 +5252,7 @@ ui.Animation = {
           $el.addClass($animationClass);
           if ($el.hasClass('ui-tap-item')) {
             const removeEvt = function () {
-              $el.children().remove();
+              $el.remove();
               $el[0].removeEventListener('animationend', removeEvt);
             };
             $el[0].addEventListener('animationend', removeEvt);
@@ -5433,10 +5436,11 @@ ui.Animation = {
     Splitting();
   },
   init: function () {
-    const $animations = $('[data-animation]');
+    let $animations = $('[data-animation]');
     if ($animations.length > 0) {
       ui.Animation.sclReady();
       const $boayEl = function () {
+        $animations = $('[data-animation]');
         const rtnVal = [];
         $animations.each(function () {
           const $this = $(this);
@@ -5449,7 +5453,7 @@ ui.Animation = {
         $(window).on(
           'scroll resize',
           _.throttle(function () {
-            ui.Animation.sclCheckIn($boayEl(), window);
+            if ($boayEl().length) ui.Animation.sclCheckIn($boayEl(), window);
           }, 300)
         );
       }
