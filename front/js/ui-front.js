@@ -6646,7 +6646,7 @@ const Layer = {
     }
 
     $target.data('popup', '#' + $popId);
-
+    const $pop = $('#' + $popId);
     $pop.on('click', '.ui-pop-select-btn', function (e) {
       e.preventDefault();
       if (!$(this).hasClass('disabled')) {
