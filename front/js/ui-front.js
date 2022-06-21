@@ -1599,7 +1599,7 @@ ui.Button = {
         $('.' + $itemClass).remove();
       });
     });
-    $('.ui-tap-item').each(function () {
+    $('.ui-tap-item.once').each(function () {
       const $this = $(this);
       let $typeClass;
       let $length = 10;
@@ -5248,9 +5248,11 @@ ui.Animation = {
           if ($el.hasClass('count-number')) ui.Animation.countInit($el);
           $el.addClass($animationClass);
           if ($el.hasClass('ui-tap-item')) {
-            $el.one('animationend', function (e) {
-              $el.remove();
-            });
+            const removeEvt = function () {
+              $el.children().remove();
+              $el[0].removeEventListener('animationend', removeEvt);
+            };
+            $el[0].addEventListener('animationend', removeEvt);
           }
         }
       }
@@ -5507,81 +5509,81 @@ ui.Confetti = {
           //꽃가루(2가지 모션, 3가지 컬러, 3가지 사이즈, 6가지 모양)
           rdClass = randomNumber(1, 6, 0);
           // rdColor = (i%6) + 1;
-          $html = '<span class="confetti-item item' + rdClass + ' color' + rdColor + ' size' + rdSize + '" style="left:' + rdLeft + '%;';
+          $html = '<i class="confetti-item item' + rdClass + ' color' + rdColor + ' size' + rdSize + '" style="left:' + rdLeft + '%;';
           $html += '-webkit-animation:confettiSwing' + rdDirection + ' ' + rdSpeed / 4 + 'ms infinite ' + rdDelay + 'ms alternate, confettiDrop ' + rdSpeed + 'ms infinite ease-out ' + rdDelay + 'ms;';
           $html += 'animation:confettiSwing' + rdDirection + ' ' + rdSpeed / 4 + 'ms infinite ' + rdDelay + 'ms alternate, confettiDrop ' + rdSpeed + 'ms infinite ease-out ' + rdDelay + 'ms;';
-          $html += '" aria-hidden="true"><span></span></span>';
+          $html += '" aria-hidden="true"><i></i></i>';
         } else if ($wrap.hasClass('type2')) {
           //코인(1가지 모양, 3가지 사이즈)
           rdSpeed = randomNumber(10, 15, 0) * 200; //속도조절
-          $html = '<span class="confetti-item size' + rdSize + '" style="left:' + rdLeft + '%;';
+          $html = '<i class="confetti-item size' + rdSize + '" style="left:' + rdLeft + '%;';
           $html += '-webkit-animation:confettiCoin ' + rdSpeed + 'ms linear ' + rdDelay + 'ms infinite;';
           $html += 'animation:confettiCoin ' + rdSpeed + 'ms linear ' + rdDelay + 'ms infinite;';
-          $html += '"></span>';
+          $html += '"></i>';
         } else if ($wrap.hasClass('type3')) {
           //깜빡임(5가지 모양, 5가지 컬러)
           rdSpeed = randomNumber(10, 15, 0) * 100; //속도조절
           rdDelay = randomNumber(0, 5, 0) * 200; //딜레이조절
           rdClass = randomNumber(1, 5, 0);
           const $rotate = randomNumber(0, 18, 0) * 5;
-          $html = '<span class="confetti-item item' + rdClass + ' color' + rdColor + '" style="left:' + rdLeft + '%;top:' + rdTop + '%;';
+          $html = '<i class="confetti-item item' + rdClass + ' color' + rdColor + '" style="left:' + rdLeft + '%;top:' + rdTop + '%;';
           $html += '-webkit-animation:confettiFlash ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
           $html += 'animation:confettiFlash ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
-          $html += '"><i style="-webkit-transform:rotate(' + $rotate + 'deg);transform:rotate(' + $rotate + 'deg);"></i></span>';
+          $html += '"><i style="-webkit-transform:rotate(' + $rotate + 'deg);transform:rotate(' + $rotate + 'deg);"></i></i>';
         } else if ($wrap.hasClass('type4')) {
           //풍선(3가지 모양, 3가지 사이즈)
           rdColor = (i % 3) + 1;
-          $html = '<span class="confetti-item color' + rdColor + ' size' + rdSize + '" style="left:' + rdLeft + '%;';
+          $html = '<i class="confetti-item color' + rdColor + ' size' + rdSize + '" style="left:' + rdLeft + '%;';
           $html += '-webkit-animation:confettiBalloon' + rdDirection + ' ' + rdSpeed / 4 + 'ms infinite ' + rdDelay + 'ms alternate, confettiUp ' + rdSpeed + 'ms infinite ease-out ' + rdDelay + 'ms;';
           $html += 'animation:confettiBalloon' + rdDirection + ' ' + rdSpeed / 4 + 'ms infinite ' + rdDelay + 'ms alternate, confettiUp ' + rdSpeed + 'ms infinite ease-out ' + rdDelay + 'ms;';
-          $html += '"></span>';
+          $html += '"></i>';
         } else if ($wrap.hasClass('type5')) {
           //불꽃(3가지 모양, 3가지 사이즈)
           rdTop = randomNumber(0, 8, 0) * 5; //top값 조정
           rdSpeed = randomNumber(15, 25, 0) * 150; //속도조절
-          $html = '<span class="confetti-item color' + rdColor + ' size' + rdSize + '" style="left:' + rdLeft + '%;top:' + rdTop + '%;">';
-          $html += '<span class="firework" style="';
+          $html = '<i class="confetti-item color' + rdColor + ' size' + rdSize + '" style="left:' + rdLeft + '%;top:' + rdTop + '%;">';
+          $html += '<i class="firework" style="';
           $html += '-webkit-animation:confettiFirework ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
           $html += 'animation:confettiFirework ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
-          $html += '"></span>';
-          $html += '<span class="fire-arr"><i style="';
+          $html += '"></i>';
+          $html += '<i class="fire-arr"><i style="';
           $html += '-webkit-animation:confettiFireArr ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
           $html += 'animation:confettiFireArr ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
-          $html += '"></i></span>';
-          $html += '</span>';
+          $html += '"></i></i>';
+          $html += '</i>';
         } else if ($wrap.hasClass('type6')) {
           //하트(2가지 모양, 3가지 각도)
           rdColor = (i % 2) + 1; //하트이미지 2종류
           rdSpeed = randomNumber(10, 15, 0) * 100; //속도조절
           rdDelay = randomNumber(0, 5, 0) * 200; //딜레이조절
-          $html = '<span class="confetti-item item' + rdClass + ' color' + rdColor + '" style="left:' + rdLeft + '%;top:' + rdTop + '%;';
+          $html = '<i class="confetti-item item' + rdClass + ' color' + rdColor + '" style="left:' + rdLeft + '%;top:' + rdTop + '%;';
           $html += '-webkit-animation:confettiFlash ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
           $html += 'animation:confettiFlash ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
-          $html += '"></span>';
+          $html += '"></i>';
         } else if ($wrap.hasClass('type7')) {
           //별빛(1가지 모양, 4가지 크기)
           rdTop = randomNumber(0, 10, 0) * 5; //top값 조정
           rdSize = (i % 4) + 1; //크기 4가지
           rdSpeed = randomNumber(10, 15, 0) * 100; //속도조절
           rdDelay = randomNumber(0, 5, 0) * 200; //딜레이조절
-          $html = '<span class="confetti-item size' + rdSize + '" style="left:' + rdLeft + '%;top:' + rdTop + '%;';
+          $html = '<i class="confetti-item size' + rdSize + '" style="left:' + rdLeft + '%;top:' + rdTop + '%;';
           $html += '-webkit-animation:confettiFlash ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
           $html += 'animation:confettiFlash ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
-          $html += '"></span>';
+          $html += '"></i>';
         } else if ($wrap.hasClass('type8')) {
           //불꽃2(5가지 모양, 3가지 크기)
           rdTop = randomNumber(0, 14, 0) * 5; //top값 조정
           rdSpeed = randomNumber(15, 25, 0) * 100; //속도조절
-          $html = '<span class="confetti-item color' + rdColor + ' size' + rdSize + '" style="left:' + rdLeft + '%;top:' + rdTop + '%;">';
-          $html += '<span class="dot" style="';
+          $html = '<i class="confetti-item color' + rdColor + ' size' + rdSize + '" style="left:' + rdLeft + '%;top:' + rdTop + '%;">';
+          $html += '<i class="dot" style="';
           $html += '-webkit-animation:confettiFireworkDot ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
           $html += 'animation:confettiFireworkDot ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
-          $html += '"></span>';
-          $html += '<span class="firework" style="';
+          $html += '"></i>';
+          $html += '<i class="firework" style="';
           $html += '-webkit-animation:confettiFirework2 ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
           $html += 'animation:confettiFirework2 ' + rdSpeed + 'ms infinite ' + rdDelay + 'ms;';
-          $html += '"></span>';
-          $html += '</span>';
+          $html += '"></i>';
+          $html += '</i>';
         } else {
           console.log('인터렉션 타입 클래스를 적용해주세요');
           break;
@@ -8155,7 +8157,7 @@ const canvasLightning = function (c, cw, ch) {
         this.createL(newX, newY, true);
       }
       this.lightTimeCurrent = 0;
-      this.lightTimeTotal = this.rand(30, 100);
+      this.lightTimeTotal = this.rand(60, 200); // 시간?
     }
   };
 

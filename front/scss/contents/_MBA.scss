@@ -295,8 +295,7 @@
 .match-animation-result {
   display: flex;
   position: fixed;
-  overflow: hidden;
-  overflow-y: auto;
+  overflow: hidden auto;
   top: 0;
   left: 0;
   visibility: hidden;
@@ -327,10 +326,12 @@
     text-align: center;
     font-size: 0;
     display: flex;
+    overflow: visible;
     .slide {
       display: flex;
       animation: topTextMotion 60s linear infinite both;
       white-space: nowrap;
+      line-height: 2rem;
       span {
         display: inline-block;
         flex: 0 0 auto;
@@ -488,15 +489,16 @@
       display: block;
       position: absolute;
       left: 0;
-      top: 0%;
+      top: -5%;
       width: 100%;
-      height: 20%;
-      background-image: linear-gradient(0deg, rgba(96, 96, 96, 1) 0%, rgba(96, 96, 96, 0) 50%);
-      z-index: 1;
+      height: 25%;
+      background-image: linear-gradient(0deg, rgba(96, 96, 96, 1) 0%, rgba(96, 96, 96, 0) 4rem);
     }
 
     > canvas {
-      height: 20%;
+      top: -5%;
+      height: 25%;
+      z-index: -1;
     }
     .top-text-motion {
       .slide {

@@ -478,8 +478,8 @@ $splits:
         padding-top: 100%;
       }
 
-      span,
-      span:before {
+      i,
+      i:before {
         content: '';
         display: block;
         position: absolute;
@@ -490,19 +490,19 @@ $splits:
       }
     }
 
-    .color1 span:before {
+    .color1 i:before {
       background: #a864fd;
     }
-    .color2 span:before {
+    .color2 i:before {
       background: #29cdff;
     }
-    .color3 span:before {
+    .color3 i:before {
       background: #78ff44;
     }
-    .color4 span:before {
+    .color4 i:before {
       background: #ff718d;
     }
-    .color5 span:before {
+    .color5 i:before {
       background: #fdff6a;
     }
 
@@ -511,33 +511,33 @@ $splits:
     }
     .size2 {
       z-index: 2;
-      span {
+      i {
         transform: scale(0.8);
       }
     }
     .size3 {
       // filter: blur(1px);
-      span {
+      i {
         transform: scale(0.6);
       }
     }
 
-    .item1 span:before {
+    .item1 i:before {
       transform: skewX(-15deg);
     }
-    .item2 span:before {
+    .item2 i:before {
       transform: skewX(25deg);
     }
-    .item3 span:before {
+    .item3 i:before {
       transform: skewX(-35deg);
     }
-    .item4 span:before {
+    .item4 i:before {
       transform: skewX(45deg);
     }
-    .item5 span:before {
+    .item5 i:before {
       transform: skewX(-55deg);
     }
-    .item6 span:before {
+    .item6 i:before {
       transform: skewX(65deg);
     }
   }
