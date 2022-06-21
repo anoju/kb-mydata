@@ -5138,7 +5138,6 @@ ui.Animation = {
   sclCheckIn: function (target, wrap) {
     // const $target = $.find('*[data-animation]');
     const $target = target;
-    console.log($target, $target.length);
     if (!$target.length) return;
     $.each($target, function () {
       const $el = $(this);
