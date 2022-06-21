@@ -122,7 +122,7 @@
     <script>
       $(function () {
         // 랜덤으로 인플루언서
-        const $random1 = parseInt(randomNumber(0, 1, 0));
+        const $random1 = randomNumber(0, 1, 0);
         if ($random1) {
           console.log('인풀루언서 매치');
           const $down = $('.match-animation .down');
@@ -138,8 +138,10 @@
         }
 
         // 랜덤으로 결과보기
-        const $random2 = parseInt(randomNumber(0, 2, 0));
+        const $random2 = randomNumber(0, 2, 0);
+        // const $random2 = 1;
         const $result = ['loss', 'draw'];
+        // console.log($random1, $random2);
         if ($random2) {
           console.log('매치 결과: ' + $result[$random2 - 1]);
           $('.match-animation-result').addClass($result[$random2 - 1]);
@@ -147,16 +149,46 @@
           console.log('매치 결과: win');
         }
 
+        const winAni = function () {
+          const $cavas = document.getElementById('confetti-canvas');
+          const $init = function () {
+            Conffeti.dropInit(10, $cavas);
+            setTimeout(function () {
+              $init();
+            }, 11000);
+          };
+          $init();
+        };
+
+        const lossAni = function () {
+          const c = document.getElementById('confetti-canvas');
+          const cw = (c.width = c.offsetWidth);
+          const ch = (c.height = c.offsetHeight);
+          const cl = new canvasLightning(c, cw, ch);
+          cl.init();
+        };
+
+        const drawAni = function () {
+          const $top = $('.top-text-motion');
+          $top.addClass('ui-confetti type6').data('length', 8);
+          ui.Confetti.set($top);
+        };
+
         $(window).load(function () {
           setTimeout(function () {
             $('.match-animation').addClass('action');
             setTimeout(function () {
               $('.match-animation').addClass('end');
               $('.match-animation-result').addClass('show');
-              if (!$random2) {
-                const $cavas = document.getElementById('confetti-canvas');
-                Conffeti.dropInit(10, $cavas);
-              }
+
+              // win
+              if (!$random2) winAni();
+
+              // loss
+              if ($random2 === 1) lossAni();
+
+              // draw
+              if ($random2 === 2) drawAni();
             }, 5000);
           }, 1000);
 
