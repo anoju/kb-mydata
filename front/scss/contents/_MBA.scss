@@ -376,41 +376,29 @@
         color: rgba(255, 255, 255, 0.6);
       }
     }
-    .img-result-box {
+  }
+  .img-result-box {
+    position: relative;
+    margin-top: 4.8rem;
+    .img {
+      border-radius: 0;
+      background: none;
       position: relative;
-      margin-top: 4.8rem;
-      .img {
+      width: 12rem;
+      // height: 12rem;
+      margin: 0 auto 0.8rem;
+      img {
         border-radius: 0;
-        background: none;
-        position: relative;
-        width: 12rem;
-        // height: 12rem;
-        margin: 0 auto 0.8rem;
-        img {
-          border-radius: 0;
-          //   width: 100%;
-          //   height: 100%;
-        }
-      }
-      .text {
-        font-size: 1.8rem;
-        color: #fff;
-      }
-
-      &:before {
-        content: 'WOW';
-        display: block;
-        position: absolute;
-        top: 0%;
-        left: 50%;
-        font-size: 14.4rem;
-        font-weight: bold;
-        color: rgba(0, 0, 0, 0.1);
-        line-height: 0.7;
-        transform: translateX(-50%) rotate(-15deg);
+        //   width: 100%;
+        //   height: 100%;
       }
     }
+    .text {
+      font-size: 1.8rem;
+      color: #fff;
+    }
   }
+
   .loss-info {
     display: flex;
     justify-content: center;
@@ -481,6 +469,26 @@
     }
   }
 
+  &:not(.loss):not(.draw) {
+    .img-result-box {
+      &:before {
+        content: 'WOW';
+        display: block;
+        position: absolute;
+        top: -1.8rem;
+        left: 0;
+        width: 100%;
+        font-size: 14.4rem;
+        line-height: 14.4rem;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.1);
+        transform: rotate(-15deg);
+        transform-origin: center center;
+        text-align: center;
+      }
+    }
+  }
+
   &.loss {
     background-color: #606060;
     // overflow: hidden;
@@ -517,32 +525,35 @@
           content: '패배';
         }
       }
-      .img-result-box {
-        .img {
-          img {
-            transition: filter 0.8s ease 0s;
-          }
+    }
+    .img-result-box {
+      .img {
+        img {
+          transition: filter 0.8s ease 0s;
         }
+      }
 
-        &:before {
-          content: '웁스';
-          font-size: 8.4rem;
-          color: rgba(255, 255, 255, 0.05);
-          transform: translate(0%, -50%) rotate(-90deg);
-          top: 50%;
-          left: -2.4rem;
-        }
-        &:after {
-          content: 'ㅠㅠ';
-          display: block;
-          position: absolute;
-          top: 50%;
-          right: -2.4rem;
-          font-size: 8.4rem;
-          color: rgba(255, 255, 255, 0.05);
-          transform: translate(0%, -50%) rotate(90deg);
-          font-weight: bold;
-        }
+      &:before,
+      &:after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        font-size: 8.4rem;
+        line-height: 1;
+        margin-top: -4.2rem;
+        color: rgba(255, 255, 255, 0.05);
+        font-weight: bold;
+        text-align: center;
+      }
+      &:before {
+        content: '웁스';
+        left: -2.4rem;
+        transform: rotate(-90deg);
+      }
+      &:after {
+        content: 'ㅠㅠ';
+        right: -2.4rem;
+        transform: rotate(90deg);
       }
     }
 
@@ -562,16 +573,11 @@
       }
     }
     &.show {
-      // &:before {
-      //   top: 0;
-      // }
-      .result-info {
-        .img-result-box {
-          .img {
-            img {
-              transition-delay: 1.5s;
-              filter: grayscale(100);
-            }
+      .img-result-box {
+        .img {
+          img {
+            transition-delay: 1.5s;
+            filter: grayscale(100);
           }
         }
       }
@@ -604,13 +610,13 @@
           color: rgba(96, 96, 96, 0.6);
         }
       }
-      .img-result-box {
-        &:before {
-          display: none;
-        }
-        .text {
-          color: var(--strong-txt-color2);
-        }
+    }
+    .img-result-box {
+      &:before {
+        display: none;
+      }
+      .text {
+        color: var(--strong-txt-color2);
       }
     }
 
@@ -643,21 +649,17 @@
       .number {
         animation: fadeInUp2 0.8s ease 0.6s both;
       }
-      .img-result-box {
-        .img {
-          animation: fadeInUp2 0.8s ease 0.8s both;
-        }
+    }
+    .img-result-box {
+      .img {
+        animation: fadeInUp2 0.8s ease 0.8s both;
+      }
 
-        .text {
-          animation: fadeInUp2 0.8s ease 0.8s both;
-        }
-
-        &:before,
-        &:after {
-          animation: fadeIn 0.8s ease 1s both;
-        }
+      .text {
+        animation: fadeInUp2 0.8s ease 0.8s both;
       }
     }
+
     .loss-info {
       .img {
         animation: fadeInLeft 0.8s ease 1.2s both;
@@ -670,6 +672,24 @@
     .btn-wrap {
       animation: fadeInUp2 0.8s ease 2.2s both;
     }
+
+    &:not(.loss):not(.draw) {
+      .img-result-box {
+        &:before {
+          animation: resultTxtWow 0.8s ease 1s both;
+        }
+      }
+    }
+    &.loss {
+      .img-result-box {
+        &:before {
+          animation: resultTxtShakeLeft 0.8s ease 1s both;
+        }
+        &:after {
+          animation: resultTxtShakeRight 0.8s ease 1s both;
+        }
+      }
+    }
   }
 }
 
@@ -679,6 +699,85 @@
   }
   100% {
     transform: translateX(-33.333%);
+  }
+}
+@keyframes resultTxtWow {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3) rotate(0deg);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-20deg);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate(-10deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03) rotate(-17deg);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97) rotate(-13deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) rotate(-15deg);
+  }
+}
+@keyframes resultTxtShakeLeft {
+  from,
+  to {
+    margin-left: 0;
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    margin-left: -10px;
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    margin-left: 10px;
+  }
+}
+@keyframes resultTxtShakeRight {
+  from,
+  to {
+    margin-right: 0;
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    margin-right: -10px;
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    margin-right: 10px;
   }
 }
 
