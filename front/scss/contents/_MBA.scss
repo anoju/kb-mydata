@@ -2115,12 +2115,12 @@
   &.no-icon {
     &.up {
       &:before {
-        display: none;
+        content: none;
       }
     }
     &.down {
       &:before {
-        display: none;
+        content: none;
       }
     }
   }
