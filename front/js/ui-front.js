@@ -7644,7 +7644,7 @@ const Layer = {
     // const $sclEvt = $wrap.data('sclEvt');
     // if (!$sclEvt) {
     //   $wrap.data('sclEvt', true);
-    const $animation = $wrap.find('[data-animation]');
+    let $animation = $wrap.find('[data-animation]');
     if ($animation.length) {
       setTimeout(function () {
         ui.Animation.sclCheckIn($animation, $wrap);
@@ -7652,7 +7652,8 @@ const Layer = {
       $wrap.on(
         'scroll resize',
         _.debounce(function () {
-          ui.Animation.sclCheckIn($animation, $wrap);
+          $animation = $wrap.find('[data-animation]');
+          if ($animation.length) ui.Animation.sclCheckIn($animation, $wrap);
         }, 100)
       );
     }
