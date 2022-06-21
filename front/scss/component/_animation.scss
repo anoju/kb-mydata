@@ -56,7 +56,7 @@
 }
 
 .number-random[data-random='type2'] {
-  --animation-random-duration: 2s;
+  --animation-random-duration: 0.4s;
   > * {
     vertical-align: middle;
   }
@@ -89,7 +89,8 @@
       transform: translateY(100%);
     }
   }
-  .action & {
+  .action &,
+  &.active {
     @for $i from 1 to 10 {
       .number:nth-of-type(#{$i}) {
         &:before {
