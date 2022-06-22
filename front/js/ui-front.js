@@ -8576,8 +8576,7 @@ $.fn.addRemoveClass = function (className, addTime, removeTime, callback) {
 
 $.fn.countNumber = function (num) {
   return this.each(function () {
-    if (typeof num !== 'number') return;
-    const $num = num;
+    const $num = typeof num !== 'number' ? onlyNumber(num) : num;
     const element = $(this);
     element.attr('title', addComma($num));
     ui.Animation.countInit(element);
@@ -8586,8 +8585,7 @@ $.fn.countNumber = function (num) {
 
 $.fn.rollingNumber = function (num) {
   return this.each(function () {
-    if (typeof num !== 'number') return;
-    const $num = num;
+    const $num = typeof num !== 'number' ? onlyNumber(num) : num;
     const element = $(this);
     element.text(addComma($num));
     ui.Animation.rollingReady(element);

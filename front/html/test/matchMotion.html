@@ -139,7 +139,7 @@
 
         // 랜덤으로 결과보기
         const $random2 = randomNumber(0, 2, 0);
-        // const $random2 = 1;
+        // const $random2 = 0;
         const $result = ['loss', 'draw'];
         // console.log($random1, $random2);
         if ($random2) {
@@ -152,10 +152,10 @@
         const winAni = function () {
           const $cavas = document.getElementById('confetti-canvas');
           const $init = function () {
-            Conffeti.dropInit(10, $cavas);
+            Conffeti.dropInit(3, $cavas);
             setTimeout(function () {
               $init();
-            }, 11000);
+            }, 4000);
           };
           $init();
         };
