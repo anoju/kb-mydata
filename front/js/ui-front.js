@@ -3,7 +3,7 @@
  * 작성자 : 안효주 *
  ********************************/
 $(function () {
-  Font.init();
+  // Font.init();
   const $elements = $.find('*[data-include-html]');
   if ($elements.length) {
     ui.Html.include(ui.Init);
