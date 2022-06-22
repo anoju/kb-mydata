@@ -193,6 +193,12 @@
     }
     .invest-txt-box {
       padding: 0.8rem 0 0;
+      .tit {
+        padding: 0;
+      }
+      .txt {
+        padding: 0;
+      }
     }
     .txt {
       color: #808892;
@@ -323,11 +329,11 @@
     flex: 1 1 auto;
     padding: 1.6rem;
     .tit {
-      padding-left: 0;
+      padding: 0;
       color: var(--strong-txt-color2);
     }
     .txt {
-      padding-left: 0;
+      padding: 0;
     }
   }
   .txt {
