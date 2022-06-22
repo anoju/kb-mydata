@@ -3,18 +3,32 @@
  * 작성자 : 안효주 *
  ********************************/
 $(function () {
-  // Font.init();
   const $elements = $.find('*[data-include-html]');
   if ($elements.length) {
     ui.Html.include(ui.Init);
   } else {
     ui.Init();
   }
+
+  /*
+  if (ui.Mobile.any()) {
+    if (ui.Mobile.iOS()) {
+      window.addEventListener('pageshow', function () {
+        ui.LoadInit();
+      });
+    } else {
+      window.addEventListener('load', function () {
+        ui.LoadInit();
+      });
+    }
+  }
+  */
 });
 // window.addEventListener('DOMContentLoaded', (event) => {
 // });
 
 $(window).on('load', function () {
+  console.log('jq load');
   ui.LoadInit();
 });
 
@@ -34,216 +48,7 @@ $(window).on('scroll', function () {
 /********************************
  * front UI 함수 *
  ********************************/
-const Font = {
-  aos: function () {
-    // 주석처진 항목은 안드로이드 앱에 없는 폰트
-    const fontArry = [
-      // {
-      //   font: 'Noto Sans KR',
-      //   name: 'NotoSansKR-Thin',
-      //   weight: 100,
-      //   file: 'notosanskr_thin',
-      //   type: 'otf'
-      // },
-      {
-        font: 'Noto Sans KR',
-        name: 'NotoSansKR-Light',
-        weight: 300,
-        file: 'notosanskr_light',
-        type: 'otf'
-      },
-      {
-        font: 'Noto Sans KR',
-        name: 'NotoSansKR-Regular',
-        weight: 400,
-        file: 'notosanskr_regular',
-        type: 'otf'
-      },
-      {
-        font: 'Noto Sans KR',
-        name: 'NotoSansKR-Medium',
-        weight: 500,
-        file: 'notosanskr_medium',
-        type: 'otf'
-      },
-      {
-        font: 'Noto Sans KR',
-        name: 'NotoSansKR-Bold',
-        weight: 700,
-        file: 'notosanskr_bold',
-        type: 'otf'
-      },
-      // {
-      //   font: 'Noto Sans KR',
-      //   name: 'NotoSansKR-Black',
-      //   weight: 900,
-      //   file: 'notosanskr_black',
-      //   type: 'otf'
-      // },
-      // {
-      //   font: 'Roboto',
-      //   name: 'Roboto-Thin',
-      //   weight: 100,
-      //   file: 'roboto_thin',
-      //   type: 'ttf'
-      // },
-      {
-        font: 'Roboto',
-        name: 'Roboto-Light',
-        weight: 300,
-        file: 'roboto_light',
-        type: 'ttf'
-      },
-      {
-        font: 'Roboto',
-        name: 'Roboto-Regular',
-        weight: 400,
-        file: 'roboto_regular',
-        type: 'ttf'
-      },
-      {
-        font: 'Roboto',
-        name: 'Roboto-Medium',
-        weight: 500,
-        file: 'roboto_medium',
-        type: 'ttf'
-      },
-      {
-        font: 'Roboto',
-        name: 'Roboto-Bold',
-        weight: 700,
-        file: 'roboto_bold',
-        type: 'ttf'
-      }
-      // {
-      //   font: 'Roboto',
-      //   name: 'Roboto-Black',
-      //   weight: 900,
-      //   file: 'roboto_black',
-      //   type: 'ttf'
-      // }
-    ];
-    const newStyle = document.createElement('style');
-    for (let i = 0; i < fontArry.length; i++) {
-      const font = fontArry[i];
-      let $setFont = '@font-face {font-family:"';
-      $setFont += font.font;
-      $setFont += '";font-style: normal;font-weight:';
-      $setFont += font.weight;
-      $setFont += ';src: local("';
-      $setFont += font.name;
-      $setFont += '"), url("file:///android_asset/fonts/';
-      $setFont += font.file;
-      $setFont += '.';
-      $setFont += font.type;
-      $setFont += '") format("';
-      $setFont += font.type === 'ttf' ? 'truetype' : 'opentype';
-      $setFont += '");}';
-      newStyle.appendChild(document.createTextNode($setFont));
-    }
-    document.head.appendChild(newStyle);
-  },
-  ios: function () {
-    const fontArry = [
-      {
-        font: 'Noto Sans KR',
-        weight: 100,
-        file: 'NotoSansKR-Thin',
-        type: 'otf'
-      },
-      {
-        font: 'Noto Sans KR',
-        weight: 300,
-        file: 'NotoSansKR-Light',
-        type: 'otf'
-      },
-      {
-        font: 'Noto Sans KR',
-        weight: 400,
-        file: 'NotoSansKR-Regular',
-        type: 'otf'
-      },
-      {
-        font: 'Noto Sans KR',
-        weight: 500,
-        file: 'NotoSansKR-Medium',
-        type: 'otf'
-      },
-      {
-        font: 'Noto Sans KR',
-        weight: 700,
-        file: 'NotoSansKR-Bold',
-        type: 'otf'
-      },
-      {
-        font: 'Noto Sans KR',
-        weight: 900,
-        file: 'NotoSansKR-Black',
-        type: 'otf'
-      },
-      {
-        font: 'Roboto',
-        weight: 100,
-        file: 'Roboto-Thin',
-        type: 'ttf'
-      },
-      {
-        font: 'Roboto',
-        weight: 300,
-        file: 'Roboto-Light',
-        type: 'ttf'
-      },
-      {
-        font: 'Roboto',
-        weight: 400,
-        file: 'Roboto-Regular',
-        type: 'ttf'
-      },
-      {
-        font: 'Roboto',
-        weight: 500,
-        file: 'Roboto-Medium',
-        type: 'ttf'
-      },
-      {
-        font: 'Roboto',
-        weight: 700,
-        file: 'Roboto-Bold',
-        type: 'ttf'
-      },
-      {
-        font: 'Roboto',
-        weight: 900,
-        file: 'Roboto-Black',
-        type: 'ttf'
-      }
-    ];
-    const newStyle = document.createElement('style');
-    for (let i = 0; i < fontArry.length; i++) {
-      const font = fontArry[i];
-      let $setFont = '@font-face {font-family:"';
-      $setFont += font.font;
-      $setFont += '";font-style: normal;font-weight:';
-      $setFont += font.weight;
-      $setFont += ';src: local("';
-      $setFont += font.file;
-      $setFont += '"), url("';
-      $setFont += font.file;
-      $setFont += '.';
-      $setFont += font.type;
-      $setFont += '") format("';
-      $setFont += font.type === 'ttf' ? 'truetype' : 'opentype';
-      $setFont += '");}';
-      newStyle.appendChild(document.createTextNode($setFont));
-    }
-    document.head.appendChild(newStyle);
-  },
-  init: function () {
-    if (!ui.Device.app()) return;
-    if (ui.Mobile.Android()) Font.aos();
-    if (ui.Mobile.iOS()) Font.ios();
-  }
-};
+
 const ui = {
   isInit: false,
   Init: function () {
@@ -279,8 +84,11 @@ const ui = {
     ui.Swiper.reInit();
     ui.Chart.init();
   },
+  isLoadInit: false,
   LoadInit: function () {
-    //console.log('window load complete');
+    if (ui.isLoadInit) return;
+    ui.isLoadInit = true;
+    console.log('window load complete');
     ui.Common.vhChk();
     ui.Common.winLoad();
     ui.Common.lottie();
