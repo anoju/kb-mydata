@@ -174,7 +174,7 @@
           ui.Confetti.set($top);
         };
 
-        $(window).load(function () {
+        const matchingInit = function () {
           setTimeout(function () {
             $('.match-animation').addClass('action');
             setTimeout(function () {
@@ -197,7 +197,8 @@
           // 결과만 보고 싶을때
           // $('.match-animation').addClass('action end');
           // $('.match-animation-result').addClass('show');
-        });
+        };
+        matchingInit();
       });
     </script>
   </body>
