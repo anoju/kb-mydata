@@ -3229,7 +3229,7 @@ ui.Form = {
     const $max = $el.attr('maxlength');
     let $val = $el.val();
     let $length = $val.length;
-    if (!!e && (e.type == 'keyup' || e.type == 'keypress' || e.type == 'paste')) {
+    if (!!e && (e.type == 'keyup' || e.type == 'keypress' || e.type == 'paste' || e.type == 'cut')) {
       setTimeout(function () {
         $val = $el.val();
         $length = $val.length;
@@ -4232,10 +4232,10 @@ ui.Form = {
     ui.Form.jqCalendar('.datepicker');
 
     //입력 텍스트 카운팅(입력)
-    $(document).on('keypress keyup keydown', '[data-text-count]', function (e) {
+    $(document).on('keypress keyup', '[data-text-count]', function (e) {
       ui.Form.textCount(this, e);
     });
-    $(document).on('paste', '[data-text-count]', function (e) {
+    $(document).on('paste cut', '[data-text-count]', function (e) {
       if (e.originalEvent.clipboardData) {
         ui.Form.textCount(this, e);
       }
