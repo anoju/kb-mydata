@@ -3219,21 +3219,26 @@ ui.Form = {
   },
   textCount: function (element, e) {
     const $el = $(element);
-    const $val = $el.val();
-    const $max = $el.attr('maxlength');
-    const $length = $val.length;
     let $target = $el.data('text-count');
     if ($target == true) {
       $target = $el.siblings('.byte').find('strong');
     } else {
       $target = $('#' + $target);
     }
-    if (!!e && (e.type == 'keyup' || e.type == 'keypress')) {
-      if ($max === undefined) {
-        $target.text($length);
-      } else {
-        $target.text(Math.min($max, $length));
-      }
+    if (!$target.length) return;
+    const $max = $el.attr('maxlength');
+    let $val = $el.val();
+    let $length = $val.length;
+    if (!!e && (e.type == 'keyup' || e.type == 'keypress' || e.type == 'paste')) {
+      setTimeout(function () {
+        $val = $el.val();
+        $length = $val.length;
+        if ($max === undefined) {
+          $target.text($length);
+        } else {
+          $target.text(Math.min($max, $length));
+        }
+      }, 1);
     } else {
       if ($val != '') $target.text(Math.min($max, $length));
     }
@@ -4227,8 +4232,13 @@ ui.Form = {
     ui.Form.jqCalendar('.datepicker');
 
     //입력 텍스트 카운팅(입력)
-    $(document).on('keypress keyup', '[data-text-count]', function (e) {
+    $(document).on('keypress keyup keydown', '[data-text-count]', function (e) {
       ui.Form.textCount(this, e);
+    });
+    $(document).on('paste', '[data-text-count]', function (e) {
+      if (e.originalEvent.clipboardData) {
+        ui.Form.textCount(this, e);
+      }
     });
   }
 };
