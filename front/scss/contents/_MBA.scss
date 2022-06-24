@@ -955,7 +955,7 @@
       box-shadow: 0 0.4rem 1.4rem rgba(71, 61, 185, 0.2);
 
       &:before {
-        border-color: transparent transparent rgba(55, 38, 214, 0.8) transparent;
+        border-bottom-color: rgba(50, 32, 214, 0.8);
       }
     }
 
@@ -997,7 +997,7 @@
       background: rgba(25, 174, 134, 0.8);
       box-shadow: 0 0.4rem 1.4rem rgba(0, 220, 220, 0.2);
       &:before {
-        border-color: transparent transparent rgba(26, 182, 182, 0.8) transparent;
+        border-bottom-color: rgba(25, 174, 134, 0.8);
       }
     }
 
@@ -1064,7 +1064,7 @@
         background: rgba(223, 89, 61, 0.8);
         box-shadow: 0 0.4rem 1.4rem rgba(253, 126, 100, 0.2);
         &:before {
-          border-color: transparent transparent rgba(223, 89, 61, 0.8) transparent;
+          border-bottom-color: rgba(223, 89, 61, 0.8);
         }
       }
 
