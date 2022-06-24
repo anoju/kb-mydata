@@ -363,23 +363,17 @@ button.btn-click {
         @include ios-bottom(padding-bottom, var(--base-padding));
       }
     }
-    &:not(.not-fixed-style):not(.btn-comment) {
+    &:not(.not-fixed-style):not(.btn-comment):not(.fixed-none) {
       > div {
         background-color: transparent !important;
         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) var(--base-padding), #fff 100%) !important;
       }
     }
-    &.not-fixed-style {
-      > div {
-        background-color: #fff;
-        // background: none;
-      }
-    }
-    &.none-bg {
-      > div {
-        background: none;
-      }
-    }
+    // &.not-fixed-style {
+    //   > div {
+    //     background-color: #fff;
+    //   }
+    // }
     &.fixed-none {
       > div {
         position: relative;
