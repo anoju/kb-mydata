@@ -4353,10 +4353,12 @@ ui.List = {
       const $this = $(this);
       const $wrap = $this.closest($wrapClass);
       const $items = $wrap.find($chkClass).not(':disabled');
-      if ($(this).prop('checked')) {
-        $items.prop('checked', true).change();
+      if ($this.prop('checked')) {
+        if ($this.hasClass('_not_change_event')) $items.prop('checked', true);
+        else $items.prop('checked', true).change();
       } else {
-        $items.prop('checked', false).change();
+        if ($this.hasClass('_not_change_event')) $items.prop('checked', false);
+        else $items.prop('checked', false).change();
       }
     });
     $(document).on('change', $wrapClass + ' ' + $chkClass, function () {
