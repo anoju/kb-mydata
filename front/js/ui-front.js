@@ -1484,7 +1484,6 @@ ui.Button = {
   },
   effect: function () {
     //버튼 클릭 효과
-    //prettier-ignore
     const btnInEfList = 'a.button, button.button, a.btn-click, button.btn-click, .radio.btn input, .checkbox.btn input, .ui-folding-btn, .ui-folding .folding-head .folding-btn';
     $(document).on('click', btnInEfList, function (e) {
       const $this = $(this);
@@ -2513,8 +2512,7 @@ ui.Touch = {
       let _html = '<div class="' + _className + '" role="img" aria-label="새로고침">';
       _html += '<div aria-hidden="true" class="ico">';
       // _html += '<div class="ico-in"></div>';
-      _html +=
-        '<svg class="svg" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="svg-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg>';
+      _html += '<svg class="svg" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="svg-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg>';
       _html += '</div>';
       _html += '</div>';
 
@@ -3087,6 +3085,7 @@ ui.Form = {
       const $val = $this.val();
       if ($this.data('removeDelBtn') !== undefined) clearTimeout($this.data('removeDelBtn'));
       if ($this.data('removePwdBtn') !== undefined) clearTimeout($this.data('removePwdBtn'));
+      // prettier-ignore
       if (
         $this.prop('readonly') ||
         $this.prop('disabled') ||
@@ -3856,8 +3855,7 @@ ui.Form = {
         const $inlineInpClass = 'ui-datepicker-inline-inp';
         if ($isInline) {
           //인라인달력
-          if (!$($calendar).find('.' + $inlineInpClass).length && !$($calendar).closest('.calendar-swiper').length)
-            $($calendar).append('<div class="input mt10 blind"><input type="text" class="ui-datepicker-inline-inp" readonly></div>');
+          if (!$($calendar).find('.' + $inlineInpClass).length && !$($calendar).closest('.calendar-swiper').length) $($calendar).append('<div class="input mt10 blind"><input type="text" class="ui-datepicker-inline-inp" readonly></div>');
           const $getDate = $(target).datepicker('getDate');
           const $date = $.datepicker.formatDate('yy.mm.dd', $getDate);
           const $input = $($calendar).find('.ui-datepicker-inline-inp');
@@ -6251,7 +6249,6 @@ const Layer = {
     }
 
     const agreePopId = 'uiPopAgreeAll' + Layer.agreeAllIdx;
-    //prettier-ignore
     let $html = '<div id="' + agreePopId + '" class="' + Layer.popClass + ' full ' + Layer.agreePopClass + ' ' + Layer.agreePopSwiperClass + ' ' + Layer.removePopClass + '" role="dialog" aria-hidden="true">';
     $html += '<article class="' + Layer.wrapClass + '">';
     $html += '<div class="' + Layer.headClass + '">';
@@ -6293,8 +6290,7 @@ const Layer = {
       const $inpPop = $($popAry[i].pop);
       const $inpPopTit = $inpPop.find('.' + Layer.headClass + ' h1').html();
       $popupTit.append('<span>' + $inpPopTit + '</span>');
-      const $btnHtml =
-        '<div class="flex"><button type="button" class="button primary ' + Layer.agreeCheckedClassName + '" role="button" data-agree-input="' + $inp + '" data-index="' + i + '">확인</button></div>';
+      const $btnHtml = '<div class="flex"><button type="button" class="button primary ' + Layer.agreeCheckedClassName + '" role="button" data-agree-input="' + $inp + '" data-index="' + i + '">확인</button></div>';
       $popupFoot.find('>div').append($btnHtml);
       const $slideHtml = '<div class="swiper-slide"></div>';
       $popupWrapper.append($slideHtml);
@@ -6407,7 +6403,6 @@ const Layer = {
       }
       return $txt;
     };
-    //prettier-ignore
     $popHtml += '<div id="' + $popId + '" class="' + Layer.popClass + ' ' + ($isFullPop ? 'full' : 'bottom') + ($isTouch || $isTouchMove ? ' is-swipe' : '') + ($isTouchMove ? ' touch-move' : '') + ' ' + Layer.selectClass + '" role="dialog" aria-hidden="true">';
     $popHtml += '<article class="' + Layer.wrapClass + '">';
     $popHtml += '<div class="' + Layer.headClass + '">';
@@ -6895,8 +6890,7 @@ const Layer = {
     }
 
     // full 팝업일때 top버튼(btn-pop-btn) 적용
-    const $btnTopHtml =
-      '<button type="button" class="' + Layer.btnTop.button.substring(1) + '" title="' + Layer.btnTop.label + '" aria-label="' + Layer.btnTop.label + '">' + Layer.btnTop.text + '</button>';
+    const $btnTopHtml = '<button type="button" class="' + Layer.btnTop.button.substring(1) + '" title="' + Layer.btnTop.label + '" aria-label="' + Layer.btnTop.label + '">' + Layer.btnTop.text + '</button>';
     if ($popup.hasClass('full') && !$popup.find(Layer.btnTop.button).length) {
       $popWrap.append($btnTopHtml);
     }
@@ -8249,10 +8243,7 @@ $.fn.highlightTxt = function (keyword) {
 //$(element).aria('hidden',true});
 //$(element).aria({'hidden':true,'selected':true});
 $.fn.aria = function (attr, val) {
-  //prettier-ignore
-  const $ariaType = [
-    'hidden', 'label', 'live', 'expanded', 'controls', 'selected', 'checked', 'pressed', 'disabled', 'readonly', 'required', 'labelledby', 'describedby', 'invalid', 'secret', 'valuemax', 'valuemin', 'valuenow', 'level', 'multiline', 'multiselectable', 'datatype', 'autocomplete', 'owns', 'haspopup', 'relevant', 'atomic', 'busy', 'dropeffect', 'grabbed', 'activedescendant', 'colcount', 'colindex', 'colspan', 'details', 'errormessage', 'flowto', 'posinset', 'rowcount', 'rowindex', 'rowspan', 'setsize'
-  ];
+  const $ariaType = ['hidden', 'label', 'live', 'expanded', 'controls', 'selected', 'checked', 'pressed', 'disabled', 'readonly', 'required', 'labelledby', 'describedby', 'invalid', 'secret', 'valuemax', 'valuemin', 'valuenow', 'level', 'multiline', 'multiselectable', 'datatype', 'autocomplete', 'owns', 'haspopup', 'relevant', 'atomic', 'busy', 'dropeffect', 'grabbed', 'activedescendant', 'colcount', 'colindex', 'colspan', 'details', 'errormessage', 'flowto', 'posinset', 'rowcount', 'rowindex', 'rowspan', 'setsize'];
   return this.each(function () {
     const $this = $(this);
     if (typeof attr === 'string') {
