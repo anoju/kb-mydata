@@ -2808,7 +2808,7 @@
           content: '';
           position: absolute;
           bottom: -0.2rem;
-          height: 15.6rem;
+          height: calc(100% + 5rem);
           left: 0;
           right: 0;
           background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);

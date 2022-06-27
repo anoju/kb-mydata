@@ -538,3 +538,21 @@
   font-size: 1rem;
   color: var(--gray-txt-color);
 }
+.notice-txt {
+  position: relative;
+  font-size: 1.4rem;
+  color: #979797;
+  padding-left: 2.1rem;
+  &:before {
+    content: '';
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    @include bg-etc;
+    // background-image: url(../images/icon/ico-notice-16.png);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Ccircle cx='8' cy='8' r='7.5' stroke='%23B4B4B4'/%3E%3Crect x='7.11328' y='4' width='1.77344' height='1.77344' rx='0.886719' fill='%23B4B4B4'/%3E%3Cpath d='M7.15991 7.63305C7.15991 7.16908 7.53603 6.79297 7.99999 6.79297C8.46395 6.79297 8.84007 7.16908 8.84007 7.63305V11.3279C8.84007 11.7919 8.46395 12.168 7.99999 12.168C7.53603 12.168 7.15991 11.7919 7.15991 11.3279V7.63305Z' fill='%23B4B4B4'/%3E%3C/svg%3E");
+  }
+}

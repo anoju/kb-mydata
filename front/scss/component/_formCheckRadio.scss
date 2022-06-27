@@ -485,9 +485,6 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
   &.ty2 {
     > i {
       border-width: 0;
-      + .lbl {
-        padding-left: 0 !important;
-      }
     }
     > input {
       &:checked {
@@ -677,6 +674,21 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
     margin-top: 0.4rem;
     margin-bottom: 0.4rem;
   }
+  &.ty2 {
+    padding: 1.5rem 2rem;
+    margin-top: 1.6rem;
+    border-radius: 1.2rem;
+    border: 1px solid #ebebeb;
+    .radio,
+    .checkbox {
+      margin-top: 0.5rem;
+      margin-right: 2rem;
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 .btn-wrap-grid {
   display: grid;
@@ -738,12 +750,6 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
         right: 0;
       }
     }
-  }
-
-  .line-bottom {
-    margin-top: 3.1rem;
-    padding-bottom: 1.7rem;
-    border-bottom: 0.1rem solid var(--line-color);
   }
 }
 
