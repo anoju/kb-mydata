@@ -2793,6 +2793,7 @@
         animation: fadeIn 0.8s ease-in-out 0.3s forwards;
         img {
           @include img-fit;
+          pointer-events: none;
         }
       }
       .text-box {
@@ -2916,7 +2917,7 @@
           padding: 0 0.8rem;
           margin-right: 0.6rem;
           line-height: 2rem;
-          margin-top: 0.1rem;
+          margin-top: 0.2rem;
           border-radius: 0.6rem;
           color: #aa63e2;
           font-size: 1.2rem;
