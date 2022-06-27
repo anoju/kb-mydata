@@ -2354,16 +2354,15 @@
 
 .match-myscore-box {
   display: flex;
-  margin-top: 0.9rem;
+  margin-top: 0.8rem;
   border-radius: 1.2rem;
-  padding: 2rem 1.3rem;
-  justify-content: space-between;
+  padding: 2rem 0;
+  justify-content: space-evenly;
   background: #fafafa;
   p {
     display: flex;
     font-size: 1.4rem;
     align-items: center;
-    margin: 0 0.4rem;
     span {
       display: block;
       width: 4.4rem;
@@ -2792,13 +2791,16 @@
         background: no-repeat center center / cover;
         opacity: 0;
         animation: fadeIn 0.8s ease-in-out 0.3s forwards;
+        img {
+          @include img-fit;
+        }
       }
       .text-box {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
-        padding: 0 2.4rem 3rem;
+        padding-bottom: 3rem;
 
         &:before {
           content: '';
@@ -2809,75 +2811,78 @@
           right: 0;
           background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
         }
-
-        .tit {
-          position: relative;
-          font-size: 2.4rem;
-          line-height: 4rem;
+      }
+      .tit-wrap {
+        display: flex;
+        padding-left: var(--base-padding);
+        overflow: hidden;
+      }
+      .tit {
+        position: relative;
+        font-size: 2.4rem;
+        line-height: 4rem;
+        color: #fff;
+        font-weight: bold;
+        flex: 1 1 auto;
+        padding-right: 1.6rem;
+        @include ellipsis(1);
+      }
+      .result-bar {
+        display: flex;
+        flex-shrink: 0;
+        background: linear-gradient(85.89deg, rgba(73, 44, 255, 0.8) 15.17%, rgba(73, 44, 255, 0.2) 100%);
+        box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2);
+        border-radius: 2rem 0 0 2rem;
+        height: 4rem;
+        align-items: center;
+        padding: 0 var(--base-padding) 0 1.5rem;
+        animation: resultBar 0.3s ease-in-out 0.8s both;
+        strong {
+          color: #d6fe65;
+        }
+        span {
           color: #fff;
-          font-weight: bold;
-          width: calc(100% - 22rem);
-          @include ellipsis;
-        }
-
-        .hashtag {
-          position: relative;
-          display: flex;
-          flex-wrap: wrap;
-          margin-top: 0.8rem;
-          margin-left: -0.8rem;
-          font-size: 0;
-          > .tag {
-            overflow: hidden;
-            display: inline-flex;
-            height: 2.4rem;
-            padding: 0.6rem 1.2rem;
-            margin-left: 0.8rem;
-            margin-bottom: 0.4rem;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.59);
-            border-radius: 1.3rem;
-            span {
-              overflow: hidden;
-              width: 100%;
-              text-align: center;
-              color: #fff;
-              font-size: 1.2rem;
-              vertical-align: middle;
-
-              &:before {
-                content: '#';
-                display: inline-block;
-                vertical-align: middle;
-                margin-right: 0.2rem;
-                font-size: 1.2rem;
-                color: #5846ff;
-                line-height: 1;
-                margin-top: -0.5rem;
-              }
-            }
+          line-height: 1;
+          &:last-child {
+            color: rgba(255, 255, 255, 0.75);
           }
         }
-        .result-bar {
-          display: flex;
-          position: absolute;
-          top: 0rem;
-          right: 0;
-          background: linear-gradient(85.89deg, rgba(73, 44, 255, 0.8) 15.17%, rgba(73, 44, 255, 0.2) 100%);
-          box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2);
-          border-radius: 2rem 0 0 2rem;
-          height: 4rem;
+      }
+
+      .hashtag {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0.8rem;
+        padding: 0 var(--base-padding) 0 calc(var(--base-padding) - 0.8rem);
+        margin-top: 0.8rem;
+        > .tag {
+          overflow: hidden;
+          display: inline-flex;
+          height: 2.4rem;
+          padding: 0.6rem 1.2rem;
+          margin-left: 0.8rem;
+          margin-bottom: 0.4rem;
           align-items: center;
-          padding: 0 2.4rem 0 1.5rem;
-          animation: resultBar 0.3s ease-in-out 0.8s both;
-          strong {
-            color: #d6fe65;
-          }
+          background: rgba(0, 0, 0, 0.59);
+          border-radius: 1.3rem;
           span {
+            overflow: hidden;
+            width: 100%;
+            text-align: center;
             color: #fff;
-            line-height: 1;
-            &:last-child {
-              color: rgba(255, 255, 255, 0.75);
+            font-size: 1.2rem;
+            vertical-align: middle;
+
+            &:before {
+              content: '#';
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 0.2rem;
+              font-size: 1.2rem;
+              color: #5846ff;
+              line-height: 1;
+              margin-top: -0.5rem;
             }
           }
         }
@@ -2897,6 +2902,7 @@
         color: #000;
         i {
           margin-right: 0.6rem;
+          animation: rotateIn 1s ease-in-out;
         }
       }
       .introduce {
@@ -2906,8 +2912,8 @@
         font-weight: bold;
         span {
           flex: 0 0 auto;
-          width: 6rem;
           height: 2rem;
+          padding: 0 0.8rem;
           margin-right: 0.6rem;
           line-height: 2rem;
           margin-top: 0.1rem;
