@@ -1361,17 +1361,14 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     border-bottom-width: 0;
     .form-box-row {
       display: block;
-      border-top: 0;
-      // + .form-box-row {
-      //   margin-top: 1rem;
-      // }
+      border-top-width: 0;
     }
     .form-box-item {
       display: block;
-      border-top: 0.063rem solid $border-color;
-      + .form-box-item {
-        margin-top: 1rem;
-      }
+      border-top: 2px solid $border-color;
+      // + .form-box-item {
+      //   margin-top: 1rem;
+      // }
     }
     .form-box-label {
       display: block;
