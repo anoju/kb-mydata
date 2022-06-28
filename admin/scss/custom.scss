@@ -1357,6 +1357,8 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 }
 @include media($mobile-size) {
   .form-box {
+    background-color: $gray-100;
+    border-bottom-width: 0;
     .form-box-row {
       display: block;
       border-top: 0;
@@ -1376,6 +1378,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
       width: auto;
       padding: 0.75rem 1rem;
       text-align: left;
+      background-color: $gray-200;
     }
     .form-box-cont {
       padding: 1rem 0.5rem;
