@@ -41,21 +41,62 @@
             </div>
           </div>
           <hr class="hr-line mt-32" aria-hidden="true" />
+
+          <!-- 검색 후 -->
+          <div id="result" style="display: none">
+            <p class="fz-14 fc-424242 mt-24"><strong>여의도동</strong>에 대한 검색결과 <span class="fc-primary">(4)</span></p>
+            <!-- 검색결과 없음 -->
+            <div class="list-empty">
+              <i class="i-ico-warning-40" aria-hidden="true" data-animation="on"></i>
+              <p>검색 결과가 없어요</p>
+            </div>
+
+            <!-- 검색결과 있음 -->
+            <ul class="line-list-2 mt-16">
+              <li>
+                <a href="#" class="list-item-2 btn-click">
+                  <div class="item-tit fz-14 fc-424242">서울특별시 영등포구 여의도동</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="list-item-2 btn-click">
+                  <div class="item-tit fz-14 fc-424242">서울특별시 영등포구 여의도동</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="list-item-2 btn-click">
+                  <div class="item-tit fz-14 fc-424242">서울특별시 영등포구 여의도동</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="list-item-2 btn-click">
+                  <div class="item-tit fz-14 fc-424242">서울특별시 영등포구 여의도동</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="list-item-2 btn-click">
+                  <div class="item-tit fz-14 fc-424242">서울특별시 영등포구 여의도동</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- //검색 후 -->
         </div>
-        <div class="section center-contents bg-fa pd-32y">
-          <!-- 2022-04-19: 삭제 -->
-          <!-- <ul class="txt-list fc-606060">
-            <li class="dot">
-              <strong class="fw-500">지역명(읍/면/동/리)</strong>
-              <div class="mt-4">일광면, 동백리, 대치동 삼성동</div>
-            </li>
-          </ul> -->
-        </div>
+        <!-- 검색 전 -->
+        <div id="space" class="section center-contents bg-fa"></div>
+        <!-- //검색 전 -->
       </main>
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+
+    <script>
+      $('.button.search').click(function () {
+        $('#space').hide();
+        $('#result').show();
+      });
+    </script>
   </body>
 </html>
