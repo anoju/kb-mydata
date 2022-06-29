@@ -250,6 +250,7 @@
     "change": "2022-04-19"
   },
   {
+    "state": "del",
     "id": "MDB02-0402002",
     "url": "../../front/html/MDB/",
     "depth2": "통합자산조회",
