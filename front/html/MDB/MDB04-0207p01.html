@@ -135,8 +135,8 @@
                 </p>
 
                 <div class="consume-process-bar">
-                  <span style="width: 67%">
-                    <span class="tip-box">67% 달성</span>
+                  <span style="width: 50%">
+                    <span class="tip-box">50% 달성</span>
                   </span>
                 </div>
 
@@ -280,6 +280,7 @@
       const bar = target.find('>span');
       const tip = target.find('.tip-box');
 
+      tip.removeClass('left right');
       if (bar.outerWidth() < tip.outerWidth() / 2) {
         tip.addClass('left');
       }
