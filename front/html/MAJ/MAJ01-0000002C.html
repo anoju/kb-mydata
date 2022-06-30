@@ -13,7 +13,7 @@
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
     <script>
-      ui.Common.title('약관동의');
+      ui.Common.title('서비스 이용 동의');
     </script>
   </head>
   <body>
@@ -31,11 +31,10 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="section">
-          <h1 class="tit-h1">약관동의</h1>
+          <h1 class="tit-h1">서비스 이용 동의</h1>
 
-          <h2 class="tit-h3 mt-32">매치서비스 이용약관 동의 및 철회</h2>
-          <p class="mt-8 fz-16">선택 약관에 동의하지 않으시면 매치 서비스를 이용하실 수 없습니다.</p>
-          <p class="tit-h4 fw-bold mt-24">필수 동의</p>
+          <h2 class="tit-h3 mt-32">매치 서비스 이용 동의 및 철회</h2>
+          <p class="mt-8">아래 동의서에 모두 동의하지 않으시면 매치 서비스를 이용 하실 수 없습니다.</p>
           <div class="flex not-full mt-22">
             <p class="fz-16 fw-500 mr-auto">매치 서비스 이용약관</p>
             <!--
@@ -46,44 +45,41 @@
             -->
             <button type="button" class="btn-txt fc-b0b0b0" onclick="Layer.open('#popAgreeView0')"><span id="agreeTxt1">철회함</span><i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
           </div>
-
-          <div class="mt-38">
-            <p class="tit-h4 fw-bold">선택 동의</p>
-            <div class="flex not-full mt-22">
-              <p class="fz-16 fw-500 mr-auto">개인정보 수집 및 이용 동의서</p>
-              <!--
+          <hr class="hr-line ty2 inset mt-22" aria-hidden="true" />
+          <div class="flex not-full mt-22">
+            <p class="fz-16 fw-500 mr-auto">개인정보 수집 및 이용 동의서</p>
+            <!--
                 상태에 따른 클래스 변화
                 
                 동의함 : fc-primary
                 철회함 : fc-b0b0b0
               -->
-              <button type="button" class="btn-txt fc-primary" onclick="Layer.open('#popAgreeView1')">동의함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
-            </div>
+            <button type="button" class="btn-txt fc-primary" onclick="Layer.open('#popAgreeView1')">동의함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
+          </div>
 
-            <!--
+          <!--
               철회함 일경우 모든 체크박스 disabled 추가
             -->
-            <div class="checkbox mt-29">
-              <input type="checkbox" id="chk1" /><i aria-hidden="true"></i>
-              <label for="chk1" class="lbl">PUSH 알림</label>
-            </div>
-            <div class="checkbox mt-14">
-              <input type="checkbox" id="chk2" /><i aria-hidden="true"></i>
-              <label for="chk2" class="lbl">SMS</label>
-            </div>
-            <div class="checkbox mt-14">
-              <input type="checkbox" id="chk3" /><i aria-hidden="true"></i>
-              <label for="chk3" class="lbl">전화</label>
-            </div>
+          <div class="checkbox mt-29">
+            <input type="checkbox" id="chk1" /><i aria-hidden="true"></i>
+            <label for="chk1" class="lbl">PUSH 알림</label>
+          </div>
+          <div class="checkbox mt-14">
+            <input type="checkbox" id="chk2" /><i aria-hidden="true"></i>
+            <label for="chk2" class="lbl">SMS</label>
+          </div>
+          <div class="checkbox mt-14">
+            <input type="checkbox" id="chk3" /><i aria-hidden="true"></i>
+            <label for="chk3" class="lbl">전화</label>
           </div>
           <hr class="hr-line mg-32y" />
 
           <h2 class="tit-h3">앱 전체 마케팅 정보 수신 동의</h2>
-          <p class="mt-8 fz-16">선택 약관에 동의하지 않으시면 포인트로 상품 교환 서비스를 이용하실 수 없습니다.</p>
+          <p class="mt-8">선택 동의서에 동의하지 않으시면 포인트로 상품을 교환하실수 없습니다.</p>
           <div class="mt-38">
             <p class="tit-h4 fw-bold">선택 동의</p>
             <div class="flex not-full mt-22">
-              <p class="fz-16 fw-500 mr-auto">개인정보 수집 및 이용 동의서</p>
+              <p class="fz-16 fw-500 mr-auto">마케팅 알림동의</p>
               <!--
                 상태에 따른 클래스 변화
                 
