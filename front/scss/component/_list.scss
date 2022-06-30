@@ -105,11 +105,6 @@
     }
   }
 }
-.line-list-3 {
-  > li {
-    border-bottom: 0.1rem solid #f2f4f6;
-  }
-}
 [class*='list-item-'] {
   position: relative;
   display: flex;
@@ -178,8 +173,6 @@
   }
 
   &.ty2 {
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
     .item-tit {
       line-height: inherit;
       color: var(--strong-txt-color2);
@@ -202,6 +195,16 @@
     .txt-compare-box {
       margin-top: 1.6rem;
       margin-bottom: 0.8rem;
+    }
+  }
+  &.ty3 {
+    .item-tit {
+      line-height: 2.3rem;
+    }
+    .item-sub {
+      margin-top: 0.2rem;
+      font-size: 1.2rem;
+      line-height: 1.7rem;
     }
   }
 }
