@@ -7096,6 +7096,13 @@ const Layer = {
       $focusEvt();
     }, 100);
 
+    //ui-scroll-btn
+    const $scrollBtn = $popup.find('.ui-scroll-btn');
+    let $scrollBtnHide = false;
+    if ($scrollBtn.length && !$scrollBtn.is(':visible')) {
+      $scrollBtnHide = true;
+    }
+
     //닫기
     $popup.removeClass(Layer.showClass + '-end');
     if ($popup.find('.next-foot-fixed').length) {
@@ -7135,6 +7142,9 @@ const Layer = {
         }
         $popup.remove();
       }
+
+      //ui-scroll-btn
+      if ($scrollBtnHide) $scrollBtn.removeAttr('style').next().hide();
 
       // 약관
       if ($popup.hasClass(Layer.agreePopClass)) {
@@ -7392,7 +7402,6 @@ const Layer = {
       }, 500);
 
       // btn-pop-top show
-
       if ($btnTop.length) {
         if ($wrapSclTop > Layer.btnTop.min) {
           btnTopOn();
