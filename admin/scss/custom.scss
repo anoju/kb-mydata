@@ -1463,6 +1463,9 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 }
 
 //table
+.bootstrap-table .fixed-table-container .table thead th {
+  vertical-align: middle;
+}
 .kb-table {
   width: 100%;
   max-width: 100%;
