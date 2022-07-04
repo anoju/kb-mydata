@@ -1139,11 +1139,12 @@ $bdTypes: (solid, dashed, dotted);
   height: 0;
   border: 0 none;
   background: #f2f4f6;
-  border-top: 0.8rem solid #f2f4f6;
+  height: 0.8rem;
+  // border-top: 0.8rem solid #f2f4f6;
   &.ty2 {
     height: 0.1rem;
     background: #ebebeb;
-    border-top-width: 0;
+    // border-top-width: 0;
     &.dashed {
       border-style: dashed;
     }
