@@ -7718,6 +7718,7 @@ const Layer = {
       e.preventDefault();
       //console.log('aaa');
       const $url = $(this).data('agree-pdf');
+      if (!$url) return;
       let $title = '약관상세';
       const $pdfTit = $(this).data('agree-pdf-title');
       if ($pdfTit) $title = $pdfTit;
