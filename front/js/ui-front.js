@@ -7718,7 +7718,7 @@ const Layer = {
       e.preventDefault();
       let $url = $(this).data('agree-pdf');
       if (!$url) return;
-      if ($url.indexOf('.pdf') < 0) $url = $url + '.pdf';
+      if ($url.indexOf('.pdf') !== $url.length - 4) $url = $url + '.pdf';
       let $title = '약관상세';
       const $pdfTit = $(this).data('agree-pdf-title');
       if ($pdfTit) $title = $pdfTit;
