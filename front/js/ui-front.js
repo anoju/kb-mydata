@@ -7716,9 +7716,9 @@ const Layer = {
     //pdf
     $(document).on('click', '[data-agree-pdf]', function (e) {
       e.preventDefault();
-      //console.log('aaa');
-      const $url = $(this).data('agree-pdf');
+      let $url = $(this).data('agree-pdf');
       if (!$url) return;
+      if ($url.indexOf('.pdf') < 0) $url = $url + '.pdf';
       let $title = '약관상세';
       const $pdfTit = $(this).data('agree-pdf-title');
       if ($pdfTit) $title = $pdfTit;
