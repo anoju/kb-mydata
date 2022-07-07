@@ -2813,6 +2813,14 @@ ui.Form = {
       const $this = $(tar);
       if (!ui.Device.app() || !ui.Mobile.Android()) return;
       if ($this.is('a') || $this.prop('readonly') || $this.prop('disabled')) return;
+      let $isFixedParent = false;
+      const $parents = $this.parents();
+      $parents.each(function () {
+        if ($(this).css('position') === 'fixed' || $(this).css('position') === 'sticky') {
+          $isFixedParent = true;
+        }
+      });
+      if ($isFixedParent) return;
       setTimeout(function () {
         const $el = $this.offsetParent();
         let $elTop = $el.offset().top;
