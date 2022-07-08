@@ -1145,13 +1145,10 @@ $bdTypes: (solid, dashed, dotted);
     height: 0.1rem;
     background: #ebebeb;
     // border-top-width: 0;
-    &.dashed {
-      border-style: dashed;
-    }
   }
-}
-.section .hr-line:not(.inset) {
-  @include outer;
+  .section &:not(.inset) {
+    @include outer;
+  }
 }
 
 // html.ios{
