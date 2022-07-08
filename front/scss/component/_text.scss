@@ -11,12 +11,14 @@
     margin: 0;
   }
 
-  > div:not(.right),
+  > div:not(.right):first-child,
   > .left,
   > [class*='tit-h'] {
     width: 100%;
     flex: 1 1 auto;
   }
+  > [class*='tit-h'] + div,
+  > div:first-child + div,
   > .right {
     margin-left: 2rem;
     white-space: nowrap;
