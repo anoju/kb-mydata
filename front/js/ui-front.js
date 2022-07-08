@@ -714,6 +714,7 @@ ui.Common = {
       }
 
       if ($SclTop > btnTop.min && $lastSclTop !== $SclTop) {
+        if ($('html').hasClass('input-focus') && ui.Mobile.any()) return;
         btnTopOn();
       } else {
         btnTopOff();
@@ -7412,6 +7413,7 @@ const Layer = {
       // btn-pop-top show
       if ($btnTop.length) {
         if ($wrapSclTop > Layer.btnTop.min) {
+          if ($('html').hasClass('input-focus') && ui.Mobile.any()) return;
           btnTopOn();
         } else {
           btnTopOff();
