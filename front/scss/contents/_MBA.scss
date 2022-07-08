@@ -3288,14 +3288,18 @@
 
   .point {
     left: -1.7rem;
-    background: url('../images/match/bg-main-label1.png') no-repeat center center / 100%;
-    width: 17.4rem;
+    background: url('../images/match/bg-main-label1.png') no-repeat left center / auto 100%;
+    // width: 17.4rem;
+    width: 18.5rem;
+    clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
   }
   .score {
     text-align: right;
     right: -1.7rem;
-    background: url('../images/match/bg-main-label2.png') no-repeat center center / 100%;
-    width: 19.4rem;
+    background: url('../images/match/bg-main-label2.png') no-repeat right center / auto 100%;
+    // width: 19.4rem;
+    width: 19.8rem;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 19% 100%);
     .text {
       justify-content: flex-end;
       strong {
