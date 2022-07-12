@@ -449,17 +449,16 @@
     }
     .right {
       margin-left: auto;
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 0.4rem;
+      align-items: center;
       font-size: 1.6rem;
       flex-shrink: 0;
       font-weight: normal;
       strong {
         font-size: 1.8rem;
-        margin-right: 0.4rem;
         font-weight: 500;
-        &:last-child {
-          margin-left: 0.4rem;
-          margin-right: 0;
-        }
       }
     }
   }
