@@ -1491,41 +1491,40 @@ ui.Button = {
       let $btnEl = $this;
       if ($btnEl.is('input')) $btnEl = $btnEl.siblings('.lbl');
       const $delay = 650;
-      if (!$btnEl.is('.disabled')) {
-        let $bgColor = $btnEl.css('background-color') ? rgba2hex($btnEl.css('background-color')) : '#ffffff';
-        let $bgAlpha = 0;
-        if ($bgColor.length > 7) {
-          const $tempColor = $bgColor;
-          $bgColor = $tempColor.substr(0, 7);
-          $bgAlpha = 255 - parseInt($tempColor.substr(7, 2), 16);
-        }
-        const $bgColorVal = Math.max($bgAlpha, Math.round(getBgBrightValue($bgColor)));
-        const isBalck = $bgColorVal < 50 ? true : false;
-        if (!$btnEl.find('.btn-click-in').length) $btnEl.addClass('btn-clicking-active').append('<i class="btn-click-in"></i>');
-        // $btnEl.append('<i class="btn-click-in"></i>');
-        const $btnIn = $btnEl.find('.btn-click-in').last();
-        if (isBalck) $btnIn.addClass('white');
-        const $btnMax = Math.max($btnEl.outerWidth(), $btnEl.outerHeight());
-
-        const $btnX = e.pageX - $btnEl.offset().left - $btnMax / 2;
-        const $btnY = e.pageY - $btnEl.offset().top - $btnMax / 2;
-        // const $btnX = e.offsetX - $btnMax / 2;
-        // const $btnY = e.offsetY - $btnMax / 2;
-        $btnIn
-          .css({
-            left: $btnX,
-            top: $btnY,
-            width: $btnMax,
-            height: $btnMax
-          })
-          .addClass('animate')
-          .delay($delay)
-          .queue(function (next) {
-            $btnIn.remove();
-            $btnEl.removeClass('btn-clicking-active');
-            next();
-          });
+      if ($btnEl.is('.disabled') || $btnEl.is('.btn-heart')) return;
+      let $bgColor = $btnEl.css('background-color') ? rgba2hex($btnEl.css('background-color')) : '#ffffff';
+      let $bgAlpha = 0;
+      if ($bgColor.length > 7) {
+        const $tempColor = $bgColor;
+        $bgColor = $tempColor.substr(0, 7);
+        $bgAlpha = 255 - parseInt($tempColor.substr(7, 2), 16);
       }
+      const $bgColorVal = Math.max($bgAlpha, Math.round(getBgBrightValue($bgColor)));
+      const isBalck = $bgColorVal < 50 ? true : false;
+      if (!$btnEl.find('.btn-click-in').length) $btnEl.addClass('btn-clicking-active').append('<i class="btn-click-in"></i>');
+      // $btnEl.append('<i class="btn-click-in"></i>');
+      const $btnIn = $btnEl.find('.btn-click-in').last();
+      if (isBalck) $btnIn.addClass('white');
+      const $btnMax = Math.max($btnEl.outerWidth(), $btnEl.outerHeight());
+
+      const $btnX = e.pageX - $btnEl.offset().left - $btnMax / 2;
+      const $btnY = e.pageY - $btnEl.offset().top - $btnMax / 2;
+      // const $btnX = e.offsetX - $btnMax / 2;
+      // const $btnY = e.offsetY - $btnMax / 2;
+      $btnIn
+        .css({
+          left: $btnX,
+          top: $btnY,
+          width: $btnMax,
+          height: $btnMax
+        })
+        .addClass('animate')
+        .delay($delay)
+        .queue(function (next) {
+          $btnIn.remove();
+          $btnEl.removeClass('btn-clicking-active');
+          next();
+        });
     });
   },
   star: function () {
