@@ -556,6 +556,17 @@ ui.Common = {
     $space.css('height', $maxHeight);
     if ($('.floating-btn').length) $('.floating-btn').css('bottom', $maxHeight === 0 ? 24 : $maxHeight + 10);
   },
+  spaceInit: function () {
+    let i = 0;
+    const repeatEvt = function () {
+      if (i < 10) {
+        ui.Common.space();
+        setTimeout(repeatEvt, 100);
+      }
+      i += 1;
+    };
+    repeatEvt();
+  },
   step: function () {
     //<ol class="step_state" role="img" aria-label="총 4단계 중 현재단계 2단계">
     if ($('.ico-step').length) {
@@ -965,7 +976,8 @@ ui.Common = {
     ui.Common.headerUI();
     // ui.Gnb.init();
     ui.Common.spaceAppend();
-    ui.Common.space();
+    // ui.Common.space();
+    ui.Common.spaceInit();
     ui.Common.step();
     ui.Common.scroll();
     // ui.Common.landscape();
