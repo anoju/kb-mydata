@@ -449,10 +449,6 @@
     }
     .right {
       margin-left: auto;
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 0.4rem;
-      align-items: center;
       font-size: 1.6rem;
       flex-shrink: 0;
       font-weight: normal;
