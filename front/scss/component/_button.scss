@@ -200,6 +200,7 @@
 }
 .btn-heart {
   .i-ico-heart {
+    background-size: 100% 100%;
     &:before,
     &:after {
       position: absolute;
@@ -241,8 +242,7 @@
   }
   &.on {
     .i-ico-heart {
-      will-change: font-size;
-      animation: heart-fz 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+      animation: heart-pop 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
       &:before,
       &:after {
         animation: inherit;
@@ -259,10 +259,10 @@
     }
   }
 }
-@keyframes heart-fz {
+@keyframes heart-pop {
   0%,
   17.5% {
-    font-size: 0;
+    background-size: 0 0;
   }
 }
 @keyframes heart-bubble {
