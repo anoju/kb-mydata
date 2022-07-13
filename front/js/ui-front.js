@@ -1483,6 +1483,9 @@ ui.Button = {
       checking();
     });
   },
+  reset: function () {
+    if ($('.btn-click-in').length) $('.btn-click-in').remove();
+  },
   effect: function () {
     //버튼 클릭 효과
     const btnInEfList = 'a.button, button.button, a.btn-click, button.btn-click, .radio.btn input, .checkbox.btn input, .ui-folding-btn, .ui-folding .folding-head .folding-btn';
@@ -1696,6 +1699,7 @@ ui.Button = {
   init: function () {
     ui.Button.default();
     ui.Button.disabledChk();
+    ui.Button.reset();
     ui.Button.effect();
     ui.Button.star();
     ui.Button.imgBox();
