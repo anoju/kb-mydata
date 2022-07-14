@@ -368,6 +368,10 @@ ui.Common = {
     return $path;
   },
   winLoad: function () {
+    ui.Common.hr();
+    ui.Common.space();
+  },
+  hr: function () {
     //hr태그 토크백 제외
     $('hr').each(function () {
       $(this).attr('aria-hidden', true);
