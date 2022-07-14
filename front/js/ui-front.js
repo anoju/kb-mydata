@@ -374,7 +374,8 @@ ui.Common = {
   hr: function () {
     //hr태그 토크백 제외
     $('hr').each(function () {
-      $(this).attr('aria-hidden', true);
+      const $this = $(this);
+      if (!$this.attr('aria-hidden') !== 'true') $this.attr('aria-hidden', true);
     });
   },
   dark: function () {
