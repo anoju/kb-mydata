@@ -5378,6 +5378,7 @@ ui.Animation = {
     const $width = $el.outerWidth();
     $el
       .css({
+        overflow: 'hidden',
         'text-align': 'right',
         'min-width': $width,
         'min-inline-size': $width
@@ -5397,7 +5398,7 @@ ui.Animation = {
           //   $el.text(Math.floor(now));
           // }
           if (now === parseInt($number)) {
-            $el.removeCss(['text-align', 'min-width', 'min-inline-size']);
+            $el.removeCss(['overflow', 'text-align', 'min-width', 'min-inline-size']);
           }
         }
       }
