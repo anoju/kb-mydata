@@ -1956,7 +1956,9 @@ ui.Tab = {
   },
   active: function (target) {
     ui.Tab.tabActive(target);
-    const $href = $(target).attr('href');
+    const $target = $(target);
+    const $btn = $target.is('a') ? $target : $target.find('a');
+    const $href = $btn.attr('href');
     ui.Tab.panelActive($href);
   },
   tabActive: function (target) {
