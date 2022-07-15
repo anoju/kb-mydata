@@ -5376,11 +5376,13 @@ ui.Animation = {
     const $number = onlyNumber($title);
     $el.text(addComma($number));
     const $width = $el.outerWidth();
+    const $height = $el.outerHeight();
     $el
       .css({
         overflow: 'hidden',
         'text-align': 'right',
         'min-width': $width,
+        height: $height,
         'min-inline-size': $width
       })
       .text(0);
@@ -5398,7 +5400,7 @@ ui.Animation = {
           //   $el.text(Math.floor(now));
           // }
           if (now === parseInt($number)) {
-            $el.removeCss(['overflow', 'text-align', 'min-width', 'min-inline-size']);
+            $el.removeCss(['overflow', 'text-align', 'min-width', 'height', 'min-inline-size']);
           }
         }
       }
