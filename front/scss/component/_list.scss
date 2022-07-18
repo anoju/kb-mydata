@@ -507,6 +507,7 @@
 
   &.checkbox {
     padding-left: calc(3.2rem + var(--base-padding));
+    input,
     i {
       left: var(--base-padding);
       top: 1.7rem;

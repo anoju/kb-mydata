@@ -3,6 +3,7 @@ $primary-color: #00caca;
 :root {
   --vh: 1vh;
   --primary-color: #00caca;
+  accent-color: var(--primary-color);
   --spl-highlight-color: var(--primary-color);
   --primary-color-rgb: 0, 202, 202;
 
