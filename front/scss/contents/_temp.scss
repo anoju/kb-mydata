@@ -3,8 +3,10 @@
   i {
     position: relative;
     display: block;
-    padding-top: #{(150 / 118) * 100}+ '%';
-    animation: logo-ani3 10s infinite forwards;
+    // padding-top: #{(150 / 118) * 100}+ '%';
+    padding-top: 100%;
+    margin: 0 10.67%;
+    animation: logo-ani3 10s infinite;
     &:before,
     &:after {
       content: '';
