@@ -31,15 +31,7 @@
   }
 }
 @keyframes logo-ani1 {
-  0% {
-    left: -50%;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
+  0%,
   15% {
     left: -50%;
     top: 50%;
@@ -55,17 +47,7 @@
   }
 }
 @keyframes logo-ani2 {
-  0% {
-    left: 50%;
-    bottom: 50%;
-    transform: translateY(50%);
-    width: 114%;
-    height: #{(80 / 150) * 100}+ '%';
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
+  0%,
   15% {
     left: 50%;
     bottom: 50%;
@@ -86,7 +68,13 @@
 }
 
 @keyframes logo-ani3 {
-  0%,
+  0% {
+    transform: rotate(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
   75% {
     transform: rotate(0);
   }
