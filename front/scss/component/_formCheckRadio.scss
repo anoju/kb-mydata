@@ -193,7 +193,6 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
       > input {
         &:checked:not(:disabled) ~ .lbl {
           color: var(--primary-color);
-          background-color: #fff2f0;
           background-color: rgba(var(--primary-color-rgb), 0.1);
         }
       }

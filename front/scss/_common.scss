@@ -1,5 +1,3 @@
-$primary-color: #00caca;
-
 :root {
   --vh: 1vh;
   --primary-color: #00caca;
@@ -27,9 +25,6 @@ $primary-color: #00caca;
 
   --loading-svg-offset: 187;
   --loading-svg-duration: 1.4s;
-}
-h1 {
-  color: $primary-color;
 }
 html {
   height: 100%;
@@ -132,6 +127,13 @@ video {
   border: 0;
   box-sizing: border-box;
 }
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  box-sizing: border-box;
+}
 h1,
 h2,
 h3,
@@ -139,11 +141,6 @@ h4,
 h5,
 h6 {
   color: var(--strong-txt-color);
-}
-input,
-select,
-textarea {
-  box-sizing: border-box;
 }
 article,
 aside,
@@ -217,13 +214,10 @@ iframe,
 textarea {
   width: 100%;
 }
+
 select,
 input,
-button {
-  margin: 0;
-}
-select,
-input,
+textarea,
 button,
 img,
 iframe {
