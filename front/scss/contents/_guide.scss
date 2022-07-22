@@ -221,6 +221,10 @@
   width: 20rem;
   height: 20rem;
   margin: 0 auto;
+  &.small {
+    width: 10rem;
+    height: 10rem;
+  }
 }
 .gd__lottie-confetti,
 .gd__lottie-complete {

@@ -13,6 +13,11 @@
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
     <!-- <script type="text/javascript" src="../../js/lib/lottie.5.7.13.min.js"></script> -->
+    <style>
+      .floating-menu-bar {
+        position: relative;
+      }
+    </style>
     <script>
       ui.Common.title('가이드');
     </script>
@@ -91,29 +96,64 @@
             <i class="i-ani-warning" data-animation="on" aria-hidden="true"><i></i></i>
           </div>
           <h1 class="gd__h1">lottie(after effect)</h1>
-          <h2 class="gd__h2">loading-bar</h2>
-          <div class="t-center">
-            <div class="gd__lottie-box _loop" data-lottie="../../lottie/loading-bar.json"></div>
-          </div>
-          <h2 class="gd__h2">무료 라이센스</h2>
-          <h3 class="gd__h3">사용</h3>
-          <div class="t-center">
-            <div class="gd__lottie-box" data-lottie="../../lottie/fireworks.json"></div>
-            <div>
-              <button class="button line h32 gd-confetti-btn">다시</button>
+          <div>
+            <h2 class="gd__h2">loading</h2>
+            <div class="flex t-center">
+              <div>
+                <div class="gd__lottie-box small _loop" data-lottie="../../lottie/loading.json"></div>
+              </div>
+              <div>
+                <div class="gd__lottie-box small _loop" data-lottie="../../lottie/loading-bar.json"></div>
+              </div>
             </div>
-          </div>
-          <h3 class="gd__h3">미사용</h3>
-          <div class="t-center">
-            <div class="gd__lottie-box _loop" data-lottie="../../temp/love.json"></div>
-            <!-- <div class="gd__lottie-box" data-lottie="../../temp/success.json" data-animation="on"></div>
-            <div>
-              <button class="button line h32 gd-confetti-btn">다시</button>
+            <h2 class="gd__h2">digital-motion</h2>
+            <div class="t-center">
+              <div class="gd__lottie-box" data-lottie="../../lottie/digital-motion.json"></div>
+              <div>
+                <button class="button line h32 gd-lottie-btn">다시</button>
+              </div>
             </div>
-            <div class="gd__lottie-box" data-lottie="../../temp/warning.json" data-animation="on"></div>
+            <h2 class="gd__h2">floating-menu-bar(안씀: 클릭해서 확인 가능)</h2>
             <div>
-              <button class="button line h32 gd-confetti-btn">다시</button>
-            </div> -->
+              <div class="floating-menu-bar">
+                <a href="#"><i class="lottie _stop" data-lottie="../../lottie/floating-home.json" aria-hidden="true"></i><i class="i-ico-floating-home"></i>홈</a>
+                <a href="#"><i class="lottie _stop" data-lottie="../../lottie/floating-match.json" aria-hidden="true"></i><i class="i-ico-floating-match"></i>매치</a>
+                <a href="#"><i class="lottie _stop" data-lottie="../../lottie/floating-invest.json" aria-hidden="true"></i><i class="i-ico-floating-invest"></i>투자</a>
+                <a href="#"><i class="lottie _stop" data-lottie="../../lottie/floating-my.json" aria-hidden="true"></i><i class="i-ico-floating-my"></i>마이</a>
+                <a href="#"><i class="lottie _stop" data-lottie="../../lottie/floating-more.json" aria-hidden="true"></i><i class="i-ico-floating-more"></i>더보기</a>
+              </div>
+            </div>
+            <h2 class="gd__h2">무료 라이센스</h2>
+            <h3 class="gd__h3">사용</h3>
+            <div class="flex t-center">
+              <div>
+                <div class="gd__lottie-box small" data-lottie="../../lottie/fireworks.json" data-animation="on"></div>
+                <div>
+                  <button class="button line h32 gd-lottie-btn">다시</button>
+                </div>
+              </div>
+            </div>
+            <h3 class="gd__h3">미사용</h3>
+            <div class="flex t-center">
+              <div>
+                <div class="gd__lottie-box small" data-lottie="../../temp/love.json" data-animation="on"></div>
+                <div>
+                  <button class="button line h32 gd-lottie-btn">다시</button>
+                </div>
+              </div>
+              <div>
+                <div class="gd__lottie-box small" data-lottie="../../temp/success.json" data-animation="on"></div>
+                <div>
+                  <button class="button line h32 gd-lottie-btn">다시</button>
+                </div>
+              </div>
+              <div>
+                <div class="gd__lottie-box small" data-lottie="../../temp/warning.json" data-animation="on"></div>
+                <div>
+                  <button class="button line h32 gd-lottie-btn">다시</button>
+                </div>
+              </div>
+            </div>
           </div>
           <h1 class="gd__h1">scroll event</h1>
           <div>
@@ -317,9 +357,28 @@
       <!-- //팝업 -->
     </article>
     <script>
-      $('.gd-confetti-btn').click(function () {
+      $('.gd-lottie-btn').click(function () {
         const anim = $(this).parent().prev().data('lottie-opt');
         if (anim) anim.goToAndPlay(0, true);
+      });
+
+      $('.floating-menu-bar a').click(function () {
+        const $oldOn = $('.floating-menu-bar .on');
+        const $oldLottieEl = $oldOn.find('.lottie');
+        if ($oldLottieEl.length) {
+          const $oldLottie = $oldLottieEl.data('lottie-opt');
+          // $oldLottie.goToAndPlay(35, true);
+          // $oldLottie.goToAndStop(0, true);
+          $oldLottie.playSegments([35, 70], true);
+        }
+
+        $(this).addClass('on').siblings().removeClass('on');
+        const $newOn = $(this);
+        const $newLottieEl = $newOn.find('.lottie');
+        if ($newLottieEl.length) {
+          const $newLottie = $newLottieEl.data('lottie-opt');
+          $newLottie.playSegments([0, 35], true);
+        }
       });
     </script>
   </body>

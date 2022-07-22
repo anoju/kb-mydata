@@ -28,6 +28,9 @@ $primary-color: #00caca;
   --loading-svg-offset: 187;
   --loading-svg-duration: 1.4s;
 }
+h1 {
+  color: $primary-color;
+}
 html {
   height: 100%;
   font-size: 62.5%;
