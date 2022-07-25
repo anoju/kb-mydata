@@ -653,6 +653,12 @@ html.pc {
     + .select {
       margin-top: 0;
     }
+    &:not(.form-box) {
+      + .input,
+      + .select {
+        margin-top: 0;
+      }
+    }
   }
   > * + * {
     margin-left: 0.8rem;
