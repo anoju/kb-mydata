@@ -2178,7 +2178,14 @@ ui.Tab = {
     ui.Tab.radio();
     ui.Tab.checkbox();
   },
+  resizeInit: false,
   resize: function () {
+    if (!ui.Tab.resizeInit) {
+      setTimeout(function () {
+        ui.Tab.resizeInit = true;
+      }, 500);
+      return;
+    }
     if ($('.tab-navi-menu').length) ui.Tab.scrolledCheck('.tab-navi-menu');
     if ($('.tab-line').length && ui.Tab.isTabInit) {
       $('.tab-line').each(function () {
