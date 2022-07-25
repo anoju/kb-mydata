@@ -1888,21 +1888,23 @@
         font-size: 1.4rem;
         color: var(--gray-txt-color);
         > span,
-        > .button {
-          margin-right: 1.6rem;
-          i {
-            margin-right: 0.3rem;
-          }
-          &:last-child {
-            margin-right: 0;
-          }
-        }
-        > span {
+        > a:not(.button) {
           display: inline-flex;
           align-items: center;
         }
         > .button {
           border-radius: 0;
+        }
+        > span,
+        > a:not(.button),
+        > .button {
+          padding-right: 1.6rem;
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+        [class*='i-ico-'] {
+          margin-right: 0.3rem;
         }
       }
 
