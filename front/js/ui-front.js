@@ -7066,12 +7066,13 @@ const Layer = {
       let fixedChkIdx = 0;
       const fixedChk = function () {
         if (fixedChkIdx > 5) return;
-        Layer.fixed(tar);
+        Layer.fixed($popWrap);
         fixedChkIdx += 1;
         setTimeout(function () {
           fixedChk();
         }, 100);
       };
+      fixedChk();
 
       //resize
       setTimeout(function () {
@@ -7290,6 +7291,7 @@ const Layer = {
   fixed: function (el) {
     //  pop fixed
     let $wrap = $(el);
+    if ($wrap.find('.' + Layer.wrapClass).length) $wrap = $wrap.find('.' + Layer.wrapClass);
     if ($wrap.closest('.' + Layer.wrapClass).length) $wrap = $wrap.closest('.' + Layer.wrapClass);
     // if ($wrap.closest('.' + Layer.sclWrapClass).length) $wrap = $wrap.closest('.' + Layer.sclWrapClass);
     const $head = $wrap.find('.' + Layer.headClass);
