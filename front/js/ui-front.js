@@ -1505,13 +1505,15 @@ ui.Button = {
   },
   effect: function () {
     //버튼 클릭 효과
-    const btnInEfList = 'a.button, button.button, a.btn-click, button.btn-click, .radio.btn input, .checkbox.btn input, .ui-folding-btn, .ui-folding .folding-head .folding-btn';
+    const btnInEfList = '.button, .btn-click, .btn-click-outer, .radio.btn input, .checkbox.btn input, .ui-folding-btn, .ui-folding .folding-head .folding-btn';
     $(document).on('click', btnInEfList, function (e) {
       const $this = $(this);
       let $btnEl = $this;
+      if (!$btnEl.is('a') && !$btnEl.is('button') && !$btnEl.is('input')) return;
       if ($btnEl.is('input')) $btnEl = $btnEl.siblings('.lbl');
+      if ($btnEl.hasClass('btn-click-outer')) $btnEl = $btnEl.offsetParent();
       const $delay = 650;
-      if ($btnEl.is('.disabled') || $btnEl.is('.btn-heart')) return;
+      if ($btnEl.is('.disabled') || $btnEl.is('.btn-heart') || $btnEl.is('.btn-click-not')) return;
       let $bgColor = $btnEl.css('background-color') ? rgba2hex($btnEl.css('background-color')) : '#ffffff';
       let $bgAlpha = 0;
       if ($bgColor.length > 7) {
@@ -7061,6 +7063,15 @@ const Layer = {
 
       //position
       Layer.position(tar);
+      let fixedChkIdx = 0;
+      const fixedChk = function () {
+        if (fixedChkIdx > 5) return;
+        Layer.fixed(tar);
+        fixedChkIdx += 1;
+        setTimeout(function () {
+          fixedChk();
+        }, 100);
+      };
 
       //resize
       setTimeout(function () {

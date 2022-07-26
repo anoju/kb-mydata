@@ -87,6 +87,7 @@
 
     img {
       height: 100%;
+      display: block;
     }
   }
 
@@ -1894,6 +1895,12 @@
         }
         > .button {
           border-radius: 0;
+          padding: 0;
+          height: auto;
+          font-size: inherit;
+          font-weight: inherit;
+          color: inherit;
+          overflow: visible;
         }
         > span,
         > a:not(.button),

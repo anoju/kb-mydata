@@ -316,7 +316,9 @@
 .ui-folding-btn,
 .ui-folding .folding-head .folding-btn,
 a.btn-click,
-button.btn-click {
+button.btn-click,
+a.btn-click-outer,
+button.btn-click-outer {
   -webkit-tap-highlight-color: transparent;
 }
 .btn-click,
