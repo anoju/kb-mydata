@@ -1985,6 +1985,48 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     }
   }
 }
+.nav-tabs.main-tab {
+  position: sticky;
+  top: 90px;
+  background: $gray-100;
+  z-index: 10;
+  flex-wrap: nowrap;
+  border-bottom-width: 2px;
+  margin: -2rem 0 3rem;
+  .nav-item {
+    width: 100%;
+  }
+  .nav-link {
+    position: relative;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 0;
+    text-align: center;
+    overflow: hidden;
+    padding: 0.75rem 1rem;
+    margin: 0 0 -2px 0;
+    border: 0 none;
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      position: absolute;
+      left: 80%;
+      bottom: 0;
+      background: $gray-900;
+      transition: left 0.3s ease, width 0.3s ease;
+    }
+    &.active {
+      font-weight: bold;
+      background: transparent;
+      &:after {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
 
 /** BSW 작업 **/
 //그룹 권한 설정 팝업
