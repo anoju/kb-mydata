@@ -1998,13 +1998,18 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   }
   .nav-link {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     font-size: 1rem;
     border-radius: 0;
     text-align: center;
     overflow: hidden;
-    padding: 0.75rem 1rem;
+    padding: 0 0.5rem;
+    height: 3rem;
     margin: 0 0 -2px 0;
+    line-height: 1.2;
     border: 0 none;
     &:after {
       content: '';
@@ -2024,6 +2029,15 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
         left: 0;
         width: 100%;
       }
+    }
+  }
+}
+@include media($mobile-size) {
+  .nav-tabs.main-tab {
+    top: 98px;
+    .nav-link {
+      height: 40px;
+      font-size: 12px;
     }
   }
 }
