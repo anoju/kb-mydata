@@ -1962,16 +1962,26 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
   .tit {
     display: flex;
     flex-wrap: wrap;
-    white-space: nowrap;
+    line-height: 1.2;
+    align-items: flex-end;
+    > strong {
+      word-break: keep-all;
+    }
     > span {
       margin-left: auto;
       text-align: right;
+      white-space: nowrap;
     }
   }
   .sub {
     text-align: right;
     margin-top: 0.3rem;
     color: $gray-600;
+    font-size: $font-size-sm;
+    word-break: keep-all;
+    + .sub {
+      margin-top: 0;
+    }
   }
 }
 
