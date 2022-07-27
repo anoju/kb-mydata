@@ -1966,6 +1966,7 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     align-items: flex-end;
     > strong {
       word-break: keep-all;
+      text-align: center;
     }
     > span {
       margin-left: auto;
