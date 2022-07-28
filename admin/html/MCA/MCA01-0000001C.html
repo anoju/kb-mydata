@@ -51,7 +51,7 @@
               <button class="nav-link" id="main-tab3" data-toggle="tab" data-target="#main-panel3" type="button" role="tab" aria-controls="main-panel3" aria-selected="false">매치/그라운드 현황</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="main-tab4" data-toggle="tab" data-target="#main-panel4" type="button" role="tab" aria-controls="main-panel4" aria-selected="false">이벤트/배너/공지사항</button>
+              <button class="nav-link" id="main-tab4" data-toggle="tab" data-target="#main-panel4" type="button" role="tab" aria-controls="main-panel4" aria-selected="false">이벤트/공지사항/배너</button>
             </li>
           </ul>
           <!-- //탭 추가-->
@@ -525,136 +525,166 @@
             </div>
             <!-- // 매치/그라운드 현황 -->
 
-            <!-- 이벤트, 배너, 수신동의 -->
+            <!-- 이벤트, 공지사항, 배너 -->
             <!-- 2022-07-27 클래스 및 속성 추가  -->
             <div class="tab-pane fade" id="main-panel4" role="tabpanel" aria-labelledby="main-tab4">
-              <div class="row">
-                <div class="col-md-9">
-                  <div class="text-line-box">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="title-wrap">
-                          <div class="left">
-                            <h2 class="h3">진행 중 이벤트</h2>
-                          </div>
-                          <div class="right">
-                            <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
-                          </div>
-                        </div>
-
-                        <table id="table1" class="table table-hover mt-1">
-                          <thead>
-                            <tr>
-                              <th scope="col">제목</th>
-                              <th scope="col">기간</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td class="text-left">
-                                <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
-                              </td>
-                              <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
-                            </tr>
-                            <tr>
-                              <td class="text-left">
-                                <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
-                              </td>
-                              <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
-                            </tr>
-                            <tr>
-                              <td class="text-left">
-                                <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
-                              </td>
-                              <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
-                            </tr>
-                            <tr>
-                              <td class="text-left">
-                                <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
-                              </td>
-                              <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
-                            </tr>
-                            <tr>
-                              <td class="text-left">
-                                <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
-                              </td>
-                              <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
-                            </tr>
-                          </tbody>
-                        </table>
+              <!-- 2022-07-27 감싸는 태그 2개 삭제  -->
+              <div class="text-line-box">
+                <div class="row">
+                  <!-- 2022-07-27: 클래스 수정 -->
+                  <div class="col-md-4">
+                    <div class="title-wrap">
+                      <div class="left">
+                        <h2 class="h3">진행 중 이벤트</h2>
                       </div>
-                      <div class="col-md-6 mt-3 mt-md-0">
-                        <div class="title-wrap">
-                          <div class="left">
-                            <h2 class="h3">배너노출</h2>
-                          </div>
-                          <div class="right">
-                            <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
-                          </div>
-                        </div>
-
-                        <table id="table2" class="table table-hover mt-1">
-                          <thead>
-                            <tr>
-                              <th scope="col">제목</th>
-                              <th scope="col">기간</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td class="text-left">
-                                <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
-                              </td>
-                              <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
-                            </tr>
-                            <tr>
-                              <td class="text-left">
-                                <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
-                              </td>
-                              <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
-                            </tr>
-                            <tr>
-                              <td class="text-left">
-                                <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
-                              </td>
-                              <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
-                            </tr>
-                            <tr>
-                              <td class="text-left">
-                                <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
-                              </td>
-                              <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
-                            </tr>
-                            <tr>
-                              <td class="text-left">
-                                <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
-                              </td>
-                              <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div class="right">
+                        <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
                       </div>
                     </div>
+
+                    <table id="table1" class="table table-hover mt-1">
+                      <thead>
+                        <tr>
+                          <th scope="col">제목</th>
+                          <th scope="col">기간</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
+                          </td>
+                          <!-- 2022-07-27: small 태그 추가 -->
+                          <td><small class="text-nowrap">YYYY.MM.DD ~ YYYY.MM.DD</small></td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
+                          </td>
+                          <td><small class="text-nowrap">YYYY.MM.DD ~ YYYY.MM.DD</small></td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
+                          </td>
+                          <td><small class="text-nowrap">YYYY.MM.DD ~ YYYY.MM.DD</small></td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
+                          </td>
+                          <td><small class="text-nowrap">YYYY.MM.DD ~ YYYY.MM.DD</small></td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.이벤트 제목입니다.</u></a>
+                          </td>
+                          <td><small class="text-nowrap">YYYY.MM.DD ~ YYYY.MM.DD</small></td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                </div>
-                <div class="col-md-3 mt-3 mt-md-0">
-                  <!-- 2022-07-27: 공지사항 위치 변경 -->
-                  <div class="list-group">
-                    <div class="list-group-item text-center bg-gray-700 fc-white">주요 공지사항</div>
-                    <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
-                    <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
-                    <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
-                    <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
-                    <a href="#" class="list-group-item list-group-item-action ellipsis">공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</a>
+
+                  <!-- 2022-07-27: 공지사항 구조 변경 -->
+                  <div class="col-md-4 mt-3 mt-md-0">
+                    <div class="title-wrap">
+                      <div class="left">
+                        <h2 class="h3">공지사항</h2>
+                      </div>
+                      <div class="right">
+                        <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
+                      </div>
+                    </div>
+
+                    <table id="table2" class="table table-hover mt-1">
+                      <thead>
+                        <tr>
+                          <th scope="col">제목</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</u></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</u></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</u></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</u></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>공지사항제목입니다.공지사항제목입니다.공지사항제목입니다.</u></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <div class="text-right mt-1">
-                    <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
+                  <!-- // 2022-07-27: 공지사항 구조 변경 -->
+
+                  <div class="col-md-4 mt-3 mt-md-0">
+                    <div class="title-wrap">
+                      <div class="left">
+                        <h2 class="h3">배너노출</h2>
+                      </div>
+                      <div class="right">
+                        <a href="#" class="btn btn-sm bg-none">더보기<i class="bi bi-chevron-right"></i></a>
+                      </div>
+                    </div>
+
+                    <!-- 2022-07-27: 기간 삭제 -->
+                    <table id="table3" class="table table-hover mt-1">
+                      <thead>
+                        <tr>
+                          <th scope="col">제목</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">
+                            <a href="#" class="ellipsis-1"><u>배너 제목입니다.배너 제목입니다.배너 제목입니다.배너 제목입니다.</u></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- //2022-07-27: 기간 삭제 -->
                   </div>
-                  <!-- //2022-07-27: 공지사항 위치 변경 -->
                 </div>
               </div>
+              <!-- //2022-07-27 감싸는 태그 2개 삭제  -->
             </div>
-            <!--// 이벤트, 배너, 수신동의 -->
+            <!--// 이벤트, 공지사항, 배너 -->
           </div>
           <!-- //2022-07-27 감싸는 태그 추가  -->
           <!-- //컨텐츠본문 -->
@@ -955,6 +985,11 @@
         });
 
         $('#table2').bootstrapTable('destroy').bootstrapTable({
+          // height: 550,
+          locale: 'ko-KR'
+        });
+
+        $('#table3').bootstrapTable('destroy').bootstrapTable({
           // height: 550,
           locale: 'ko-KR'
         });
