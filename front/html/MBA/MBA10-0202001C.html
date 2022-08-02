@@ -208,6 +208,8 @@
       const btnHeart = function () {
         $(document).on('click', '.btn-heart', function () {
           $(this).toggleClass('on');
+          if ($(this).hasClass('on')) $(this).addClass('boom');
+          else $(this).removeClass('boom');
           return false;
         });
       };

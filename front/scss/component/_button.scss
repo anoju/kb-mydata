@@ -240,7 +240,7 @@
       -2.25479rem -1.38275rem 0 -0.1875rem #ff8080;
     }
   }
-  &.on {
+  &.boom.on {
     .i-ico-heart {
       animation: heart-pop 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
       &:before,
