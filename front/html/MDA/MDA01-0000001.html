@@ -121,12 +121,12 @@
                     <a href="#" class="item btn-click ui-pop-video" role="button" data-youtube="sqgxcCjD04s">
                       <p class="img-box">
                         <span class="invest-state">뮤직비디오</span>
-                        <!-- http://img.youtube.com/vi/[동영상 ID값]/[이미지형식].jpg 
+                        <!-- http://i.ytimg.com/vi/[동영상 ID값]/[이미지형식].jpg 
                           sddefault.jpg : 640*480
                           hqdefault.jpg : 480*360
                           mqdefault.jpg : 320*180
                         -->
-                        <img src="http://img.youtube.com/vi/sqgxcCjD04s/sddefault.jpg" alt="" />
+                        <img src="http://i.ytimg.com/vi/sqgxcCjD04s/sddefault.jpg" alt="" />
                       </p>
                       <div class="invest-txt-box">
                         <p class="tit">strawberry moon</p>
@@ -141,7 +141,7 @@
                     <a href="#" class="item btn-click ui-pop-video" role="button" data-youtube="0-q1KafFCLU">
                       <p class="img-box">
                         <span class="invest-state">뮤직비디오</span>
-                        <img src="http://img.youtube.com/vi/0-q1KafFCLU/sddefault.jpg" alt="" />
+                        <img src="http://i.ytimg.com/vi/0-q1KafFCLU/sddefault.jpg" alt="" />
                       </p>
                       <div class="invest-txt-box">
                         <p class="tit">Celebrity</p>
@@ -599,7 +599,7 @@
         player = new YT.Player('player', {
           videoId: firstVideo,
           // playerVars: { autoplay: 1, controls: 0 },
-          playerVars: { modestbranding: 1, rel: 0 }
+          playerVars: { modestbranding: 1, rel: 0, fs: 0 }
           // events: {
           //   onReady: onPlayerReady
           // }
@@ -611,12 +611,22 @@
       function setYouboxWrap() {
         const $pop = $('#popVideo');
         const $body = $pop.find('.pop-body');
+        const $bodyW = $body.width();
+        const $bodyH = $body.height();
         const $box = $pop.find('.youtube-box');
-        $box.css({
-          width: $body.height(),
-          height: $body.width(),
-          marginLeft: ($body.width() - $body.height()) / 2
-        });
+        if ($bodyW > $bodyH) {
+          $box.css({
+            width: $bodyW,
+            height: $bodyH,
+            marginLeft: 0
+          });
+        } else {
+          $box.css({
+            width: $bodyH,
+            height: $bodyW,
+            marginLeft: ($bodyW - $bodyH) / 2
+          });
+        }
       }
       $(document).on('click', '.ui-pop-video', function () {
         if (!player) return;
