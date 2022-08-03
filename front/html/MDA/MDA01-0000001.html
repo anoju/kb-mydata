@@ -540,11 +540,9 @@
             </div>
           </div>
           <div class="pop-body">
-            <div class="youtube-rotate">
-              <div class="youtube-box">
-                <div id="player"></div>
-                <!-- <iframe src="https://www.youtube.com/embed/sqgxcCjD04s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-              </div>
+            <div class="youtube-box">
+              <div id="player"></div>
+              <!-- <iframe src="https://www.youtube.com/embed/sqgxcCjD04s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
             </div>
           </div>
         </article>
@@ -610,17 +608,36 @@
       // function onPlayerReady(event) {
       //   console.log('onPlayerReady', event);
       // }
-
+      function setYouboxWrap() {
+        const $pop = $('#popVideo');
+        const $body = $pop.find('.pop-body');
+        const $box = $pop.find('.youtube-box');
+        $box.css({
+          width: $body.height(),
+          height: $body.width(),
+          marginLeft: ($body.width() - $body.height()) / 2
+        });
+      }
       $(document).on('click', '.ui-pop-video', function () {
         if (!player) return;
         const videoId = $(this).data('youtube');
         if (playVideoId !== videoId) player.loadVideoById(videoId);
-        Layer.open('#popVideo', function () {
-          player.playVideo();
-        });
+        Layer.open(
+          '#popVideo',
+          function () {
+            setYouboxWrap();
+            setTimeout(function () {
+              player.playVideo();
+            }, 500);
+          },
+          200
+        );
       });
       $('#popVideo .pop-close').click(function () {
         player.stopVideo();
+      });
+      $(window).resize(function () {
+        if ($('#popVideo').hasClass('show')) setYouboxWrap();
       });
     </script>
   </body>
