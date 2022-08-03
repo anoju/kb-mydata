@@ -108,8 +108,79 @@
           </div>
           <!-- //고정 컨텐츠 -->
 
+          <!-- 신규추가 컨텐츠 -->
+          <div class="invest-content">
+            <!-- K-컨텐츠 투자 -->
+            <div data-animation="fadeInUp2">
+              <h2 class="tit-h1">유튜브 테스트</h2>
+
+              <!-- 유튜브 테스트 -->
+              <div class="invest-item-list mt-24">
+                <ul>
+                  <li>
+                    <a href="#" class="item btn-click ui-pop-video" role="button" data-youtube="sqgxcCjD04s">
+                      <p class="img-box">
+                        <span class="invest-state">뮤직비디오</span>
+                        <!-- http://img.youtube.com/vi/[동영상 ID값]/[이미지형식].jpg 
+                          sddefault.jpg : 640*480
+                          hqdefault.jpg : 480*360
+                          mqdefault.jpg : 320*180
+                        -->
+                        <img src="http://img.youtube.com/vi/sqgxcCjD04s/sddefault.jpg" alt="" />
+                      </p>
+                      <div class="invest-txt-box">
+                        <p class="tit">strawberry moon</p>
+                        <p class="txt">IU(아이유)</p>
+                        <span class="invest-info">
+                          <span class="info">뮤직비디오</span>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="item btn-click ui-pop-video" role="button" data-youtube="0-q1KafFCLU">
+                      <p class="img-box">
+                        <span class="invest-state">뮤직비디오</span>
+                        <img src="http://img.youtube.com/vi/0-q1KafFCLU/sddefault.jpg" alt="" />
+                      </p>
+                      <div class="invest-txt-box">
+                        <p class="tit">Celebrity</p>
+                        <p class="txt">IU(아이유)</p>
+                        <span class="invest-info">
+                          <span class="info">뮤직비디오</span>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- // 신규추가 컨텐츠 -->
+
           <!-- 랜덤 컨텐츠 -->
           <div class="invest-content">
+            <!-- 중간 배너: 배너가 맨 1번째로 변경 -->
+            <div class="invest-banner-list" data-animation="fadeInUp2">
+              <ul>
+                <li>
+                  <a href="#" class="img-box btn-click">
+                    <img src="../../images/MDA/img_banner_1.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="img-box btn-click">
+                    <img src="../../images/MDA/img_banner_2.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="img-box btn-click">
+                    <img src="../../images/MDA/img_banner_3.png" alt="" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
             <!-- 미술품 투자 -->
             <div data-animation="fadeInUp2">
               <h2 class="tit-h1">
@@ -294,27 +365,6 @@
               </div>
             </div>
 
-            <!-- 중간 배너 -->
-            <div class="invest-banner-list" data-animation="fadeInUp2">
-              <ul>
-                <li>
-                  <a href="#" class="img-box btn-click">
-                    <img src="../../images/MDA/img_banner_1.png" alt="" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="img-box btn-click">
-                    <img src="../../images/MDA/img_banner_2.png" alt="" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="img-box btn-click">
-                    <img src="../../images/MDA/img_banner_3.png" alt="" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-
             <!-- 음악 투자 -->
             <div data-animation="fadeInUp2">
               <h2 class="tit-h1">
@@ -482,6 +532,23 @@
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
+      <div id="popVideo" class="popup full pop-video" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="youtube-rotate">
+              <div class="youtube-box">
+                <div id="player"></div>
+                <!-- <iframe src="https://www.youtube.com/embed/sqgxcCjD04s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
       <!-- //팝업 -->
     </article>
     <script>
@@ -518,6 +585,43 @@
         });
       };
       investVisualEvt();
+
+      /********
+      youtube 
+      ********/
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      let player;
+      const firstVideo = $('[data-youtube]').eq(0).data('youtube');
+      let playVideoId = firstVideo;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          videoId: firstVideo,
+          // playerVars: { autoplay: 1, controls: 0 },
+          playerVars: { modestbranding: 1, rel: 0 }
+          // events: {
+          //   onReady: onPlayerReady
+          // }
+        });
+      }
+      // function onPlayerReady(event) {
+      //   console.log('onPlayerReady', event);
+      // }
+
+      $(document).on('click', '.ui-pop-video', function () {
+        if (!player) return;
+        const videoId = $(this).data('youtube');
+        if (playVideoId !== videoId) player.loadVideoById(videoId);
+        Layer.open('#popVideo', function () {
+          player.playVideo();
+        });
+      });
+      $('#popVideo .pop-close').click(function () {
+        player.stopVideo();
+      });
     </script>
   </body>
 </html>

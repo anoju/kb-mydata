@@ -122,3 +122,31 @@
   padding: 2rem;
   background: #f8f8f8;
 }
+
+.youtube-box {
+  position: relative;
+  padding-bottom: -xyPercent(16, 9);
+  overflow: hidden;
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.youtube-rotate {
+  position: relative;
+  padding-bottom: -xyPercent(9, 16);
+  max-height: 100%;
+  .youtube-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: -xyPercent(9, 16);
+    padding-bottom: 100%;
+    transform: rotate(-90deg) translate(28%, -89%);
+  }
+}
