@@ -45,12 +45,6 @@
 
           <div class="img-box mt-24"><img src="../../images/match/sample_banner.png" alt="" /></div>
 
-          <!-- <div class="quizOX-box">
-            <input type="radio" id="o" name="quizOX" />
-            <label for="o" class="quizO" data-animation="flipInY">퀴즈 O</label>
-            <input type="radio" id="x" name="quizOX" />
-            <label for="x" class="quizX" data-animation="flipInY" data-delay="200">퀴즈 X</label>
-          </div> -->
           <div class="quiz-select-box flex">
             <div class="radio btn btn-1">
               <input type="radio" id="rdo1" name="quizRdo" value="1" />
@@ -186,27 +180,6 @@
       <!-- //팝업 -->
     </article>
     <script>
-      // 임시: OX 선택UI
-      // let choiceSelect = false;
-      // $('.quizOX-box :radio').click(function () {
-      //   if (!choiceSelect) {
-      //     $('.quizOX-box :radio').removeClass('on off');
-      //     $(this).addClass('on').siblings('input').addClass('off');
-      //     choice();
-      //   }
-      // });
-      // const choice = function () {
-      //   Layer.confirm('[선택된 보기 값]으로 선택 할까요? <br />선택 완료 후 변경할 수 없습니다.', null, '선택 완료', '다시 선택', function (e) {
-      //     if (e) {
-      //       Layer.toast('정답 선택이 완료 되었어요.');
-      //       choiceSelect = true;
-      //     } else {
-      //       $('.quizOX-box :radio').removeClass('on off');
-      //       $('.quizOX-box :radio:checked').prop('checked', false);
-      //     }
-      //   });
-      // };
-
       // 임시: 선택UI
       $('.quiz-select-box :radio').click(function (e) {
         e.preventDefault();
