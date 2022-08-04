@@ -2207,11 +2207,10 @@
     }
   }
 }
-
+/*
 .quizOX-box {
   display: flex;
   position: relative;
-  margin-left: -1.6rem;
   margin-bottom: 3.2rem;
   input {
     position: absolute;
@@ -2219,14 +2218,17 @@
   }
   label {
     position: relative;
-    width: calc(50% - 1.6rem);
+    display: block;
+    width: 100%;
     height: 14.2rem;
-    margin-left: 1.6rem;
     border: 0.1rem solid red;
     background: #fff;
     border-radius: 1.2rem;
     font-size: 0;
     transition: all 0.3 ease;
+    ~ label {
+      margin-left: 1.6rem;
+    }
 
     &.quizO {
       border-color: #ddebff;
@@ -2300,6 +2302,43 @@
       &:after {
         background: #d6dbe1;
         box-shadow: 0 0.4rem 1rem rgba(214, 219, 225, 0.5);
+      }
+    }
+  }
+}
+*/
+.quiz-select-box {
+  display: flex;
+  position: relative;
+  margin: 1.5rem 3.2rem;
+
+  .btn {
+    .lbl {
+      font-weight: bold;
+    }
+    + .btn {
+      margin-left: 1.6rem;
+    }
+    > input:disabled ~ .lbl {
+      border-color: #ebeef1;
+      background: #ebeef1;
+      color: #d6dbe1;
+      text-shadow: 0 0.4rem 1rem rgb(214 219 225 / 50%);
+    }
+    &.btn-1 {
+      > input:checked ~ .lbl {
+        border-color: #ddebff;
+        background: #eaf2ff;
+        color: #3887fd;
+        text-shadow: 0 0.4rem 1rem rgb(56 135 253 / 40%);
+      }
+    }
+    &.btn-2 {
+      > input:checked ~ .lbl {
+        border-color: #ffdede;
+        background: #ffebee;
+        color: #eb5757;
+        text-shadow: 0 0.4rem 1rem rgb(235 87 87 / 30%);
       }
     }
   }
