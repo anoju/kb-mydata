@@ -598,16 +598,16 @@
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
           videoId: firstVideo,
-          // playerVars: { autoplay: 1, controls: 0 },
-          playerVars: { modestbranding: 1, rel: 0, fs: 0, playsinline: 1 }
-          // events: {
-          //   onReady: onPlayerReady
-          // }
+          playerVars: {
+            // autoplay: 1,
+            // controls: 0,
+            modestbranding: 1,
+            rel: 0,
+            fs: 0,
+            playsinline: 1
+          }
         });
       }
-      // function onPlayerReady(event) {
-      //   console.log('onPlayerReady', event);
-      // }
       function setYouboxWrap() {
         const $pop = $('#popVideo');
         const $body = $pop.find('.pop-body');
@@ -631,10 +631,10 @@
       $(document).on('click', '.ui-pop-video', function () {
         if (!player) return;
         const videoId = $(this).data('youtube');
-        if (playVideoId !== videoId) {
-          player.loadVideoById(videoId);
-          playVideoId = videoId;
-        }
+        // if (playVideoId !== videoId) {
+        player.loadVideoById(videoId);
+        playVideoId = videoId;
+        // }
         Layer.open(
           '#popVideo',
           function () {
