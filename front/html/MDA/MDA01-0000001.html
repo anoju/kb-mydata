@@ -631,7 +631,10 @@
       $(document).on('click', '.ui-pop-video', function () {
         if (!player) return;
         const videoId = $(this).data('youtube');
-        if (playVideoId !== videoId) player.loadVideoById(videoId);
+        if (playVideoId !== videoId) {
+          player.loadVideoById(videoId);
+          playVideoId = videoId;
+        }
         Layer.open(
           '#popVideo',
           function () {
