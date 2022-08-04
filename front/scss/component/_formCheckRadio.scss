@@ -140,9 +140,9 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
       height: 100%;
       &:disabled ~ .lbl {
         opacity: 1;
-        color: var(--disabled-color);
-        background-color: var(--disabled-bg-color);
-        border-color: var(--disabled-bg-color);
+        color: #c2c2c2;
+        background-color: #f2f4f6;
+        border-color: #f2f4f6;
       }
       &:checked ~ .lbl {
         border-color: var(--primary-color);
