@@ -2217,6 +2217,8 @@
     .lbl {
       border-radius: 1rem;
       font-size: 1.6rem;
+      color: var(--base-txt-color);
+      border-color: #dedede;
     }
     + .btn {
       margin-left: 1.2rem;
