@@ -89,10 +89,22 @@
   }
 }
 .img-area {
+  position: relative;
   text-align: center;
   display: block;
   img {
     max-width: 100%;
+  }
+  &.no-img-bg {
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+      pointer-events: none;
+    }
+    img {
+      @include img-fit(true);
+    }
   }
 }
 .smooth-corners {
