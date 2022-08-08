@@ -105,26 +105,32 @@
 }
 
 // 투자 메인 swiper
-.ui-swiper.invest-list-swiper {
+.invest-list-swiper {
   .swiper {
     // overflow: visible;
     padding: 0 calc(var(--base-padding) - 0.8rem);
     margin-bottom: -2rem;
   }
-  .swiper-slide {
+  &.swiper-items .swiper-slide {
     width: auto;
     overflow: visible;
     padding: 2rem 0;
     a {
-      position: relative;
-      display: block;
-      height: 100%;
       width: 23.2rem;
       margin: 0 0.8rem;
-      box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.08);
-      border-radius: 1.6rem;
-      background: #fff;
     }
+  }
+  .list-item > a,
+  .swiper-slide > a {
+    position: relative;
+    display: block;
+    height: 100%;
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.08);
+    border-radius: 1.6rem;
+    background: #fff;
+  }
+  .list-item + .list-item {
+    margin-top: 2rem;
   }
   .img-box {
     // height: 17.6rem;
@@ -161,7 +167,7 @@
     }
     .swiper-slide {
       padding: 0;
-      a {
+      > a {
         width: 18.8rem;
         padding: 1rem 1rem 0;
         margin: 0;
@@ -278,12 +284,14 @@
   font-size: 1.2rem;
   line-height: 1.5;
   padding: 0.4rem 0.7rem;
+  max-width: calc(100% - 2.4rem);
   left: 1.2rem;
   top: 1.2rem;
   color: #fff;
   border-radius: 0.8rem;
   font-weight: 400;
   @include dimm;
+  @include ellipsis;
 }
 // 투자 뱃지
 .invest-info {
