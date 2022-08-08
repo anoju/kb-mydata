@@ -5239,7 +5239,7 @@ ui.Animation = {
 
       const $animationClass = ui.Animation.sclTypeChk($el);
       if ($el.data('init')) return;
-      if (($wrapTop <= $elTop && $elTop <= $wrapBottom) || ($wrapTop <= $elBottom && $elBottom <= $wrapBottom)) {
+      if (($wrapTop <= $elTop && $elTop <= $wrapBottom) || ($wrapTop <= $elBottom && $elBottom <= $wrapBottom) || ($wrapTop > $elTop && $elBottom > $wrapBottom)) {
         ui.Animation.sclAction($el, $elTop);
         if (($el.hasClass('lottie__init'), $el.data('lottie'))) {
           setTimeout(function () {
