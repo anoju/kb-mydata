@@ -137,16 +137,3 @@
     height: 100%;
   }
 }
-.youtube-rotate {
-  position: relative;
-  padding-bottom: -xyPercent(9, 16);
-  max-height: 100%;
-  .youtube-box {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: -xyPercent(9, 16);
-    padding-bottom: 100%;
-    transform: rotate(-90deg) translate(28%, -89%);
-  }
-}
