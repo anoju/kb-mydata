@@ -274,7 +274,7 @@
         padding-top: 1.7rem;
       }
       span {
-        font-size: 0;
+        @include text-blind;
         display: inline-block;
         width: 1.6rem;
         height: 1rem;

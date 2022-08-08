@@ -60,9 +60,9 @@
   display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
-  @include bg-etc;
   flex-shrink: 0;
-  font-size: 0;
+  @include bg-etc;
+  @include text-blind;
 }
 .i-head-alarm {
   width: 3.6rem;

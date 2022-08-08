@@ -89,10 +89,9 @@
   height: 3.6rem;
   margin-top: -1.8rem;
   display: block;
-  font-size: 0;
-  color: transparent;
   overflow: hidden;
   background-color: transparent;
+  @include text-blind;
   z-index: 2;
   &:after {
     content: '';
