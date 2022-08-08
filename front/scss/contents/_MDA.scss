@@ -82,7 +82,9 @@
 }
 .invest-content {
   margin-top: 4.8rem;
-  padding-bottom: 4rem;
+  &:last-child {
+    padding-bottom: 4rem;
+  }
   > div + div {
     margin-top: 4.8rem;
   }
@@ -132,25 +134,18 @@
     &:before {
       padding-top: -xyPercent(232, 174);
     }
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 7.2rem;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
-    }
-    // img {
-    //   width: 100%;
-    // }
   }
   .invest-txt-box {
-    padding: 1.6rem 0 1.8rem;
+    padding: 1.6rem 1.6rem 1.8rem;
   }
   .invest-info {
-    left: 1.2rem;
-    bottom: 1.2rem;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 7.2rem;
+    padding: 1.2rem;
+    align-items: flex-end;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
     span {
       color: #fff;
       border: 0.1rem #fff solid;
@@ -196,23 +191,20 @@
     }
     .invest-txt-box {
       padding: 0.8rem 0 0;
-      .tit {
-        padding: 0;
-      }
-      .txt {
-        padding: 0;
-      }
     }
     .txt {
       color: #808892;
       margin-top: 0.4rem;
     }
     .invest-info {
-      left: 0;
-      bottom: 0;
+      left: auto;
+      bottom: auto;
       position: relative;
+      min-height: auto;
+      padding: 0;
       margin-top: 0.8rem;
       justify-content: center;
+      background: none;
       span {
         color: #b0b0b0;
         border: 0.1rem #c2c2c2 solid;
@@ -222,18 +214,20 @@
 }
 .invest-txt-box {
   .tit {
-    padding: 0 1.6rem;
+    // padding: 0 1.6rem;
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 2.3rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    word-break: break-all;
     color: var(--strong-txt-color);
+    &:not(.ellipsis-2):not(.ellipsis-3) {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      word-break: break-all;
+    }
   }
   .txt {
-    padding: 0 1.6rem;
+    // padding: 0 1.6rem;
     font-size: 1.4rem;
     margin-top: 0.2rem;
     font-weight: 400;
@@ -245,7 +239,7 @@
     word-break: break-all;
   }
   .price {
-    padding: 0 1.6rem;
+    // padding: 0 1.6rem;
     margin-top: 0.8rem;
     font-size: 1.6rem;
     span {
@@ -332,11 +326,7 @@
     flex: 1 1 auto;
     padding: 1.6rem;
     .tit {
-      padding: 0;
       color: var(--strong-txt-color2);
-    }
-    .txt {
-      padding: 0;
     }
   }
   .txt {
