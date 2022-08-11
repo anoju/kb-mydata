@@ -120,7 +120,6 @@
       margin: 0 0.8rem;
     }
   }
-  .list-item > a,
   .swiper-slide > a {
     position: relative;
     display: block;
@@ -144,22 +143,7 @@
   .invest-txt-box {
     padding: 1.6rem 1.6rem 1.8rem;
   }
-  .invest-info {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    min-height: 7.2rem;
-    padding: 1.2rem;
-    align-items: flex-end;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
-    span {
-      color: #fff;
-      border: 0.1rem #fff solid;
-      + span {
-        margin-left: 0.4rem;
-      }
-    }
-  }
+
   &.type2 {
     .swiper {
       padding: 0 calc(var(--base-padding) - 1rem);
@@ -214,14 +198,6 @@
       span {
         color: #b0b0b0;
         border: 0.1rem #c2c2c2 solid;
-      }
-    }
-  }
-
-  &.type3 {
-    .img-box {
-      &:before {
-        padding-top: -xyPercent(16, 9);
       }
     }
   }
@@ -314,18 +290,53 @@
     border-radius: 1rem;
     // margin-right: 0 0.2rem 0 0;
   }
+  .invest-list-swiper &,
+  .invest-item-list .img-box & {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1.2rem;
+    align-items: flex-end;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    span {
+      color: #fff;
+      border: 0.1rem #fff solid;
+      + span {
+        margin-left: 0.4rem;
+      }
+    }
+  }
+  .invest-list-swiper & {
+    min-height: 7.2rem;
+  }
+  .invest-item-list .img-box & {
+    position: absolute;
+    min-height: 4rem;
+    justify-content: flex-end;
+  }
 }
 
 // k-컨텐츠 리스트
-.invest-item-list li {
-  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.08);
-  border-radius: 1.2rem;
-  & + li {
-    margin-top: 1.6rem;
+.invest-item-list {
+  li {
+    & + li {
+      margin-top: 1.6rem;
+    }
+    &.open {
+      // .item {
+      //   background: rgba(var(--primary-color-rgb), 0.1);
+      // }
+      .tit {
+        color: var(--primary-color);
+      }
+    }
   }
   .item {
     display: flex;
     width: 100%;
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.08);
+    border-radius: 1.2rem;
+    background: #fff;
   }
   .img-box {
     flex: 0 0 auto;
@@ -357,6 +368,11 @@
       color: #b0b0b0;
       border: 0.1rem #c2c2c2 solid;
     }
+  }
+  .folding-panel {
+    display: none;
+    @include outer;
+    margin-top: 0.8rem;
   }
 }
 
