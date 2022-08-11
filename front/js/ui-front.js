@@ -4477,60 +4477,67 @@ ui.Folding = {
   list: function (list, btn, panel, addClass, speed) {
     if (!addClass) addClass = 'open';
     if (!speed) speed = 200;
-    $(list + ' ' + btn).on('click', function (e) {
-      e.preventDefault();
-      const $this = $(this);
-      const $list = $this.closest(list);
-      const $li = $this.closest('li');
-      let $openDelay = 0;
-      if ($this.closest('.disabled').length || $this.hasClass('disabled')) return false;
+    $(list).each(function (e) {
+      const isFolding = $(this).data('folding');
+      if (isFolding) return;
+      $(this).data('folding', true);
+      $(this)
+        .find(btn)
+        .on('click', function (e) {
+          e.preventDefault();
+          const $this = $(this);
+          const $list = $this.closest(list);
+          const $li = $this.closest('li');
+          let $openDelay = 0;
+          if ($this.closest('.disabled').length || $this.hasClass('disabled')) return false;
 
-      const slideCallback = function () {
-        if ($li.find(panel).find('.ui-swiper').length) {
-          ui.Swiper.update($li.find(panel).find('.ui-swiper'));
-        }
-      };
+          const slideCallback = function () {
+            if ($li.find(panel).find('.ui-swiper').length) {
+              ui.Swiper.update($li.find(panel).find('.ui-swiper'));
+            }
+          };
 
-      if ($li.hasClass(addClass)) {
-        $li.find(btn).attr('aria-expanded', false);
-        $li.removeClass(addClass);
-        $li
-          .find(panel)
-          .attr('aria-hidden', true)
-          .stop(true, false)
-          .slideUp(speed, function () {
-            slideCallback();
-          });
-        if ($this.children('span').length && $this.children('span').text() == '닫기') {
-          $this.children('span').text('더보기');
-        }
-      } else {
-        $li.addClass(addClass).find(btn).attr('aria-expanded', true);
-        if (!$list.hasClass('not-toggle')) {
-          const $siblings = $li.siblings();
-          $siblings.removeClass(addClass).find(btn).attr('aria-expanded', false);
-          $siblings.find(panel).attr('aria-hidden', true).stop(true, false).slideUp(speed);
-          if ($siblings.find(btn).children('span').length && $siblings.find(btn).children('span').text() == '닫기') {
-            $siblings.find(btn).children('span').text('더보기');
+          if ($li.hasClass(addClass)) {
+            $li.find(btn).attr('aria-expanded', false);
+            $li.removeClass(addClass);
+            $li
+              .find(panel)
+              .attr('aria-hidden', true)
+              .stop(true, false)
+              .slideUp(speed, function () {
+                slideCallback();
+              });
+            if ($this.children('span').length && $this.children('span').text() == '닫기') {
+              $this.children('span').text('더보기');
+            }
+          } else {
+            $li.addClass(addClass).find(btn).attr('aria-expanded', true);
+            if (!$list.hasClass('not-toggle')) {
+              const $siblings = $li.siblings();
+              $siblings.removeClass(addClass).find(btn).attr('aria-expanded', false);
+              $siblings.find(panel).attr('aria-hidden', true).stop(true, false).slideUp(speed);
+              if ($siblings.find(btn).children('span').length && $siblings.find(btn).children('span').text() == '닫기') {
+                $siblings.find(btn).children('span').text('더보기');
+              }
+            }
+            if ($li.find(panel).html() == '') $openDelay = 100;
+            $li
+              .find(panel)
+              .removeAttr('aria-hidden')
+              .stop(true, false)
+              .delay($openDelay)
+              .slideDown(speed, function () {
+                ui.Scroll.inScreen($this, this);
+                slideCallback();
+              });
+            if ($this.children('span').length && $this.children('span').text() == '더보기') {
+              $this.children('span').text('닫기');
+            }
           }
-        }
-        if ($li.find(panel).html() == '') $openDelay = 100;
-        $li
-          .find(panel)
-          .removeAttr('aria-hidden')
-          .stop(true, false)
-          .delay($openDelay)
-          .slideDown(speed, function () {
-            ui.Scroll.inScreen($this, this);
-            slideCallback();
-          });
-        if ($this.children('span').length && $this.children('span').text() == '더보기') {
-          $this.children('span').text('닫기');
-        }
-      }
-    });
+        });
 
-    ui.Folding.listAria(list, btn, panel, addClass);
+      ui.Folding.listAria(this, btn, panel, addClass);
+    });
   },
   btnAria: function (btn, className) {
     if (className == undefined) className = 'open';
