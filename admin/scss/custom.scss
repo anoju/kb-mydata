@@ -1234,6 +1234,9 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
 .form-box {
   border-bottom: 0.063rem solid $border-color;
   color: $body-color;
+  &.expand {
+    margin-top: -0.063rem;
+  }
   a:not(.btn) {
     text-decoration: underline;
   }
