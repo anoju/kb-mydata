@@ -65,6 +65,9 @@
             <div class="left">
               <h2 class="h3">등록구분</h2>
             </div>
+            <div class="right">
+              <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#layoutGuide"><i class="bi bi-exclamation-circle mr-1"></i>구분별 레이아웃 확인</button>
+            </div>
           </div>
           <div class="form-box">
             <div class="form-box-row">
@@ -881,6 +884,22 @@
             <button type="button" class="btn btn-lg btn-primary"><i class="bi bi-check"></i> 저장</button>
           </div>
           <!-- //컨텐츠본문 -->
+
+          <!-- 레이아웃안내 팝업 -->
+          <article class="modal fade" id="layoutGuide" tabindex="-1" aria-labelledby="layoutGuideLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="layoutGuideLabel">구분별 레이아웃</h1>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">이미지</div>
+              </div>
+            </div>
+          </article>
+          <!-- //레이아웃안내 팝업 -->
         </main>
         <!-- //컨텐츠 -->
       </div>
