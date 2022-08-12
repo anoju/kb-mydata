@@ -1882,7 +1882,20 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     margin-bottom: 0;
   }
 }
-
+.text-dl-box {
+  border: $border-width solid $border-color;
+  border-radius: $border-radius-lg;
+  > dt {
+    background: $border-color;
+    padding: 0.5rem 1rem;
+    strong {
+      font-weight: 500;
+    }
+  }
+  > dd {
+    padding: 1rem;
+  }
+}
 .dashboard-box {
   background: $dark;
   border-radius: $border-radius-lg;
