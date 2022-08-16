@@ -115,7 +115,7 @@
       $textarea.keyup($btnDisabled);
 
       // 임시: 수정 UI
-      if (getUnlParams().type === 'change') {
+      if (getUrlParams().type === 'change') {
         $select.val('1').change();
         $input.val('문의 제목입니다.');
         $textarea.val('문의 내용입니다.\n문의 내용입니다.\n문의 내용입니다.\n문의 내용입니다.');

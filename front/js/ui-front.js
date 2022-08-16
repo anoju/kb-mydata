@@ -3287,9 +3287,11 @@ ui.Form = {
     const $allAgreeChkClass = '.ui-all-agree-chk';
     const $agreeChkClass = '.ui-agree-chk';
 
+    if ($($wrapClass).data('agree-init')) return;
+    $($wrapClass).data('agree-init', true);
     // 전체동의
     $($wrapClass + ' ' + $allAgreeChkClass)
-      .off('change')
+      // .off('change')
       .on('change', function () {
         const $this = $(this);
         const $wrap = $this.closest($wrapClass);
@@ -3312,7 +3314,7 @@ ui.Form = {
         }
       });
     $($wrapClass + ' ' + $agreeChkClass)
-      .off('change')
+      // .off('change')
       .on('change', function () {
         const $this = $(this);
         const $wrap = $this.closest($wrapClass);
@@ -3343,23 +3345,25 @@ ui.Form = {
         if ($(this.trim()).length) $targets.push(this.trim());
       });
 
-      $this.off('change').on('change', function () {
-        let $checked = 0;
-        if ($(this).prop('checked')) {
-          $.each($targets, function () {
-            if ($('' + this).prop('checked')) $checked += 1;
-          });
-          if ($checked === 0) {
+      $this
+        // .off('change')
+        .on('change', function () {
+          let $checked = 0;
+          if ($(this).prop('checked')) {
             $.each($targets, function () {
-              $('' + this).prop('checked', true);
+              if ($('' + this).prop('checked')) $checked += 1;
+            });
+            if ($checked === 0) {
+              $.each($targets, function () {
+                $('' + this).prop('checked', true);
+              });
+            }
+          } else {
+            $.each($targets, function () {
+              $('' + this).prop('checked', false);
             });
           }
-        } else {
-          $.each($targets, function () {
-            $('' + this).prop('checked', false);
-          });
-        }
-      });
+        });
 
       $.each($targets, function () {
         $('' + this).change(function () {
@@ -3393,7 +3397,7 @@ ui.Form = {
       }
     };
     $('.inp-mail select')
-      .off('change')
+      // .off('change')
       .on('change', function () {
         mailCheck(this, true);
       });
@@ -3433,51 +3437,53 @@ ui.Form = {
         $lbl.find('.blind').text($lblTxt);
       }*/
     });
-    $swichBtn.off('change').on('change', function () {
-      const $lbl = $(this).siblings('.lbl');
-      let $lblTxt = $lbl.text();
-      if ($(this).prop('checked')) {
-        if ($lbl.attr('aria-label') != undefined) {
-          $lblTxt = $lbl.attr('aria-label');
-          if ($lblTxt.indexOf('해제') >= 0) {
-            $lblTxt = $lblTxt.replace('해제', '등록');
-            $lbl.attr('aria-label', $lblTxt);
-          }
-        } else if ($lbl.find('.blind').length) {
-          $lblTxt = $lbl.find('.blind').text();
-          if ($lblTxt.indexOf('해제') >= 0) {
-            $lblTxt = $lblTxt.replace('해제', '등록');
-            $lbl.find('.blind').text($lblTxt);
-          }
-        } else {
-          $lblTxt = $lbl.text();
-          if ($lblTxt.indexOf('해제') >= 0) {
-            $lblTxt = $lblTxt.replace('해제', '등록');
-            $lbl.text($lblTxt);
-          }
-        }
-      } else {
-        if ($lbl.attr('aria-label') != undefined) {
-          $lblTxt = $lbl.attr('aria-label');
-          if ($lblTxt.indexOf('등록') >= 0) {
-            $lblTxt = $lblTxt.replace('등록', '해제');
-            $lbl.attr('aria-label', $lblTxt);
-          }
-        } else if ($lbl.find('.blind').length) {
-          $lblTxt = $lbl.find('.blind').text();
-          if ($lblTxt.indexOf('등록') >= 0) {
-            $lblTxt = $lblTxt.replace('등록', '해제');
-            $lbl.find('.blind').text($lblTxt);
+    $swichBtn
+      // .off('change')
+      .on('change', function () {
+        const $lbl = $(this).siblings('.lbl');
+        let $lblTxt = $lbl.text();
+        if ($(this).prop('checked')) {
+          if ($lbl.attr('aria-label') != undefined) {
+            $lblTxt = $lbl.attr('aria-label');
+            if ($lblTxt.indexOf('해제') >= 0) {
+              $lblTxt = $lblTxt.replace('해제', '등록');
+              $lbl.attr('aria-label', $lblTxt);
+            }
+          } else if ($lbl.find('.blind').length) {
+            $lblTxt = $lbl.find('.blind').text();
+            if ($lblTxt.indexOf('해제') >= 0) {
+              $lblTxt = $lblTxt.replace('해제', '등록');
+              $lbl.find('.blind').text($lblTxt);
+            }
+          } else {
+            $lblTxt = $lbl.text();
+            if ($lblTxt.indexOf('해제') >= 0) {
+              $lblTxt = $lblTxt.replace('해제', '등록');
+              $lbl.text($lblTxt);
+            }
           }
         } else {
-          $lblTxt = $lbl.text();
-          if ($lblTxt.indexOf('등록') >= 0) {
-            $lblTxt = $lblTxt.replace('등록', '해제');
-            $lbl.text($lblTxt);
+          if ($lbl.attr('aria-label') != undefined) {
+            $lblTxt = $lbl.attr('aria-label');
+            if ($lblTxt.indexOf('등록') >= 0) {
+              $lblTxt = $lblTxt.replace('등록', '해제');
+              $lbl.attr('aria-label', $lblTxt);
+            }
+          } else if ($lbl.find('.blind').length) {
+            $lblTxt = $lbl.find('.blind').text();
+            if ($lblTxt.indexOf('등록') >= 0) {
+              $lblTxt = $lblTxt.replace('등록', '해제');
+              $lbl.find('.blind').text($lblTxt);
+            }
+          } else {
+            $lblTxt = $lbl.text();
+            if ($lblTxt.indexOf('등록') >= 0) {
+              $lblTxt = $lblTxt.replace('등록', '해제');
+              $lbl.text($lblTxt);
+            }
           }
         }
-      }
-    });
+      });
   },
   spinner: function () {
     const $spinner = $('.spinner');
@@ -8710,7 +8716,7 @@ const autoTimeFormet = function (str, mark) {
 };
 
 //파라미터 값 갖고오기
-const getUnlParams = function () {
+const getUrlParams = function () {
   const params = {};
   window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
     params[key] = value;

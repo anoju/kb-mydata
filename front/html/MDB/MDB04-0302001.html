@@ -273,28 +273,28 @@
     </article>
     <script>
       //임시 타입별 케이스 확인용
-      if (getUnlParams().type) {
+      if (getUrlParams().type) {
         $('#cardType').hide();
-        if (getUnlParams().type === 'pay') $('#payType').show();
-        if (getUnlParams().type === 'card2') $('#cardType2').show();
-        if (getUnlParams().type === 'card3') {
+        if (getUrlParams().type === 'pay') $('#payType').show();
+        if (getUrlParams().type === 'card2') $('#cardType2').show();
+        if (getUrlParams().type === 'card3') {
           $('#sub').text('하나은행');
           $('#cardType3').show();
         }
-        if (getUnlParams().type === 'pay2') {
+        if (getUrlParams().type === 'pay2') {
           $('#sub').text('박교보(하나된평창통장)');
           $('#payType2').show();
         }
-        if (getUnlParams().type === 'pay3') {
+        if (getUrlParams().type === 'pay3') {
           // 2022-04-21: 전자금융송금/적요회신불가일때 텍스트 수정
           $('#sub').text('-(하나은행)');
           $('#payType3').show();
         }
-        if (getUnlParams().type === 'bank') {
+        if (getUrlParams().type === 'bank') {
           $('#sub').text('적용정보표시');
           $('#bankType').show();
         }
-        if (getUnlParams().type === 'none') {
+        if (getUrlParams().type === 'none') {
           $('#sub').text('-');
           $('#noneType').show();
           $('#checkbox').prop('checked', true);

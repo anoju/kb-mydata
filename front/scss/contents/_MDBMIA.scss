@@ -88,6 +88,9 @@
     &.ico-reg-4 {
       background-image: url(../images/MY/ico-reg-property-4.png);
     }
+    &.ico-reg-5 {
+      background-image: url(../images/MY/ico-reg-property-5.png);
+    }
   }
 }
 
@@ -771,10 +774,14 @@
     flex: 0 1 auto;
     width: 100%;
     min-width: 28rem;
-    padding: 2.4rem 2.2rem 2.4rem 2rem;
+    padding: 2.2rem 2.2rem 2.2rem 2rem;
     border-radius: 0.8rem;
+    text-align: left;
     + a {
       margin-left: 1.2rem;
+    }
+    > div {
+      padding-right: 2rem;
     }
     .tit {
       font-weight: 500;
@@ -793,12 +800,25 @@
       margin-left: auto;
       align-self: center;
     }
+    &.disabled {
+      filter: grayscale(100);
+      .tit {
+        color: var(--disabled-color);
+      }
+      .text {
+        color: #c2c2c2;
+        opacity: 0.8;
+      }
+    }
   }
   .event1 {
     background-color: #e4f9ff;
   }
   .event2 {
     background-color: #ffeff5;
+    .text {
+      color: #606060;
+    }
   }
 }
 

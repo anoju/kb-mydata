@@ -86,7 +86,7 @@
     Layer.open('#popCategory');
 
     // 임시 수정일때: [삭제]버튼 보이게, [등록]버튼 '수정'으로 + 활성화
-    if (getUnlParams().type === 'change') {
+    if (getUrlParams().type === 'change') {
       $('#input').val('카테고리제목이지');
       $('#cateBtnWrap').show();
       $('#btnMain').prop('disabled', false).text('수정');

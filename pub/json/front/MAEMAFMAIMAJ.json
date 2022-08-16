@@ -366,7 +366,8 @@
     "name": "투자 메인",
     "worker": "변상우",
     "complete": "2022-04-08",
-    "change": "2022-05-19"
+    "change": "2022-05-19",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(투자메인)</strong>"
   },
   {
     "id": "MDA01-0000002",

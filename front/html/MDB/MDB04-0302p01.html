@@ -80,7 +80,7 @@
     Layer.open('#popMemo');
 
     // 수정일때: [등록]버튼 '수정'으로
-    if (getUnlParams().type === 'change') {
+    if (getUrlParams().type === 'change') {
       $('#input').val('메모 내용입니다. 메모 내용입니다.');
       $('#btnMain').prop('disabled', false).text('수정');
     }

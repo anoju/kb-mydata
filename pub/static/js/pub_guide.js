@@ -1,76 +1,8 @@
-const $headerHtml =
-  '' +
-  '<div class="g_util">' +
-  '<h1><span><img src="../static/images/logo.png" alt="끌" /></span><span><img src="../static/images/kyobo-logo.png" alt="끌" /></span></h1>' +
-  '<div class="g_project">' +
-  '<button type="button" class="current" title="코딩리스트 바로가기">선택</button>' +
-  '<ul class="g_list">' +
-  '<li><a href="front.html">Front</a></li>' +
-  '<li><a href="admin.html">Admin</a></li>' +
-  '</ul>' +
-  '</div>' +
-  '<button type="button" class="btn_nav"><span>메뉴</span></button>' +
-  '</div>';
+const $headerHtml = '' + '<div class="g_util">' + '<h1><span><img src="../static/images/logo.png" alt="끌" /></span><span><img src="../static/images/kyobo-logo.png" alt="끌" /></span></h1>' + '<div class="g_project">' + '<button type="button" class="current" title="코딩리스트 바로가기">선택</button>' + '<ul class="g_list">' + '<li><a href="front.html">Front</a></li>' + '<li><a href="admin.html">Admin</a></li>' + '</ul>' + '</div>' + '<button type="button" class="btn_nav"><span>메뉴</span></button>' + '</div>';
 
-const $naviHtmlPC =
-  '' +
-  '<ul>' +
-  '<li><a href="../pc/www.html">Status Board</a></li>' +
-  '<li><a href="../pc/introduction.html">Introduction</a></li>' +
-  '<li><a href="#">Basic Rules</a>' +
-  '<ul>' +
-  '<li><a href="../pc/font.html">Font</a></li>' +
-  '<li><a href="../pc/color.html">Color</a></li>' +
-  '<li><a href="../pc/html.html">HTML</a></li>' +
-  '<li><a href="../pc/tag.html">Tag</a></li>' +
-  '<li><a href="../pc/naming.html">Naming</a></li>' +
-  '</ul>' +
-  '</li>' +
-  '<li><a href="../pc/layout.html">Layout</a></li>' +
-  '<li><a href="../pc/directory.html">Directory</a></li>' +
-  '<li><a href="#">Elements</a>' +
-  '<ul>' +
-  '<li><a href="../pc/text.html">Text</a></li>' +
-  '<li><a href="../pc/button.html">Button</a></li>' +
-  '<li><a href="../pc/form.html">Form</a></li>' +
-  '<li><a href="../pc/table.html">Table</a></li>' +
-  '<li><a href="../pc/tab.html">Tab</a></li>' +
-  '<li><a href="../pc/list.html">List</a></li>' +
-  '<li><a href="../pc/popup.html">Popup</a></li>' +
-  '<li><a href="../pc/etc.html">Etc</a></li>' +
-  '</ul>' +
-  '</li>' +
-  '</ul>';
+const $naviHtmlPC = '' + '<ul>' + '<li><a href="../pc/www.html">Status Board</a></li>' + '<li><a href="../pc/introduction.html">Introduction</a></li>' + '<li><a href="#">Basic Rules</a>' + '<ul>' + '<li><a href="../pc/font.html">Font</a></li>' + '<li><a href="../pc/color.html">Color</a></li>' + '<li><a href="../pc/html.html">HTML</a></li>' + '<li><a href="../pc/tag.html">Tag</a></li>' + '<li><a href="../pc/naming.html">Naming</a></li>' + '</ul>' + '</li>' + '<li><a href="../pc/layout.html">Layout</a></li>' + '<li><a href="../pc/directory.html">Directory</a></li>' + '<li><a href="#">Elements</a>' + '<ul>' + '<li><a href="../pc/text.html">Text</a></li>' + '<li><a href="../pc/button.html">Button</a></li>' + '<li><a href="../pc/form.html">Form</a></li>' + '<li><a href="../pc/table.html">Table</a></li>' + '<li><a href="../pc/tab.html">Tab</a></li>' + '<li><a href="../pc/list.html">List</a></li>' + '<li><a href="../pc/popup.html">Popup</a></li>' + '<li><a href="../pc/etc.html">Etc</a></li>' + '</ul>' + '</li>' + '</ul>';
 
-const $naviHtmlMO =
-  '' +
-  '<ul>' +
-  '<li><a href="../mobile/m.html">Status Board</a></li>' +
-  '<li><a href="../mobile/introduction.html">Introduction</a></li>' +
-  '<li><a href="#">Basic Rules</a>' +
-  '<ul>' +
-  '<li><a href="../mobile/font.html">Font</a></li>' +
-  '<li><a href="../mobile/color.html">Color</a></li>' +
-  '<li><a href="../mobile/html.html">HTML</a></li>' +
-  '<li><a href="../mobile/tag.html">Tag</a></li>' +
-  '<li><a href="../mobile/naming.html">Naming</a></li>' +
-  '</ul>' +
-  '</li>' +
-  '<li><a href="../mobile/layout.html">Layout</a></li>' +
-  '<li><a href="../mobile/directory.html">Directory</a></li>' +
-  '<li><a href="#">Elements</a>' +
-  '<ul>' +
-  '<li><a href="../mobile/text.html">Text</a></li>' +
-  '<li><a href="../mobile/button.html">Button</a></li>' +
-  '<li><a href="../mobile/form.html">Form</a></li>' +
-  '<li><a href="../mobile/table.html">Table</a></li>' +
-  '<li><a href="../mobile/tab.html">Tab</a></li>' +
-  '<li><a href="../mobile/list.html">List</a></li>' +
-  '<li><a href="../mobile/popup.html">Popup</a></li>' +
-  '<li><a href="../mobile/etc.html">Etc</a></li>' +
-  '</ul>' +
-  '</li>' +
-  '</ul>';
+const $naviHtmlMO = '' + '<ul>' + '<li><a href="../mobile/m.html">Status Board</a></li>' + '<li><a href="../mobile/introduction.html">Introduction</a></li>' + '<li><a href="#">Basic Rules</a>' + '<ul>' + '<li><a href="../mobile/font.html">Font</a></li>' + '<li><a href="../mobile/color.html">Color</a></li>' + '<li><a href="../mobile/html.html">HTML</a></li>' + '<li><a href="../mobile/tag.html">Tag</a></li>' + '<li><a href="../mobile/naming.html">Naming</a></li>' + '</ul>' + '</li>' + '<li><a href="../mobile/layout.html">Layout</a></li>' + '<li><a href="../mobile/directory.html">Directory</a></li>' + '<li><a href="#">Elements</a>' + '<ul>' + '<li><a href="../mobile/text.html">Text</a></li>' + '<li><a href="../mobile/button.html">Button</a></li>' + '<li><a href="../mobile/form.html">Form</a></li>' + '<li><a href="../mobile/table.html">Table</a></li>' + '<li><a href="../mobile/tab.html">Tab</a></li>' + '<li><a href="../mobile/list.html">List</a></li>' + '<li><a href="../mobile/popup.html">Popup</a></li>' + '<li><a href="../mobile/etc.html">Etc</a></li>' + '</ul>' + '</li>' + '</ul>';
 
 const $naviHtmlAdmin = '' + '<ul>' + '<li><a href="../admin/admin.html">Status Board</a></li>' + '</ul>';
 
@@ -179,7 +111,6 @@ const makeBoard = function () {
         idx += 1;
         if (obj.id) {
           let $url = obj.url;
-          console.log($host);
           if ($host) {
             $url = $url.replace('../..', $protocol + '//' + $host);
             if ($url.indexOf('/front/') >= 0) $url = $url.replace('/front/', '/mydata/resources/static/');

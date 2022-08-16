@@ -159,8 +159,8 @@
     </article>
     <script>
       //임시: 팝업 띄우기
-      if (getUnlParams().pop) {
-        const $pop = getUnlParams().pop;
+      if (getUrlParams().pop) {
+        const $pop = getUrlParams().pop;
         Layer.open('#' + $pop);
       }
 

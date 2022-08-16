@@ -784,11 +784,24 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
         .item-sub {
           color: #c2c2c2;
         }
+        .ico-logo {
+          opacity: 0.4;
+        }
+        .state-txt {
+          color: rgba(var(--primary-color-rgb), 0.4);
+        }
       }
     }
     .section & {
       @include outer;
     }
+  }
+  .ico-logo {
+    margin-right: 0.8rem;
+  }
+  .state-txt {
+    color: var(--primary-color);
+    font-size: 1.2rem;
   }
   .item-tit {
     font-size: 1.6rem;
@@ -801,11 +814,20 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
       align-items: center;
       strong {
         width: 100%;
+        @include ellipsis(2);
       }
       span {
         margin-left: auto;
         flex-shrink: 0;
         font-size: 1.2rem;
+      }
+      .ico-logo {
+        + strong {
+          flex: 1 1 auto;
+        }
+      }
+      .state-txt {
+        margin-left: 0.8rem;
       }
     }
   }

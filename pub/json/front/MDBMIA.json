@@ -236,7 +236,8 @@
     "depth4": "자산선택",
     "name": "자산선택",
     "worker": "안효주",
-    "complete": "2022-04-11"
+    "complete": "2022-04-11",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   },
   {
     "id": "MDB02-0402001",
@@ -471,6 +472,50 @@
     "complete": "2022-04-12",
     "change": "2022-04-19",
     "etc": ""
+  },
+  {
+    "id": "MDB02-0406001",
+    "url": "../../front/html/MDB/",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "가상자산",
+    "name": "거래소 선택",
+    "worker": "안효주",
+    "complete": "",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
+  },
+  {
+    "id": "MDB02-0406p01",
+    "url": "../../front/html/MDB/MDB02-0406001.html?pop=true",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "가상자산",
+    "name": "약관 동의 팝업",
+    "worker": "안효주",
+    "complete": "",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>, MDB02-0406001 안에 포함"
+  },
+  {
+    "id": "MDB02-0406002",
+    "url": "../../front/html/MDB/",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "가상자산",
+    "name": "자산 연결완료",
+    "worker": "안효주",
+    "complete": "",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
+  },
+  {
+    "id": "MDB02-0406002",
+    "url": "../../front/html/MDB/",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "가상자산",
+    "name": "자산 연결실패",
+    "worker": "안효주",
+    "complete": "",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   },
   
   {
