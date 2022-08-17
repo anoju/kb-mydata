@@ -37,11 +37,7 @@
             <strong class="txt-name">빗썸 bithumb</strong>
           </div>
 
-          <div class="item-txt-price mt-24">
-            <sub>총평가금액</sub>
-            <strong>0</strong>
-            원
-          </div>
+          <div class="item-txt-price mt-24"><sub>총평가금액</sub><strong id="total">0</strong>원</div>
           <p class="t-right mt-4 fc-up">+1,234,567 (10.64%)</p>
           <!-- 상승 : fc-up, 하락 : fc-down, 유지: fc-424242 -->
           <div class="t-right">
@@ -94,7 +90,7 @@
     </article>
     <script>
       $(window).load(function () {
-        $('.item-txt-price strong').countNumber(105000000);
+        $('#total').countNumber(105000000);
       });
     </script>
   </body>
