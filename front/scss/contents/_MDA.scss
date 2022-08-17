@@ -91,21 +91,23 @@
 }
 
 //태그 영역
-.invest-tag {
+.invest-tit-sub {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -0.4rem;
   font-size: 1.4rem;
   span {
     display: inline-block;
-    margin: 0 0.4rem;
     font-weight: 400;
     color: #818892;
+    margin-right: 0.8rem;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
 // 투자 메인 swiper
-.invest-list-swiper {
+.invest-card-list {
   .swiper {
     // overflow: visible;
     padding: 0 calc(var(--base-padding) - 0.8rem);
@@ -130,6 +132,9 @@
   }
   .list-item + .list-item {
     margin-top: 2rem;
+  }
+  .item {
+    display: block;
   }
   .img-box {
     // height: 17.6rem;
@@ -197,6 +202,28 @@
       background: none;
     }
   }
+
+  &.type3 {
+    > ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.4rem 1.2rem;
+    }
+    .item {
+      display: block;
+    }
+    .img-box {
+      border-radius: 1.2rem;
+    }
+    .invest-txt-box {
+      padding: 0;
+      margin-top: 1.2rem;
+    }
+    .invest-info {
+      position: relative;
+      margin-top: 0.7rem;
+    }
+  }
 }
 .invest-txt-box {
   .tit {
@@ -259,6 +286,7 @@
 }
 
 .invest-state {
+  display: block;
   position: absolute;
   z-index: 2;
   font-size: 1.2rem;
@@ -272,6 +300,15 @@
   font-weight: 400;
   @include dimm;
   @include ellipsis;
+  .invest-txt-box & {
+    position: relative;
+    left: auto;
+    top: auto;
+    padding: 0;
+    color: #898989;
+    background: none;
+    max-width: none;
+  }
 }
 // 투자 뱃지
 .invest-info {
@@ -289,7 +326,7 @@
       border: 0.1rem solid #c2c2c2;
     }
   }
-  .invest-list-swiper &,
+  .invest-card-list .img-box &,
   .invest-item-list .img-box & {
     left: 0;
     bottom: 0;
@@ -304,7 +341,7 @@
       }
     }
   }
-  .invest-list-swiper & {
+  .invest-card-list .img-box & {
     min-height: 7.2rem;
     padding: 1.2rem;
   }
