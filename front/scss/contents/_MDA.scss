@@ -312,8 +312,11 @@
   line-height: 1;
   color: #b0b0b0;
   span {
+    max-width: 100%;
+    @include ellipsis(1);
     &.info {
-      padding: 0.3rem 0.5rem;
+      padding: 0 0.5rem;
+      line-height: 1.7rem;
       border-radius: 1rem;
       border: 0.1rem solid #c2c2c2;
     }
