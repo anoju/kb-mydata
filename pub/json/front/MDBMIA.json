@@ -486,11 +486,33 @@
   },
   {
     "id": "MDB02-0406p01",
-    "url": "../../front/html/MDB/MDB02-0406001.html?pop=true",
+    "url": "../../front/html/MDB/MDB02-0406001.html?pop=popAgreeChk",
     "depth2": "통합자산조회",
     "depth3": "비금융자산",
     "depth4": "가상자산",
     "name": "약관 동의 팝업",
+    "worker": "안효주",
+    "complete": "",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>, MDB02-0406001 안에 포함"
+  },
+  {
+    "id": "MDB02-0406p02",
+    "url": "../../front/html/MDB/MDB02-0406001.html?pop=popAgreeView1",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "가상자산",
+    "name": "약관 상세 팝업1",
+    "worker": "안효주",
+    "complete": "",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>, MDB02-0406001 안에 포함"
+  },
+  {
+    "id": "MDB02-0406p03",
+    "url": "../../front/html/MDB/MDB02-0406001.html?pop=popAgreeView2",
+    "depth2": "통합자산조회",
+    "depth3": "비금융자산",
+    "depth4": "가상자산",
+    "name": "약관 상세 팝업2",
     "worker": "안효주",
     "complete": "",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>, MDB02-0406001 안에 포함"
@@ -507,7 +529,7 @@
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   },
   {
-    "id": "MDB02-0406002",
+    "id": "MDB02-0406003",
     "url": "../../front/html/MDB/",
     "depth2": "통합자산조회",
     "depth3": "비금융자산",
@@ -517,7 +539,6 @@
     "complete": "",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   },
-  
   {
     "depth1": "MY(자산현황)",
     "version" : "비금융자산<span>v1.0_202220419</span>"
@@ -626,8 +647,51 @@
     "complete": "2022-04-13",
     "change": "2022-04-19",
     "etc": ""
+  },
+  {
+    "id": "MDB03-0205001",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "가상자산",
+    "name": "가상자산 목록",
+    "worker": "안효주",
+    "complete": "",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
+  },
+  {
+    "id": "MDB03-0205002",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "가상자산",
+    "name": "가상자산 상세1",
+    "worker": "안효주",
+    "complete": "",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
+  },
+  {
+    "id": "MDB03-0205003",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "가상자산",
+    "name": "가상자산 상세2",
+    "worker": "안효주",
+    "complete": "",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
+  },
+  {
+    "id": "MDB03-0205004",
+    "url": "../../front/html/MDB/",
+    "depth2": "자산현황",
+    "depth3": "비금융자산",
+    "depth4": "가상자산",
+    "name": "가상자산 관리",
+    "worker": "안효주",
+    "complete": "",
+    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   }
-
   
 
   ,{
