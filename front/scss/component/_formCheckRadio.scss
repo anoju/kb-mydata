@@ -717,10 +717,15 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
 }
 .agree-dl {
   .agree-dt {
-    padding: 2rem 0;
+    padding: 0 0 2rem;
     + .agree-dd {
       border-top: 0.1rem solid var(--line-color);
-      padding-top: 2rem;
+      padding-top: 1.6rem;
+    }
+  }
+  .agree-dd {
+    .checkbox + .checkbox {
+      margin-top: 1.4rem;
     }
   }
   .checkbox {
@@ -782,15 +787,13 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
       ~ .lbl {
         .item-tit,
         .item-sub,
-        .logo-info-txt .txt-name {
+        .logo-info-txt .txt-name,
+        .state-txt {
           color: #c2c2c2;
         }
-        .ico-logo {
-          opacity: 0.4;
-        }
-        .state-txt {
-          color: rgba(var(--primary-color-rgb), 0.4);
-        }
+        // .ico-logo {
+        //   opacity: 0.4;
+        // }
       }
     }
     .section & {

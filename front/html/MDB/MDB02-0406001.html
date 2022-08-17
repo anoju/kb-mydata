@@ -33,11 +33,10 @@
         <div class="section">
           <h1 class="tit-h1">거래소 선택</h1>
 
-          <div class="check-list-wrap mt-22">
+          <div class="check-list-wrap mt-24">
             <div class="check-list-item">
               <label class="checkbox">
-                <!-- 전체 선택기능용 클래스: 개별선택에 .ui-chk 클래스 (불필요시 해당 클래스만 삭제) -->
-                <input type="checkbox" class="ui-chk" /><i aria-hidden="true"></i>
+                <input type="checkbox" /><i aria-hidden="true"></i>
                 <div class="lbl">
                   <div class="logo-info-txt">
                     <i class="ico-logo"><img src="../../images/temp/logo-KB.png" alt="" /></i>
@@ -48,7 +47,7 @@
             </div>
             <div class="check-list-item">
               <label class="checkbox">
-                <input type="checkbox" class="ui-chk" /><i aria-hidden="true"></i>
+                <input type="checkbox" /><i aria-hidden="true"></i>
                 <div class="lbl">
                   <div class="logo-info-txt">
                     <i class="ico-logo"><img src="../../images/temp/logo-KB.png" alt="" /></i>
@@ -59,24 +58,24 @@
             </div>
             <div class="check-list-item">
               <label class="checkbox">
-                <input type="checkbox" class="ui-chk" checked disabled /><i aria-hidden="true"></i>
+                <input type="checkbox" checked disabled /><i aria-hidden="true"></i>
                 <div class="lbl">
                   <div class="logo-info-txt">
                     <i class="ico-logo"><img src="../../images/temp/logo-KB.png" alt="" /></i>
                     <strong class="txt-name">코빗 korbit</strong>
-                    <span class="state-txt">선택됨</span>
+                    <span class="state-txt">연결됨</span>
                   </div>
                 </div>
               </label>
             </div>
             <div class="check-list-item">
               <label class="checkbox">
-                <input type="checkbox" class="ui-chk" checked disabled /><i aria-hidden="true"></i>
+                <input type="checkbox" checked disabled /><i aria-hidden="true"></i>
                 <div class="lbl">
                   <div class="logo-info-txt">
                     <i class="ico-logo"><img src="../../images/temp/logo-KB.png" alt="" /></i>
                     <strong class="txt-name">거래소 이름입니다.거래소 이름입니다.거래소 이름입니다.거래소 이름입니다.거래소 이름입니다.</strong>
-                    <span class="state-txt">선택됨</span>
+                    <span class="state-txt">연결됨</span>
                   </div>
                 </div>
               </label>
@@ -100,9 +99,9 @@
               <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
             </div>
           </div>
-          <div class="pop-body">
+          <div class="pop-body pb-8">
             <div class="section">
-              <div class="agree-dl ui-agree">
+              <div class="agree-dl mt-4 ui-agree">
                 <div class="agree-dt">
                   <div class="checkbox">
                     <input type="checkbox" id="agreeAll1" class="ui-all-agree-chk" /><i aria-hidden="true"></i>
@@ -114,14 +113,14 @@
                     <input type="checkbox" id="agree1-1" class="ui-agree-chk" /><i aria-hidden="true"></i>
                     <div class="lbl">
                       <label for="agree1-1">개인(신용)정보 활용 동의(필수)</label>
-                      <a href="#" class="agree-btn" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                      <a href="#" class="agree-btn" aria-label="약관상세 확인" onclick="Layer.open('#popAgreeView1')"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
                     </div>
                   </div>
                   <div class="checkbox ty2">
                     <input type="checkbox" id="agree1-2" class="ui-agree-chk" /><i aria-hidden="true"></i>
                     <div class="lbl">
                       <label for="agree1-2">개인(신용)정보 제3자 제공 동의(필수)</label>
-                      <a href="#" class="agree-btn" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                      <a href="#" class="agree-btn" aria-label="약관상세 확인" onclick="Layer.open('#popAgreeView2')"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
                     </div>
                   </div>
                 </div>
@@ -137,7 +136,62 @@
           </div>
         </article>
       </div>
-      <!-- 약관 개별 상세 팝업은 추후 추가 -->
+
+      <div id="popAgreeView1" class="popup full" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="section">
+              <article class="terms-content">
+                <h1>개인(신용)정보 활용 동의(필수)</h1>
+                <h1>약관 상세 내용 없음~~!!</h1>
+                <h1>약관 상세 내용 없음~~!!</h1>
+                <h1>약관 상세 내용 없음~~!!</h1>
+                <h1>약관 상세 내용 없음~~!!</h1>
+              </article>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="flex">
+                <button type="button" class="button primary ui-pop-close" onclick="$('#agree1-1').prop('checked',true).change()">동의</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div id="popAgreeView2" class="popup full" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="section">
+              <article class="terms-content">
+                <h1>개인(신용)정보 제3자 제공 동의(필수)</h1>
+                <h1>약관 상세 내용 없음~~!!</h1>
+                <h1>약관 상세 내용 없음~~!!</h1>
+                <h1>약관 상세 내용 없음~~!!</h1>
+                <h1>약관 상세 내용 없음~~!!</h1>
+              </article>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="flex">
+                <button type="button" class="button primary ui-pop-close" onclick="$('#agree1-2').prop('checked',true).change()">동의</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
       <!-- //팝업 -->
     </article>
     <script>
@@ -148,14 +202,12 @@
 
       // 거래소 선택
       $('.check-list-wrap .checkbox input').change(function () {
-        setTimeout(function () {
-          const $length = $('.check-list-wrap .checkbox input:checked').not(':disabled').length;
-          if ($length > 0) {
-            $('#btnMain').prop('disabled', false);
-          } else {
-            $('#btnMain').prop('disabled', true);
-          }
-        }, 10);
+        const $length = $('.check-list-wrap .checkbox input:checked').not(':disabled').length;
+        if ($length > 0) {
+          $('#btnMain').prop('disabled', false);
+        } else {
+          $('#btnMain').prop('disabled', true);
+        }
       });
 
       // 확인(페이지)
@@ -168,7 +220,6 @@
         setTimeout(function () {
           const $length = $('.ui-agree-chk').length;
           const $checked = $('.ui-agree-chk:checked').length;
-          console.log($length, $checked);
           if ($length === $checked) {
             $('#popAgreeChk .pop-foot .button').prop('disabled', false);
           } else {

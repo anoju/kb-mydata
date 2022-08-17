@@ -171,13 +171,6 @@
     font-size: 1.4rem;
     color: var(--gray-txt-color);
   }
-  .item-price {
-    font-size: 1.4rem;
-    color: var(--strong-txt-color);
-    > strong {
-      font-size: 1.6rem;
-    }
-  }
 
   &.ty2 {
     .item-tit {
@@ -262,6 +255,21 @@
   }
 }
 .list-item-3 {
+  padding: 0.8rem;
+  font-size: 1.4rem;
+  .item-tit {
+    color: var(--strong-txt-color);
+  }
+  .item-sub {
+    margin-top: 0.2rem;
+    color: #818892;
+  }
+  .item-price {
+    color: var(--strong-txt-color);
+    > strong {
+      font-weight: 500;
+    }
+  }
 }
 
 // list-view
