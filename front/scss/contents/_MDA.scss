@@ -95,10 +95,10 @@
   display: flex;
   flex-wrap: wrap;
   font-size: 1.4rem;
+  color: #818892;
   span {
     display: inline-block;
     font-weight: 400;
-    color: #818892;
     margin-right: 0.8rem;
     &:last-child {
       margin-right: 0;
@@ -203,27 +203,27 @@
     }
   }
 
-  &.type3 {
-    > ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.4rem 1.2rem;
-    }
-    .item {
-      display: block;
-    }
-    .img-box {
-      border-radius: 1.2rem;
-    }
-    .invest-txt-box {
-      padding: 0;
-      margin-top: 1.2rem;
-    }
-    .invest-info {
-      position: relative;
-      margin-top: 0.7rem;
-    }
-  }
+  // &.type3 {
+  //   > ul {
+  //     display: grid;
+  //     grid-template-columns: 1fr 1fr;
+  //     gap: 2.4rem 1.2rem;
+  //   }
+  //   .item {
+  //     display: block;
+  //   }
+  //   .img-box {
+  //     border-radius: 1.2rem;
+  //   }
+  //   .invest-txt-box {
+  //     padding: 0;
+  //     margin-top: 1.2rem;
+  //   }
+  //   .invest-info {
+  //     position: relative;
+  //     margin-top: 0.7rem;
+  //   }
+  // }
 }
 .invest-txt-box {
   .tit {
