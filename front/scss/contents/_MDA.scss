@@ -321,8 +321,7 @@
       border: 0.1rem solid #c2c2c2;
     }
   }
-  .invest-card-list .img-box &,
-  .invest-item-list .img-box & {
+  .img-box & {
     left: 0;
     bottom: 0;
     width: 100%;
@@ -400,15 +399,13 @@
     .invest-state + .tit.h-46 + .invest-info {
       margin-top: 0.7rem;
     }
+    .invest-info {
+      position: relative;
+      margin-top: 1.5rem;
+    }
   }
   .txt {
     margin-top: 0.2rem;
-  }
-  .invest-info {
-    left: 0;
-    bottom: 0;
-    position: relative;
-    margin-top: 1.5rem;
   }
   .folding-panel {
     display: none;
