@@ -119,6 +119,13 @@
   }
   .item-tit {
     font-weight: 500;
+    color: var(--strong-txt-color);
+  }
+  .item-price {
+    color: var(--strong-txt-color);
+    > strong {
+      font-weight: 500;
+    }
   }
   .section & {
     @include outer(true);
@@ -158,7 +165,6 @@
   .item-tit {
     font-size: 1.6rem;
     line-height: 2rem;
-    color: var(--strong-txt-color);
     .i-ico-new {
       margin-right: 0.4rem;
       vertical-align: -0.1rem;
@@ -257,18 +263,24 @@
 .list-item-3 {
   padding: 0.8rem;
   font-size: 1.4rem;
-  .item-tit {
-    color: var(--strong-txt-color);
-  }
   .item-sub {
     margin-top: 0.2rem;
     color: #818892;
   }
+}
+.list-item-4 {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
   .item-price {
-    color: var(--strong-txt-color);
+    margin-top: 1.8rem;
     > strong {
-      font-weight: 500;
+      font-size: 1.8rem;
     }
+  }
+  .item-sub {
+    margin-top: 0.2rem;
+    color: #818892;
+    font-size: 1.4rem;
   }
 }
 
