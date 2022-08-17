@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>끌</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('가상자산 상세정보');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <p class="t-right fz-12 fc-818892">최근 업데이트 2022.12.12 09:05:12</p>
+          <div class="logo-info-txt mt-12">
+            <i class="ico-logo"><img src="../../images/temp/logo-KB.png" alt="" /></i>
+            <strong class="txt-name">빗썸 bithumb</strong>
+          </div>
+
+          <div class="item-txt-price mt-24">
+            <sub>총평가금액</sub>
+            <strong>0</strong>
+            원
+          </div>
+          <p class="t-right mt-4 fc-up">+1,234,567 (10.64%)</p>
+          <!-- 상승 : fc-up, 하락 : fc-down, 유지: fc-424242 -->
+          <div class="t-right">
+            <button class="button icon pd-8 mr-m8"><span class="fc-979797 fz-12 mr-5">자산 업데이트</span><i class="i-ico-refresh-small" aria-hidden="true"></i></button>
+          </div>
+
+          <dl class="flex not-full bg-fa pd-16 bd-radius-10 fz-14 align-center mt-16">
+            <dt>투자금액</dt>
+            <dd class="flex-11 t-right fc-212121">25,000,000 원</dd>
+          </dl>
+
+          <hr class="hr-line mt-32" aria-hidden="true" />
+
+          <!-- 보유 코인이 없을때 -->
+          <div class="list-empty">
+            <i class="i-ico-warning-40" aria-hidden="true" data-animation="on"></i>
+            <p>보유 중인 코인이 없습니다.</p>
+          </div>
+
+          <!-- 보유 코인이 있을때 -->
+          <ul class="line-list-2 mt-16">
+            <li>
+              <a href="#" class="list-item-4 btn-click">
+                <p class="item-tit">비트코인 BTC</p>
+                <p class="item-price t-right"><strong>44,000,000</strong> 원</p>
+                <p class="item-sub t-right fc-up">+4,567 (10.64%)</p>
+                <!-- 상승 : fc-up, 하락 : fc-down, 유지: fc-424242 -->
+              </a>
+            </li>
+            <li>
+              <a href="#" class="list-item-4 btn-click">
+                <p class="item-tit">이더리움 ETH</p>
+                <p class="item-price t-right"><strong>44,000,000</strong> 원</p>
+                <p class="item-sub t-right fc-down">-4,567 (10.64%)</p>
+                <!-- 상승 : fc-up, 하락 : fc-down, 유지: fc-424242 -->
+              </a>
+            </li>
+            <li>
+              <a href="#" class="list-item-4 btn-click">
+                <p class="item-tit">원화 KRW</p>
+                <p class="item-price t-right"><strong>44,000,000</strong> 원</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- 팝업 -->
+      <!-- //팝업 -->
+    </article>
+    <script>
+      $(window).load(function () {
+        $('.item-txt-price strong').countNumber(105000000);
+      });
+    </script>
+  </body>
+</html>
