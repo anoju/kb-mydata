@@ -1,10 +1,10 @@
 // 투자
 //투자 메인배너
 .invest-banner-wrap {
+  background: #f1f1f1;
   @include outer;
   overflow: hidden;
   .img-box {
-    background: #f1f1f1;
     &:before {
       padding-top: -xyPercent(360, 208);
     }
@@ -95,7 +95,6 @@
   display: flex;
   flex-wrap: wrap;
   font-size: 1.5rem;
-  color: #818892;
   margin-top: 0.4rem;
 }
 
@@ -293,14 +292,16 @@
   font-weight: 400;
   @include dimm;
   @include ellipsis;
+  text-shadow: 0 0 5px #000;
   .invest-txt-box & {
     position: relative;
     left: auto;
     top: auto;
     padding: 0;
-    color: #898989;
+    color: #818892;
     background: none;
     max-width: none;
+    text-shadow: none;
   }
 }
 // 투자 뱃지
