@@ -481,7 +481,7 @@
     "depth4": "가상자산",
     "name": "거래소 선택",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-08-18",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   },
   {
@@ -492,7 +492,7 @@
     "depth4": "가상자산",
     "name": "약관 동의 팝업",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-08-18",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>, MDB02-0406001 안에 포함"
   },
   {
@@ -503,7 +503,7 @@
     "depth4": "가상자산",
     "name": "약관 상세 팝업1",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-08-18",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>, MDB02-0406001 안에 포함"
   },
   {
@@ -514,7 +514,7 @@
     "depth4": "가상자산",
     "name": "약관 상세 팝업2",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-08-18",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>, MDB02-0406001 안에 포함"
   },
   {
@@ -525,7 +525,7 @@
     "depth4": "가상자산",
     "name": "자산 연결완료",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-08-18",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   },
   {
@@ -536,7 +536,7 @@
     "depth4": "가상자산",
     "name": "자산 연결실패",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-08-18",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   },
   {
@@ -656,7 +656,7 @@
     "depth4": "가상자산",
     "name": "가상자산 목록",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-08-18",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   },
   {
@@ -667,7 +667,7 @@
     "depth4": "가상자산",
     "name": "가상자산 상세1",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-08-18",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   },
   {
@@ -678,7 +678,7 @@
     "depth4": "가상자산",
     "name": "가상자산 상세2",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-08-18",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   },
   {
@@ -689,7 +689,7 @@
     "depth4": "가상자산",
     "name": "가상자산 관리",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-08-18",
     "etc": "<strong style=\"color:red;background:yellow;\">추가요건(가상자산)</strong>"
   }
   
