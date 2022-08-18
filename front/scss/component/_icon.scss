@@ -40,15 +40,6 @@
     border: 0.1rem solid rgba(0, 0, 0, 0.04);
     border-radius: 50%;
   }
-  &.color-1 {
-    background: var(--primary-color);
-  }
-  &.color-2 {
-    background: #818892;
-  }
-  &.color-3 {
-    background: #b9c1c9;
-  }
 }
 
 [class*='i-ico-'],
@@ -553,7 +544,8 @@ a.visited {
 .i-ico-header-info {
   width: 1.6rem;
   height: 1.6rem;
-  background-image: url('../images/icon/ico-header-info.png');
+  // background-image: url('../images/icon/ico-header-info.png');
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Ccircle cx='8' cy='8' r='7.25' fill='white' stroke='%23FD7E64' stroke-width='1.5'/%3E%3Cpath d='M9.05739 4C9.64 4 9.9313 4.3648 9.9313 4.7828C9.9313 5.3048 9.42522 5.7876 8.76652 5.7876C8.21478 5.7876 7.89304 5.4876 7.90826 4.9916C7.90826 4.5744 8.2913 4 9.05739 4ZM7.26478 12C6.80478 12 6.46783 11.7392 6.78957 10.5904L7.31739 8.5536C7.40913 8.228 7.42435 8.0972 7.31739 8.0972C7.17957 8.0972 6.58304 8.322 6.22957 8.544L6 8.192C7.11826 7.3176 8.40478 6.8052 8.95696 6.8052C9.41652 6.8052 9.49304 7.3144 9.26348 8.0972L8.6587 10.238C8.55174 10.616 8.59739 10.7464 8.70478 10.7464C8.84261 10.7464 9.29478 10.5896 9.73913 10.2636L10 10.5892C8.91217 11.608 7.72391 12 7.26478 12Z' fill='%23FD7E64'/%3E%3C/svg%3E");
 }
 .i-ico-point-label {
   width: 2rem;
@@ -577,12 +569,6 @@ a.visited {
     // background-image: url('../images/icon/ico-btn-alarm-new.png');
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='24' viewBox='0 0 25 24' fill='none'%3E%3Cpath d='M7.83465 8.61319C8.09878 6.23596 10.1081 4.4375 12.5 4.4375V4.4375C14.8919 4.4375 16.9012 6.23596 17.1654 8.61319L17.3769 10.5174C17.4855 11.4943 17.8034 12.4363 18.3091 13.2791L18.7948 14.0886C19.1067 14.6084 19.2627 14.8683 19.2887 15.0783C19.343 15.5158 19.1044 15.9372 18.7013 16.1157C18.5079 16.2014 18.2048 16.2014 17.5986 16.2014H7.40139C6.79521 16.2014 6.49212 16.2014 6.29867 16.1157C5.89562 15.9372 5.65703 15.5158 5.7113 15.0783C5.73734 14.8683 5.89328 14.6084 6.20516 14.0886L6.69087 13.2791C7.19656 12.4363 7.51452 11.4943 7.62306 10.5174L7.83465 8.61319Z' stroke='%23424242' stroke-width='2'/%3E%3Cpath d='M10.0651 16.7599C10.2087 17.5639 10.5252 18.2744 10.9655 18.7811C11.4057 19.2878 11.9451 19.5625 12.5 19.5625C13.055 19.5625 13.5944 19.2878 14.0346 18.7811C14.4749 18.2744 14.7914 17.5639 14.935 16.7599' stroke='%23424242' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='20.2344' cy='3.23438' r='2.25' fill='%23E45055'/%3E%3C/svg%3E");
   }
-}
-.i-ico-exclamation {
-  width: 1.6rem;
-  height: 1.6rem;
-  // background-image: url('../images/icon/ico-exclamation.png');
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.5 8C2.5 11.0376 4.96243 13.5 8 13.5C11.0376 13.5 13.5 11.0376 13.5 8C13.5 4.96243 11.0376 2.5 8 2.5C4.96243 2.5 2.5 4.96243 2.5 8ZM8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM8 4.25C8.41421 4.25 8.75 4.58579 8.75 5V8.5C8.75 8.91421 8.41421 9.25 8 9.25C7.58579 9.25 7.25 8.91421 7.25 8.5V5C7.25 4.58579 7.58579 4.25 8 4.25ZM8 10C7.44772 10 7 10.4477 7 11C7 11.5523 7.44772 12 8 12C8.55228 12 9 11.5523 9 11C9 10.4477 8.55228 10 8 10Z' fill='%2300caca'/%3E%3C/svg%3E");
 }
 .i-ico-kind {
   width: 3.2rem;
@@ -668,6 +654,7 @@ a.visited {
 .i-ico-exclamation {
   width: 1.4rem;
   height: 1.4rem;
+  // background-image: url('../images/icon/ico-exclamation.png');
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.5 7C1.5 10.0376 3.96243 12.5 7 12.5C10.0376 12.5 12.5 10.0376 12.5 7C12.5 3.96243 10.0376 1.5 7 1.5C3.96243 1.5 1.5 3.96243 1.5 7ZM7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0ZM7 3.25C7.41421 3.25 7.75 3.58579 7.75 4V7.5C7.75 7.91421 7.41421 8.25 7 8.25C6.58579 8.25 6.25 7.91421 6.25 7.5V4C6.25 3.58579 6.58579 3.25 7 3.25ZM7 9C6.44772 9 6 9.44771 6 10C6 10.5523 6.44772 11 7 11C7.55228 11 8 10.5523 8 10C8 9.44771 7.55228 9 7 9Z' fill='%2300CACA'/%3E%3C/svg%3E");
 }
 
