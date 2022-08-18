@@ -300,6 +300,9 @@
     background: none;
     max-width: none;
     text-shadow: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1;
   }
 }
 // 투자 뱃지
@@ -396,8 +399,11 @@
         }
       }
     }
-    .invest-state + .tit.h-46 + .invest-info {
-      margin-top: 0.7rem;
+    .invest-state + .tit.h-46 {
+      margin-top: 0.4rem;
+      + .invest-info {
+        margin-top: 1rem;
+      }
     }
     .invest-info {
       position: relative;
