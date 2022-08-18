@@ -196,14 +196,15 @@
               <div class="invest-tit-sub">머니텐TV 유튜브의 믿고 보는 투자 정보</div>
               <div class="invest-item-list mt-24 ui-folding _youtube-list">
                 <ul>
-                  <li data-youtube="sqgxcCjD04s">
+                  <!-- https://i.ytimg.com/vi/[동영상 ID값]/[이미지형식].jpg 
+                    sddefault.jpg : 640*480
+                    hqdefault.jpg : 480*360
+                    mqdefault.jpg : 320*180
+                  -->
+                  <!-- <li data-youtube="sqgxcCjD04s">
                     <a href="#" class="item btn-click folding-btn" role="button">
                       <p class="img-box">
-                        <!-- https://i.ytimg.com/vi/[동영상 ID값]/[이미지형식].jpg 
-                            sddefault.jpg : 640*480
-                            hqdefault.jpg : 480*360
-                            mqdefault.jpg : 320*180
-                          -->
+                        
                         <img src="https://i.ytimg.com/vi/sqgxcCjD04s/sddefault.jpg" alt="" />
                         <span class="invest-info">
                           <span>3:39</span>
@@ -285,7 +286,7 @@
                         </span>
                       </div>
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -682,51 +683,114 @@
       /********
       youtube 
       ********/
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      const $list = [
+        {
+          id: 'sqgxcCjD04s',
+          title: 'strawberry moon 동영상타이틀입니다.동영상타이틀입니다.동영상타이틀입니다.동영상타이틀입니다.동영상타이틀입니다.동영상타이틀입니다.',
+          time: '3:39',
+          state: '컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태',
+          tag: 'IU(아이유)'
+        },
+        {
+          id: '0-q1KafFCLU',
+          title: 'Celebrity',
+          time: '3:18',
+          state: '뮤직비디오',
+          tag: 'IU(아이유)'
+        },
+        {
+          id: '86BST8NIpNM',
+          title: 'Coin',
+          time: '3:39',
+          state: '뮤직비디오',
+          tag: 'IU(아이유)'
+        },
+        {
+          id: 'v7bnOxV4jAc',
+          title: 'LILAC(라일락)',
+          time: '4:39',
+          state: '뮤직비디오',
+          tag: 'IU(아이유)'
+        },
+        {
+          id: 'D1PvIWdJ8xo',
+          title: 'Blueming(블루밍)',
+          time: '3:39',
+          state: '뮤직비디오',
+          tag: 'IU(아이유)'
+        }
+      ];
 
-      let playing = false;
+      makeYoutubeList($list);
+
+      function makeYoutubeList(ary) {
+        let $html;
+        if (ary.length < 1) return;
+        $.each(ary, function () {
+          console.log(this);
+          $html += '<li data-youtube="' + this.id + '">';
+          $html += '  <a href="#" class="item btn-click folding-btn" role="button">';
+          $html += '   <p class="img-box">';
+          $html += '     <img src="https://i.ytimg.com/vi/' + this.id + '/sddefault.jpg" alt="" />';
+          $html += '     <span class="invest-info"><span>' + this.time + '</span></span>';
+          $html += '   </p>';
+          $html += '   <div class="invest-txt-box">';
+          $html += '     <span class="invest-state">' + this.state + '</span>';
+          $html += '     <p class="tit ellipsis-2 h-46">' + this.title + '</p>';
+          $html += '     <span class="invest-info"><span>' + this.tag + '</span></span>';
+          $html += '   </div>';
+          $html += '  </a>';
+          $html += '</li>';
+        });
+        $('._youtube-list>ul').html($html);
+        youtubeInsert();
+      }
+
+      function youtubeInsert() {
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        $('a, button').click(function () {
+          const $list = $('._youtube-list');
+          $youtube_li = $list.find('li');
+          if ($youtube_li.length < 1) return;
+          $youtube_li.each(function () {
+            const $this = $(this);
+            const $player = $this.data('player');
+            if (!!$player && typeof $player.stopVideo === 'function') $player.stopVideo();
+          });
+        });
+      }
+
       function onYouTubeIframeAPIReady() {
         const $list = $('._youtube-list');
-        $list_li = $list.find('li');
-        youtubeInsert();
-
-        function youtubeInsert() {
-          $list_li.each(function (i) {
-            const $this = $(this);
-            const $html = '<div class="folding-panel"><div class="youtube-box"><div id="player' + i + '"></div></div></div>';
-            $this.append($html);
-            const $box = $this.find('.youtube-box');
-            const $playerId = 'player' + i;
-            const $videoId = $this.data('youtube');
-            const $player = new YT.Player($playerId, {
-              videoId: $videoId,
-              playerVars: {
-                // autoplay: 1,
-                // controls: 0,
-                modestbranding: 1,
-                enablejsapi: 1,
-                showinfo: 0,
-                rel: 0,
-                // fs: 0,
-                playsinline: 1
-              }
-            });
-            $this.data('player', $player);
-          });
-        }
-      }
-      $('a, button').click(function () {
-        $list_li.each(function () {
+        $youtube_li = $list.find('li');
+        if ($youtube_li.length < 1) return;
+        $youtube_li.each(function (i) {
           const $this = $(this);
-          const $player = $this.data('player');
-          if (!!$player && typeof $player.stopVideo === 'function') {
-            $player.stopVideo();
-          }
+          const $html = '<div class="folding-panel"><div class="youtube-box"><div id="player' + i + '"></div></div></div>';
+          $this.append($html);
+          const $box = $this.find('.youtube-box');
+          const $playerId = 'player' + i;
+          const $videoId = $this.data('youtube');
+          const $player = new YT.Player($playerId, {
+            videoId: $videoId,
+            playerVars: {
+              // autoplay: 1,
+              // controls: 0,
+              modestbranding: 1,
+              enablejsapi: 1,
+              showinfo: 0,
+              rel: 0,
+              // fs: 0,
+              playsinline: 1
+            }
+          });
+          $this.data('player', $player);
         });
-      });
+      }
     </script>
   </body>
 </html>
