@@ -721,11 +721,15 @@
         }
       ];
 
+      const $youtube_list = $('._youtube-list');
       makeYoutubeList($list);
 
       function makeYoutubeList(ary) {
         let $html;
-        if (ary.length < 1) return;
+        if (ary.length < 1) {
+          $youtube_list.parent().hide();
+          return;
+        }
         $.each(ary, function () {
           console.log(this);
           $html += '<li data-youtube="' + this.id + '">';
@@ -742,7 +746,7 @@
           $html += '  </a>';
           $html += '</li>';
         });
-        $('._youtube-list>ul').html($html);
+        $youtube_list.find('>ul').html($html);
         youtubeInsert();
       }
 
@@ -753,8 +757,7 @@
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
         $('a, button').click(function () {
-          const $list = $('._youtube-list');
-          $youtube_li = $list.find('li');
+          const $youtube_li = $youtube_list.find('li');
           if ($youtube_li.length < 1) return;
           $youtube_li.each(function () {
             const $this = $(this);
@@ -765,8 +768,7 @@
       }
 
       function onYouTubeIframeAPIReady() {
-        const $list = $('._youtube-list');
-        $youtube_li = $list.find('li');
+        const $youtube_li = $youtube_list.find('li');
         if ($youtube_li.length < 1) return;
         $youtube_li.each(function (i) {
           const $this = $(this);
