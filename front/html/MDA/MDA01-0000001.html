@@ -725,13 +725,12 @@
       makeYoutubeList($list);
 
       function makeYoutubeList(ary) {
-        let $html;
+        let $html = '';
         if (ary.length < 1) {
           $youtube_list.parent().hide();
           return;
         }
         $.each(ary, function () {
-          console.log(this);
           $html += '<li data-youtube="' + this.id + '">';
           $html += '  <a href="#" class="item btn-click folding-btn" role="button">';
           $html += '   <p class="img-box">';
