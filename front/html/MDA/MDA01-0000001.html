@@ -691,20 +691,20 @@
           state: '컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태',
           tag: 'IU(아이유)'
         },
-        {
-          id: '0-q1KafFCLU',
-          title: 'Celebrity',
-          time: '3:18',
-          state: '뮤직비디오',
-          tag: 'IU(아이유)'
-        },
-        {
-          id: '86BST8NIpNM',
-          title: 'Coin',
-          time: '3:39',
-          state: '뮤직비디오',
-          tag: 'IU(아이유)'
-        },
+        // {
+        //   id: '0-q1KafFCLU',
+        //   title: 'Celebrity',
+        //   time: '3:18',
+        //   state: '뮤직비디오',
+        //   tag: 'IU(아이유)'
+        // },
+        // {
+        //   id: '86BST8NIpNM',
+        //   title: 'Coin',
+        //   time: '3:39',
+        //   state: '뮤직비디오',
+        //   tag: 'IU(아이유)'
+        // },
         {
           id: 'v7bnOxV4jAc',
           title: 'LILAC(라일락)',
@@ -718,6 +718,20 @@
           time: '3:39',
           state: '뮤직비디오',
           tag: 'IU(아이유)'
+        },
+        {
+          id: 'https://www.youtube.com/watch?v=Hbb5GPxXF1w',
+          title: 'SNEAKERS',
+          time: '3:04',
+          state: '뮤직비디오',
+          tag: 'ITZY(있지)'
+        },
+        {
+          id: 'https://youtu.be/8AMBslo1zng',
+          title: 'LOVE DIVE',
+          time: '2:58',
+          state: '뮤직비디오',
+          tag: 'IVE(아이브)'
         }
       ];
 
@@ -731,10 +745,18 @@
           return;
         }
         $.each(ary, function () {
-          $html += '<li data-youtube="' + this.id + '">';
+          let $id = this.id;
+          if ($id.indexOf('?v=') > 0) {
+            $id = this.id.split('?v=')[1];
+            $id = $id.substring(0, 11);
+          } else if ($id.indexOf('youtu.be/') > 0) {
+            $id = this.id.split('youtu.be/')[1];
+            $id = $id.substring(0, 11);
+          }
+          $html += '<li data-youtube="' + $id + '">';
           $html += '  <a href="#" class="item btn-click folding-btn" role="button">';
           $html += '   <p class="img-box">';
-          $html += '     <img src="https://i.ytimg.com/vi/' + this.id + '/sddefault.jpg" alt="" />';
+          $html += '     <img src="https://i.ytimg.com/vi/' + $id + '/sddefault.jpg" alt="" />';
           $html += '     <span class="invest-info"><span>' + this.time + '</span></span>';
           $html += '   </p>';
           $html += '   <div class="invest-txt-box">';
