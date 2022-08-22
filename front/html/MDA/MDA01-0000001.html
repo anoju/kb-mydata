@@ -687,56 +687,48 @@
         {
           id: 'sqgxcCjD04s',
           title: 'strawberry moon 동영상타이틀입니다.동영상타이틀입니다.동영상타이틀입니다.동영상타이틀입니다.동영상타이틀입니다.동영상타이틀입니다.',
-          time: '3:39',
           state: '컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태',
           tag: 'IU(아이유)'
         },
         // {
         //   id: '0-q1KafFCLU',
         //   title: 'Celebrity',
-        //   time: '3:18',
         //   state: '뮤직비디오',
         //   tag: 'IU(아이유)'
         // },
         // {
         //   id: '86BST8NIpNM',
         //   title: 'Coin',
-        //   time: '3:39',
         //   state: '뮤직비디오',
         //   tag: 'IU(아이유)'
         // },
         {
           id: 'v7bnOxV4jAc',
           title: 'LILAC(라일락)',
-          time: '4:39',
           state: '뮤직비디오',
           tag: 'IU(아이유)'
         },
         // {
         //   id: 'D1PvIWdJ8xo',
         //   title: 'Blueming(블루밍)',
-        //   time: '3:41',
         //   state: '뮤직비디오',
         //   tag: 'IU(아이유)'
         // },
         {
           id: 'https://www.youtube.com/watch?v=Hbb5GPxXF1w',
           title: 'SNEAKERS',
-          time: '3:04',
           state: '뮤직비디오',
           tag: 'ITZY(있지)'
         },
         {
           id: 'https://youtu.be/8AMBslo1zng',
           title: 'LOVE DIVE',
-          time: '2:58',
           state: '뮤직비디오',
           tag: 'IVE(아이브)'
         },
         {
           id: 'vePPhG9zy38',
           title: '아쿠아플라넷 제주 메인수조',
-          time: '라이브',
           state: '라이브캠',
           tag: '아쿠아플라넷 제주'
         }
@@ -764,7 +756,8 @@
           $html += '  <a href="#" class="item btn-click folding-btn" role="button">';
           $html += '   <p class="img-box">';
           $html += '     <img src="https://i.ytimg.com/vi/' + $id + '/sddefault.jpg" alt="" />';
-          $html += '     <span class="invest-info"><span>' + this.time + '</span></span>';
+          // $html += '     <span class="invest-info"><span>' + this.time + '</span></span>';
+          $html += '     <span class="invest-info"><span></span></span>';
           $html += '   </p>';
           $html += '   <div class="invest-txt-box">';
           $html += '     <span class="invest-state">' + this.state + '</span>';
@@ -825,7 +818,6 @@
           function onPlayerReady(event) {
             // console.log(event.target);
             // 유튜브 플레이시간 구해오기
-            /*
             const $duration = event.target.getDuration();
             let $tiemStr = '';
             if ($duration === 0) {
@@ -848,7 +840,6 @@
             const $TimeSpan = $this.find('.img-box .invest-info > span');
             const $TimeTxt = $TimeSpan.text();
             if ($TimeTxt !== $tiemStr) $TimeSpan.text($tiemStr);
-            */
           }
         });
       }
