@@ -1306,8 +1306,7 @@
     }
     .number {
       display: block;
-      flex: 0 0 auto;
-      width: 5rem;
+      min-width: 5rem;
       text-align: center;
       font-size: 1.8rem;
       font-weight: 500;

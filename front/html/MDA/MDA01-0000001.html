@@ -778,13 +778,18 @@
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
         $('a, button').click(function () {
-          const $youtube_li = $youtube_list.find('li');
-          if ($youtube_li.length < 1) return;
-          $youtube_li.each(function () {
-            const $this = $(this);
-            const $player = $this.data('player');
-            if (!!$player && typeof $player.stopVideo === 'function') $player.stopVideo();
-          });
+          youtubeStop();
+        });
+      }
+
+      // 유튜브 재생정지
+      function youtubeStop() {
+        const $youtube_li = $youtube_list.find('li');
+        if ($youtube_li.length < 1) return;
+        $youtube_li.each(function () {
+          const $this = $(this);
+          const $player = $this.data('player');
+          if (!!$player && typeof $player.stopVideo === 'function') $player.stopVideo();
         });
       }
 
