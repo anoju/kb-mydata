@@ -760,9 +760,9 @@
           $html += '     <span class="invest-info"><span></span></span>';
           $html += '   </p>';
           $html += '   <div class="invest-txt-box">';
-          $html += '     <span class="invest-state">' + this.state + '</span>';
+          if (this.state) $html += '     <span class="invest-state">' + this.state + '</span>';
           $html += '     <p class="tit ellipsis-2 h-46">' + this.title + '</p>';
-          $html += '     <span class="invest-info"><span>' + this.tag + '</span></span>';
+          if (this.tag) $html += '     <span class="invest-info"><span>' + this.tag + '</span></span>';
           $html += '   </div>';
           $html += '  </a>';
           $html += '</li>';
