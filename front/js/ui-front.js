@@ -1776,84 +1776,87 @@ ui.Tab = {
     let $wrap = $(wrap);
     if ($wrap.hasClass('tab-inner')) $wrap = $wrap.parent();
     if ($wrap.hasClass('tab-list')) $wrap = $wrap.closest('.tab-inner').parent();
-    const $line = $wrap.find('.tab-line');
-    if (!$line.length) return;
-    const $LastLeft = $line.data('left') === undefined ? 0 : $line.data('left');
-    const $LastWidth = $line.data('width') === undefined ? 0 : $line.data('width');
-    const $inner = $wrap.find('.tab-inner');
-    const $innerSclWidth = $inner.get(0).scrollWidth;
-    const $innerSclGap = $innerSclWidth - $inner.outerWidth();
-    // const $innerSclLeft = $inner.get(0).scrollLeft;
-    const $isTy2 = $line.hasClass('ty2');
-    const $list = $wrap.find('.tab-list');
-    const $listLeft = parseInt($list.css('margin-left'));
-    const $active = $wrap.find('.active');
-    const $tabBtn = $active.find('a');
-    // const $tabWidth = $tabBtn.get(0).offsetWidth;
-    // const $tabLeft = $active.get(0).offsetLeft + $tabBtn.get(0).offsetLeft;
-    const $tabWidth = $tabBtn.outerWidth();
-    const $tabLeft = $listLeft + $active.position().left + $tabBtn.position().left;
-    const $tabRight = $innerSclWidth - $tabLeft - $tabWidth - $innerSclGap;
 
-    if ($LastLeft === $tabLeft && $LastWidth === $tabWidth) return;
-    if ($isTy2) {
-      if (isAni) {
-        const $delay = $innerSclGap < 10 ? 0 : 200;
-        if ($LastLeft < $tabLeft) {
-          $line
-            .stop(true, false)
-            .delay($delay)
-            .animate(
-              {
-                right: $tabRight
-              },
-              200,
-              function () {
-                $wrap.addClass('tab-line-moving');
-                $line.css({
-                  left: $tabLeft
-                });
-              }
-            );
-        } else {
-          $line
-            .stop(true, false)
-            .delay($delay)
-            .animate(
-              {
-                left: $tabLeft
-              },
-              200,
-              function () {
-                $wrap.addClass('tab-line-moving');
-                $line.css({
+    const $delay = $wrap.is(':visible') ? 0 : 10;
+    setTimeout(function () {
+      const $line = $wrap.find('.tab-line');
+      if (!$line.length) return;
+      const $LastLeft = $line.data('left') === undefined ? 0 : $line.data('left');
+      const $LastWidth = $line.data('width') === undefined ? 0 : $line.data('width');
+      const $inner = $wrap.find('.tab-inner');
+      const $innerSclWidth = $inner.get(0).scrollWidth;
+      const $innerSclGap = $innerSclWidth - $inner.outerWidth();
+      // const $innerSclLeft = $inner.get(0).scrollLeft;
+      const $isTy2 = $line.hasClass('ty2');
+      const $list = $wrap.find('.tab-list');
+      const $listLeft = parseInt($list.css('margin-left'));
+      const $active = $wrap.find('.active');
+      const $tabBtn = $active.find('a');
+      // const $tabWidth = $tabBtn.get(0).offsetWidth;
+      // const $tabLeft = $active.get(0).offsetLeft + $tabBtn.get(0).offsetLeft;
+      const $tabWidth = $tabBtn.outerWidth();
+      const $tabLeft = $listLeft + $active.position().left + $tabBtn.position().left;
+      const $tabRight = $innerSclWidth - $tabLeft - $tabWidth - $innerSclGap;
+      if ($LastLeft === $tabLeft && $LastWidth === $tabWidth) return;
+      if ($isTy2) {
+        if (isAni) {
+          const $delay = $innerSclGap < 10 ? 0 : 200;
+          if ($LastLeft < $tabLeft) {
+            $line
+              .stop(true, false)
+              .delay($delay)
+              .animate(
+                {
                   right: $tabRight
-                });
-              }
-            );
+                },
+                200,
+                function () {
+                  $wrap.addClass('tab-line-moving');
+                  $line.css({
+                    left: $tabLeft
+                  });
+                }
+              );
+          } else {
+            $line
+              .stop(true, false)
+              .delay($delay)
+              .animate(
+                {
+                  left: $tabLeft
+                },
+                200,
+                function () {
+                  $wrap.addClass('tab-line-moving');
+                  $line.css({
+                    right: $tabRight
+                  });
+                }
+              );
+          }
+        } else {
+          $line.css({
+            left: $tabLeft,
+            right: $tabRight
+          });
         }
       } else {
+        if (isAni) $wrap.addClass('tab-line-moving');
         $line.css({
-          left: $tabLeft,
-          right: $tabRight
+          width: $tabWidth,
+          left: $tabLeft
         });
       }
-    } else {
-      if (isAni) $wrap.addClass('tab-line-moving');
-      $line.css({
-        width: $tabWidth,
-        left: $tabLeft
-      });
-    }
-    if (isAni) {
-      const transitionEndEvt = function () {
-        $wrap.removeClass('tab-line-moving');
-        $line.off('transitionend', transitionEndEvt);
-      };
-      $line.on('transitionend', transitionEndEvt);
-    }
-    $line.data('left', $tabLeft);
-    $line.data('width', $tabWidth);
+      if (isAni) {
+        const transitionEndEvt = function () {
+          $wrap.removeClass('tab-line-moving');
+          $line.off('transitionend', transitionEndEvt);
+        };
+        $line.on('transitionend', transitionEndEvt);
+      }
+      $line.data('left', $tabLeft);
+      $line.data('width', $tabWidth);
+    }, $delay);
   },
   getInnerTxt: function (wrap) {
     let $wrap = $(wrap);
