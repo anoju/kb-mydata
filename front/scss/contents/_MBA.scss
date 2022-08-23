@@ -2141,26 +2141,29 @@
 
 .filter-opt-box {
   display: flex;
-  > button {
-    padding: 0.8rem;
-    font-size: 1.3rem;
+  flex-wrap: wrap;
+  margin-right: -1.2rem;
+  > button,
+  > span {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    margin: 0 1.2rem 0.6rem 0;
     color: var(--gray-txt-color);
     border-radius: 3rem;
     background: #f2f4f6;
+    font-size: 1.3rem;
+    height: 3.4rem;
+  }
+  > button {
+    padding: 0.8rem;
     i {
       display: block;
       line-height: 0;
     }
   }
   > span {
-    display: inline-flex;
-    margin-left: 1.2rem;
     padding: 0rem 1rem;
-    font-size: 1.3rem;
-    color: var(--gray-txt-color);
-    border-radius: 3rem;
-    align-items: center;
-    background: #f2f4f6;
   }
 }
 
