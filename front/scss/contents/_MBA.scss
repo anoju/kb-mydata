@@ -2141,22 +2141,28 @@
 
 .filter-opt-box {
   display: flex;
-  flex-wrap: wrap;
-  margin-right: -1.2rem;
+  @include outer(true);
+  @include scroll-x;
+  @include scroll-hide;
   > button,
   > span {
     display: inline-flex;
+    flex: 0 0 auto;
     align-items: center;
-    white-space: nowrap;
-    margin: 0 1.2rem 0.6rem 0;
-    color: var(--gray-txt-color);
+    height: 3.4rem;
+    margin-right: 1.2rem;
     border-radius: 3rem;
     background: #f2f4f6;
     font-size: 1.3rem;
-    height: 3.4rem;
+    color: var(--gray-txt-color);
+    white-space: nowrap;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   > button {
-    padding: 0.8rem;
+    width: 3.4rem;
+    justify-content: center;
     i {
       display: block;
       line-height: 0;
