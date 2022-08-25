@@ -891,14 +891,21 @@
       }
 
       // 풀스크린 여부 체크
-      // let isFullscreen = false;
+      let _fullscreen_startSclTop = 0;
+      let _fullscreen_endSclTop = 0;
       function fullscreenchanged(event) {
         if (document.fullscreenElement) {
-          console.log('Element: ' + document.fullscreenElement.id + ' entered fullscreen mode.');
-          // isFullscreen = true;
+          _fullscreen_startSclTop = window.pageYOffset;
+          console.log('Element: ' + document.fullscreenElement.id + ' entered fullscreen mode.', _fullscreen_startSclTop);
         } else {
-          console.log('Leaving fullscreen mode.');
-          // isFullscreen = false;
+          // setTimeout(function () {
+          _fullscreen_endSclTop = window.pageYOffset;
+          console.log('Leaving fullscreen mode.', _fullscreen_endSclTop);
+          if (_fullscreen_endSclTop !== _fullscreen_startSclTop) {
+            console.log('fullscreen scroll');
+            $(window).scrollTop(_fullscreen_startSclTop);
+          }
+          // }, 10);
         }
       }
       document.onfullscreenchange = fullscreenchanged;
