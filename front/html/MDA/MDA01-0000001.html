@@ -867,7 +867,7 @@
           if (_distansY > 0 && _sclTop === _lastTop) return;
           if (_distansY < 0 && _sclTop === 0) return;
           if (!isTouchScroll) {
-            if (_startSclTop === _sclTop) {
+            if (_startSclTop === _sclTop && _distansY !== 0) {
               isTouchScrollIdx += 1;
               if (isTouchScrollIdx > 10) isTouchScroll = true;
             }
@@ -894,6 +894,7 @@
       let _fullscreen_startSclTop = 0;
       let _fullscreen_endSclTop = 0;
       function fullscreenchanged(event) {
+        console.log(event);
         if (document.fullscreenElement) {
           // 풀스크린띄울때
           _fullscreen_startSclTop = window.pageYOffset;
