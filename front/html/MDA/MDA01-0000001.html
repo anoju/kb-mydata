@@ -895,9 +895,12 @@
       let _fullscreen_endSclTop = 0;
       function fullscreenchanged(event) {
         if (document.fullscreenElement) {
+          // 풀스크린띄울때
           _fullscreen_startSclTop = window.pageYOffset;
           console.log('Element: ' + document.fullscreenElement.id + ' entered fullscreen mode.', _fullscreen_startSclTop);
         } else {
+          // 풀스크린 해제할때
+          // 스크롤 원래 위치로~
           // setTimeout(function () {
           _fullscreen_endSclTop = window.pageYOffset;
           console.log('Leaving fullscreen mode.', _fullscreen_endSclTop);
