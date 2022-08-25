@@ -35,7 +35,7 @@
       <!-- //헤더 -->
 
       <!-- 컨테이너(컨텐츠) -->
-      <main id="container">
+      <main id="container" class="not-top-btn">
         <div class="section pt-16 pb-0">
           <!-- 상단고정배치 컨텐츠 -->
           <div class="fc-212121 t-right">
@@ -114,81 +114,7 @@
             <div data-animation="fadeInUp2">
               <h2 class="tit-h1">10초컷 금융 뉴스</h2>
               <div class="invest-tit-sub">티끌모아 재산되는 SHORTEST NEWS</div>
-              <div class="invest-item-list mt-24">
-                <ul>
-                  <li>
-                    <a href="#" class="item btn-click" role="button">
-                      <p class="img-box">
-                        <span class="invest-state">컨텐츠상태</span>
-                        <img src="../../images/temp/thumb-temp.jpg" alt="" />
-                      </p>
-                      <div class="invest-txt-box">
-                        <p class="tit ellipsis-2 h-46">뉴스제목입니다.</p>
-                        <span class="invest-info">
-                          <span class="info">뉴스 태그</span>
-                        </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="item btn-click" role="button">
-                      <p class="img-box">
-                        <span class="invest-state">컨텐츠상태 컨텐츠상태 컨텐츠상태</span>
-                        <img src="../../images/temp/thumb-temp2.jpg" alt="" />
-                      </p>
-                      <div class="invest-txt-box">
-                        <p class="tit ellipsis-2 h-46">뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.</p>
-                        <span class="invest-info">
-                          <span class="info">뉴스 태그</span>
-                        </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="item btn-click" role="button">
-                      <p class="img-box">
-                        <span class="invest-state">컨텐츠상태</span>
-                        <img src="../../images/temp/thumb-temp3.jpg" alt="" />
-                      </p>
-                      <div class="invest-txt-box">
-                        <p class="tit ellipsis-2 h-46">뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.</p>
-                        <span class="invest-info">
-                          <span class="info">뉴스 태그</span>
-                        </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="item btn-click" role="button">
-                      <p class="img-box">
-                        <span class="invest-state">컨텐츠상태</span>
-                        <img src="../../images/temp/thumb-temp.jpg" alt="" />
-                      </p>
-                      <div class="invest-txt-box">
-                        <p class="tit ellipsis-2 h-46">뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.</p>
-                        <span class="invest-info">
-                          <span class="info">뉴스 태그</span>
-                        </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="item btn-click" role="button">
-                      <p class="img-box">
-                        <span class="invest-state">컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태컨텐츠상태</span>
-                        <img src="../../images/temp/thumb-temp2.jpg" alt="" />
-                      </p>
-                      <div class="invest-txt-box">
-                        <p class="tit ellipsis-2 h-46">뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.뉴스제목입니다.</p>
-                        <span class="invest-info">
-                          <span class="info">뉴스 태그</span>
-                        </span>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="ui-swiper swiper-items invest-card-list paging-hidden mt-12">
+              <div class="ui-swiper swiper-items invest-card-list paging-hidden">
                 <div class="swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -200,6 +126,7 @@
                         <div class="invest-txt-box">
                           <span class="invest-state2">주식뉴스</span>
                           <p class="tit ellipsis-2 h-46">뉴스제목입니다</p>
+                          <p class="invest-date">2022.05.26</p>
                         </div>
                       </a>
                     </div>
@@ -212,6 +139,7 @@
                         <div class="invest-txt-box">
                           <span class="invest-state2">뉴스태그</span>
                           <p class="tit ellipsis-2 h-46">뉴스제목입니다. 뉴스제목입니다. 뉴스제목입니다.</p>
+                          <p class="invest-date">2022.05.26</p>
                         </div>
                       </a>
                     </div>
@@ -901,6 +829,30 @@
           }
         });
       }
+
+      touchScroll();
+      function touchScroll() {
+        document.addEventListener(
+          'touchmove',
+          function (e) {
+            console.log(e);
+          },
+          false
+        );
+      }
+
+      // 풀스크린 체크
+      let isFullscreen = false;
+      function fullscreenchanged(event) {
+        if (document.fullscreenElement) {
+          console.log(`Element: ${document.fullscreenElement.id} entered fullscreen mode.`);
+          isFullscreen = true;
+        } else {
+          console.log('Leaving fullscreen mode.');
+          isFullscreen = false;
+        }
+      }
+      document.onfullscreenchange = fullscreenchanged;
     </script>
   </body>
 </html>

@@ -668,7 +668,7 @@ ui.Common = {
       scrollSpeed: 300
     };
     let btnHtml = '';
-    if (!$('#container').length) return;
+    if (!$('#container').length || $('#container').hasClass('not-top-btn')) return;
     if (!$('.floating-btn').length) btnHtml += '<div class="floating-btn">';
     btnHtml += '<a href="#" id="' + btnTop.button.substring(1) + '" class="btn btn-page-top" title="' + btnTop.label + '" role="button" aria-label="' + btnTop.label + '">' + btnTop.text + '</a>';
     if (!$('.floating-btn').length) btnHtml += '</div>';
