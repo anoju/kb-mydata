@@ -98,20 +98,24 @@
 
 // 투자 메인 swiper
 .invest-card-list {
-  .swiper {
-    // overflow: visible;
-    padding: 0 calc(var(--base-padding) - 0.8rem);
-    margin-bottom: -2rem;
-  }
-  &.swiper-items .swiper-slide {
-    width: auto;
-    overflow: visible;
-    padding: 2rem 0;
-    a {
-      width: 23.2rem;
-      margin: 0 0.8rem;
+  margin-top: 0.4rem;
+  &.swiper-items {
+    .swiper {
+      // padding: 0 1.6rem;
+      padding: 0 calc(var(--base-padding) - 0.8rem);
+      margin-bottom: -2rem;
+    }
+    .swiper-slide {
+      width: auto;
+      overflow: visible;
+      padding: 2rem 0;
+      a {
+        width: 23.2rem;
+        margin: 0 0.8rem;
+      }
     }
   }
+
   .swiper-slide > a {
     position: relative;
     display: block;
@@ -137,12 +141,19 @@
   }
   .invest-txt-box {
     padding: 1.6rem 1.6rem 1.8rem;
+    min-height: 12.8rem;
+    .invest-state2 {
+      margin-bottom: 1.2rem;
+    }
   }
 
   &.type2 {
-    .swiper {
-      padding: 0 calc(var(--base-padding) - 1rem);
-      margin-bottom: 0;
+    margin-top: 1.4rem;
+    &.swiper-items {
+      .swiper {
+        padding: 0 calc(var(--base-padding) - 1rem);
+        margin-bottom: 0;
+      }
     }
     .swiper-slide {
       padding: 0;
@@ -176,6 +187,7 @@
     }
     .invest-txt-box {
       padding: 0.8rem 0 0;
+      min-height: auto;
     }
     .txt {
       color: #808892;
@@ -291,19 +303,15 @@
   @include dimm;
   @include ellipsis;
   text-shadow: 0 0 5px #000;
-  .invest-txt-box & {
-    position: relative;
-    left: auto;
-    top: auto;
-    padding: 0;
-    color: #818892;
-    background: none;
-    max-width: none;
-    text-shadow: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    line-height: 1;
-  }
+}
+.invest-state2 {
+  // color: #818892;
+  color: #424242;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1;
+  display: block;
+  @include ellipsis;
 }
 // 투자 뱃지
 .invest-info {
@@ -399,7 +407,7 @@
         }
       }
     }
-    .invest-state + .tit.h-46 {
+    .invest-state2 + .tit.h-46 {
       margin-top: 0.4rem;
       + .invest-info {
         margin-top: 1rem;
