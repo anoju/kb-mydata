@@ -31,9 +31,14 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <!-- 이미지형 상세: 현업에서 상세는 이미지로만 관리할거라 함(2022-08-17) -->
-        <div class="list-view-1">
-          <div class="view-cont mt-0">
-            <img src="../../images/temp/detail-MDA-main.png" alt="" />
+        <div class="section pt-0">
+          <div class="list-view-1">
+            <div class="view-cont mt-0">
+              <img src="../../images/temp/detail-MDA-main.png" alt="" />
+              텍스트입니다. <br />
+              텍스트입니다. <br />
+              텍스트입니다. <br />
+            </div>
           </div>
         </div>
 
@@ -75,5 +80,16 @@
       <!-- 팝업 -->
       <!-- //팝업 -->
     </article>
+    <script>
+      function imgAreaInsert() {
+        const $img = $('.view-cont img');
+        if ($img.length) {
+          $img.each(function () {
+            $(this).wrap('<div class="img-area outer"></div>');
+          });
+        }
+      }
+      imgAreaInsert();
+    </script>
   </body>
 </html>

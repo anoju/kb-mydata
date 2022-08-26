@@ -109,6 +109,9 @@
       @include img-fit(true);
     }
   }
+  &.outer {
+    @include outer;
+  }
 }
 .smooth-corners {
   mask-image: paint(smooth-corners);
