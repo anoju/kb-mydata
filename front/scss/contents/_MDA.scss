@@ -107,6 +107,7 @@
     }
     .swiper-slide {
       width: auto;
+      height: auto;
       overflow: visible;
       padding: 2rem 0;
       a {
@@ -141,7 +142,7 @@
   }
   .invest-txt-box {
     padding: 1.6rem 1.6rem 1.8rem;
-    min-height: 12.8rem;
+    // min-height: 12.8rem;
     .invest-state2 {
       margin-top: 0.4rem;
       + .tit.h-46 {
@@ -150,12 +151,15 @@
     }
     .tit.h-46 {
       margin-top: 2.3rem;
+      &:last-child {
+        margin-bottom: 0.6rem;
+      }
       + .invest-date {
-        margin-top: 1.5rem;
+        margin-top: 1.2rem;
       }
     }
     .invest-date:last-child {
-      margin-bottom: -0.2rem;
+      margin-bottom: 0.6rem;
     }
   }
 

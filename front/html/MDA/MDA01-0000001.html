@@ -867,11 +867,15 @@
           if (_distansY > 0 && _sclTop === _lastTop) return;
           if (_distansY < 0 && _sclTop === 0) return;
           if (!isTouchScroll) {
-            if (_startSclTop === _sclTop && _distansY !== 0) {
+            if (_startSclTop === _sclTop && _distansY > _distansX && _distansY !== 0) {
               isTouchScrollIdx += 1;
-              if (isTouchScrollIdx > 10) isTouchScroll = true;
+              if (isTouchScrollIdx > 15) isTouchScroll = true;
             }
           } else {
+            if (_startSclTop !== _sclTop) {
+              isTouchScroll = false;
+              return;
+            }
             if (_distansY !== 0) {
               console.log('touchScroll', isTouchScroll);
               $(window).scrollTop(_startSclTop + _distansY);
