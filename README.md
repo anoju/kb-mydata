@@ -19,8 +19,8 @@
    
    
 > **퍼블용 vscode 환경설정**
-- 프로젝트 루트 경로에 .vscode 폴더를 생성 후 settings.json파일을 만들어서 그안에 복붙
-- 해당 폴더 및 파일은 git에는 따로 올리지 않는다.
+- 프로젝트 루트 경로에 .vscode 폴더를 생성 후 settings.json파일을 만들어서 그안에 복붙하면 됩니다.
+- 해당 폴더 및 파일은 git에는 따로 올리지 않습니다.
 
 ```
 {
@@ -70,5 +70,20 @@
 ```
 
 > **svg 이미지를 소스코드(bg)로 전환**   
-<https://yoksel.github.io/url-encoder/>   
-해당경로로 접속 후 'Insert SVG'에 svg 소스 복붙하면 확인가능하다
+> <https://yoksel.github.io/url-encoder/>   
+- 해당경로로 접속 후 'Insert SVG'에 svg 소스 복붙하면 확인가능합니다.
+
+> **스타일시트(css) 작성규칙**
+- css 파일을 수정하지 않고 scss 파일을 수정하여 씁니다.
+- 'Live Sass Compiler' 확장프로그램으로 scss파일을 css파일로 컴파일해서 쓴다
+- 실서버에는 front.min.css 파일만 배포하며   scss 파일 및 front.css.map 파일은 실서버에 배포하지않아도 됩니다.
+
+> **퍼블리싱 산출물**   
+> <https://anoju.github.io/kyobo-mydata-pub/pub/index.html>   
+- front화면 디자인(피그마)기반으로 만들어졌습니다.
+- front는 별도의 퍼블가이드 html이 있습니다.   위링크에서 확인가능합니다.
+- front 퍼블가이드는 디자인 가이드가 늦게 나와서 약간 상이합니다.
+- front 퍼블가이드 중 최대한 기능 위주로 만들어져있기때문에 사용되지 않은 기능도 존재합니다.
+- admin화면은 부트스트랩기반(v4.6.1)으로 만들어졌습니다.
+- admin의 가이드 화면은 부트스트랩에서 갖고온것입니다.
+- 디자인없이 퍼블에서 진행하였고 일부는 직접 제작하였습니다.   admin은 디자인 산출물이 없습니다.
