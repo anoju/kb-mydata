@@ -6950,7 +6950,7 @@ const Layer = {
 
     // full 팝업일때 top버튼(btn-pop-btn) 적용
     const $btnTopHtml = '<button type="button" class="' + Layer.btnTop.button.substring(1) + '" title="' + Layer.btnTop.label + '" aria-label="' + Layer.btnTop.label + '">' + Layer.btnTop.text + '</button>';
-    if ($popup.hasClass('full') && !$popup.find(Layer.btnTop.button).length) {
+    if ($popup.hasClass('full') && !$popup.find(Layer.btnTop.button).length && !$popup.hasClass('not-top-btn')) {
       $popWrap.append($btnTopHtml);
     }
 
