@@ -74,9 +74,15 @@
 - 해당경로로 접속 후 'Insert SVG'에 svg 소스 복붙하면 확인가능합니다.
 
 > **스타일시트(css) 작성규칙**
-- css 파일을 수정하지 않고 scss 파일을 수정하여 씁니다.
-- 'Live Sass Compiler' 확장프로그램으로 scss파일을 css파일로 컴파일해서 쓴다
-- 실서버에는 front.min.css 파일만 배포하며   scss 파일 및 front.css.map 파일은 실서버에 배포하지않아도 됩니다.
+- css 파일을 사용하지 않고 scss 파일을 사용합니다.    **'Live Sass Compiler'** 확장프로그램으로 scss파일을 css파일로 컴파일해서 사용하면됩니다.
+- 실서버에는 front.min.css 파일만 배포하며    scss 파일 및 front.css.map 파일은 실서버에 배포하지않아도 됩니다.
+- 일부 단색의 아이콘의 경우 이미지를 직접사용하지 않고     소스코드 (위 'svg 이미지를 소스코드(bg)로 전환' 참고) 로 변환하여    scss파일에서 직접사용합니다.
+- 단위는 px를 사용하지않고 rem으로 작성합니다.
+
+> **자바스크립트(js) 작성규칙**
+- ui-front.js 만 퍼블리싱에서 작성한 js파일 입니다.    그 이외 파일은 라이브러리 이거나 개발팀에서 작성한 내용입니다.
+- html파일에도 일부 자바스크립트가 되어있습니다.
+- 공통(다수사용)의 여지가 있는 스크립트는 ui-front.js에 작성,    단발성 스크립트는 html파일에 작성 하였습니다.
 
 > **퍼블리싱 산출물**   
 > <https://anoju.github.io/kyobo-mydata-pub/pub/index.html>   
