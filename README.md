@@ -4,15 +4,18 @@
 
 > 사용 에디터 : vscode   
 > <https://code.visualstudio.com/>   
-> **확장프로그램**   
-> 1. Live Sass Compiler (필수) - scss 컴파일러   
-> <https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass>
-> 2. Live Server (필수) - live 로컬서버(html용)   
-> <https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer>
-> 3. prettier (선택) - 소스코드 정리   
-> <https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode>
-> 4. HTMLHint (선택) - 마크업 문법 검사   
-> <https://marketplace.visualstudio.com/items?itemName=ctf0.htmlhint>
+<br />
+
+> **vscode 확장프로그램**   
+1. Live Sass Compiler (필수) - scss 컴파일러   
+<https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass>
+2. Live Server (필수) - live 로컬서버(html용)   
+<https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer>
+3. prettier (선택) - 소스코드 정리   
+<https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode>
+4. HTMLHint (선택) - 마크업 문법 검사   
+<https://marketplace.visualstudio.com/items?itemName=ctf0.htmlhint>    
+나머지는 작업자 취향껏 설치하면 됩니다.   
 <br />
    
 > **퍼블용 vscode 환경설정**
@@ -83,18 +86,29 @@
 - ui-front.js 만 퍼블리싱에서 작성한 js파일 입니다.<br />그 이외 파일은 라이브러리 이거나 개발팀에서 작성한 내용입니다.
 - html파일에도 일부 자바스크립트가 되어있습니다.
 - 공통(다수사용)의 여지가 있는 스크립트는 ui-front.js에 작성,<br />단발성 스크립트는 html파일에 작성 하였습니다.
+- ui-front.js에서 사용된 함수중 찾지 못하는 함수는 개발팀에서 만든 함수입니다.
+<br />
+
+> **기타참고**   
+- layout에 속하는 #header, #container 빼고는 모드 클래스기반으로 스타일이 적용되어있습니다.
+- 퍼블리싱에 이미지는 모두 png 파일을 사용하였습니다.<br />향후 움직이는 이미지가 필요할경우 gif보다 apng를 추천드립니다. (gif 이미지 퀄리티 문제)
+- 디자인은 피그마로 공유 받았고 이미지 네이밍은 퍼블에서 작업자가 직접하였습니다.<br />이미지크기는 3배수 작업이 되어있습니다.
+- 디자인기준 가로사이즈는 360으로 제공 받았으며 대응하는 최소가로 사이즈는 320 입니다.<br />320경우 크게 깨지지않는 선으로 퍼블이 알아서 작업하였습니다.
+- 한글은 noto sans, 숫자는 roboto로 _font.scss에서 unicode-range를 이용하여 구분 적용시켰습니다. ','는 (큰)숫자사이에 들어가는 케이스때문에 roboto로 적용되었습니다.
+- noto sans는 최적화 되어있기때문에 모든 한글케이스에 폰트가 적용되지 않습니다.
+- 폰트는 디자인상 대부분 Regular, Medium, Bold 폰트만 이용하였고, 일부 매치(결과)화면에서 지마켓 폰트가 사용되었습니다.
+- 레이어팝업의 경우 풀팝업(full), 모달팝업(modal), 바텀시트(bottom)는 구조가 모두 동일하므로 클래스만 바꿔주면 팝업 형태가 변경됩니다.
+- 차트는 highcharts.js(유료 라이센스)를 사용합니다.
+- 로띠(lottie)는 디자인팀에서 제작하였습니다. 
 <br />
 
 > **퍼블리싱 산출물**   
 > <https://anoju.github.io/kyobo-mydata-pub/pub/index.html>   
 - front화면 디자인(피그마)기반으로 만들어졌습니다.
 - front는 별도의 퍼블가이드 html이 있습니다.<br />위링크에서 확인가능합니다.
-- front 퍼블가이드 중네는 제 경험기반 최대한으로 기능 및 확정성 위주로 만들어져있기때문에<br />디자인상 없는 디자인과 사용되지 않은 기능도 존재합니다.<br />(예: 달력기능 등등)<br />퍼블가이드상 디자인상 없는 디자인을 갖어다 쓰게 될 경우 새로 재디자인을 해서 사용해야합니다.
+- front 퍼블가이드 중네는 제 경험기반 최대한으로 기능 및 확정성 위주로 만들어져있기때문에 디자인상 없는 디자인과 사용되지 않은 기능도 존재합니다. (예: 달력기능 등등)<br />퍼블가이드상 디자인상 없는 디자인을 갖어다 쓰게 될 경우 새로 재디자인을 해서 사용해야합니다.
 - front의 로띠(lottie)를 제외 한 대부분의 인터렉션은 퍼블파트에서 고려해서 만들었습니다.
 - admin화면은 부트스트랩기반(v4.6.1)으로 만들어졌습니다.
 - admin의 가이드 화면은 부트스트랩에서 갖고온것입니다.
-- admin의 경우 개발팀이 참고하는 목적성이 더 크기때문에 개발완료된 화면과 약간 상이할 수 있습니다.
-- 디자인없이 퍼블에서 진행하였고 일부는 직접 제작하였습니다.<br />admin은 디자인 산출물이 없습니다.
-<br />
-
-> **기타참고**   
+- admin의 경우 개발팀이 참고하는 목적성이 더 크기때문에<br />개발완료된 화면과 약간 상이할 수 있습니다.
+- 디자인없이 퍼블에서 진행하였고 일부는 직접 제작하였습니다.<br />그래서 admin은 디자인 산출물이 없습니다.
