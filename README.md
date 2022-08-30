@@ -73,6 +73,16 @@
   }
 }
 ```
+### (prettier 사용 시) .prettierignore 설정
+- 프로젝트 폴더 루트경로에 .prettierignore 생성 후 복붙하면 됩니다.
+```
+**/node_modules/*
+**/*.min.*
+**/lib/*
+**/mail/*
+_font.scss
+front.scss
+```
 <br />
 
 ### svg 이미지를 소스코드(bg)로 전환
