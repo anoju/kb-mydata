@@ -381,6 +381,9 @@
     + .chk-item {
       margin-top: 1.6rem;
     }
+    + p {
+      margin-top: 0.8rem;
+    }
   }
   .txt-list {
     color: var(--base-txt-color);
@@ -418,6 +421,7 @@
   .terms-txt-point {
     font-size: 1.6rem;
     color: var(--primary-color);
+    font-weight: 500;
   }
   .terms-txt-sub {
     margin-top: 1rem;
