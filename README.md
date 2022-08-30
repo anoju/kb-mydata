@@ -130,7 +130,7 @@ pdf.js - <https://mozilla.github.io/pdf.js/>
 <br />
 
 ### 산출물 
-> <https://anoju.github.io/kyobo-mydata-pub/pub/index.html>   
+> <https://anoju.github.io/kyobo-mydata-pub/pub/index.html>{:target="_blank"}  
 - front화면 디자인(피그마)참고하여 작업되었니다.
 - front는 별도의 퍼블가이드 html이 있습니다.<br />위링크에서 확인가능합니다.
 - front 퍼블가이드 중네는 제 경험기반 최대한으로 기능 및 확정성 위주로 만들어져있기때문에<br />디자인상 없는 디자인과 사용되지 않은 기능도 존재합니다. (예: 달력기능 등등)<br />추후 퍼블가이드상 <u>디자인산출물에 없는 디자인을 쓰게 될 경우</u>(아이콘의 경우 등) <br />새롭게 재디자인을 해서 사용해야합니다.
