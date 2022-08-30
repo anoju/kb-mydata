@@ -428,6 +428,13 @@
     font-size: 1.4rem;
     color: var(--gray-txt-color);
   }
+  .terms-txt-sub2 {
+    font-size: 1.2rem;
+    color: var(--gray-txt-color);
+    + .chk-item {
+      margin-top: 1.6rem;
+    }
+  }
   .terms-box {
     margin-top: 0.8rem;
     border: 0.1rem solid var(--line-color);
