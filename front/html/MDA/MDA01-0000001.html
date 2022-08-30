@@ -831,7 +831,6 @@
       }
 
       // 모바일 터치스크롤 안될때: touchmove 이벤트로 강제 스크롤
-      touchScroll();
       function touchScroll() {
         function getPos(ev) {
           const clientX = ev.touches ? ev.touches[0].clientX : ev.clientX;
@@ -849,13 +848,11 @@
         let _startSclTop = 0;
         function _start(e) {
           if ($('html').hasClass('lock')) return;
-          // isTouchScroll = true;
           _startX = getPos(e).X;
           _startY = getPos(e).Y;
           _startSclTop = window.pageYOffset;
         }
         function _move(e) {
-          // if (!isTouchScroll) return;
           const _X = getPos(e).X;
           const _Y = getPos(e).Y;
           const _distansX = _startX - _X;
@@ -863,28 +860,25 @@
           const _bodySclH = $('body')[0].scrollHeight;
           const _winH = $(window).height();
           const _lastTop = _bodySclH - _winH;
-          const _sclTop = window.pageYOffset;
-          if (_distansY > 0 && _sclTop === _lastTop) return;
-          if (_distansY < 0 && _sclTop === 0) return;
-          if (!isTouchScroll) {
-            if (_startSclTop === _sclTop && _distansY > _distansX && _distansY !== 0) {
-              isTouchScrollIdx += 1;
-              if (isTouchScrollIdx > 15) isTouchScroll = true;
+          const _delay = isTouchScroll ? 0 : 1;
+          setTimeout(function () {
+            const _sclTop = window.pageYOffset;
+            if (_distansY > 0 && _sclTop === _lastTop) return;
+            if (_distansY < 0 && _sclTop === 0) return;
+            if (!isTouchScroll) {
+              if (_startSclTop === _sclTop && _distansY > _distansX && _distansY !== 0) {
+                isTouchScrollIdx += 1;
+                if (isTouchScrollIdx > 5) isTouchScroll = true;
+              }
+            } else {
+              if (_distansY !== 0) {
+                console.log('touchScroll', isTouchScroll);
+                $(window).scrollTop(_startSclTop + _distansY);
+              }
             }
-          } else {
-            if (_startSclTop !== _sclTop) {
-              isTouchScroll = false;
-              return;
-            }
-            if (_distansY !== 0) {
-              console.log('touchScroll', isTouchScroll);
-              $(window).scrollTop(_startSclTop + _distansY);
-            }
-          }
+          }, _delay);
         }
         function _end(e) {
-          // if (!isTouchScroll) return;
-          // isTouchScroll = false;
           _startX = 0;
           _startY = 0;
           _startSclTop = 0;
@@ -893,6 +887,7 @@
         document.addEventListener('touchmove', _move, false);
         document.addEventListener('touchend', _end, false);
       }
+      touchScroll();
 
       // 풀스크린 여부 체크
       let _fullscreen_startSclTop = 0;
