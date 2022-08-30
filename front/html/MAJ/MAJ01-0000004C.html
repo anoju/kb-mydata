@@ -13,7 +13,7 @@
     <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
     <script type="text/javascript" src="../../js/ui-front.js"></script>
     <script>
-      ui.Common.title('서비스 이용 동의');
+      ui.Common.title('마케팅 이용 동의');
     </script>
   </head>
   <body>
@@ -31,13 +31,10 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="section center-contents pb-20">
-          <h1 class="tit-h1">서비스 이용 동의</h1>
+          <h1 class="tit-h1">마케팅 이용 동의</h1>
 
-          <h2 class="tit-h3 mt-32">매치 서비스 이용 동의 및 철회</h2>
-          <p class="mt-8">
-            매치 서비스를 이용하시려면 아래 동의서를 모두 동의하셔야합니다.
-            <!-- <br />문자메시지, 전화 중 한가지 이상 선택하지 않으시면 포인트로 교환한 상품을 받으실 수 없습니다. -->
-          </p>
+          <h2 class="tit-h3 mt-32">앱 마케팅 활용 &middot; 수신 동의</h2>
+          <p class="mt-8">이벤트 경품 등 다양한 혜택을 받기 위해 아래 동의서를 동의해주세요.</p>
           <div class="mt-18">
             <div class="flex not-full pd-7y align-start">
               <p class="fw-500 flex-11 pr-10">[선택] 개인(신용)정보 수집 및 이용 동의서</p>
@@ -47,34 +44,24 @@
                 동의함 : fc-primary
                 미동의 : fc-b0b0b0
               -->
-              <button type="button" class="btn-txt fc-primary" onclick="Layer.open('#popAgreeView1')">동의함<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
+              <button type="button" class="btn-txt fc-b0b0b0" onclick="Layer.open('#popAgreeView2')">미동의<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
             </div>
+
             <!--
               미동의 일경우 모든 체크박스 disabled 추가
             -->
             <div class="checkbox mt-7">
-              <input type="checkbox" id="chk1" /><i aria-hidden="true"></i>
-              <label for="chk1" class="lbl">PUSH 알림</label>
+              <input type="checkbox" id="chk4" disabled /><i aria-hidden="true"></i>
+              <label for="chk4" class="lbl">PUSH 알림</label>
             </div>
             <div class="checkbox mt-14">
-              <input type="checkbox" id="chk2" /><i aria-hidden="true"></i>
-              <label for="chk2" class="lbl">문자메시지</label>
+              <input type="checkbox" id="chk5" disabled /><i aria-hidden="true"></i>
+              <label for="chk5" class="lbl">문자메시지</label>
             </div>
             <div class="checkbox mt-14">
-              <input type="checkbox" id="chk3" /><i aria-hidden="true"></i>
-              <label for="chk3" class="lbl">전화</label>
+              <input type="checkbox" id="chk6" disabled /><i aria-hidden="true"></i>
+              <label for="chk6" class="lbl">전화</label>
             </div>
-          </div>
-
-          <div class="flex not-full pd-7y align-start mt-23">
-            <p class="fw-500 flex-11 pr-10">[선택] 개인(신용)정보 제공 동의서</p>
-            <!--
-              상태에 따른 클래스 변화
-
-              동의함 : fc-primary
-              미동의 : fc-b0b0b0
-            -->
-            <button type="button" class="btn-txt fc-b0b0b0" onclick="Layer.open('#popAgreeView0')"><span id="agreeTxt1">미동의</span><i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
           </div>
         </div>
         <div class="section">
@@ -83,69 +70,23 @@
               <button class="button fc-primary h-72"><i class="i-ico-arrow-left-primary"></i>확인 후 이전화면으로 돌아가기</button>
             </div>
           </div>
+          <!-- // 2022-06-10: 추가 -->
         </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
-      <!-- 2022-05-12: 수정 -->
-      <div id="popAgreeView0" class="popup full" role="dialog" aria-hidden="true">
+
+      <div id="popAgreeView2" class="popup full pop-pdf" role="dialog" aria-hidden="true">
         <article class="pop-wrap">
           <div class="pop-head">
             <div>
-              <h1>매치 서비스 이용약관 동의</h1>
+              <h1>[선택] 마케팅 알림 수신 동의서</h1>
               <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
             </div>
           </div>
-          <div class="pop-body">
-            <div class="section">
-              <div data-include-html="../include/match-terms.html"></div>
-            </div>
-          </div>
-          <div class="pop-foot">
-            <div>
-              <div class="flex">
-                <button type="button" class="button primary ui-scroll-btn">계속 읽기</button>
-                <button type="button" id="matchAgreeBtn" class="button primary" disabled style="display: none">동의하기</button>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div id="popAgreeView1" class="popup full pop-pdf" role="dialog" aria-hidden="true">
-        <article class="pop-wrap">
-          <div class="pop-head">
-            <div>
-              <h1>[선택] 개인(신용)정보 수집 및 이용 동의서</h1>
-              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
-            </div>
-          </div>
-          <div class="pop-body iframe-full-box tab-pdf">
-            <div class="tab-line-menu ui-tab tab-fixed">
-              <div class="tab-inner">
-                <i class="tab-line" aria-hidden="true"></i>
-                <ul class="tab-list">
-                  <li class="tab"><a href="#lineTabCont1">요약 동의서</a></li>
-                  <li class="tab"><a href="#lineTabCont2">상세 동의서</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="tab-panels">
-              <div id="lineTabCont1" class="tab-panel">
-                <iframe src="../../pdfjs/web/viewer.html?file=../../temp/교보증권마이데이터 샘플.pdf" frameborder="0"></iframe>
-              </div>
-              <div id="lineTabCont2" class="tab-panel">
-                <!-- html 타입 -->
-                <article class="terms-content">
-                  <h1>개인정보 수집 ∙ 이용동의 상세</h1>
-                  <div style="height: 2000px; background: #eee; margin-top: 20px">중간 약관 상세 들어갈 자리</div>
-                </article>
-
-                <!-- link 타입 -->
-                <!-- <iframe src="https://crosscert.com/mydata/terms.html"></iframe> -->
-              </div>
-            </div>
+          <div class="pop-body iframe-full-box">
+            <iframe src="../../pdfjs/web/viewer.html?file=../../temp/교보증권마이데이터 샘플.pdf" frameborder="0"></iframe>
           </div>
           <div class="pop-foot">
             <div>
@@ -155,7 +96,6 @@
           </div>
         </article>
       </div>
-      <!-- //2022-05-12: 수정 -->
       <!-- //팝업 -->
     </article>
 
