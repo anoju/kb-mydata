@@ -846,11 +846,13 @@
         let _startX = 0;
         let _startY = 0;
         let _startSclTop = 0;
+        let _prevY = 0;
         function _start(e) {
           if ($('html').hasClass('lock')) return;
           _startX = getPos(e).X;
           _startY = getPos(e).Y;
           _startSclTop = window.pageYOffset;
+          _prevY = _startY;
         }
         function _move(e) {
           const _X = getPos(e).X;
@@ -858,21 +860,35 @@
           const _distansX = _startX - _X;
           const _distansY = _startY - _Y;
           const _bodySclH = $('body')[0].scrollHeight;
-          const _winH = $(window).height();
+          // const _winH = $(window).height();
+          const _winH = window.screen.height;
           const _lastTop = _bodySclH - _winH;
-          const _delay = isTouchScroll ? 0 : 1;
+          const _delay = isTouchScroll ? 1 : 3;
+          if (_distansY === 0 || (_distansY - 2 <= _prevY && _prevY <= _distansY + 2)) return;
+          _prevY = _distansY;
+          const _prevTop = window.pageYOffset;
           setTimeout(function () {
             const _sclTop = window.pageYOffset;
-            if (_distansY > 0 && _sclTop === _lastTop) return;
-            if (_distansY < 0 && _sclTop === 0) return;
+            // console.log(_prevTop, _sclTop);
+            if (_prevTop !== _sclTop) {
+              isTouchScroll = false;
+              return;
+            }
+            if (_sclTop >= _lastTop - 1) return;
+            if (_sclTop <= 1) return;
             if (!isTouchScroll) {
-              if (_startSclTop === _sclTop && _distansY > _distansX && _distansY !== 0) {
+              if (_startSclTop === _sclTop && _distansY > _distansX) {
+                // console.log(_startSclTop, _sclTop, isTouchScrollIdx);
                 isTouchScrollIdx += 1;
-                if (isTouchScrollIdx > 5) isTouchScroll = true;
+                if (isTouchScrollIdx > 10) isTouchScroll = true;
+              } else {
+                isTouchScrollIdx = 0;
               }
-            } else {
-              if (_distansY !== 0) {
-                console.log('touchScroll', isTouchScroll);
+            } else if (isTouchScroll) {
+              isTouchScrollIdx = 0;
+              // console.log(_startSclTop, _sclTop);
+              if (_startSclTop === _sclTop) {
+                console.log('touchScroll');
                 $(window).scrollTop(_startSclTop + _distansY);
               }
             }
@@ -882,6 +898,7 @@
           _startX = 0;
           _startY = 0;
           _startSclTop = 0;
+          _prevY = 0;
         }
         document.addEventListener('touchstart', _start, false);
         document.addEventListener('touchmove', _move, false);
