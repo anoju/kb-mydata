@@ -7,6 +7,15 @@
   min-width: 28rem;
   @include web-center;
 }
+@include media-min-width(1024) {
+  body {
+    background-color: #fafafa;
+  }
+  #wrap,
+  .page {
+    background-color: #fff;
+  }
+}
 
 // lock
 html.lock,
