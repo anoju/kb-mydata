@@ -85,7 +85,7 @@
         const $img = $('.view-cont img');
         if ($img.length) {
           $img.each(function () {
-            $(this).wrap('<div class="img-area outer"></div>');
+            if (!$(this).closest('.img-area').length) $(this).wrap('<div class="img-area outer"></div>');
           });
         }
       }
