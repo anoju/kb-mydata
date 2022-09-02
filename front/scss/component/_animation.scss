@@ -102,11 +102,9 @@
         }
         &:after {
           @if ($i%2 == 0) {
-            animation: numberRandomAfterReverse var(--animation-random-duration) linear infinite both,
-              numberRandomAfterCount calc(var(--animation-random-duration) * 10) linear calc(var(--animation-random-duration) / 2) infinite both;
+            animation: numberRandomAfterReverse var(--animation-random-duration) linear infinite both, numberRandomAfterCount calc(var(--animation-random-duration) * 10) linear calc(var(--animation-random-duration) / 2) infinite both;
           } @else {
-            animation: numberRandomAfter var(--animation-random-duration) linear infinite both,
-              numberRandomAfterCount calc(var(--animation-random-duration) * 10) linear calc(var(--animation-random-duration) / 2) infinite both;
+            animation: numberRandomAfter var(--animation-random-duration) linear infinite both, numberRandomAfterCount calc(var(--animation-random-duration) * 10) linear calc(var(--animation-random-duration) / 2) infinite both;
           }
         }
       }
@@ -307,6 +305,9 @@ $splits:
           // }
           animation: #{$ani} #{$duration}s cubic-bezier(0.5, 0, 0.5, 1) backwards;
           animation-delay: calc(#{$delay}ms * var(--char-index));
+          @if ($class == 'on') {
+            animation-iteration-count: 2;
+          }
         }
       }
     }
