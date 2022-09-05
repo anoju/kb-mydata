@@ -226,6 +226,10 @@ html.lock,
   width: auto !important;
   z-index: 50;
   transition: padding 0.3s, bottom 0.3s;
+  @include media-min-width(1024) {
+    right: 50%;
+    margin-right: calc(-51.2rem + var(--base-padding));
+  }
   &.top-on {
     padding-bottom: 6.4rem;
   }
@@ -278,7 +282,7 @@ html.lock,
 }
 .btn-pop-top {
   position: fixed;
-  right: -15rem;
+  right: var(--base-padding);
   bottom: 2.4rem;
   display: flex;
   width: 5.6rem;
@@ -293,12 +297,17 @@ html.lock,
   color: var(--strong-txt-color2);
   align-items: center;
   justify-content: center;
-  opacity: 0;
   z-index: 11;
-  transition: opacity 0.3s, right 0s 0.3s;
+  opacity: 0;
+  transform: translateX(500%);
+  transition: opacity 0.3s, transform 0s 0.3s;
+  @include media-min-width(1024) {
+    right: 50%;
+    margin-right: calc(-51.2rem + var(--base-padding));
+  }
   &.on {
     opacity: 1;
-    right: 2.4rem;
+    transform: translateX(0);
     transition-delay: 0s, 0s;
   }
 }
