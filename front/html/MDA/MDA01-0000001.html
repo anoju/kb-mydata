@@ -188,7 +188,7 @@
             <div data-animation="fadeInUp2">
               <h2 class="tit-h1">보이는 MONEY</h2>
               <div class="invest-tit-sub">머니텐TV 유튜브의 믿고 보는 투자 정보</div>
-              <div class="invest-item-list mt-24 ui-folding _youtube-list">
+              <div class="invest-item-list mt-24 _youtube-list">
                 <ul>
                   <!-- https://i.ytimg.com/vi/[동영상 ID값]/[이미지형식].jpg 
                     sddefault.jpg : 640*480
@@ -828,6 +828,9 @@
             if ($TimeTxt !== $tiemStr) $TimeSpan.text($tiemStr);
           }
         });
+
+        // 아코디언기능
+        ui.Folding.list('._youtube-list', '.folding-btn', '.folding-panel');
       }
 
       // 모바일 터치스크롤 안될때: touchmove 이벤트로 강제 스크롤
