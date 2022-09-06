@@ -1351,9 +1351,14 @@ $ratios: 3 2, 4 3, 5 3, 5 4, 16 9, 17 10, 25 16;
     @include border-radius($input-border-radius, 0);
     .form-control {
       border-width: 0;
+      &.text-center {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
     .input-group-text {
       border-width: 0;
+      padding: 0.375rem;
       background-color: transparent;
     }
   }
