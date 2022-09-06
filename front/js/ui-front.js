@@ -6259,7 +6259,7 @@ const Layer = {
       }
       return $txt;
     };
-    $popHtml += '<div id="' + $popId + '" class="' + Layer.popClass + ' ' + ($isFullPop ? 'full' : 'bottom') + ($isTouch || $isTouchMove ? ' is-swipe' : '') + ($isTouchMove ? ' touch-move' : '') + ' ' + Layer.selectClass + '" role="dialog" aria-hidden="true">';
+    $popHtml += '<div id="' + $popId + '" class="' + Layer.popClass + ' ' + ($isFullPop ? 'full' : 'bottom') + ($isTouch || $isTouchMove ? ' is-swipe' : '') + ($isTouchMove ? ' _touch-move' : '') + ' ' + Layer.selectClass + '" role="dialog" aria-hidden="true">';
     $popHtml += '<article class="' + Layer.wrapClass + '">';
     $popHtml += '<div class="' + Layer.headClass + '">';
     $popHtml += '<div>';
@@ -6394,8 +6394,10 @@ const Layer = {
   bottomTouch: function (tar) {
     const $popup = $(tar);
     const $wrap = $popup.find('.' + Layer.wrapClass);
+    const $head = $popup.find('.' + Layer.headClass);
     const $body = $popup.find('.' + Layer.bodyClass);
-    const $bodyMinHeight = parseInt($body.css('padding-top')) + parseInt($body.css('padding-bottom'));
+    const $foot = $popup.find('.' + Layer.footClass);
+    const $minHeight = ($head.outerHeight() ?? 0) + ($foot.outerHeight() ?? 0) + 50; // 50: body의 최소 높이값
 
     let isMove = false;
     const $animateSpeed = 300;
@@ -6431,7 +6433,7 @@ const Layer = {
           $duration += 10;
         }, 10);
         $wrap.stop(false, true);
-        if ($(tar).hasClass('touch-move')) $(tar).addClass('touch-moving');
+        if ($(tar).hasClass('_touch-move')) $(tar).addClass('_touch-moving');
       });
 
     $(tar)
@@ -6445,14 +6447,14 @@ const Layer = {
         $distanceY = $clientY - $startY;
         // console.log($distanceX, $distanceY)
 
-        // const $min = $(tar).hasClass('touch-move') ? $firstHeight:0;
-        const $min = $bodyMinHeight;
-        const $max = $(tar).hasClass('touch-move') ? $popup.height() : $popup.outerHeight();
+        // const $min = $(tar).hasClass('_touch-move') ? $firstHeight:0;
+        const $min = $minHeight;
+        const $max = $(tar).hasClass('_touch-move') ? $popup.height() : $popup.outerHeight();
         const $height = Math.max($min, Math.min($max, $startH - $distanceY));
 
-        $wrap.css('height', $height);
-        $body.css('max-height', $height);
-        if (!$(tar).hasClass('touch-move')) {
+        $wrap.css({ 'max-height': $height, height: $height });
+        //$body.css('max-height', $height);
+        if (!$(tar).hasClass('_touch-move')) {
           if ($popup.hasClass('full')) {
             // $isFull = true;
             $this.data('is-full', true);
@@ -6480,56 +6482,67 @@ const Layer = {
         if ($distanceX !== 0) $directionX = $distanceX > 0 ? 'right' : 'left';
         if ($distanceY !== 0) $directionY = $distanceY > 0 ? 'down' : 'up';
         const $firstHeight = $this.data('first-height');
-        const $min = $bodyMinHeight;
-        const $max = $(tar).hasClass('touch-move') ? $popup.height() : $popup.outerHeight();
+        const $min = $minHeight;
+        const $max = $(tar).hasClass('_touch-move') ? $popup.height() : $popup.outerHeight();
 
         clearInterval($durationTimer);
         const $powerRatio = $duration === 0 || $distanceY === 0 ? 0 : Math.abs($distanceY) / $duration;
         const $power = (1 + Math.round($powerRatio * 3)) * Math.round($powerRatio * 30);
         const $powerDistance = Math.round((($distanceY * -1) / $duration) * $power);
-        if ($(tar).hasClass('touch-move')) {
-          $(tar).removeClass('touch-moving');
+        if ($(tar).hasClass('_touch-move')) {
+          $(tar).removeClass('_touch-moving');
 
           const $wrapHeight = $wrap.outerHeight();
           const $endHeight = Math.max($min, Math.min($max, $wrapHeight + $powerDistance));
           const $endSpeed = Math.min(2000, Math.abs($powerDistance * 10));
-          $wrap.animate({ height: $endHeight }, $endSpeed, 'easeOutQuint', function () {
-            $body.css('max-height', $endHeight);
-          });
+          $wrap
+            .stop(true, false)
+            .removeCss('max-height')
+            .animate({ height: $endHeight }, $endSpeed, 'easeOutQuint', function () {
+              $wrap.css('max-height', $endHeight);
+            });
         } else {
           if (Math.abs($distanceY) > 50) {
             if ($popup.hasClass('bottom') && !$isFull) {
               if ($directionY === 'up') {
-                $wrap.animate({ height: '100%' }, $animateSpeed, function () {
-                  $wrap.removeCss('height');
-                  $body.removeCss('max-height');
-                  $popup.removeClass('bottom').addClass('full');
-                });
+                $popup.css('padding-top', 0);
+                $wrap
+                  .stop(true, false)
+                  .removeCss('max-height')
+                  .animate({ height: '100%' }, $animateSpeed, function () {
+                    $wrap.removeCss('height');
+                    $popup.removeClass('bottom').addClass('full');
+                    $popup.removeCss('padding-top');
+                  });
               } else if ($directionY === 'down') {
                 Layer.close(tar);
               }
             }
             // console.log($isFull, $directionY, $firstHeight);
             if ($isFull && $directionY === 'down') {
-              $wrap.animate({ height: $firstHeight }, $animateSpeed, function () {
+              $wrap.removeCss('max-height').animate({ height: $firstHeight }, $animateSpeed, function () {
                 // $isFull = false;
                 $this.data('is-full', false);
-                $wrap.removeCss('height');
+                $wrap.removeCss('height').css('max-height', $firstHeight);
                 $this.removeData('first-height');
               });
             }
           } else {
             if ($isFull) {
-              $wrap.animate({ height: '100%' }, $animateSpeed, function () {
-                // $isFull = false;
-                $this.data('is-full', false);
-                $wrap.removeCss('height');
-                $popup.removeClass('bottom').addClass('full');
-              });
+              $popup.css('padding-top', 0);
+              $wrap
+                .stop(true, false)
+                .removeCss('max-height')
+                .animate({ height: '100%' }, $animateSpeed, function () {
+                  // $isFull = false;
+                  $this.data('is-full', false);
+                  $wrap.removeCss('height');
+                  $popup.removeClass('bottom').addClass('full');
+                  $popup.removeCss('padding-top');
+                });
             } else {
-              $wrap.animate({ height: $firstHeight }, $animateSpeed, function () {
-                $wrap.removeCss('height');
-                $body.css('max-height', $firstHeight);
+              $wrap.removeCss('max-height').animate({ height: $firstHeight }, $animateSpeed, function () {
+                $wrap.removeCss('height').css('max-height', $firstHeight);
                 $this.removeData('first-height');
               });
             }
