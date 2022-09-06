@@ -141,7 +141,7 @@ front.scss
 highcharts - <https://www.highcharts.com/>
 - 로띠(lottie)에 사용되는 json 파일은<br />디자인팀에서 (Adobe After Effects 로)제작하여 제공받았습니다.<br />일부 무료라이센스 파일을 사용하였습니다.   
 lottie - <https://airbnb.io/lottie>
-- pdf뷰어는 웹용 무료라이렌스 라이브러리를 커스텀해서 사용했습니다.   
+- pdf뷰어는 웹용 무료라이센스 라이브러리를 커스텀해서 사용했습니다.   
 pdf.js - <https://mozilla.github.io/pdf.js/>
 - 기타 라이브러리는 html 산출물 중 '오픈소스 라이선스' html 화면을 참고하면 됩니다.
 <br />
