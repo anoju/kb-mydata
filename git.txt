@@ -1,0 +1,2 @@
+git checkout --orphan 브렌치이름
+git rm --cached -r .
