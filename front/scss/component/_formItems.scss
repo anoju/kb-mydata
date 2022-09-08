@@ -44,6 +44,9 @@ i.require {
 }
 .form-item {
   position: relative;
+  + .form-lbl {
+    margin-top: 2.4rem;
+  }
   + .form-item,
   + .validate-item {
     margin-top: 1.6rem;
