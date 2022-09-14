@@ -27,6 +27,10 @@
       margin-left: auto;
     }
   }
+  > .left {
+    display: flex;
+    align-items: center;
+  }
   &.line-gray {
     @include outer(true);
     background: #f8f8f8;

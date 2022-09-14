@@ -263,12 +263,13 @@
     z-index: 100;
     margin: 0;
     height: 0.2rem;
-    &.swiper-pagination-progressbar {
-      background: #fefefe;
-      .swiper-pagination-progressbar-fill {
-        background: var(--primary-color);
-      }
-    }
+  }
+}
+
+.swiper-pagination-progressbar {
+  background: #f2f4f6;
+  .swiper-pagination-progressbar-fill {
+    background: var(--primary-color);
   }
 }
 
