@@ -330,6 +330,15 @@
             el: '.swiper-pagination',
             type: 'progressbar'
           },
+          effect: 'creative',
+          creativeEffect: {
+            prev: {
+              translate: [0, 0, -400]
+            },
+            next: {
+              translate: ['100%', 0, 0]
+            }
+          },
           on: {
             init: function (swiper) {
               swiperFraction(swiper);
