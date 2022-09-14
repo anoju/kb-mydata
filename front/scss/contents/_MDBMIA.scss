@@ -1566,10 +1566,14 @@
 }
 
 .analysis-swiper {
-  // display: flex;
+  display: flex;
   flex: 1 0 auto;
   margin: 0 var(--outer-padding);
+  .swiper-wrapper {
+    min-height: 100%;
+  }
   .swiper-slide {
+    min-height: 100%;
     padding: var(--base-padding);
   }
   .swiper-pagination {
