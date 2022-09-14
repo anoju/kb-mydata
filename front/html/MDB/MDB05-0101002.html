@@ -293,88 +293,72 @@
 
       <!-- 팝업 -->
       <!-- //팝업 -->
+      <div class="bottom-fixed-space" aria-hidden="true" style="height: 108px"></div>
     </article>
     <script>
-      $(window).load(function () {
-        let swiperIdx = 0;
-        let activeIdx = 0;
-        function swiperFraction(e) {
-          const $fraction = $('.swiper-fraction');
-          const $length = e.slides.length;
-          const $index = e.realIndex + 1;
-          swiperIdx = $index;
-          $fraction.text($index + '/' + $length);
-          if ($index === 1) {
-            $('#btnPrev').prop('disabled', true);
-          } else {
-            $('#btnPrev').prop('disabled', false);
-          }
+      let swiperIdx = 0;
+      let activeIdx = 0;
+      function swiperFraction(e) {
+        const $fraction = $('.swiper-fraction');
+        const $length = e.slides.length;
+        const $index = e.realIndex + 1;
+        swiperIdx = $index;
+        $fraction.text($index + '/' + $length);
+        if ($index === 1) {
+          $('#btnPrev').prop('disabled', true);
+        } else {
+          $('#btnPrev').prop('disabled', false);
+        }
 
-          if ($index === $length) {
-            $('#btnNext').text('완료');
-          } else {
-            $('#btnNext').text('다음');
+        if ($index === $length) {
+          $('#btnNext').text('완료');
+        } else {
+          $('#btnNext').text('다음');
+        }
+      }
+      function btnNextChk() {
+        if (swiperIdx <= activeIdx) {
+          $('#btnNext').prop('disabled', false);
+        } else {
+          $('#btnNext').prop('disabled', true);
+        }
+      }
+      const swiper = new Swiper('.analysis-swiper .swiper', {
+        autoHeight: true,
+        allowTouchMove: false,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'progressbar'
+        },
+        effect: 'creative',
+        creativeEffect: {
+          prev: {
+            translate: [0, 0, -400]
+          },
+          next: {
+            translate: ['100%', 0, 0]
+          }
+        },
+        on: {
+          init: function (swiper) {
+            swiperFraction(swiper);
+            // btnNextChk();
+          },
+          slideChange: function (swiper) {
+            swiperFraction(swiper);
+            btnNextChk();
           }
         }
-        function btnNextChk() {
-          if (swiperIdx <= activeIdx) {
-            $('#btnNext').prop('disabled', false);
-          } else {
-            $('#btnNext').prop('disabled', true);
-          }
-        }
-        const swiper = new Swiper('.analysis-swiper .swiper', {
-          autoHeight: true,
-          allowTouchMove: false,
-          pagination: {
-            el: '.swiper-pagination',
-            type: 'progressbar'
-          },
-          effect: 'creative',
-          creativeEffect: {
-            prev: {
-              translate: [0, 0, -400]
-            },
-            next: {
-              translate: ['100%', 0, 0]
-            }
-          },
-          on: {
-            init: function (swiper) {
-              swiperFraction(swiper);
-              // btnNextChk();
-            },
-            slideChange: function (swiper) {
-              swiperFraction(swiper);
-              btnNextChk();
-            }
-          }
-        });
-        $('#btnPrev').click(function () {
-          swiper.slidePrev();
-        });
-        $('#btnNext').click(function () {
-          const $txt = $(this).text();
-          if ($txt === '다음') {
-            swiper.slideNext();
-          } else {
-            const $txt = '투자성향측정을 이대로 완료할까요?';
-            Layer.confirm($txt, function (e) {
-              if (e) {
-                console.log('확인');
-              } else {
-                console.log('취소');
-              }
-            });
-          }
-        });
-        $('.btn input').click(function () {
-          // console.log(activeIdx, swiperIdx);
-          if (activeIdx < swiperIdx) activeIdx = swiperIdx;
-          btnNextChk();
-        });
-        $('.head-close').click(function () {
-          const $txt = '투자성향측정을 그만할까요?<br />작성 중인 내용을 저장하지 않습니다.';
+      });
+      $('#btnPrev').click(function () {
+        swiper.slidePrev();
+      });
+      $('#btnNext').click(function () {
+        const $txt = $(this).text();
+        if ($txt === '다음') {
+          swiper.slideNext();
+        } else {
+          const $txt = '투자성향측정을 이대로 완료할까요?';
           Layer.confirm($txt, function (e) {
             if (e) {
               console.log('확인');
@@ -382,10 +366,25 @@
               console.log('취소');
             }
           });
-        });
-
-        // swiper.slideTo(7);
+        }
       });
+      $('.btn input').click(function () {
+        // console.log(activeIdx, swiperIdx);
+        if (activeIdx < swiperIdx) activeIdx = swiperIdx;
+        btnNextChk();
+      });
+      $('.head-close').click(function () {
+        const $txt = '투자성향측정을 그만할까요?<br />작성 중인 내용을 저장하지 않습니다.';
+        Layer.confirm($txt, function (e) {
+          if (e) {
+            console.log('확인');
+          } else {
+            console.log('취소');
+          }
+        });
+      });
+
+      // swiper.slideTo(7);
     </script>
   </body>
 </html>
