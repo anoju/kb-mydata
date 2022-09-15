@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>끌</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('투자성향진단 이용동의');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-right">
+            <button type="button" class="head-close button" role="button" aria-label="화면닫기"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section full-section">
+          <h1 class="tit-h1">개인신용정보 동의서</h1>
+          <p class="mt-16"><strong class="fc-424242">하나의 동의서를 선택해 주세요.</strong></p>
+          <div class="tg-btn-wrap group mt-16">
+            <div class="flex">
+              <div class="radio btn">
+                <input type="radio" id="tglrdo2-1" name="rdo1" checked /><i aria-hidden="true"></i>
+                <label for="tglrdo2-1" class="lbl">상세 동의서</label>
+              </div>
+              <div class="radio btn">
+                <input type="radio" id="tglrdo2-2" name="rdo1" /><i aria-hidden="true"></i>
+                <label for="tglrdo2-2" class="lbl">요약 동의서</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="agree-dl mt-23">
+            <div class="checkbox ty2">
+              <input type="checkbox" id="agree1-1" /><i aria-hidden="true"></i>
+              <div class="lbl">
+                <label for="agree1-1">개인신용정보 동의서(선택)</label>
+                <a href="#" class="agree-btn" aria-label="약관상세 확인" role="button" onclick="Layer.open('#popAgreeView')"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section pb-0">
+          <p class="notice-txt mt-17">동의를 완료하셔야 투자성향진단과 추천 포트폴리오 확인이 가능합니다.</p>
+          <div class="btn-wrap bottom-fixed">
+            <div class="flex">
+              <button type="button" class="button h60 primary" id="btnNext" disabled>동의완료</button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+
+      <!-- 팝업 -->
+      <div id="popAgreeView" class="popup full pop-pdf" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>개인신용정보 동의서</h1>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body iframe-full-box tab-pdf">
+            <div class="tab-line-menu ui-tab tab-fixed">
+              <div class="tab-inner">
+                <i class="tab-line" aria-hidden="true"></i>
+                <ul class="tab-list">
+                  <li class="tab"><a href="#lineTabCont1">요약 동의서</a></li>
+                  <li class="tab active"><a href="#lineTabCont2">상세 동의서</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="tab-panels">
+              <div id="lineTabCont1" class="tab-panel">
+                <iframe src="../../pdfjs/web/viewer.html?file=../../temp/교보증권마이데이터 샘플.pdf" frameborder="0"></iframe>
+              </div>
+              <div id="lineTabCont2" class="tab-panel">
+                <!-- html 타입 -->
+                <article class="terms-content">
+                  <h1>개인정보 수집 ∙ 이용동의 상세</h1>
+                  <div style="height: 2000px; background: #eee; margin-top: 20px">중간 약관 상세 들어갈 자리</div>
+                </article>
+
+                <!-- link 타입 -->
+                <!-- <iframe src="https://crosscert.com/mydata/terms.html"></iframe> -->
+              </div>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="flex"><button type="button" class="button primary ui-pop-close">확인</button></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div id="popContinue" class="popup bottom" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>안내</h1>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="section">
+              <p>회원님은 교보증권에서 진단한 투자성향이 있으시네요.<br />바로 불러올까요?</p>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="pop-foot-close"><button type="button" class="button" onclick="Layer.close('#popContinue');">아니오. 새로할게요!!</button></div>
+              <div class="flex">
+                <button type="button" class="button primary h48" onclick="Layer.close('#popContinue');">네</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <!-- //팝업 -->
+    </article>
+    <script>
+      /* 임시 스크립트*/
+
+      //토글버튼
+      $('.tg-btn-wrap input').click(function () {
+        const $this = $(this);
+        const $lbl = $this.siblings('.lbl');
+        const $text = $lbl.text();
+        $('#popAgreeView .tab').each(function () {
+          const $tabTxt = $(this).find('a').text();
+          if ($tabTxt === $text) ui.Tab.active(this);
+        });
+      });
+
+      //약관상세팝업 탭버튼
+      $('#popAgreeView .tab a').click(function (e) {
+        e.preventDefault();
+        const $text = $(this).text();
+        $('.tg-btn-wrap input').each(function () {
+          const $this = $(this);
+          const $lbl = $this.siblings('.lbl');
+          if ($lbl.text() === $text) {
+            $this.prop('checked', true);
+          } else {
+            $this.prop('checked', false);
+          }
+        });
+      });
+
+      // 약관체크
+      $('.agree-dl input').change(function () {
+        const $checked = $(this).prop('checked');
+        if ($checked) {
+          $('#btnNext').prop('disabled', false);
+        } else {
+          $('#btnNext').prop('disabled', true);
+        }
+      });
+
+      // 동의완료
+      $('#btnNext').click(function () {
+        // const $txt = '회원님은 교보증권에서 진단한 투자성향이 있으시네요.<br />바로 불러올까요?';
+        // Layer.confirm($txt, null, '네', '<span class="fz-14 lh-16">아니오<br />새로할게요</span>', function (e) {
+        //   if (e) {
+        //     console.log('확인');
+        //   } else {
+        //     console.log('취소');
+        //   }
+        // });
+
+        Layer.open('#popContinue');
+      });
+
+      // 닫기
+      $('.head-close').click(function () {
+        const $txt = '약관에 동의하지 않으시면 투자성향진단 및 추천 포트폴리오 서비스를 받아볼 수 없어요.<br />계속 진행할까요?';
+        Layer.confirm($txt, function (e) {
+          if (e) {
+            console.log('확인');
+          } else {
+            console.log('취소');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

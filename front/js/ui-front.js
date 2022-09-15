@@ -5841,12 +5841,12 @@ const Layer = {
     let $actionTxt;
     if (!!option.actionTxt) $actionTxt = option.actionTxt;
     if (typeof callback2 === 'string' && callback2 !== '') $actionTxt = callback2;
-    if ($actionTxt) $('#' + $actionId).text($actionTxt);
+    if ($actionTxt) $('#' + $actionId).html($actionTxt);
 
     let $cancelTxt;
     if (!!option.cancelTxt) $cancelTxt = option.cancelTxt;
     if (typeof callback3 === 'string' && callback3 !== '') $cancelTxt = callback3;
-    if ($cancelTxt) $('#' + $cancelId).text($cancelTxt);
+    if ($cancelTxt) $('#' + $cancelId).html($cancelTxt);
     // if ($actionTxt && $cancelTxt && $actionTxt.length > $cancelTxt.length + 4) $('#' + $cancelId).addClass('w-33fp');
 
     const $htmlContent = Layer.content;

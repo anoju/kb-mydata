@@ -138,6 +138,9 @@
   &:first-child {
     margin-top: 0;
   }
+  + div {
+    margin-top: 2.4rem;
+  }
   .button {
     // width: 100%;
     font-size: 1.4rem !important;
