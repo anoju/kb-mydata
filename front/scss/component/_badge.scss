@@ -9,6 +9,11 @@
   align-items: center;
   border-radius: 0.6rem;
   font-weight: 500;
+  &.small {
+    height: 2rem;
+    padding: 0 0.6rem;
+    font-size: 1.2rem;
+  }
 
   &.gray {
     // background: var(--line-color);

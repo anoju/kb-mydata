@@ -105,6 +105,16 @@ html.lock,
     display: flex;
     align-items: center;
   }
+  .head-left {
+    h1 {
+      padding: 0;
+      display: block;
+      text-align: left;
+      flex: none;
+      font-weight: 500;
+      font-size: 1.6rem;
+    }
+  }
 }
 .button[class*='head-'] {
   position: relative;
@@ -126,7 +136,14 @@ html.lock,
   display: flex;
   width: auto;
   height: auto;
+  align-items: center;
 }
+.head-left {
+  &.full {
+    flex: 1 1 auto;
+  }
+}
+
 .head-right {
   margin-left: auto !important;
   .button {

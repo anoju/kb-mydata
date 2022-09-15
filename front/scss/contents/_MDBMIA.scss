@@ -1566,16 +1566,15 @@
 }
 
 .analysis-swiper {
-  display: flex;
-  flex: 1 0 auto;
+  // display: flex;
+  // flex: 1 0 auto;
   margin: 0 var(--outer-padding);
-  .swiper-wrapper {
-    min-height: 100%;
-  }
+  // .swiper-wrapper {
+  //   min-height: 100%;
+  // }
   .swiper-slide {
-    // min-height: calc(100% - (var(--base-padding) * 2));
-    min-height: 100%;
-    padding: var(--base-padding);
+    // min-height: 100%;
+    padding: 0.8rem var(--base-padding);
     background: #fff;
   }
   .swiper-pagination {
@@ -1587,15 +1586,27 @@
     z-index: 51;
   }
   .analysis-top {
-    min-height: 4.8rem;
     .tit {
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 1.5;
+      font-weight: bold;
+      font-size: 2.2rem;
+      line-height: 3.2rem;
       color: var(--strong-txt-color);
+      sub {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #979797;
+      }
     }
   }
-  .btn-wrap {
-    margin-top: 1.6rem;
+  .analysis-bottom {
+    margin-top: 3.2rem;
+  }
+}
+.analysis-swiper-fraction {
+  font-weight: 500;
+  color: #979797;
+  strong {
+    font-weight: bold;
+    color: var(--primary-color);
   }
 }

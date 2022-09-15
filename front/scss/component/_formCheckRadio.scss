@@ -579,8 +579,6 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
   }
 }
 .chk-item {
-  border-radius: 1.2rem;
-  background: #f2f4f6;
   // border: 0.1rem solid #eee;
   // transition: border 0.3s;
   // &.checked {
@@ -599,6 +597,8 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
       margin-top: -1.2rem;
     }
     > .lbl {
+      border-radius: 1.2rem;
+      background: #f2f4f6;
       padding: 1.6rem 2rem 1.6rem 5.4rem;
       margin-left: 0;
       line-height: 2.3rem;
@@ -641,11 +641,23 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
   &.ty2 {
     > .checkbox,
     > .radio {
-      i {
-        display: none;
+      > input,
+      > i {
+        left: 1.5rem;
       }
       .lbl {
-        padding: 2rem 1.6rem;
+        color: #424242;
+        background-color: #fff;
+        border: 1px solid #ebebeb;
+        padding: 1.5rem 1.5rem 1.5rem 4.7rem;
+      }
+      input {
+        &:checked {
+          ~ .lbl {
+            background-color: rgba(var(--primary-color-rgb), 0.1);
+            border-color: var(--primary-color);
+          }
+        }
       }
     }
     + .chk-item {
