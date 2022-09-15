@@ -1565,10 +1565,12 @@
   }
 }
 
-.step-swiper {
+.step-chk-items {
   // display: flex;
   // flex: 1 0 auto;
-  margin: 0 var(--outer-padding);
+  .swiper {
+    margin: 0 var(--outer-padding);
+  }
   // .swiper-wrapper {
   //   min-height: 100%;
   // }
@@ -1588,6 +1590,14 @@
     @include media-min-width(1024) {
       @include web-center;
       @include web-center-fixed;
+    }
+  }
+  .step-item {
+    + .step-item {
+      margin-top: 6rem;
+    }
+    .step-cont-bottom {
+      margin-top: 2.4rem;
     }
   }
   .step-cont-top {

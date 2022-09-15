@@ -44,288 +44,278 @@
 
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
-        <div class="section pt-40">
-          <p class="step-swiper-fraction"></p>
-        </div>
-        <div class="section full-section pb-0">
-          <div class="step-swiper">
-            <div class="swiper">
-              <div class="swiper-wrapper">
-                <!-- 1항목 -->
-                <div class="swiper-slide">
-                  <div class="step-cont-top">
-                    <p class="tit"><span data-splitting class="on">투자목적</span>을 <br />선택해 주세요</p>
-                  </div>
-                  <div class="step-cont-bottom">
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo1-1" name="rdo1" /><i aria-hidden="true"></i>
-                        <label for="rdo1-1" class="lbl">채권이자, 주식배당 수준의 안정적 투자</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo1-2" name="rdo1" /><i aria-hidden="true"></i>
-                        <label for="rdo1-2" class="lbl">시장 수익률(지수 상승률)과 비슷한 수준의 수익 추구</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo1-3" name="rdo1" /><i aria-hidden="true"></i>
-                        <label for="rdo1-3" class="lbl">적극적 매매를 통한 고수익 추구</label>
-                      </div>
-                    </div>
+        <div class="section">
+          <div class="step-chk-items">
+            <!-- 1항목 -->
+            <div class="step-item">
+              <div class="step-cont-top">
+                <p class="tit"><span data-splitting data-animation="on">투자목적</span>을 <br />선택해 주세요</p>
+              </div>
+              <div class="step-cont-bottom">
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo1-1" name="rdo1" /><i aria-hidden="true"></i>
+                    <label for="rdo1-1" class="lbl">채권이자, 주식배당 수준의 안정적 투자</label>
                   </div>
                 </div>
-
-                <!-- 2항목 -->
-                <div class="swiper-slide">
-                  <div class="step-cont-top">
-                    <p class="tit"><span data-splitting class="on">투자수익과 위험</span>에 대한 <br />의견을 선택해 주세요.</p>
-                  </div>
-                  <div class="step-cont-bottom">
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo2-1" name="rdo2" /><i aria-hidden="true"></i>
-                        <label for="rdo2-1" class="lbl">투자수익을 고려하나 원금 보존이 더 중요</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo2-2" name="rdo2" /><i aria-hidden="true"></i>
-                        <label for="rdo2-2" class="lbl">원금 보존을 고려하나 투자 수익이 더 중요</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo2-3" name="rdo2" /><i aria-hidden="true"></i>
-                        <label for="rdo2-3" class="lbl">손실 위험이 있더라도 투자 수익이 더 중요</label>
-                      </div>
-                    </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo1-2" name="rdo1" /><i aria-hidden="true"></i>
+                    <label for="rdo1-2" class="lbl">시장 수익률(지수 상승률)과 비슷한 수준의 수익 추구</label>
                   </div>
                 </div>
-
-                <!-- 3항목 -->
-                <div class="swiper-slide">
-                  <div class="step-cont-top">
-                    <p class="tit"><span data-splitting class="on">재산규모</span>를 <br />선택해 주세요.</p>
-                  </div>
-                  <div class="step-cont-bottom">
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo3-1" name="rdo3" /><i aria-hidden="true"></i>
-                        <label for="rdo3-1" class="lbl">1억 미만</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo3-2" name="rdo3" /><i aria-hidden="true"></i>
-                        <label for="rdo3-2" class="lbl">1억 ~ 10억 미만</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo3-3" name="rdo3" /><i aria-hidden="true"></i>
-                        <label for="rdo3-3" class="lbl">10억 이상</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 4항목 -->
-                <div class="swiper-slide">
-                  <div class="step-cont-top">
-                    <p class="tit"><span data-splitting class="on">연평균 수입</span>을 <br />선택해주세요.</p>
-                  </div>
-                  <div class="step-cont-bottom">
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo4-1" name="rdo4" /><i aria-hidden="true"></i>
-                        <label for="rdo4-1" class="lbl">5천만원 미만</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo4-2" name="rdo4" /><i aria-hidden="true"></i>
-                        <label for="rdo4-2" class="lbl">5천만원 ~ 10억 미만</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo4-3" name="rdo4" /><i aria-hidden="true"></i>
-                        <label for="rdo4-3" class="lbl">10억 이상</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 5항목 -->
-                <div class="swiper-slide">
-                  <div class="step-cont-top">
-                    <p class="tit"><span data-splitting class="on">투자 중이거나 경험한 금융투자 상품</span>을 선택해주세요. <sub>(중복가능)</sub></p>
-                  </div>
-                  <div class="step-cont-bottom">
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="checkbox" id="chk5-1" name="chk5" /><i aria-hidden="true"></i>
-                        <label for="chk5-1" class="lbl">
-                          <i class="badge small green">저위험</i>
-                          <p class="mt-4">은행 예적금, CMA, 국채, 지방채, 보증채, MMF, 금융채, 신용도 높은 회사채, 채권형 펀드, ELB, DLB</p>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="checkbox" id="chk5-2" name="chk5" /><i aria-hidden="true"></i>
-                        <label for="chk5-2" class="lbl">
-                          <i class="badge small orange">중위험</i>
-                          <p class="mt-4">주식, 주식관련사채, 신용도 중간 등급의 회사채, 혼합형 펀드, ELS, DLB</p>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="checkbox" id="chk5-3" name="chk5" /><i aria-hidden="true"></i>
-                        <label for="chk5-3" class="lbl">
-                          <i class="badge small red">고위험</i>
-                          <p class="mt-4">신용도 낮은 회사채, 장내 선물옵션, 해외선물, FX마진, 장외파생상품, 원금비보장 펀드, ELW, ELS, DLS</p>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 6항목 -->
-                <div class="swiper-slide">
-                  <div class="step-cont-top">
-                    <p class="tit">이전 5번 항목에서 <span data-splitting class="on">투자하신 상품의 투자기간</span>을 선택해주세요.</p>
-                  </div>
-                  <div class="step-cont-bottom">
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo6-1" name="rdo6" /><i aria-hidden="true"></i>
-                        <label for="rdo6-1" class="lbl">평균 1년 미만</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo6-2" name="rdo6" /><i aria-hidden="true"></i>
-                        <label for="rdo6-2" class="lbl">평균 1년 이상 ~ 3년 미만</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo6-3" name="rdo6" /><i aria-hidden="true"></i>
-                        <label for="rdo6-3" class="lbl">평균 3년 이상</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 7항목 -->
-                <div class="swiper-slide">
-                  <div class="step-cont-top">
-                    <p class="tit">고객님의 금융투자상품 <span data-splitting class="on">투자지식 수준</span>이 어느정도라고 생각하시나요?</p>
-                  </div>
-                  <div class="step-cont-bottom">
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo7-1" name="rdo7" /><i aria-hidden="true"></i>
-                        <label for="rdo7-1" class="lbl">
-                          <i class="badge small green">낮음</i>
-                          <p class="mt-4">투자 수준이 거의 전무하고 금융투자회사 임직원의 도움없이는 스스로 투자 판단을 내릴 수 없을 정도</p>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo7-2" name="rdo7" /><i aria-hidden="true"></i>
-                        <label for="rdo7-2" class="lbl">
-                          <i class="badge small orange">보통</i>
-                          <p class="mt-4">파생상품 등을 제외한 널리 알려진 금융투자상품(주식, 채권, CMA, 펀드 등)은 스스로 투자한 경험이 있고 금융투자상품의 기본 구조나 위험에 대해 이해하고 있는 정도</p>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo7-3" name="rdo7" /><i aria-hidden="true"></i>
-                        <label for="rdo7-3" class="lbl">
-                          <i class="badge small red">높음</i>
-                          <p class="mt-4">파생상품 등을 포함하여 수개의 금융투자상품에 대해 상당한 기간동안 스스로 투자한 경험이 있고, 금융투자상품의 기본 구조나 위험에 대해 상세하게 이해하고 있는 정도</p>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 8항목 -->
-                <div class="swiper-slide">
-                  <div class="step-cont-top">
-                    <p class="tit">파생상품, 파생결합증권 또는 파생상품펀드에 <span data-splitting class="on">투자한 경험 및 기간</span>을 선택해주세요.</p>
-                  </div>
-                  <div class="step-cont-bottom">
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo8-1" name="rdo8" /><i aria-hidden="true"></i>
-                        <label for="rdo8-1" class="lbl">평균 1년 미만</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo8-2" name="rdo8" /><i aria-hidden="true"></i>
-                        <label for="rdo8-2" class="lbl">평균 1년 이상 ~ 3년 미만</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo8-3" name="rdo8" /><i aria-hidden="true"></i>
-                        <label for="rdo8-3" class="lbl">평균 3년 이상</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 9항목 -->
-                <div class="swiper-slide">
-                  <div class="step-cont-top">
-                    <p class="tit">회원님의 상황에 <span data-splitting class="on">부합하거나 가장 가까운 항목</span>을 선택해주세요.</p>
-                  </div>
-                  <div class="step-cont-bottom">
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo9-1" name="rdo9" /><i aria-hidden="true"></i>
-                        <label for="rdo9-1" class="lbl">해당사항없음</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo9-2" name="rdo9" /><i aria-hidden="true"></i>
-                        <label for="rdo9-2" class="lbl">금융투자상품 투자 무경험자</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo9-3" name="rdo9" /><i aria-hidden="true"></i>
-                        <label for="rdo9-3" class="lbl">문맹자</label>
-                      </div>
-                    </div>
-                    <div class="chk-item ty2">
-                      <div class="checkbox">
-                        <input type="radio" id="rdo9-4" name="rdo9" /><i aria-hidden="true"></i>
-                        <label for="rdo9-4" class="lbl">정상적인 판단에 장애가 있는 투자자</label>
-                      </div>
-                    </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo1-3" name="rdo1" /><i aria-hidden="true"></i>
+                    <label for="rdo1-3" class="lbl">적극적 매매를 통한 고수익 추구</label>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
+
+            <!-- 2항목 -->
+            <div class="step-item">
+              <div class="step-cont-top">
+                <p class="tit"><span data-splitting data-animation="on">투자수익과 위험</span>에 대한 <br />의견을 선택해 주세요.</p>
+              </div>
+              <div class="step-cont-bottom">
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo2-1" name="rdo2" /><i aria-hidden="true"></i>
+                    <label for="rdo2-1" class="lbl">투자수익을 고려하나 원금 보존이 더 중요</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo2-2" name="rdo2" /><i aria-hidden="true"></i>
+                    <label for="rdo2-2" class="lbl">원금 보존을 고려하나 투자 수익이 더 중요</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo2-3" name="rdo2" /><i aria-hidden="true"></i>
+                    <label for="rdo2-3" class="lbl">손실 위험이 있더라도 투자 수익이 더 중요</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3항목 -->
+            <div class="step-item">
+              <div class="step-cont-top">
+                <p class="tit"><span data-splitting data-animation="on">재산규모</span>를 <br />선택해 주세요.</p>
+              </div>
+              <div class="step-cont-bottom">
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo3-1" name="rdo3" /><i aria-hidden="true"></i>
+                    <label for="rdo3-1" class="lbl">1억 미만</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo3-2" name="rdo3" /><i aria-hidden="true"></i>
+                    <label for="rdo3-2" class="lbl">1억 ~ 10억 미만</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo3-3" name="rdo3" /><i aria-hidden="true"></i>
+                    <label for="rdo3-3" class="lbl">10억 이상</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4항목 -->
+            <div class="step-item">
+              <div class="step-cont-top">
+                <p class="tit"><span data-splitting data-animation="on">연평균 수입</span>을 <br />선택해주세요.</p>
+              </div>
+              <div class="step-cont-bottom">
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo4-1" name="rdo4" /><i aria-hidden="true"></i>
+                    <label for="rdo4-1" class="lbl">5천만원 미만</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo4-2" name="rdo4" /><i aria-hidden="true"></i>
+                    <label for="rdo4-2" class="lbl">5천만원 ~ 10억 미만</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo4-3" name="rdo4" /><i aria-hidden="true"></i>
+                    <label for="rdo4-3" class="lbl">10억 이상</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5항목 -->
+            <div class="step-item">
+              <div class="step-cont-top">
+                <p class="tit"><span data-splitting data-animation="on">투자 중이거나 경험한 금융투자 상품</span>을 선택해주세요. <sub>(중복가능)</sub></p>
+              </div>
+              <div class="step-cont-bottom">
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="checkbox" id="chk5-1" name="chk5" /><i aria-hidden="true"></i>
+                    <label for="chk5-1" class="lbl">
+                      <i class="badge small green">저위험</i>
+                      <p class="mt-4">은행 예적금, CMA, 국채, 지방채, 보증채, MMF, 금융채, 신용도 높은 회사채, 채권형 펀드, ELB, DLB</p>
+                    </label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="checkbox" id="chk5-2" name="chk5" /><i aria-hidden="true"></i>
+                    <label for="chk5-2" class="lbl">
+                      <i class="badge small orange">중위험</i>
+                      <p class="mt-4">주식, 주식관련사채, 신용도 중간 등급의 회사채, 혼합형 펀드, ELS, DLB</p>
+                    </label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="checkbox" id="chk5-3" name="chk5" /><i aria-hidden="true"></i>
+                    <label for="chk5-3" class="lbl">
+                      <i class="badge small red">고위험</i>
+                      <p class="mt-4">신용도 낮은 회사채, 장내 선물옵션, 해외선물, FX마진, 장외파생상품, 원금비보장 펀드, ELW, ELS, DLS</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6항목 -->
+            <div class="step-item">
+              <div class="step-cont-top">
+                <p class="tit">이전 5번 항목에서 <span data-splitting data-animation="on">투자하신 상품의 투자기간</span>을 선택해주세요.</p>
+              </div>
+              <div class="step-cont-bottom">
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo6-1" name="rdo6" /><i aria-hidden="true"></i>
+                    <label for="rdo6-1" class="lbl">평균 1년 미만</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo6-2" name="rdo6" /><i aria-hidden="true"></i>
+                    <label for="rdo6-2" class="lbl">평균 1년 이상 ~ 3년 미만</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo6-3" name="rdo6" /><i aria-hidden="true"></i>
+                    <label for="rdo6-3" class="lbl">평균 3년 이상</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7항목 -->
+            <div class="step-item">
+              <div class="step-cont-top">
+                <p class="tit">고객님의 금융투자상품 <span data-splitting data-animation="on">투자지식 수준</span>이 어느정도라고 생각하시나요?</p>
+              </div>
+              <div class="step-cont-bottom">
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo7-1" name="rdo7" /><i aria-hidden="true"></i>
+                    <label for="rdo7-1" class="lbl">
+                      <i class="badge small green">낮음</i>
+                      <p class="mt-4">투자 수준이 거의 전무하고 금융투자회사 임직원의 도움없이는 스스로 투자 판단을 내릴 수 없을 정도</p>
+                    </label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo7-2" name="rdo7" /><i aria-hidden="true"></i>
+                    <label for="rdo7-2" class="lbl">
+                      <i class="badge small orange">보통</i>
+                      <p class="mt-4">파생상품 등을 제외한 널리 알려진 금융투자상품(주식, 채권, CMA, 펀드 등)은 스스로 투자한 경험이 있고 금융투자상품의 기본 구조나 위험에 대해 이해하고 있는 정도</p>
+                    </label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo7-3" name="rdo7" /><i aria-hidden="true"></i>
+                    <label for="rdo7-3" class="lbl">
+                      <i class="badge small red">높음</i>
+                      <p class="mt-4">파생상품 등을 포함하여 수개의 금융투자상품에 대해 상당한 기간동안 스스로 투자한 경험이 있고, 금융투자상품의 기본 구조나 위험에 대해 상세하게 이해하고 있는 정도</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8항목 -->
+            <div class="step-item">
+              <div class="step-cont-top">
+                <p class="tit">파생상품, 파생결합증권 또는 파생상품펀드에 <span data-splitting data-animation="on">투자한 경험 및 기간</span>을 선택해주세요.</p>
+              </div>
+              <div class="step-cont-bottom">
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo8-1" name="rdo8" /><i aria-hidden="true"></i>
+                    <label for="rdo8-1" class="lbl">평균 1년 미만</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo8-2" name="rdo8" /><i aria-hidden="true"></i>
+                    <label for="rdo8-2" class="lbl">평균 1년 이상 ~ 3년 미만</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo8-3" name="rdo8" /><i aria-hidden="true"></i>
+                    <label for="rdo8-3" class="lbl">평균 3년 이상</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 9항목 -->
+            <div class="step-item">
+              <div class="step-cont-top">
+                <p class="tit">회원님의 상황에 <span data-splitting data-animation="on">부합하거나 가장 가까운 항목</span>을 선택해주세요.</p>
+              </div>
+              <div class="step-cont-bottom">
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo9-1" name="rdo9" /><i aria-hidden="true"></i>
+                    <label for="rdo9-1" class="lbl">해당사항없음</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo9-2" name="rdo9" /><i aria-hidden="true"></i>
+                    <label for="rdo9-2" class="lbl">금융투자상품 투자 무경험자</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo9-3" name="rdo9" /><i aria-hidden="true"></i>
+                    <label for="rdo9-3" class="lbl">문맹자</label>
+                  </div>
+                </div>
+                <div class="chk-item ty2">
+                  <div class="checkbox">
+                    <input type="radio" id="rdo9-4" name="rdo9" /><i aria-hidden="true"></i>
+                    <label for="rdo9-4" class="lbl">정상적인 판단에 장애가 있는 투자자</label>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="btn-wrap bottom-fixed">
             <div class="flex">
-              <!-- hide 클래스로 숨김처리 -->
-              <button type="button" class="button h60 gray hide" id="btnPrev">이전</button>
-              <button type="button" class="button h60 primary" id="btnNext" disabled>다음</button>
+              <button type="button" class="button h60 primary" id="btnNext" disabled>확인</button>
             </div>
           </div>
         </div>
@@ -337,79 +327,15 @@
       <div class="bottom-fixed-space" aria-hidden="true" style="height: 108px"></div>
     </article>
     <script>
-      let swiperIdx = 0;
-      let activeIdx = 0;
-      function swiperFraction(e) {
-        const $fraction = $('.step-swiper-fraction');
-        const $length = e.slides.length;
-        const $index = e.realIndex + 1;
-        swiperIdx = $index;
-        $fraction.html('<strong>' + $index + '</strong> / ' + $length);
-        if ($index === 1) {
-          // $('#btnPrev').prop('disabled', true);
-          $('#btnPrev').addClass('hide');
-        } else {
-          // $('#btnPrev').prop('disabled', false);
-          $('#btnPrev').removeClass('hide');
-        }
-
-        if ($index === $length) {
-          $('#btnNext').text('완료');
-        } else {
-          $('#btnNext').text('다음');
-        }
-      }
-      function btnNextChk() {
-        if (swiperIdx <= activeIdx) {
-          $('#btnNext').prop('disabled', false);
-        } else {
-          $('#btnNext').prop('disabled', true);
-        }
-      }
-      const swiper = new Swiper('.step-swiper .swiper', {
-        autoHeight: true,
-        allowTouchMove: false,
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'progressbar'
-        },
-        // effect: 'creative',
-        // creativeEffect: {
-        //   prev: {
-        //     translate: [0, 0, -400]
-        //   },
-        //   next: {
-        //     translate: ['100%', 0, 0]
-        //   }
-        // },
-        on: {
-          init: function (swiper) {
-            swiperFraction(swiper);
-            // btnNextChk();
-          },
-          slideChange: function (swiper) {
-            swiperFraction(swiper);
-            btnNextChk();
-          }
-        }
-      });
-      $('#btnPrev').click(function () {
-        swiper.slidePrev();
-      });
       $('#btnNext').click(function () {
-        const $txt = $(this).text();
-        if ($txt === '다음') {
-          swiper.slideNext();
-        } else {
-          const $txt = '투자성향진단 답변이 완료되었습니다.<br />투자성향진단을 이대로 저장할까요?';
-          Layer.confirm($txt, function (e) {
-            if (e) {
-              console.log('확인');
-            } else {
-              console.log('취소');
-            }
-          });
-        }
+        const $txt = '투자성향진단 답변이 완료되었습니다.<br />투자성향진단을 이대로 저장할까요?';
+        Layer.confirm($txt, function (e) {
+          if (e) {
+            console.log('확인');
+          } else {
+            console.log('취소');
+          }
+        });
       });
       $('.step-cont-bottom input').click(function () {
         // console.log(activeIdx, swiperIdx);
