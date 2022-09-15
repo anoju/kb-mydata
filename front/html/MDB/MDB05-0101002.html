@@ -315,7 +315,7 @@
           </div>
           <div class="btn-wrap bottom-fixed">
             <div class="flex">
-              <button type="button" class="button h60 primary" id="btnNext" disabled>확인</button>
+              <button type="button" class="button h60 primary" id="btnNext" disabled>완료</button>
             </div>
           </div>
         </div>
@@ -338,9 +338,15 @@
         });
       });
       $('.step-cont-bottom input').click(function () {
-        // console.log(activeIdx, swiperIdx);
-        if (activeIdx < swiperIdx) activeIdx = swiperIdx;
-        btnNextChk();
+        const $item = $(this).closest('.step-item');
+        $item.addClass('checked');
+        const $length = $('.step-item').length;
+        const $chklength = $('.step-item.checked').length;
+        if ($length === $chklength) {
+          $('#btnNext').prop('disabled', false);
+        } else {
+          $('#btnNext').prop('disabled', true);
+        }
       });
       $('.head-close').click(function () {
         const $txt = '투자성향진단을 그만할까요?<br />작성 중인 내용을 저장하지 않습니다.';
