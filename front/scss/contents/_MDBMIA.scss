@@ -1585,6 +1585,10 @@
     margin-top: 0;
     z-index: 51;
     height: 0.3rem;
+    @include media-min-width(1024) {
+      @include web-center;
+      @include web-center-fixed;
+    }
   }
   .analysis-top {
     .tit {
