@@ -493,10 +493,7 @@ ui.Common = {
     }
     */
     const $headLeft = $header.find('.head-left');
-    if ($headLeft.find('h1').length) {
-      $headLeft.addClass('full');
-      return;
-    }
+    if ($headLeft.find('h1').length) return;
     const $headLeftW = $headLeft.outerWidth();
     const $headRight = $header.find('.head-right');
     const $headRightW = $headRight.outerWidth();
