@@ -969,16 +969,6 @@
     "etc": "<strong class=\"strong-point\">추가요건(투자성향진단)</strong>"
   }
   ,{
-    "id":"MDB05-0101003",
-    "url":"../../front/html/MDB/",
-    "depth2": "결과",
-    "name": "투자성향진단 결과",
-    "worker": "안효주",
-    "complete": "2022-09-16",
-    "change": "",
-    "etc": "<strong class=\"strong-point\">추가요건(투자성향진단)</strong>"
-  }
-  ,{
     "id":"MDB05-0101004",
     "url":"../../front/html/MDB/",
     "depth2": "추천포트폴리오",
