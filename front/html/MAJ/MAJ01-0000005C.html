@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>끌</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('쿼터백 서비스 이용 동의');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button type="button" class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section full-section pb-20">
+          <h1 class="tit-h1">쿼터백 서비스 이용 동의</h1>
+
+          <p class="mt-32">투자성향을 진단하고 추천포트폴리오를 확인하시려면 아래 동의서에 동의하셔야 합니다.</p>
+          <div class="mt-18">
+            <div class="flex not-full pd-7y align-center">
+              <p class="fw-500 flex-11 pr-10 fz-14">[선택] 개인(신용)정보 수집 및 이용 동의서</p>
+              <!--
+                상태에 따른 클래스 변화
+                
+                동의함 : fc-primary
+                미동의 : fc-b0b0b0
+              -->
+              <button type="button" class="btn-txt fc-b0b0b0" onclick="Layer.open('#popAgreeView1')">미동의<i class="i-ico-arr-right-24" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="section pb-0">
+          <div class="btn-wrap outer line-top">
+            <div class="flex">
+              <button class="button fc-primary h-72"><i class="i-ico-arrow-left-primary"></i>확인 후 이전화면으로 돌아가기</button>
+            </div>
+          </div>
+          <!-- // 2022-06-10: 추가 -->
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+
+      <!-- 팝업 -->
+      <div id="popAgreeView1" class="popup full pop-pdf" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>[선택] 개인(신용)정보 수집 및 이용 동의서</h1>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body iframe-full-box tab-pdf">
+            <div class="tab-line-menu ui-tab tab-fixed">
+              <div class="tab-inner">
+                <i class="tab-line" aria-hidden="true"></i>
+                <ul class="tab-list">
+                  <li class="tab"><a href="#lineTabCont1">요약 동의서</a></li>
+                  <li class="tab"><a href="#lineTabCont2">상세 동의서</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="tab-panels">
+              <div id="lineTabCont1" class="tab-panel">
+                <iframe src="../../pdfjs/web/viewer.html?file=../../temp/교보증권마이데이터 샘플.pdf" frameborder="0"></iframe>
+              </div>
+              <div id="lineTabCont2" class="tab-panel">
+                <!-- html 타입 -->
+                <article class="terms-content">
+                  <h1>개인정보 수집 ∙ 이용동의 상세</h1>
+                  <div style="height: 2000px; background: #eee; margin-top: 20px">중간 약관 상세 들어갈 자리</div>
+                </article>
+
+                <!-- link 타입 -->
+                <!-- <iframe src="https://crosscert.com/mydata/terms.html"></iframe> -->
+              </div>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <!-- 철회하기, 동의하기 문구 변경 -->
+              <div class="flex"><button type="button" class="button primary ui-pop-close">철회하기</button></div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <!-- //팝업 -->
+    </article>
+
+    <script>
+      // [동의하고 진행]버튼 활성화, 비활성화 체크
+      const matchAgreeBtn = function () {
+        const $pop = $('#popAgreeView0');
+        const $popBtn = $('#matchAgreeBtn');
+        const $agreeTxt = $('#agreeTxt1');
+        const $checkbox = $pop.find('.checkbox > input');
+        const agreeCheck = function () {
+          const $checked = $pop.find('.checkbox > input:checked');
+          if ($checkbox.length === $checked.length) {
+            $popBtn.prop('disabled', false);
+          } else {
+            $popBtn.prop('disabled', true);
+          }
+        };
+        $checkbox.click(function () {
+          agreeCheck();
+        });
+        $popBtn.click(function () {
+          Layer.close(
+            '#popAgreeView0',
+            function () {
+              const $text = $popBtn.text();
+              if ($text === '철회하기') {
+                // 철회
+                $checkbox.prop({ disabled: false, checked: false });
+                $popBtn.text('동의하기').hide();
+                $popBtn.prev().show();
+                $agreeTxt.text('미동의').parent().removeClass('fc-primary').addClass('fc-b0b0b0');
+              } else {
+                // 동의
+                $checkbox.prop('disabled', true);
+                $popBtn.text('철회하기');
+                $agreeTxt.text('동의함').parent().removeClass('fc-b0b0b0').addClass('fc-primary');
+              }
+            },
+            200
+          );
+        });
+      };
+      matchAgreeBtn();
+    </script>
+  </body>
+</html>

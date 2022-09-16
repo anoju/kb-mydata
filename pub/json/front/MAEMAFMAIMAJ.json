@@ -288,7 +288,8 @@
     "name": "더보기 메인",
     "worker": "안효주",
     "complete": "2022-03-28",
-    "change": "2022-05-19"
+    "change": "2022-09-16",
+    "etc": "<strong class=\"strong-point\">추가요건(투자성향진단)</strong>"
   }
   ,{
     "id": "MAJ01-0000003C",
@@ -363,6 +364,14 @@
     "change": "2022-04-28"
   },
   {
+    "id": "MAJ01-0000005C",
+    "url": "../../front/html/MAJ/",
+    "depth2": "쿼터백 이용 동의",
+    "name": "쿼터백 이용 동의",
+    "worker": "안효주",
+    "complete": "2022-09-16"
+  },
+  {
     "depth1": "투자",
     "version": "투자메인_<span>v1.0_20220406</span>"
   },
@@ -375,7 +384,7 @@
     "worker": "변상우",
     "complete": "2022-04-08",
     "change": "2022-05-19",
-    "etc": "<strong style=\"color:red;background:yellow;\">추가요건(투자메인)</strong>"
+    "etc": "<strong class=\"strong-point\">추가요건(투자메인)</strong>"
   },
   {
     "id": "MDA01-0000002",

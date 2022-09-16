@@ -440,3 +440,5 @@ caption,legend{overflow:hidden;width:1px;height:0.1px;font-size:0px;line-height:
 .code__preview iframe.w360{width:360px;height:640px}
 .code__preview iframe.w375{width:375px;height:812px}
 .code__preview iframe.w768{width:768px;height:1024px}
+.strong-point{background-color:yellow;color:red
+	;}
