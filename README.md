@@ -170,3 +170,4 @@ pdf.js - <https://mozilla.github.io/pdf.js/>
 - admin은 디자인없이 퍼블에서 자체진행하였기 때문에<br />디자인 산출물은 없습니다.
 - admin은 admin git서버에 html이 별도로 관리하고 있습니다.
 - custom.scss, custom.js 만 퍼블에서 추가로 작성된 파일입니다.
+- 경로: /src/main/webapp/resources
