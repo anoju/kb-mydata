@@ -97,6 +97,8 @@
   display: block;
   img {
     max-width: 100%;
+    width: auto !important;
+    height: auto !important;
   }
   &.no-img-bg {
     &:before {

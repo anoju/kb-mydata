@@ -21,8 +21,8 @@
       <!-- 헤더 -->
       <header id="header">
         <div>
-          <div class="head-right">
-            <button type="button" class="head-close button" role="button" aria-label="화면닫기"></button>
+          <div class="head-left">
+            <a href="#" class="head-back button" role="button" aria-label="이전화면"></a>
           </div>
         </div>
       </header>
@@ -30,8 +30,8 @@
 
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
-        <div class="section full-section">
-          <h1 class="tit-h1">개인신용정보 동의서</h1>
+        <div class="section">
+          <h1 class="tit-h1">개인신용정보 수집 및 이용동의</h1>
           <p class="mt-16"><strong class="fc-424242">하나의 동의서를 선택해 주세요.</strong></p>
           <div class="tg-btn-wrap group mt-16">
             <div class="flex">
@@ -50,13 +50,13 @@
             <div class="checkbox ty2">
               <input type="checkbox" id="agree1-1" /><i aria-hidden="true"></i>
               <div class="lbl">
-                <label for="agree1-1">개인신용정보 동의서(선택)</label>
+                <label for="agree1-1">(선택)개인신용정보 동의서</label>
                 <a href="#" class="agree-btn" aria-label="약관상세 확인" role="button" onclick="Layer.open('#popAgreeView')"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>
-        </div>
-        <div class="section pb-0">
+          <hr class="hr-line ty2 inset mt-23" aria-hidden="true" />
+
           <p class="notice-txt mt-17">동의를 완료하셔야 투자성향진단과 추천 포트폴리오 확인이 가능합니다.</p>
           <div class="btn-wrap bottom-fixed">
             <div class="flex">
@@ -110,7 +110,7 @@
         </article>
       </div>
 
-      <div id="popContinue" class="popup bottom" role="dialog" aria-hidden="true">
+      <div id="popContinue" class="popup bottom show" role="dialog" aria-hidden="true">
         <article class="pop-wrap">
           <div class="pop-head">
             <div>
@@ -120,13 +120,13 @@
           </div>
           <div class="pop-body">
             <div class="section">
-              <p>회원님은 교보증권에서 진단한 투자성향이 있으시네요.<br />바로 불러올까요?</p>
+              <p>회원님은 교보증권에서 진단한 투자성향이 있으시네요. 바로 불러올까요?</p>
             </div>
           </div>
           <div class="pop-foot">
             <div>
-              <div class="pop-foot-close"><button type="button" class="button" onclick="Layer.close('#popContinue');">아니오. 새로할게요!!</button></div>
-              <div class="flex">
+              <div class="t-center"><button type="button" class="btn-txt fz-14 underline fc-979797" onclick="Layer.close('#popContinue');">아니오. 새로할게요!!</button></div>
+              <div class="flex mt-20">
                 <button type="button" class="button primary h48" onclick="Layer.close('#popContinue');">네</button>
               </div>
             </div>

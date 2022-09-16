@@ -1592,29 +1592,52 @@
       @include web-center-fixed;
     }
   }
-  .step-item {
-    + .step-item {
-      margin-top: 6rem;
-    }
-    .step-cont-bottom {
-      margin-top: 2.4rem;
-    }
-  }
   .step-cont-top {
     .tit {
       font-weight: bold;
-      font-size: 2.2rem;
-      line-height: 3.2rem;
       color: var(--strong-txt-color);
       sub {
-        font-size: 1.6rem;
         font-weight: 500;
         color: #979797;
       }
     }
   }
-  .step-cont-bottom {
-    margin-top: 3.2rem;
+  .swiper {
+    .step-cont-top {
+      .tit {
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+        sub {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .step-cont-bottom {
+      margin-top: 3.2rem;
+    }
+  }
+  .step-item {
+    + .step-item {
+      margin-top: 6rem;
+    }
+    .step-cont-top {
+      .tit {
+        position: relative;
+        padding-left: 2.1rem;
+        font-size: 1.8rem;
+        .num {
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        sub {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .step-cont-bottom {
+      margin-top: 2rem;
+    }
   }
 }
 .step-swiper-fraction {
