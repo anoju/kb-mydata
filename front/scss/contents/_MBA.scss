@@ -1,4 +1,9 @@
 // 1:1 매치
+.match-animation-wrap {
+  #container {
+    padding-top: 0;
+  }
+}
 .match-animation {
   overflow: hidden;
   position: relative;
