@@ -1648,3 +1648,62 @@
     color: var(--primary-color);
   }
 }
+.simulation-input-box {
+  padding: 2.4rem;
+  background: #fafafa;
+  border: 0.1rem solid #f2f4f6;
+  border-radius: 2rem;
+  .input-box {
+    margin-top: 2.4rem;
+    background: #ffffff;
+    border: 0.1rem solid #ebebeb;
+    border-radius: 1.2rem;
+    text-align: right;
+    padding: 1.4rem 2.4rem;
+    .input {
+      margin-top: 0.5rem;
+      background: none;
+      border-width: 0;
+      border-radius: 0;
+      input {
+        text-align: right;
+        font-weight: bold;
+        padding: 0;
+        height: 4.4rem;
+        font-size: 2.4rem;
+        line-height: 1;
+      }
+      .unit {
+        margin-left: 0.4rem;
+        margin-right: 0;
+        font-size: 2rem;
+        line-height: 1;
+      }
+    }
+  }
+
+  .bdg {
+    display: inline-flex;
+    padding: 0 0.6rem;
+    border-radius: 0.4rem;
+    font-size: 1.1rem;
+    height: 1.9rem;
+    align-items: center;
+    background-color: #f2f4f6;
+    color: #b0b0b0;
+    white-space: nowrap;
+  }
+}
+.stock-info-item {
+  position: relative;
+  overflow: hidden;
+  padding: 2.4rem;
+  border-radius: 1.6rem;
+  background-color: #fafafa;
+  &:where(a) {
+    display: block;
+  }
+  + .stock-info-item {
+    margin-top: 1.2rem;
+  }
+}

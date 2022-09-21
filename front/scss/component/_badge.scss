@@ -63,11 +63,11 @@
     color: #f4c819;
   }
   &.lv-2 {
-    background-color: to-light(#e4482a, 80);
+    background-color: to-light(#e4482a, 85);
     color: #e4482a;
   }
   &.lv-1 {
-    background-color: to-light(#e4482a, 80);
+    background-color: to-light(#e4482a, 85);
     color: #e4482a;
   }
 
@@ -78,8 +78,16 @@
     padding: 0 0.7rem;
     border: 0.1rem solid #eee;
   }
+  &.line-2 {
+    height: 2.8rem;
+    border-radius: 1.4rem;
+    padding: 0 1.2rem;
+    background: none;
+    color: var(--primary-color);
+    border: 0.1rem solid var(--primary-color);
+  }
   &.round {
-    border-radius: 1.5rem;
+    border-radius: 1.4rem;
   }
 }
 
