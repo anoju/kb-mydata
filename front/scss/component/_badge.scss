@@ -50,25 +50,24 @@
   }
 
   //투자성향
-  &.lv-1 {
-    background-color: rgba(102, 155, 45, 0.2);
+  &.lv-5 {
     background-color: to-light(#669b2d, 80);
     color: #669b2d;
   }
-  &.lv-2 {
-    background-color: rgba(156, 226, 8, 0.2);
-    color: #9ce208;
-  }
-  &.lv-3 {
-    background-color: rgba(244, 200, 25, 0.2);
+  &.lv-4 {
+    background-color: to-light(#f4c819, 80);
     color: #f4c819;
   }
-  &.lv-4 {
-    background-color: rgba(255, 129, 38, 0.2);
-    color: #ff8126;
+  &.lv-3 {
+    background-color: to-light(#f4c819, 80);
+    color: #f4c819;
   }
-  &.lv-5 {
-    background-color: rgba(228, 72, 42, 0.1);
+  &.lv-2 {
+    background-color: to-light(#e4482a, 80);
+    color: #e4482a;
+  }
+  &.lv-1 {
+    background-color: to-light(#e4482a, 80);
     color: #e4482a;
   }
 

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta property="og:image" content="https://dev-mydata.mykkl.com/mydata/resources/static/images/og_image_1200x630.png" />
+    <title>끌</title>
+    <link href="../../css/front.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-plugins.min.js"></script>
+    <script type="text/javascript" src="../../js/ui-front.js"></script>
+    <script>
+      ui.Common.title('추천 포트폴리오');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <a href="#" class="head-back button" role="button" aria-label="이전화면"></a>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <h1 class="tit-h1">추천 포트폴리오</h1>
+          <div class="img-area bd-radius-12 overflow-hidden mt-24"><img src="../../images/temp/thumb-temp.jpg" alt="" /></div>
+
+          <dl class="mt-40">
+            <dt class="_badge">
+              <i class="badge large lv-5" style="display: none">위험회피형</i>
+              <i class="badge large lv-4" style="display: none">안정성장형</i>
+              <i class="badge large lv-3" style="display: none">성장형</i>
+              <i class="badge large lv-2" style="display: none">적극형</i>
+              <i class="badge large lv-1" style="display: none">위험선호형</i>
+            </dt>
+            <dd class="fz-14 fc-212121 mt-12 _summary">
+              <!-- 위험회피형 -->
+              <p style="display: none">예적금 수준의 수익률을 기대하며, 투자 원금읜 손실이 발생하는 것을 원치 않는 고객님을 위해 준비했어요.</p>
+
+              <!-- 안정성장형 -->
+              <p style="display: none">손실위험은 최소화 하고, 안정적인 투자를 목표로 하는 고객님을 위해 준비했어요.</p>
+
+              <!-- 성장형 -->
+              <p style="display: none">예적금보다 높은 수익을 기대 할 수 있다면 일정 수준의 손실위험을 감수할 수 있는 고객님을 위해 준비했어요.</p>
+
+              <!-- 적극형 -->
+              <p style="display: none">투자원금의 보전보다는 위험을 감내하더라도 높은 수준의 투자수익 실현을 추구하는 고객님을 위해 준비했어요.</p>
+
+              <!-- 위험선호형 -->
+              <p style="display: none">높은 수준의 투자 수익을 추구하며, 이를 위해 손실 위험을 적극 수용할 수 있는 고객님을 위해 준비했어요.</p>
+            </dd>
+            <dd class="fz-12 fc-979797 mt-12">포트폴리오 제공 : 쿼터백 자산운용</dd>
+          </dl>
+          <hr class="hr-line mt-40" aria-hidden="true" />
+          <div class="title-bar">
+            <h2 class="tit-h1">포트폴리오 성과</h2>
+            <div class="right">
+              <p class="fz-11 fc-b0b0b0">기준일 : 2020.08.18</p>
+            </div>
+          </div>
+
+          <div class="tab-round-menu mt-32 ui-tab">
+            <div class="tab-inner">
+              <i class="tab-line" aria-hidden="true"></i>
+              <ul class="tab-list">
+                <li class="tab"><a href="#">1개월</a></li>
+                <li class="tab"><a href="#">3개월</a></li>
+                <li class="tab"><a href="#">6개월</a></li>
+                <li class="tab"><a href="#">12개월</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="chart1" class="chart h-160"></div>
+
+          <div class="btn-wrap bottom-fixed">
+            <div>
+              <div class="t-center"><button type="button" class="btn-txt fz-14 underline fc-979797">다시 측정하기</button></div>
+              <div class="flex mt-20">
+                <button type="button" class="button h60 primary">추천 포트폴리오 확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+
+      <!-- 팝업 -->
+      <!-- //팝업 -->
+    </article>
+    <script type="text/javascript" src="../../js/lib/highcharts.js"></script>
+    <script>
+      // 임시 확인용 스크립트
+      const $random = parseInt(randomNumber(0, 4, 0));
+      $('._badge').children().eq($random).show();
+      $('._summary').children().eq($random).show();
+
+      // 차트
+      const $chartData = [2, 1.8, 3.5, 2, 4.3, 5.5, 6.5, 6.8, 6.4, 6.2, 8, 6];
+      const $chartData2 = [2000000, 1800000, 3500000, 2000000, 4300000, 5500000, 6500000, 6800000, 6400000, 6200000, 8000000, 6000000];
+      const $max = Math.max.apply(null, $chartData);
+      Highcharts.chart('chart1', {
+        chart: {
+          type: 'areaspline',
+          backgroundColor: 'rgba(255,255,255,0)',
+          spacing: [10, 0, 0, 0]
+        },
+        title: false,
+        legend: false,
+        xAxis: {
+          labels: {
+            style: {
+              color: 'rgba(255,255,255,0.7)'
+            }
+          },
+          categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+        },
+        yAxis: {
+          labels: {
+            style: {
+              color: 'rgba(255,255,255,0.7)'
+            },
+            x: -6
+          },
+          lineColor: 'rgba(255, 255, 255, 0.35)',
+          gridLineColor: 'rgba(255, 255, 255, 0.35)',
+          gridLineDashStyle: 'Dot',
+          title: false
+        },
+        tooltip: {
+          enabled: false
+        },
+        credits: {
+          enabled: false
+        },
+        plotOptions: {
+          areaspline: {
+            lineColor: '#2AD6A8',
+            states: {
+              hover: {
+                enabled: false
+              },
+              inactive: {
+                enabled: false
+              },
+              select: {
+                enabled: false
+              }
+            },
+            marker: {
+              enabled: false,
+              states: {
+                hover: {
+                  enabled: false
+                },
+                select: {
+                  enabled: false
+                }
+              }
+            },
+            fillOpacity: 1,
+            fillColor: {
+              linearGradient: {
+                x1: 0,
+                y1: 0,
+                x2: 0,
+                y2: 1
+              },
+              stops: [
+                [0, Highcharts.color('#2AD6A8').setOpacity(0.2).get('rgba')],
+                [1, Highcharts.color('#2AD6A8').setOpacity(0).get('rgba')]
+              ]
+            }
+          }
+        },
+        series: [
+          {
+            data: $chartData
+          }
+        ]
+      });
+    </script>
+  </body>
+</html>
