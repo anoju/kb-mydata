@@ -137,12 +137,8 @@
     border-radius: 1.6rem 1.6rem 0 0;
     position: relative;
     &:before {
-      padding-top: -xyPercent(232, 164);
-    }
-    &.ty2 {
-      &:before {
-        padding-top: -xyPercent(232, 174);
-      }
+      // padding-top: -xyPercent(232, 164);
+      padding-top: -xyPercent(232, 174);
     }
   }
   .invest-txt-box {
@@ -209,11 +205,11 @@
   }
 
   &.type3 {
-    .img-box {
-      &:before {
-        padding-top: -xyPercent(232, 174);
-      }
-    }
+    // .img-box {
+    //   &:before {
+    //     padding-top: -xyPercent(232, 174);
+    //   }
+    // }
     .invest-txt-box {
       .invest-state2 {
         margin-top: 0.4rem;
