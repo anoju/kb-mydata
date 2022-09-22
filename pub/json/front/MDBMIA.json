@@ -974,9 +974,19 @@
     "depth2": "추천포트폴리오",
     "name": "투자성향진단 추천포트폴리오",
     "worker": "안효주",
-    "complete": "",
+    "complete": "2022-09-22",
     "change": "",
     "etc": "<strong class=\"strong-point\">추가요건(투자성향진단)</strong>"
+  }
+  ,{
+    "id":"MDB05-0101p01",
+    "url":"../../front/html/MDB/MDB05-0101004.html?pop=popStockView",
+    "depth2": "추천포트폴리오 상세",
+    "name": "투자성향진단 추천포트폴리오 상세",
+    "worker": "안효주",
+    "complete": "2022-09-22",
+    "change": "",
+    "etc": "<strong class=\"strong-point\">추가요건(투자성향진단)</strong>, MDB05-0101004안에 포함"
   }
 
 

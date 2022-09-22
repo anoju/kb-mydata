@@ -329,8 +329,13 @@
       $('._badge').children().eq($random).show();
       $('._summary').children().eq($random).show();
 
-      // 차트
+      //임시: 팝업 띄우기
+      if (getUrlParams().pop) {
+        const $pop = getUrlParams().pop;
+        Layer.open('#' + $pop);
+      }
 
+      // 차트
       const $lineChartData = [1240, 1220, 1280, 1240, 1285, 1288, 1290, 1320, 1310, 1300, 1350, 1290];
       // const $Label = ['2022.01', '2022.02', '2022.03', '2022.04', '2022.05', '2022.06', '2022.07', '2022.08', '2022.09', '2022.10', '2022.11', '2022.12'];
 
