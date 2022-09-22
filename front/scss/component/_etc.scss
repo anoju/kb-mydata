@@ -137,3 +137,34 @@
     height: 100%;
   }
 }
+
+.num-box-item {
+  display: flex;
+  background: #fafafa;
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  > i {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.2rem;
+    background: #00caca;
+    border-radius: 4px;
+    white-space: nowrap;
+    color: #fff;
+    background-color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.4rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .inner {
+    margin-left: 0.6rem;
+  }
+  + .num-box-item {
+    margin-top: 1.2rem;
+  }
+}

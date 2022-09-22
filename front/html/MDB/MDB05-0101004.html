@@ -104,6 +104,7 @@
                   <td class="t-center"><span class="fc-down">▼ 4.47%</span></td>
                   <td class="t-center"><span class="fc-up">▲ 4.47%</span></td>
                   <td class="t-center"><span class="fc-down">▼ 4.47%</span></td>
+                  <!-- 상승 : fc-up, 하락 : fc-down, 유지: fc-424242 -->
                 </tr>
               </tbody>
             </table>
@@ -148,19 +149,19 @@
 
           <h2 class="tit-h1 mt-40">포트폴리오 구성 종목</h2>
           <div class="mt-16">
-            <a href="#" class="stock-info-item btn-click">
+            <a href="#" class="stock-info-item btn-click" onclick="Layer.open('#popStockView')">
               <div class="flex not-full">
                 <div>
-                  <i class="badge line-2">커머더티형</i>
+                  <i class="badge line2 color-1">종목타입A</i>
                 </div>
                 <div class="ml-auto">
-                  <span class="fz-18 fc-979797">25%</span>
+                  <span class="fz-18 fc-979797">30%</span>
                 </div>
               </div>
               <div class="fw-500 fc-424242 mt-16">
                 <div class="flex not-full">
                   <div class="w-80">SPY</div>
-                  <div class="flex-11 t-right">SPDR S&P 500</div>
+                  <div class="flex-11 t-right ellipsis-2">SPDR S&P 500</div>
                 </div>
                 <hr class="hr-line ty2 inset mg-8y" aria-hidden="true" />
                 <div class="flex not-full space-between nowrap">
@@ -171,10 +172,10 @@
               </div>
             </a>
 
-            <a href="#" class="stock-info-item btn-click">
+            <a href="#" class="stock-info-item btn-click" onclick="Layer.open('#popStockView')">
               <div class="flex not-full">
                 <div>
-                  <i class="badge line-2">커머더티형</i>
+                  <i class="badge line2 color-2">종목타입B</i>
                 </div>
                 <div class="ml-auto">
                   <span class="fz-18 fc-979797">25%</span>
@@ -183,7 +184,7 @@
               <div class="fw-500 fc-424242 mt-16">
                 <div class="flex not-full">
                   <div class="w-80">AGG</div>
-                  <div class="flex-11 t-right">iShares US Aggregate bond</div>
+                  <div class="flex-11 t-right ellipsis-2">iShares US Aggregate bond</div>
                 </div>
                 <hr class="hr-line ty2 inset mg-8y" aria-hidden="true" />
                 <div class="flex not-full space-between nowrap">
@@ -193,17 +194,132 @@
                 </div>
               </div>
             </a>
+
+            <a href="#" class="stock-info-item btn-click" onclick="Layer.open('#popStockView')">
+              <div class="flex not-full">
+                <div>
+                  <i class="badge line2 color-3">종목타입C</i>
+                </div>
+                <div class="ml-auto">
+                  <span class="fz-18 fc-979797">20%</span>
+                </div>
+              </div>
+              <div class="fw-500 fc-424242 mt-16">
+                <div class="flex not-full">
+                  <div class="w-80">종목코드</div>
+                  <div class="flex-11 t-right ellipsis-2">주식종목명최대2행노출주식종목명최대2행노출주식종목명최대2행노출</div>
+                </div>
+                <hr class="hr-line ty2 inset mg-8y" aria-hidden="true" />
+                <div class="flex not-full space-between nowrap">
+                  <div class="w-40p">종가</div>
+                  <div>수량</div>
+                  <div class="flex-11 t-right">합계금액</div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="stock-info-item btn-click" onclick="Layer.open('#popStockView')">
+              <div class="flex not-full">
+                <div>
+                  <i class="badge line2 color-4">종목타입D</i>
+                </div>
+                <div class="ml-auto">
+                  <span class="fz-18 fc-979797">15%</span>
+                </div>
+              </div>
+              <div class="fw-500 fc-424242 mt-16">
+                <div class="flex not-full">
+                  <div class="w-80">종목코드</div>
+                  <div class="flex-11 t-right ellipsis-2">주식종목명최대2행노출주식종목명최대2행노출주식종목명최대2행노출</div>
+                </div>
+                <hr class="hr-line ty2 inset mg-8y" aria-hidden="true" />
+                <div class="flex not-full space-between nowrap">
+                  <div class="w-40p">종가</div>
+                  <div>수량</div>
+                  <div class="flex-11 t-right">합계금액</div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="stock-info-item btn-click" onclick="Layer.open('#popStockView')">
+              <div class="flex not-full">
+                <div>
+                  <i class="badge line2 color-5">종목타입E</i>
+                </div>
+                <div class="ml-auto">
+                  <span class="fz-18 fc-979797">10%</span>
+                </div>
+              </div>
+              <div class="fw-500 fc-424242 mt-16">
+                <div class="flex not-full">
+                  <div class="w-80">종목코드</div>
+                  <div class="flex-11 t-right ellipsis-2">주식종목명최대2행노출주식종목명최대2행노출주식종목명최대2행노출</div>
+                </div>
+                <hr class="hr-line ty2 inset mg-8y" aria-hidden="true" />
+                <div class="flex not-full space-between nowrap">
+                  <div class="w-40p">종가</div>
+                  <div>수량</div>
+                  <div class="flex-11 t-right">합계금액</div>
+                </div>
+              </div>
+            </a>
           </div>
 
           <ul class="txt-list mt-20">
             <li class="dot">모든 투자 결과는 이용자 본인의 판단 및 책임 하에 있습니다. 본 서비스에서 제공하는 정보는 단순 참고를 위한 것이며, 정확성과 안전성을 보장하지 않습니다. 투자 결과에 대해 서비스, 콘텐츠 제공자는 법적 책임을 지지 않으며, 어떠한 정보도 책임 소재의 증빙자료로 사용될 수 없습니다.</li>
           </ul>
+          <hr class="hr-line ty2 inset mt-40" aria-hidden="true" />
+          <div class="mt-18 t-right">
+            <i class="logo-quarterback va-top" aria-label="QUARTERBACK INVESTMENTS"></i>
+          </div>
         </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
+      <div id="popStockView" class="popup full" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button>
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="section">
+              <h1 class="tit-h2 fw-500 break-all">[종목코드] 주식종목명주식종목명주식종목명주식종목명주식종목명주식종목명</h1>
+              <dl class="mt-21">
+                <dt class="fz-14 fw-500 fc-b0b0b0">종가 (2022.08.15)</dt>
+                <dd class="flex not-full align-end mt-4">
+                  <strong class="fc-212121 fz-32 lh-32">$66.83</strong>
+                  <span class="ml-8 fz-14 fc-up">▲ 4.47%</span>
+                  <!-- 상승 : fc-up, 하락 : fc-down, 유지: fc-424242 -->
+                </dd>
+              </dl>
 
+              <hr class="hr-line ty2 inset mt-40" aria-hidden="true" />
+              <h2 class="tit-h4 mt-32">투자 포인트</h2>
+              <ol class="mt-12">
+                <li class="num-box-item">
+                  <i>1</i>
+                  <div class="inner">이 ETF는 MSCI EAFE Extended ESG Focus Index를 추종하며, 미국과 캐나다를 제외한 선진 시장의 환경 친화(E), 사회적 책임(S) 그리고 지배구조(G)에서 앞서가는 대형주 및 중형주를 편입합니다.</div>
+                </li>
+                <li class="num-box-item">
+                  <i>2</i>
+                  <div class="inner">주요 구성 자산으로는 네슬레, 로쉐, 노바티스 등이 있습니다. (해당 종목은 예고 없이 변경될 수 있습니다.)</div>
+                </li>
+              </ol>
+
+              <hr class="hr-line mt-40 mb-40" aria-hidden="true" />
+
+              <h2 class="tit-h4">섹터별 비중</h2>
+              <div id="chart4" class="mg-24y"></div>
+
+              <h2 class="tit-h4">투자지역</h2>
+              <div id="chart5" class="mg-24y"></div>
+            </div>
+          </div>
+        </article>
+      </div>
       <!-- //팝업 -->
     </article>
     <script type="text/javascript" src="../../js/lib/highcharts.js"></script>
@@ -214,19 +330,49 @@
       $('._summary').children().eq($random).show();
 
       // 차트
-      areasplineChart();
-      dounutChart();
-      areaChart();
 
-      function areasplineChart() {
-        const $chartData = [1240, 1220, 1280, 1240, 1285, 1288, 1290, 1320, 1310, 1300, 1350, 1290];
-        const $Label = ['2022.01', '2022.02', '2022.03', '2022.04', '2022.05', '2022.06', '2022.07', '2022.08', '2022.09', '2022.10', '2022.11', '2022.12'];
+      const $lineChartData = [1240, 1220, 1280, 1240, 1285, 1288, 1290, 1320, 1310, 1300, 1350, 1290];
+      // const $Label = ['2022.01', '2022.02', '2022.03', '2022.04', '2022.05', '2022.06', '2022.07', '2022.08', '2022.09', '2022.10', '2022.11', '2022.12'];
+
+      const $dounutChartData1 = [
+        { name: '종목타입A', y: 30 },
+        { name: '종목타입B', y: 25 },
+        { name: '종목타입C', y: 20 },
+        { name: '종목타입D', y: 15 },
+        { name: '글자가많을땐...', y: 10 }
+      ];
+
+      const $areaChartData = [2.2, 4.8, 1.2, 10.0, 9.5];
+
+      const $dounutChartData2 = [
+        { name: '금융', y: 30 },
+        { name: '산업재', y: 25 },
+        { name: '헬스케어', y: 20 },
+        { name: '내수소비재', y: 15 },
+        { name: '필수소비재', y: 10 }
+      ];
+
+      const $dounutChartData3 = [
+        { name: '유럽', y: 30 },
+        { name: '아시아', y: 25 },
+        { name: '북미', y: 20 },
+        { name: '중동', y: 15 },
+        { name: '아프리카', y: 10 }
+      ];
+
+      areasplineChart('chart1', $lineChartData);
+      dounutChart('chart2', $dounutChartData1);
+      areaChart('chart3', $areaChartData);
+      dounutChart('chart4', $dounutChartData2);
+      dounutChart('chart5', $dounutChartData3);
+
+      function areasplineChart(el, data) {
         Highcharts.setOptions({
           lang: {
             thousandsSep: ','
           }
         });
-        Highcharts.chart('chart1', {
+        Highcharts.chart(el, {
           chart: {
             type: 'areaspline',
             spacing: [20, 0, 0, 0]
@@ -322,42 +468,20 @@
           },
           series: [
             {
-              data: $chartData
+              data: data
             }
           ]
         });
       }
 
-      function dounutChart() {
-        const $chartData = [
-          {
-            name: '우량주',
-            y: 30
-          },
-          {
-            name: '메타버스',
-            y: 25
-          },
-          {
-            name: '주식',
-            y: 20
-          },
-          {
-            name: '우량주',
-            y: 15
-          },
-          {
-            name: '글자가많을땐...',
-            y: 10
-          }
-        ];
+      function dounutChart(el, data) {
         Highcharts.setOptions({
           colors: ['#F66FA0', '#FBC846', '#00CACA', '#5846FF', '#FD7E64'],
           lang: {
             thousandsSep: ','
           }
         });
-        var chart = new Highcharts.Chart('chart2', {
+        var chart = new Highcharts.Chart(el, {
           chart: {
             type: 'pie',
             margin: [0, 0, 0, 0],
@@ -409,7 +533,7 @@
             {
               type: 'pie',
               innerSize: '70%',
-              data: $chartData,
+              data: data,
               dataLabels: {
                 enabled: false
               }
@@ -418,9 +542,8 @@
         });
       }
 
-      function areaChart() {
-        const $chartData = [2.2, 4.8, 1.2, 10.0, 9.5];
-        Highcharts.chart('chart3', {
+      function areaChart(el, data) {
+        Highcharts.chart(el, {
           chart: {
             type: 'area',
             height: 150,
@@ -510,7 +633,7 @@
           },
           series: [
             {
-              data: $chartData
+              data: data
             }
           ]
         });

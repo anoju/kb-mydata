@@ -92,6 +92,7 @@
       &.color-#{$i} {
         border-color: $c;
         color: $c;
+        background-color: to-light($c, 90);
       }
     }
   }

@@ -1711,3 +1711,10 @@
     margin-top: 1.2rem;
   }
 }
+.logo-quarterback {
+  display: inline-block;
+  width: 15rem;
+  height: 3.4rem;
+  @include bg-etc;
+  background-image: url(../images/MDB/logo-quarterback.png);
+}
