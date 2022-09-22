@@ -747,7 +747,7 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
     }
   }
   .agree-dd {
-    .checkbox + .checkbox {
+    div.checkbox + div.checkbox {
       margin-top: 1.4rem;
     }
   }

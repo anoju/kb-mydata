@@ -3066,51 +3066,53 @@ ui.Form = {
     const $allAgreeChkClass = '.ui-all-agree-chk';
     const $agreeChkClass = '.ui-agree-chk';
 
-    if ($($wrapClass).data('_ui-init')) return;
-    $($wrapClass).data('_ui-init', true);
-    // 전체동의
-    $($wrapClass + ' ' + $allAgreeChkClass).on('change', function () {
-      const $this = $(this);
-      const $wrap = $this.closest($wrapClass);
-      const $items = $wrap.find($agreeChkClass);
-      const $isFolding = $wrap.hasClass('folding');
-      const $foldingBtn = $wrap.find('.ui-folding-btn');
-      const $foldingPanel = $wrap.find('.folding-panel');
-      if ($(this).prop('checked')) {
-        $items.prop('checked', true).change();
-        if ($isFolding && $foldingBtn.hasClass('open')) {
-          $foldingBtn.removeClass('open');
-          $foldingPanel.stop(true, false).slideUp(200);
+    $($wrapClass).each(function () {
+      const $wrapEl = $(this);
+      if ($wrapEl.data('_ui-init')) return;
+      $wrapEl.data('_ui-init', true);
+      // 전체동의
+      $wrapEl.find($allAgreeChkClass).on('change', function () {
+        const $this = $(this);
+        const $wrap = $this.closest($wrapClass);
+        const $items = $wrap.find($agreeChkClass);
+        const $isFolding = $wrap.hasClass('folding');
+        const $foldingBtn = $wrap.find('.ui-folding-btn');
+        const $foldingPanel = $wrap.find('.folding-panel');
+        if ($(this).prop('checked')) {
+          $items.prop('checked', true).change();
+          if ($isFolding && $foldingBtn.hasClass('open')) {
+            $foldingBtn.removeClass('open');
+            $foldingPanel.stop(true, false).slideUp(200);
+          }
+        } else {
+          $items.prop('checked', false).change();
+          if ($isFolding && !$foldingBtn.hasClass('open')) {
+            $foldingBtn.addClass('open');
+            $foldingPanel.stop(true, false).slideDown(200);
+          }
         }
-      } else {
-        $items.prop('checked', false).change();
-        if ($isFolding && !$foldingBtn.hasClass('open')) {
-          $foldingBtn.addClass('open');
-          $foldingPanel.stop(true, false).slideDown(200);
+      });
+
+      $wrapEl.find($agreeChkClass).on('change', function () {
+        const $this = $(this);
+        const $wrap = $this.closest($wrapClass);
+        const $allchk = $wrap.find($allAgreeChkClass);
+        const $items = $wrap.find($agreeChkClass);
+        const $isFolding = $wrap.hasClass('folding');
+        const $foldingBtn = $wrap.find('.ui-folding-btn');
+        const $foldingPanel = $wrap.find('.folding-panel');
+        const $itemsLength = $items.length;
+        const $itemsChecked = $wrap.find($agreeChkClass + ':checked').length;
+        if ($itemsLength === $itemsChecked) {
+          $allchk.prop('checked', true);
+          if ($isFolding && $foldingBtn.hasClass('open')) {
+            $foldingBtn.removeClass('open');
+            $foldingPanel.stop(true, false).slideUp(200);
+          }
+        } else {
+          $allchk.prop('checked', false);
         }
-      }
-    });
-    if ($($wrapClass + ' ' + $agreeChkClass).data('_ui-init')) return;
-    $($wrapClass + ' ' + $agreeChkClass).data('_ui-init', true);
-    $($wrapClass + ' ' + $agreeChkClass).on('change', function () {
-      const $this = $(this);
-      const $wrap = $this.closest($wrapClass);
-      const $allchk = $wrap.find($allAgreeChkClass);
-      const $items = $wrap.find($agreeChkClass);
-      const $isFolding = $wrap.hasClass('folding');
-      const $foldingBtn = $wrap.find('.ui-folding-btn');
-      const $foldingPanel = $wrap.find('.folding-panel');
-      const $itemsLength = $items.length;
-      const $itemsChecked = $wrap.find($agreeChkClass + ':checked').length;
-      if ($itemsLength === $itemsChecked) {
-        $allchk.prop('checked', true);
-        if ($isFolding && $foldingBtn.hasClass('open')) {
-          $foldingBtn.removeClass('open');
-          $foldingPanel.stop(true, false).slideUp(200);
-        }
-      } else {
-        $allchk.prop('checked', false);
-      }
+      });
     });
 
     // 선택약관(문자, 메일수신)
@@ -3177,86 +3179,6 @@ ui.Form = {
     });
     $('.inp-mail select').each(function () {
       mailCheck(this, false);
-    });
-  },
-  etc: function () {
-    //버튼 스위치
-    const $swichBtn = $('.checkbox.switch input');
-    $swichBtn.each(function () {
-      const $lbl = $(this).siblings('.lbl');
-      let $lblTxt = '';
-      if ($(this).prop('checked')) {
-        if ($lbl.attr('aria-label') != undefined) {
-          $lblTxt = $lbl.attr('aria-label');
-          if ($lblTxt.indexOf('해제') >= 0) {
-            $lblTxt = $lblTxt.replace('해제', '등록');
-            $lbl.attr('aria-label', $lblTxt);
-          }
-        } else if ($lbl.find('.blind').length) {
-          $lblTxt = $lbl.find('.blind').text();
-          if ($lblTxt.indexOf('해제') >= 0) {
-            $lblTxt = $lblTxt.replace('해제', '등록');
-            $lbl.find('.blind').text($lblTxt);
-          }
-        } else {
-          $lblTxt = $lbl.text();
-          if ($lblTxt.indexOf('해제') >= 0) {
-            $lblTxt = $lblTxt.replace('해제', '등록');
-            $lbl.text($lblTxt);
-          }
-        }
-      }
-      /*else{
-        $lblTxt = $lblTxt.replace('등록','해제');
-        $lbl.find('.blind').text($lblTxt);
-      }*/
-    });
-    if ($swichBtn.data('_ui-init')) return;
-    $swichBtn.data('_ui-init', true);
-    $swichBtn.on('change', function () {
-      const $lbl = $(this).siblings('.lbl');
-      let $lblTxt = $lbl.text();
-      if ($(this).prop('checked')) {
-        if ($lbl.attr('aria-label') != undefined) {
-          $lblTxt = $lbl.attr('aria-label');
-          if ($lblTxt.indexOf('해제') >= 0) {
-            $lblTxt = $lblTxt.replace('해제', '등록');
-            $lbl.attr('aria-label', $lblTxt);
-          }
-        } else if ($lbl.find('.blind').length) {
-          $lblTxt = $lbl.find('.blind').text();
-          if ($lblTxt.indexOf('해제') >= 0) {
-            $lblTxt = $lblTxt.replace('해제', '등록');
-            $lbl.find('.blind').text($lblTxt);
-          }
-        } else {
-          $lblTxt = $lbl.text();
-          if ($lblTxt.indexOf('해제') >= 0) {
-            $lblTxt = $lblTxt.replace('해제', '등록');
-            $lbl.text($lblTxt);
-          }
-        }
-      } else {
-        if ($lbl.attr('aria-label') != undefined) {
-          $lblTxt = $lbl.attr('aria-label');
-          if ($lblTxt.indexOf('등록') >= 0) {
-            $lblTxt = $lblTxt.replace('등록', '해제');
-            $lbl.attr('aria-label', $lblTxt);
-          }
-        } else if ($lbl.find('.blind').length) {
-          $lblTxt = $lbl.find('.blind').text();
-          if ($lblTxt.indexOf('등록') >= 0) {
-            $lblTxt = $lblTxt.replace('등록', '해제');
-            $lbl.find('.blind').text($lblTxt);
-          }
-        } else {
-          $lblTxt = $lbl.text();
-          if ($lblTxt.indexOf('등록') >= 0) {
-            $lblTxt = $lblTxt.replace('등록', '해제');
-            $lbl.text($lblTxt);
-          }
-        }
-      }
     });
   },
   spinner: function () {
@@ -4023,7 +3945,6 @@ ui.Form = {
     ui.Form.textarea();
     ui.Form.agree();
     ui.Form.mail();
-    ui.Form.etc();
 
     ui.Form.spinner();
     ui.Form.range();
@@ -4041,7 +3962,6 @@ ui.Form = {
     ui.Form.textareaUI();
     ui.Form.agree();
     ui.Form.mail();
-    ui.Form.etc();
 
     ui.Form.spinnerUI();
     ui.Form.spinner();
@@ -4364,59 +4284,64 @@ ui.Folding = {
   btn: function (btn, className, speed) {
     if (!className) className = 'open';
     if (!speed) speed = 200;
-    if ($(btn).data('_ui-init')) return;
-    $(btn).data('_ui-init', true);
-    $(btn).on('click', function (e) {
-      e.preventDefault();
-      const $this = $(this);
-      let $panel = $this.attr('href');
-      if ($this.closest('.disabled').length || $this.hasClass('disabled')) return false;
-
-      const slideCallback = function () {
-        if ($($panel).find('.ui-swiper').length) {
-          ui.Swiper.update($($panel).find('.ui-swiper'));
-        }
-      };
-
-      if (($panel == '#' || $panel == '#none') && $this.closest('.folding-list').length) $panel = $this.closest('.folding-list').find('.folding-panel');
-      if ($this.hasClass(className) && !$this.hasClass('_not-folding-hide')) {
-        $this.removeClass(className).attr('aria-expanded', false);
-        $($panel)
-          .attr('aria-hidden', true)
-          .stop(true, false)
-          .slideUp(speed, function () {
-            slideCallback();
-          });
-      } else if (!$($panel).is(':visible')) {
-        $this.addClass(className).attr('aria-expanded', true);
-        $($panel)
-          .removeAttr('aria-hidden')
-          .stop(true, false)
-          .slideDown(speed, function () {
-            ui.Scroll.inScreen($this, $($panel));
-            slideCallback();
-          });
-      }
-    });
-
     ui.Folding.btnAria(btn, className);
+    $(btn).each(function () {
+      const $btn = $(this);
+      if ($btn.data('_ui-init')) return;
+      $btn.data('_ui-init', true);
+      $btn.on('click', function (e) {
+        e.preventDefault();
+        const $this = $(this);
+        let $panel = $this.attr('href');
+        if ($this.closest('.disabled').length || $this.hasClass('disabled')) return false;
+
+        const slideCallback = function () {
+          if ($($panel).find('.ui-swiper').length) {
+            ui.Swiper.update($($panel).find('.ui-swiper'));
+          }
+        };
+
+        if (($panel == '#' || $panel == '#none') && $this.closest('.folding-list').length) $panel = $this.closest('.folding-list').find('.folding-panel');
+        if ($this.hasClass(className) && !$this.hasClass('_not-folding-hide')) {
+          $this.removeClass(className).attr('aria-expanded', false);
+          $($panel)
+            .attr('aria-hidden', true)
+            .stop(true, false)
+            .slideUp(speed, function () {
+              slideCallback();
+            });
+        } else if (!$($panel).is(':visible')) {
+          $this.addClass(className).attr('aria-expanded', true);
+          $($panel)
+            .removeAttr('aria-hidden')
+            .stop(true, false)
+            .slideDown(speed, function () {
+              ui.Scroll.inScreen($this, $($panel));
+              slideCallback();
+            });
+        }
+      });
+    });
   },
   close: function (btn, className, speed) {
     if (!className) className = 'open';
     if (!speed) speed = 200;
-    if ($(btn).data('_ui-init')) return;
-    $(btn).data('_ui-init', true);
-    $(btn).on('click', function (e) {
-      e.preventDefault();
-      const $closest = $(this).closest('[aria-labelledby]');
-      const $btn = $closest.attr('aria-labelledby');
-      if ($closest.length) {
-        $closest.attr('aria-hidden', true).stop(true, false).slideUp(speed);
-        if ($('#' + $btn).length)
-          $('#' + $btn)
-            .removeClass(className)
-            .attr('aria-expanded', false);
-      }
+    $(btn).each(function () {
+      const $this = $(this);
+      if ($this.data('_ui-init')) return;
+      $this.data('_ui-init', true);
+      $this.on('click', function (e) {
+        e.preventDefault();
+        const $closest = $(this).closest('[aria-labelledby]');
+        const $btn = $closest.attr('aria-labelledby');
+        if ($closest.length) {
+          $closest.attr('aria-hidden', true).stop(true, false).slideUp(speed);
+          if ($('#' + $btn).length)
+            $('#' + $btn)
+              .removeClass(className)
+              .attr('aria-expanded', false);
+        }
+      });
     });
   }
 };
@@ -4761,39 +4686,42 @@ ui.Scroll = {
   horizonScl: function () {
     const $wrap = '.tab-inner, .img-box-wrap';
     if (!$($wrap).length || ui.Mobile.any()) return;
-    if ($($wrap).data('_ui-init')) return;
-    $($wrap).data('_ui-init', true);
-    $($wrap).on('mousewheel', function (e) {
-      const $wheelDelta = e.originalEvent.wheelDelta;
+    $($wrap).each(function () {
       const $this = $(this);
-      const $thisW = $this.outerWidth();
-      const $thisSclW = $this[0].scrollWidth;
-      const $widthGap = $thisSclW - $thisW;
-      const $thisSclL = $this.scrollLeft();
-      // console.log($thisSclW, $thisW, $widthGap, $thisSclL, $wheelDelta);
-      let $isMove = false;
-      const $move = function () {
-        if ($isMove) return;
-        $isMove = true;
-        // $this.scrollLeft($thisSclL - $wheelDelta);
-        $this.stop(false, true).animate({ scrollLeft: $thisSclL - $wheelDelta }, 100, function () {
-          $isMove = false;
-        });
-      };
+      if ($this.data('_ui-init')) return;
+      $this.data('_ui-init', true);
+      $this.on('mousewheel', function (e) {
+        const $wheelDelta = e.originalEvent.wheelDelta;
+        const $this = $(this);
+        const $thisW = $this.outerWidth();
+        const $thisSclW = $this[0].scrollWidth;
+        const $widthGap = $thisSclW - $thisW;
+        const $thisSclL = $this.scrollLeft();
+        // console.log($thisSclW, $thisW, $widthGap, $thisSclL, $wheelDelta);
+        let $isMove = false;
+        const $move = function () {
+          if ($isMove) return;
+          $isMove = true;
+          // $this.scrollLeft($thisSclL - $wheelDelta);
+          $this.stop(false, true).animate({ scrollLeft: $thisSclL - $wheelDelta }, 100, function () {
+            $isMove = false;
+          });
+        };
 
-      if ($wheelDelta > 0) {
-        //up
-        if ($thisSclL > 0) {
-          e.preventDefault();
-          $move();
+        if ($wheelDelta > 0) {
+          //up
+          if ($thisSclL > 0) {
+            e.preventDefault();
+            $move();
+          }
+        } else {
+          //down
+          if ($thisSclL + $thisW < $thisSclW) {
+            e.preventDefault();
+            $move();
+          }
         }
-      } else {
-        //down
-        if ($thisSclL + $thisW < $thisSclW) {
-          e.preventDefault();
-          $move();
-        }
-      }
+      });
     });
   },
   loading: function (el, showCallback, hideCallback) {

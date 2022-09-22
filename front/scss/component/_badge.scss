@@ -78,13 +78,22 @@
     padding: 0 0.7rem;
     border: 0.1rem solid #eee;
   }
-  &.line-2 {
+  &.line2 {
     height: 2.8rem;
     border-radius: 1.4rem;
     padding: 0 1.2rem;
     background: none;
     color: var(--primary-color);
     border: 0.1rem solid var(--primary-color);
+
+    $badgeColors: #f66fa0, #fbc846, #00caca, #5846ff, #fd7e64;
+    @for $i from 1 through length($badgeColors) {
+      $c: nth($badgeColors, $i);
+      &.color-#{$i} {
+        border-color: $c;
+        color: $c;
+      }
+    }
   }
   &.round {
     border-radius: 1.4rem;
