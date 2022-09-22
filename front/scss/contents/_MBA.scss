@@ -1326,12 +1326,10 @@
       overflow: hidden;
       flex: 1 1 auto;
       .name {
-        overflow: hidden;
         font-size: 1.6rem;
         color: var(--strong-txt-color2);
         font-weight: 500;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        @include ellipsis;
       }
       .score {
         margin-top: 0.3rem;
@@ -2429,12 +2427,10 @@
       color: #818892;
     }
     .text {
-      overflow: hidden;
       flex: 1 1 auto;
       font-size: 1.6rem;
       color: #424242;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      @include ellipsis;
     }
     .cash {
       flex: 1 1 auto;
@@ -3447,9 +3443,7 @@
         overflow: hidden;
         margin-left: 1.6rem;
         .tit {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+          @include ellipsis;
           font-size: 1.8rem;
           font-weight: bold;
         }
