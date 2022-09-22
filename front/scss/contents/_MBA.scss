@@ -1,6 +1,7 @@
 // 1:1 매치
 .match-animation-wrap {
-  #container {
+  #container,
+  .page-body {
     padding-top: 0;
   }
 }
@@ -3029,8 +3030,14 @@
 }
 
 /* 매치 메인*/
-#header ~ #container .match-main-visual {
-  top: 5rem;
+#header,
+.page-head {
+  ~ #container,
+  ~ .page-body {
+    .match-main-visual {
+      top: 5rem;
+    }
+  }
 }
 @keyframes match-img-opacity {
   0%,
