@@ -120,7 +120,7 @@
           <!-- 도넛차트 -->
           <div id="chart2" class="mt-24"></div>
 
-          <div class="simulation-input-box mt-40">
+          <div class="simulation-input-box folding-list mt-40">
             <div class="title-bar mt-0">
               <h3 class="tit-h3">투자시뮬레이션</h3>
               <div class="right">
@@ -132,14 +132,17 @@
                 <input type="tel" class="no-del" value="10,000,000" title="금액입력" />
                 <div class="unit">원</div>
               </div>
-              <p class="fz-10 fc-b0b0b0 mb-10"><span>일천만원</span> ($ <spab>7612.09</spab>)</p>
+              <p class="fz-10 fc-b0b0b0"><span>일천만원</span> ($ <spab>7612.09</spab>)</p>
             </div>
             <div class="t-center mt-12">
               <p><strong class="fw-500 fz-18 fc-212121">원을 투자한다면?</strong></p>
               <p class="mt-8"><i class="bdg">1달러 = 1313.70원</i></p>
-              <div class="btn-wrap mt-24">
-                <button class="button primary round w-140">계산하기</button>
+              <div class="mt-24">
+                <a href="#" class="button primary round w-140 ui-folding-btn _not-folding-hide">계산하기</a>
               </div>
+            </div>
+            <div class="folding-panel">
+              <div id="chart3"></div>
             </div>
           </div>
 
@@ -162,7 +165,7 @@
                 <hr class="hr-line ty2 inset mg-8y" aria-hidden="true" />
                 <div class="flex not-full space-between nowrap">
                   <div class="w-40p">$ 395.57</div>
-                  <div class="pd-10x">2주</div>
+                  <div>2주</div>
                   <div class="flex-11 t-right">$ 791.14</div>
                 </div>
               </div>
@@ -184,9 +187,9 @@
                 </div>
                 <hr class="hr-line ty2 inset mg-8y" aria-hidden="true" />
                 <div class="flex not-full space-between nowrap">
-                  <div class="w-40p">$ 395.57</div>
-                  <div class="pd-10x">2주</div>
-                  <div class="flex-11 t-right">$ 791.14</div>
+                  <div class="w-40p">$ 395,395.57</div>
+                  <div>2주</div>
+                  <div class="flex-11 t-right">$ 791,791,791.14</div>
                 </div>
               </div>
             </a>
@@ -211,10 +214,11 @@
       $('._summary').children().eq($random).show();
 
       // 차트
-      lineChart();
+      areasplineChart();
       dounutChart();
+      areaChart();
 
-      function lineChart() {
+      function areasplineChart() {
         const $chartData = [1240, 1220, 1280, 1240, 1285, 1288, 1290, 1320, 1310, 1300, 1350, 1290];
         const $Label = ['2022.01', '2022.02', '2022.03', '2022.04', '2022.05', '2022.06', '2022.07', '2022.08', '2022.09', '2022.10', '2022.11', '2022.12'];
         Highcharts.setOptions({
@@ -258,7 +262,6 @@
               format: '{value:,.0f}'
             },
             gridLineWidth: 0,
-
             title: false
           },
           tooltip: {
@@ -299,27 +302,8 @@
                 ]
               },
               lineWidth: 4,
-              states: {
-                hover: {
-                  enabled: false
-                },
-                inactive: {
-                  enabled: false
-                },
-                select: {
-                  enabled: false
-                }
-              },
               marker: {
-                enabled: false,
-                states: {
-                  hover: {
-                    enabled: false
-                  },
-                  select: {
-                    enabled: false
-                  }
-                }
+                enabled: false
               },
               fillOpacity: 1,
               fillColor: {
@@ -429,6 +413,104 @@
               dataLabels: {
                 enabled: false
               }
+            }
+          ]
+        });
+      }
+
+      function areaChart() {
+        const $chartData = [2.2, 4.8, 1.2, 10.0, 9.5];
+        Highcharts.chart('chart3', {
+          chart: {
+            type: 'area',
+            height: 150,
+            spacing: [20, 0, 0, 0],
+            backgroundColor: 'rgba(255, 255, 255, 0)'
+          },
+          title: false,
+          legend: false,
+          xAxis: {
+            lineColor: '#dedede',
+            gridLineColor: '#f2f4f6',
+            gridLineWidth: 1,
+            crosshair: {
+              width: 1,
+              color: '#FEB2A2'
+            },
+            tickWidth: 0,
+            // categories: $Label
+            type: 'datetime',
+            dateTimeLabelFormats: {
+              month: {
+                main: '%Y.%m'
+              },
+              year: {
+                main: '%Y'
+              }
+            },
+            title: false
+          },
+          yAxis: {
+            min: -5,
+            max: 15,
+            opposite: true,
+            labels: {
+              x: 4,
+              format: '{value:,.0f}%'
+            },
+            gridLineWidth: 0,
+            title: false
+          },
+          // tooltip: {
+          //   pointFormat: '{series.name}<br /><b>{point.y:,.0f}</b>'
+          // },
+          tooltip: {
+            formatter: function () {
+              return '<div class="ff-roboto"><span>' + Highcharts.dateFormat('%Y.%m', new Date(this.x)) + '</span> : <b>' + Highcharts.numberFormat(this.y, -1) + '%</b></div>';
+            },
+            backgroundColor: 'rgba(33, 33, 33, 0.8)',
+            borderWidth: 0,
+            borderRadius: 8,
+            shadow: false,
+            padding: 16,
+            style: {
+              color: '#fff',
+              fontSize: '12px'
+            },
+            shared: true,
+            useHTML: true
+          },
+          credits: {
+            enabled: false
+          },
+          plotOptions: {
+            series: {
+              pointStart: Date.UTC(2021, 1, 1),
+              pointIntervalUnit: 'month'
+            },
+            area: {
+              lineColor: '#FEB2A2',
+              marker: {
+                enabled: false
+              },
+              fillOpacity: 1,
+              fillColor: {
+                linearGradient: {
+                  x1: 0,
+                  y1: 0,
+                  x2: 0,
+                  y2: 1
+                },
+                stops: [
+                  [0, Highcharts.color('#FEB2A2').setOpacity(0.3).get('rgba')],
+                  [1, Highcharts.color('#FEB2A2').setOpacity(0).get('rgba')]
+                ]
+              }
+            }
+          },
+          series: [
+            {
+              data: $chartData
             }
           ]
         });
