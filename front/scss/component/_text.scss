@@ -283,6 +283,19 @@
   + .txt-dl-list {
     margin-top: 1.4rem;
   }
+  &.ty2 {
+    > li {
+      > .dt {
+        color: #979797;
+      }
+      > .dd {
+        color: var(--strong-txt-color2);
+      }
+      + li {
+        margin-top: 0.4rem;
+      }
+    }
+  }
 }
 .num-list-1 {
   color: var(--strong-txt-color2);
