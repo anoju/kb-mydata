@@ -569,7 +569,8 @@
     // }
   }
 
-  &[class*='side-'] {
+  &[class^='side-'],
+  &[class*=' side-'] {
     > .pop-wrap {
       width: 67%;
       max-width: 40rem;

@@ -112,7 +112,8 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
         right: 0;
       }
     }
-    [class*='i-ico-'] {
+    [class^='i-ico-'],
+    [class*=' i-ico-'] {
       vertical-align: top;
       margin-top: 0.4rem;
     }
@@ -763,7 +764,8 @@ div.checkbox.ty2:not(.btn):not(.switch):not(.switch2) {
       top: 0;
       right: 0;
       margin-top: 0;
-      [class*='i-ico-'] {
+      [class^='i-ico-'],
+      [class*=' i-ico-'] {
         margin-top: 0;
       }
     }

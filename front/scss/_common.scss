@@ -611,7 +611,8 @@ html.pc {
   //     width: auto;
   //   }
   // }
-  > [class*='w-'] {
+  > [class^='w-'],
+  > [class*=' w-'] {
     flex-grow: 0;
     flex-shrink: 0;
   }

@@ -104,7 +104,8 @@
       &:after {
         top: 2.8rem;
       }
-      [class*='i-ico-'] {
+      [class^='i-ico-'],
+      [class*=' i-ico-'] {
         &:first-child {
           margin-right: 0.8rem;
         }
@@ -116,13 +117,15 @@
   }
 }
 .ui-folding-btn {
-  [class*='i-ico-arr'] {
+  [class^='i-ico-arr'],
+  [class*=' i-ico-arr'] {
     display: block;
     @include rotateZ(0);
     transition: 0.3s;
   }
   &.open {
-    [class*='i-ico-arr'] {
+    [class^='i-ico-arr'],
+    [class*=' i-ico-arr'] {
       @include rotateZ(180);
     }
   }

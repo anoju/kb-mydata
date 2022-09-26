@@ -1916,7 +1916,8 @@
             padding-right: 0;
           }
         }
-        [class*='i-ico-'] {
+        [class^='i-ico-'],
+        [class*=' i-ico-'] {
           margin-right: 0.3rem;
         }
       }

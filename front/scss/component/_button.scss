@@ -30,7 +30,8 @@
     height: auto;
     padding: 0;
     border-radius: 0;
-    [class*='i-ico-'] {
+    [class^='i-ico-'],
+    [class*=' i-ico-'] {
       margin: 0 !important;
     }
     &.share {
@@ -38,6 +39,29 @@
       height: 3.6rem;
       border: 0.1rem solid #ddd;
       border-radius: 50%;
+    }
+  }
+  &.loading {
+    transition: clip-path 0.5s;
+    color: transparent !important;
+    clip-path: circle(100% at 50% 50%);
+    pointer-events: none;
+    .loading-svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+      height: 60%;
+      position: absolute;
+      left: 20%;
+      top: 20%;
+      svg {
+        width: 100%;
+        height: 100%;
+        .path {
+          stroke: #fff;
+        }
+      }
     }
   }
   &.h24 {
@@ -147,11 +171,13 @@
     border-radius: 0.4rem;
   }
 
-  [class*='i-ico-check-'] {
+  [class^='i-ico-check-'],
+  [class*=' i-ico-check-'] {
     margin-right: 0.8rem;
   }
 
-  // [class*="i-ico-"]{
+  // [class^="i-ico-"],
+  // [class*=" i-ico-"]{
   // 	margin-left: 0.8rem;
   // 	&:first-child{
   // 		margin-left: 0;
@@ -164,7 +190,8 @@
 
   &.search {
     padding: 0 0.4rem;
-    [class*='i-ico-'] {
+    [class^='i-ico-'],
+    [class*=' i-ico-'] {
       margin: 0;
     }
   }
@@ -584,12 +611,14 @@ button.btn-click-outer {
   padding: 0;
   text-align: center;
   height: auto;
-  [class*='i-ico-'] {
+  [class^='i-ico-'],
+  [class*=' i-ico-'] {
     margin-right: 0;
     transition: 0.3s;
   }
   &.open {
-    [class*='i-ico-'] {
+    [class^='i-ico-'],
+    [class*=' i-ico-'] {
       @include rotateZ(180);
     }
   }

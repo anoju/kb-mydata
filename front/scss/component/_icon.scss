@@ -42,11 +42,16 @@
   }
 }
 
-[class*='i-ico-'],
-[class*='i-btn-'],
-[class*='i-img-'],
-[class*='i-head-'],
-[class*='i-ani-'] {
+[class^='i-ico-'],
+[class*=' i-ico-'],
+[class^='i-btn-'],
+[class*=' i-btn-'],
+[class^='i-img-'],
+[class*=' i-img-'],
+[class^='i-head-'],
+[class*=' i-head-'],
+[class^='i-ani-'],
+[class*=' i-ani-'] {
   position: relative;
   display: inline-block;
   width: 2.4rem;

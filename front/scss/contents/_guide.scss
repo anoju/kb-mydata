@@ -1,5 +1,6 @@
 /*가이드*/
-[class*='gd__h'] {
+[class^='gd__h'],
+[class*=' gd__h'] {
   color: #999;
   margin-bottom: 1em;
   font-weight: bold;
@@ -9,7 +10,8 @@
   &.first {
     margin-top: 0 !important;
   }
-  & + [class*='gd__h'] {
+  & + [class^='gd__h'],
+  & + [class*=' gd__h'] {
     margin-top: 1em !important;
   }
   &:before {

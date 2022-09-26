@@ -13,11 +13,13 @@
 
   > div:not(.right):first-child,
   > .left,
-  > [class*='tit-h'] {
+  > [class^='tit-h'],
+  > [class*=' tit-h'] {
     width: 100%;
     flex: 1 1 auto;
   }
-  > [class*='tit-h'] + div,
+  > [class^='tit-h'] + div,
+  > [class*=' tit-h'] + div,
   > div:first-child + div,
   > .right {
     margin-left: 2rem;
@@ -44,7 +46,8 @@
     }
   }
 }
-[class^='tit-'] {
+[class^='tit-h'],
+[class*=' tit-h'] {
   position: relative;
   color: var(--strong-txt-color);
   line-height: 1.4;

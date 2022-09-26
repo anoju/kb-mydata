@@ -1428,6 +1428,37 @@ ui.Button = {
       $this.append($append);
     });
   },
+  loading: function (element, show) {
+    const $element = $(element);
+    if (show === undefined) show = true;
+    if (!$element) return;
+    const $elW = $element.outerWidth();
+    const $elH = $element.outerHeight();
+    const $min = $elW < $elH ? $elW / 2 : $elH / 2;
+    const $max = $elW < $elH ? $elH : $elW;
+    let $html = '<div class="loading-svg" role="img">';
+    $html += '<svg width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">';
+    $html += '<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>';
+    $html += '</svg>';
+    $html += '</div>';
+    let showTimer;
+    let hideTimer;
+    if (show) {
+      clearTimeout(hideTimer);
+      $element.addClass('loading');
+      $element.append($html);
+      showTimer = setTimeout(function () {
+        $element.css('clip-path', 'circle(' + $min + 'px at 50% 50%)');
+      }, 1);
+    } else {
+      clearTimeout(showTimer);
+      $element.removeCss('clip-path');
+      hideTimer = setTimeout(function () {
+        $element.find('.loading-svg').remove();
+        $element.removeClass('loading');
+      }, 500);
+    }
+  },
   etc: function () {
     $(document).on('click', '.search-opt-wrap .btn-select', function (e) {
       e.preventDefault();
