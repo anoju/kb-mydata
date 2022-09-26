@@ -611,8 +611,7 @@ html.pc {
   //     width: auto;
   //   }
   // }
-  > [class^='w-'],
-  > [class*=' w-'] {
+  @include class-begins('w-', '>') {
     flex-grow: 0;
     flex-shrink: 0;
   }

@@ -1755,8 +1755,7 @@
   @include bg-etc;
   background-image: url(../images/MDB/logo-quarterback.png);
 }
-[class^='i-img-risk-'],
-[class*=' i-img-risk-'] {
+@include class-begins('i-img-risk-') {
   display: block;
   width: auto;
   height: 22rem;

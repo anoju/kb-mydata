@@ -63,8 +63,7 @@
       font-weight: bold;
     }
   }
-  [class^='i-ico-'],
-  [class*=' i-ico-'] {
+  @include class-begins('i-ico-') {
     display: block;
     margin: 0 auto 0.1rem;
   }
@@ -72,8 +71,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    + [class^='i-ico-'],
-    + [class*=' i-ico-'] {
+    @include class-begins('i-ico-', '+') {
       display: none;
     }
   }

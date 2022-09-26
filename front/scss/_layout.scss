@@ -116,8 +116,7 @@ html.lock,
     }
   }
 }
-.button[class^='head-'],
-.button[class*=' head-'] {
+@include class-begins('head-', '.button') {
   position: relative;
   display: block;
   width: 3.6rem;
@@ -128,8 +127,7 @@ html.lock,
   .btn-click-in {
     display: none;
   }
-  + [class^='head-'],
-  + [class*=' head-'] {
+  @include class-begins('head-', '+') {
     margin-left: 0.4rem;
   }
 }

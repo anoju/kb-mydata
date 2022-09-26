@@ -30,8 +30,7 @@
     height: auto;
     padding: 0;
     border-radius: 0;
-    [class^='i-ico-'],
-    [class*=' i-ico-'] {
+    @include class-begins('i-ico-') {
       margin: 0 !important;
     }
     &.share {
@@ -176,14 +175,11 @@
   &.round2 {
     border-radius: 0.4rem;
   }
-
-  [class^='i-ico-check-'],
-  [class*=' i-ico-check-'] {
+  @include class-begins('i-ico-check-') {
     margin-right: 0.8rem;
   }
 
-  // [class^="i-ico-"],
-  // [class*=" i-ico-"]{
+  // @include class-begins('i-ico-') {
   // 	margin-left: 0.8rem;
   // 	&:first-child{
   // 		margin-left: 0;
@@ -196,8 +192,7 @@
 
   &.search {
     padding: 0 0.4rem;
-    [class^='i-ico-'],
-    [class*=' i-ico-'] {
+    @include class-begins('i-ico-') {
       margin: 0;
     }
   }
@@ -617,14 +612,12 @@ button.btn-click-outer {
   padding: 0;
   text-align: center;
   height: auto;
-  [class^='i-ico-'],
-  [class*=' i-ico-'] {
+  @include class-begins('i-ico-') {
     margin-right: 0;
     transition: 0.3s;
   }
   &.open {
-    [class^='i-ico-'],
-    [class*=' i-ico-'] {
+    @include class-begins('i-ico-') {
       @include rotateZ(180);
     }
   }

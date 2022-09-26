@@ -46,8 +46,7 @@
     }
   }
 }
-[class^='tit-h'],
-[class*=' tit-h'] {
+@include class-begins('tit-h') {
   position: relative;
   color: var(--strong-txt-color);
   line-height: 1.4;

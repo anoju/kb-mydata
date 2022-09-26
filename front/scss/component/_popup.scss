@@ -568,9 +568,7 @@
     //   }
     // }
   }
-
-  &[class^='side-'],
-  &[class*=' side-'] {
+  @include class-begins('side-', '&') {
     > .pop-wrap {
       width: 67%;
       max-width: 40rem;

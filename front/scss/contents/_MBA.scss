@@ -1916,8 +1916,7 @@
             padding-right: 0;
           }
         }
-        [class^='i-ico-'],
-        [class*=' i-ico-'] {
+        @include class-begins('i-ico-') {
           margin-right: 0.3rem;
         }
       }

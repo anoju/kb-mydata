@@ -42,24 +42,22 @@
   }
 }
 
-[class^='i-ico-'],
-[class*=' i-ico-'],
-[class^='i-btn-'],
-[class*=' i-btn-'],
-[class^='i-img-'],
-[class*=' i-img-'],
-[class^='i-head-'],
-[class*=' i-head-'],
-[class^='i-ani-'],
-[class*=' i-ani-'] {
-  position: relative;
-  display: inline-block;
-  width: 2.4rem;
-  height: 2.4rem;
-  flex-shrink: 0;
-  @include bg-etc;
-  @include text-blind;
+@include class-begins('i-ico-') {
+  @include icon-default;
 }
+@include class-begins('i-btn-') {
+  @include icon-default;
+}
+@include class-begins('i-img-') {
+  @include icon-default;
+}
+@include class-begins('i-head-') {
+  @include icon-default;
+}
+@include class-begins('i-ani-') {
+  @include icon-default;
+}
+
 .i-head-alarm {
   width: 3.6rem;
   height: 3.6rem;
