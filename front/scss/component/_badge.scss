@@ -50,23 +50,23 @@
   }
 
   //투자성향
-  &.lv-5 {
+  &.risk-lv-5 {
     background-color: to-light(#669b2d, 80);
     color: #669b2d;
   }
-  &.lv-4 {
+  &.risk-lv-4 {
     background-color: to-light(#f4c819, 80);
     color: #f4c819;
   }
-  &.lv-3 {
+  &.risk-lv-3 {
     background-color: to-light(#f4c819, 80);
     color: #f4c819;
   }
-  &.lv-2 {
+  &.risk-lv-2 {
     background-color: to-light(#e4482a, 85);
     color: #e4482a;
   }
-  &.lv-1 {
+  &.risk-lv-1 {
     background-color: to-light(#e4482a, 85);
     color: #e4482a;
   }
@@ -86,13 +86,13 @@
     color: var(--primary-color);
     border: 0.1rem solid var(--primary-color);
 
-    $badgeColors: #f66fa0, #fbc846, #00caca, #5846ff, #fd7e64;
-    @for $i from 1 through length($badgeColors) {
-      $c: nth($badgeColors, $i);
-      &.color-#{$i} {
-        border-color: $c;
-        color: $c;
-        // background-color: to-light($c, 90);
+    $portfolioColors: #f66fa0, #fbc846, #00caca, #5846ff, #fd7e64;
+    @for $i from 1 through length($portfolioColors) {
+      $color: nth($portfolioColors, $i);
+      &.pt-color-#{$i} {
+        border-color: $color;
+        color: $color;
+        // background-color: to-light($color, 90);
       }
     }
   }

@@ -1755,3 +1755,13 @@
   @include bg-etc;
   background-image: url(../images/MDB/logo-quarterback.png);
 }
+[class*='i-img-risk-'] {
+  display: block;
+  width: auto;
+  height: 22rem;
+}
+@for $i from 1 through 3 {
+  .i-img-risk-#{$i} {
+    background-image: url(../images/MDB/img-risk-#{$i}.png);
+  }
+}
