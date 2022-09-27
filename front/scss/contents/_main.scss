@@ -3,9 +3,15 @@
   .page-head > div {
     height: 5rem;
   }
-  #container,
-  .page-body {
+  #container:first-child,
+  .page-body:first-child {
     padding-top: 0;
+  }
+  html.ios & {
+    #container:first-child,
+    .page-body:first-child {
+      padding-top: 0;
+    }
   }
 }
 
