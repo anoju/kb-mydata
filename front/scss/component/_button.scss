@@ -590,22 +590,6 @@ button.btn-click-outer {
   }
 }
 
-.btn-inline-wrap {
-  .button {
-    margin: 0 0.4rem 0.8rem 0;
-  }
-  &.search-ty {
-    .button {
-      border-color: #ddd;
-      height: 3.6rem;
-      padding: 0 1.6rem;
-      font-size: 1.3rem;
-      font-weight: normal;
-      margin-right: 0.7rem;
-    }
-  }
-}
-
 // etc button
 .button.arr-folding-btn {
   display: flex;
@@ -621,10 +605,4 @@ button.btn-click-outer {
       @include rotateZ(180);
     }
   }
-}
-.button.add-address {
-  height: 6.4rem;
-
-  font-weight: 500;
-  border-color: #eee;
 }
