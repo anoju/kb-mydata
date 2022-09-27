@@ -77,6 +77,6 @@
     }
   }
 }
-@function -xyPercent($width, $height) {
-  @return ($height / $width) * 100%;
+@function -WH-ratio($width: 1, $height: 1, $unit: '%') {
+  @return (($height / $width) * 100) + #{$unit};
 }

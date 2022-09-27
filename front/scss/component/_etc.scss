@@ -125,7 +125,7 @@
 
 .youtube-box {
   position: relative;
-  padding-bottom: -xyPercent(16, 9);
+  padding-bottom: -WH-ratio(16, 9);
   overflow: hidden;
   iframe,
   object,

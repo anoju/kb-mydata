@@ -32,7 +32,7 @@
 .event-list-item {
   .img-box {
     &:before {
-      padding-top: -xyPercent(312, 192);
+      padding-top: -WH-ratio(312, 192);
     }
   }
   .item-link {

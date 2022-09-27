@@ -1661,7 +1661,7 @@
         height: auto;
         overflow: hidden;
         &:before {
-          padding-top: -xyPercent(360, 160);
+          padding-top: -WH-ratio(360, 160);
         }
       }
     }
@@ -2369,13 +2369,13 @@
       width: 8rem;
       margin: 0 auto;
       &:before {
-        padding-top: -xyPercent(80, 68);
+        padding-top: -WH-ratio(80, 68);
       }
 
       &.type2 {
         width: 6.6rem;
         &:before {
-          padding-top: -xyPercent(66, 56);
+          padding-top: -WH-ratio(66, 56);
         }
       }
     }
@@ -2532,7 +2532,7 @@
       width: 11rem;
       margin: 0 auto;
       &:before {
-        padding-top: -xyPercent(110, 94);
+        padding-top: -WH-ratio(110, 94);
       }
       ~ .checkbox {
         top: 4rem;
@@ -2626,7 +2626,7 @@
       width: 11rem;
       margin: 0 auto;
       &:before {
-        padding-top: -xyPercent(110, 94);
+        padding-top: -WH-ratio(110, 94);
       }
     }
     .swiper-button {
@@ -3593,7 +3593,7 @@
         overflow: hidden;
         border-radius: 1.6rem 1.6rem 0 0;
         &:before {
-          padding-top: -xyPercent(232, 170);
+          padding-top: -WH-ratio(232, 170);
         }
       }
       .text-box {
@@ -3637,7 +3637,7 @@
           margin-top: 1rem;
           border-radius: 0;
           &:before {
-            padding-top: -xyPercent(148, 78);
+            padding-top: -WH-ratio(148, 78);
           }
         }
         .text-box {

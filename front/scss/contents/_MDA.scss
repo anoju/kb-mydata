@@ -6,7 +6,7 @@
   overflow: hidden;
   .img-box {
     &:before {
-      padding-top: -xyPercent(360, 208);
+      padding-top: -WH-ratio(360, 208);
     }
   }
 
@@ -137,8 +137,8 @@
     border-radius: 1.6rem 1.6rem 0 0;
     position: relative;
     &:before {
-      // padding-top: -xyPercent(232, 164);
-      padding-top: -xyPercent(232, 174);
+      // padding-top: -WH-ratio(232, 164);
+      padding-top: -WH-ratio(232, 174);
     }
   }
   .invest-txt-box {
@@ -207,7 +207,7 @@
   &.type3 {
     // .img-box {
     //   &:before {
-    //     padding-top: -xyPercent(232, 174);
+    //     padding-top: -WH-ratio(232, 174);
     //   }
     // }
     .invest-txt-box {
@@ -403,7 +403,7 @@
     border-radius: 1.2rem;
     overflow: hidden;
     &:before {
-      padding-top: -xyPercent(152, 114);
+      padding-top: -WH-ratio(152, 114);
     }
   }
   .invest-txt-box {
@@ -440,7 +440,7 @@
   &.type2 {
     .img-box {
       &:before {
-        padding-top: -xyPercent(152, 161);
+        padding-top: -WH-ratio(152, 161);
       }
     }
   }
@@ -456,7 +456,7 @@
         border-radius: 3.4rem;
       }
       &:before {
-        padding-top: -xyPercent(312, 80);
+        padding-top: -WH-ratio(312, 80);
       }
     }
     + li {
