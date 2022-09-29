@@ -15,6 +15,19 @@
     <script>
       ui.Common.title('테스트');
     </script>
+    <style>
+      .checkbox .num {
+        background: var(--primary-color);
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+        z-index: 2;
+      }
+      .checkbox .num:after {
+        content: none;
+      }
+    </style>
   </head>
   <body>
     <article id="wrap">
@@ -32,139 +45,63 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="section">
-          <div class="input"><input type="text" placeholder="첫번째" /></div>
-          <div class="input"><input type="text" placeholder="두번째" /></div>
-          <div class="select not">
-            <select>
-              <option value="">세번째</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-          <div class="input"><input type="text" placeholder="네번째" /></div>
-          <div class="input"><input type="file" placeholder="이미지 선택-기본" /></div>
-          <div class="input"><input type="file" accept="image/*" capture="gallery" placeholder="이미지 선택-gallery" /></div>
-          <div class="input"><input type="file" accept="image/*" capture="filesystem" placeholder="이미지 선택-filesystem" /></div>
-
-          <div class="imgs_wrap"></div>
-
-          <div style="height: 100vh"></div>
-        </div>
-        <div class="btn-wrap bottom-fixed">
-          <div class="pd-10y">
-            <div class="textarea auto-height add-btn">
-              <textarea id="textarea" style="max-height: 9.4rem"></textarea>
-              <button type="button" class="button h32 line">입력</button>
+          <h1 class="gd__h1">체크박스 넘버링</h1>
+          <div class="step-cont-bottom">
+            <div class="chk-item ty2">
+              <label class="checkbox">
+                <input type="checkbox" value="1" /><i aria-hidden="true"></i>
+                <div class="lbl">선택1</div>
+              </label>
             </div>
-            <!-- <div class="flex">
-              <a href="#" class="button h60 gray" id="btnFocus">다음</a>
-              <a href="#" class="button h60 primary" id="btnFocus2">팝업입력</a>
-            </div> -->
+            <div class="chk-item ty2">
+              <label class="checkbox">
+                <input type="checkbox" value="2" /><i aria-hidden="true"></i>
+                <div class="lbl">선택2</div>
+              </label>
+            </div>
+            <div class="chk-item ty2">
+              <label class="checkbox">
+                <input type="checkbox" value="3" /><i aria-hidden="true"></i>
+                <div class="lbl">선택3</div>
+              </label>
+            </div>
+            <div class="chk-item ty2">
+              <label class="checkbox">
+                <input type="checkbox" value="4" /><i aria-hidden="true"></i>
+                <div class="lbl">선택4</div>
+              </label>
+            </div>
+            <div class="chk-item ty2">
+              <label class="checkbox">
+                <input type="checkbox" value="5" /><i aria-hidden="true"></i>
+                <div class="lbl">선택5</div>
+              </label>
+            </div>
           </div>
         </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
-
-      <!-- 팝업 -->
-      <div id="pop1" class="popup modal" role="dialog" aria-hidden="true">
-        <article class="pop-wrap">
-          <div class="pop-body">
-            <div class="section">
-              <div class="textarea auto-height flex">
-                <textarea></textarea>
-                <a href="#" class="button h32 line w-auto ml-0 mr-16">입력</a>
-              </div>
-            </div>
-          </div>
-          <div class="pop-foot">
-            <div>
-              <div class="flex">
-                <button type="button" class="button primary ui-pop-close">확인</button>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-      <!-- //팝업 -->
     </article>
-
-    <!-- <div class="btn-wrap bottom-fixed">
-      <div>
-        <div class="flex">
-          <div class="textarea auto-height flex">
-            <textarea id="textarea"></textarea>
-            <button type="button" class="button h32 line w-auto ml-0 mr-16">입력</button>
-          </div>
-        </div>
-        <div class="flex">
-          <button type="button" class="button h60 primary" id="btnFocus">다음</button>
-          <button type="button" class="button h60 primary" id="btnFocus2">팝업입력</button>
-        </div>
-      </div>
-    </div> -->
-
     <script>
-      var sel_files = [];
-
-      $(function () {
-        // $('#textarea').focus(function () {
-        //   Body.lock();
-        // });
-        // $('#textarea').blur(function () {
-        //   Body.unlock();
-        // });
-
-        const $el = $('input, select');
-        const $elLength = $el.length;
-        let $focusIdx = -1;
-
-        $el.focus(function () {
-          const $idx = $el.index(this);
-          $focusIdx = $idx;
+      let $chkAry = [];
+      function aryChk(ary) {
+        $('.checkbox').find('.num').remove();
+        $.each(ary, function (i) {
+          const val = this[0];
+          const $input = $('.checkbox input[value=' + val + ']');
+          const $checkbox = $input.closest('.checkbox');
+          $checkbox.append('<i class="num">' + (i + 1) + '</i>');
         });
-
-        $('#btnFocus').click(function () {
-          const $idx = $focusIdx + 1 >= $elLength - 1 ? 0 : $focusIdx + 1;
-          $el.eq($idx).focus();
-        });
-        setTimeout(function () {
-          $el.first().focus();
-        }, 100);
-
-        $('#btnFocus2').click(function () {
-          Layer.open('#pop1', function () {
-            $('#pop1 textarea').focus();
-          });
-        });
-
-        $(':file').on('change', handleImgsFilesSelect);
-
-        function handleImgsFilesSelect(e) {
-          var files = e.target.files;
-          var filesArr = Array.prototype.slice.call(files);
-
-          console.log(files);
-
-          filesArr.forEach(function (f) {
-            if (!f.type.match('image.*')) {
-              alert('확장자는 이미지 확장자만 가능합니다.');
-              return;
-            }
-
-            sel_files.push(f);
-
-            var reader = new FileReader();
-            //console.log(reader)
-            reader.onload = function (e) {
-              var img_html = '<img src=' + e.target.result + ' />';
-              $('.imgs_wrap').append(img_html);
-            };
-            reader.readAsDataURL(f);
-
-            console.log(reader.readAsDataURL(f));
-          });
+      }
+      $('.checkbox input').change(function () {
+        const $checked = $(this).prop('checked');
+        const $val = $(this).val();
+        if ($checked) {
+          $chkAry.push($val);
+        } else {
+          $chkAry = $chkAry.filter((item) => item !== $val);
         }
+        aryChk($chkAry);
       });
     </script>
   </body>
