@@ -46,7 +46,16 @@
       <main id="container">
         <div class="section">
           <h1 class="gd__h1">체크박스 넘버링</h1>
-          <div class="step-cont-bottom">
+          <div class="flex align-center">
+            <label class="checkbox">
+              <input type="checkbox" class="all-chk" value="all" /><i aria-hidden="true"></i>
+              <div class="lbl">전체선택</div>
+            </label>
+            <div class="input line">
+              <input type="tel" class="chk-num" placeholder="전체 체크할 수" value="5" />
+            </div>
+          </div>
+          <div class="step-cont-bottom mt-10">
             <div class="chk-item ty2">
               <label class="checkbox">
                 <input type="checkbox" value="1" /><i aria-hidden="true"></i>
@@ -77,6 +86,36 @@
                 <div class="lbl">선택5</div>
               </label>
             </div>
+            <div class="chk-item ty2">
+              <label class="checkbox">
+                <input type="checkbox" value="6" /><i aria-hidden="true"></i>
+                <div class="lbl">선택6</div>
+              </label>
+            </div>
+            <div class="chk-item ty2">
+              <label class="checkbox">
+                <input type="checkbox" value="7" /><i aria-hidden="true"></i>
+                <div class="lbl">선택7</div>
+              </label>
+            </div>
+            <div class="chk-item ty2">
+              <label class="checkbox">
+                <input type="checkbox" value="8" /><i aria-hidden="true"></i>
+                <div class="lbl">선택8</div>
+              </label>
+            </div>
+            <div class="chk-item ty2">
+              <label class="checkbox">
+                <input type="checkbox" value="9" /><i aria-hidden="true"></i>
+                <div class="lbl">선택9</div>
+              </label>
+            </div>
+            <div class="chk-item ty2">
+              <label class="checkbox">
+                <input type="checkbox" value="a" /><i aria-hidden="true"></i>
+                <div class="lbl">선택10</div>
+              </label>
+            </div>
           </div>
         </div>
       </main>
@@ -85,15 +124,16 @@
     <script>
       let $chkAry = [];
       function aryChk(ary) {
-        $('.checkbox').find('.num').remove();
+        $('.step-cont-bottom .checkbox').find('.num').remove();
         $.each(ary, function (i) {
           const val = this[0];
-          const $input = $('.checkbox input[value=' + val + ']');
+          console.log(val);
+          const $input = $('.step-cont-bottom .checkbox input[value=' + val + ']');
           const $checkbox = $input.closest('.checkbox');
           $checkbox.append('<i class="num">' + (i + 1) + '</i>');
         });
       }
-      $('.checkbox input').change(function () {
+      $('.step-cont-bottom .checkbox input').change(function () {
         const $checked = $(this).prop('checked');
         const $val = $(this).val();
         if ($checked) {
@@ -102,6 +142,30 @@
           $chkAry = $chkAry.filter((item) => item !== $val);
         }
         aryChk($chkAry);
+      });
+
+      $('.all-chk').change(function () {
+        // $chkAry = [];
+        const $checked = $(this).prop('checked');
+        const $chk = $('.step-cont-bottom .checkbox');
+        // $chk.find('.num').remove();
+        $chk.find('input:checked').each(function () {
+          $(this).prop('checked', false).change();
+        });
+
+        $chk.each(function (i) {
+          const $input = $(this).find('input');
+          const $max = parseInt($('.chk-num').val());
+          if ($checked) {
+            if ($max) {
+              if (i < $max) $input.prop('checked', true).change();
+            } else {
+              $input.prop('checked', true).change();
+            }
+          } else {
+            $input.prop('checked', false).change();
+          }
+        });
       });
     </script>
   </body>
