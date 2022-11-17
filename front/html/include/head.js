@@ -7,5 +7,5 @@
   str += '<script type="text/javascript" src="../../js/ui-front.js"></script>';
   document.write(str);
   const $include = document.querySelector('.__include');
-  $include.remove();
+  if ($include) $include.remove();
 })();
