@@ -3269,7 +3269,11 @@ ui.Form = {
         const $slider = $(this).find('.range-wrap');
         const $list = $(this).find('.list');
         const $input = $(this).find('input').first();
-        const $first = $(this).find('.first-inp');
+        let $first = $(this).find('.first-inp');
+        if (!$first.length && $input.length == 1) {
+          $input.addClass('first-inp');
+          $first = $input;
+        }
         const $last = $(this).find('.last-inp');
         const $min = parseInt($input[0].min);
         const $max = parseInt($input[0].max);
