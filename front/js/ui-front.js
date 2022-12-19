@@ -2177,11 +2177,11 @@ ui.Tooltip = {
       const $closeBtn = $(this).find('.tooltip-close');
       if (!$contId) $contId = 'ttCont-' + e;
       $btn.attr({
-        role: 'button',
-        'aria-describedby': $contId
+        role: 'button'
+        // 'aria-describedby': $contId
       });
       $cont.attr({
-        id: $contId,
+        // id: $contId,
         role: 'tooltip'
       });
       $closeBtn.attr('role', 'button');
@@ -2224,8 +2224,11 @@ ui.Tooltip = {
     $(document).on('click', '.tooltip-close', function (e) {
       e.preventDefault();
       const $cont = $(this).closest('.tooltip-cont');
-      $cont.stop(true, false).fadeOut();
-      $cont.siblings('.tooltip-btn').removeClass('on').focus();
+      const $btn = $cont.siblings('.tooltip-btn');
+      $btn.removeClass('on');
+      $cont.stop(true, false).fadeOut(500, function () {
+        $btn.focus();
+      });
     });
     $(document)
       .on('click touchend', function (e) {
