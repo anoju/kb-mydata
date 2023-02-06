@@ -147,3 +147,22 @@
     }
   }
 }
+.img-TBD {
+  position: relative;
+  &:after {
+    content: 'TBD';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(255, 0, 0, 0.3);
+  }
+}

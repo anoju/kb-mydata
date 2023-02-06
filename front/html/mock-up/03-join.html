@@ -15,75 +15,249 @@
   </head>
   <body>
     <article id="wrap">
-      <!-- 컨테이너(컨텐츠) -->
-      <main id="container">
-        <div class="ui-swiper intro-swiper full-section">
-          <div class="swiper-pagination"></div>
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="inner">
-                  <div class="text">
-                    <h2 class="tit-h2 spl-hidden-up" data-splitting>내 소중한 자산을 다 끌어모으고</h2>
-                    <p class="sub-txt">
-                      금융·비금융 자산 모두 한눈에 볼 수 있어요<br />
-                      신박한 자산분석과 지출관리로 돈 고민 종결!
-                    </p>
-                  </div>
-
-                  <div class="img" data-swiper-parallax="100%">
-                    <div><img src="../../images/consume/img-content1.png" alt="" /></div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="inner">
-                  <div class="text">
-                    <h2 class="tit-h2 spl-hidden-up" data-splitting>힙한 투자 정보는 빨리 끌어당기고</h2>
-                    <p class="sub-txt">
-                      미술, 음악 등 현시점 핫하고 트렌디한 <br />
-                      대안투자 정보를 가장 먼저 알려드려요
-                    </p>
-                  </div>
-
-                  <div class="img" data-swiper-parallax="100%">
-                    <div><img src="../../images/consume/img-content2.png" alt="" /></div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="inner">
-                  <div class="text">
-                    <h2 class="tit-h2 spl-hidden-up" data-splitting>수익률 매치로 금융자존감을 끌어올려요</h2>
-                    <p class="sub-txt">
-                      1:1 주식투자 수익률 대결로 <br />
-                      인플루언서 투자고수들과 자산력을 비교하세요
-                    </p>
-                  </div>
-
-                  <div class="img" data-swiper-parallax="100%">
-                    <div><img src="../../images/consume/img-content3.png" alt="" /></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button class="head-back button" aria-label="이전화면"></button>
           </div>
         </div>
-        <div class="btn-wrap bottom-fixed intro-btn">
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <h1 class="tit-h1">이름을 입력해 주세요</h1>
+          <h1 class="tit-h1" style="display: none">주민등록번호를 입력해 주세요</h1>
+          <h1 class="tit-h1" style="display: none">통신사를 선택해 주세요</h1>
+          <h1 class="tit-h1" style="display: none">휴대폰 번호를 입력해주세요</h1>
+
+          <div class="input line-lbl-inp mt-30" data-step="3" style="display: none">
+            <input type="text" id="input4" title="휴대폰번호입력" placeholder="휴대폰 번호" maxlength="13" />
+            <label for="input4" class="lbl">휴대폰 번호</label>
+          </div>
+
+          <div class="select line-lbl-inp mt-30" data-step="2" style="display: none">
+            <select id="select3" title="통신사선택" class="off">
+              <option value="">통신사선택</option>
+              <option value="1">SKT</option>
+              <option value="2">KT</option>
+              <option value="3">LG U+</option>
+              <option value="4">SKT 알뜰폰</option>
+              <option value="5">KT 알뜰폰</option>
+              <option value="6">LG U+ 알뜰폰</option>
+            </select>
+            <div class="lbl">통신사선택</div>
+          </div>
+
+          <div class="input line-lbl-inp mt-30" data-step="1" style="display: none">
+            <input type="tel" id="input2-1" class="no-del" title="주민등록번호 앞자리 입력" placeholder="주민등록번호" maxlength="6" />
+            <div class="dash">-</div>
+            <input type="tel" id="input2-2" class="no-del w-40f t_center" title="주민등록번호 뒷자리 입력" placeholder="주민등록번호" maxlength="1" />
+            <label for="input2-2" class="masking" aria-hidden="true">●●●●●●</label>
+            <label for="input2-1" class="lbl">주민등록번호</label>
+          </div>
+
+          <div class="input line-lbl-inp mt-30" data-step="0">
+            <input type="text" id="input1" title="이름입력" placeholder="이름" maxlength="10" />
+            <label for="input1" class="lbl">이름</label>
+          </div>
+        </div>
+
+        <div class="btn-wrap bottom-fixed focus-btn" style="display: none">
           <div class="flex">
-            <button type="button" id="btnNext" class="button h60 primary">시작하기</button>
+            <button type="button" id="btnFocus" class="button h60 primary" disabled>확인</button>
+          </div>
+        </div>
+
+        <div class="btn-wrap bottom-fixed next-btn">
+          <div class="flex">
+            <button type="button" id="btnNext" class="button h60 primary" disabled>본인인증하기</button>
           </div>
         </div>
       </main>
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
+      <div id="pop-agree" class="popup bottom" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>모두 동의하기</h1>
+              <!-- <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button> -->
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="section">
+              <div class="agree-dl ui-agree">
+                <div class="agree-dt">
+                  <div class="checkbox">
+                    <input type="checkbox" id="agreeAll1" class="ui-all-agree-chk" /><i aria-hidden="true"></i>
+                    <label class="lbl fz-16 fc-424242" for="agreeAll1"><strong>전체 동의</strong></label>
+                  </div>
+                </div>
+                <div class="agree-dd">
+                  <div class="checkbox ty2">
+                    <input type="checkbox" id="agree1-1" class="ui-agree-chk" /><i aria-hidden="true"></i>
+                    <div class="lbl">
+                      <label for="agree1-1" class="fc-primary">(필수) 서비스 약관동의</label>
+                      <a href="#" class="agree-btn" data-agree-pdf="../../temp/교보증권마이데이터 샘플.pdf" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                  <div class="checkbox ty2">
+                    <input type="checkbox" id="agree1-2" class="ui-agree-chk" /><i aria-hidden="true"></i>
+                    <div class="lbl">
+                      <label for="agree1-2">(필수) 본인확인 동의</label>
+                      <a href="#" class="agree-btn" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                  <div class="checkbox ty2">
+                    <input type="checkbox" id="agree1-3" class="ui-agree-chk" data-agree-target="#agree1-3-kakao, #agree1-3-sms, #agree1-3-mail" /><i aria-hidden="true"></i>
+                    <div class="lbl">
+                      <label for="agree1-3">(선택) 마케팅 정보 제공 및 활용 동의</label>
+                      <a href="#" class="agree-btn" aria-label="약관상세 확인"><i class="i-ico-agree-arrow" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                  <div class="mt-14 pl-28">
+                    <span class="checkbox ty2">
+                      <input type="checkbox" id="agree1-3-kakao" /><i aria-hidden="true"></i>
+                      <label for="agree1-3-kakao" class="lbl fz-14">카카오톡 수신</label>
+                    </span>
+                    <span class="checkbox ty2">
+                      <input type="checkbox" id="agree1-3-sms" /><i aria-hidden="true"></i>
+                      <label for="agree1-3-sms" class="lbl fz-14">문자 수신</label>
+                    </span>
+                    <span class="checkbox ty2">
+                      <input type="checkbox" id="agree1-3-mail" /><i aria-hidden="true"></i>
+                      <label for="agree1-3-mail" class="lbl fz-14">메일 수신</label>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="flex">
+                <button type="button" id="btnAgree" class="button primary" disabled>동의하고 진행</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
       <!-- //팝업 -->
     </article>
 
+    <script src="../../js/mockup.js"></script>
     <script>
+      let _step = 0;
+      let _lastStep = 4;
+      let blurTime;
+      function reset() {
+        blurTime = setTimeout(function () {
+          console.log('reset');
+          $('.focus-btn').hide();
+          $('.next-btn').show();
+          $('#btnFocus').prop('disabled', true);
+          $('.__ing').removeClass('__ing');
+          if (_step >= _lastStep) $('#btnNext').prop('disabled', false);
+        }, 100);
+      }
+      function nextStep() {
+        const $focus = $('.__ing');
+        const $step = $focus.closest('[data-step]');
+        const $stepVal = parseInt($step.data('step'));
+        if (_step === $stepVal) {
+          _step += 1;
+          $('.tit-h1').eq(_step).show().siblings('.tit-h1').hide();
+          $('[data-step=' + _step + ']').slideDown(300, function () {
+            if (_step === 2) {
+              $('.btn-select').click();
+            } else {
+              $(this).find(':focusable').first().focus();
+            }
+            // reset();
+          });
+        }
+      }
+      function phoneFormatter(val) {
+        const cleanInput = val.replaceAll(/[^0-9]/g, '');
+        let result = '';
+        const length = cleanInput.length;
+        if (length === 8) {
+          result = cleanInput.replace(/(\d{4})(\d{4})/, '$1-$2');
+        } else if (cleanInput.startsWith('02') && (length === 9 || length === 10)) {
+          result = cleanInput.replace(/(\d{2})(\d{3,4})(\d{4})/, '$1-$2-$3');
+        } else if (!cleanInput.startsWith('02') && (length === 10 || length === 11)) {
+          result = cleanInput.replace(/(\d{3})(\d{3,4})(\d{4})/, '$1-$2-$3');
+        } else {
+          result = cleanInput;
+        }
+        return result;
+      }
+
+      $('.input input').focus(function () {
+        console.log('focus');
+        clearTimeout(blurTime);
+        const $this = $(this);
+        const $value = $this.val();
+        $('.focus-btn').show();
+        $('.next-btn').hide();
+        $('.__ing').removeClass('__ing');
+        $this.addClass('__ing');
+
+        if ($value) $('#btnFocus').prop('disabled', false);
+      });
+
+      $('.input input').keyup(function () {
+        const $this = $(this);
+        const $id = $this.attr('id');
+        const $maxlength = parseInt($this.attr('maxlength'));
+        const $value = $this.val();
+        if ($id === 'input1' && $value.length < 2) {
+          $('#btnFocus').prop('disabled', true);
+          return;
+        }
+        if ($id === 'input2-1') {
+          if ($value.length >= $maxlength) $('#input2-2').focus();
+          else $('#btnFocus').prop('disabled', true);
+          return;
+        }
+        if ($id === 'input2-2' && (!$value.length || !$('#input2-1').val().length)) return;
+        if ($id === 'input4') $this.val(phoneFormatter($value));
+        if ($value) $('#btnFocus').prop('disabled', false);
+        else $('#btnFocus').prop('disabled', true);
+      });
+
+      $('#select3').change(function () {
+        const $this = $(this);
+        const $val = $this.val();
+        $this.addClass('__ing');
+        if ($val) nextStep();
+      });
+
+      $('.input input').blur(reset);
+      $('#btnFocus').click(function () {
+        nextStep();
+      });
       $('#btnNext').click(function () {
-        location.href = '03-join.html';
+        Layer.open('#pop-agree');
+      });
+
+      $('#agree1-1, agree1-2').change(function () {
+        const _val1 = $('#agree1-1').prop('checked');
+        const _val2 = $('#agree1-2').prop('checked');
+        if (_val1 && _val2) {
+          $('#btnAgree').prop('disabled', false);
+        } else {
+          $('#btnAgree').prop('disabled', true);
+        }
+      });
+
+      $('#btnAgree').click(function () {
+        Layer.alert('다음스텝 현재 없음');
       });
     </script>
   </body>
