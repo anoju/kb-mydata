@@ -32,9 +32,10 @@
           <h1 class="tit-h1" style="display: none">주민등록번호를 입력해 주세요</h1>
           <h1 class="tit-h1" style="display: none">통신사를 선택해 주세요</h1>
           <h1 class="tit-h1" style="display: none">휴대폰 번호를 입력해주세요</h1>
+          <!-- <h2 class="_keycode"></h2> -->
 
           <div class="input line-lbl-inp mt-30" data-step="3" style="display: none">
-            <input type="text" id="input4" title="휴대폰번호입력" placeholder="휴대폰 번호" maxlength="13" />
+            <input type="tel" id="input4" title="휴대폰번호입력" placeholder="휴대폰 번호" maxlength="13" />
             <label for="input4" class="lbl">휴대폰 번호</label>
           </div>
 
@@ -157,12 +158,10 @@
       let blurTime;
       function reset() {
         blurTime = setTimeout(function () {
-          console.log('reset');
           $('.focus-btn').hide();
           $('.next-btn').show();
           $('#btnFocus').prop('disabled', true);
           $('.__ing').removeClass('__ing');
-          if (_step >= _lastStep) $('#btnNext').prop('disabled', false);
         }, 100);
       }
       function nextStep() {
@@ -174,12 +173,18 @@
           $('.tit-h1').eq(_step).show().siblings('.tit-h1').hide();
           $('[data-step=' + _step + ']').slideDown(300, function () {
             if (_step === 2) {
-              $('.btn-select').click();
+              $('.btn-select').focus().click();
             } else {
               $(this).find(':focusable').first().focus();
             }
-            // reset();
           });
+          if (_step >= _lastStep) {
+            reset();
+            $('#btnNext').prop('disabled', false);
+            setTimeout(function () {
+              $('#btnNext').focus();
+            }, 500);
+          }
         }
       }
       function phoneFormatter(val) {
@@ -199,7 +204,6 @@
       }
 
       $('.input input').focus(function () {
-        console.log('focus');
         clearTimeout(blurTime);
         const $this = $(this);
         const $value = $this.val();
@@ -209,9 +213,11 @@
         $this.addClass('__ing');
 
         if ($value) $('#btnFocus').prop('disabled', false);
+        else $('#btnFocus').prop('disabled', true);
       });
 
-      $('.input input').keyup(function () {
+      $('.input input').keyup(function (e) {
+        const $keyCode = e.keyCode ? e.keyCode : e.which;
         const $this = $(this);
         const $id = $this.attr('id');
         const $maxlength = parseInt($this.attr('maxlength'));
@@ -225,10 +231,31 @@
           else $('#btnFocus').prop('disabled', true);
           return;
         }
-        if ($id === 'input2-2' && (!$value.length || !$('#input2-1').val().length)) return;
-        if ($id === 'input4') $this.val(phoneFormatter($value));
+        if ($id === 'input2-2') {
+          if ($value.length && $('#input2-1').val().length === 6) {
+            reset();
+            nextStep();
+          } else {
+            return;
+          }
+        }
+
+        if ($id === 'input4') {
+          $this.val(phoneFormatter($value));
+          if ($this.val().length >= $maxlength) {
+            reset();
+            nextStep();
+          }
+        }
         if ($value) $('#btnFocus').prop('disabled', false);
         else $('#btnFocus').prop('disabled', true);
+
+        if ($keyCode === 13) {
+          e.preventDefault();
+          reset();
+          nextStep();
+        }
+        $('._keycode').html($keyCode);
       });
 
       $('#select3').change(function () {
