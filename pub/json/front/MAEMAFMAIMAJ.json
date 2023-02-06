@@ -4,7 +4,7 @@
   },
   {
     "id": "error",
-    "url": "../../front/html/",
+    "url": "../../front/html/etc/",
     "depth2": "에러 안내",
     "name": "에러 안내 화면",
     "worker": "안효주",
@@ -13,7 +13,7 @@
   },
   {
     "id": "network-error",
-    "url": "../../front/html/",
+    "url": "../../front/html/etc/",
     "depth2": "네트워크 에러 안내",
     "name": "네트워크 에러 안내 화면",
     "worker": "안효주",
