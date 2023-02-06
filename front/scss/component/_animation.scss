@@ -283,6 +283,10 @@ $splits:
         .word {
           overflow: hidden;
         }
+        .char {
+          animation-duration: 0s;
+          animation-delay: 0s;
+        }
       }
     }
     &[data-animation='#{$class}'].#{$class},

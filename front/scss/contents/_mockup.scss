@@ -1,0 +1,34 @@
+.intro-swiper.ui-swiper {
+  text-align: center;
+  .swiper-pagination {
+    margin-top: 0;
+    flex-shrink: 0;
+    .swiper-pagination-bullet {
+      background: var(--primary-color);
+    }
+  }
+  .inner {
+    display: flex;
+    flex-direction: column;
+    height: -vh(100, 15rem, true);
+    .text {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      align-items: center;
+      justify-content: center;
+    }
+    .img {
+      flex-shrink: 0;
+    }
+    .sub-txt {
+      font-size: 1.4rem;
+      color: #818892;
+      margin-top: 1.6rem;
+    }
+  }
+}
+.intro-btn.btn-wrap.bottom-fixed > div {
+  padding-top: 0;
+}
