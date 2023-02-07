@@ -87,7 +87,7 @@ const ui = {
   LoadInit: function () {
     if (ui.isLoadInit) return;
     ui.isLoadInit = true;
-    // console.log('window load complete');
+    console.log('window load complete');
     ui.Common.vhChk();
     ui.Common.winLoad();
     ui.Common.lottie();
