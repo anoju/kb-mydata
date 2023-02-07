@@ -56,7 +56,7 @@
         const $this = $(this);
         const $val = $this.val();
         const $maxlength = $this.attr('maxlength');
-        if (first) clearTimeout(firstTimer);
+        clearTimeout(firstTimer);
         if ($val.length >= $maxlength) {
           if (first) {
             firstTimer = setTimeout(function () {
@@ -66,13 +66,15 @@
               $('.tit-h1').text('간편비밀번호 확인');
             }, 500);
           } else {
-            if (firstPw === $val) {
-              $('#alertMsg').addClass('hide');
-              Layer.alert('성공');
-            } else {
-              pwReset();
-              $('#alertMsg').removeClass('hide');
-            }
+            firstTimer = setTimeout(function () {
+              if (firstPw === $val) {
+                $('#alertMsg').addClass('hide');
+                location.href = '06-joinComplete.html';
+              } else {
+                pwReset();
+                $('#alertMsg').removeClass('hide');
+              }
+            }, 500);
           }
         }
       });

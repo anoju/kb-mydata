@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 퍼블용 include: 개발팀에서 재include 하길 바랍니다. -->
+    <script class="__include" src="../include/meta.js"></script>
+
+    <title>끌</title>
+
+    <!-- 퍼블용 include: 개발팀에서 재include 하길 바랍니다. -->
+    <script class="__include" src="../include/head.js"></script>
+
+    <script>
+      ui.Common.title('가입완료');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <!-- <header id="header">
+        <div>
+          <div class="head-left">
+            <button class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header> -->
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section full-section justify-center confetti-contents" data-animation="fadeInIcon" data-delay="300">
+          <div>
+            <div class="img-box w-144 mg-autox end-img-complete" aria-hidden="true"></div>
+            <h1 class="tit-h1 t-center mt-24">회원가입이 완료되었습니다</h1>
+            <p class="t-center mt-16">마이데이터의 회원이 되신 것을 환영합니다.</p>
+          </div>
+        </div>
+        <div class="btn-wrap bottom-fixed">
+          <div class="flex">
+            <a href="#" class="button h60 primary">확인</a>
+          </div>
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+    </article>
+
+    <script src="../../js/lib/confetti.browser.5.10.0.min.js"></script>
+    <script src="../../js/mockup.js"></script>
+    <script>
+      const $clickTarget = document.querySelector('.confetti-contents');
+
+      Conffeti.sideInit();
+      Conffeti.randomClick($clickTarget);
+    </script>
+  </body>
+</html>
