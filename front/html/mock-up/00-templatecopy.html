@@ -10,7 +10,7 @@
     <script class="__include" src="../include/head.js"></script>
 
     <script>
-      ui.Common.title('회원가입');
+      ui.Common.title('템플릿');
     </script>
   </head>
   <body>
@@ -42,12 +42,12 @@
           <div class="select line-lbl-inp mt-30" data-step="2" style="display: none">
             <select id="select3" title="통신사선택" class="off">
               <option value="">통신사선택</option>
-              <option value="SKT">SKT</option>
-              <option value="KT">KT</option>
-              <option value="LG U+">LG U+</option>
-              <option value="SKT 알뜰폰">SKT 알뜰폰</option>
-              <option value="KT 알뜰폰">KT 알뜰폰</option>
-              <option value="LG U+ 알뜰폰">LG U+ 알뜰폰</option>
+              <option value="1">SKT</option>
+              <option value="2">KT</option>
+              <option value="3">LG U+</option>
+              <option value="4">SKT 알뜰폰</option>
+              <option value="5">KT 알뜰폰</option>
+              <option value="6">LG U+ 알뜰폰</option>
             </select>
             <div class="lbl">통신사선택</div>
           </div>
@@ -55,7 +55,7 @@
           <div class="input line-lbl-inp mt-30" data-step="1" style="display: none">
             <input type="tel" id="input2-1" class="no-del" title="주민등록번호 앞자리 입력" placeholder="주민등록번호" maxlength="6" />
             <div class="dash">-</div>
-            <input type="tel" id="input2-2" class="no-del w-40f t-center" title="주민등록번호 뒷자리 입력" placeholder="주민등록번호" maxlength="1" />
+            <input type="tel" id="input2-2" class="no-del w-40f t_center" title="주민등록번호 뒷자리 입력" placeholder="주민등록번호" maxlength="1" />
             <label for="input2-2" class="masking" aria-hidden="true">●●●●●●</label>
             <label for="input2-1" class="lbl">주민등록번호</label>
           </div>
@@ -152,142 +152,5 @@
     </article>
 
     <script src="../../js/mockup.js"></script>
-    <script>
-      let _step = 0;
-      let _lastStep = 4;
-      let blurTime;
-      function reset() {
-        blurTime = setTimeout(function () {
-          $('.focus-btn').hide();
-          $('.next-btn').show();
-          $('#btnFocus').prop('disabled', true);
-          $('.__ing').removeClass('__ing');
-        }, 100);
-      }
-      function nextStep() {
-        const $focus = $('.__ing');
-        const $step = $focus.closest('[data-step]');
-        const $stepVal = parseInt($step.data('step'));
-        if (_step === $stepVal) {
-          _step += 1;
-          $('.tit-h1').eq(_step).show().siblings('.tit-h1').hide();
-          $('[data-step=' + _step + ']').slideDown(300, function () {
-            if (_step === 2) {
-              $('.btn-select').focus().click();
-            } else {
-              $(this).find(':focusable').first().focus();
-            }
-          });
-          if (_step >= _lastStep) {
-            reset();
-            $('#btnNext').prop('disabled', false);
-            setTimeout(function () {
-              $('#btnNext').focus();
-            }, 500);
-          }
-        }
-      }
-      function phoneFormatter(val) {
-        const cleanInput = val.replaceAll(/[^0-9]/g, '');
-        let result = '';
-        const length = cleanInput.length;
-        if (length === 8) {
-          result = cleanInput.replace(/(\d{4})(\d{4})/, '$1-$2');
-        } else if (cleanInput.startsWith('02') && (length === 9 || length === 10)) {
-          result = cleanInput.replace(/(\d{2})(\d{3,4})(\d{4})/, '$1-$2-$3');
-        } else if (!cleanInput.startsWith('02') && (length === 10 || length === 11)) {
-          result = cleanInput.replace(/(\d{3})(\d{3,4})(\d{4})/, '$1-$2-$3');
-        } else {
-          result = cleanInput;
-        }
-        return result;
-      }
-
-      $('.input input').focus(function () {
-        clearTimeout(blurTime);
-        const $this = $(this);
-        const $value = $this.val();
-        $('.focus-btn').show();
-        $('.next-btn').hide();
-        $('.__ing').removeClass('__ing');
-        $this.addClass('__ing');
-
-        if ($value) $('#btnFocus').prop('disabled', false);
-        else $('#btnFocus').prop('disabled', true);
-      });
-
-      $('.input input').keyup(function (e) {
-        const $keyCode = e.keyCode ? e.keyCode : e.which;
-        const $this = $(this);
-        const $id = $this.attr('id');
-        const $maxlength = parseInt($this.attr('maxlength'));
-        const $value = $this.val();
-        if ($id === 'input1' && $value.length < 2) {
-          $('#btnFocus').prop('disabled', true);
-          return;
-        }
-        if ($id === 'input2-1') {
-          if ($value.length >= $maxlength) $('#input2-2').focus();
-          else $('#btnFocus').prop('disabled', true);
-          return;
-        }
-        if ($id === 'input2-2') {
-          if ($value.length && $('#input2-1').val().length === 6) {
-            reset();
-            nextStep();
-          } else {
-            return;
-          }
-        }
-
-        if ($id === 'input4') {
-          $this.val(phoneFormatter($value));
-          if ($this.val().length >= $maxlength) {
-            reset();
-            nextStep();
-          }
-        }
-        if ($value) $('#btnFocus').prop('disabled', false);
-        else $('#btnFocus').prop('disabled', true);
-
-        if ($keyCode === 13) {
-          e.preventDefault();
-          reset();
-          nextStep();
-        }
-        $('._keycode').html($keyCode);
-      });
-
-      $('#select3').change(function () {
-        const $this = $(this);
-        const $val = $this.val();
-        $this.addClass('__ing');
-        if ($val) nextStep();
-      });
-
-      $('.input input').blur(reset);
-      $('#btnFocus').click(function () {
-        nextStep();
-      });
-      $('#btnNext').click(function () {
-        Layer.open('#pop-agree');
-      });
-
-      $('#agree1-1, agree1-2').change(function () {
-        const _val1 = $('#agree1-1').prop('checked');
-        const _val2 = $('#agree1-2').prop('checked');
-        if (_val1 && _val2) {
-          $('#btnAgree').prop('disabled', false);
-        } else {
-          $('#btnAgree').prop('disabled', true);
-        }
-      });
-
-      $('#btnAgree').click(function () {
-        uiStorage.set('mobile1', $('#select3').val());
-        uiStorage.set('mobile2', $('#input4').val());
-        location.href = '04-phoneCheck.html';
-      });
-    </script>
   </body>
 </html>

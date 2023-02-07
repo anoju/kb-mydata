@@ -140,6 +140,11 @@
     display: flex;
     align-items: center;
   }
+  &.line-lbl-inp {
+    .timer {
+      margin-right: 0;
+    }
+  }
   .btn-inp-del {
     margin-right: 0.8rem;
     &:last-child {

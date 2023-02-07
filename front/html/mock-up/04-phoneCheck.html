@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 퍼블용 include: 개발팀에서 재include 하길 바랍니다. -->
+    <script class="__include" src="../include/meta.js"></script>
+
+    <title>끌</title>
+
+    <!-- 퍼블용 include: 개발팀에서 재include 하길 바랍니다. -->
+    <script class="__include" src="../include/head.js"></script>
+
+    <script>
+      ui.Common.title('본인인증');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section full-section">
+          <h1 class="tit-h1">휴대폰 본인인증</h1>
+          <div class="mt-10 fw-500 fz-14 fc-979797">
+            <span id="mobile1">SKT</span>
+            <span id="mobile2">010-1234-1234</span>
+          </div>
+
+          <div class="flex not-full align-end mt-30">
+            <div class="input line-lbl-inp flex-11">
+              <input type="tel" id="input1" title="인증번호 6자리 입력" placeholder="인증번호" maxlength="6" />
+              <div class="timer">03:00</div>
+              <label for="input1" class="lbl">인증번호 6자리 입력</label>
+            </div>
+            <button type="button" class="button line h38 pd-10x">재요청</button>
+          </div>
+        </div>
+        <div class="section bottom-contents t-center">
+          <button type="button" class="btn-txt fz-14 line-underline">인증문자가 오지 않아요</button>
+        </div>
+
+        <!-- <div class="btn-wrap bottom-fixed">
+          <div class="flex">
+            <button type="button" id="btnNext" class="button h60 primary" disabled>본인인증하기</button>
+          </div>
+        </div> -->
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+
+      <!-- 팝업 -->
+      <!-- //팝업 -->
+    </article>
+
+    <script src="../../js/mockup.js"></script>
+    <script>
+      const mobile1 = uiStorage.get('mobile1');
+      const mobile2 = uiStorage.get('mobile2');
+      if (mobile1) {
+        $('#mobile1').html(mobile1);
+        uiStorage.remove('mobile1');
+      }
+      if (mobile2) {
+        $('#mobile2').html(mobile2);
+        uiStorage.remove('mobile2');
+      }
+
+      $('#input1').on('input', function () {
+        const $this = $(this);
+        const $val = $this.val();
+        const $maxlength = $this.attr('maxlength');
+        // const $btn = $('#btnNext');
+        // if ($val.length >= $maxlength) $btn.prop('disabled', false);
+        // else $btn.prop('disabled', true);
+        if ($val.length >= $maxlength) {
+          Loading.open();
+          setTimeout(function () {
+            // location.href = '.html';
+            Layer.alert('다음 스텝 없음');
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>
