@@ -12,6 +12,14 @@
     <script>
       ui.Common.title('본인인증');
     </script>
+    <style>
+      .text-style1 {
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: #979797;
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
     <article id="wrap">
@@ -28,7 +36,7 @@
       <!-- 컨테이너(컨텐츠) -->
       <main id="container">
         <div class="section full-section">
-          <h1 class="tit-h1">휴대폰 본인인증</h1>
+          <h1 class="tit-h1 fc-up">휴대폰 본인인증</h1>
           <div class="mt-10 fw-500 fz-14 fc-979797">
             <span id="mobile1">SKT</span>
             <span id="mobile2">010-1234-1234</span>
@@ -40,7 +48,7 @@
               <div class="timer">03:00</div>
               <label for="input1" class="lbl">인증번호 6자리 입력</label>
             </div>
-            <button type="button" class="button line h38 pd-10x">재요청</button>
+            <button type="button" class="button line h38 pd-10x" onclick="checkTimerCount(180)">재요청</button>
           </div>
         </div>
         <div class="section bottom-contents t-center">
@@ -80,13 +88,46 @@
         // if ($val.length >= $maxlength) $btn.prop('disabled', false);
         // else $btn.prop('disabled', true);
         if ($val.length >= $maxlength) {
+          clearInterval(checkTimer);
           Loading.open();
           setTimeout(function () {
+            Loading.close();
             // location.href = '.html';
             Layer.alert('다음 스텝 없음');
           }, 500);
         }
       });
+
+      let checkTimer;
+      function checkTimerCount(time) {
+        let checkTotal = time;
+        const $timer = $('.timer');
+        const $input = $('#input1');
+        clearInterval(checkTimer);
+        function setTime(val) {
+          let min = '' + Math.floor(val / 60);
+          if (min.length === 1) min = '0' + min;
+          let sec = '' + (val % 60);
+          if (sec.length === 1) sec = '0' + sec;
+
+          $timer.text(min + ':' + sec);
+        }
+        setTime(checkTotal);
+
+        checkTimer = setInterval(function () {
+          checkTotal -= 1;
+          setTime(checkTotal);
+          if (checkTotal === 0) {
+            clearInterval(checkTimer);
+            $input.prop('disabled', true);
+            $timer.addClass('fc-929292');
+          } else {
+            $input.prop('disabled', false);
+            $timer.removeClass('fc-929292');
+          }
+        }, 1000);
+      }
+      checkTimerCount(180);
     </script>
   </body>
 </html>
