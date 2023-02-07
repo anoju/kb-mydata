@@ -56,6 +56,28 @@
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
+      <div id="popCheckInfo" class="popup bottom" role="dialog" aria-hidden="true">
+        <article class="pop-wrap">
+          <div class="pop-head">
+            <div>
+              <h1>회원등록 안내</h1>
+              <!-- <button type="button" class="pop-close ui-pop-close" aria-label="팝업창 닫기"></button> -->
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="section">
+              <p>홍길동 고객님의 교보증권 마이데이터 회원가입 내역이 확인되었습니다.</p>
+            </div>
+          </div>
+          <div class="pop-foot">
+            <div>
+              <div class="flex">
+                <button type="button" id="btnPop" class="button primary">간편비밀번호 재등록하기</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
       <!-- //팝업 -->
     </article>
 
@@ -84,10 +106,13 @@
           Loading.open();
           setTimeout(function () {
             Loading.close();
-            // location.href = '.html';
-            Layer.alert('다음 스텝 없음');
+            Layer.open('#popCheckInfo');
           }, 500);
         }
+      });
+
+      $('#btnPop').click(function () {
+        location.href = '05-pinPW.html';
       });
 
       let checkTimer;

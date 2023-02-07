@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 퍼블용 include: 개발팀에서 재include 하길 바랍니다. -->
+    <script class="__include" src="../include/meta.js"></script>
+
+    <title>끌</title>
+
+    <!-- 퍼블용 include: 개발팀에서 재include 하길 바랍니다. -->
+    <script class="__include" src="../include/head.js"></script>
+
+    <script>
+      ui.Common.title('간편비밀번호');
+    </script>
+  </head>
+  <body>
+    <article id="wrap">
+      <!-- 헤더 -->
+      <header id="header">
+        <div>
+          <div class="head-left">
+            <button class="head-back button" aria-label="이전화면"></button>
+          </div>
+        </div>
+      </header>
+      <!-- //헤더 -->
+
+      <!-- 컨테이너(컨텐츠) -->
+      <main id="container">
+        <div class="section">
+          <div class="t-center mt-44">
+            <h1 class="tit-h1 fz-26">간편비밀번호 입력</h1>
+            <div class="mt-48">
+              <p class="fw-500">암호 6자리 입력</p>
+              <div class="dot-password">
+                <input id="input1" type="tel" maxlength="6" />
+              </div>
+              <div id="alertMsg" class="mt-16 fz-14 fc-red hide">입력하신 암호를 다시 확인해주세요.</div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- 컨테이너(컨텐츠) -->
+    </article>
+
+    <script src="../../js/mockup.js"></script>
+    <script>
+      let first = true;
+      let firstPw;
+      let firstTimer;
+      function pwReset() {
+        $('.dot-password input').val('');
+        $('.dot-password .dot').removeClass('on');
+      }
+      $('#input1').on('input', function () {
+        const $this = $(this);
+        const $val = $this.val();
+        const $maxlength = $this.attr('maxlength');
+        if (first) clearTimeout(firstTimer);
+        if ($val.length >= $maxlength) {
+          if (first) {
+            firstTimer = setTimeout(function () {
+              first = false;
+              firstPw = $val;
+              pwReset();
+              $('.tit-h1').text('간편비밀번호 확인');
+            }, 500);
+          } else {
+            if (firstPw === $val) {
+              $('#alertMsg').addClass('hide');
+              Layer.alert('성공');
+            } else {
+              pwReset();
+              $('#alertMsg').removeClass('hide');
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

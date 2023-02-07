@@ -81,7 +81,7 @@
       <!-- 컨테이너(컨텐츠) -->
 
       <!-- 팝업 -->
-      <div id="pop-agree" class="popup bottom" role="dialog" aria-hidden="true">
+      <div id="popAgree" class="popup bottom" role="dialog" aria-hidden="true">
         <article class="pop-wrap">
           <div class="pop-head">
             <div>
@@ -147,7 +147,6 @@
           </div>
         </article>
       </div>
-
       <!-- //팝업 -->
     </article>
 
@@ -270,7 +269,7 @@
         nextStep();
       });
       $('#btnNext').click(function () {
-        Layer.open('#pop-agree');
+        Layer.open('#popAgree');
       });
 
       $('#agree1-1, agree1-2').change(function () {
