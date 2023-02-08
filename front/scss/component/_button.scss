@@ -24,7 +24,12 @@
   i {
     pointer-events: none;
   }
-
+  &.jsfy-left {
+    justify-content: left;
+  }
+  &.jsfy-right {
+    justify-content: right;
+  }
   &.icon {
     width: auto;
     height: auto;
