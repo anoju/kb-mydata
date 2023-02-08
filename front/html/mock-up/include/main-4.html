@@ -2,15 +2,45 @@
   <li><a href="#mainMy1">자산</a></li>
   <li><a href="#mainMy2">소비</a></li>
 </ul>
-<div id="mainMy1" class="section tab-panel">자산 추가해야함</div>
+
+<div id="mainMy1" class="section tab-panel">
+  <div class="title-bar mt-20">
+    <h2 class="tit-h1">내 자산</h2>
+    <div class="right align-self-center">
+      <span class="checkbox switch2 small in-txt block">
+        <label for="moneySwitch1" class="lbl">금액</label>
+        <!-- 2022-04-12 수정 -->
+        <input type="checkbox" id="moneySwitch1" class="hide-switch" /><i aria-hidden="true" data-on="ON" data-off="OFF"></i>
+      </span>
+    </div>
+  </div>
+  <div class="my-expense">
+    <div class="show">
+      <div class="tit flex not-full justify-center align-center">
+        총자산
+        <div class="tooltip-wrap ml-4">
+          <button type="button" class="tooltip-btn" aria-label="자세한 내용 확인"><i class="i-ico-tooltip" aria-hidden="true"></i></button>
+          <div class="tooltip-cont">총자산은 계좌 + 투자 + 포인트 + 자동차 + 부동산 + 미술품투자 + 직접 등록한 자산을 합산한 금액입니다.</div>
+        </div>
+      </div>
+      <p class="text"><strong data-animation="rolling-number">210,120,000</strong>원</p>
+    </div>
+    <div class="hide">
+      <p class="tit">자산은 <strong class="fc-primary">비밀</strong>이에요<i class="i-img-emoji"></i></p>
+      <p class="text">금액표시 버튼을 눌러 내 자산을 확인해 보세요!</p>
+    </div>
+  </div>
+  <p class="flex not-full align-center fz-12 fc-b0b0b0 justify-center">최근 업데이트 2021.12.13 13:35</p>
+</div>
+
 <div id="mainMy2" class="section tab-panel pb-96">
   <div class="title-bar mt-20">
     <h2 class="tit-h1">내 소비</h2>
     <div class="right align-self-center">
       <span class="checkbox switch2 small in-txt block">
-        <label for="moneySwitch" class="lbl">금액</label>
+        <label for="moneySwitch2" class="lbl">금액</label>
         <!-- 2022-04-12 수정 -->
-        <input type="checkbox" id="moneySwitch" /><i aria-hidden="true" data-on="ON" data-off="OFF"></i>
+        <input type="checkbox" id="moneySwitch2" class="hide-switch" /><i aria-hidden="true" data-on="ON" data-off="OFF"></i>
       </span>
     </div>
   </div>
