@@ -4,26 +4,99 @@
   </div>
   <!-- 메인 총자산 -->
   <div class="radius-box">
-    <h1><strong>김교보</strong>님 반가워요</h1>
-    <span>최근 업데이트 2022.12.12 13:35</span>
+    <h2>
+      <strong>김교보</strong>님 반가워요
+      <p class="fz-12 fc-b0b0b0">최근 업데이트 2021.12.13 13:35</p>
+    </h2>
 
-    <div class="flex">
-      <h2>
-        총 자산
-        <div class="tooltip-wrap">
-          <button type="button" class="tooltip-btn" aria-label="자세한 내용 확인"><i class="i-ico-tooltip" aria-hidden="true"></i></button>
-          <div class="tooltip-cont">툴팁내용내용내용내용</div>
+    <div class="title-bar">
+      총자산
+      <div class="tooltip-wrap ml-4">
+        <button type="button" class="tooltip-btn" aria-label="자세한 내용 확인"><i class="i-ico-tooltip" aria-hidden="true"></i></button>
+        <div class="tooltip-cont">총자산은 계좌 + 투자 + 포인트 + 자동차 + 부동산 + 미술품투자 + 직접 등록한 자산을 합산한 금액입니다.</div>
+        <div class="align-self-center flex justify-end ml-auto">
+          <span class="checkbox switch2">
+            <label for="moneySwitch" class="lbl">자산보기</label>
+            <input type="checkbox" id="moneySwitch" class="hide-switch" /><i aria-hidden="true" data-on="ON" data-off="OFF"></i>
+          </span>
         </div>
-      </h2>
-      <div class="align-end align-self-center">
-        <span class="checkbox switch2">
-          <label for="moneySwitch" class="lbl">자산보기</label>
-          <input type="checkbox" id="moneySwitch" /><i aria-hidden="true" data-on="ON" data-off="OFF"></i>
-        </span>
       </div>
     </div>
 
-    <!-- 차트 -->
-    <div id="chart1" class="chart mt-30" style="height: 150px"></div>
+    <div class="my-expense">
+      <div class="show">
+        <p class="text justify-start flex"><strong data-animation="rolling-number">210,120,000</strong>원</p>
+        <!-- 차트 -->
+        <div id="chart1" class="chart mt-30" style="height: 150px"></div>
+      </div>
+
+      <div class="hide">
+        <p class="tit">자산은 <strong class="fc-primary">비밀</strong>이에요<i class="i-img-emoji"></i></p>
+        <p class="text">금액표시 버튼을 눌러 내 자산을 확인해 보세요!</p>
+      </div>
+    </div>
   </div>
+
+  <!-- 주식 수익률로 대결해보세요! -->
+  <h3 class="tit">주식 수익률로 대결해보세요!</h3>
+  <div class="main-match flex">
+    <a href="#none" class="new">
+      <span></span>
+      인플루언서를 이겨라!
+    </a>
+    <a href="#none" class=""> 서학개미들 입장하실게요 </a>
+  </div>
+
+  <!-- 퀵하게 최근 지출을 분류해볼까요? -->
+  <h3 class="tit">퀵하게 최근 지출을 분류해볼까요?</h3>
+  <div class="radius-box">
+    <h4 class=" ">나의 최근 등록 카테고리</h4>
+    <ul>
+      <li>
+        <a href="#none">
+          <div>
+            <strong>기타비용</strong>
+            <i class="ico_cate ico-star" aria-hidden="true"></i>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <h4 class=" ">나의 최근 등록 카테고리</h4>
+    <ul>
+      <li>
+        <a href="#none">
+          <div>
+            <strong>덕질</strong>
+            <span>어떤 대상을 좋아해서 하는 관련된 행위</span>
+            <i class="ico_cate ico-star" aria-hidden="true"></i>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          <div>
+            <strong>관리비·공과금</strong>
+            <span>시설이나 물건을 관리하는 데 드는 비용</span>
+            <i class="ico_cate ico-star" aria-hidden="true"></i>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#none">
+          <div>
+            <strong>주문·배달</strong>
+            <span>음식 주문·배달로 인해 발생한 비용</span>
+            <i class="ico_cate ico-star" aria-hidden="true"></i>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- no data -->
+  <!--
+  <a href="#none" class="banner-btn-box banner-main btn-click" data-animation="on" role="button">
+    <div class="banner-sub">꼭 기억하고 싶은 지출 정보를 담아보세요!</div>
+    <div class="banner-tit"><strong>카테고리 분류하기</strong><i class="i-ico-arr-right-w-16"></i></div>
+  </a>
+  -->
 </div>

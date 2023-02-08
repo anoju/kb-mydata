@@ -131,6 +131,20 @@ mockup.main = {
     $('#wrap').addClass('main-bg');
     $('#header').addClass('main-bg');
     $('#header h1').addClass('head-logo').aria('label', '홈');
+
+    moneySwitch();
+    function moneySwitch() {
+      $('.hide-switch').change(function () {
+        const $this = $(this);
+        const $target = $this.closest('.title-bar').siblings('.my-expense');
+        if ($this.prop('checked')) {
+          $target.addClass('hidden');
+        } else {
+          $target.removeClass('hidden');
+        }
+      });
+    }
+    //차트
     const $chartData = [2000000, 1800000, 3500000, 2000000, 4300000, 5500000, 6500000, 6800000, 6400000, 6200000, 8000000, 6000000];
     const $max = Math.max.apply(null, $chartData);
     Highcharts.chart('chart1', {
