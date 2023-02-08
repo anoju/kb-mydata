@@ -82,6 +82,8 @@ const ui = {
     ui.List.reInit();
     ui.Swiper.reInit();
     ui.Chart.init();
+    ui.Animation.init();
+    ui.Animation.splitting();
   },
   isLoadInit: false,
   LoadInit: function () {
