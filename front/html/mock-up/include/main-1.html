@@ -1,11 +1,29 @@
 <div class="section">
   <div class="flex">
-    <a href="#" class="button primary h38 jsfy-left">상품 당첨! 상품지급내역을 확인하세요.</a>
+    <a href="#" class="button primary h38 justify-start">상품 당첨! 상품지급내역을 확인하세요.</a>
   </div>
   <!-- 메인 총자산 -->
-  <div class="assets_box">
+  <div class="radius-box">
     <h1><strong>김교보</strong>님 반가워요</h1>
     <span>최근 업데이트 2022.12.12 13:35</span>
+
+    <div class="flex">
+      <h2>
+        총 자산
+        <div class="tooltip-wrap">
+          <button type="button" class="tooltip-btn" aria-label="자세한 내용 확인"><i class="i-ico-tooltip" aria-hidden="true"></i></button>
+          <div class="tooltip-cont">툴팁내용내용내용내용</div>
+        </div>
+      </h2>
+      <div class="align-end align-self-center">
+        <span class="checkbox switch2">
+          <label for="moneySwitch" class="lbl">자산보기</label>
+          <input type="checkbox" id="moneySwitch" /><i aria-hidden="true" data-on="ON" data-off="OFF"></i>
+        </span>
+      </div>
+    </div>
+
+    <!-- 차트 -->
     <div id="chart1" class="chart mt-30" style="height: 150px"></div>
   </div>
 </div>
