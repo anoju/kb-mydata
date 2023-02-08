@@ -80,6 +80,7 @@ mockup = {
       ui.Html.include(function () {
         ui.reInit();
 
+        mockup.main.reset();
         switch ($idx) {
           case 0:
             $headTit.text('홈');
@@ -121,7 +122,15 @@ mockup = {
 };
 
 mockup.main = {
+  reset: function () {
+    $('#wrap').removeClass('main-bg');
+    $('#header').removeClass('main-bg');
+    $('#header h1').removeClass('head-logo').removeAttr('aria-label');
+  },
   home: function () {
+    $('#wrap').addClass('main-bg');
+    $('#header').addClass('main-bg');
+    $('#header h1').addClass('head-logo').aria('label', '홈');
     const $chartData = [2000000, 1800000, 3500000, 2000000, 4300000, 5500000, 6500000, 6800000, 6400000, 6200000, 8000000, 6000000];
     const $max = Math.max.apply(null, $chartData);
     Highcharts.chart('chart1', {

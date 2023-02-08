@@ -40,7 +40,9 @@
     border-bottom: 0.1rem solid var(--strong-txt-color);
   }
 }
-
+.main-bg {
+  background-color: #f2f4f6 !important;
+}
 .floating-menu-bar {
   display: flex;
   position: fixed;
