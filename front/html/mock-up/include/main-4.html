@@ -1,0 +1,208 @@
+<ul class="main-head-tab">
+  <li><a href="#">자산</a></li>
+  <li class="active"><a href="#">소비</a></li>
+</ul>
+<div class="section pb-96">
+  <div class="title-bar mt-20">
+    <h2 class="tit-h1">내 소비</h2>
+    <div class="right align-self-center">
+      <span class="checkbox switch2 small in-txt block">
+        <label for="moneySwitch" class="lbl">금액</label>
+        <!-- 2022-04-12 수정 -->
+        <input type="checkbox" id="moneySwitch" /><i aria-hidden="true" data-on="ON" data-off="OFF"></i>
+      </span>
+    </div>
+  </div>
+  <div class="my-expense">
+    <div class="show">
+      <p class="tit">이번 달 지출</p>
+      <p class="text"><strong data-animation="rolling-number">210,120,000</strong>원</p>
+    </div>
+    <div class="hide">
+      <p class="tit">지출은 <strong class="fc-primary">비밀</strong>이에요<i class="i-img-emoji"></i></p>
+      <p class="text">금액표시 버튼을 눌러 내 자산을 확인해 보세요!</p>
+    </div>
+  </div>
+  <p class="flex not-full align-center fz-12 fc-b0b0b0 justify-center">최근 업데이트 2021.12.13 13:35</p>
+
+  <div class="consumption-link">
+    <!-- 2022-04-05
+      비활성화시 disabled 클래스 추가
+    -->
+    <a href="#" class="type1 btn-click disabled">
+      <p class="tit">내 이번 달 <br />소비 리포트</p>
+      <p class="text">이번 달 어때?</p>
+      <i class="i-img-consumption-link1"></i>
+    </a>
+    <a href="#" class="type2 btn-click">
+      <p class="tit">내 연령대 <br />카테고리 비교</p>
+      <p class="text">다른 사람은 어때?</p>
+      <i class="i-img-consumption-link2"></i>
+    </a>
+  </div>
+
+  <!-- 결제수단 -->
+  <div class="main-gray-box">
+    <h2 class="tit-h4">
+      <a href="#" class="flex not-full">이번 달 Top3 결제수단<i class="i-ico-arr-right-24 ml-auto"></i></a>
+    </h2>
+
+    <!-- 이번 달 소비 내역이 없는 경우-->
+    <div class="list-empty mt-25 bg-fff pt-20 pb-20 bd-radius-14">
+      <i class="i-ico-warning-40" aria-hidden="true" data-animation="on"></i>
+      <p>이번 달 소비 내역이 없어요</p>
+    </div>
+    <!-- //이번 달 소비 내역이 없는 경우-->
+
+    <div class="bank-list-box">
+      <a href="#" class="btn-click">
+        <p class="img-box"><img src="../../images/temp/ico-bank.png" alt="" /></p>
+        <p class="tit">씨티카드</p>
+        <p class="text">씨티 뉴클리어카드</p>
+        <p class="number"><strong>61,081</strong>원</p>
+      </a>
+      <a href="#" class="btn-click">
+        <p class="img-box"><img src="../../images/temp/ico-bank.png" alt="" /></p>
+        <p class="tit">씨티카드</p>
+        <p class="text">씨티 뉴클리어카드</p>
+        <p class="number"><strong>61,081</strong>원</p>
+      </a>
+    </div>
+  </div>
+  <!-- //결제수단 -->
+
+  <!-- 카테고리 -->
+  <div class="main-gray-box">
+    <h2 class="tit-h4">
+      <a href="#" class="flex not-full">이번 달 Top3 카테고리<i class="i-ico-arr-right-24 ml-auto"></i></a>
+    </h2>
+    <div id="dounutChart" class="mt-53"></div>
+
+    <!-- 이번 달 카테고리가 없는 경우-->
+    <div class="list-empty mt-37 pt-0 pb-0">
+      <i class="i-ico-warning-40" aria-hidden="true" data-animation="on"></i>
+      <p>카테고리에 담아 소비 습관을 관리하세요</p>
+      <div class="btn-wrap mt-24">
+        <div class="flex">
+          <a href="#" class="button line">카테고리 분류하러 가기</a>
+        </div>
+      </div>
+    </div>
+    <!-- //이번 달 카테고리가 없는 경우-->
+  </div>
+  <!-- //카테고리 -->
+
+  <!-- 최근 지출 -->
+  <div class="main-gray-box">
+    <h2 class="tit-h4">
+      <a href="#" class="flex not-full">최근 지출<i class="i-ico-arr-right-24 ml-auto"></i></a>
+    </h2>
+
+    <!-- 이번 달 소비 내역이 없는 경우-->
+    <div class="list-empty mt-25 bg-fff pt-20 pb-20 bd-radius-14">
+      <i class="i-ico-warning-40" aria-hidden="true" data-animation="on"></i>
+      <p>이번 달 소비 내역이 없어요</p>
+    </div>
+    <!-- //이번 달 소비 내역이 없는 경우-->
+
+    <!-- 2022-04-22: 수정 -->
+    <div class="date-line-list-wrap">
+      <div class="date-line-list">
+        <div class="items">
+          <a href="#" class="list-item-price btn-click">
+            <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
+            <div class="item-tit">
+              <div class="left ellipsis">스타벅스여의도점스타벅스여의도점스타벅스여의도점</div>
+              <div class="right"><strong>31,081</strong> 원</div>
+            </div>
+            <div class="item-bottom">
+              <div class="left">
+                <span>09:13:24</span>
+                <span>주문·배달</span>
+              </div>
+              <!-- 2022-03-24: . item-bottom .right 구조 변경(span 추가) -->
+              <div class="right"><span>출금</span></div>
+            </div>
+          </a>
+          <!-- 취소된 아이템 : cancelled -->
+          <a href="#" class="list-item-price btn-click cancelled">
+            <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
+            <div class="item-tit">
+              <div class="left ellipsis">스타벅스여의도점</div>
+              <div class="right"><strong>31,081</strong> 원</div>
+            </div>
+            <div class="item-bottom">
+              <div class="left">
+                <span>09:13:24</span>
+                <span>주문·배달</span>
+              </div>
+              <div class="right"><span>입급취소(출금)</span></div>
+            </div>
+          </a>
+          <!-- 2022-05-27 제외 : except -->
+          <a href="#" class="list-item-price btn-click except">
+            <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
+            <div class="item-tit">
+              <div class="left ellipsis">스타벅스여의도점</div>
+              <div class="right"><strong>31,081</strong> 원</div>
+            </div>
+            <div class="item-bottom">
+              <div class="left">
+                <span>09:13:24</span>
+                <span>주문·배달</span>
+              </div>
+              <div class="right"><span>입급취소(출금)</span></div>
+            </div>
+          </a>
+          <a href="#" class="list-item-price btn-click">
+            <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
+            <div class="item-tit">
+              <div class="left ellipsis">스타벅스여의도점</div>
+              <div class="right"><strong>31,081</strong> 원</div>
+            </div>
+            <div class="item-bottom">
+              <div class="left">
+                <span>09:13:24</span>
+                <span>주문·배달</span>
+              </div>
+              <div class="right"><span>정정(출금)</span></div>
+            </div>
+          </a>
+          <a href="#" class="list-item-price btn-click">
+            <div class="item-info"><i class="badge orange">계좌</i>보통예금(신IBK급여통장)</div>
+            <div class="item-tit">
+              <div class="left ellipsis">스타벅스여의도점</div>
+              <div class="right"><strong>31,081</strong> 원</div>
+            </div>
+            <div class="item-bottom">
+              <div class="left">
+                <span>09:13:24</span>
+                <span>주문·배달</span>
+              </div>
+              <div class="right"><span>기타(출금)</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2022-05-03 -->
+      <p class="notice-txt mt-16">최근 내역은 <a href="#" class="fc-212121 line-underline">지출내역</a>에서 자세히 보실 수 있습니다.</p>
+      <!-- //2022-05-03 -->
+
+      <div class="btn-wrap">
+        <button class="button line h-38 fz-14 fc-606060">더보기</button>
+      </div>
+    </div>
+    <!-- //2022-04-22: 수정 -->
+  </div>
+  <!-- //최근 지출 -->
+
+  <div class="line-link-box">
+    <p><a href="#">자산 연결</a></p>
+    <p><a href="#">마이데이터 관리</a></p>
+  </div>
+
+  <a href="#" class="unclassified-info">
+    미분류 지출내역 <strong>10<span></span>건</strong>
+  </a>
+</div>

@@ -116,6 +116,7 @@ ui.Html = {
       if (location.host) {
         $.each($elements, function (i) {
           const $this = $(this);
+          $this.empty();
           const $html = $this.data('include-html');
           const $htmlAry = $html.split('/');
           const $htmlFile = $htmlAry[$htmlAry.length - 1];
@@ -126,7 +127,8 @@ ui.Html = {
           }
           $this.load($html, function (res, sta, xhr) {
             if (sta == 'success') {
-              $this.children().unwrap();
+              if (!$this.attr('class') && !$this.attr('id')) $this.children().unwrap();
+              else $this.removeAttr('data-include-html');
             }
             if (i === $elements.length - 1) {
               if (!!fn) fn();
