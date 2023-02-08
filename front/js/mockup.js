@@ -1,5 +1,8 @@
 $(function () {
   mockup.init();
+  setTimeout(function () {
+    mockup.main.home();
+  }, 100);
 });
 
 mockup = {
@@ -80,6 +83,7 @@ mockup = {
         switch ($idx) {
           case 0:
             $headTit.text('홈');
+            mockup.main.home();
             break;
           case 1:
             $headTit.text('매치');
@@ -117,6 +121,94 @@ mockup = {
 };
 
 mockup.main = {
+  home: function () {
+    const $chartData = [2000000, 1800000, 3500000, 2000000, 4300000, 5500000, 6500000, 6800000, 6400000, 6200000, 8000000, 6000000];
+    const $max = Math.max.apply(null, $chartData);
+    Highcharts.chart('chart1', {
+      chart: {
+        type: 'areaspline',
+        backgroundColor: 'rgba(255,255,255,0)',
+        spacing: [10, 0, 0, 0]
+      },
+      title: false,
+      legend: false,
+      xAxis: {
+        labels: {
+          style: {
+            color: '#B0B0B0'
+          }
+        },
+        lineColor: 'rgba(0, 0, 0, 0.05)',
+        gridLineColor: 'rgba(255, 255, 255, 0.35)',
+        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+      },
+      yAxis: {
+        max: $max,
+        labels: {
+          style: {
+            color: '#B0B0B0'
+          },
+          x: -6
+        },
+        lineColor: 'rgba(255, 255, 255, 0.35)',
+        gridLineColor: 'rgba(255, 255, 255, 0.35)',
+        gridLineDashStyle: 'Dot',
+        tickAmount: 5,
+        title: false
+      },
+      tooltip: {
+        enabled: false
+      },
+      credits: {
+        enabled: false
+      },
+      plotOptions: {
+        areaspline: {
+          lineColor: '#2AD6A8',
+          states: {
+            hover: {
+              enabled: false
+            },
+            inactive: {
+              enabled: false
+            },
+            select: {
+              enabled: false
+            }
+          },
+          marker: {
+            enabled: false,
+            states: {
+              hover: {
+                enabled: false
+              },
+              select: {
+                enabled: false
+              }
+            }
+          },
+          fillOpacity: 1,
+          fillColor: {
+            linearGradient: {
+              x1: 0,
+              y1: 0,
+              x2: 0,
+              y2: 1
+            },
+            stops: [
+              [0, Highcharts.color('#2AD6A8').setOpacity(0.6).get('rgba')],
+              [1, Highcharts.color('#2AD6A8').setOpacity(0).get('rgba')]
+            ]
+          }
+        }
+      },
+      series: [
+        {
+          data: $chartData
+        }
+      ]
+    });
+  },
   match: function () {
     let $visual = $('.match-main-visual:visible');
     let $visualTop = 0;
