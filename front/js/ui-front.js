@@ -89,7 +89,7 @@ const ui = {
   LoadInit: function () {
     if (ui.isLoadInit) return;
     ui.isLoadInit = true;
-    console.log('window load complete');
+    // console.log('window load complete');
     ui.Common.vhChk();
     ui.Common.winLoad();
     ui.Common.lottie();
@@ -2048,6 +2048,25 @@ ui.Tab = {
             $($href).find('.animate__animated').addClass('paused');
             $(window).scroll();
           }, 100);
+        }
+        if ($($href).find('.rolling-number').length) {
+          $($href)
+            .find('.rolling-number')
+            .each(function () {
+              const $this = $(this);
+              const $thisH = $this.height();
+              $this.css({
+                height: '',
+                'line-height': ''
+              });
+              const $in = $this.find('.rolling__in').first().children().first();
+              const $inH = $in.height();
+              const $setH = $thisH < $inH ? $inH : $thisH;
+              $this.css({
+                height: $setH,
+                'line-height': $setH + 'px'
+              });
+            });
         }
 
         if ($($href).find('.ui-swiper').length) {
