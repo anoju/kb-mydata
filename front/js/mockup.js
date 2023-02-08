@@ -398,11 +398,13 @@ mockup.main = {
     }
 
     function moneySwitch() {
-      $('#moneySwitch').change(function () {
-        if ($(this).is(':checked')) {
-          $('.my-expense').addClass('hidden');
+      $('.hide-switch').change(function () {
+        const $this = $(this);
+        const $target = $this.closest('.title-bar').siblings('.my-expense');
+        if ($this.prop('checked')) {
+          $target.addClass('hidden');
         } else {
-          $('.my-expense').removeClass('hidden');
+          $target.removeClass('hidden');
         }
       });
     }
