@@ -15,6 +15,14 @@
   }
   .my-expense {
     height: auto;
+    .hide {
+      height: 23.4rem;
+      .hide-wrap {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
   }
 }
 
@@ -117,6 +125,23 @@
     }
   }
 }
+
+//
+.profile {
+  .tit {
+    font-size: 2.2rem;
+    font-weight: 400;
+    strong {
+      font-weight: 700;
+    }
+  }
+  .img-box {
+    overflow: hidden;
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 50%;
+  }
+}
 // 배너
 .banner-btn-box {
   position: relative;
@@ -151,6 +176,52 @@
     .banner-tit {
       display: flex;
       align-items: center;
+    }
+  }
+}
+// 등록 카테고리
+.registed-category {
+  li {
+    border-top: 1px #f2f4f6 solid;
+    &:nth-child(1) {
+      border: 0;
+    }
+    a {
+      position: relative;
+      padding: 1.6rem 0;
+    }
+    div {
+      position: relative;
+      strong {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+      span {
+        display: block;
+        font-size: 1.4rem;
+      }
+    }
+    .ico-cate {
+      display: block;
+      margin-left: auto;
+      width: 3.2rem;
+      height: 3.2rem;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      &.ico-star {
+        background-image: url(../images/MAIN/ico-star.png);
+      }
+      &.ico-camera {
+        background-image: url(../images/MAIN/ico-camera.png);
+      }
+      &.ico-block {
+        background-image: url(../images/MAIN/ico-block.png);
+      }
+      &.ico-bike {
+        background-image: url(../images/MAIN/ico-bike.png);
+      }
     }
   }
 }
