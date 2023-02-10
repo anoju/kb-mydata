@@ -13,17 +13,6 @@
       padding-top: 0;
     }
   }
-  .my-expense {
-    height: auto;
-    .hide {
-      height: 23.4rem;
-      .hide-wrap {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-  }
 }
 
 // 메인이벤트 팝업

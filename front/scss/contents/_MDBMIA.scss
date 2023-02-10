@@ -551,6 +551,18 @@
       display: block !important;
     }
   }
+
+  &.ty2 {
+    height: auto;
+    .hide {
+      height: 23.4rem;
+      .hide-wrap {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }
 .consumption-link {
   display: flex;

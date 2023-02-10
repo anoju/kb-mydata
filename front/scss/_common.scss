@@ -727,6 +727,9 @@ html.pc {
 }
 
 // height
+.h-auto {
+  height: auto !important;
+}
 @for $i from 0 through 100 {
   .h-#{$i} {
     height: $i * 0.1rem !important;
