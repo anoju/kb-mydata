@@ -1,14 +1,15 @@
-<div class="section">
-  <div class="flex">
-    <a href="#" class="button primary h38 justify-start">상품 당첨! 상품지급내역을 확인하세요.</a>
+<div class="section pb-40">
+  <div class="home-tip" style="display: none">
+    <a href="#" class="cont">상품 당첨! 상품지급내역을 확인하세요.</a>
+    <button class="close" aria-label="닫기"></button>
   </div>
   <!-- 메인 총자산 -->
-  <div class="radius-box mt-8">
-    <div class="flex not-full profile">
-      <h2 class="tit">
-        <strong>김교보</strong>님 반가워요
-        <p class="fz-12 fc-b0b0b0">최근 업데이트 2021.12.13 13:35</p>
-      </h2>
+  <div class="home-round-box" data-animation="fadeInUp2">
+    <div class="home-profile">
+      <div class="cont">
+        <h2 class="tit"><strong>김교보</strong>님 반가워요</h2>
+        <p>최근 업데이트 2021.12.13 13:35</p>
+      </div>
       <p class="img-box ml-auto"><img src="../../images/match/sample_result.png" alt="" /></p>
     </div>
 
@@ -36,76 +37,74 @@
       <div class="hide">
         <div class="hide-wrap">
           <p class="tit">자산은 <strong class="fc-primary">비밀</strong>이에요<i class="i-img-emoji"></i></p>
-          <p class="text">금액표시 버튼을 눌러 내 자산을 확인해 보세요!</p>
+          <p class="text">자산보기를 ON하여 내 자산을 확인해 보세요!</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- 주식 수익률로 대결해보세요! -->
-  <h3 class="tit fz-22 mt-48">주식 수익률로 대결해보세요!</h3>
-  <div class="main-match flex mt-16">
-    <a href="#none" class="new">
-      <i class="badge">오늘의 매치</i>
-
-      <strong>인플루언서를 이겨라!</strong>
+  <h3 class="tit-h1 mt-48">주식 수익률로 대결해보세요!</h3>
+  <div class="home-match-bn mt-16">
+    <a href="#none" class="button new" data-animation="fadeInLeft2">
+      <img src="../../images/MAIN/img_home_bn_match.png" alt="" />
     </a>
-    <a href="#none" class="">
-      <i class="badge">오늘의 매치</i>
-      <strong>서학개미들 입장하실게요</strong>
+    <a href="#none" class="button" data-animation="fadeInRight2">
+      <img src="../../images/MAIN/img_home_bn_ground.png" alt="" />
     </a>
   </div>
 
   <!-- 퀵하게 최근 지출을 분류해볼까요? -->
-  <h3 class="tit fz-22 mt-48">퀵하게 최근 지출을 분류해볼까요?</h3>
-  <div class="radius-box mt-23">
-    <h4 class="fc-primary fz-16">나의 최근 등록 카테고리</h4>
+  <h3 class="tit-h1 mt-48">퀵하게 최근 지출을 분류해볼까요?</h3>
+
+  <div class="mt-16">
+    <a href="#none" class="banner-btn-box banner-main btn-click" data-animation="on" role="button">
+      <div class="banner-sub">꼭 기억하고 싶은 지출 정보를 담아보세요!</div>
+      <div class="banner-tit"><strong>카테고리 분류하기</strong><i class="i-ico-arr-right-w-16"></i></div>
+    </a>
+  </div>
+
+  <div class="home-round-box mt-23" data-animation="fadeInUp2">
+    <h4 class="tit-h4 fc-primary">나의 최근 등록 카테고리</h4>
     <ul class="registed-category">
       <li>
-        <a href="#none" class="flex align-center">
-          <div>
-            <strong>기타비용</strong>
+        <a href="#none" class="inner">
+          <div class="cont">
+            <div class="tit"><strong>기타비용</strong></div>
           </div>
-          <i class="ico-cate ico-star" aria-hidden="true"></i>
+          <i class="img-box"><img src="../../images/MAIN/ico-star.png" alt="" /></i>
         </a>
       </li>
     </ul>
-    <h4 class="fc-primary fz-16">끌 사용자가 많이 등록한 카테고리</h4>
+    <h4 class="tit-h4 fc-primary">끌 사용자가 많이 등록한 카테고리</h4>
     <ul class="registed-category">
       <li>
-        <a href="#none" class="flex align-center">
-          <div>
-            <strong>덕질</strong>
-            <span>어떤 대상을 좋아해서 하는 관련된 행위</span>
+        <a href="#none" class="inner">
+          <div class="cont">
+            <div class="tit"><strong>덕질</strong></div>
+            <div class="txt">어떤 대상을 좋아해서 하는 관련된 행위</div>
           </div>
-          <i class="ico-cate ico-camera" aria-hidden="true"></i>
+          <i class="img-box"><img src="../../images/MAIN/ico-camera.png" alt="" /></i>
         </a>
       </li>
       <li>
-        <a href="#none" class="flex align-center">
-          <div>
-            <strong>관리비·공과금</strong>
-            <span>시설이나 물건을 관리하는 데 드는 비용</span>
+        <a href="#none" class="inner">
+          <div class="cont">
+            <div class="tit"><strong>관리비·공과금</strong></div>
+            <div class="txt">시설이나 물건을 관리하는 데 드는 비용</div>
           </div>
-          <i class="ico-cate ico-block" aria-hidden="true"></i>
+          <i class="img-box"><img src="../../images/MAIN/ico-block.png" alt="" /></i>
         </a>
       </li>
       <li>
-        <a href="#none" class="flex align-center">
-          <div>
-            <strong>주문·배달</strong>
-            <span>음식 주문·배달로 인해 발생한 비용</span>
+        <a href="#none" class="inner">
+          <div class="cont">
+            <div class="tit"><strong>주문·배달</strong></div>
+            <div class="txt">음식 주문·배달로 인해 발생한 비용</div>
           </div>
-          <i class="ico-cate ico-bike" aria-hidden="true"></i>
+          <i class="img-box"><img src="../../images/MAIN/ico-bike.png" alt="" /></i>
         </a>
       </li>
     </ul>
   </div>
-  <!-- no data -->
-  <!--
-  <a href="#none" class="banner-btn-box banner-main btn-click" data-animation="on" role="button">
-    <div class="banner-sub">꼭 기억하고 싶은 지출 정보를 담아보세요!</div>
-    <div class="banner-tit"><strong>카테고리 분류하기</strong><i class="i-ico-arr-right-w-16"></i></div>
-  </a>
-  -->
 </div>

@@ -97,31 +97,97 @@
   }
 }
 //수익률로 대결해보세요!
-.main-match {
-  --match-btn-color1: #9b90ff;
-  --match-btn-color2: #ff9993;
-  a {
-    position: relative;
-    height: 23.1rem;
-    color: #fff;
+.home-tip {
+  position: relative;
+  margin-bottom: 0.8rem;
+  display: flex;
+  font-size: 1.4rem;
+  color: #fff;
+  background: var(--primary-color);
+  box-shadow: 0.2rem 0.4rem 1.6rem rgba(0, 0, 0, 0.04);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  .cont {
+    display: block;
+    line-height: 2rem;
+    padding: 1rem 1.6rem;
+    flex: 1 1 auto;
+  }
+  .close {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7.75732 7.75781L16.2426 16.2431' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.75739 16.2431L16.2427 7.75781' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center center / 2.4rem auto;
+  }
+}
+
+.home-round-box {
+  background-color: #fff;
+  box-shadow: 0.2rem 0.4rem 1.6rem rgba(0, 0, 0, 0.04);
+  padding: 2.4rem;
+  border-radius: 1.6rem;
+  &.r20 {
+    border-radius: 2rem;
+  }
+  &.r25 {
+    border-radius: 2.5rem;
+  }
+}
+
+.home-match-bn {
+  display: flex;
+  .button {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0;
     border-radius: 1.6rem;
-    padding: 2.4rem 1.6rem;
-    &:nth-child(1) {
-      background-color: var(--match-btn-color1);
+    overflow: hidden;
+    background-color: #fafafa;
+    &:before {
+      content: '';
+      display: block;
+      padding-top: (231 / 175) * 100%;
     }
-    &:nth-child(2) {
-      background-color: var(--match-btn-color2);
+    &.new {
+      &:after {
+        content: 'NEW';
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #fff;
+        background: #fd7e64;
+        padding: 0.5rem 0.9rem;
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        border-radius: 1.6rem 0 0 1.6rem;
+      }
+    }
+    img {
+      @include img-fit(true);
+    }
+    + a {
+      margin-left: 0.8rem;
     }
   }
 }
 
-//
-.profile {
-  .tit {
-    font-size: 2.2rem;
-    font-weight: 400;
-    strong {
-      font-weight: 700;
+.home-profile {
+  display: flex;
+  align-items: center;
+  .cont {
+    flex: 1 1 auto;
+    padding-right: 10px;
+    .tit {
+      font-size: 2.2rem;
+      strong {
+        font-weight: 700;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      color: #b0b0b0;
     }
   }
   .img-box {
@@ -129,6 +195,7 @@
     width: 5.6rem;
     height: 5.6rem;
     border-radius: 50%;
+    flex-shrink: 0;
   }
 }
 // 배너
@@ -159,58 +226,50 @@
     &.on:before {
       transform: translateX(0);
     }
-    > div {
-      position: relative;
+    .banner-sub {
+      font-size: 1.4rem;
     }
     .banner-tit {
       display: flex;
       align-items: center;
+      strong {
+        font-weight: 500;
+      }
     }
   }
 }
 // 등록 카테고리
 .registed-category {
+  margin-top: 0.8rem;
+  + .tit-h4 {
+    margin-top: 2.4rem;
+  }
   li {
-    border-top: 1px #f2f4f6 solid;
-    &:nth-child(1) {
-      border: 0;
-    }
-    a {
+    border-bottom: 0.1rem solid #f2f4f6;
+    a.inner {
+      display: flex;
       position: relative;
       padding: 1.6rem 0;
     }
-    div {
+    .cont {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex: 1 1 auto;
       position: relative;
-      strong {
-        display: block;
-        font-size: 1.6rem;
-        font-weight: 700;
-      }
-      span {
-        display: block;
-        font-size: 1.4rem;
-      }
+      padding-right: 1rem;
     }
-    .ico-cate {
-      display: block;
-      margin-left: auto;
+    .tit {
+      color: var(--strong-txt-color2);
+    }
+    .txt {
+      font-size: 1.4rem;
+      color: #818892;
+    }
+    .img-box {
       width: 3.2rem;
       height: 3.2rem;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      &.ico-star {
-        background-image: url(../images/MAIN/ico-star.png);
-      }
-      &.ico-camera {
-        background-image: url(../images/MAIN/ico-camera.png);
-      }
-      &.ico-block {
-        background-image: url(../images/MAIN/ico-block.png);
-      }
-      &.ico-bike {
-        background-image: url(../images/MAIN/ico-bike.png);
-      }
+      align-self: flex-end;
     }
   }
 }

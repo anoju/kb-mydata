@@ -1688,6 +1688,38 @@ $splits:
 .animate__fadeInUp2 {
   animation-name: fadeInUp2;
 }
+@keyframes fadeInLeft2 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-2rem, 0, 0);
+    transform: translate3d(-2rem, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInLeft2 {
+  animation-name: fadeInLeft2;
+}
+@keyframes fadeInRight2 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(2rem, 0, 0);
+    transform: translate3d(2rem, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInRight2 {
+  animation-name: fadeInRight2;
+}
 @keyframes bounce2 {
   from,
   20%,

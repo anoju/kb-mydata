@@ -144,6 +144,13 @@ mockup.main = {
         }
       });
     }
+    setTimeout(function () {
+      $('.home-tip').slideDown(300);
+    }, 1000);
+    $('.home-tip .close').click(function () {
+      $('.home-tip').slideUp(300);
+    });
+
     //차트
     const $chartData = [2000000, 1800000, 3500000, 2000000, 4300000, 5500000, 6500000, 6800000, 6400000, 6200000, 8000000, 6000000];
     const $max = Math.max.apply(null, $chartData);
