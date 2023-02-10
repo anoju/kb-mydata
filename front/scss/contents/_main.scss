@@ -273,6 +273,26 @@
     }
   }
 }
+.home-baloon-tip {
+  position: relative;
+  border-radius: 1.6rem;
+  border: 1px solid var(--primary-color);
+  color: var(--strong-txt-color2);
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  &:before {
+    content: '';
+    display: block;
+    width: 1.1rem;
+    height: 0.5rem;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    background: url(../images/MAIN/home-baloon-tip.png) no-repeat center top / 100% auto;
+    transform: translateX(-50%);
+  }
+}
 
 /* ---------------------------------- */
 .main-gray-box2 {
