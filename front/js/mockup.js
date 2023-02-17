@@ -1,8 +1,10 @@
 $(function () {
   mockup.init();
-  setTimeout(function () {
-    mockup.main.home();
-  }, 100);
+  if ($('#wrap').hasClass('main')) {
+    setTimeout(function () {
+      mockup.main.home();
+    }, 100);
+  }
 });
 
 mockup = {
