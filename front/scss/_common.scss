@@ -1,6 +1,6 @@
 :root {
   --vh: 1vh;
-  --primary-color: #00caca;
+  --primary-color: $primary;
   accent-color: var(--primary-color);
   --spl-highlight-color: var(--primary-color);
   --primary-color-rgb: 0, 202, 202;
@@ -695,7 +695,7 @@ html.pc {
   }
 }
 @for $i from 0 through 100 {
-  @if $i !=33 && $i !=66 {
+  @if $i !=33 and $i !=66 {
     .w-#{$i}p {
       width: $i * 1% !important;
     }
@@ -741,7 +741,7 @@ html.pc {
   }
 }
 @for $i from 0 through 100 {
-  @if $i !=33 && $i !=66 {
+  @if $i !=33 and $i !=66 {
     .h-#{$i}p {
       height: $i * 1% !important;
     }
