@@ -3,7 +3,7 @@
   --primary-color: #{$primary};
   accent-color: var(--primary-color);
   --spl-highlight-color: var(--primary-color);
-  --primary-color-rgb: 0, 202, 202;
+  --primary-color-rgb: #{hex-to-rgb($primary)};
 
   --base-txt-color: #606060;
   --strong-txt-color: #212121;
