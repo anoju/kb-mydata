@@ -76,6 +76,18 @@
           </div>
         </div>
         <div class="section">
+          <h2 class="gd__h1">micro-slider</h2>
+          <div>
+            <div class="micro-slider sample-micro-slider">
+              <div class="slider-item s1">1</div>
+              <div class="slider-item s2">2</div>
+              <div class="slider-item s3">3</div>
+              <div class="slider-item s4">4</div>
+              <div class="slider-item s5">5</div>
+              <div class="slider-item s6">6</div>
+            </div>
+          </div>
+
           <h2 class="gd__h1">apng 파일 테스트</h2>
           <div>
             <div class="img-box contain w-200">
@@ -128,18 +140,6 @@
                   <div class="img-box"><img src="../../images/temp/thumb-temp.jpg" alt="" /></div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <h2 class="gd__h1">micro-slider</h2>
-          <div>
-            <div class="micro-slider sample-micro-slider">
-              <div class="slider-item s1">1</div>
-              <div class="slider-item s2">2</div>
-              <div class="slider-item s3">3</div>
-              <div class="slider-item s4">4</div>
-              <div class="slider-item s5">5</div>
-              <div class="slider-item s6">6</div>
             </div>
           </div>
 
@@ -408,42 +408,44 @@
         const __msSlider = new MicroSlider(__ms, {
           indicators: true,
           // padding: 150,
-          perspectiveFactor: 2.5
+          perspectiveFactor: 3.5,
+          zoomScale: -30,
+          shift: -60
         });
         /*
-	let __msTimer = 3000;
-	let __msAutoplay = null;
-  const __msAutoplayStart = function(){
-    if(__msAutoplay !== null)clearInterval(__msAutoplay);
-    __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
-  };
-  const __msAutoplayStop = function(){
-    if(__msAutoplay === null) return
-    clearInterval(__msAutoplay);
-    __msAutoplay = null;
-  };
-	
-  //set autoplay (start)
-	__msAutoplayStart();
+      let __msTimer = 3000;
+      let __msAutoplay = null;
+       const __msAutoplayStart = function(){
+         if(__msAutoplay !== null)clearInterval(__msAutoplay);
+         __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
+       };
+       const __msAutoplayStop = function(){
+         if(__msAutoplay === null) return
+         clearInterval(__msAutoplay);
+         __msAutoplay = null;
+       };
 
-  // PC: mouse autoplay control
-	__ms.onmouseenter = function(e) {
-    __msAutoplayStop();
-  }
-	__ms.onmouseleave = function(e) {
-    __msAutoplayStart();
-  }
+       //set autoplay (start)
+      __msAutoplayStart();
 
-  
-  // mobile: hammer autoplay control
-  const __hammer = new Hammer(__ms);
-  __hammer.on('panstart', function(e) {
-    __msAutoplayStop();
-  });
-  __hammer.on('panend', function(e) {
-    __msAutoplayStart();
-  });
-	*/
+       // PC: mouse autoplay control
+      __ms.onmouseenter = function(e) {
+         __msAutoplayStop();
+       }
+      __ms.onmouseleave = function(e) {
+         __msAutoplayStart();
+       }
+
+
+       // mobile: hammer autoplay control
+       const __hammer = new Hammer(__ms);
+       __hammer.on('panstart', function(e) {
+         __msAutoplayStop();
+       });
+       __hammer.on('panend', function(e) {
+         __msAutoplayStart();
+       });
+      */
       };
 
       ui.Form.character();
