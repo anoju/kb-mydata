@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>egjs-flicking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- unpkg -->
+    <link rel="stylesheet" href="https://unpkg.com/@egjs/flicking/dist/flicking.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/@egjs/flicking/dist/flicking-inline.css" crossorigin="anonymous" />
+
+    <style>
+      .flicking-viewport-wrap {
+        padding: 100px 0;
+        overflow: hidden;
+      }
+      .flicking-viewport {
+        height: 100%;
+        overflow: visible;
+        width: 100%;
+      }
+      .flicking-camera {
+        align-items: center;
+        perspective: 400px;
+      }
+      .main-logo-box {
+        height: -moz-fit-content;
+        height: fit-content;
+        margin-right: 10px;
+        transform-style: preserve-3d;
+        width: 100px;
+      }
+      .image {
+        border: 2px solid #dbdbdb;
+        border-radius: 10px;
+        transform-style: preserve-3d;
+        padding-top: 100%;
+        background: #ddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="flicking-viewport-wrap">
+      <div id="flick" class="flicking-viewport">
+        <div class="flicking-camera">
+          <div class="main-logo-box"><p class="image is-1by1"></p></div>
+          <div class="main-logo-box"><p class="image is-1by1"></p></div>
+          <div class="main-logo-box"><p class="image is-1by1"></p></div>
+          <div class="main-logo-box"><p class="image is-1by1"></p></div>
+          <div class="main-logo-box"><p class="image is-1by1"></p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Initialize Swiper -->
+    <!-- unpkg -->
+    <script src="https://unpkg.com/@egjs/flicking/dist/flicking.pkgd.min.js" crossorigin="anonymous"></script>
+    <script>
+      const flicking = new Flicking('#flick', {
+        renderOnlyVisible: true
+      });
+
+      const updateUI = (e) => {
+        const flicking = e.currentTarget;
+        const panels = flicking.panels;
+        const camera = flicking.camera;
+        const camPos = camera.position - camera.alignPosition - camera.offset;
+        const viewportHalf = flicking.viewport.width / 2;
+
+        camera.element.style.perspectiveOrigin = `${camPos + viewportHalf}px 50%`;
+
+        panels.forEach((panel) => {
+          if (panel.index === 4) console.log(panel.outsetProgress);
+          const translateZ = Math.abs(panel.outsetProgress) * 100;
+          const ratateY = panel.outsetProgress * 15;
+          // panel.element.style.opacity = 1 - Math.abs(panel.outsetProgress);
+          panel.element.style.transform = `translateZ(${translateZ}px) rotateY(${ratateY}deg)`;
+        });
+      };
+      flicking.on('ready', updateUI);
+      flicking.on('move', updateUI);
+    </script>
+  </body>
+</html>
