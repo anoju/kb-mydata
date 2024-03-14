@@ -5579,7 +5579,7 @@ const Body = {
     if ($('html').hasClass('lock')) return;
     fullRefresh.lock();
 
-    Body.scrollTop = window.pageYOffset;
+    Body.scrollTop = window.scrollY || window.pageYOffset;
     const $wrap = $('#wrap');
     const $wrapTop = $('#wrap').length ? $wrap.offset().top : 0;
     const $setTop = Body.scrollTop * -1 + $wrapTop;
